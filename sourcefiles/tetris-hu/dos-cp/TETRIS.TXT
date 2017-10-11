@@ -1,0 +1,34 @@
+
+
+TETRIS
+[Instrukci¢k az 576 KByte j t‚k hoz]
+
+Kezel‚s: - Joystick 2-es csatlakoz¢.
+
+Ir ny¡t s:
+Joy jobbra-balra - Leveg“ben l‚v“ k“ elmozd¡t sa az adott ir nyba.
+Joy le           - Zuhan si sebess‚g n”vel‚se.
+T–zgomb          - K“ elforgat sa 90 fokkal jobbra.
+
+Szab lyok: - Az ‚ppen leveg“ben l‚v“ alakzat addig forgathat¢ vagy
+             ir ny¡that¢, am¡g a p lya hat rai, vagy egy el“z“leg
+             lerakott alakzat ezt meg nem akad lyozza.
+
+           - A k‚perny“ jobb fels“ sark ban tal lhat¢ kis ablakban
+             mindig a k”vetkez“ objektum l that¢, ami lehet“s‚get
+             teremt arra, hogy el“re gondolkozzunk egy l‚p‚ssel.
+
+C‚l: - A folyamatosan potyog¢ nyolc lehets‚ges form j£ alakzat
+       ir ny¡t sa ‚s forgat sa lehet“leg olyan m¢don, hogy
+       le‚rkez‚sekor legal bb egy teljes v¡zszintes sort kit”lts”n. Ha
+       ez sikerlt, akkor ez a sor elt–nik, ¡gy tudjuk elkerlni, hogy
+       a j t‚kt‚r megteljen a zuhan¢ alakzatokkal. Min‚l tov bb tudjuk
+       ezt teljes¡teni, ann l t”bb pont szerz‚s‚re van lehet“s‚g.
+
+A j t‚kban lehet“s‚gnk van a legjobbak k”z‚ nevnket a cs£cslist ra
+fel¡rni. Ez joystickkal t”rt‚nik a k”vetkez“ m¢don:
+A joystick fel-le mozgat s val v laszthatunk a villog¢ pont poz¡ci¢j n
+az ABC bet–i k”zl, jobbra-balra pedig a be¡rand¢ bet– poz¡ci¢j t
+tudjuk kiv lasztani.
+Ha minden k‚sz, a t–zgombbal tudjuk v‚gleges¡teni a m¢dos¡t st, £jabb
+t–zre pedig visszat‚rhetnk a j t‚kba.

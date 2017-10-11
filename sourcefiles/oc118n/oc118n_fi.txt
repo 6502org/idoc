@@ -1,0 +1,2325 @@
+*********
+
+Welcome to iDOC= - the international CBM documentation project!
+
+The goal of iDOC= is to preserve (non-English) Commodore related documents
+in electronic text format that might otherwise cease to exist with the rapid
+advancement of computer technology and declining interest in 8-bit computers
+on the part of the general population. If you would like to help by
+converting Commodore related hardcopy documents to electronic texts please
+contact the manager of iDOC=, Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names consists of a reasonably short unique title, followed by the
+document language. Two optional fields follow; first the document version (0
+for incomplete texts, version 1 is usually unnumbered), and then the
+document source, if there are more than one. Finally, the document is given
+a .txt extension.
+
+The author(s) of the original document and members of iDOC= make no
+representations about the accuracy or suitability of this material for any
+purpose. This etext is provided "as-is". Please refer to the warranty of the
+original document, if any, that may included in this etext. No other
+warranties, express or implied, are made to you as to the etext or any
+medium it may be on. Neither the author(s) nor the members of iDOC= will
+assume liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext. Therefore
+if you read this document or use the information herein you do so at your
+own risk.
+
+*********
+
+The iDOC= etext of the OC-118N manual (Finnish), converted to text by Curt
+Coder <trollvm@hotmail.com>
+
+oc118n_fi.txt, November 2003, etext #78.
+
+*********
+
+OC-118N
+
+
+KÄYTTÄJÄN OPAS
+
+
+----------------------------------------------------------------------------
+
+T A K U U E H D O T
+
+
+YLEISTÄ
+
+Karelia Computer Ky antaa levyasemille, OC-118N, Senator, Master 3S ja
+Master 5A-1, vuoden takuun ostopäivästä lukien. Takuu sisältää
+materiaali- ja valmistusvirheet sekä näiden itse tuotteelle aiheuttamat
+vauriot. Takuunantaja voi harkintansa mukaan joko korjata viat tai
+antaa tilalle korvaavan laitteen. Takuukorjausta on pyydettävä
+kohtuullisessa ajassa vian ilmenemisestä (korkeintaan kaksi viikkoa).
+Takuukorjausta varten laitteet on toimitettava maahantuojalle Karelia
+Computer Ky:lle. Lähettäminen tapahtuu asiakkaan kustannuksella.
+
+
+TOSITTEET
+
+Asiakkaan on osoitettava oikeutensa takuuseen myyntitositteella
+(kuitti, lähetysluettelo, lasku), josta ilmenee laitteen valmistus-
+numero, myyntipäivämäärä, myyjäliikkeen nimi ja asiakkaan nimi.
+
+
+RAJOITUKSET
+
+Asiakas menettää oikeutensa takuuseen, jos
+
+- laitteessa oleva sinetti rikotaan
+- laite avataan
+- laitetta käytetään teolliseen tai muuhun poikkeukselliseen
+tarkoitukseen
+
+
+Takuu ei kata vikoja, jotka ovat aiheutuneet takuunantajasta
+riippumattomista syistä. Näin ollen takuun ulkopuolella ovat mm. viat,
+jotka ovat aiheutuneet:
+
+- laitteen virheellisestä käytöstä, huolimattomuudesta ja muuntelusta.
+Esim. takuu ei koske vikoja, jotka johtuvat laitteen putoamisesta
+lattialle. Edelleen esim. OC-118N-aseman lukitusvivun vääntämisestä
+liikeratansa ulkopuolelle aiheutuneet viat eivät kuulu takuun piiriin.
+
+- salaman iskusta, tulipalosta, vesivahingosta tai muusta vastaavasta
+syystä
+
+Levyaseman luku-/kirjoituspään puhdistus ei kuulu takuun piiriin.
+
+- i ------------------------------------------------------------------------
+
+Käännös: Jarkko Lavinen
+
+Kesäkuussa, 1989
+
+© Karelia Computer Ky
+
+- ii -----------------------------------------------------------------------
+
+SISÄLLYSLUETTELO
+
+                                                                sivu
+1. Esittely ..................................................... 1
+
+2. Tekniset tiedot .............................................. 2
+
+3. OC-118N Levyaseman asennus ................................... 4
+
+               Kaapelien kytkentä ................................ 4
+               Virran kytkentä päälle ............................ 4
+               Levyn syöttö asemaan .............................. 4
+
+4. Peruskomennot ................................................ 5
+
+               Valmisohjelmien lataus ja käyttö .................. 5
+               Levyhakemiston lataus ............................. 7
+               Jokerimerkit ...................................... 7
+
+5. Levykomennot ................................................. 10
+
+               LEVYN ALUSTUS ELI FORMATOINTI ..................... 12
+               Virhetilan luku komentokanavalta .................. 14
+
+6. Peräkkäistiedostot ........................................... 15
+
+7. Hajatieodostot ............................................... 19
+
+               Hajatiedostojen käyttö ............................ 22
+
+8. Suhteelliset tiedostot ....................................... 27
+
+               Suhteellisten tiedostojen käyttö .................. 27
+
+9. Levyohjaimen ohjelmointi ..................................... 31
+
+10. Laitenumeron vaihto .......................................... 34
+
+
+Liitteet
+
+      I.       Komentoluettelo ................................... 36
+
+     II.       Virheilmoitukset .................................. 37
+
+    III.       Levyaseman ylläpito ............................... 41
+
+- iii ----------------------------------------------------------------------
+
+1. ESITTELY
+
+     OC-118N on monipuolinen ja tehokas levyasema Commodore-
+yhteensopiviin mikrotietokoneisiin. Se on yhteensopiva Commodore 64-
+mikrotietokoneen kanssa ja korvaa Commodore 1541-levyaseman. OC-118N
+levyaseman kirjoitus- ja lukunopeudet sekä välipuskurin koko ovat
+huomattavasti suuremmat kuin Commodore 1541-levyasemassa. Se antaa näin
+käyttäjälle suuremman suorituskyvyn.
+
+     Jos olet aloittelija, tutustu ensin tähän lukuun ja lukuihin 3 ja
+4, joissa selvitetään laitteiston kytkeminen ja muutamien
+peruskomentojen käyttö. Myöhemmät luvut tarjoavat syventävää lisätietoa
+vaatimustesi kasvaessa uusien sovellusten myötä.
+
+     Jos olet kokenut käyttäjä, tämä ohjekirja tarjoaa tarpeellisen
+viitemateriaalin, jotta voit saada kaiken mahdollisen suorituskyvyn OC-
+118N-levyasemastasi ja voit käyttää kaikkia ominaisuuksia tehokkaasti.
+
+     Riippumatta siitä minkätasoinen käyttäjä olet, OC-118N-levyasema
+tulee parantamaan tietokonejärjestelmäsi suorituskykyä ja joustavutta.
+
+     Pyydämme kuitenkin ottamaan huomioon, että tämä on ensisijaisesti
+levyaseman käyttöohje. Vaikka eri luvuissa käsitelläänkin komentoja
+yksityiskohtaisesti, ne esitetään levyaseman käytön kannalta.
+Varsinaiseen ohjelmointiin tai isäntäkoneen esittelyyn ja käyttöön ei
+tämän ohjekirjan puitteissa voida syventyä. Lukijan oletetaan
+hallitsevan isäntäkoneen BASIC-kielen, sekä BASIC-kielisten ohjelmien
+syötön isäntäkoneeseen.
+
+     Sinun ei tarvitse hallita koko käsikirjaa pystyäksesi käyttämään
+OC-118N levyasemaa tyydyttävästi! Muutamassa ensimmäisessä luvussa
+selvitetään riittävät ja yleisimmät peruskomennot, kun taas myöhemmissa
+luvuissa syvennytään yksityiskohtiin ja harvemmin tarvittaviin
+komentoihin, levytiedostoihin, levyllä esiintyviin tallenusrakenteisiin
+ja levyaseman prosessorin suoraan ohjelmointiin konekielellä.
+
+HUOM: Tässä kirjassa termillä isäntäkone tarkoitetaan sitä mikrotieto-
+konetta, johon kytket OC-118N-levyaseman.
+
+- 1 ------------------------------------------------------------------------
+
+2. TEKNISET TIEDOT
+
+*    Matala, pienikokoinen ja Commodore-yhteensopiva
+
+*    Levykekoko: 5.25 tuuman kalvolevy
+
+*    Kapasiteetti:
+
+          Levyllä                            174848 tavua
+
+          Tiedostoja, enimmillään            144/levy
+
+          Sektoreita uralla                  17-21
+
+          Tavuja sektorilla                  256
+
+          Uria                               35
+
+*    Keskimääräinen vikatiheys               8000 tuntia
+
+*    Virtalähde
+
+          Toimintajännite                    220 V
+
+          Taajuus                            50 Hz
+
+          Tehonkulutus                       24 W
+
+*    Fyysiset ominaisuudet
+
+          Korkeus                            47.5 mm
+
+          Leveys                             150 mm
+
+          Syvyys                             268 mm
+
+          Paino verkkolaitteen kanssa        2.8 kg
+
+- 2 ------------------------------------------------------------------------
+
+OC-118N
+
+LEVYASEMA
+
+
+
+
+MERKKIVALO: PUNAINEN - OPERAATIO KESKEN
+            VIHREÄ - NORMAALI LEPOTILA
+            VILKKUVA PUNAINEN JA VIHREÄ - VIRHETILA
+
+[kuva puuttuu]
+
+KUVA 1. LEVYASEMA EDESTÄ
+
+VIRTAKYTKIN
+
+SARJAVÄYLÄ  VIRTALIITIN
+
+[kuva puuttuu]
+
+KUVA 2. LEVYASEMA TAKAA
+
+- 3 ------------------------------------------------------------------------
+
+3. OC-118N-LEVYASEMAN ASENNUS
+
+KAAPELIEN KYTKENTÄ
+
+     Kytke ensiksi virtalähde levyasemaan. Virtalähteen viisinapainen
+urosliitin kytketään vastaavaan viisinapaiseen naarasliittimeen, joka
+on virtakatkaisijan vieressä. Seuraavaksi kytke virtalähde.
+pistorasiaan. Jos levyasemaan oli kytketty virta päälle, käynnistyy
+aseman moottori hetkeksi ja punainen merkkivalo palaa etupaneelissa.
+Moottorin pysähdyttyä valo vaihtuu vihreäksi. Jos virta oli päällä,
+kytke se nyt pois. Älä kytke muita kaapeleita virran ollessa päällä.
+
+     Kytke seuraavaksi kuusinapainen väyläliitin jompaankumpaan
+kuusinapaisista naarasliittimistä. Kytke myös isäntäkoneesta virta
+pois ja kytke väyläliittimen toinen pää vastaavaan naarasliittimeen
+isäntäkoneessa.
+
+     Jos sinulla on muita oheislaitteita sarjaväylässä (esim. kirjoitin
+tai toinen levyasema), kytke niistä virta pois. Jokaisessa
+oheislaitteessa on kaksi kuusinapaista väyläliitintä, joilla
+oheislaitteet ketjutetaan toisiinsa. Ketjun viimeisen laitteen toinen
+väyläliitin jää vapaaksi. Jos väylään kytketään kaksi levyasemaa joilla
+on sama laitenumero, ne eivät voi toimia yhtäaikaa, vaan tarvitaan
+laitenumeromuutos toisessa asemassa.
+
+VIRRAN KYTKENTÄ PÄÄLLE
+
+     Kun kaikki oheislaitteet ovat kytketyt toisiinsa, voidaan niihin
+panna virta päälle. Tämän on syytä tapahtua oikeassa järjestyksessä
+alkaen ketjun viimeisestä laitteesta edeten lopulta isäntäkoneeseen,
+joka kytketään päälle viimeisenä. Tarkista, ettei asemassa ole levyä,
+kun kytket virran päälle.
+
+LEVYN SYÖTTÖ ASEMAAN
+
+     Asettaaksesi levyn asemaan käännä lukitusvipu vaakasuoraan
+asentoon, jolloin sisällä oleva levy voidaan ottaa pois. Jos sisällä on
+kuljetussuoja, poista se ja talleta se mahdollista myöhempää aseman
+kuljetusta varten.
+     Uusi levy asetetaan asemaan etikettipuoli ylöspäin, (mahdollinen)
+pieni lovi vasemmalla. Lukitse levy asemaan kääntämällä lukitusvipu
+alas.
+
+     Älä koskaa poista levyä asemasta kun merkkivalo palaa punaisena!
+Muista myös ottaa levy pois asemasta, ennen kuin kytket virran pois
+asemasta! Muussa tapauksessa levylle talletetut tiedot voivat tuhoutua.
+
+- 4 ------------------------------------------------------------------------
+
+4. PERUSKOMENNOT
+
+VALMISOHJELMISTOJEN LATAUS JA KÄYTTÖ
+
+     Käännä lukitusvipu yläasentoon ja asenna levy sisään etikettipuoli
+ylöspäin, pieni lovi (mahdollisesti peitetty teipillä tai puuttuu
+kokonaan) vasemmalla ja siten, että lukupäätä varten oleva aukio
+suojakuoressa menee ennen levyn keskustaa asemaan. Käännä vipu alas,
+jolloin levy lukittuu paikoilleen.
+     Nyt voit ladata ohjelman kirjoittamalla jommankumman seuraavasta
+komennosta. Se, tuleeko komennon loppuun ,1 on tapauskohtainen ja se
+sinun tulee itse tarkistaa ohjelman mukana tulleista ohjeista.
+
+     LOAD "ladattavan ohjelman nimi",8       kuittaa komento painamalla
+                                             return-näppäintä
+tai  LOAD "ladattavan ohjelman nimi",8,1
+
+     Levyasema herää eloon, lataa ohjelmaa hetken ja seuraava teksti
+tulostuu:
+
+     SEARCHING FOR ladattavan ohjelman nimi
+     LOADING
+
+     READY
+
+     Kun teksti "READY" tulostuu, voit käynnistää ohjelman seuraavasti:
+
+     RUN                 kuittaa komento painamalla return-näppäintä
+
+     Sitävastoin, jos levyllä ei ole haluamaasi ohjelmaa, seuraava
+teksti tulostuu latauskomennon jälkeen.
+
+     SEARCHING FOR LADATTAVAN OHJELMAN NIMI
+     ?FILE NOT FOUND ERROR
+
+     READY
+
+Mikä tarkoittaa, ettei haluamaasi ohjelmaa ole levyllä.
+
+
+LOAD-KOMENTO
+
+     TOIMINTO: Lataa Basic-ohjelman levyltä isäntäkoneen muistiin.
+
+     MUOTO:    LOAD"Ohjelman nimi",laitenumero,komentonumero
+
+     Ohjelman nimi on merkkijono, eli se voi olla ohjelman nimi
+lainausmerkkien sisällä tai merkkijonomuuttuja, johon nimi on
+tallennettu. Edelleen laite- ja komentonumero voidaan korvata
+numeerisella muuttujalla. Laitenumero on valmistajan puolesta asetettu
+8:aan. Jos kytket useamman kuin yhden levyaseman, tutustu lukuun "10
+Laitenumeron vaihtaminen". Tässä ohjekirjassa esitetyissä esimerkeissä
+laitenumero on 8.
+
+     Komentonumero voidaan jättää pois. Oletusarvo on nolla, mikäli se
+jätetään pois. Arvolla nolla ohjelma latautuu BASIC-ohjelmalle varatun
+muistialueen alusta lähtien. Jos arvo on 1, ohjelma latautuu täsmälleen
+samaan paikkaan muistissa, kuin mistä se tallennettiin. Arvoa 1
+käytetään lähinnä konekielisten ohjelmien, merkistöjen ja muun
+sijainnista riippuvan tiedon tallentamiseen.
+
+- 5 ------------------------------------------------------------------------
+
+     ESIMERKKEJÄ:  LOAD "KOKEILUA",8
+
+                   LOAD "OHJELMA 1",8
+
+                   LOAD "ERIKOISMERKISTO",8,1
+
+                   LOAD A$,L,K
+
+     VAROITUS: Sen lisäksi, että LOAD-komento lataa ohjelman levyltä,
+     edellinen ohjelma tuhoutuu muistista pois!
+
+     HUOM: Voit käyttää muuttujia esittämään merkkijonoa, laitenumeroa
+     ja komentonumeroa. Pidä kuitenkin huoli, että käyttämäsi muuttujat
+     ovat määritellyt järkevillä arvoilla. Ota myös huomioon
+     rajoitukset ohjelmien nimissä, sivu 9.
+
+
+LEVYHAKEMISTO: ESITTELY
+
+     Levyasemasi on hajatalletukseen perustuva laite. Se tarkoittaa,
+että aseman lukupää voi siirtyä mielivaltaiselta uralta mieli-
+valtaiselle uralle ja sen jälkeen lukea mielivaltaisen sektorin tai
+kirjoittaa mielivaltaiselle sektorille.
+     Termiä sektori käytetään levyasemissa kuvaamaan urien jaottelua
+pienempiin kiinteämittaisiin osiin. Se kuvaa lähinnä tiedon tallennusta
+levylle levyaseman näkökulmasta
+     LOHKO (BLOCK) on 256 tavun kokoinen talletusalue levyllä.
+Formatoidulla levyllä on aina 683 lohkoa. Niinpä levylle mahtuu
+teoriassa 683*256 tavua eli 174848 tavua tietoa. Terminä lohko kuvaa
+tiedon tallennusta isäntäkoneen ohjelmien näkökulmasta. OC-118N
+levyasemassa yksi lohko tallennetaan aina yhdelle levyn sektorille.
+     TIEDOSTO (FILE) on lohkoista koostuva joustavampi
+tallennusrakenne. Käytännössä tiedosto vastaa lohkoa, jonka pituus saa
+olla mielivaltainen. Niinpä tiedostot ovat yleisin ja joustavin tiedon
+tallennustapa levyille. Esimerkiksi levylle tallennetut Basic-ohjelmat
+ovat tiedostoja, ja niinpä tästä lähtien termillä tiedosto tarkoitetaan
+sekä ohjelmia, että muita tiedostorakenteita (kuten peräkkäistiedostot
+ja suhteelliset tiedostot)
+
+     Sinun ei tarvitse välittää, mitä yksittäiset lohkot levyllä
+sisältävät. Levyasemasi sisältää kiinteästi niin kutsutun
+levykäyttöjärjestelmän, jonka lyhenne on DOS. DOS huolehtii
+tallennuslohkojen varauksista ja käytöstä puolestasi ja pitää
+puolestasi kirjaa, mitä kukin talletuslohko pitää sisällään. DOS pitää
+yllä erityistä lohkovarauskarttaa, jonka lyhenne on BAM. BAM on
+yksinkertaisesti luettelo lohkojen varauksista. Niinpä aina kun levylle
+tallennetaan uutta tietoa, jonka tallennukseen tarvitaan uusia lohkoja,
+DOS tutkii ensin BAM:mista, mistä tarvittavat lohkot levyltä löytyvät
+ja merkitsee ne sen jälkeen BAM:iin varatuiksi.
+
+     Levyllä on myös hakemistoluettelo, joka on yksinkertaisesti
+luettelo kaikista levyillä olevista tiedostoista. Hakemistoluettelossa
+voi enimmillään olla 144 tiedoston hakutiedot. Hakutietoina
+tallennetaan tiedoston nimi, sen tyyppi, käytettyjen tallennuslohkojen
+määrä, sekä ensimmäinen talletuslohko eli aloituslohko.
+     Hakemistoluetteloa pidetään yllä aina, kun levylle kohdistuu
+
+- 6 ------------------------------------------------------------------------
+
+kirjoitusoperaatio. BAM:iin ei muutoksia kuitenkaan kirjata
+välittömästi, vaan vasta kun koko tiedosto on tallennettu. Niinpä jos
+kesken kirjoitusoperaation tapahtuu jotain katastrofaalista, kuten
+sähkökatko tai isäntäkoneen tiedon siirto keskeytetään, jäävät BAM:in
+tiedot vaillinaiseksi. Tiedostojen osalta tämä tarkoittaa, että BAM
+päivitetään, vasta kun tiedosto suljetaan. Jos tiedostoa ei suljeta,
+koko tiedosto menetetään. Basic-ohjelmien tallennuksessa tästä ei
+tarvitse välittää, silä SAVE-komento sulkee talletustiedoston itsestään
+siirron tapahduttua.
+
+
+LEVYHAKEMISTO: KÄYTTÖ
+
+     Hakemistoluettelon tiedot voidaan ladata muistiin aivan kuten mikä
+tahansa ohjelma. Aseta levy asemaan ja kirjoita:
+
+     LOAD "$",8
+
+     Isäntäkoneesi tulostaa:
+
+     SAVE-KOMENTO
+     SEARCHING FOR $
+     FOUND $
+     LOADING
+     READY
+
+     Hakemisto on nyt ladattu muistiin BASIC-ohjelmana. Aivan kuten
+BASIC-ohjelma, saat sen tulostetuksi kirjoittamalla komennon:
+
+     LIST
+
+     Jos haluat tutkia hakemistoluetteloa BASIC-ohjelmasta käsin,
+joudut käyttämään eri menetelmää, joka on selostettu luvussa 6. Jos
+käytät LOAD-komentoa levyhakemiston lataamiseen Basic-ohjelmasta,
+latautuu hakemisto ohjelmasi päälle!
+
+
+JOKERIMERKIT
+
+     Ohjelmien latauksen helpottamiseksi ohjelman nimeä ei aina
+tarvitse kirjoitaa täydellisenä, vaan nimeä voidaan tiettyjen
+rajoitusten puitteissa lyhentää käyttämällä jokerimerkkejä. Aivan kuten
+korttipeleissä, jokeri esittää mitä tahansa kirjainta. Jokerimerkkejä
+on kahdenlaisia; kysymysmerkki "?" esittää mielivaltaista merkkiä, ja
+tähti "*" esittää mielivaltaisen pituista merkkijonoa, jonka kaikki
+merkit voidaan valita mielivaltaisesti. Esimerkiksi:
+
+     "?" on sama kuin "A" tai "B" tai "C","D","E", ...   ... "Z"
+                 tai  "a","b","c",... ..."z"
+                 tai  "0","1","2",... ..."9"
+
+     "??" voi olla esim "Ab", "G1","XX" jne.
+
+     "**" voi olla esim. "QWeRtY" , "palsternakka" , "A" , "K3632", jne.
+
+     Kun jokerimerkkejä käytetään latauskomennoissa, latautuu
+ensimmäinen hakuehdon täyttävä ohjelma. Seuraavassa käyttöesimerkkejä:
+
+     LOAD"*",8            Ensimmäinen levyllä oleva ohjelma latautuu.
+
+- 7 ------------------------------------------------------------------------
+
+     LOAD"JAMES*",8       Ensimmäinen levyllä oleva James-alkuinen
+                          ohjelma latautuu
+     LOAD"*546",8         Lataa ensimmäisen ohjelman, jonka nimi päättyy
+                          merkkeihin 546
+     LOAD"?546",8         Lataa ensimmäisen 4-kirjaimisen ohjelman,
+                          jonka kolme viimeistä kirjainta ovat 546
+     LOAD"A?A",8          Lataa ensimmäisen 3-kirjaimisen ohjelman,
+                          jonka nimen ensimmäinen ja viimeinen kirjain
+                          on A
+
+     Jokerimerkkiä voidaan myös käyttää hakemiston latauksessa.
+Hakemiston latauksen yhteydessä jokemerkkiyhdistelmä toimii kuin
+suodatin; vain halutut tiedostonimet latautuvat muistiin. Esimerkki:
+
+     LOAD"$:JAMES*",8      Lataa hakemistoluettelon, jossa ovat
+                           ainoastaan JAMES-alkuiset tiedostonimet.
+
+
+SAVE-KOMENTO
+
+     TOIMINTO: Tallentaa isäntäkoneessa olevan BASIC-ohjelman levylle
+
+     MUOTO: SAVE"Ohjelman nimi',laitenumero,komentonumero
+
+     Aivan kuten LOAD-komennossa (katso sivu 5), lainausmerkeissä
+oleva tallennettavan ohjelman nimi voidaan korvata merkkijono-
+numeerisella muuttujalla. Laitenumero on tavallisesti 8, ellei aseman
+laitenumeroa olla tarkoituksella muuksi muutettu.
+     Jos levyllä on jo samanniminen tiedosto, tallennusta ei suoriteta,
+vaan isäntäkone tulostaa virheilmoituksen, ja OC-118N:n merkkivalo
+vilkuu punaisena. Virhetilanne syntyy myös, jos levyllä ei ole
+riittävästi tilaa. Tällöin tulee käyttää toista levyä, tai tuhota
+levyltä tiedostoja.
+
+Esimerkki:
+
+     SAVE"KOKEILUA",8
+
+
+UUDELLEENTALLENNUS
+
+     TOIMINTO: Tallentaa isäntäkoneessa olevan BASIC-ohjelman
+               levyllä jo olevan tiedoston tai ohjelman päälle.
+
+     MUOTO:    SAVE"@0:Ohjelman nimi",laitenumero,komentonumero
+
+     ESIM:     SAVE"@0:KOKEILUA",8
+
+     Usein kehiteltäviä ohjelmia joudutaan tallentamaan tuon tuostakin.
+Olisi kovin kömpelöä tallentaa kukin versio eri nimellä. Tai erikseen
+tuhota vanha versio levyltä. Uudelleentallennus tarjoaa tähän
+ongelmaan siistin ratkaisun.
+
+- 8 ------------------------------------------------------------------------
+
+VERIFY-KOMENTO
+
+     TOIMINTO: Tarkistaa onko isäntäkoneen muistissa oleva täsmälleen
+               sama kuin levyllä oleva.
+
+     MUOTO:    VERIFY"Ohjelman nimi",laitenumero,komentonumero
+
+     ESIM:     VERIFY"KOKEILUA",8
+
+     Operaatio suoritetaan vertaamalla tiedoston tavuja yksi kerrallaan
+muistissa oleviin.
+
+
+YLEISTÄ TIEDOSTOJEN NIMISTÄ
+
+     Tiedostojen nimissä tulee ensimmäisen merkin olla kirjain. Nimissä
+saa esiintyä välilyöntejä. 16 merkin pituuden ylittävistä tiedostojen
+nimistä katkaistaan ylimenevä jono pois.
+
+Esimerkki: Seuraavat kaksi komentoa lataavat saman ohjelman!
+
+     LOAD"A123456789012345",8
+
+     LOAD"A123456789012345HOLYNPOLYANIMENPERAAN",8
+
+- 9 ------------------------------------------------------------------------
+
+5. LEVYKOMENNOT
+
+     Tähän mennessä olet oppinut käyttämään levyaseman yksin-
+kertaisimpia komentoja. Levykomentojen käyttöönotto laajentaa
+mahdollisuuksiasi vuorovaikutteiseen viestintään levyaseman kanssa.
+Levykomennoilla voit myös luoda muita tiedostorakenteita, kuin mitä
+pelkät ohjelmat edustavat.
+
+
+OPEN-KOMENTO
+
+     TOIMINTO: Aukaisee joko tiedoston levyllä tai komentokanavan.
+     MUOTO: OPEN tiedostonumero,laitenumero,kanavanumero,merkkijono
+
+     Tiedoston tai komentokanavan avaus tarkoittaa sen käyttöönottoa.
+Jos tiedosto/komentokanava ei ole avattu, se on suljettu, eikä siihen
+voida kohdistaa minkäänlaisia komentoja. Kun et enää kohdista
+operaatiota tiedostoon tai komentokanavaan, sinun tulisi sulkea se
+käyttäen CLOSE-komentoa.
+     Kun tiedosto avataan, aukaistaan samalla isäntäkoneen ja
+levyaseman tiedonsiirtoa varten siirtokanava. Mikäli kanavanumerona
+käytetään komentokanavan numeroa 15, ei levyltä avata tiedostoa,
+ainoastaan kanava. Kaikki tälle kanavalle lähetetty tieto tulkitaan
+levyasemassasi komennoksi.
+     Jos aukaiset ohjelmassasi komentokanavan, aukaise se aina ennen
+kuin avaat yhtäkään tiedostoa! Komentokanavaa aukaistessa ei tarvita
+merkkijonoa OPEN-komennon lopussa. Jos käytät merkkijonoa, se sisältää
+komentokanavan ensimmäisen komennon.
+
+     Tiedostonumero on normaalisti välillä 1..127, lukuja 128..255
+tulisi välttää, sillä PRINT#-komento lisää merkkijonojen ASCII koodin
+13 (Carriage Return) perään ASCII koodin 10 (Line Feed). Laitenumero on
+tavallisesti 8.
+
+     Kanavanumero on välillä 2..14 tiedostoille ja 15 komentokanavalle.
+Kanavat 0 ja 1 ovat varatut isäntäkoneen LOAD- ja SAVE-komentojen
+toteutukseen.
+
+     Merkkijono on haluamasi tiedoston nimi. Tiedostoa ei luoda, mikäli
+levyllä on jo sellainen, tai jos nimi on tyhjä merkkijono. Jos yrität
+avata kahdesti saman tiedoston, isäntäkone keskeyttää suorituksen "FILE
+OPEN ERROR"-virheeseen.
+
+Esimerkiksi:
+
+     OPEN 5,8,5,"VARASTOLUETTELOT"      luo tiedoston
+                                        "VARASTOLUETTELOT"
+
+     OPEN 15,8,15,"I"    Lähettää komennon komentokanavalla
+
+     OPEN A,B,C,D$       Muuttujien tulee olla määritelty!
+
+PRINT#-KOMENTO
+
+     TOIMINTO: Tallentaa merkkijonon tiedostoon tai antaa komennon
+               komentokanavalla.
+
+- 10 -----------------------------------------------------------------------
+
+     MUOTO:    PRINT# tiedostonumero,tulostusparametrit
+
+     PRINT# on aivan sama komento kuin PRINT-komento, paitsi
+että tulostus ei ohjaudu näytölle, vaan tässä tapauksessa levyasemalle.
+Kun käytetään tiedoston kanavanumeroa, tulostuvat tulosparametrit
+tiedostoon aivan samalla tavalla, kuin ne tulostuisivat näytölle.
+Tallennus levylle käy välipuskurin kautta, joten tallenus ei ole
+välitöntä. Jos käytetään komentokanavan kanavanumeroa, PRINT# lähettää
+komennon levyasemalle komentokanavalla.
+
+Esimerkiksi: (Esimerkeissä oletetaan tiedoston ja kanavan olevan jo
+auki)
+
+     PRINT# 7,C$    Tulostaa merkkijonomuuttujan C$ sisällön tiedostoon
+
+     PRINT# 15,"I"  Lähettää levykomennon komentokanavalla
+
+
+CLOSE-KOMENTO
+
+     TOIMINTO: Sulkee tiedoston ja siirtokanavan. Varaa tiedoston
+               käyttämät talletuslohkot!
+
+     MUOTO:    CLOSE tiedostonumero
+
+     ON ERITTÄIN TÄRKEÄÄ, ETTÄ SULJET TIEDOSTOT, KUN ET ENÄÄ SUORITA
+OPERAATIOITA NIIHIN. JOS TIEDOSTO JÄÄ SULKEMATTA, MENETÄT AVOIMISSA
+TIEDOSTOISSA OLLEET TIEDOT. DOS päivittää lohkovarauskartan levylle
+vasta, kun sille annetaan CLOSE-komento. Niinpä tiedosto on olemassa
+levyllä, vasta kun sille annetaan CLOSE-koemento.
+     KOMENTOKANAVA SULJETAAN AINA VIIMEISENÄ. Komentokanavaa
+suljettaessa kaikki tiedostot ja komentokanava sulkeutuvat
+levyasemassa. Isäntäkoneesi luulee kuitenkin muitten tiedostojen olevan
+edelleen auki ja sulkeneensa ainoastaan komentokanavan.
+
+     HUOM: Jos isäntäkoneesi BASIC-ohjelman suoritus katkeaa
+     virhetilanteeseen, kaikki tiedostot sulkeutuvat isäntäkoneessa. Ne
+     jäävät edelleen auki levyasemassa! Tilanne on hyvin vaarallinen!
+     Kirjoita välittömästi seuraava komentorivi:
+
+          CLOSE 15:OPEN 15,8,15:CLOSE 15
+
+     Tämä alustaa levyasemasi ja tiedostojesi lohkovaraukset
+     päivittyvät levylle.
+
+
+INITIALIZE-KOMENTO
+
+     TOIMINTO: Alustaa levyasemasi tilaan, joka vastaa sitä, missä se
+               oli heti virran kytkeydyttyä päälle.
+
+     LEVYKOMENNON MERKKIJONO: "INITIALIZE"
+
+     Toisinaan levyasemasi voi joutua virhstilaan, jossa se ei ota
+mitään komentoja vastaan. INITIALIZE-komento on siistimpi tapa alustaa
+asemasi, kuin virran katkaiseminen.
+     Tunnuksen INITIALIZE voi lyhentää tunnuksella I.
+
+- 11 -----------------------------------------------------------------------
+
+Esimerkiksi:
+
+     OPEN 15,8,15,"I"    Jos komentokanava ei ole auki
+
+     PRINT# 15,"I"       Jos komentokanava on auki
+
+
+NEW-KOMENTO (ELI PORMATOINTI)
+
+     TOIMINTO: Alustaa (eli formatoi) uuden levyn käyttöä varten tai
+               tyhjentää alustetun levyn hakemistoluettelon.
+
+     LEVYKOMENNON MERKKIJONO: "NEW 0:levyn nimi,tunnuskoodi" tai
+                              "NEW 0:levyn nimi"
+
+     Täydellinen alustus kirjaimellisesti pyyhkii koko levyn tyhjäksi.
+Se käy levyn jokaisen uran vuorotellen läpi ja asettaa tarpeelliset
+tahdistus- ja lohkomerkit levylle. Sen lisäksi levylle tallennetaan
+tyhjä hakemistoluettelo ja tyhjän levyn lohkovarauskartta.
+     Tunnuskoodia tarvitaan erottamaan eri levyt toisistaan.
+Täydellisessä alustuksessa jokainen levyn sektori ja hakemisto saa
+tämän tunnuskoodin, joka koostuu kahdesta mielivaltaisesta merkistä.
+Tämän ansiosta asemasi tunnistaa levynvaihdon asemassa kesken
+operaation!
+     NEW-tunnuksen voi korvata lyhenteellä N.
+
+Esimerkiksi:
+
+     OPEN 15,8,15,"NEW 0:PUHELINLUETTELO,KC" Jos komentokanava ei ole
+                                             auki
+
+     PRINT# 15,"NEW 0:PUHELINLUETTELO,KC"    Komentokanava oli auki
+
+     Jos levysi on jo joskus aikaisemmin alustettu täydellisesti, se
+sisältää valmiina tahdistus- ja lohkomerkit. Niitä ei tarvitse alustaa,
+jos pääasiallinen tarkoitus on ainoastaan hävittää kaikki levyllä
+olevat tiedostot. Osittainen alustus luo ainoastaan uuden hakemisto-
+luettelon ja lohkovarauskartan levylle, mikä on operaationa
+huomattavasti nopeampi toimenpide kuin täydellinen alustus.
+     Osittaisessa alustuksessa jätetään tunnuskoodi ja sitä edeltävä
+pilkku pois.
+
+Esimerkiksi:
+
+     OPEN 15,8,15,"NEW 0:LAMPOTILAT1962"     Jos komentokanava ei ole
+                                             auki
+     PRINT# 15,"N 0:LAMPOTILAT1962"          Komentokanava oli auki
+
+
+SCRATCH-KOMENTO
+
+     TOIMINTO: Tuhoaa haluamasi tiedostot levyltä.
+
+     LEVYKOMENNON MERKKIJONO: "SCRATCH 0:tiedostonimi"
+
+     Komento tuhoaa tiedoston levyltä ja vapauttaa sen varaaman tilan
+muiden tiedostojen käyttöön. Tiedostot voidaan myös luetella lisäämällä
+jokaisen nimen alkuun 0: ja erottelemalla nimet toisistaan pilkulla.
+
+- 12 -----------------------------------------------------------------------
+
+Myös jokerimerkkien käyttö on sallittua.
+     Tunnuksen SCRATCH voi lyhentää tunnuksella S.
+
+Esimerkiksi:
+
+     OPEN 15,8,15,"S 0:HEINAKUU"   Mikäli komentokanava ei ole auki,
+                                   avataan se ja tuhotaan tiedosto
+                                   HEINAKUU
+
+     PRINT# 15,"S 0:*KUU"     Komentokanava on auki, joten käytetään
+                              PRINT#-komentoa. Tuhoaa kaikki KUU-
+                              loppuiset tiedostot
+
+     PRINT# 15,"SRATCH 0:TAMMIKUU,0:JOULUKUU,0:KESAKUU"
+                              Tuhoaa tiedostot TAMMIKUU, JOULUKUU ja
+                              KESAKUU
+
+
+COPY-KOMENTO
+
+     TOIMINTO: Kopio tiedostoja uudeksi tiedostoksi.
+
+     LEVYKOMENNON MERKKIJONO: "COPY 0:kopion nimi= 0:vanha nimi1,
+                              0:vanha nimi2,..."
+
+     Kopion nimi ei saa olla yksikään vanhoista nimistä. Jos kopiotavan
+tiedoston lähteenä on useampi kuin yksi tiedosto, ne kopioidaan
+luetellussa järjestyksessa uuteen tiedostoon toinen toisensa perään.
+Kopioitavien tiedostojen määrä on rajoitettu neljään.
+     Tunnuksen COPY voi lyhentää tunnuksella C.
+
+Esimerkiksi:
+
+     OPEN 15,8,15,"C 0:LASKUT=0:TAMMIKUU,0:HELMIKUU"
+                                   Kopioi tiedostot TAMMIKUU ja
+                                   HELMIKUU tiedostoon LASKUT
+
+     PRINT# 15,"COPY 0:VARMISTUS=0:LASKUT"
+                                   Kopioi tiedoston LASKUT tiedostoon
+                                   VARMISTUS
+
+
+RENAME-KOMENTO
+
+     TOIMINTO: Vaihtaa tiedoston nimen.
+
+     LEVYKOMENNON MERKKIJONO: "RENAME 0:uusi nimi=0:vanha nimi"
+
+     Et voi käyttää RENAME-komentoa avoimiin tiedostoihin. Tunnuksen
+RENAME voi lyhentää tunnuksella R
+
+Esimerkki:
+
+     OPEN 15,8,15,"R 0:TAMMIKUU=0:TAMIKUU"
+
+
+VALIDATE-KOMENTO
+
+     TOIMINTO: Poistaa käyttökelvottamat tyhjät lohkot levyltä.
+
+     LEVYKOMENNON MERKKIJONO: "VALIDATE 0:"
+
+- 13 -----------------------------------------------------------------------
+
+     Kun levyllä on useita tiedostoja, joita usein tuhotaan tai
+luodaan, muodostuu levylle tavallisesti ajan kuluessa pieniä muutaman
+tallennuslohkon kokoisia 'aukkoja'. Nämä aukot ovat käyttökelvottomia
+tallennukseen pienen kokonsa vuoksi ja vievät siten vain
+tallennustilaa. VALIDATE-komento järjestelee levyllä olevat tiedostot
+tiivisti peräkkäin. Niiden seassa olevien tyhjien tallennuslohkojen
+varaama tila vapautuu käyttöön.
+     Tunnuksen VALIDATE voi lyhentää tunnuksella V
+
+     HUOM! Jos levylläsi on hajasaantitiedostoja, ne tuhoutuvat. Niinpä
+     sinun ei tulisi koskaan käyttää VALIDATE-komentoa levylle, jolla
+     on hajatiedostoja.
+
+Esimerkiksi:
+
+     OPEN 15,8,15,"V0:"
+
+
+LEVYASEMAN TILAN TUTKIMINEN KOMENTOKANAVALLA
+
+     Valitettavasti et voi lukea levyaseman tilaa muuten kuin BASIC-
+ohjelmasta, sillä siihen tarvitaan INPUT#-komentoa, joka ei toimi
+irrallisena komentona.
+     Seuraava ohjelma tutkii levyasemasi tilan:
+
+     10 OPEN 15,8,15
+     20 INPUT #15,A$,B$,C$,D$
+     30 PRINT A$,B$,C$,D$
+
+     INPUT#-lukee neljä muuttujaa komentokanavalta. Näistä toinen on
+merkkijonomuuttuja ja loput ovat numeerisia muuttujia, joten ne voidaan
+lukea numeeriseen muuttujaan. Muuttujien sisältö on seuraava:
+
+     Ensimmäinen:   Virhenumero, paitsi 0, joka tarkoittaa virheetöntä
+                    tilaa.
+     Toinen:        Virheen kuvaus, tekstinä.
+     Kolmas:        Ura, millä virhe esiintyi.
+     Neljäs:        Millä uran sektorilla virhe esiintyi.
+
+     Virheet uralla 18 liittyvät hakemistoluetteloon ja lohkovaraus-
+     karttaan.
+
+- 14 -----------------------------------------------------------------------
+
+6. PERÄKKÄISTIEDOSTOT
+
+     Peräkkäissaannissa tiedoston alkioita voidaan käsitellä ainoastaan
+peräkkäin. Jos peräkkäistiedostoon on tallennettu luvut 1,2 ja 3, ne
+voidaan lukea tiedostosta ainoastaan tässä järjestyksessä. On olemassa
+tallennusrakenteita, joissa alkioita voidaan lukea ja kirjoittaa
+mielivaltaisessa järjestyksessä - niistä myöhemmissä luvuissa.
+     Käytössäsi on kolme erilaista peräkkäistallenukseen perustuvaa
+tallennusrakennetta; ohjelmatiedostot (PRG), peräkkäistiedostot (SEQ)
+ja käyttäjän tiedostot (USR). Itse asiassa kaikki ovat peräkkäis-
+tiedostoja, mutta niille on annettu eri tyyppinimi niiden sisällön
+mukaan. Niinpä SAVE-komento luo aina ohjelmatiedoston, ja LOAD-komento
+lataa vain ohjelmatiedostoja.
+
+OPEN-KOMENTO PERÄKKÄISTIEDOSTOILLE
+
+     TOIMINTO: Avaa peräkkäistiedoston joko tallennusta tai lukua
+               varten.
+
+     MUOTO:    OPEN tiedostonumero, laitenumero, kanavanumero,
+               "0:tiedostonimi,tyyppi,osoitusmuoto"
+
+     Tiedostonumeroilla pätee sama, kuin edellisen luvun OPEN-
+komennossa, eli niiden tulisi olla välillä 1..127. Laitenumero on
+tavallisesti 8. Kanavanumero valitaan väliltä 2..14. On suositeltavaa
+käyttää samoja tiedosto- ja kanavanumeroja selkeyden vuoksi. Tämän
+kirjan esimerkeissä ne ovat samat.
+
+     Tiedostonimi on haluamasi tiedoston nimi, jota ei saa lyhentää
+jokerimerkeillä, jos olet avaamassa tiedostoa tallennusta varten!
+Tyyppi valitaan tämän kappaleen alapuolella olevasta luettelosta.
+Osoitusmuoto tarkoittaa avataanko tiedosto lukua, READ, varten, vaiko
+kirjoitusta, WRITE, varten. Tyypin ja osoitusmuodon voi lyhentää
+käyttämällä niiden ensimmäistä kirjainta.
+     Jos haluat tallentaa tiedoston jo olemassa olevan tiedoston
+päälle, lisää tunnus @0: merkkijonon alkuun, aivan kuten kappaleessa 4
+uudelleentallennuksen yhteydessä esitettiin.
+
+     TIEDOSTOTYYPPI           SELITYS
+
+          PRG                 Ohjelmatiedosto
+          SEQ                 Peräkkästiedosto
+          USR                 Käyttäjän tiedosto
+          REL                 Suhteellinen tiedosto, katso luku 8
+                              (Tätä tiedostotyyppiä ei olla toteutettu
+                              BASIC 2.0:ssa)
+
+Esimerkiksi:
+
+     OPEN 5,8,5,"0:PERJANTAI13,SEQ,READ"
+
+     OPEN A,B,A,"0:OHJELMA,P,W"
+
+     OPEN A,B,A,"0:"+C$+"U,W"           Avaa tiedoston, jonka nimi on
+                                        muuttujassa C$
+
+     OPEN 2,8,2,"@0:RUOKALISTA,S,W"     Avaa tiedoston RUOKALISTA
+
+- 15 -----------------------------------------------------------------------
+
+                                        levyllä jo olevan tiedoston
+                                        päälle
+
+     Kun tiedosto on avattu, ovat kolme seuraavaa komentoa käytössäsi
+tiedonsiirtoon; PRINT#, INPUT# ja GET#.
+
+PRINT#-KOMENTO PERÄKKÄISTIEDOSTOILLE
+
+     TOIMINTO: Ohjaa PRINT-komentoa vastaavan tulostuksen tiedostoon.
+     MUOTO:    PRINT# tiedostonumero,parametriluettelo
+
+     PRINT#-komento tulostaa aivan saman kuin PRINT-komento. PRINT-
+komento tulostaa sille luetellut parametrit näytölle, PRINT#
+vastaavasti tiedostoon. Tulostus on täsmälleen sama kuin vastaavilla
+arvoilla PRINT-lauseella. Kuitenkin PRINT#-komennossa on aina
+ensimmäisenä tiedostonumero sama, joka juuri äsken aukaistiin OPEN-
+komennolla, ja parametriluettelo koostuu niistä muuttujista ja
+vakioista, jotka haluat tulostaa.
+
+     Tulostusta muotoillessa on syytä olla varovainen, sillä muutoin
+tietojen luku takaisin voi olla mahdotonta. Pilkut muuttujien välissä
+aiheuttavat tulostuksessa arvojen välille välilyöntejä. Puolipiste taas
+pakkaa tulostuksen tiheään, ilman välilyöntejä. Jos PRINT#-komennon
+lopussa ei ole pilkkua eikä puolipistettä, tulostuu viimeisenä merkkinä
+rivinsiirto viimeisen muuttujan/vakion perään. Seuraava ohjelman-
+pätkä havainnollistaa asiaa:
+
+     10 A$="TAMA ON"
+     20 B$="KOKEILUA"
+     30 OPEN 8,8,8,"0:KOE ,S,W"
+     40 PRINT# 8,A$,B$;".LOPPU"
+     50 CLOSE 8
+
+     Jos nyt tiedosto luettaisiin merkki kerrallaan takaisin,
+saataisiin seuraavat merkit luettua:
+
+  01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+   T  A  M  A  O  N                                   K  O  K  E  I  L
+
+  24 25 26 27 28 29 30 31     32         33
+   U  A  .  L  O  P  P  U <RIVINSIIRTO> <EOF>
+
+     Koska rivillä 40 olevassa PRINT#-komennossa oli pilkku A$:n ja
+B$:n välissä, aiheutuu siitä 10 välilyöntiä välille 08-17. Vastaavasti
+B$:n ja merkkijonovakion välissä on puolipiste niin, että ne tulostuvat
+aivan peräkkäin. Koska PRINT#-komennon lopussa ei ollut pilkkua
+eikä puolipistettä, tulostuu lopuksi rivinsiirto. Tässä tiedostossa on
+32 merkkiä, merkkejä numerosta 33 eteenpäin ei ole olemassa, sillä
+tiedostoon kirjoitettiin vain 32 merkkiä. Jos tiedostosta yritettäisiin
+lukea merkkejä ohi tiedoston lopun, saataisiin takaisin joka kerralla
+sama merkki EOP, joka tarkoittaa tiedoston loppua.
+
+     Jos merkkijonomuuttujan ja merkkijonovakion välissä oleva erotin
+on puolipiste, se voidaan jättää pois. Samoin kahden merkkijono-
+muuttujan välistä voidaan jättää puolipste pois. Esimerkiksi:
+
+- 16 -----------------------------------------------------------------------
+
+     PRINT# 5,A$"TEKSTI1"B$"TEKSTI2"C$D$E$        On sama kuin
+
+     PRINT# 5,A$;"TEKSTII";B$;"TEKSTI2";C$;D$;E$
+
+     Jos haluat tulostaa puolipisteen tai pilkun, ne tulostetaan
+merkkijonossa. Esimerkki: Muuttujat A$ ja B$ halutaan tulostaa pilkulla
+erotettuna.
+
+     PRINT# 5,A$,B$      Väärin! Muuttujien välille ei tulostu pilkkua,
+                         vaan 10 merkin väli.
+
+     PRINT# 5,A$","B$    Oikein.
+
+
+GET#-LAUSE PERÄKKÄISTIEDOSTOILLE
+
+     TOIMINTO: Lukee tietoa tiedostosta tavu kerrallaan.
+     MUOTO:	GET# tiedostonumero,muuttujaluettelo
+
+     Jos luetaan merkkijonomuuttujaa, luku tapahtuu merkki kerrallaan.
+Jokainen merkki luetaan, riippumatta onko kyseessä tavallinen merkki
+tai erotin (= pilkku, rivinsiirto tai välilyönti). Numeeriseen
+muuttujaan luettaessa luetaan koko luku. Yleensä on turvallisempaa
+käyttää merkkijonomuuttujia, sillä suoritus katkeaa virheilmoitukseen,
+jos numeerista muuttujaa luettaessa tiedostosta luettava merkkijono ei
+esitäkään numeroa. Esimerkiksi:
+
+     GET# 8,A$                Lukee yhden merkin
+
+     GET# 5,A                 Lukee numeron, joka tyypillisesti koostuu
+                              useista merkeistä. Luettavan merkkijonon
+                              tulee esittää numeroa!
+
+     GET# 7,A$,B$,C$          Lukee kolme merkkiä kerralla.
+
+     GET#-komento on erittäin käyttökelpoinen tutkittaessa tuntematonta
+tai viallista tiedostoa, sillä se voidaan tutkia merkki kerrallaan. Jos
+tunnet tiedoston sisällön ja tallennusrakenteen, on INPUT# kuitenkin
+tehokkaampi. Seuraava esimerkkiohjelma tulostaa tiedoston "KOE"
+sisällön merkki kerrallaan. Jokaiselle merkille tulostetaan myös
+järjestysnumero.
+
+     10 OPEN 8,8,8,"KOE ,S,R"
+     20 I=1
+     30 GET# 8,A$
+     40 PRINT I,A$:I=I+1
+     50 IF ST=0 THEN 30                 (ST on levyaseman tila)
+     60 PRINT I,"EOF"
+     70 CLOSE 8
+     80 END
+
+
+INPUT#-KOMENTO
+
+     TOIMINTO: Lukee levyltä erotinmerkeillä erotettua tietoa ryhmissä.
+     MUOTO:    INPUT# tiedostonumero,muuttujaluettelo
+
+- 17 -----------------------------------------------------------------------
+
+     Erotinmerkkejä tarvitaan erottamaan halutut tiedot toisistaan
+tiedostossa. Jos tiedostossa on kaksi merkkijonoa peräkkäin, ei niitä
+voida mitenkään erottaa toisistaan, ellei niiden välissä ole
+erotinmerkkiä. Erotinmerkkejä ovat puolipiste, pilkku ja rivinsiirto.
+Jos tulostat PRINT#-komennolla useita tietoja samalle riville, sinun on
+itse huolehdittava, että ne on erotettu erotusmerkillä! Seuraavissa
+esimerkeissä yritetään tallentaa 2 merkkijonomuuttujaa toisistaan
+eroteltuina.
+
+     PRINT# S,A$,B$      Väärin! Merkkijonojen välissä on 10 merkin
+                         väli, joka koostuu välilyönnesitä, joten
+                         niitä ei ole erotettu erotusmerkillä.
+
+     PRINT# S,A$","B$    Oikein. Merkkijonojen välissä on pilkku, ja ne
+                         ovat selvästi erotettu.
+
+     PRINT# 5,A$
+     PRINT# 5,B$         Oikein. Merkkijonot erottaa rivinsiirto. ??
+
+     Numeroita tulostettaessa ensimmäinen merkki on välilyönti, jos
+numero on positiivinen tai nolla. Jos numero on negatiivinen,
+ensimmäinen merkki on miinus, "-". Seuraava ohjelma tulostaa tiedostoon
+10 lukua ja lukee ne sen jälkeen sieltä näytölle.
+
+     10 OPEN 8,8,8,"@0:KOE,S,W"
+     20 FOR A=1 TO 10
+     30 PRINT# 8,A
+     40 NEXT A
+     50 CLOSE 8
+     60 OPEN 2,8,2,"KOE,S,R"
+     70 INPUT# 2,B:PRINT B
+     80 IF ST=0 THEN 70
+     90 CLOSE 2
+     100 END
+
+     Ohjelma tulostaa luvut yhdestä kymmeneen, kunkin omalle rivilleen,
+tiedostoon KOE. Rivit 70 ja 80 lukevat luvut tiedostosta yksi
+kerrallaan ja tulostavat ne näytölle.
+
+- 18 -----------------------------------------------------------------------
+
+7. HAJATIEDOSTOT
+
+     Peräkkäistiedostot soveltuvat erinomaisesti tiedon käsittelyyn
+jossakin kiinteässä järjestyksessä. Jos esimerkiksi peräkkäistiedostoon
+olisi tallennettu henkilöluettelo aakkosjärjestykseen ja haluttaisiin
+tulostaa nimet "öökkösjärjestykessä" eli lopusta alkuun, olisi tehtävä
+suurilla tiedostoilla mahdoton suorittaa ilman aputiedostoja.
+     Tässä tilanteessa hajasaanti mahdollistaisi tiedoston alkioiden
+luvun missä järjestyksessä tahansa, vaikkapa lopusta alkuun.
+
+     On kahdenlaisia hajasaantiin perustuvia tiedostoja; hajatiedostoja
+ja suhteellisia tiedostoja. Levykäyttöjärjestelmä ylläpitää
+suhteellisia tiedostoja, mutta hajatiedostojen ylläpito on täysin
+käyttäjän vastuulla. Hajatiedostot ovat suositeltavia, mikäli nopeus on
+ensisijainen tavoite.
+     Koska DOS ei ylläpidä hajatiedostoja, on valitettavan helppoa
+tuhota vahingossa hajatiedostot levyltä. Hyvänä esimerkkinä on
+levykomento "VALIDATE".
+
+     Hajatiedostot perustuvat levyn tallennuslohkojen suoraan
+käsittelyyn. Levyllä on 35 uraa, joka vastaa levyllä olevaa renkaan
+muotoista tallennusaluetta, joka syntyy levyn pyörähtäessä ja lukupään
+pysyessä paikalla. Jokainen ura jaetaan edelleen sektoreihin seuraavan
+taulukon mukaisesti:
+
+     URAN NUMERO    SALLITUT SEKTORINUMEROT     SEKTOREITA YHTEENSÄ
+
+        1..17                 0..20                    21
+       18..24                 0..18                    19
+       25..30                 0..17                    18
+       31..35                 0..16                    17
+
+     On mahdollista lukea tai kirjoittaa mielivaltainen tallennuslohko
+levyltä. Seuraavassa esitetään DOS:in tukemat hajatiedostotoiminnot.
+
+
+OPEN-KOMENTO HAJATIEDOSTOILLE
+
+     TOIMINTO:      Avaa tiedonsiirtokanavan hajasaantia varten
+
+     MUOTO:         OPEN tiedostonumero,laitenumero,"#"
+
+     Hajatiedostojen käsittelyyn tarvitaan kaksi avointa kanavaa
+levyasemaan; varsinainen tiedonsiirtokanava ja komentokanava. Tiedoston
+nimeksi annetaan siirtokanavalle #, jolloin varsinaista tiedostoa ei
+luoda tai aukaista - ainostaan siirtokanava.
+
+     Siirtokanavan aukaisun yhteydessä DOS varaa 256 tavun puskurin
+hajatallennusoperaatioden suoritusta varten. Jos haluat
+käyttää useampia puskureita yhtäaikaa, ne täytyy erotella toisistaan
+antamalla puskurille numero. Jos puskurin numerolla ei ole merkitystä,
+annetaan OPEN-komennossa tiedoston nimeksi pelkkä #, muutoin puskurin
+numero tulee merkin # perään. Esimerkiksi:
+
+     OPEN 5,8,5,"#"           Avaa siirtokanavan. Puskurin numerolla ei
+                              ole väliä.
+
+     OPEN 8,8,8,"#2"          Avaa siirtokanavan. Varaa puskurin numero
+                              2.
+
+- 19 -----------------------------------------------------------------------
+
+LOHKON LUKU LEVYLTÄ
+
+     TOIMINTO: Lukee halutun tallennuslohkon levyltä puskuriin.
+     MUOTO:    PRINT# tiedostonumero,"BLOCK-READ:"kavanumero;
+               yksikkö;uranumero;sektorinumero
+
+     Tiedosto- ja kanavanumero ovat samat kuin OPEN-komennolla.
+Uranumero ja sektorinumero määrittelevät, mihin tallennuslohkoon
+levyllä viitataan. Lukupää hakeutuu määriteltyyn kohtaan levyllä ja
+lataa määritellyn sektorin sisältämän tallennuslohkon puskuriin. Tämän
+jälkeen voidaan puskurin sisältöä lukea joko INPUT#- tai GET#-
+komennolla. Ainoastaan käytössä olevat tavut voidaan lukea (ne, joihin
+on joskus tallennettu jokin arvo). Seuraava esimerkkiohjelma lukee uran
+5 sektorille 9 tallennetun lohkon sisällön näytölle.
+     Tunnus BLOCK-READ voidaan lyhentää tunnukseksi B-R. Yksikkö on
+normaalisti 0.
+
+     10 OPEN 15,8,15
+     20 OPEN 8,8,8,"#"
+     30 PRINT# 15,"B-R:"8;0;5;9
+     40 GET# 8,A$
+     50 PRINT A$
+     60 IF ST=0 THEN 40
+     70 PRINT "VALMIS"
+     80 CLOSE 8
+     90 CLOSE 15
+
+
+LOHKON TALLENNUS LEVYLLE
+
+     TOIMINTO:      Tallentaa puskurin sisällön haluttuun tallennus-
+                    lohkoon levyllä.
+
+     MUOTO:         PRINT# tiedostonumero,"BLOCK-WRITE:"kanavanumero;
+                    yksikkönumero;uranumero;sektorinumero
+
+     Tunnus BLOCK-WRITE voidaan lyhentää tunnukseksi B-W. Puskuriin
+tallennus tapahtuu PRINT#-komennolla, jonka jälkeen puskurin sisältö
+voidaan tallentaa levylle. Tallennuslohkon ensimmäisenä merkkinä
+tallennetaan puskurin pituus, joten käytännössä voidaan tallentaa (ja
+lukea) ainoastaan 255 merkkiä. Seuraava esimerkkiohjelma kirjoittaa
+samaan tallennuslohkoon, jota edellinen esimerkkiohjelma lukee.
+
+     10 OPEN 15,8,15
+     20 OPEN 8,8,8,"#"
+     30 FOR I=1 TO 32
+     40 PRINT# 8,"012345678";
+     50 NEXT
+     60 PRINT# 15,"B-W:"8;0;5;9
+     70 CLOSE 8
+     80 CLOSE 15
+
+
+LOHKON VARAUS LEVYLTÄ
+
+     TOIMINTO:      Tarkistaa, onko määritelty lohko vapaa, ja varaa
+                    sen, jos se on vapaa.
+
+- 20 -----------------------------------------------------------------------
+
+     MUOTO:         PRINT# 15,"BLOCK-ALLOCATE"kanavanumero;yksikkö;
+                    uranumero;sektorinumero
+
+     Lohkon luku ja tallennus ovat operaatioina sokeita. Ne suoritetaan
+riippumatta siitä, mikä on lohkon sisältö tai onko lohko vapaa vai ei.
+Jos levylle on talletettu muita tiedostoja, voivat tiedostojen
+talletuslohkot sijaita levyllä aivan missä vain. Koska DOS ei tarkista
+lohkonvarauskarttaa lohkon luvun tai kirjoituksen yhteydessä jää
+vastuu käyttäjälle.
+     Lohkonvaraus palvelee kahta asiaa. Ensinnäkin se tarkistaa
+lohkonvarauskartasta, että käyttöönotettava lohko on vapaa, eikä jonkun
+toisen tiedoston käytössä. Toiseksi se varaa lohkon lohkonvaraus
+kartasta, jos lohko on vapaa. Koska DOS ylläpitää lohkonvarauskarttaa
+automaattisesti muiden tiedostojen osalta, ei yhteentörmäyksiä tapahdu
+tällä menettelyllä.
+     HUOM! VALIDATE-levykomentoa ei tulisi koskaan käyttää levyllä,
+jolla on hajatiedostoja, sillä se ei tunnista hajatiedostoja.
+
+     Jos lohkonvaraus havaitsee halutun lohkon olevan varattu, syntyy
+virhetila. Virheen numero on 65, ja se voidaan lukea komentokanavalta.
+Normaalin virhenumeron ja virheilmoituksen lisäksi komentokanavalta on
+luettavissa seuraavan vapaan lohkon sijainti. Tätä lohkoa ei kuitenkaan
+varata, joten lohkonvarauskomentoa joudutaan käyttämään uudestaan.
+Tällä kertaa voit tosin olla varma, että uusi lohko on vapaa! Seuraava
+esimerkkiohjelma yrittää varata lohkon uran 5 sektorilta 9. Jos lohko
+on käytössä, se varaa seuraavan vapaan lohkon.
+
+     10 OPEN 15,8,15
+     20 OPEN 8,8,8,"#"
+     30 PRINT# 8,"TÄMÄ TEKSTI MENEE ALUKSI PUSKURIIN"
+     40 T=5:S=9
+     50 PRINT# 15,"B-A:"8;0;T;S
+     60 INPUT# 1S,A,A$,B,C
+     70 IF A=65 THEN T=B:S=C:GOTO 50
+     80 PRINT# 15,"B-W:"8;0;T;S
+     90 PRINT "PUSKURIN SISÄLTÖ TALLENNETTIN"
+     100 PRINT "URALLE:"T",SEKTORILLE:"S
+     110 CLOSE 8
+     120 CLOSE 15
+     130 END
+
+     Rivi 30 tallentaa aluksi puskuriin jotain mielekästä. Rivillä 40
+ja 50 yritetään varata lohko uran 5 sektorilta 9. Rivillä 70
+tarkistetaan aiheuttiko komento virhetilan. Jos kyseessä on virhetila,
+palautti DOS muuttujiin B ja C seuraavan vapaa lohkon paikan.
+Seuravaaksi palataan riville 50 ja varataan tämä lohko. Joko
+ensimmäisellä tai toisella kerralla varaus onnistuu (ellei sitten levy
+ole aivan täysi) ja suoritus jatkuu rivillä 80, jossa puskurin sisältö
+tallentuu juuri äsken varattuun lohkoon.
+
+
+LOHKON VAPAUTUS
+
+     TOIMINTO:      Vapauttaa tarpeettoman lohkon muiden tiedostojen
+                    käyttöön.
+
+     MUOTO:         OPEN 15,8,15,"BLOCK-FREE:"yksikkö;ura;sektori
+
+- 21 -----------------------------------------------------------------------
+
+     Päinvastoin kuin lohkonvaraus tämä komento vapauttaa varatun
+lohkon. Toisin sanoen ilmoitat DOS:ille, ettet enää käytä tätä lohkoa.
+Komentoa voidaan verrata SCRATCH-levykomentoon - se ei hävitä lohkon
+sisältöä, ainostaan merkitsee lohkonvarauskarttaan sen olevan vapaa.
+Esimerkki:
+
+     10 OPEN 8,8,"#"
+     20 OPEN 15,8,15
+     30 PRINT# 15,"B-F:"0;5;9
+     30 CLOSE 8
+     40 CLOSE 15
+
+
+PUSKURI-OSOITIN
+
+     TOIMINTO:      Mahdollistaa hajasaannin puskurissa.
+
+     MUOTO:         PRINT# 15,"BUFFER-POINTER:"kanavanumero,paikka
+
+     Hajatiedostojen puskuria voidaan käsitellä kuten peräkkäis-
+tiedostoa, tosin puskurin rajoissa. Puskuri-osoitin ilmaisee, missä
+kohdin puskuria luku/kirjoitus on menossa. Muuttamalla itse osoittimen
+arvoa voit lukea puskurin sisällön haluamassasi järjestyksessä - vaikka
+takaperin. Se tarkoittaa myös, että voit jakaa puskurin pienempiin
+kiinteämittaisiin tietueisiin.
+     Kanavanumero viittaa siihen kanavanumeroon, jolla aukaiset
+hajatiedoston. Paikka on luku välillä 1..255 ja ilmaisee sen merkin
+puskurissa johon puskuri-osoitin vittaa.
+     Esimerkiksi:
+
+     PRINT# 15,"B-P:"5,64          Asettaa osoittimen puskurin 64:teen
+                                   merkkiin
+
+
+HAJATIEDOSTOJEN KÄYTTÖ
+
+     Suurin ongelma hajatiedostojen käytössä on tietää itse, mitkä
+lohkot ovat käytössä. Lohkonvarauskartta ei kerro, mihin tiedostoon
+varattu lohko kuuluu. Yleisin tapa ratkaista ongelma on luoda jokaista
+hajatiedostoa varten erillinen peräkkäistiedosto, jossa on luettelo
+käytetyistä tallennuslohkoista ja mahdollisesti tietueista. Tämä
+tarkoittaa, että sinulla on kolme kanavaa auki levyasemaan;
+komentokanava, hajatiedoston kanava ja peräkkäistiedoston kanava.
+Komentokanava ei tarvitse puskuria, mutta kumpikin tiedosto vie yhden
+puskurin.
+
+     Seuraavat esimerkkiohjelmat käsittelevät neljää erilaista
+hajasaantitapausta.
+
+     - Ohjelma 1 kirjoittaa kymmenelle tallennuslohkolle tietoa ja
+     pitää yllä luetteloa lohkoista peräkkäistiedostossa.
+
+     - Ohjelma 2 lukee tiedot takaisin
+
+     - Ohjelma 3 tallentaa kymmenelle tallennuslohkolle 4 tietuetta
+     kuhunkin.
+
+- 22 -----------------------------------------------------------------------
+
+     - Ohjelma 4 lukee ohjelman 3 kirjoittamat tiedot takaisin.
+
+
+OHJELMA 1
+
+     10 OPEN 15,8,15
+
+     20 OPEN 5,8,5,"#"
+
+     30 OPEN 4,8,4,"@0:LOHKOT,S,W"
+
+     40 A$="TIETUENUMERO"
+
+     50 FOR R=1 TO 10
+
+     60 PRINT# 5,A$","R
+
+     70 T=1:S=1
+
+     80 PRINT# 15,"B-A:"0;T;S
+
+     90 INPUT# 15,A,B$,C,D
+
+     100 IF A=65 THEN T=C:S=D:GOTO 80
+
+     110 PRINT# 15,"B-W:"S;0;T;S
+
+     120 PRINT# 4,T","S
+
+     130 NEXT R
+
+     140 CLOSE 4:CLOSE 5:CLOSE 15
+
+
+OHJELMA 2
+
+     10 OPEN 15,8,15
+
+     20 OPEN 5,8,5,"#"
+
+     30 OPEN 4,8,4,"@0:LOHKOT,S,R"
+
+     40 FOR R=1 TO 10
+
+     50 INPUT# 4, T, S
+
+     60 PRINT# 15,"B-R:"5;0;T;S
+
+     70 INPUT# 5,A$,X
+
+     80 IF A$<>"TIETUENUMERO" OR X<>R THEN STOP
+
+     90 PRINT# 15,"B-F:"5;0;T;S
+
+     100 NEXT R
+
+     110 CLOSE 4:CLOSE 5
+
+- 23 -----------------------------------------------------------------------
+
+     120 PRINT# 15,"S0:LOHKOT"
+
+     130 CLOSE 15
+
+
+OHJELMA 3
+
+     10 OPEN 15,8,15
+
+     20 OPEN 5,8,5,"#"
+
+     30 OPEN 4,8,4,"@0:LOHKOT,S,W"
+
+     40 A$="TIETUENUNERO"
+
+     50 FOR R=1 TO 10
+
+     60 FOR L=1 TO 4
+
+     70 PRINT# 15,"B-P:"5,(L-1)*64+1
+
+     80 PRINT# 5,A$","L
+
+     90 NEXT L
+
+     100 T=1:S=1
+
+     110 PRINT# 15,"B-A:"0;T;S
+
+     120 INPUT# 15,A,B$,C,D
+
+     130 IF A=65 THEN T=C:S=D:GOTO 110
+
+     140 PRINT# 15,"B-W:"5;0;T;S
+
+     150 PRINT# 4,T","S
+
+     160 NEXT R
+
+     170 CLOSE 4:CLOSE 5:CLOSE 15
+
+
+OHJELMA 4:
+
+     10 OPEN 15,8,15
+
+     20 OPEN 5,8,5,"#"
+
+     30 OPEN 4,8,4,"@0:LOHKOT,S,R"
+
+     40 FOR R=1 TO 10
+
+     50 INPUT# 4,T,S
+
+     60 PRINT# 15,"B-R:"5;0;T;S
+
+     70 FOR L=1 TO 4
+
+- 24 -----------------------------------------------------------------------
+
+     80 PRINT# 15,"B-P:"5,(L-1)*64+1
+
+     90 INPUT# 5,A$,X
+
+     100 IF A$<>"TIETUENUMERO" OR X<>L THEN STOP
+
+     110 NEXT L
+
+     120 PRINT# 15,"B-F:"5;0;T;S
+
+     130 NEXT R
+
+     140 CLOSE 4:CLOSE 5
+
+     150 PRINT# 15,"S0:LOHKOT"
+
+     160 CLOSE 15
+
+
+
+USER1-KOMENTO
+
+     TOIMINTO:      Lukee 256 tavun lohkon kokonaisuudessaan puskuriin.
+
+     MUOTO:         PRINT# tiedostonumero,"USER1:"kanava,yksikkö, ura,
+                    sektori
+     USER1-komento on hyvin pitkälle sama komento kuin lohkon luku.
+Ainoa ero on siinä, että luku on aina kiinteämittainen eli 256 tavua.
+BLOCK-READ-komento lukee 0..255 merkkiä, riippuen siitä, montako siihen
+alunperin on tallennettu. USER1-tunnus voidaan lyhentää tunnukseksi UI
+tai UA. Seuraava esimerkkiohjelma lukee uran 5 sektorin 9 koko lohkon
+näytölle.
+
+     10 OPEN 15,8,15:OPEN 8,8,8,"#"
+     20 PRINT# 15,"U1:"8;0;5;9
+     30 GET# 8,A$:PRINT A$;
+     40 IF ST=0 THEN 30
+     50 CLOSE 8
+     60 CLOSE 15
+     70 END
+
+
+USER2-KOMENTO
+
+     TOIMINTO:      Tallentaa puskurin sisällön kokonaan haluttuun
+                    lohkoon muuttamatta puskuri-osoitinta.
+
+     MUOTO:	PRINT# 15,"USER2:"kanava,yksikkö,ura,sektori
+
+     USER2-tunnus voidaan lyhentää tunnukseksi U2 tai UB. Komento
+muistuttaa BLOCK-WRITE-komentoa. USER2-komento kirjoittaa aina koko
+puskurin sisällön, 256 tavua, lohkolle. Puskuriosoitin säilyy
+muuttumattomana. Piirre on erityisen kätevä, jos haluat muuttaa jotain
+yksittäistä tietoa puskurissa. Kun olet ensin löytänyt oikean kohdan
+puskurissa ja muuttanut sen, USER2-komennossa voidaan tallentaa lohko
+levylle välittämättä osoittimen arvosta. BLOCK-WRITE-komennossa olisi
+ensin pitänyt nollata osoitin. Seuraava esimerkkiohjelma käyttää sekä
+USER1- että USER2-komentoa.
+
+- 25 -----------------------------------------------------------------------
+
+     10 OPEN 15,8,15
+     20 OPEN 8,8,8,"#"
+     30 PRINT# 15,"U1:"8;0;5;9
+     40 PRINT# 15,"B-P:"8,32
+     50 PRINT# 8,"A"
+     60 PRINT# 15,"U2:"8;0;5;9
+     70 CLOSE 8
+     80 CLOSE 15
+     90 END
+
+     Rivi 20 lukee uran 5 sektorin 9 sisältämän lohkon puskuriin. Rivi
+30 asetta puskuriosoittimen osoittamaan puskurin 32. merkkiä. Rivi 40
+muuttaa osoittimen osoittaman merkkin A:ksi, eli puskurin 32:s merkki
+muuttuu A:ksi. Rivillä 50 tallennetaan muutettu lohko takaisin levylle
+samaan paikkaan.
+     Vaikka puskuriosoittimen arvoa muutetaan, vanha osoittimen arvo
+säilyy tallennuslohkossa.
+
+- 26 -----------------------------------------------------------------------
+
+8. SUHTEELLISET TIEDOSTOT
+
+     Suhteelliset tiedostot tarjoavat samanlaisia hajasaantipalveluja
+kuin hajatiedostot, paitsi että ylläpitovastuu on DOS:lla. DOS
+huolehtii puolestasi lohkovarauskartan ylläpidosta ja puskurien ja
+levyn välisistä operaatioista. Johtuen ylläpidon viemästä ajasta,
+suhteelliset tiedostot ovat hitaampia kuin hajatiedostot, mutta usein
+lisääntynyt käyttömukavuus korvaa sen.
+
+     DOS ylläpitää luetteloa tiedoston käyttämistä tallennuslohkoista,
+ja sallii myös lohkorajan keskelle tietuetta (eli sallii tietueen
+jatkua yhdestä lohkosta toiseen). Tämä on mahdollista muodostamalla
+levylle erityisiä sivulohkoja (tai sivusektoreita, miten vain), joihin
+on tallennettu osoittimet kunkin tietueen alkuun. Sivulohkojen määrä on
+rajoitettu kuuteen tiedostoa kohti. Kuhunkin sivulohkojn mahtuu 120
+tietueen osoittimet. Näinollen tiedoston tietumäärä on rajoitettu
+720:een, ja yksi tietue voi olla enintään 254 tavun mittainen niin,
+että yksi tiedosto pystyy tarvittaessa täyttämään koko levyn.
+
+     Lohkon tallennusrakenne koostuu 256 merkistä, joista kaksi
+ensimmäistä ovat DOS:n käytössä. Niihin tallennetaan seuraavan
+tiedoston käyttämän tallenuslohkon uranumero ja sektorinumero. Tällöin
+
+tallennuslohkot ovat ikään kuin ketjussa. Seuraavat 254 tavua ovat
+käytettävissä varsinaiseen tallennukseen. Kaikkien tyhjien tietueitten
+alussa on arvo FFH (eli CHR$(255)) ja lopuissa arvo OOH (eli CHR$(0)).
+Sivusektoreita käytetään myös muiden sivusektoreiden paikantamiseen, ei
+ainoastaan tietueitten osoittimiin.
+
+              SUHTEELLISTEN TIETUEITTEN TALLETUSRAKENTEET
+
+TALLENNUSLOHKO
+
+  TAVU                              MÄÄRITELMÄ
+   0           Seuraavan tallennuslohkon uranumero
+   1           Seuraavan tallennuslohkon sektorinumero
+2..255        254 tavun tallennusalue. Kaikkien tyhjien tietueitten
+               alussa on arvo FFH ja lopuissa arvo 00H. Vajaat tietueet
+               täytetään arvoilla 00H.
+
+SIVULOHKO
+
+  TAVU                              MÄÄRITELMÄ
+   0           Seuraavan tallennuslohkon uranumero
+   1           Seuraavan tallennuslohkon sektorinumero
+   2           Sivulohkon numero, väliltä 0..5
+   3           Tietueen pituus
+   4,5         Ensimmäisen sivusektorin uranumero ja sektorinumero
+   6,7         Toisen sivusektorin uranumero ja sektorinumero
+   8,9         Kolmannen sivusektorin uranumero ja sektorinumero
+  10,11        Neljännen sivusektorin uranumero ja sektorinumero
+  12,13        Viidennen sivusektorin uranumero ja sektorinumero
+  14,15        Kuudennen sivusektorin uranumero ja sektorinumero
+16..256       120 tietueen tallennuslohkon ura- ja sektorinumero.
+
+
+SUHTEELLISTEN TIEDOSTOJEN KÄYTTÖ
+
+     Suhteellinen tiedosto luodaan vain kerran. Sitä ei voi korvata
+
+- 27 -----------------------------------------------------------------------
+
+uudella samannimisellä, mutta vastaavasti tiedostoa voidaan muuttaa
+jälkeenpäin. Suhteellinen tiedosto voidaan tuhota ainoastaan SCRATCH-
+levykomennolla, tai alustamalla koko levy uudelleen NEW-komennolla.
+Tunnusta @0: ei voida käyttää suhteellisten tiedostojen yhteydessä.
+
+UUDEN SUHTEELLISEN TIEDOSTON LUONTI:
+
+     MUOTO:    OPEN tiedostonumero, kanavanumero
+                    ,"0:nimi,L,"+CHR$(tietueen pituus)
+
+     ESIMERKIKSI NÄIN:
+
+     OPEN 2,8,2"0:VARASTO,L"+CHR$(100)       Tietueen pituus on 100
+                                             merkkiä
+
+     OPEN F,8,F,"0:"+A$+",L,"+CHR$(Q)
+
+VANHAN SUHTEELLISEN TIEDOSTON AVAUS:
+
+     MUOTO:    OPEN tiedostonumero,laitenumero,kanavanumero,"0:nimi"
+
+     ESIMERKIKSI:
+
+     OPEN 2,8,6,"0:KOKEILUA"
+
+     Tässä tapauksessa DOS tunnistaa komennon muodosta, että kyseessä
+on suhteellinen tiedosto. Molemmat edellä esitetyt muodot sallivat sekä
+luku- että kirjoitusoperaatiot tiedostoon.
+
+     HUOM! Ennen mitään operaatiota, sinun täytyy kohdistaa tiedosto
+osoitin oikeaan kohtaan!
+
+
+TIEDOSTO-OSOITTIMEN KOHDISTUS
+
+     TOIMINTO: Kohdistaa tietueosoittimen haluttuun tietueeseen.
+
+     MUOTO:    PRINT# tiedostonumero, "P"CHR$(kanavanumero) CHR$(
+               tietuenumero, alempi tavu) CHR$(tietuenumero, ylempi
+               tavu) CHR$(siirtymä tietueessa)
+
+     HUOM: Siirtymä tietueessa ilmaisee tiedosto-osoittimen paikan
+halutun tietueen sisällä ja voidaan jättää pois.
+
+     Tietuenumeroon tarvitaan kaksi tavua, sillä yhdellä tavulla
+voitaisiin esittää numeroita ainoastaan väliltä 0..255 ja tietueita voi
+olla jopa 720. Oikea tietuenumero voidaan laskea yhtälöstä:
+tietuenumero = ylempi tavu*256 + alempi Tavu. Tietuenumero ilmaisee
+mistä tiedoston tietueesta alkaen tallennus/luku tapahtuu.
+
+ESIMERKIKSI:
+
+     PRINT# 15,"P"CHR$(2)CHR$(1)CHR$(0)           tietueen 1 alkuun
+     PRINT# 15,"P"CHR$(CH)CHR$(R1)CHR$(R2)CHR$(P)
+
+Seuraava esimerkkiohjelma luo suhteellisen tiedoston. Ohjelman
+suorituksesta aiheutuva virhetila johtuu tiedoston laajenemisesta.
+
+- 28 -----------------------------------------------------------------------
+
+     10 OPEN 15,8,15
+     20 OPEN 8,8,8,"0:KOE,L,"+CHR$(50)
+     30 PRINT# 15,"P"CHR$(8)CHR$(0)CHR$(4)CHR$(1)
+     40 PRINT# 8,CHR$(255)
+     50 CLOSE 8
+     60 CLOSE 15
+
+     Ohjelma luo suhteellisen tiedoston nimelle KOE, joka koostuu 50
+merkin tietueista. Rivi 30 siirtää tiedosto-osoittimen tietueen 1024
+alkuun (1024 = 256 * 4 + 0 ). Huomaa, että kohdistuskomento lähetetään
+komentokanavalle, kun taas tallennus tapahtuu kanavalle 8.
+Komentokanavalta on luettavissa virhe kohdistuskomennon jälkeen, mikäli
+haluamaasi tietuetta ei ole vielä olemassa. Jos yrität lukea olematonta
+tietuetta, ohjelman suoritus katkeaa.
+
+     Olemassaolevan suhteellisen tiedoston käsittely poikkeaa sen
+luomisesta. Tiedostoa voidaan jatkaa uusia tietueita kirjoittamalla.
+Sitä voidaan muuttaa tallentamalla entisiin tietueisiin uusi arvo.
+Tietuekokoa ei kuitenkaan voi muuttaa. Jos haluat jatkaa tiedostoa,
+siirrät ainoastaan kohdistimen uuden tietueen kohdalle, kuten
+edellisessä esimerkkiohjelmassa. DOS luo tarvittavat uudet tietueet
+itsestään.
+     Seuraavassa esimerkkiohjelma tallentaa olemassaolevan tiedoston
+tietueisiin.
+
+     10 OPEN 15,8,15
+     20 OPEN 2,8,6,"0:KOE"
+     30 GOSUB 1000
+     40 IF A=100 THEN STOP
+     50 PRINT# 15,"P"CHR$(6)CHR$(100)CHR$(0)CHR$(1)
+     60 GOSUB 1000
+     70 IF A=50 THEN PRINT#2,1:GOTO 50
+     80 IF A=100 THEN STOP
+     90 PRINT# 2,"123456789"
+     100 PRINT# 15,"P"CHR$(6)CHR$(100)CHR$(0)CHR$(20)
+     110 PRINT# 2,"MARJA KUUSI"
+     120 CLOSE 2:CLOSE 15
+     130 END
+
+     1000 INPUT#15,A,A$,B,C
+     1010 IF (A=50)OR(A<20) THEN RETURN
+     1020 PRINT "VIRHETILA:"
+     1030 PRINT A,A$,B,C
+     1040 A=100:RETURN
+
+     Rivit 10 ja 20 avaavat komentokanavan ja tiedoston
+     Riveillä 30 ja 40 tarkistetaan mahdollinen virhetila
+     Rivillä 50 siirtää tiedosto-osoittimen sadanteen tietueeseen
+     Rivit 60, 70 ja 80 tarkistavat virhetilan ja luovat 100 tietuetta
+     Rivi 90 kirjoittaa 9 tavua sadannen tietueen 9 ensimmäiseen
+     merkkiin.
+     Rivi 110 jatkaa tallennusta samassa tietueessa.
+
+     On tärkeää, että tallenus tapahtuu tietueeseen peräkkäin, koska
+muuten tietueen vanha sisältö tuhoutuu.
+
+     Seuraava esimerkkiohjelma lukee takaisin edellisen esimerkin
+tallentaman tiedoston.
+
+- 29 -----------------------------------------------------------------------
+
+     10 OPEN 15,8,15
+     20 OPEN 2,8,6,"0:TEST"
+     30 GOSUB 1000
+     40 IF A=100 THEN STOP
+     50 PRINT# 15,"P"CHR$(6)CHR$(100)CHR$(0)CHR$(1)
+     60 GOSUB 1000
+     70 IF A=50 THEN PRINT A$
+     80 IF A=100 THEN STOP
+     90 INPUT# 2,D$:PRINT D$
+     100 PRINT# 15,"P"CHR$(6)CHR$(100)CHR$(0)CHR$(20)
+     110 INPUT# 2,E$:PRINT E$
+     120 CLOSE 2:CLOSE 15
+     130 END
+
+     1000 INPUT#15,A,A$,B$,C$
+     1010 IF (A=50)OR(A<20) THEN RETURN
+     1020 PRINT "VIRHETILA:"
+     1030 PRINT A,A$,B$,C$
+     1040 A=100:RETURN
+
+     Rivit 90, 100 ja 110 lukevat tietueen ja tulostavat sen sisällön
+näytölle. Huomaa, että tallennusrutiinissa PRINT#-komento tallensi
+tiedot rivinsirrolla eroteltuina. Näin saadaan tietueen tietokentät
+erotelluiksi toisistaan.
+
+     Jos tiedosto luetaan tai tallennetaan peräkkäin, ei tietue-
+osoittimen päivitys ole tarpeen jokaiselle tietueelle. Jos osoittimen
+arvoa ei erikseen määritellä, sen arvo on 1 (=oletusarvo). Kun kukin
+tietue on luettu tai tallennettu, osoitin siirtyy itsestään seuraavaan.
+
+- 30 -----------------------------------------------------------------------
+
+9. LEVYOHJAIMEN OHJELMOINTI
+
+     OC-118N-levyasema on ns. älykäs oheislaite, eli se pystyy
+suorittamaan itsenäisiä tietokäsittelytehtäviä. Se sisältää oman
+mikrosuorittimen ja työmuistin. Kehittyneellä ohjelmoijalla on
+mahdollisuus käyttää kumpaakin. Levyaseman toimintoja voidaan siten
+laajentaa luomalla aliohjelmia, joita voidaan säilyttää jatkuvasti
+levyaseman muistissa tai ladata sinne aina tarvittaessa.
+
+     OC-118N-levyasemassa on 16 kilotavun ROM-muisti ja 2 kilotavun
+RAM-muisti. Ohjelmoijan kannalta mielenkiintoisin alue on puskurialue
+alkaen osoitteesta 4000H ja päättyen osoitteeseen SFFFH. Tälle alueelle
+voidaan sijoittaa konekielisiä aliohjelmia ja ajaa ne sitten levyaseman
+mikrosuorittimella.
+
+     Levyaseman omaan muistiin suoraan viittaavia komentoja kutsutaan
+MEMORY-komennoiksi. Käytettävissä on kolme MEMORY-komentoa
+tallennukseen, muistissa ajoon ja lataukseen. Sen lisäksi on olemassa
+USER-komentoja lisätoimintoihin.
+
+
+MUISTIIN TALLENNUS ISÄNTÄKONEELTA
+
+     TOIMINTO:      Lataa enintään 34 tavua isäntäkoneesta levyaseman
+                    työmuistiin.
+
+     MUOTO:         PRINT# 15,"MEMORY-WRITE:"CHR$(osoite,alempi tavu)
+                    CHR$(osoite, ylempi tavu) CHR$(pituus) merkkijono
+
+     Komento lataa merkkijonon haluttuun osoitteeseen levyaseman
+muistissa. Levyaseman mikrosuoritin voidaan komentaa ajamaan tämä koodi
+käyttämällä joko MMEMORY-EXECUTE- tai USER-komentoja. Osoitteen alempi
+ja ylempi tavu vastaavat heksadesimaaliosoitteen ylemmän ja alemman
+tavun desimaalimuunnoksia. (Esim: Osoite 1234H, ylempi tavu = 12H = 18D
+(desimaali), alempi tavu = 34H = 52D). Pituus on sen merkkijonon pituus
+jonka lähetät.
+     Esimerkki:
+
+     10 OPEN 15,8,15
+     20 PRINT# 15,"M-W:"CHR$(0)CHR$(112)CHR$(3)CHR$(169)
+     CHR$(8)CHR$(96)
+     30 CLOSE 15
+
+     Ohjelma siirtää kolme tavua osoitteesta 7000H alkaen seuraavasti:
+
+     7000H = A9H = 169D            Nollasivu, PAGE ZERO
+     7001H = 08H = 8D              osoite 8
+     7002H = 60H = 96D             paluu, RETURN
+
+     Osoite 7000H saadaan yhtälöstä 7000H = 28672D = 256*122+ 0. Jos
+tämä ohjelma ajettaisiin, se lataisi mikrosuotittimen akkuun osoitteen
+0008H sisällön palauttaisi suorituksen DOS:sille.
+
+
+MUISTISTA LUKU
+
+     TOIMINTO:      Lataa koodia levyaseman työmuistista.
+
+- 31 -----------------------------------------------------------------------
+
+     MUOTO:         PRINT# 15,"MEMORY-READ:"CHR$(osoite,alempi tavu)
+                    CHR$(osoite,ylempi tavu)
+
+     MUISTISTA LUKU valitsee aloitusosoitteen levyaseman muistista,
+jonka jälkeen komentokamavalta voidaan lukea peräkkäin muistin
+sisältö halutusta osoitteesta alkaen. Lukemiseen tulisi käyttää GET#-
+komentoa.
+     Seuraava esimerkkiohjelma lukee 10 peräkkäistä tavua levyaseman
+muistista alkaen osoitteesta FFOOH ja päättyen osoitteeseen FF09H.
+Desimaaliesityksenä vastaavat osoitteet ovat 65280 ja 65289.
+
+     10 OPEN 15,8,15
+     20 FOR A=1 TO 10
+     30 PRINT# 15,"M-R:"CHR$(A)CHR$(255)
+     40 GET# 15,A$:PRINT ASC(A$+CHR$(0));
+     50 NEXT
+     60 CLOSE 15
+
+     Käyttäessäsi MUISTISTA LUKUA, et voi lukea virhetilaa INPUT#-
+komennolla. MEMORY-READ-komennon jälkeen voidaan komentokamavalta lukea
+ainoastaan levyaseman muistin sisältö halutusta osoitteesta alkaen.
+Vasta seuraava ei MEMORY-komento palauttaa levyaseman normaalitilaan.
+Seuraava esimerkkiohjelma lukee levyaseman muistia haluamastasi
+osoitteesta alkaen.
+
+     10 OPEN 15,8,15
+     20 INPUT"OSOITE ";A
+     30 A1=INT(A/256):A2=A-A1*256
+     40 PRINT# 15,"M-R:"CHR$(A2)CHR$(A1)
+     50 FOR L=1 TO 5
+     60 GET# 15,A$
+     70 PRINT ASC(A$+CHR$(0))
+     80 NEXT
+     90 INPUT "JATKETAANKO";A$
+     110 IF LEFT$(A$,1)="K" THEN 50
+     120 GOTO 20
+
+
+MUISTISSA AJO
+
+     TOIMINTO:      Suorittaa aliohjelman levyaseman työmuistissa.
+
+     MUOTO:         PRINT# 15,"MEMORY-EXECUTE:"CHR$(osoite,alempi
+                    tavu)CHR$(osoite,ylempi tavu)
+
+     Kun aliohjelma on muistissa, se voidaan ajaa. Sekä ROM-muistissa,
+että RAM-muistissa sijaitsevien aliohjelmien ajo on mahdollista.
+MUISTISSA AJO määrittelee sen osoitteen, jota mikrosuoritin kutsuu.
+Kutsuttavan aliohjelman tulee päättyä konekieliseen RTS-komentoon,
+jotta suoritus voisi jatkua normaalisti DOS:in alaisena aliohjelman
+suorituksen jälkeen.
+     Seuraava esimerkkiohjelma luo yhden tavun aliohjelman muistiin,
+joka sisältää ainoastaan RTS-komennon. Sen jälkeen rivi 20 kutsuu
+aliohjelmaa. Koska ainoa komento on RTS, ei aliohjelma tee mitään.
+
+     10 OPEN 15,8,15,"M-W:"CHR$(0)CHR$(5);1;CHR$(96)
+     20 PRINT# 15,"M-E:"CHR$(0)CHR$(19)
+     30 CLOSE 15
+
+- 32 -----------------------------------------------------------------------
+
+USER-KOMENNOT
+
+     Luvussa 7 mainittujen USER1- ja USER2-komentojen lisäksi on
+olemassa muita, jotka aiheuttavat aliohjelman kutsun ennalta määrätystä
+osoitteesta levyaseman puskurialueelta. Tämä mahdollistaa pidempier
+rutiinien kutsun hyppytaulukon avulla, myös BASIC-ohjelmista.
+
+  KOMENTO                       TOIMINTO
+
+U1 tai UA               Lohkon luku muuttamatta puskuri-osoitinta
+U2 tai UB               Lohkon tallennus muuttamatta puskuri-osoitinti
+U3 tai UC               Kutsu osoitteeseen 0500H
+U4 tai UD               Kutsu osoitteeseen 0503H
+U5 tai UE               Kutsu osoitteeseen 0506H
+U6 tai UF               Kutsu osoitteeseen 0509H
+U7 tai UG               Kutsu osoitteeseen OSOCH
+U8 tai UH               Kutsu osoitteeseen 050FH
+U9 tai UI               Kutsu osoitteeseen FFFAH
+U; tai UJ               Käynnistysvektori
+
+    UI+                  C-64 nopeus
+    UI-                  VIC-20 nopeus
+
+     Esimerkkejä käyttäjän komennoista:
+
+     PRINT# 15,"U3"
+
+     PRINT# 15,"U"+CHR$(50+Q)
+
+     PRINT# 15,"UI"
+
+- 33 -----------------------------------------------------------------------
+
+10 LAITENUMERON VAIHTO
+
+     Kaikilla oheislaitteilla on oma laitenumeronsa, jota isäntäkone
+käyttää erottamaan ne toisistaan. OC-118N-levyasema on asetettu
+valmiiksi laitenumerolle 8 ja yksikkönumerolle 0. Yksikkönumero viittaa
+kaksoislevyasemiin, joissa eri yksikkönumerolla erotetaan koneistot
+toisistaan. Levyasema tunnistaa oman laitenumeronsa tarkistamalla
+kahden pienen DIP-kytkimen asennon ja asettaa kytkimen mukaisen
+laitenumeron RAM-muistissa sijaitsevaan muuttujaan.
+
+     Laitenumero voidaan vaihtaa kahdella eri tavalla; joko
+ohjelmallisesti tai laitetasolla kytkimistä. Jos käytät väliaikaisesti
+kahta levyasemaa, ohjelmallinen menetelmä sallii sinun muuttaa
+laitenumeroa väliaikaisesti. Jos oletat käyttäväsi kahta tai useampaa
+asemaa pidemmän aikaa tai pysyvästi, laitteistotason muutos on helppo
+tapa muuttaa laitenumeron käynnistysarvo pysyvästi toiseksi.
+
+
+OHJELMALLINEN TAPA
+
+     Laitenumero voidaan vaihtaa kirjoittamalla uusi arvo laitenumeron
+sisältävään muuttujaan osoitteissa 0077H ja 0078H. Komento voidaan
+suorittaa, kunhan komentokanava on ensin avattu.
+
+     MUOTO:    PRINT# 15,"M-W:"CHR$(119)CHR$(0)CHR$(2)
+               CHR$(laitenumero+32)CHR$(laitenumero+64)
+
+     Seuraava esimerkkiohjelma vaihtaa laitenumeron arvoon 9.
+
+
+     10 OPEN 15,8,15
+     20 PRINT# 15,"M-W:"CHR$(119)CHR$(0)CHR$(2)CHR$(9+32)CHR$(9+64)
+     30 CLOSE 15
+
+     Aluksi, käännä päälle yksi asema, ja vaihda sen laitenumero. Sen
+jälkeen vaihda seuraavan aseman laitenumero samalla tavalla, kunnes
+olet käynyt läpi jokaisen aseman.
+
+
+LAITTEISTOTASON MUUTOS
+
+     Jokainen oheislaite tarvitsee laitenumeron, jotta isäntäkone voisi
+erottaa oheislaitteet toisistaan. OC-118N-levyaseman laitetason
+laitenumeron muutos on hyvin yksinkertainen. Mitään ohjelmallisia
+komentoja ei tarvita, levyasemaa ei tarvitse avata eikä juotinta
+tarvita. Sinun tarvitsee vain vaihtaa asemassa olevien DIP-kytkimien
+asento.
+     Yksityiskohtaiset ohjeet seuraavat:
+
+     VAIHTAAKSESI LAITENUMERON:
+
+     1.   KATKAISE VIRTA LEVYASEMASTA
+
+     2.   KÄÄNNÄ LEVYASEMA YLÖSALAISIN JA PAIKANNA KAKSI PIENTÄ
+          KYTKINTÄ, JOTKA NÄKYVÄT POHJALEVYN AUKOSTA.
+
+- 34 -----------------------------------------------------------------------
+
+     3.   ASETA KYTKIMIEN ASENTO VASTAMAAN HALUAMAASI LAITENUMEROA. ON
+          TARKOITTAA ASENTOA, JOSSA VIPU ON KAHDESTA ASENNOSTAAN
+          LÄHEMPÄNÄ TAKALEVYA.
+
+          LAITENUMERO:      VIPU 1         VIPU 2
+
+                8             ON             ON
+                9             EI             ON
+               10             ON             EI
+               11             EI             EI
+
+     4.   MUUTOS ON VALMIS. KYTKIESSÄSI VIRRAN PÄÄLLE, SEN LAITENUMERO,
+          ON MUUTTUNUT HALUAMAKSESI.
+
+- 35 -----------------------------------------------------------------------
+
+LIITE I. KOMENTOLUETTELO
+
+KAPPALE 4. PERUSKOMENNOT
+
+     LOAD - OHJELMAN LATAUS ...................................... 5
+     SAVE - OHJELMAN TALLENNUS ................................... 8
+     UUDELLEENTALLENNUS .......................................... 8
+     VERIFY - TALLENNUKSEN TARKISTUS ............................. 9
+
+KAPPALE 5. LEVYKOMENNOT
+
+     OPEN - KOMENTOKANAVAN AVAUS ................................. 10
+     PRINT# - KOMENTOJEN LÄHETYS KONENTOKANAVALLE ................ 10
+     CLOSE -KOMENTOKANAVAN SULKU ................................. 11
+     INITIALIZE - LEVYASEMAN ALUSTUS ............................. 11
+     NEW - LEVYN ALUSTUS ELI FORMATOINTI ......................... 12
+     SCRATCH - TIEDOSTON POISTO LEVYLTÄ .......................... 12
+     COPY - TIEDOSTON KOPIOINTI .................................. 13
+     RENAME - TIEDOSTON UUDELLEENNIMEÄMINEN ...................... 13
+     VALIDATE - LEVYTILAN JÄRJESTELY ............................. 13
+
+KAPPALE 6. PERÄKKÄISTIEDOSTOT
+
+     OPEN ........................................................ 15
+     PRINT# ...................................................... 16
+     GET# ........................................................ 17
+     INPUT# ...................................................... 17
+
+KAPPALE 7. HAJATIEDOSTOT
+
+     OPEN ........................................................ 19
+     BLOCK-READ ELI LOHKON LUKU .................................. 20
+     BLOCK-WRITE ELI LOHKON TALLENNUS ............................ 20
+     BLOCK-ALLOCATE ELI LOHKON VARAUS ............................ 20
+     BLOCK-FREE ELI LOHKON VAPAUTUS .............................. 21
+     BUFFER-POINTER ELI PUSKURIOSOITIN ........................... 22
+     USER1 - KOKO LOHKON LATAUS .................................. 25
+     USER2 - KOKO LOHKON TALLENNUS ............................... 25
+
+KAPPALE 8. SUHTEELLISET TIEDOSTOT
+
+     POSITION ELI TIEDOSTO-OSOITTINEN KOHDISTUS .................. 28
+
+KAPPALE 9 LEVYOHJAINEN OHJELMOINTI
+
+     MEMORY-WRITE ELI TALLENNUS LEVYASEMAN MUISTIIN .............. 31
+     MEMORY-READ ELI LUKU LEVYASEMAN MUISTISTA ................... 31
+     MEMORY-EXECUTE ELI AJO LEVYASEMAN MUISTISSA ................. 32
+     USER-KOMENNOT ............................................... 33
+
+- 36 -----------------------------------------------------------------------
+
+LIITE II. VIRHEILMOITUKSET
+
+     Virhetilassa levyaseman merkkivalo vilkkuu punaisena. Levyasema ei
+kuitenkaan lähetä virheilmoitusta isäntäkoneelle, ellei isäntäkone
+sitä erikseen pyydä. Seuraava ohjelmanpätkä lukee levyaseman virhetilan -
+ja tulostaa sen näytölle.
+
+     10 OPEN 15,8,15
+     20 INPUT# 15,A,A$,B$,C$
+     30 PRINT A,A$,B$,C$
+     40 CLOSE 15
+     50 END
+
+     Seuraava luettelo on OC-118N-levyaseman yksitysikohtainen
+virheilmoitusluettelo täsmennyksineen.
+
+0:        NO ERROR.
+
+          EI VIRHETTÄ. Virheilmoitus on luettu komentokanavalta, vaikka
+          virhetilaa ei ole.
+
+1:        FILES SCRATCHED
+
+          POISTETTUJEN TIEDOSTOJEN MÄÄRÄ. Tämäkään ei ole virhatila.
+          Ilmoitus kertoo montako tiedostoa SCRATCH-komento poisti
+          levyltä.
+
+2-19:     NÄMÄ VIRHENUMEROT EIVÄT OLE KÄYTÖSSÄ
+
+20:       READ ERROR
+
+          LATAUSVIRHE. Lohkon otsikko ei löydy. Tämä voi johtua
+          vaurioituneesta lohkon otsikosta tai virheellisestä sektorin
+          numerosta.
+
+21:       READ ERROR
+
+          LATAUSVIRHE. Uralta ei löydy tahdistusmerkkiä. Tämä voi
+          johtua alustamattomasta levystä, levyn puuttumisesta
+          kokonaan, levyn huonosta lukituksesta asemaan tai lukupään
+          kohdistusvirheestä. Myös laitteistovika voi aiheuttaa tämän
+          virheen.
+
+22:       READ ERROR
+
+          LATAUSVIRHE. Tallennuslohkoa ei ole. Levyohjainta on pyydetty
+          lukemaan tai tarkistamaan tallennuslohko, jota ei olla
+          tallennettu kunnolla. Virhe esiinty lohkoihin viitatesssa
+          (BLOCK-komennot) ja ilmaisee virheellistä ura- tai/ja -
+          sektoriviittausta.
+
+23:       READ ERROR
+
+          LATAUSVIRHE. Lohkon tarkistussumma on virheellinen.
+          Tallennuslohko on luettu muistiin, mutta se sisältää
+          virheellisiä tavuja.
+
+24:       READ ERROR
+
+- 37 -----------------------------------------------------------------------
+
+          LATAUSVIRHE. Tavun purku epäonnistui. Lohko tai sen otsikko
+          on luettu muistiin koodatussa muodossa, josta löytyi
+          virheellinen bittiyhdistelmä.
+
+25:       WRITE ERROR
+
+          TALLENNUSVIRHE. Tallenuksen tarkistusvirhe. Tämä virhe
+          syntyy, jos levylle tallennettu tieto ei vastaakaan sitä,
+          joka on DOS:n muistissa.
+
+26:       WRITE PROTECT
+
+          KIRJOITUSSUOJA ON PÄÄLLÄ. On yritetty tallentaa
+          kirjoitussuojatulle levylle. Levy on kirjoitussuojattu, jos
+          vasemmalla sivulla oleva ura on peitetty.
+
+27:       READ ERROR
+
+          LATAUSVIRHE. Otsikon tarkistussumma on virheellinen. Halutun
+          lohkon otsikko on virheellinen, eikä sitä pystytä lukemaan
+          muistiin.
+
+28:       WRITE ERROR
+
+          TALLENNUSVIRHE. Ylipitkä tallennuslohko. Ohjain yrittää
+          paikantaa seuraavan lohkon tahdistusmerkin. Jos sitä ei
+          esiinny määrätyssä ajassa, syntyy virhetila. Virhe johtuu
+          virheellisestä levyn rakenteestä tai alustuksesta,
+          sillä lohko jatkuu seuraavan lohkon päälle, tai
+          laitteistoviasta.
+
+29:       DISK ID MISMATCH
+
+          Levyn tunnus on viallinen. Levyohjain on yrittänyt viitata
+          levylle, joka on alustamaton tai jolla on viallinen otsikko.
+          Virhe ilmenee myös, jos levyä vaihdetaan asemassa kesken
+          operaation.
+
+30:       SYNTAX ERROR
+
+          Komennon parametrit ovat virheelliset, eikä DOS pysty
+          suorittamaan komentoa. Tyypillisesti tämä johtuu annettujen
+          tiedostonimien virheellisestä lukumäärästä tai vääristä
+          välimerkeistä.
+
+31:       SYNTAX ERROR
+
+          DOS ei tunnista komentoa. Käskyn alettava komentojonon
+          ensimmäisestä merkistä.
+
+32:       SYNTAX ERROR
+
+          Lähetetty komento on pidempi kuin 58 merkkiä.
+
+33:       SYNTAX ERROR
+
+          Virheellinen tiedostonimi. Jokerimerkkejä on käytetty
+
+- 38 -----------------------------------------------------------------------
+
+          virheellisesti SAVE- ja LOAD-komentojen kanssa.
+
+34:       SYNTAX ERROR
+
+          Tiedostonimi puuttuu. Komennosta puuttuu tiedostonimi tai DOS
+          ei pysty tunnistamaan komentojonosta tiedostonimeä.
+          Tyypillisesti tämä johtuu kaksoispisteen : puuttumisesta.
+
+35-38:    NÄMÄ VIRHENUMEROT EIVÄT OLE KÄYTÖSSÄ
+
+39:       SYNTAX ERROR
+
+          Virheellinen komento. Tämä virhe syntyy, jos DOS ei tunnista
+          lähetettyä komentoa.
+
+40-49:    NÄMÄ VIRHENUMEROT EIVÄT OLE KÄYTÖSSÄ
+
+50:       RECORD NOT PRESENT
+
+          Olematon tietue. Tähän virhetilaan päästään joko lukemalla
+          ohi tiedoston lopun INPUT#- tai GET#-komennolla, tai
+          siirtämällä suhteellisen tiedoston tiedosto-osoitin
+          tietueeseen, jota ei ole vielä olemassa. Virhetilaa ei
+          tarvitse huomioida, jos tarkoituksena on laajentaa
+          olemassaolevaa tiedostoa PRINT#-komennollå. Tämän virhetilan
+          syntyessä ei tulisi käyttää INPUT#- tai GET#-komentoa ennen
+          tiedosto-osoittimen siirtoa olemassaolevaan tietueeseen.
+
+51:       OVERFLOW IN RECORD
+
+          Ylipitkä tietue. PRINT#-komennon tulostus jatkuu yli tietueen
+          lopun ja ylimenevä osa katkaistaan. Rivinsiirto, jota
+          käytetään tietueen erottimena, lasketaan mukaan rivinpituutta
+          laskettaessa. Virhe esiintyy kun, rivinpituus ylittää
+          ennaltamäärätyn kiinteän tietuekoon.
+
+52:       FILE TOO LARGE
+
+          Tiedosto on liian suuri. Tiedosto, jota laajennettaisiin
+          uuteen tietueeseen asti, ei mahtuisi levylle.
+
+53-59:    NÄMÄ VIRHENUMEROT EIVÄT OLE KÄYTÖSSÄ
+
+60:       WRITE FILE OPEN
+
+          Tiedosto on auki kirjoitusta varten. Ilmoitus annetaan, kun
+          yritetään avata kirjoitusta varten avattu tiedosto lukemista
+          varten, ennen kuin se on välillä suljettu.
+
+61:       FILE NOT OPEN
+
+          Tiedosto ei ole auki. On yritetty viitata avaamattomaan
+          tiedostoon: Aina ei virheilmoitusta synny, vaikka
+          yritetäänkin viitata avaamattomaan tiedostoon. Tällöin
+          viittaus yksinkertaisesti jätetään levyasemassa huomiotta.
+
+62:       FILE NOT FOUND
+
+- 39 -----------------------------------------------------------------------
+
+          Tiedostoa ei löydy. On yritetty viitata tiedostoon, jota ei
+          ole olemassa.
+
+63:       FILE EXISTS
+
+          Tiedosto on jo olemassa. On yritetty luoda tiedosto, joka on
+          jo levyllä.
+
+64:       FILE TYPE MISMATCH
+
+          Tiedoston väärä tyyppi. Tiedostontyyppi ei ole sama, kuin
+          hakemistoluettelossa olevan samannimisen tiedoston tyyppi.
+
+65:       NO BLOCK
+
+          Varattu lohko. Ilmoitus esiintyy lohkonvarauskomennon
+          yhteydessä. Haluttu lohko on jo varattu, eikä sitä voida
+          varata. Ilmoituksen lisäksi saadaan seuraavan vapaan lohkon
+          sijainti levyllä. Jos vapaan lohkon ura- ja sektorinumero
+          ovat kumpikin nollia, ei haluttua lohkoa seuraa vapaata
+          lohkoa.
+
+66:       ILLEGAL TRACK AND SECTOR
+
+          Väärä ura- ja sektorinumero. DOS on yrittänyt viitata
+          lohkoon, jota ei ole olemassa levyllä. Virhe voi myös
+          aiheutua, jos osoitinta seuraavaan lohkoon ei voida lukea
+          levyltä.
+
+67:       ILLEGAL SYSTEM T OR S
+
+          Väärä järjestelmän ura tai sektori. Virhe johtuu väärästä
+          järjestelmän urasta tai sektorista.
+
+68,69:    NÄMÄ VIRHENUMEROT EIVÄT OLE KÄYTÖSSÄ
+
+70:       NO CHANNEL
+
+          Kanava on käytössä. Haluttu kanava ei ole saavutettavissa,
+          tai kaikki kanavat ovat käytössä. DOS rajoittaa avoimien
+          peräkkäistiedostojen määrän viiteen ja hajasaantitiedostojen
+          määrän kuuteen.
+
+71:       DIRECTORY ERROR
+
+          Hakemistovirhe. Lohkovarauskartta ei vastaa sisäistä
+          lohkovarauslaskuria. Virhe aiheutuu joko lohkonvarauksesta
+          tai DOS:n muistissa olevan lohkovarauskartan kopion päälle on
+          kirjoitettu. Poistaaksesi ongelman sinun täytyy nollata
+          asemasi INITIALIZE-komennolla, joka kopioi samalla
+          lohkovarauskartan levyltä muistiin. INITIALIZE-komento
+          saattaa sulkea avoimia tiedostoja.
+
+72:       DISK FULL
+
+          Levy on täynnä. Joko kaikki levyn talletuslohkot ovat
+          käytössä, tai sitten hakemistoluettelo on täynnä.
+          Hakemistoluettelossa näkyvien tiedostojen määrä on rajoitettu
+
+- 40 -----------------------------------------------------------------------
+
+          144:n
+
+73:       DOS MISMATCH
+
+          Levykäyttöjärjestelmät ovat yhteensopimattomat. DOS:n versiot
+          1 ja 2 ovat kirjoitusyhteensopimattomat, mutta ne voivat
+          lukea toinen toisensa levyjä. Tämä johtuu levyjen erilaisista
+          talletusrakenteista alustuksen yhteydessä. Virhe esiintyy
+          aina, kun yhteensopimattomalle levylle yritetään kirjoittaa.
+          Virhe voi esiintyä myös virran kytkemisen yhteydessä.
+
+74:       DRIVE NOT READY
+
+          Asema ei ole valmis. On yritetty viitata levylle, vaikka
+          asema on tyhjä. Pistä levy asemaan.
+
+
+
+
+
+LIITE III LEVYASEMAN YLLÄPITOTOIMET
+
+VIRTALÄHDE
+
+     Levyasemanne virtalähteessä ei ole erillistä virtakytkintä, joten
+se on jatkuvasti päällä. Pidempien käyttökatkosten ajaksi on se syytä
+irroitaa sähköverkosta. Virtalähde lämpenee melkoisesti käytön aikana,
+joten riittävästä ilmanvaihdosta on huolehdittava.
+     Virtalähde lämpenee myös jonkin verran, vaikkei sitä kuormiteta.
+Tämä on aivan normaalia, eikä siitä tarvitse välittää.
+
+
+LEVYASEMA
+
+     Levyaseman lukupää on herkkä kaikelle lialle, pölylle ja savulle.
+Käytännössä lukupää hitaasti etenevää likaantumista ei kotikäytössä voi
+välttää. Niinpä lukupää tulisi puhdistaa säännöllisesti noin 3-6
+kuukauden välein, riippuen käyttötiheydestä. Puhdistukseen tulisi
+käyttää ei-hankaavia märkä uhdistuslevyä.
+     Valitettavasti monet puhdistuslevyt ovat hieman hankaavia, joten
+liiallinen puhdistaminen on verrattavissa lukupään puhdistukseen
+hiekkapaperilla!
+     Muita käyttäjän huollettavissa olevia osia ei levyasemassa ole.
+
+- 41 -----------------------------------------------------------------------
+
+KARELIA COMPUTER KY
+
+Nuohoojankatu 11, 80160 Joensuu
+puh: 973-897088
+fax: 973-821945
+
+----------------------------------------------------------------------------
+
+*********
+
+End of the iDOC= etext of the OC-118N manual.
+
+*********

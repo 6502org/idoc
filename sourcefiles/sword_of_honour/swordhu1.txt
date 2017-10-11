@@ -1,0 +1,201 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore 64
+related documents in electronic text format that might otherwise cease to
+exist with the rapid advancement of computer technology and declining
+interest in 8-bit computers on the part of the general population. If you
+would like to help by converting C64 related hardcopy documents to
+electronic texts please contact the manager of International Project 64,
+Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The first
+characters of the file name are an abbreviation of the original document
+name and the language of the etext. The version number of the etext follows
+next. After that a letter may appear to indicate the particular source of
+the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International Project
+64 make no representations about the accuracy or suitability of this
+material for any purpose. This etext is provided "as-is". Please refer to
+the warranty of the original document, if any, that may included in this
+etext. No other warranties, express or implied, are made to you as to the
+etext or any medium it may be on. Neither the author(s) nor the members of
+International Project 64 will assume liability for damages either from the
+direct or indirect use of this etext or from the distribution of or
+modification to this etext. Therefore if you read this document or use the
+information herein you do so at your own risk.
+
+*********
+
+The International Project 64 etext of the Sword of Honour Hungarian manual,
+converted to text by Adam Dohos <hosza@szabinet.hu>.
+
+SWORDHU1.TXT, June 1998, etext #35.
+
+*********
+
+SWORD OF HONOUR
+
+
+Betöltési instrukciók
+
+Kapcsold ki a számítógépet és távolíts el minden bôvítôt és cartridge-ot
+a gépbôl. Kapcsold be a számítógépet és a floppy meghajtót. Tedd be az
+1-es lemez elsô oldalát és írd be az utasítást: LOAD"*",8,1.
+
+A játék automatikusan betöltôdik és elindul. Amikor megjelenik a
+"PASSWORD CHECK" felirat, akkor a megfelelô szöveg kért sorának adott
+szavát kell begépelni. Például: "English text line 02, word 03"
+utasításnál az angol szöveg második sorában álló harmadik szót kell
+beírni, majd a RETURN-t leütni.
+
+
+A történet
+
+A Becsület Szablyája, a Sword of Honour évszázadok óta Yuichiro shogun
+családi ereklyéje. Az ôsi japán tradíció szerint a szamurájkard a
+tulajdonos lelkét testesíti meg, ezért még a közelébe sem
+merészkedhetett senki. Hét lakat alatt ôrizték éjjel-nappal,
+illetéktelenek még szemmel sem érinthették.
+
+A Yuichiro família ôsi ellensége Észak-Japán teljhatalmú kormányzója,
+Toranaga nagyúr hatalomvágya olthatatlan. A déli területekre fáj a foga,
+de Yuichiro az útjában áll. Hogy megtörje az ellenállást, szörnyû tervet
+eszel ki...
+
+Egy reggel Yuichiro shogun arra a hírre ébredt, hogy a dinasztiájának
+jelképe, a Becsület Szablyája eltûnt. Nem kétséges, hogy ki tehette!
+Mivel a kard misztikus jelentôségû, Yuichiro becsületén esett folt
+azzal, hogy idegen kezébe kerülhetett a szablya. Ez népe szemében
+egyenlô volt a megszégyenüléssel, hatalma megingott - és élete is
+veszélybe került. Felbérelte hát a birodalom legjobb kardforgatóját,
+egy magányos ninja harcost, Téged, hogy a becsületén esett csorbát
+kiküszöbölje és a családi ereklyét visszaszerezze.
+
+Kelj hát útra és juttasd vissza jogos tulajdonosához a Becsület
+Szablyáját! Ne feledd: A becsület mindennél többet ér!
+
+
+A játékmenet
+
+Haladj képernyôrôl-képernyôre jobbra, balra, fel, le, ki, be, annak
+megfelelôen, hogy melyik irányban vannak lehetséges kijáratok az adott
+helyszínrôl. Keresd a fegyvereket, információkat, tárgyakat, használd
+vagy cseréld el ôket a cselekmény szereplôinél. Verd vissza a Téged ért
+támadásokat puszta kézzel, vagy a helyszíneken elszórtan található ninja
+fegyverek (shuriken, szamurájkard, nunchaku) segítségével. De vigyázz!
+A gonosz Yuichiro démoni erôkkel szövetkezett!
+
+
+Irányítás
+
+A játék joystickkal és billentyûzettel irányítható.
+
+- Joystick funkciók tûz megnyomása nélkül:
+
+FEL        - ugrás (fel/ki/be)
+LE         - lehajolás/tárgy felvétele
+BALRA      - hátrálás (megfordulás)
+JOBBRA     - elôre menés (megfordulás)
+JOBBRA FEL - ugrórúgás
+JOBBRA LE  - elôre gurulás
+BALRA FEL  - védekezés
+BALRA LE   - hátra gurulás
+
+- Joystick funkciók tûz megnyomásával:
+
+Fegyver/karom nélkül:
+
+FEL        - rugás/ütés
+LE         - lehajolás/rugás
+BALRA      - védekezés
+JOBBRA     - középmagas ütés
+JOBBRA FEL - magas ütés
+JOBBRA LE  - lehajolás/ütés
+BALRA FEL  - magas rugás
+BALRA LE   - középmagas rugás
+
+Lánccal:
+
+FEL        - ugrás/rugás
+LE         - lehajolás/rugás
+BALRA      - védekezés
+JOBBRA     - középmagas lánccsapás
+JOBBRA FEL - magas ütés
+JOBBRA LE  - lehajolás/lánccsapás
+BALRA FEL  - magas rugás
+BALRA LE   - középmagas rugás
+
+Karddal:
+
+FEL        - ugrás/rugás
+LE         - lehajolás/rugás
+BALRA      - védekezés
+JOBBRA     - szúrás
+JOBBRA FEL - vágás
+JOBBRA LE  - lehajolás/szúrás
+BALRA FEL  - magas rugás
+BALRA LE   - középmagas rugás
+
+
+Billentyûzet funkciók
+
+P             - Szünet
+INS/DEL       - Üzenet, szöveg kiiratása
+SPACE         - Shuriken dobása (ha van)
+1-9           - A számnak megfelelô helyen lévô tárgy használata
+SHIFT 1-9     - A számnak megfelelô helyen lévô tárgy átadása
+Commodore 1-9 - A számnak megfelelô helyen lévô tárgy eldobása
+RETURN        - Adott helyszín lezárása (ha van ajtó a helyszínen)
+F1            - Váltás a szövegmezô és a tárgylista között
+
+* A játékhoz alapnyelvû angol nyelvismeret ajánlott.
+
+
+Ezt az oldalt használd a kód beírásához
+
+
+English text
+
+With the Sword of Honour
+stolen, Shogun Yuichiro's
+honour has been violated.
+As the toughest ninja
+around it's up to you to
+find the Sword and defeat
+Yuichiro's greatest enemy
+- the evil Toranaga.
+
+The game features lethal
+weapons, vicious hand-to-
+hand combat, and
+awesome gameplay. With
+wicked music, sound
+effects, 90 colours on-
+screen, and 2.5 MB of
+mental graphics this game
+must be one of the most
+realistic martial arts
+games ever!
+
+[Megjegyzés: A francia, német és olasz szövegeket nem írtam be, tessék
+ angolul játszani! ;-)]
+
+*********
+
+End of the International Project 64 etext of the Sword of Honour manual.
+
+*********

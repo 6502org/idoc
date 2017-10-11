@@ -1,0 +1,1207 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore
+64 related documents in electronic text format that might otherwise
+cease to exist with the rapid advancement of computer technology and
+declining interest in 8-bit computers on the part of the general
+population. If you would like to help by converting C64 related
+hardcopy documents to electronic texts please contact the manager of
+International Project 64, Peter Karlsson, at m9944@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document.  However, certain portions, such as diagrams, program
+listings, and indexes may have been either altered or sacrificed due
+to the limitations of plain vanilla text.  Diagrams may have been
+eliminated where ASCII-art was not feasible.  Program listings may be
+missing display codes where substitutions were not possible.  Tables
+of contents and indexes may have been changed from page number
+references to section number references. Please accept our apologies
+for these limitations, alterations, and possible omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The
+first characters of the file name are an abbreviation of the original
+document name. The version number of the etext follows next. After
+that a letter may appear to indicate the particular source of the
+document. Finally, the document is given a .TXT extension.
+
+The author(s) of the original document and members of International
+Project 64 make no representations about the accuracy or suitability
+of this material for any purpose.  This etext is provided "as-is".
+Please refer to the warantee of the original document, if any, that
+may included in this etext.  No other warantees, express or implied,
+are made to you as to the etext or any medium it may be on.  Neither
+the author(s) nor the members of International Project 64 will assume
+liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext.
+Therefore if you read this document or use the information herein you
+do so at your own risk.
+
+*********
+
+The International Project 64 etext of the ProLogic Quickbyte 2 manual,
+converted to text by Christian Janoff
+<mepk@rbg.informatik.th-darmstadt.de>
+
+QB2_10.TXT, March 1997, etext #2.
+
+*********
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        ProLogic Quickbyte 2
+
+                      Jann Datentechnik Berlin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+QUICKBYTE 2           Bedienungshandbuch              SEITE 1
+
+Sehr geehrter Kunde,
+
+mit dem Kauf des Quickbyte 2 Eprom-Brenners  haben  Sie  sich
+für ein Gerät  entschieden,  welches  nach  einer  intensiven
+Entwicklungsphase  nunmehr  ein  Spitzenerzeugnis   auf   dem
+Weltmarkt darstellt. Weder die  Anzahl  der  programmierbaren
+Eprom-Typen, noch die erreichbaren Programmierzeiten  dürften
+einen Wunsch offen lassen.
+
+Technische Daten:
+
+ *** Wahlweise ProLogic - Programmieralgorithmus  ermöglicht
+     zuverlässige Programmierzeiten ab 1KByte/Sekunde, sowie
+     zwei weitere Standardalgorithmen
+
+ *** Vollelektronisch - keine mechanischen Schalter
+
+ *** Kein externes Netzteil
+
+ *** Sehr aufwendige  Hardware  ermöglicht  schnellstmögliche
+     Lese- und Schreibzugriffe
+
+ *** Umfangreiche Betriebssoftware im  Autostarteprom  (16K),
+     Supermonitor für Maschinensprache integriert
+
+ *** Modulschacht  zum  direkten  Auslesen  von  C64-Modulen,
+     sowie Textool-Sockel selbstverständlich
+
+ *** 6-fach Fast-Load für 1541 zu- / abschaltbar
+
+Wir wünschen Ihnen viel Erfolg mit Ihrem Quickbyte 2.
+Booklet (C)86 by ML/LL
+
+
+
+
+
+QUICKBYTE 2           Bedienungshandbuch              SEITE 2
+
+Quickbyte 2 - Lageplan der wichtigsten Teile
+--------------------------------------------
+
+
+            +-- Einstellregler Brennspannung
+            |
+            v
++---+------+-+-------------------+--+---------------+
+|---|      |X|                   |==|               |
+|---|      |X|                   |==|               |
+|---|      |X|                   |==|               |
+|---|      +-+                   |==| +---------+   |
+|---| +----+                     |==| |==XXXXX==|   |
+|---| |XXXX|                     |==| |==XXXXX==|   |
+|---| |XXXX|                     |==| |==XXXXX==| O |<-led gn
+|---| |XXXX|                     |==| |==XXXXX==|   |
+|---| |XXXX|                     |==| |==XXXXX==| O |<-led rt
+|---| |XXXX|                     |==| |==XXXXX==|   |
+|---| +----+                     |==| |==XXXXX==| O |<-led ge
++---+----------------------------+--+-|==XXXXX==|---+
+  ^      ^                            |==XXXXX==|
+  |      |                            +---------+
+  |      +-- Betriebssoftware             ^
+  |                                       |
+  +-- C-64 Steckerleiste                  +-- Modulsteckplatz
+
+
+
+
+
+
+
+
+
+
+
+
+QUICKBYTE 2           Bedienungshandbuch              SEITE 3
+
+Generelles
+----------
+
+Das Quickbyte  2  (QB2)  Epromprogrammiergerät  besitzt  eine
+Steckleiste, die das direkte Einstecken in  den  Modulschacht
+des C64 ermöglicht. Die  Betriebssoftware  befindet  sich  im
+Eprom auf der Platine und  ist  selbststartend. Beim  Betrieb
+des QB2 ist generell auf folgendes zu achten:
+
+
+  --- Beim  Einschalten  des  C64  darf  sich  kein  Eprom  im
+      Brennsockel befinden.
+  --- Während des Brennvorganges darf das Eprom nicht aus  dem
+      Brennsockel entfernt werden.
+  --- Beim Arbeiten mit Eproms ist darauf zu achten, daß diese
+      sehr  empfindlich  gegen   statische   Aufladung   sind.
+      Vermeiden Sie daher Teppichböden, Nylonkleidung etc.
+  --- Der   Einstellregler   für   die    Brennspannung    ist
+      voreingestellt und darf keinesfalls verändert werden.
+  --- Der  QB2   darf   nur   bei   ausgeschaltetem   Computer
+      eingesteckt werden.
+
+
+ Bei Beachtung dieser Punkte ist ein fehlerfreies Arbeiten mit
+ Ihrem Quickbyte 2 gewährleistet.
+
+
+
+
+
+
+
+
+
+
+
+
+QUICKBYTE 2           Bedienungshandbuch              SEITE 4
+
+Inbetriebnahme
+--------------
+
+Stecken  Sie   den   QB2   mit   der   hierfür   vorgesehenen
+Steckerleiste in den Expansion-Port Ihres C64.  Schalten  Sie
+das Gerät ein. Der Computer meldet sich mit einem  Startbild,
+kurz darauf mit einer Tonmeldung, sowie  dem  Startmenü.  Ihr
+QB2  ist  nunmehr  betriebsbereit.  Um  die  Aktivierung  von
+Fast-Load zu unterdrücken muß eine der beiden  <SHIFT>-Tasten
+bis zum Ertönen der Tonmeldung gedrückt werden.
+
+Die Leuchtdioden...
+-------------------
+
+müssen nach dem Erscheinen des Hauptmenüs - mit Ausnahme  der
+grünen  -  verlöschen.  Sie  haben  im   Einzelnen   folgende
+Bedeutungen:
+
+Grün - Betriebsspannungs-LED,  leuchtet  ständig,  wenn   der
+       Computer eingeschaltet ist
+
+Rot  - Action-LED, leuchtet immer dann, wenn auf  Brennsockel
+       bzw. Modulsteckplatz zugegriffen wird. Ein  Fehlerfall
+       wird durch Blinken angezeigt.
+
+Gelb - Programmier-LED,  leuchtet   immer   wenn   am   Eprom
+       Programmierspannung anliegt. In dieser Zeit  darf  das
+       Eprom  nicht  aus   seinem   Sockel   genommen,   bzw.
+       eingesteckt  werden,  da  dies  zur   Zerstörung   des
+       Bausteins führen kann.
+
+
+
+
+
+
+
+QUICKBYTE 2           Bedienungshandbuch              SEITE 5
+
+Steckrichtung für Eproms im Textool - Sockel
+--------------------------------------------
+        +------ Pin 28
+        |   +-- Pin 24                           Hebel --+
+        |   |                                            |
+        v   v                                            v
+      +----------------------------------------+ xxxxxxXXXXXX
+      | +---+---+----------------------------+ +-----+
+      | |   |   |XXXXXXXXXXXXXXXXXXXXXXXXXXXX|       |
+      | |   |   |XXXXXXXXXXXXXXXXXXXXXXXXXXXX|       |
+      | |   |   |XXXXXXXXXXXXXXXXXXXXXXXXXXXX|       |
+Kerbe |  \   \  |XXXXXXX E P R O M XXXXXXXXXX|       |
+      |  /   /  |XXXXXXXXXXXXXXXXXXXXXXXXXXXX|       |
+      | |   |   |XXXXXXXXXXXXXXXXXXXXXXXXXXXX|       |
+      | |   |   |XXXXXXXXXXXXXXXXXXXXXXXXXXXX|       |
+      | |   |   |XXXXXXXXXXXXXXXXXXXXXXXXXXXX|       |
+      | +---+---+----------------------------+       |
+      +----------------------------------------------+
+                                             ^
+            Eproms rechtsbündig einsetzen,   |
+        <---<------------ Kerbe nach links --+
+
+ACHTUNG - WICHTIG
+-----------------
+
+Falsch  eingesetzte  Eproms  werden  beim  Brennvorgang   mit
+Sicherheit zerstört. Bei 24 - poligen  Eproms  darauf achten,
+daß diese rechtsbündig eingesetzt werden, d.h.  links  müssen
+in jeder Kontaktreihe 2 Pins frei bleiben.
+
+Textool-Sockel: Hebel oben: Eprom einsetzen oder herausnehmen
+                Hebel unten: Sockel verriegelt
+
+
+
+
+
+QUICKBYTE 2           Bedienungshandbuch              SEITE 6
+
+Das Hauptmenü...
+----------------
+
+              PROLOGIC  QUICKBYTE  II
+       (C) 1985 BY JANN DATENTECHNIK, BERLIN
+      LIST OF COMMANDS:
+
+        <F1>  READ TO BUFFER
+        <F3>  ERASE-TEST
+        <F5>  COMPARE WITH BUFFER
+        <F7>  PROGRAMMING
+        <F2>  PARAMETERS
+        <F4>  SET BUFFER-SIZE
+        <F6>  DISK-MENUE
+        <F8>  MONITOR
+        CTRL / [Pfund-Zeichen]  EXIT TO BASIC
+
+      ENTER OPTION ?
+
+...ist,   wie   auch   alle   anderen   Menüs   weitestgehend
+selbsterklärend.  Die  Verzweigungen  des  Menüs  sind   über
+Funktionstasten erreichbar.
+Es sind diese:
+
+<F1> READ TO BUFFER
+     Liest den Inhalt eines Eproms, bzw.  C64-Moduls  in  den
+     intern vorgesehenen Buffer.
+
+
+
+
+
+
+
+
+
+
+QUICKBYTE 2           Bedienungshandbuch              SEITE 7
+
+<F3> ERASE-TEST
+     Führt einen Leertest mit dem eingesetzten  Eprom  durch.
+     (Alle Speicherstellen werden auf $FF getestet).
+
+<F5> COMPARE WITH BUFFER
+     Macht  ein  Verify  des   internen   Buffers   mit   dem
+     eingesetzten Eprom.
+
+<F7> PROGRAMMING
+     Programmiert ein eingesetztes Eprom. (Der interne Buffer
+     wird in das eingesetzte Eprom kopiert.)
+
+Das Untermenü
+-------------
+          PROLOGIC -- QUICKBYTE  II
+          JANN DATENTECHNIK, BERLIN
+       +EPROM-TYPE-------------------+
+       |  2764         BYTES:  8192  |
+       +-----------------------------+
+       +BUFFER-----------------------+
+       | STRT:$1000 END:$2FFF ALG: - |
+       +-----------------------------+
+       +FUNCTION---------------------+
+       | READ TO BUFFER              |
+       +-----------------------------+
+       +DATAFLOW---------------------+
+       | ADRESS:$0000   DATA:$FF     |
+       +-----------------------------+
+       +EPROM-STATUS-----------------+
+       | READY                       |
+       +-----------------------------+
+       +OPERATOR INTERVENTION--------+
+       | HIT ANY KEY TO START        |
+       +-----------------------------+
+       RUN/STOP  .RETURN TO MAIN-MENUE
+
+
+QUICKBYTE 2           Bedienungshandbuch              SEITE 8
+
+...mit  den  eben  beschriebenen  Funktionstasten  wird   der
+Anwender bei ihrem Druck auf eine zweite Ebene verwiesen, das
+Untermenü. Auch  dieses  ist  weitestgehend  selbsterklärend,
+trotzdem soll hier kurz darauf eingegangen werden.
+
+In  der  ersten  Zeile  des  Untermenüs  wird  der   gewählte
+Epromtyp, sowie die sich ergebende Anzahl von Bytes angezeigt.
+
+Die zweite Zeile zeigt den derzeitigen Buffer-Bereich und den
+gewählten Brennalgorithmus.
+
+In der dritten Zeile wird das gewählte Kommando gezeigt.
+
+In der vierten Zeile (DATAFLOW) wird  die  aktuelle  Adresse,
+sowie der aktuelle Speicherinhalt angezeigt. Aus  Zeitgründen
+wird  jedoch  nur  in  Blöcken  von  256  Bytes   ausgegeben.
+Lediglich  im  Fehlerfall  wird  die   gesamte   Adresse   in
+hexadezimaler Schreibweise angezeigt.
+
+In der fünften Zeile (ERROR STATUS) wird  im  Fehlerfall  die
+Fehlerart angegeben. Im Normalfall erscheint hier: READY,  im
+Fehlerfall die entsprechende Fehlermeldung in Verbindung  mit
+einer blinkenden, roten LED.
+
+In der letzten Zeile wird eine  Anwenderanweisung  ausgegeben
+(OPERATOR INTERVENTION). Dies kann z.B. sein: HIT ANY KEY  TO
+START; nach Druck einer  Taste  wird  mit  dem,  in  Zeile  3
+gegebenen Kommando begonnen.
+
+
+
+
+
+
+
+
+
+QUICKBYTE 2           Bedienungshandbuch              SEITE 9
+
+Die weiteren Funktionstastenbelegungen:
+---------------------------------------
+
+<F2> PARAMETERS
+
+             EPROM-TYPES AVAILABLE
+     NR: TYPE:     NR: TYPE:     NR: TYPE:
+     ---------------------------------------
+     01> 27916 <   09> 27C64 <   17>  2508 <
+     02> 27513 <   10> 87C64 <   18>  5133 <
+     03> 27512 <   11>  2732 <   19>  5143 <
+     04> 27256 <   12>  2732A<   20>XL2816A<
+     05> 57256 <   13>  2716 <   21>XL2864A<
+     06> 27128 <   14>  2564 <   22>XL48C64<
+     07> 27128A<   15>  2532 <   23>2332/64<
+     08>  2764 <   16>  2516 <   24>ROM-MOD<
+         SELECT BY USING THE CURSOR-KEYS
+            <F7>  BACK TO MAIN-MENUE
+
+
+     Nach Druck dieser Taste erscheint ein Untermenü  um  den
+     Epromtyp festzulegen, der im folgenden bearbeitet werden
+     soll. Dies geschieht durch Anfahren  des  entsprechenden
+     Typen mit den Cursor-Tasten. Durch Druck von  <F7>  oder
+     <RETURN> gelangt man  zurück  in  das  Hauptmenü.  Bitte
+     beachten:
+
+
+
+
+
+
+
+
+
+
+
+QUICKBYTE 2           Bedienungshandbuch             SEITE 10
+
+     Die  Funktion  24  dient  zum  Auslesen  von   Commodore
+     Steckmodulen. Die  Erkennung,  ob  es  sich  hierbei  um
+     Module handelt, die den  Game-Bereich,  bzw.  das  Basic
+     abdecken  geschieht  automatisch,  es  können  aber  nur
+     8-KByte    gelesen    werden.     Hier     ist     keine
+     Programmierfunktion vorgesehen. Die Module sind mit  der
+     Bauteilseite nach vorn (zum 64er zeigend) einzustecken.
+     Die Funktion  23  dient  zum  Auslesen  der  angezeigten
+     ROMs.   Diese  ROMs   finden  in   Commodore   Computern
+     Anwendung. Ein  Programmiervorgang  ist  hier  ebenfalls
+     nicht möglich.
+     Neuerdings hat Commodore in  ihren  Geräten  PC-128  und
+     1571  ROMs von bis zu  32-KByte Länge. Es sind die Typen
+     23128   und   23256.    Zum    Auslesen    können    die
+     Epromalternativen 27128 (Typ  06)  und  27256  (Typ  04)
+     gewählt werden, aber hier würde die  Programmierfunktion
+     zur zerstörung der Bausteine führen.
+
++-------------------------------------------------------------+
+|Beim Kopieren von  ROMs, bzw.  ROM-/  Eprommodulen  sind  die|
+|Urheberrechtsvorschriften  zu   beachten.   Die   in   dieser|
+|Bedienungsanleitung  verwendeten  Begriffe  C-64-Modul,  bzw.|
+|Commodore-Modul  beziehen   sich   ausschließlich   auf   die|
+|Kompatibilität zum  Expansionport des C64  und  sollen  keine|
+|Aufforderung zum unerlaubten Kopieren  geschützter  Programme|
+|darstellen.   Commodore,   bzw.    C64   sind    eingetragene|
+|Warenzeichen, bzw. Firmennamen  der  Commodore  Büromaschinen|
+|GmbH Deutschland.                                            |
++-------------------------------------------------------------+
+
+
+
+
+
+
+
+
+QUICKBYTE 2           Bedienungshandbuch             SEITE 11
+
+<F4> SET BUFFER SIZE
+
+               +----------------------+
+               | BUFFER START : $1000 |
+               +----------------------+
+               | EPROM  START : $0000 |
+               +----------------------+
+               | NO. OF PAGES : $20   |
+               +----------------------+
+
+           <F7>  BACK TO MAIN-MENUE
+
+
+Nach Druck  dieser  Taste  ist  es  möglich  innerhalb  eines
+Untermenüs  Buffer-  und   Eprombereiche   festzulegen.   Die
+Festlegung erfolgt in 256-Byte-Schritten (Pages).
+
+Beim Einschalten des Gerätes ist der  computerinterne  Buffer
+auf $1000  festgelegt.  Dies  kann  in  der  Spalte  BU-START
+verändert werden. Theoretisch läßt sich der Buffer  über  den
+gesamten Adressierungsbereich des C64 verschieben. Hierzu ist
+jedoch folgendes zu beachten:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+QUICKBYTE 2           Bedienungshandbuch             SEITE 12
+
+Als Anwenderbuffer steht  nur  ein  32K  großer  Bereich  zur
+Verfügung ($1000-$8FFF).
+Die  Betriebssoftware  des  QB2  liegt   in   den   Bereichen
+$9000-$9FFF und $C000-$CFFF.  (Hierbei  verschiebt  sich  die
+Software   aus    Platzersparnisgründen   beim    Einschalten
+selbsttätig).
+Der Basicbereich wurde ins RAM kopiert und umgeschaltet.  Die
+ersten Bytes des $A000-Bereiches werden für Pointer benutzt.
+
+Nach der Bestimmung des internen Buffers wird in der  zweiten
+Zeile (EPROM START) die Anfangsadresse im  Eprom  festgelegt,
+an der mit der Bearbeitung begonnen werden soll.
+
+Zuletzt wird in der letztem Zeile (NO. OF PAGES)  festgelegt,
+wieviele Pages im Eprom gebrannt werden sollen.
+
+Nur durch  Druck  der  Taste  <F7>  gelangt  man  zurück  ins
+Hauptmenü.  Durch  eine   umfangreiche   Fehlerprüfung   wird
+festgestellt, ob die eingestellten  Parameter  möglich  sind.
+Ist dies nicht der Fall, so wird  der  Sprung  ins  Hauptmenü
+nicht ausgeführt, der Cursor wird wieder in der ersten  Zeile
+positioniert, so daß eine Korrekturmöglichkeit gegeben ist.
+
+Da im  Normalfall  immer  komplette  Eprominhalte  bearbeitet
+werden, muß diese Funktion nicht  angewählt  werden,  da  die
+richtigen Werte automatisch mit der Epromwahl  voreingestellt
+werden.
+
+
+
+
+
+
+
+
+
+
+QUICKBYTE 2           Bedienungshandbuch             SEITE 13
+
+<F6> DISK MENU
+
+               DISK/MENUE :
+                 <F1>  DIRECTORY
+                 <F3>  LOAD
+                 <F5>  SAVE
+                 <F7>  BACK TO MAIN-MENUE
+                 <F2>  READ ERROR-MESSAGE
+                 <F4>  SEND FLOPPY-COMMAND
+                 <F6>  DESELECT FAST-LOAD
+                 <F8>  CREATE BOOT-PROGRAMM
+               ENTER OPTION ?
+
+Durch Druck der Taste wird ein  Menü  erreicht,  welches  ein
+umfangreiches Diskettenhandling ermöglicht:
+
+<F1> DIRECTORY
+     Das Directory des angeschlossenen  Floppylaufwerks  wird
+     eingelesen. Dies kann die  serielle  Floppy  1541,  bzw.
+     unter Verwendung unseres  IEC-64  Interfaces  auch  eine
+     Commodore IEEE488-Floppy sein (SFD 1001, CBM 3040, 8050,
+     8250 etc.).
+     Durch Druck irgendeiner Taste  wird  danach  wieder  das
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+QUICKBYTE 2           Bedienungshandbuch             SEITE 14
+
+<F3> LOAD
+<F5> SAVE
+     Diese beiden Funktionen  beziehen  sich  immer  auf  den
+     eingestellten Bufferbereich  für  die  Startadresse, den
+     eingestellten Epromtyp für die Endadresse.  Hierbei  ist
+     es gleichgültig, von welchem Bereich  ein  Programm  auf
+     die Diskette gespeichert wurde, es wird immer, beginnend
+     mit  der  Startadresse   des   Buffers   geladen,   bzw.
+     abgespeichert.
+
+<F2> READ ERROR-MESSAGE...
+     ...liest den Fehlerkanal des angeschlossenen Laufwerkes.
+
+<F4> SEND FLOPPY COMMAND
+     Es  wird  ein  Diskettenbefehl  an  das   angeschlossene
+     Laufwerk gesendet. (Befehle  siehe  COMMODORE-Handbuch).
+     Die Befehle sind direkt einzugeben, z.B.:  I0,  S0:TEST,
+     V0. Dem Befehl muss kein  Kennungszeichen  vorangestellt
+     werden.
+
+<F6> DESELECT FAST-LOAD
+     Schaltet Fast-Load 6.0 ab. Z.B. zum Betrieb von IEEE-Bus
+     Floppies oder ProLogic-DOS.
+
+<F8> CREATE BOOT PROGRAMM
+     Erzeugt ein brennfähiges Diskettenfile aus  Basic,  bzw.
+     Maschinenprogrammen.
+     Siehe Sonderteil 'The CARTRIDGE-MAKER'.
+
+<F7> BACK TO MAIN-MENUE
+     Ermöglicht Rückkehr in das Hauptmenü.
+
+
+
+
+
+
+QUICKBYTE 2           Bedienungshandbuch             SEITE 15
+
+Der Brennvorgang
+----------------
+
+Der   QB2    Eprommer    ist    mit    einem    intelligenten
+Programmieralgorithmus  ausgestattet.  Diese   Programmierart
+erlaubt    Programmierzeiten    ab    1 KByte/Sekunde.    Der
+ProLogic-Programmieralgorithmus  arbeitet  abhängig  von  der
+Qualität der zu brennenden Eproms. Generell ist zu  bemerken,
+daß  Eproms  neuer  Bauart,  hierbei   besonders   diejenigen
+japanischer Hersteller meist schneller zu programmieren  sind
+als andere.
+
+Eproms ab 8 KByte Größe (2764)  lassen  sich  erfahrungsgemäß
+sehr schnell programmieren, bei Eproms der Typen 2716 /  2532
+/ 2732 sind häufig noch Lagerbestände  älterer  Jahrgänge  im
+Verkauf, so daß sich hier längere  Programmierzeiten  ergeben
+können.
+
+
+Was passiert beim Brennvorgang beim QB2 ?
+
+1. FF - Leertest, das Eprom wird  auf  einwandfreie  Löschung
+   überprüft.
+
+2. ISB - Test, das Eprom wird daraufhin getestet, ob ein  Bit
+   gesetzt   ist,   welches   nicht   mit   dem    'Original'
+   übereinstimmt.  Dieser Test  ermöglicht  ein  Brennen  des
+   Eproms auch dann, wenn nicht alle Bits gelöscht  sind.  Es
+   ist hierdurch leicht  möglich,  bestimmte  Speicherstellen
+   'überzubrennen',  bzw.    das    Eprom    teilweise     zu
+   programmieren.
+
+
+
+
+
+
+QUICKBYTE 2           Bedienungshandbuch             SEITE 16
+
+3. PB - Brennvorgang,  hierbei  werden  alle  Speicherstellen
+   einmal sehr kurz vorgebrannt, an der  Anzahl  der  'guten'
+   Speicherstellen die Güte  des  Eproms  festgestellt,  eine
+   Programmierzeit errechnet und voreingestellt.
+
+4. Der Brennvorgang - Mit  der  errechneten   Programmierzeit
+   wird jede Speicherstelle programmiert, danach überprüft ob
+   das Byte einwandfrei gebrannt wurde. Ist  dies  nicht  der
+   Fall, wird die Programmierzeit erhöht, die  Speicherstelle
+   erneut gebrannt.  Das  Erhöhen  der  Programmierzeit  kann
+   mehrfach während des Brennvorgangs erfolgen,  maximal  bis
+   zur  Standardprogrammierzeit  von  50ms/Byte.  Durch   die
+   Erhöhung der Brennzeit bis  zum  Standardalgorithmus  sind
+   Ausfälle durch zu kurze Brennzeiten ausgeschlossen. Sofern
+   sich   ein   Byte   trotz   50ms/Byte   Brennzeit    nicht
+   programmieren läßt wird der Brennvorgang  sofort  mit  der
+   Fehlermeldung 'EPROM IS NOT PROGRAMMABLE' abgebrochen.
+   Der   Speicherinhalt   $FF   wird    beim    Programmieren
+   übersprungen, hierdurch wird nochmals  eine  Zeitersparnis
+   erzielt.
+
+5. Nach Abschluß des Brennvorgangs wird das Eprom  überprüft,
+   ein eventueller Verify-Error angezeigt.
+
+
+Beim Menüpunkt Programmieren <F7> können  Sie  zwischen  drei
+verschiedenen Programmieralgorithmen wählen, beim Drücken der
+RETURN-Taste wird automatisch Algorithmus eins gewählt.
+
+
+
+
+
+
+
+
+
+QUICKBYTE 2           Bedienungshandbuch             SEITE 17
+
+Die Typen 27512/27513...
+------------------------
+
+...haben  eine  Sonderstellung  unter  den   programmierbaren
+Eproms. Durch den großen Bereich  (27512=64KByte),  bzw.  die
+Aufteilung in 4 Bänke (27513) können  sie  nicht  auf  einmal
+gebrannt werden, sondern müssen in Teilbereichen  verarbeitet
+werden.
+Sie haben  in  jeder   Betriebsart   die   Möglichkeit,   die
+entsprechende Bank anzuwählen, oder dies auch automatisch vom
+QB2 machen zu lassen. Für den Automatik-Betrieb muß sich eine
+entsprechende Diskette im Laufwerk befinden.
+
+Filenamen: 27512 Bank1 ($0000-$7FFF) = xxx.512-1
+           27512 Bank2 ($8000-$FFFF) = xxx.512-2
+
+           27513 Bank1 ($0000-$3FFF) = xxx.513-1
+           27513 Bank2 ($4000-$7FFF) = xxx.513-2
+           27513 Bank3 ($8000-$BFFF) = xxx.513-3
+           27513 Bank4 ($C000-$FFFF) = xxx.513-4
+
+xxx ist Ihr spezifischer Filename von max. 10 Stellen.
+
+Die   Adreßangaben   beziehen   sich   auf    die    relative
+Eprom-Adresse, es  wird   immer   der   Computer-Buffer   von
+$1000-$8FFF, bzw. $1000-$4FFF benutzt.
+
+
+
+
+
+
+
+
+
+
+
+QUICKBYTE 2           Bedienungshandbuch             SEITE 18
+
+<F8> MONITOR
+     Durch Druck dieser Funktionstaste im Hauptmenü wird  ein
+     in die Betriebssoftware des  QB2  eingebundener  Monitor
+     aufgerufen.
+
+     b*
+         pc  nmi  ac xr yr sp nv#bdizc
+     .; 906e c0a4 00 90 84 fb ..**..*.
+     .d e000 e010
+
+     ., e000 85 56    sta $56
+     ., e002 20 0f bc jsr $bc0f
+     ., e005 a5 61    lda $61
+     ., e007 c9 88    cmp #$88
+     ., e009 90 03    bcc $e00e
+     ., e00b 20 d4 ba jsr $bad4
+     ., e00e 20 cc bc jsr $bccc
+     .m 9000 9020
+
+     ., c20b 4a       lsr
+     .: 9000 4c 0c 90 4c 6e 90 4c cdXXXXXXXX
+     .: 9008 ff 4c d2 ff 78 ea ea eaX BILD
+     .: 9010 a2 03 bd 14 03 9d b0 01X SCHIRM
+     .: 9018 ca 10 f7 ad f4 9f ae f5X CODES
+     .: 9020 9f 8d 16 03 8e 17 03 adXXXXXXXX
+
+     Der Befehlssatz des Monitors lautet wie folgt:
+
+
+     R  Anzeige der Registerinhalte
+
+     G  Direkter Sprung auf  die  hinter  dem G  (GO)-Befehl
+        angegebene Adresse. Beispiel:
+        G 1000
+
+
+
+QUICKBYTE 2           Bedienungshandbuch             SEITE 19
+
+     M  Memory - zeigt die  Speicherinhalte  der  gewünschten
+        Speicherbereiche (8 pro  Zeile),  sowie  den  jeweils
+        dazugehörigen ASCII-Wert in den hinteren  8  Spalten.
+        Beispiel:
+        M 1000 2000
+        zeigt die Speicherinhalte von $1000 bis $2000
+        M 1000
+        zeigt 8  Speicherinhalte  (1  Zeile),  beginnend  mit
+        $1000, durch Betätigen der  Cursor-Tasten  kann  auf-
+        und abgescrollt werden.
+
+     L  LOAD - lädt ein Programm  von  der  Diskette.  Sofern
+        hinter   dem   zu   ladenden   Programmnamen    keine
+        Geräteadresse angegeben wird, ist automatisch  Nummer
+        8 vorgegeben. Syntax:
+        L"TEST"
+        L"TEST",09 - Laden von Floppy Nr. 9
+
+     S  SAVE - speichert  einen  angegebenen  Speicherbereich
+        auf die Diskette ab. Syntax:
+        S"0:TEST",08,1000,2000
+
+     +  addiert zwei aufeinanderfolgende  Werte  hexadezimal.
+        Syntax:
+        +1000,2000 - Ergebnis $3000
+
+     -  subtrahiert    zwei     aufeinanderfolgende     Werte
+        hexadezimal. Syntax wie +
+
+     $  rechnet einen hexadezimalen Wert dezimal um. Syntax:
+        $1000 - Ergebnis 4096
+
+
+
+
+
+
+QUICKBYTE 2           Bedienungshandbuch             SEITE 20
+
+     #  rechnet einen dezimalen Wert hexadezimal  um.  Syntax
+        wie $
+
+     X  Exit - bewirkt eine Rückkehr in das Hauptmenü.
+
+     F  Fill -  füllt  den  angegebenen  Speicherbereich  mit
+        einem Byte-Wert. Syntax:
+        F 1000 2000 FF
+        Der  Speicherbereich  zwischen  den   beiden   ersten
+        Adressen wird mit dem an letzter  Stelle  definierten
+        Byte gefüllt.
+
+     T  Transfer    -    transferiert    einen    definierten
+        Speicherbereich in einen neuen. Syntax:
+        T 1000 2000 4000
+        Transferiert den Bereich von  $1000  bis  $2000  nach
+        $4000 bis $5000
+
+     H  Hunt - sucht ein Byte oder eine  Bytefolge  innerhalb
+        eines definierten Speicherbereichs. Syntax:
+        H 1000 2000 EA
+        H 1000 2000 EA 2D FF
+        H 1000 2000 'TEST
+
+     D  Disassemble -   disassembliert    einen   definierten
+        Speicherbereich.   Die   Ausgabe   erfolgt   in   der
+        Reihenfolge -Adresse-, -OP-Code-, -Mnemonik-. Syntax:
+        D 1000 2000
+
+
+
+
+
+
+
+
+
+QUICKBYTE 2           Bedienungshandbuch             SEITE 21
+
+     A  Assemble - wandelt Mnemonik in OP-Codes um. Syntax:
+        A 1000 LDA #$20
+        Bei korrekter Eingabe werden die OP-Codes  eingerückt
+        und die nächste Adresse erscheint.
+
+    ES  Spritedefinition - bei Aufruf  dieser  Funktion  wird
+        pro Bildschirmzeile  ein  Spritestring  als  Bitfolge
+        ausgegeben. Ein Punkt in dieser Zeile  definiert  ein
+        ungesetztes Bit, ein Sternchen ein gesetztes Bit. Ein
+        Spritestring besteht aus 3  Bytes.  Eine  Veränderung
+        der Spritebits ist möglich, indem mit dem  Cursor  an
+        die entsprechende Stelle gefahren und das  gewünschte
+        Bit entsprechend verändert wird.
+        Da die Feinheiten der Spritedefinition  an  sich  ein
+        buchfüllendes Thema darstellen, soll an dieser Stelle
+        nicht näher darauf  eingegangen  werden.  Wir  bitten
+        entsprechende Einzelheiten hierzu  der  Fachliteratur
+        zu entnehmen.
+        Syntax der ES - Funktion:
+        ES 0380
+        Als Beispiel: die Sprites der QB2-Software liegen  ab
+        $0380
+
+    EC  Binärdarstellung, hier werden statt  3  Bytes  nur  1
+        Byte pro Zeile abgebildet. Syntax wie ES
+
+Der Supermon erlaubt ein Arbeiten in Gross/Kleinschrift, beim
+Rücksprung in das Hauptmenü wird automatisch auf  Großschrift
+umgeschaltet.   Im    Supermon    ist    eine    automatische
+Scrollfunktion integriert, beim Erreichen des  unteren,  bzw.
+oberen  Bildschirmrandes  wird   die   aufgerufene   Funktion
+unabhängig vom definierten Speicherbereich fortgeführt.
+
+
+
+
+
+QUICKBYTE 2           Bedienungshandbuch             SEITE 22
+
+Cartridge Maker (C)85 by Mike Lamm
+----------------------------------
+
+Ihr Quickbyte 2  ist  mit  einem  automatischen  Basic-Booter
+ausgestattet, genannt 'Cartridge-Maker'.  Hiermit können  Sie
+Basic- bzw. Maschinenprogramme in brennfähige Files umwandeln
+um diese per Modul -ohne Lade-/Wartezeit- im C-64 zu starten.
+Sie erreichen ihn über <F8> im Disk-Menü (CREATE  BOOT-FILE).
+Da ein solches Programm fast so umfangreich wie die  Software
+des  QB2  ist,  konnte   es   nicht   im   Betriebssystem-ROM
+untergebracht werden. Sie können aber direkt  Basic-Programme
+von maximal 7,5K-Byte Länge (32Blocks) bearbeiten.  Für  alle
+anderen Programme  > 7,5K-Byte  wird  die  als  Sonderzubehör
+erhältliche EP-128 Karte benötigt. Zum Programmstart muß  die
+mitgelieferte Diskette eingelegt, und durch Aufruf  mit  <F3>
+zugeladen werden. Das Programm installiert sich  selbsttätig,
+benötigt aber eine formatierte  Arbeitsdiskette  für  diverse
+Workfiles.
+
+Achtung:  Beim Start von 'Cartridge Maker'  werden  alle sich
+--------  im Speicher befindlichen Programme zerstört,  evtl.
+          vorher mit <F3> im Disk-Menü abspeichern.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+QUICKBYTE 2           Bedienungshandbuch             SEITE 23
+
+Nach dem erfolgreichen Laden des  Programms  können  Sie  den
+gewünschten I/O-Bereich der EP-128 Karte wählen. Vergewissern
+Sie sich, daß keine andere Erweiterungskarte  diesen  Bereich
+benötigt (EX-80=I/O2, IEC-64=I/O1, ProLogic-DOS=I/O1  -  wird
+aber hiervon nicht tangiert). Der  Bereichsschalter  auf  der
+EP-128 Karte muß entsprechend Ihrer Wahl gesetzt werden.
+
+Anschließend wählen Sie mit den Tasten 'Y'  und  'N'  bis  zu
+acht Programme aus, die Sie im Eprom  speichern  wollen,  die
+maximale Programmlänge beträgt 225 Blocks.
+
+'The Cartridge Maker'  macht  Ihnen   jetzt  Vorschläge   für
+mögliche Eprom-Bestückungen.  Wenn  Ihre  Wahl  abgeschlossen
+ist, beginnt das Programm die einzelnen Files einzuladen.  Da
+der Buffer-Speicher nur 52K-Bytes umfaßt,   ist  es  möglich,
+daß mehrmals gelesen und geschrieben wird. Falls  bei  dieser
+Prozedur ein Disketten-Fehler auftritt (Diskette voll  etc.),
+erscheint die Meldung: 'DISK-ERROR OCCURED, HIT  ANY  KEY  TO
+CLEAR'. In diesem Fall muß nach Tastendruck  erneut  begonnen
+werden.
+
+Die erzeugten  Files  sind  durch  vier  Buchstaben  für  den
+vorgesehenen Sockel des Eproms in der EP-128  gekennzeichnet,
+für den  linken  Sockel  ist  es  'LEFT.',  für  den  rechten
+'RGHT.'.  Der  Filename  enthält  außerdem   den   jeweiligen
+Eprom-Typen z.B. '.128' für ein 27128-Eprom.
+
+Beim 27512-Eprom kann, wie bereits an anderer Stelle erwähnt,
+der  große  Bereich  von  64K-Byte  nicht  an   einem   Stück
+bearbeitet werden. Für diesen Fall werden zwei Files je 27512
+erzeugt, die direkt vom QB2 bearbeitet werden können.  Hierzu
+wählen Sie beim Programmieren die Betriebsart 'AUTO'.
+
+
+
+
+
+QUICKBYTE 2           Bedienungshandbuch             SEITE 24
+
+Achtung:  Bereits     existierende     Files     werden
+--------  überschrieben, sofern sie den gleichen Namen haben.
+
+Zum  Brennen  der  Eproms  müssen  alle  Files  einzeln   per
+Disk-Menü geladen und programmiert werden.
+
+
+Nach Einstecken der Karte in  den  C64  und  Einschalten  des
+Computers erscheint ein spezielles Auswahlmenü. Die Filenamen
+werden als Programmnamen übernommen. Durch Druck einer  Taste
+von  1  bis  8,  je  nach  Anzahl  der  Programme,  wird  das
+entsprechende Programm gestartet und die Karte  abgeschaltet.
+Befindet sich nur ein Programm  auf  dieser  Liste,  so  wird
+dieses direkt gestartet. In diesem Fall erscheint kein Menü.
+
+Dieses Verfahren funktioniert gleichermaßen  mit  Basic-  und
+den meisten Maschinenprogrammen, wobei durch die Startadresse
+der Programmtyp unterschieden wird.  Bei  Maschinenprogrammen
+wird ein SYS-Befehl auf das erste Byte ausgeführt.
+Bitte nur Basic-Programme mit Startadresse $0801 verwenden!!
+
+
+Die Technik der EP-128 Karte
+----------------------------
+
+Die EP-128 arbeitet im Adressbereich $DE60-7F, bzw. $DF60-7F.
+Durch einen Schreibzugriff auf eine dieser 32  Adressen  wird
+der entsprechende Bereich gewählt. Im Einschaltmoment ist die
+Vorbesetzung  $DE60/$DF60,  im  Bereich  von  $DE70-7F,  bzw.
+$DF70-7F wird die Karte deaktiviert.
+
+
+
+
+
+
+
+QUICKBYTE 2           Bedienungshandbuch             SEITE 25
+
+Die Adreßbits 0-2 repräsentieren die Eprom-Adressen  A13-A15,
+Bit 3 ist für die Sockelauswahl zuständig (0=links, 1=rechts)
+und Bit 4 entspricht der EXROM-Leitung (0=Karte aktiv).
+
+Um  erneut  nach  Programmstart  das  Menü  aufzurufen,   muß
+folgende Basic-Zeile eingegeben werden:
+
+          I/O1 - POKE 56928,0:SYS 32811
+     oder I/O2 - POKE 57184,0:SYS 32811
+
+Durch diese Befehlsfolge werden alle Variablen gelöscht.
+
+
+Erzeugen von Boot-Programmen ohne die mitgel. Diskette
+------------------------------------------------------
+
+Um Programme bis 7,5K-Byte für die Karten EP-8 und  Mycom-ONE
+zu erzeugen, muß anfangs die Taste <F1> betätigt werden. Nach
+der  Frage  'ENTER  FILENAME:'  geben  Sie  Ihr   gewünschtes
+Programm ein.
+
+Sobald das entsprechende Epromprogramm erzeugt und im  Buffer
+ab $1000  abgelegt wurde,  gelangen  Sie  in   das  Hauptmenü
+zurück. Von hier kann jetzt direkt in ein 2764-Eprom gebrannt
+werden.
+
+Bei Verwendung  der  Mycom-Karte  wird  nach  Einstecken  und
+Inbetriebnahme des C64 sofort gestartet. Der durch die  Karte
+belegte  Bereich   von   8K-Byte   wird   durch   Abschaltung
+freigegeben. Die EP-8 Karte ermöglicht  diese  Option  nicht,
+hier ist hardwaremäßig keine Abschaltung vorgesehen.
+
+
+
+
+
+
+QUICKBYTE 2           Bedienungshandbuch             SEITE 26
+
+Garantieleistungen
+------------------
+
+
+Im Rahmen unserer allgemeinen Liefer- und Zahlungsbedingungen
+erhalten Sie eine Herstellergarantie von 6 Monaten.
+
+
+Im Fehlerfall ist das gesamte Gerät mit  einer  ausführlichen
+Fehlerbeschreibung frei einzusenden an:
+
+Jann Datentechnik
+Abt. Technik
+Glimmerweg 22
+1000 Berlin 47
+
+Der  Kaufbeleg   (Quittung,   Rechnung)   ist   der   Sendung
+beizulegen.
+
+
+Fehler,   die   auf   fehlerhafte    Bedienung,    mechanische
+Beschädigungen,  bzw.  Dejustierungen    zurückzuführen  sind,
+unterliegen nicht den Garantieleistungen.  Eine  Haftung   für
+Folgeschäden ist ausgeschlossen.
+
+
+
+
+
+
+
+
+
+
+
+
+
+QUICKBYTE 2           Bedienungshandbuch             SEITE 27
+
+Lieferbares Zubehör zum Quickbyte 2
+-----------------------------------
+
+QB2 Gehäuse
+-----------
+Das Gehäuse besteht aus zwei Halbschalen, die durch Verkleben
+gesichert werden. Montagebohrungen können je nach Wunsch
+selbst angebracht werden.
+
+Epromplatinen mit C64 Steckadapter für Expansion-Port
+-----------------------------------------------------
+EP-8   Kleinplatine mit 1 Epromsockel zum Einstecken von
+       1 Eprom 2716, 2732 oder 2764. DIP-Schalter für die
+       Leitungen EXROM, ROML, ROMH und GAME 'on board'.
+EP-16  wie EP-8, nur mit 2 Steckplätzen.
+EP-64  Epromplatine für 4 Eproms 2716, 2732, 2764 oder
+       27128 (max 64K). Schaltmöglichkeiten wie EP-8,
+       zusätzlich Resettaste.
+KE-3   3-fache Kernalumschaltplatine. Elektronisch geschaltet,
+       für Eproms 2764 und 2564 zum Ersatz des C64 -
+       Betriebssystems.
+ST-2   2-fach Steckplatzerweiterung.
+IEC-64 IEEE488-Bus zum Anschluß der 'großen' Commodore-
+       Peripherie an den C64. Der IEC64-Bus ist kompatibel
+       zum QB2.
+EP-128 Auto-Booter Epromplatine für 2 Eproms der Typen
+       2764, 27128, 27256 oder 27512. Bankswitchung, wird
+       benötigt für den 'Cartridge-Maker'.
+
+Und natürlich ProLogic-DOS, um aus Ihrer 1541 Floppy das
+letzte herauszuholen. Bis zu 35-mal schneller laden.
+
+Preise teilen wir Ihnen auf Anfrage gerne telefonisch mit,
+bzw. können den Inseraten der Fachpresse entnommen werden.
+Beachten Sie unsere aktuellen Anzeigen in der MC, 64er, RUN.
+
+
+QUICKBYTE 2           Bedienungshandbuch             SEITE 28
+
+Nachwort
+--------
+
+Wir hoffen mit dieser Dokumentation eine kurze und umfassende
+Bedienungsanleitung  abgegeben  zu  haben,  die   Ihnen   ein
+optimales Arbeiten mit Ihrem Quickbyte 2 ermöglicht.
+
+Sollten dennoch Fragen offen geblieben sein, so  steht  Ihnen
+unser telefonischer Service jederzeit zur Verfügung.
+
+Sie erreichen uns:
+
+
+Mo - Do von 9 - 13, und von 15 - 17 Uhr
+Fr      von 9 - 13 Uhr
+
+Außerhalb dieser Zeiten ist unser  Anrufbeantworter  für  Sie
+aufnahmebereit.
+
+
+Jann Datentechnik Berlin
+Tel. 030 / 73 11 84
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=============================================================
+Ergänzungen
+
+Nach Fertigstellung der Bedienungsanleitung haben sich
+folgende Ergänzungen ergeben:
+
+Seite 9:  Eproms des Type 2764A (12,5 V Programmierspannung)
+          werden im Menüpunkt 10 (87C64) gebrannt
+
+          Für Eproms 27256 mit 21 V Programmierspannung ist
+          der Menüpunkt O5 (57256) zu wählen.
+
+Seite 16: Bei der Erklärung des PROLOGIC - Programmiermodus
+          (Algorithmus 1) wurde versäumt, auf die anderen
+          beiden möglichen Programmierarten einzugehen.
+          Es sind dies:
+
+          Algorithmus 2: genäherter INTEL - Algorithmus
+
+          Algorithmus 3: Standardbrennvorgang 50ms
+=============================================================
+*********
+
+End of the International Project 64 etext of ProLogic Quickbyte 2
+manual.
+
+*********

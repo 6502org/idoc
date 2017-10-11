@@ -1,0 +1,148 @@
+
+
+LONG LIFE
+
+
+[bels“ bor¡t¢: n‚mi rekl m]
+
+
+A JTK KEZELSE
+
+A j t‚kban v laszthatunk, hogy egyedl a sz m¡t¢g‚p ellen (KšLDETS),
+vagy t rsunkkal (2 JTKOS) egym s ellen harcolunk. 1 j t‚kos zemm¢dban
+alapesetben csak SATO-val kzdhetnk, 2 j t‚kos zemm¢dban valamennyi
+szerepl“ v laszthat¢. Ha csak egyedl j tszunk, az 1-es joystick
+bemenetr“l ir ny¡thatjuk a j t‚kot, k‚t r‚sztvev“ eset‚n mindk‚t
+bemenetet haszn lja a program.
+
+Alapfel ll s szerint KšLDETS zemm¢dban a v lasztott harcos a k‚perny“
+bal oldal n  ll, a joystick mozg sok ennek megfelel“en ‚rtelmez“dnek.
+rtelem szerint, amikor a k‚t j t‚kos elhalad egym s mellett, az ir nyok
+felcser‚l“dnek (a j t‚kosok fordul sa automatikus).
+
+
+TMADSOK
+
+Joystick jobbra fel       - fejr£g s: testk”zelben alkalmazhat¢ fels“
+			    t mad s
+Joystick jobbra fel + t–z - ugr¢ r£g s: h rom embernyi t vols gb¢l is
+			    alkalmazhat¢ hat‚kony t mad s
+Joystick jobbra + t–z     - t‚s: k‚t l‚p‚s t vols gr¢l alkalmazhat¢
+			    fels“testre ir nyul¢ t mad s
+Joystick jobbra le + t–z  - becs£sz¢ l bs”pr‚s: ar nylag nagy t vols gb¢l
+			    alkalmazhat¢ als¢ t mad s
+Joystick balra + t–z      - k”rr£g s: nagyon hat‚kony ‚s l tv nyos fels“
+			    t mad s
+Joystick fel v. le + t–z  - speci lis t mad s, t–zlabda: 10 crd-be kerl“
+			    var zslat, alkalmaz sa csak v‚gvesz‚lyben
+			    javasolt
+
+
+VDEKEZSEK
+
+Joystick balra fel       - h traugr s: t vols g nyer‚s‚re alkalmas mozg s
+Joystick balra fel + t–z - fels“ v‚dekez‚s: az ”sszes fejre ‚s fels“
+			   testre ir nyul¢ t mad s elleni v‚dekez‚s
+Joystick balra le  + t–z - als¢ v‚dekez‚s: l bs”pr‚s ‚s a t–zlabda ellen
+			   eredm‚nyes v‚dekez‚s
+
+
+A PONTOZSI RENDSZER
+
+A k‚perny“ alj n h rom-h rom kijelz“ tal lhat¢, amelyek a szerepl“k
+er“nl‚t‚t (STR), kreditj‚t (CRD) ‚s tal lati erej‚t (HIT) jelzi. Menet
+k”zben er“nl‚tnk az elszenvedett t‚sek ‚s r£g sok hat s ra cs”kken,
+melynek m‚rt‚ke megegyezik az ellenf‚l tal lati erej nek ‚rt‚k‚vel.
+Kreditnk az  ltalunk bevitt tal latok sz m val n”vekszik. A n”veked‚s
+nagys g t az ellenf‚l tal lati ereje hat rozza meg. Tal lati er“nket
+pedig a megnyert m‚rk“z‚sek ut n tudjuk n”velni, felt‚ve ha az ezt
+megel“z“ harcokban elegend“ kreditet gy–jt”ttnk. Ennek m¢dja a
+k”vetkez“: ellenfelnk legy“z‚se ut n a sz ml l¢nkon megjelen“ villog¢
+keret seg¡ts‚g‚vel k”lthetjk ”sszegy–jt”tt kreditpontjainkat. K‚t
+lehet“s‚gnk van erre. Er“nl‚ti pontot 2 kredit‚rt, tal lati er“t 30
+kredit‚rt n”velhetnk. A k¡v nt sz ml l¢ra mozgatva a villog¢ keretet
+‚s a joystickot felfel‚ nyomva tudunk v s rolni. A k”ltekez‚s nem
+k”telez“, kreditpontjaink  tvihet“k a k”vetkez“ menetre is. Ebb“l a
+menb“l a t–zgombbal tudunk tov bbl‚pni az £jabb helysz¡nre.
+
+
+KARAKTEREK
+
+MEDIK, a k¡m‚letlen h¢h‚r: Magass ga 190 cm, s£lya 85 kg, ‚letkora 33
+‚v, szlet‚si helye USA. A harcot "hal losan" komolyan veszi, a
+kzdelemben kegyetlen m¢dszerekkel v‚gez ellenfel‚vel, ‚lvezi a m sik
+szenved‚seit. Egy bandah bor£ban annyira komoly s‚rl‚seket szenvedett
+a fej‚n, hogy a felismerhetetlens‚gig  eltorzult arc n az¢ta csukly t
+hord. Nagyon agyaf£rt ‚s kegyelmet nem ismer“ harcos.
+
+STROGOFF, a vas”kl– bokszol¢: Magass ga 183 cm, s£lya 92 kg, ‚letkora
+42 ‚v, szlet‚si helye Tadzsikiszt n. Szab lyosan ‚s nagyon taktikusan
+verekszik. Ereje az ”kl‚ben rejlik, melynek kem‚nys‚g‚t vassz”gek puszta
+k‚zzel val¢ f ba ver‚s‚vel edzi. Reflexei viszonylag magas ‚letkora
+dac ra kifinomultak, neh‚z a k”zel‚be f‚rk“zni.
+
+SNAKE, a mag nyos harcos k¡gy¢b“r mell‚nyben: Magass ga 180 cm, s£lya
+80 kg, ‚letkora 22 ‚v, szlet‚si helye Chile. Fiatal kora ellen‚re
+nagyon fegyelmezett ‚s kiegyens£lyozott harcos, aki kik‚pz‚s‚ben a
+legnagyobb hangs£lyt a l btechnik j nak fejleszt‚s‚re ford¡totta.
+F‚lelmetes erej– k”rr£g s r¢l ‚s vill mgyors g ncsair¢l h¡res.
+
+VOODOO, a misztikus erej– harcos: Magass ga 178 cm, s£lya 74 kg,
+‚letkora 35 ‚v, szlet‚si helye Korzika. Szlei egy terrort mad sban
+vesztett‚k ‚letket, amelynek egyetlen t£l‚l“je “ volt. Eg‚sz ‚let‚ben
+arra t”rekedett, hogy az igazs got k‚pviselje ‚s az igazs gtalans got
+megtorolja. Olyan fok£ bioenergi val rendelkezik, amellyel ellenfeleit
+megb‚n¡tani k‚pes. Kzdelmei sor n ezt a medit l son alapul¢ energi t
+haszn lja fel.
+
+FOXX, a kung-fu nagymester: Magass ga 175 cm, s£lya 72 kg, ‚letkora 36
+‚v, szlet‚si helye Izland. Harcm–v‚szet‚t ‚s tud s t azzal fejlesztette,
+hogy minden egyes rangos versenyen r‚szt vett ‚s elk‚peszt“ nyerni
+akar s nak ‚s kitart s nak k”sz”nhet“en valamennyit meg is nyerte.
+Kung-fu nagymester, aki vill mgyorsan ‚s iszonyatos energiabedob ssal
+harcol. Szel¡d klseje ellen‚re az egyik legkem‚nyebb ellenf‚l.
+
+YAGO, a kopasz szerzetes: Magass ga 170 cm, s£lya 65 kg, ‚letkora 58 ‚v,
+szlet‚si helye Tibet. A Shaolin templomban nevelkedett, ahol nap mint
+nap er“pr¢b kon ‚s ritu lis szertart sokon vett r‚szt. Szik r teste
+hatalmas fizikai ‚s lelki er“t rejt. Harc k”zben minden idegsz l val az
+ellenfel‚t figyeli, akinek legapr¢bb hib j t is azonnal a saj t jav ra
+ford¡tja. Nagyon megfontolt harcos.
+
+SATO, a nesztelen ninja: Magass ga 192 cm, s£lya 81 kg, ‚letkora 31 ‚v,
+szlet‚si helye Jap n. §si b‚rgyilkos csal d sarja, els“  ldozat t nyolc
+‚ves kor ban ejtette. Ma is akt¡v, igazi profi. Ellenfeleit szemrebben‚s
+n‚lkl int‚zi el, nem ismer irgalmat. Saj t testi ‚ps‚g‚vel sem t”r“dik,
+vakmer“en kzd, csak a v‚gs“ gy–zelem ‚rdekli.
+
+
+TIPPEK-TRšKK™K
+
+- Az els“ h rom-n‚gy menetben nem ‚rdemes t£lzottan k”ltekezni, f“leg
+nem tal lati pontot v s rolni. Magas tal lati pontn l ugyanis hamarabb
+v‚get ‚r a kzdelem, ‚s sokkal kevesebb kreditet kapunk. Ez a k‚s“bbi
+szinteken v‚gzetes hi nny  v lhat.
+
+- Ne hagyjuk magunkat a p lya sz‚l‚re szor¡tani.
+
+- A t–zlabda l tv nyos ugyan, de kis hat sfok£ ‚s sok kreditbe kerl.
+  Ne l”v”ld”zzk t£l gyakran.
+
+- Lehet, hogy nem csak SATO-val lehetnk, ha egyedl j tszunk?!
+
+
+A programot k‚sz¡tett‚k:
+
+Domokos S ndor - programoz s, hangeffektek
+Udvardy L szl¢ - grafika, sztori
+
+(c) COMGAME GM
+
+A programot ‚s a hozz  tartoz¢ dokument ci¢t szerz“i jog v‚di. Enged‚ly
+n‚lkli m sol sa, sokszoros¡t sa, k”lcs”nz‚se bntet“jogi
+k”vetkezm‚nyekkel j r.
+
+
+K•DTBLZAT
+
+[Ezt sajnos nem tudom reproduk lni ASCII karakterekkel]

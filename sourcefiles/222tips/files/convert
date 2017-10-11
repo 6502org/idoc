@@ -1,0 +1,4 @@
+#!/bin/bash
+
+disk2t64 bookdsk1 /other/E/emulator/c64/bookdsk1.t64
+disk2t64 bookdsk2 /other/E/emulator/c64/bookdsk2.t64

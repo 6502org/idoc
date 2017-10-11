@@ -1,0 +1,693 @@
+*********
+
+Welcome to iDOC= - the international CBM documentation project!
+
+The goal of iDOC= is to preserve (non-English) Commodore related documents
+in electronic text format that might otherwise cease to exist with the rapid
+advancement of computer technology and declining interest in 8-bit computers
+on the part of the general population. If you would like to help by
+converting Commodore related hardcopy documents to electronic texts please
+contact the manager of iDOC=, Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names consists of a reasonably short unique title, followed by the
+document language. Two optional fields follow; first the document version (0
+for incomplete texts, version 1 is usually unnumbered), and then the
+document source, if there are more than one. Finally, the document is given
+a .txt extension.
+
+The author(s) of the original document and members of iDOC= make no
+representations about the accuracy or suitability of this material for any
+purpose. This etext is provided "as-is". Please refer to the warranty of the
+original document, if any, that may included in this etext. No other
+warranties, express or implied, are made to you as to the etext or any
+medium it may be on. Neither the author(s) nor the members of iDOC= will
+assume liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext. Therefore
+if you read this document or use the information herein you do so at your
+own risk.
+
+*********
+
+The iDOC= etext of the Professional-DOS Release quick manual (German),
+converted to text by Wolfgang Moser <womo (at) d81 (dot) de>.
+
+professionaldos_de.txt, October 2002, etext #74.
+
+Note from the etexter: 
+
+This etext contains the quick manual of Professional-DOS Release for the
+C64 and C1541 (pages 1 to 6) and an additional advertisement (pages 7 to
+10) describing the different Release variants.
+Much effort was taken to keep as close as possible to the original
+formatting. Therefore some of the lines are longer than 80 chars, they were
+formatted with a condensed font in the original text.
+
+On page 10 (page 4 of the advertisement) of the original text, some
+words have been striked through manually. In this etext, this is
+represented by alternating a char with the minus sign (-), e.g.:
+   -s-t-r-i-k-e-d---t-h-r-o-u-g-h-
+
+Page breaks (ASCII char 12 resp. 0x0c) were used in this etext to
+itensify the orignal formatting even more.
+
+On page 4 the original graphics were replaced by ASCII charts of the C64
+and C1541 mainboard.
+
+*********
+
+=============================================================================
+) ) )   m i k r o t r o n i c   s y s t e m   p r o f e s s i o n a l   ( ( (
+=============================================================================
+
+                Bedienungshinweise PROFESSIONAL DOS RELEASE 4 
+                               und PROFESSIONAL DOS RELEASE 7
+
+Mit PROFESSIONAL DOS RELEASE erhält Ihr Rechner zahlreiche weitere Befehle, 
+teils auf Funktionstasten, teils auf Tastenkombinationen. Ab Dezember 1986 
+wird RELEASE 4 auch eine RS232-Schnittstelle erhalten, die dem CBM Rom entspricht.
+
+
+FUNKTIONSTASTENBELEGUNG
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+Wir liefern unterschiedliche Funktionstastenbelegungen auf Anfrage. Standard-
+mäßig wird folgende Belegung geliefert:
+
+F1 = LIST   F5 = LOAD"       F2 = OFF                 F6 = SAVE
+F3 = RUN    F8 = SYS$C000    F4 = um 1. und 2. Drive  F7 = DIRECTORY
+                     ¯
+Die Direktory können Sie laden, ohne ein Basic-Programm zu zerstören. Aus der 
+angezeigten Directory können Sie laden, indem Sie mit dem Cursor auf die 
+Blockzahl des zu ladenden Files fahren und F5 drücken. Wenn Sie F5 ohne einen 
+Namen dahinter eingeben, wird jeweils das letzte geladene File wiederholt oder 
+nach einem Diskettenwechsel das erste PRG-File aus der Directory geladen.
+
+Der F6-(SAVE)-Befehl enthält ein korrigiertes REPLACE, d.h. wenn Sie mit 
+SAVE@: name abspeichern, wird zunächst ein eventuell namensgleiches File auf 
+der Disk gelöscht und dann das File "name" abgespeichert.
+
+Mit F8 erfolgt der Einsprung in ein Maschine-Programm. Das C erscheint mit Ba-
+rüberstehendem Cursor. So können sie leicht das C mit einem anderen Wert über-
+schreiben.
+
+CENTRONICSSCHNITTSTELLE
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+Das System verfügt über eine Centronics-kompatible Schnittstelle am Userport. 
+Drucker können mit handelsüblichen Verbindern angeschlossen werden. Alle An-
+schlüsse am Userport MÜSSEN IMMER mit eingeschalteten Geräten verbunden sein, 
+wenn der Rechner in Betrieb ist. Andernfalls kann es zur Zerstörung des Ports 
+kommen. Schließen Sie NIEMALS mehr als zwei entkoppelte Geräte gleichzeitig an!
+
+ESCAPE UND CURSOR
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+CTRL und SPACE gleichzeitig gedrückt führt zu einem ESCAPE aus dem Anführungs-
+zeichenmodus. CTRL und DEL löscht alle Zeichen rechts vom Cursor. CTRL mit 
+CRSR HOME positioniert den Cursor in die linke untere Ecke des Bildschirms.
+
+LOW-RESOLUTION HARDCOPY
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+Geben Sie CTRL und £ ein. Die Funktion gibt es nicht bei Systemen mit RS232.
+
+HEXADEZIMAL/DEZIMALUMRECHNUNG
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+? $ wert rechnet einen Hex-Wert nach Dezimal um. #wert rechnet nach hex um. 
+Die Hex-Umrechnung können Sie auch im PRG-Modus verwenden.
+
+DISK-BEFEHLE
+¯¯¯¯¯¯¯¯¯¯¯¯
+Disk-Befehle können abgekürzt werden mit @ . Dieses Zeichen steht für den
+Befehl OPEN1,8,15,"befehl":CLOSE1. Auch die Systembefehle werden damit gesendet. 
+Der FAST-Loader wird mit LOAD"name",8,2 oder mit @- umgangen. @- ist resetfest.
+
+BASIC-RENEW holt durch Reset gelöschte Files zurück. Geben Sie dazu ! Return ein.
+¯¯¯¯¯¯¯¯¯¯¯
+RESETS über separaten Taster: 1.Mal drücken normal, 2.Mal drücken zerstört CBM80. 
+¯¯¯¯¯¯ Reset mit SPACE überspringt CBM80.
+
+
+=============================================================================
+) ) )   m i k r o t r o n i c   s y s t e m   p r o f e s s i o n a l   ( ( (
+=============================================================================
+
+          Bedienungs- und Einbauhinweise PROFESSIONAL DOS RELEASE
+
+                 für alle Systeme mit Anschluß am Userport
+
+
+  1) EINBAU
+     ¯¯¯¯¯¯
+  Schalten Sie alle Geräte aus. Soweit Sie einen Nachrüstsatz bestellt 
+haben, brennen Sie zunächst das Rechnerkernal auf Eprom. Entweder befin-
+det sich das Kernal als File auf der beigefügten Systemdiskette oder Sie 
+generieren es sich selbst mit dem Programm PRODUCE KERNAL. Das Kernal 
+wird mit dem Eprom-Adapter in die Fassung U4 des 64er eingesetzt.
+Für den 128 und 128D ist ein 16K Eprom erforderlich, auf dem sich im 
+oberen 8K-Bereich das Kernal und im unteren 8K-Bereich das Basic des 
+64er Modus befinden muß. Im 128/128D wird das Kernal für den 64er-Modus 
+in U32 eingesetzt. Den kompletten Systemen liegt das Kernal bei und 
+zwar mit Adapter für den 64er oder ohne Adapter für den 128er(D).
+
+Wenn das Kernal in Ihrem 64er nicht gesockelt ist, sollten Sie den Einbau unbedingt 
+in einer Fachwerkstatt durchführen lassen.
+
+Lösen Sie alle Verbindungen zur Floppy. Schalten Sie den Rechner ganz 
+kurz ein. PROFESSIONAL DOS RELEASE muß sich in weniger als einer Sekunde 
+melden. Andernfalls wieder ausschalten und den Einbau noch einmal über-
+prüfen!
+
+Soweit in Ihrer Floppy noch kein Parallelbus installiert ist, entfernen 
+Sie in Ihrer 1541 folgende Bausteine: UB4, UC4 und UC3. Bei vorhandenem 
+Parallelbus muß UC3 nicht entfernt werden. Setzen Sie den Baustein 6522 
+aus UC3 in die 40-polige Fassung des Flachkabelanschlusses. Achten Sie 
+immer auf die Richtung der Kerben der Bausteine. Stecken Sie den 40-poli-
+gen Anschluß mit dem 6522 in die Fassung UC3. Der Prozessor 6502 wird 
+auf die längliche PROFESSIONAL DOS Platine gesetzt. Die Platine ge-
+hört in UC4. Die Fassung von UB4 (DOS EF-Bereich) bleibt normalerweise 
+leer. Nur bei den umschaltbaren Versionen wird hier der Eprom-Adapter 
+oder die Umschaltplatine eingesetzt.
+
+Bei der neuen 1541C sind folgende Bausteine zu entferne: UA2, UC1, UC2. 
+Setzen Sie das DOS-Eprom in UA2, die Flachkabelverbindung mit dem 6522 
+in UCl und die PROFESSIONAL DOS PLATINE MIT DEM 6502 IN UC2 ein. Wenn 
+Sie eine umschaltbare Version bestellt haben, muß der Sockel mit dem 
+Umschalter zwischen UA2 und dem Eprom installiert werden.
+
+Stellen Sie nun die Verbindung zwischen Rechner und Floppy her, indem 
+Sie den IEC-Bus (normale Rundkabelverbindung) wieder anschließen und 
+die Flachkabelverbindung in den Userport stecken. Schalten Sie dann Ihre 
+Floppy ein. Sie muß ganz kurz anlaufen. Sollte das nicht der Fall sein, 
+überprüfen Sie noch einmal alle Verbindungen. Oder rufen Sie uns an, wir 
+helfen Ihnen weiter.
+
+Wenn jetzt der Rechner eingeschaltet wird, ist das System betriebsbereit.
+
+
+=============================================================================
+) ) )   m i k r o t r o n i c   s y s t e m   p r o f e s s i o n a l   ( ( (
+=============================================================================
+
+
+=============================================================================
+) ) )   m i k r o t r o n i c   s y s t e m   p r o f e s s i o n a l   ( ( (
+=============================================================================
+
+          Bedienungs- und Einbauhinweise PROFESSIONAL DOS RELEASE 
+
+                für alle Systeme am User- und Expansion-Port
+
+
+  2) BEDIENUNG:
+     ¯¯¯¯¯¯¯¯¯¯
+  Alle Varianten besitzen den "§D -Befehl" gemeinsam:
+
+§D1 = Standardgeschwindigkeit und variable Taktfrequenz des Prozessors 
+§DO = 1 Megahertz Taktfrequenz und Einschaltzustand, auch nach Reset 
+§D2 = 2 Megahertz Taktfrequenz und höchste Geschwindigkeitsstufe
+
+§D- = Abschalten der Beschleunigung (außer bei PRG-Files) 
+§D+ = wieder einschalten. Die Funktion ist softresetfest.
+
+§DA- = automatische Umschaltung aus   Es werden M-E und &- Files erkannt
+§DA+ = wieder ein                     und auf 1 Megahertz geschaltet.
+
+§DN = Verify beim Save aus         §DY = Verify wieder ein
+
+§D3 = Umschalten auf 35 Tracks vor dem Formatieren (Einschaltzustand) 
+§D4 = Umschalten auf 40 Tracks. So formatierte Disketten erhalten als 
+      DOS-Kennung 4A anstelle von 2A. Die Disketten werden beim Lesen 
+      einer Direktory automatisch erkannt.
+§DE = Erweitern von 35 Track Disks auf 40 Tracks ohne Zerstörung
+§DI = Kennzeichen 4A anbringen (z.B. auf SpeedDos 40-Track Disketten) 
+§D:name = File vor Löschen schützen/entschützen
+§DS- = Fast-Save ausschalten        §DS+ = wieder einschalten
+§DL+ = Super-Fastload mit Bildschirm aus     §DL- = wieder ein
+
+§D? = Zustand der Floppy abfragen Ausgabe z.B.   0,1Y+3S+L-A+ 
+      bedeutet: 0, = Teil aus der Fehlerkanalabfrage
+                1  = Zustand Standardgeschwindigkeit 
+                Y  = Verify eingeschaltet
+                +  = §D+
+                S+ = Fastsave ein
+                L- = Laden mit eingeschaltetem Bildschirm
+                A+ = 1 MHz- Automatic für M-E und &- Files an
+
+Anmerkung: Der Befehl §D2 bei Load ist für Userport-Systeme nicht frei. 
+           Den Befehl §DS- gibt es bei Systemen am Expansion-Port nicht. 
+           Befehle §DO, §D1 und §D2 existieren nur für die 1541 (alt). 
+           Befehl §DL+ für Systeme am Expansion-Port erst ab Januar 87.
+
+Aus technischen Gründen haben wir beim D-Befehl das §-Zeichen verwendet. 
+Suchen Sie diese Zeichen nicht auf Ihrer Tastatur, sondern geben Sie 
+folgendes Zeichen anstelle des §-Zeichens ein:
+
+bei SpeedDos und SpeedDos + und anderen Systemen am Userport 
+    das KLAMMERAFFENZEICHEN (zwische P und * auf der Tastatur)
+
+bei Systemen am Expansion-Port außer Turbo Access: Funktionstaste F8 
+bei Turbo Access und anderen Roßmöller-Systemen  : CTRL + O
+
+Übrigens: Schnellformatieren mit §DN vor dem Formatierbefehl eingeben.
+
+
+=============================================================================
+) ) )   m i k r o t r o n i c   s y s t e m   p r o f e s s i o n a l   ( ( (
+=============================================================================
+
+
+
+      V C 6 4
+     =========
+     _________        ____   ________________________________________________
+    |         |      |    | |  |   ||   ||            ||             |       |
++---+     === +------+    +-+  |___||___||            || ___________ |    ___|
+|                    +--+                |            |||           ||   |   |
+|  # |V| |V|     |V| +--+|V|  |V|        |            |||-----------||  _|___|
+|  # | | | | +u+ #u# +u+ | |  | |        |            |++ ----------++ |     |
+|  # | | | | | | #U# | | | |  | |        |            |  =====         ++====|
+|  # | | | | | | #4# | | | |  +-+        |____________|      _______+--+|    |
+|  # |_| |_| |_| ### |_| |_|                                |_______|  ||    |
+|  # ++                                            +--+    +--+---+-++-++----|
+|    ||                 ++       |V|               |__|    |  |   |  |  |    |
+|    ++ ++ ++ ++ ++n++  || ++ ++ | |               ___     |  |   |  |  |    |
+|    ++ || || || ||H||  ++ || || | |              D___|    |  |   |  |  +----|
+|    ++ ++ ++ ++ ++H++     ++ ++ |_|        +---------+    +--+---+--+       |
+|                       ++                  D_________|     +-+              |
+|       ++ ++ ++ ++n++  || ++ ++ ++                         | |+-----+       |
+|       || || || ||H||  || || || ||                         +-+|     |       |
+|       ++ ++ ++ ++H++  ++ ++ ++ ++                            +-----+       |
+|                                                                            |
++----------------------------------------------------------------------------+
+
+
+                                                1 5 4 1
+                  ___________________          =========
+      +---+====+-+   __         __   +-----------------------------------+
+      |   |____| |  /  \       /  \  |  _____                            |
+      | +-+      | /    \     /    \ | D_____|                           |
+      | | |      |/      \   /      \|  ____     +---+                   |
+      | |_|      |   VR1  | |  VR2   | D____|    |___|       _____       |
+      |  _       |\      /   \      /|            ____      D_____|      |
+      | | |      | \    /     \    / |  ____     D____|                  |
+      | | |      +--\__/-------\__/--+ D____|                            |
+      | +-+             _________   _____________                        |
+      |  +------------+| :  UB4  | |     UC4     | _____   _      ____   |
+      |  |            |D : EPROM | D  6502 PROZ  |D_____| D_|    D____|  |
+      |  |            |+---------+ +-------------+                       |
+      |  +------------+  +-------+ +-------------+ ____                  |
+      |______  ______    D  UB3  | D UC3 6522 VIA|D____|          ____   |
+      |      ||      |   |_______| |_____________|               D____|  |
+      |      ||      |   +-------+ +\   /--------+ ____                  |
+      |______||      |   D  UB2  | D | |  UC2    |D____|                 |
+      |      ||      |   |_______| |_| |_________|                       |
+      |      ||      |              _| |_________                        |
+      |______||      | ____  ____  | | |         | ____                  |
+      |       |      |D____|D____| D | |  UC1    |D____|                 |
+      |       +------+             +-| |---------+                       |
+      |   =====                   ===| |  === ========== =====   ====    |
+      +------------------------------| |---------------------------------+
+                                     |~|Flachkabel
+
+
+Verkaufs-, Liefer- und Zahlungsbedingungen (AGB) 
+
+1. Allgemeines
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+Für alle Angebote, Verträge und sonstige Vereinbarungen mit uns gelten aus-
+schließlich unsere AGB. Die AGB unseres Vetragspartners schließen wir hiermit 
+aus.
+Alle Angebote sind freibleibend. Änderungen von Produkten und Produkteigen-
+schaften sowie Irrtum bleiben vorbehalten. Vereinbarungen gleich welcher
+Form mit uns sind nur gültig, wenn sie schriftlich mit Unterschrift bestätigt 
+wurden.
+Die in unseren Produkten angewandten Verfahren und Routinen, Beschreibungen, 
+Zeichnungen, Abbildungen, Muster oder Prototypen bleiben unser Eigentum. In-
+soweit wird nur das Nutzungsrecht für den von uns bestimmten Verwendungszweck 
+übertragen. Wir erheben hierfür das Urheberrecht und das Recht am Eigentum. 
+Die Namen und Bezeichnungen unserer Produkte sind i.d.R. eingetragene Waren-
+zeichen.
+
+2. Lieferfristen
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+Wir liefern, wenn nicht anders vereinbart nach Verfügbarkeit am Lager ohne 
+Auftragsbestätigung per Nachnahme. Die Lieferfristen sind unverbindlich; 
+Teillieferungen sind zulässig. Betriebsstörungen, höhere Gewalt, Liefereng-
+pässe bei Zulieferern, unvorhergesehene Lieferhindernisse, Transportschwie-
+rigkeiten usw. berechtigen uns ganz oder teilweise vom Vertrag zurückzutreten. 
+Schadensersatzansprüche des Bestellers sind ausgeschlossen, wenn Liefer-
+schwierigkeiten nicht unser Verschulden sind.
+
+3. Versand
+¯¯¯¯¯¯¯¯¯¯
+Wenn nicht anders vereinbart, erfolgt der Versand nach bestem Ermessen. Die 
+Gefahr geht ausnahmslos auf den Besteller über, sobald die Ware unser Lager 
+oder eine von uns bestimmte Versandstelle verläßt. Wird der Versand durch 
+den Besteller oder seinen Beauftragten verzögert, geht die Gefahr mit der 
+Meldung der Versandbereitschaft auf den Besteller über. Bei Verzögerung 
+behalten wir uns den Weiterverkauf der verzögerten Bestellung vor.
+
+4. Preise
+¯¯¯¯¯¯¯¯¯
+Von uns gegenüber Endverbrauchern genannte Preise schließen die jeweils 
+gültige Mehrwertsteuer ein. Wiederverkäufern genannte Preise sind rein netto 
+ohne MwSt. Fracht, Versand-und Verpackungsgebühren werden gesondert erhoben. 
+
+5. Zahlungsbedingungen
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+Soweit nicht anders vereinbart, sind unsere Rechnungen innerhalb von 10 Tagen 
+zahlbar ohne jeden Abzug. Eine Zahlung gilt dann als geleistet, wenn wir über 
+den Betrag frei verfügen können. Die Annahme nicht bestätigter Schecks gilt nur 
+zahlungshalber.
+Gerät der Besteller in Zahlungsverzug, werden alle offenen Rechnungen zzgl. 
+Verzugszinsen und Rechtsverfolgungskosten sofort fällig. In diesen Fällen 
+sind wir berechtigt, von allen Veträgen ganz oder teilweise zurückzutreten 
+und/oder bereits gelieferte Ware ganz oder teilweise zurückzufordern.
+Bei Zielüberschreitungen erheben wir Verzugszinsen in Höhe von 2% über den 
+uns bankmäßig eingeräumten Zinsen für kurzfristige Kredite.
+
+
+5. Eigentumsvorbehalt
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+Gelieferte Waren bleiben unser Eigentum bis zur vollständigen Erfüllung 
+aller Forderungen aus unserer gesamten Geschäftsverbindung.
+Der Besteller kann die von uns gelieferten Waren im normalen Geschäftsbetrieb 
+verkaufen. Mit dem Verkauf werden uns sämtliche Forderungen zur Sicherung unserer 
+Gesamtforderung abgetreten, ohne daß es dazu einer gesonderten Erklärung bedarf.
+
+6. Gewährleistung
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+Beanstandungen sind innerhalb von 7 Kalendertagen nach Wareneingang mit ge-
+nauer vollständiger Beschreibung der festgestellten Mängel zu melden. Bei 
+berechtigten Mängelrügen haben wir das Recht, entweder die Mängel zu besei-
+tigen oder die bemängelte Ware ganz oder teilweise zurückzunehmen, in ange-
+messener Frist Ersatz zu leisten oder dem Besteller den bemängelten Minder-
+wert zu vergüten. Weitergehende Ansprüche sind ausgeschlossen, solange uns 
+kein Vorsatz trifft. Es wird keine Gewähr geleistet für Schäden die nach Ge-
+fahrübergang durch unsachgemäße Behandlung entstehen. Insbesondere sind 
+Folgeschäden von uns zu verantwortender Mängel ausdrücklich ausgeschlossen. 
+Wir haften nicht für die Verletzung von Schutzrechten Dritter beim Verkauf 
+der von uns bezogenen Waren.
+Bei Beanstandungen ist der Besteller verpflichtet, die bemängelte Ware an uns 
+portofrei (frachtfrei) unter genauer Beschreibung der festgestellten Mängel 
+einzusenden.
+
+7. Sonstiges
+¯¯¯¯¯¯¯¯¯¯¯¯
+Es gilt als vereinbart, daß uns übermittelte Daten im Rahmen des Geschäftsbetriebs 
+elektronisch gespeichert werden können.
+Sofern nicht anders geregelt, gelten für unsere Geschäftsbeziehungen die 
+"Allgemeinen Lieferungsbedingungen für Erzeugnisse und Leistungen der Elektro-
+industrie" in der jeweils gültigen Fassung.
+Das Vertragsverhältnis unterliegt deutschem Recht.
+
+Erfüllungsort und Gerichtsstand ist 4780 Lippstadt, soweit vom Gesetz nicht 
+anders festgelegt. Wir behalten uns vor, am Ort des Bestellers oder einem 
+anderen Ort zu klagen.
+
+
+
+Lippstadt, den 1.Oktober 1986
+
+
+ 
+                                                                9/86 11/86III
+
+=============================================================================
+) ) )   m i k r o t r o n i c   s y s t e m   p r o f e s s i o n a l   ( ( (
+=============================================================================
+                         macht Ihre 1541/1571 zur 
+
+                       schnellsten Floppy der Welt
+
+
+                P R O F E S S I O N A L   D O S   R E L E A S E
+
+
+PROFESSIONAL DOS RELEASE eröffnet Ihnen neue Möglichkeiten für das 
+schnelle und professionelle Arbeiten mit Ihrem Diskettenlaufwerk. Das 
+Laden und Saven von Programmfiles wird in einem Maße beschleunigt, wie 
+es bis heute vom keinem Superspeeder erreicht wird. Z.B. können Sie 
+Programme, die mit einem Fastsave gespeichert wurden, unter PROFESSIONAL 
+DOS RELEASE 7 in weniger als 3 (drei !) Sekunden einladen; ohne Kompatibili-
+tätsverlust! Saven können Sie 202 Blocks in ca. 8 Sekunden incl. Verify . 
+Dateien (SEQ oder REL) werden bis zu ca. 10-fach beschleunigt.
+
+PROFESSIONAL DOS RELEASE benutzt dazu u.a. verschiedene hardwaremäs-
+sige Verfahren:
+
+              - variable Taktung des Floppy-Prozessors 6502
+
+              - parallele Datenübertragung zwischen Rechner und Floppy 
+
+              - nybbleweise (4 Bit) harwaremäßige GCR-Umwandlung
+
+Insbesondere die harwaremäßige GCR-Umwandlung, die ausschließlich bei 
+PROFESSIONAL DOS RELEASE verwendet wird, ist besonders kompatibel und 
+so extrem schnell (18 Zyklen), daß es damit erstmals möglich wird, be-
+stimmte Files direkt vom Lesekopf des Laufwerks in den Rechner zu über-
+tragen; das zusätzliche Ram in der Floppy, das bisher allen Superspeedern 
+als Zwischenspeicher dient, wird dabei gar nicht mehr benötigt. Da sich 
+jedoch nicht jedes File so schnell laden läßt, befindet sich ein Ram
+von 8K Bytes weiterhin auf der Hardware.
+
+PROFESSIONAL DOS RELEASE ist aufgrund dieser unübertroffenen Eigen-
+schaften
+             - WELTWEIT DIE SCHNELLSTE FLOPPY-ERWEITERUNG.
+
+PROFESSIONAL DOS RELEASE gibt es als KOMPLETTES SYSTEM und als 
+NACHRÜSTUNG zu SpeedDos (Plus) , Floppy-Flash und Turbo Access 2.7+ .
+
+PROFESSIONAL DOS RELEASE kann auf 256K BYTE RAM in der Floppy auf-
+gerüstet werden, und zwar sowohl in der 1541 als auch in der 1571. 
+Diese Aufrüstung liefern wir unter der Bezeichnung RAM DOS PROFESSIONAL. 
+RAM DOS PROFESSIONAL ist eine RAM-Floppy in der Floppy, wahlweise 
+schaltbar als Ersatz für die Diskette oder als 2-tes Laufwerk. Lesen und 
+Schreiben von 64K dauert ca. 1 Sekunde. Das Kopieren einer ganzen Disk 
+ins Ram benötigt nur 8 Sekunden, das Kopieren einer Disk aus dem Ram 
+incl. Verify nur etwa 14 Sekunden. Und der Deckel der Floppy paßt
+trotz aller Erweiterungen noch.
+
+PROFESSIONAL ERWEITERUNGEN sind auch in speziellen Varianten liefer-
+bar, bei denen Sie auf die Original- oder andere Systeme umschalten 
+können. Ebenfalls gibt es eine Variante für den SX64.
+
+PROFESSIONAL DOS RELEASE und RAM DOS PROFESSIONAL sind auch von 
+Laien in wenigen Minuten zu installieren, wenn das Kernal im 64er 
+bzw. der Prozessor der 1571* gesockelt sind (* bei 1571 ab 2/87 nicht 
+mehr erforderlich).
+                                                                9/86
+
+
+PROFESSIONAL DOS Version3 wurde bereits in namhaften Computerzeit-
+schriften mit hervorragenden Ergebnissen getestet (64er Ausg.6 u.7/86, 
+RUN 8/86 und Sonderheft 64er 9/86). Heute zur Auslieferung kommende 
+Versionen mit der Bezeichnung RELEASE laden 202 Blocks bis zu mehr 
+als doppelt so schnell, wie die damals getesteten. Damit ist das 
+PROFESSIONAL DOS RELEASE System zum weltweit schnellsten Direktlade-
+system geworden und z.B. beim LOAD mehr als doppelt so schnell wie 
+DOLPHIN DOS. Außerdem zeichnet sich PROFESSIONAL DOS RELEASE dadurch 
+aus, daß der Fastloader nicht ständig aus Kompatibilitätsgründen ab-
+geschaltet werden muß. Sollte es mal nötig sein, geschieht das in der 
+Regel automatisch.
+
+PROFESSIONAL DOS RELEASE ist mehr als SpeedDos-kompatibel. Es laufen 
+also nicht nur alle derzeitigen Programme, die auch unter SpeedDos 
+laufen, sondern sogar auch einige der wenigen, die unter SpeedDos nicht 
+liefen. Das kann kein anderer Speeder von sich behaupten.
+
+Folgende nachvollziehbare Testwerte haben wir ermittelt und zwar ein-
+schließlich Positionieren und Verify bzw. Checksumme:
+    Load PRG-Files mit Screen Blanking 202 Blocks 2,3 Sekunden 70 x schneller 
+    Load    "     ohne    "      "     202   "    3,2 -3,5"    40 x schneller 
+    Save    "       "     "      "     202   "    8,0     "    40 x schneller
+    Read u. Write Dateien bis zu                               10 x schneller
+    Load/Save/Read/Write im RAM bzw. der RAM-Disk bis zu      180 x schneller 
+
+RAM DOS PROFESSIONAL ist trotz von uns nur als 180 x schneller be-
+zeichnet, bei vergleichbaren Disk-Zugriffen noch bis zu 30 mal schneller 
+als alle z.Zt. am Markt befindlichen RAM-Disk-System. Neu beim neuen 
+RAM DOS PROFESSIONAL ist, daß es erstmals gelungen ist, auch mit 
+kopiergeschützten Programmen die RAM-Disk zu nutzen. Außerdem wird 
+mit neuen Routinen erstmals ein besonders schneller Zugriff auf 
+Relative Dateien möglich.
+
+Zu allen Systemen gibt es von uns besonders schnelle Copys und Backups. 
+FILEMASTER PROFESSIONAL RELEASE von eurosystems (eine Spezialversion 
+für PROFESSIONAL DOS) ist kostenlos im Lieferumfang enthalten. FILE-
+MASTER PROFESSIONAL DOS RELEASE ist absolut das schnellste und komfor-
+tabelste Filecopy auf dem Markt. eurosystems entwickelt übrigens alle 
+Programme auf PROFESSIONAL DOS RELEASE , nicht nur die Turbo- und 
+Burst-Nibbler, sondern auch die Prologic-Nibbler. Wenn das kein Kompli-
+ment an die Kompatibilität von PROFESSIONAL DOS RELEASE ist !
+
+Weitere Copy- und Backup-Programme werden im Dezember 86 erscheinen: 
+
+- XEROX 40 PROFESSIONAL:  Backup für 1 1541 oder 1571, 23 Sekunden
+                          für 40 Tracks bei nur 3 Wechseln.      DM 49.--
+- XEROX 40/2 PROFESSIONAL:Backup für 2 Laufwerke 1541 oder 1571 auch 
+                          kombiniert. 15 Sekunden, kein Wechsel  DM 69.-- 
+- FILEMASTER PROFESS. 2  :Filecopy für 2 Laufw. 1541 oder 1571   DM 39.--
+
+Übersicht über die verschieden Varianten von PROFESSIONAL DOS:
+
+RELEASE   VC64 1541 1541C 1571  PC128 1541 1570 1571 PC128D Lieferumfang
+   1        j    j    n     n     n     n    n    n     n   Nachrüsts.S/F
+   2        j    j    n     n     j     j    n    n     j   Nachrüsts.S/F/T
+   2C       j    n    j     n     j     n    n    n     j   Nachrüsts. F
+   3        j    j    n     n     j     j    n    n     j   Kompl.Modul-Por
+   3C       j    n    j     n     j     n    n    n     j   Kompl.Mod.-Port
+   4        j    j    n     n     j     j    n    n     j   Kompl.User-Port
+   4C       j    n    j     n     j     j    n    n     j   ab Jan. 87
+   5        j    n    n     n     j     n    j    n     n   Kompl.Mod.-Port
+   6        j    n    n     j     j     n    j    j     j   Kompl.Mod.-Port
+   7       Umrüstung von älteren Versionen auf Release 2 im Umtausch
+RAM DOS          j    j     j           j    j    j     j   Nachrüstung
+                                                                9/86 11/86II
+
+
+Kombinationsmöglichkeiten von verschiedenen Rechnern und Laufwerken 
+
+am 64er: l oder mehrere 1541 mit RELEASE 1 oder 2 oder Original CBM 
+         oder auch Hypra Load , 64er Dos, EXOS oder Turbo Basic und 
+         andere. Bei Original CBM muß das Rechner-Kernal nicht umge 
+         schaltet werden.
+am 64er: eine oder mehrere 1541 mit RELEASE 2 oder 3 oder Orig. CBM 
+am 64er mit RELEASE 3 und 5: gemischter Betrieb von 1541 und 1571 (muß 
+         bei der Bestellung angegeben werden)
+am 128er mit RELEASE 3 und 5:gemischter Betrieb von 1541 und 1571 
+         oder Original CBM im 64er Modus (muß bei Bestellung angeg-
+         geben werden)
+am 128er mit RELEASE 3 und 6: gemischter Betrieb von 1541 und 1571 
+         oder Original CBM im 64er oder 128er Modus (muß bei Be-
+         stellung angegeben werden)
+Die Angaben für den Betrieb von mehr als einer Floppy unter PROFESSIONAL 
+DOS RELEASE der Varianten 3, 5 und 6 ist erforderlich, da eine Bus-
+Treiberplatine für mehrere Laufwerke benötigt wird.
+Der gemischte Betrieb von einer 1541 und einer 1570/1571 an einem 64er 
+oder 128er ist am Userport nicht möglich. Für diesen Anwendungsfall 
+bieten wir eine kostengünstige Umrüstung an (Bus-Treiber-Platine für 
+den Expansions-Port und geändertes Rechner-Kernal).
+
+Sonstige Unterschiede zwischen den Varianten:
+RELEASE 1 ist eine reine 35 Track Dos Version. Alle anderen Varianten 
+können per Befehl zwischen 35 und 40 Tracks umgeschaltet werden. Bei 
+40 Tracks haben Sie 85 Blocks mehr auf der Disk frei (749 Blocks free). 
+Die Erkennung von 40 Track Disketten erfolgt automatisch. Sie können 
+auch 35 Track Disks auf 40 Tracks erweitern (per Befehl) oder alte 
+SpeedDos 40 Track Disks nachträglich zur automatischen Erkennung kenn-
+zeichnen. Der Disketteninhalt geht dabei nicht verloren.
+
+Die Erweiterungen für SpeedDos erhalten zusätzliche Befehle und Funktionen: 
+korrigiertes Replace, Laden an eine Absolutaddresse (Eingabe in dezimal 
+oder hexadezimal), Save von absoluten Speicherbereichen, Umrechnung
+von dezimal nach hexadezimal und umgekehrt, Sprung in ein Maschine-Pro-
+gramm per F-Taste.
+Alle Versionen besitzen ein superschnelles Validate und Formatieren: 
+Validate 144 Einträge 8 Sekunden, Formatieren einer Disk 9 Sekunden. 
+Alle Versionen sind auch per Befehl auf langsames Laden umschaltbar. 
+Für einige DATA BECKER-Programme mußten wir einen Befehl zu etwas 
+langsameren Laden einbauen (aufgrund des eigenwilligen Kopierschutzes), 
+dafür laufen bisher alle getesteten Versionen.
+
+                                   Preise
+
+RELEASE   PREIS  LIEFERUMFANG    (RELEASE 1 bis 6 incl. Filemaster)
+
+    1     169.-  Nachrüstsatz mit Floppy-Erweiterungsplatine
+    2     189.-  wie Release 1)
+    2C    238.-  wie Release 1, jedoch mit 16K Eprom f. Floppy
+3 und 3C  258.-  komplette Systeme am Expansion-Port
+4 und 4C  258.-  komplette Systeme am Userport
+5 und 6   298.-  komplette Systeme am Expansion-Port
+    7      69.-  Umtausch Ihrer alten Floppy-Erweiterungsplatine
+                 gegen Release 2
+
+RAM DOS   249.-  256K Byte RAM und 8K ROM- Erweiterung zu RELEASE 1-6
+Expansion  69.-  Bus-Treiber Platine für mehrere Laufw. unter Rel 3,5 u.6
+2. Laufw.   ?    Preise wie RELEASE 1 bis 6 abzüglich 10% Rabatt
+Kernals    15.-  16K Rechner-Kernal mit CBM f.64er, mit Basic64 f. 128er
+Kernaladap.19.-  umschalbarer Adapter für 2 Betriebssysteme im 64er
+Buskabel   29.-  Parallelbuskabel, bitte RELEASE angeben
+Filem.8-9  39,-- kopiert von Drive 8 nach Drive 9
+                                                               11/86II
+
+VERSIONEN für Turbo Access bieten wir nur für 1 Drive an.
+
+SONDERVERSIONEN  liefern wir für:  SX64 Aufpreis DM 49.-
+                                   1541 mit umschaltbarem Dos DM 49.-
+                                   1571 mit umschaltbarem Dos DM 69.-
+
+COPYRIGHT: Für alle Varianten von PROFESSIONAL DOS besitzen wir das 
+alleinige Copyright. Die Versionen für Turbo Access sind vertraglich 
+mit der Firma Roßmöller GmbH, Bonn,und die Versionen für SpeedDos mit 
+der Firma Electronic Service Christoph Dichte, Brunsbüttel, abgesichert. 
+Da der Endverbraucher nicht immer unterscheiden kann, ob es sich bei 
+seinem SpeedDos um ein Original oder um einen Nachbau handelt, verrech-
+nen wir mit der Firma Dichte eine pauschale Entschädigung. Dadurch 
+ist jeder Endverbraucher, der PROFESSIONAL DOS RELEASE bei uns bezieht, 
+vor einer Rechtsverfolgung wegen Besitzes eines SpeedDos-Nachbaus ge-
+schützt. Dieser Schutz gilt nicht für Händler oder andere Hersteller.
+
+LIEFERTERMINE:  Alle Varianten von PROFESSIONAL DOS einschließlich 
+Zubehör sind ab Lager lieferbar mit Ausnahme der nachstehenden :
+
+Bus Treiber 2 Laufwerke RELEASE 3,5 und 6 ab Ende Dezember 1986
+RAM DOS PROFESSIONAL, verbesserte Version ab Ende Dezember 1986
+RELEASE 6 aufgrund von Wartelisten        -a-b---A-n-f-.---D-e-z-e-m-b-e-r---1-9-8-6- sofort 
+FILEMASTER PROFESSIONAL 2                 -a-b---A-n-f-.---D-e-z-e-m-b-e-r---1-9-8-6- sofort
+XEROX 40 PROFESSIONAL UND XEROX 40/2      ab Ende Dezember 1986
+RELEASE 2C und RELEASE 4C                 -a-b---A-n-f-.---D-e-z-e-m-b-e-r---1-9-8-6- ab ca. 
+                                                                15.12.1986
+
+Lieferfristen: innerhalb von ca. 7 Tagen ab Auftragseingang
+Es gelten unsere Liefer- und Zahlungsbedingungen.
+Angebote freibleibend. Änderungen und Irrtum vorbehalten.
+
+Lieferungen ins Ausland erfolgen nur gegen Vorkasse oder Euro-Ver-
+rechnungsscheck zuzüglich DM 22,50. Eine Umsatzsteuererstattung für 
+Endverbraucher wird von uns nicht durchgeführt.
+
+Porto-, Versand- und Verpackungskosten im Inland betragen DM 9,50.
+
+Übrigens: PROFESSIONAL DOS RELEASE 6 beschleunigt die 1570 bzw. 
+1571 im 64er-128er-Modus. Floppybezogen also im 1541-, 1571- und CPM-Modus.
+
+PROFESSIONAL DOS RELEASE 3 und RELEASE 3C für 1541/1541C gibt es ab 
+sofort gegen einen Aufpreis von DM 39,-- auch für den 128er bzw. 128D.
+
+
+
+
+·····························hier·bitte·abtrennen·····························
+
+BESTELLUNG
+¯¯¯¯¯¯¯¯¯¯
+Hiermit bestelle ich zu Ihren Lieferbedingungen per Nachnahme/Vorausscheck
+
+... Stück  PROFESSIONAL DOS RELEASE  .. für Rechner .... und Floppy ...... 
+mit folgender Sonderausstattung ...........................................
+
+Name .........................   Vorname ..................................
+PLZ und Ort ............. ........... Str. u. Nr.  ........................
+
+Datum und Unterschrift:  ..............................................
+Bei minderjährigen Unterschrift des Erziehungsberechtigten nicht vergessen
+
+Ihre Bestellung richten Sie an: Dipl.-Ing. Klaus Roreger     oder telefonisch
+                                Liebigstraße 28              Tel.: 02238-43556
+                                D-4780 Lippstadt             ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+
+
+*********
+
+End of the iDOC= etext of the Professional-DOS Release quick manual.
+
+*********

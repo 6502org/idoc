@@ -1,0 +1,336 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore 64
+related documents in electronic text format that might otherwise cease to
+exist with the rapid advancement of computer technology and declining
+interest in 8-bit computers on the part of the general population. If you
+would like to help by converting C64 related hardcopy documents to
+electronic texts please contact the manager of International Project 64,
+Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The first
+characters of the file name are an abbreviation of the original document
+name and the language of the etext. The version number of the etext follows
+next. After that a letter may appear to indicate the particular source of
+the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International Project
+64 make no representations about the accuracy or suitability of this
+material for any purpose. This etext is provided "as-is". Please refer to
+the warranty of the original document, if any, that may included in this
+etext. No other warranties, express or implied, are made to you as to the
+etext or any medium it may be on. Neither the author(s) nor the members of
+International Project 64 will assume liability for damages either from the
+direct or indirect use of this etext or from the distribution of or
+modification to this etext. Therefore if you read this document or use the
+information herein you do so at your own risk.
+
+*********
+
+The International Project 64 etext of the Scarabaeus instructions, converted
+to text by Guido Mersmann <geit@studST.FH-Muenster.DE>
+
+SCAR_DE1.TXT, June 1998, etext #40.
+
+*********
+
+-----------------------------------------------------------------------------
+
+                               Handbuch
+
+-----------------------------------------------------------------------------
+                              SCARABAEUS
+-----------------------------------------------------------------------------
+
+                        Durchsuchen des Labyrinths
+
+                        Finden der Medizin-Nischen
+
+                    Inspizieren der Informationsplätze
+
+
+-----------------------------------------------------------------------------
+                               AriolaSoft
+
+
+ Spezielle Eigenschaften:
+
+ - sagenhafte Grafiken
+
+ - 3D Labyrinth in "Scrollerama"
+
+ - Zomies und Geister
+
+ - brilliante 3D Lift Operationen
+
+ - Gifte und Medizinen
+
+   Ich habe meine Suche begonnen, SCARABAEUS zu  finden,  den  sagenhaften
+   Smaragd  der Pharaonen. Er liegt mit dem Pharao in seinem feuchten Grab
+   beerdigt. Allein ich gehe durch das tödliche Portal nur  um  von  einer
+   giftigen  Spinne  gebissen zu werden! Mein Herz ist jetzt schwächer und
+   vielleicht lebe ich nicht mehr lange genug,  um  das  anstrengende  und
+   verwirrende  Labyrinth  zu  durchsuchen.  Wenn  ich  es  tue  habe  ich
+   vielleicht nicht die Kraft die patrolierenden Zombies zu  schlagen  und
+   wahnsinnige  Geister zu fangen. Im Labyrinth muß ich Hieroglyphen-Codes
+   sammeln, die mich in die Lage versetzen den Schlüssel zu  Pharaos  Grab
+   zu  finden,  Medizin  von  Gift  zu  unterscheiden  und Zombiefallen zu
+   sammeln. Auch ohne meine geschwächte  Kondition  muß  ich  diese  Codes
+   erwerben,  wenn  ich  am Leben bleiben soll! Der Gedanke an einen neuen
+   Morgen scheint mir fern, jetzt wo ich meinen  Abstieg  in  die  dunklen
+   Schrecken  der Pharaohnengrabes beginne, um den mächtigen SCARABAEUS zu
+   finden.
+
+   Zum Laden: Diskette
+
+   Schalte Deine Floppy und Deinen Computer an.  Lege  die  Diskette  ein.
+   Jetzt  tippe:  load"AS",8,1.  Drücke  RETURN.  Stecken  den Joystick in
+   Port2.
+
+   Zum Laden: Cassette:
+
+   Drücke   SHIFT   und    RUN/STOP.    Danach    die    PLAY-Taste    des
+   Kassettenrecorders.  Das  Spiel lädt sich automatisch. Der Joystick muß
+   in Port 2 gesteckt werden.
+
+   Zum Aussuchen des Sounds
+
+   Drücke M für die Festlegung zwischen Musik und Sound-Effekten.
+
+
+
+   Ebene1: Ziel
+
+   Das Ziel der  Ebene  1  ist,  9  Hieroglyphen  zu  sammeln,  um  Deinen
+   Schlüssel  zu  vervollständigen.  Wenn  Du  FEUER  drückst,  wird  Dein
+   Schlüssel ausgegeben. Hieroglyphen werden gesammelt, indem  Geister  im
+   Labyrinth  aufgespührt  und  berührt  werden.  Diese Geister töten Dich
+   nicht.
+
+   In Ebene 2 wird Dich der vollständige Schlüssel in die  Lage  versetzen
+   Medizin  von  Gift  sowie  auch  gute  von  schlechten  Zombiefallen zu
+   unterscheiden. Du brauchst die Medizin um den Spinnenbiß zu  überleben,
+   den  Du  am  Eingang  des Grabmals erhalten hast. Wenn Du den Schlüssel
+   vervollständigt hast, gehe zum Aufzug an der Außenwand des Labyrinths.
+
+
+   Steuerung für Ebene 1
+
+   Vorne        - gehe, betritt den Aufzug
+   Zurück       - Karte anzeigen
+   Links/Rechts - abbiegen an den Kreuzungen
+   Feuer        - Schlüssel ausgeben
+
+   Ebene 2: Ziel
+
+   Das Ziel von Ebene 2 ist die 8 Medizinen und die 4  guten  Zombiefallen
+   zu identifizieren. Das wird erreicht, indem Informationsplätze, wie auf
+   der Karte des Labyrinths gezeigt, betreten und die Hieroglyphen an  den
+   Wänden  untersucht  werden,  um  herraus  zu  finden, welche Tränke und
+   Fallen gut oder schlecht für Dich sind. Um die  Tränke  und  Fallen  zu
+   untersuchen,  mußt  Du  den Joystick nach VORN drücken, wenn Du vor der
+   Wand bist. Tränke erscheinen als Flaschen, Fallen als  Gasmasken.  Wenn
+   die  9 Hieroglyphen, die Du schon gesammelt hast, mit denen an der Wand
+   in  irgendeiner  Ordnung  in  einem  Quadrat   von   3x3   Hieroglyphen
+   übereinstimmen,  hast  Du  etwas  gefunden, das in der Ebene 3 nützlich
+   ist. Bewege den Joystick nach RECHTS oder LINKS um die Falle  oder  den
+   Tranks  auszuwählen  und mit nach Ebene 3 zu nehmen. Du solltest 8 gute
+   Arzneiflachen finden, denn ohne all diese ist es schwieriger das Rätsel
+   am  Eingang  des Pharaonengrabes zu lösen. Wählst Du eine falsche Falle
+   aus, betrifft das nur Deinen Gesundheitszustand. Das  Auswählen  der  8
+   Medizinen  tötet  automatisch  alle Spinnen. Paß auf! Manche der Tränke
+   sind Gifte. Machst Du einen Fehler beim  Abgleichen  der  Hieroglyphen,
+   bedeutet  das,  daß  Du  eine  Flasche  Gift auswählen kannst! Das kann
+   fürchterliche Wirkungen haben.
+
+
+
+   Das Rätsel des Pharao
+
+   Wenn Du den Schlüssel zum Pharaonengrab findest, wirst Du in  der  Lage
+   sein,  durch  die  Wände von Ebene 3 zu kommen. Um das Rätsel zu lösen,
+   wenn Du auf es trifft, bewege den Joystick nach RECHTS oder  LINKS,  um
+   den  Cursor  um  die  Ecken  der  Hieroglyphentabelle zu positionieren.
+   Drückst  Du  FEUER,  schnippt  das  die  Puzzleteile  aus  der   Reihe,
+   spaltenweise  oder  diagonal,  um deren Rückseiten zu zeigen. Wenn alle
+   Stücke den Schlüssel zum Pharaohnengrab zeigen, wirst Du den  Schlüssel
+   haben.
+
+   Steuerung für Ebene 2
+
+   Vorne        - gehe, betritt den Aufzug, Anzeigen der Hieroglypen
+   Links/Rechts - abbiegen an den Kreuzungen
+   Zurück       - Karte und Schlüssel anzeigen
+
+
+
+   Ebene 3: Ziel
+
+   Das Ziel von Ebene 3 besteht darin, das Pharaonengrab zu  betreten  und
+   damit  Deine  Aufgabe  zu erfüllen. Um das Grabmal zu betreten, mußt Du
+   das Rätzel an seinem Eingang lösen. Um Dir zu helfen, daß zu  schaffen,
+   mußt  Du  die Medizin-Nischen aufsuchen und die Medizin nehmen, wenn Du
+   welche findest. Nimm nicht jeden Trank, weil er Dich umbringen  könnte!
+   Das   Einnehmen   jeder   weiteren  Medizin  eröffnet  neue  Teile  des
+   Grabeingangsrätsels.  In   jeder   Medizin-Nische   drücke   FEUER   um
+   herrauszufinden,  ob  die Medizin vorhanden ist und bewege den Joystick
+   nach oben oder unten und drücke FEUER, um sie zu nehmen oder liegen  zu
+   lassen.
+
+
+
+   Eingang zum Pharaonengrab
+
+   Um das Pharaonengrab zu betreten, mußt Du die mittleren Hieroglyphen so
+   bewegen,   daß   die   vier   Kolonnen  genau  mit  den  Seitenkolonnen
+   übereinstimmen, die Du aber nur dann vollständig sehen kannst, wenn  Du
+   alle 8 Medizinen mit Dir nach Ebene 3 genommen hast. Ein Farbwechsel in
+   den Hieroglyphen zeigt die Position des Cursors  an.  Positioniere  den
+   Cursor  auf das Stück, das Du bewegen willst, drücke FIRE, um das Stück
+   zu greifen und benutze den Joystick, um es  in  die  neue  Position  zu
+   bringen.   Um   das   Puzzle   zu   verlassen   und  in  das  Labyrinth
+   zurückzukehren, drücke FEUER, wenn Du auf einem freien Platz bist. Wenn
+   Du  auf  dieser  Ebene alle 12 Zombies getötet hast, kannst Du Dir Zeit
+   nehmen, das Rätsel zu lösen. Es gibt 8 Türen  zum  Pharaonengrab,  jede
+   mit  einem  gleichen  Puzzel.  Du  hast 40 Veränderungsmöglichkeiten an
+   jeder Tür. Deine Versuche werden durch eine Kette festgehalten, die auf
+   der  Tür  erscheint. Nach dem 40. Versuch erscheint ein Vorhängeschloß,
+   um anzudeuten, daß  diese  bestimmte  Tür  verschlossen  bleibt.  Jeder
+   weitere  Versuch  muß  an  einer der verbleibenen Türen gemacht werden.
+   jede Tür gibt Deine momentane Position beim Lösen des Problems wieder.
+
+
+
+   Steuerung für Ebene 3
+
+   Vorne        - gehe, betritt den Aufzug
+   Zurück       - ausgeben der Karte
+   Links/Rechts - abbiegen
+   Feuer        - Zombiefallen aufstellen
+
+
+   Gebrauch des Aufzuges
+
+   Gehe direkt auf die Wand zu, wo der Aufzu ist. Um nach unten zu fahren,
+   mußt  Du  den  Joystick gegen den Uhrzeigersinn drehen. Um nach oben zu
+   fahren  drehe   ihn   im   Uhrzeigersinn.   Fange   jedesmal   in   der
+   "VORNE"-Position  an  und  paß  auf,  das  der Joystick alle Positionen
+   nacheinander durchläuft. Wenn eine Position  fehlt  oder  der  Joystick
+   losgelassen  wird, fällt der Aufzug auf die nächstniedrigere Ebene. Die
+   Farben des Schachtes wechseln von grau/rot  nach  braun/rot,  wenn  der
+   Lift auf einer Ebene ankommt. Um den Aufzug zu verlassen drücke FEUER.
+
+
+
+   Statusanzeigen
+
+   Position im Labyrinth: Zeigt die Ebene, in  der  Du  gerade  bist
+   Gesundheit:            Dein momentaner  Gesundheitszustand  wird  durch
+                          die Tür hinter dem laufenden Mann angezeigt. Die
+                          Tür   geht   auf,   wenn   die  Gesundheit  sich
+                          verschlechtert.   Das  Papierband  zeigt  Deinen
+                          Erschöpfungszustand.  Vorsicht!  Du  kannst  vor
+                          Erschöpfung sterben.
+   Zeit:                  Der Zeitablauf wird durch die Sanduhr angezeigt.
+                          Wenn der ganze Sand durchgelaufen  ist,  stirbst
+                          Du.
+   Richtung:              Die Anzeige zeigt Dir die Richtung,  in  die  Du
+                          siehst.
+
+
+
+   Labyrinth-Karten
+
+   Auf den Labyrinthkarten: - Ein Schädel zeigt die Position eines Geistes
+
+                            - Der  Aufzug  wird  auf  einer  äußeren  Wand
+                              gezeigt
+
+                            - vier   verschiedene     Zeichnungen   zeigen
+                              Informationsplätze oder Medizin-nischen, wie
+                              folgt:
+                                     Ort mit Monster
+
+                                     - besucht
+
+                                     - noch nicht besucht
+
+                                     Ort ohne Monster
+
+                                     - besucht
+
+                                     - noch nicht besucht
+
+
+
+   Monster-Bewegungen
+
+   Auf der Ebene 1 neigen die Geister dazu sich von Dir  weg  zu  bewegen.
+   Auf  der  Ebene  2 ist zunächst eine Spinne an jedem Informationsplatz.
+   Wenn du an ihrem Platz vorbeikommst, wird sie Dich zunächst  verfolgen,
+   aber  da sie langsammer ist als Du, kannst Du sie ins Labyrinth führen,
+   damit  Du  Zeit  hast  die  Hieroglyphen  zu   studieren,   bevor   Sie
+   zurückkommt.  Eine  Warnung ertönt, wenn sie sich nähert. Wenn sie Dich
+   von hinten trifft, während Du die Hieroglyphen untersuchst, wird  Deine
+   Gesundheit  ungünstig  beeinflußt  und  die  Spinne stirbt. Auf Ebene 3
+   kommen die Zombies auf dem kürzesten Weg auf Dich zu.
+
+
+
+   Punkte
+
+   Ebene 1: Für jede genommende Hieroglyphe  -   500 Punkte
+
+   Ebene 2: Für jede Entscheidung über
+            Medizin oder Fallen              -  1000 Punkte
+
+            Für das finden des Schlüssels
+            des Pharaos                      -  5000 Punkte
+
+   Ebene 3: Für jede genommende Medizin      - 10000 Punkte
+
+            Medizin-Bonus                    - hängt vom Gesundheitzustand
+                                               ab, wenn die letzte Medizin
+                                               genommen wird.
+            Zeit-Bonus                       - hängt von der verbleibenden
+                                               Zeit ab,  wenn  die  letzte
+                                               Medizin genommen wird.
+            SCARABAEUS                       - 10000 Punkte
+            Pharao-Bonus                     - hängt von der verbleibenden
+                                               Zeit ab,wenn der SCARABAEUS
+                                               gefunden wird.
+
+   Um die Punktanzeige jederzeit  während  des  Spiels  sehen  zu  können,
+   drücke  H. Drücke den Joystick nach VORN um das Spiel fortzusetzen. Die
+   Punkteanzeige erscheint automatisch am Ende des Spiels. Drücke S um das
+   Spiel erneut zu starten.
+
+
+
+   Pause
+
+   Drücke RUN/STOP um das Spiel zu unterbrechen und wieder anzufangen.
+-----------------------------------------------------------------------------
+  Qualität ist unser Programm!
+
+  4830 Gütersloh . Postfach 1350 . TEL. 05241/805165
+-----------------------------------------------------------------------------
+
+*********
+
+End of the International Project 64 etext of the Scarabaeus manual.
+
+*********

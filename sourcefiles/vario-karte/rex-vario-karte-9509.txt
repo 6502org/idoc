@@ -1,0 +1,74 @@
+-------------------------------------------------------------------------------
+[Verpackungsetikett]
+
+VARIO-KARTE 9509
+Für alle Commodore C-64 und C-128 im 64er-Modus
+- Für 2 x 2764 (8K) oder 2 x 27128 (16K) EPROMs geeignet
+- im 8KByte-Modus für max. 4 Module oder Betriebssysteme
+- über DIP-Schalter kann jeder Modus eingestellt werden
+- hardwaremäßiges Abschalten der Karte möglich
+- umfangreiche deutsche Anleitung
+- 6 Monate REX-Garantie auf Fertiggeräte
+-------------------------------------------------------------------------------
+[Anleitung]
+
+REX DATENTECHNIK
+VARIO-KARTE 9509
+
+Die Vario-Karte kann sowohl als externe Betriebssystem-Umschaltplatine im
+Modulport verwendet werden, sowie auch als EPROM-Modulkarte für maximal
+2 mal 16KByte.
+
+ACHTUNG !!!
+Stecken Sie die Karte bei ausgeschaltetem Rechner in den Expansionsport
+(hinten rechts), und zwar so, daß die Bauteile der Platine nach oben zeigen.
+
+Die Variokarte bietet Ihnen die Möglichkeit, vier Betriebssysteme über den
+Modulport am C64 zu betreiben. Ein Auslöten des Kernal-ROMs ist hierbei nicht
+erforderlich. Für die Besitzer des neuen C64 ist hiermit eine Alternative
+geschaffen.
+Allerdings steht bei eingeschaltetet Karte der RAM-Bereich unter dem
+Kernal-ROM nicht mehr zur Verfügung, so daß vereinzelt die Karte abgeschaltet
+werden und das Programm mit dem Original-Betriebssystem geladen werden muß.
+
+Der Einsatz der Variokarte als 4x8K-EPROM-Karte stellt die zweite
+Anwendungsmöglichkeit dar. Für die Anwendung als EPROM-Karte läuft die
+Karte wie gewohnt im Adreßbereich $8000-$9FFF. Die EPROM-Typen 2732, 2764
+und 27128 können auf beiden Sockeln eingesetzt werden.
+Dies, sowie auch das Entfernen von EPROMs, darf nur bei ausgeschaltetem
+Rechner geschehen.
+Die immer preiswerter werdenden 16K-EPROMs können bei der Anwendung
+in 2x8K-Funktionsblöcke aufgeteilt werden. Der obere und untere Block
+wird durch die Einstellung der DIL-Schalter selektiert. Dasselbe Prinzip
+gilt bei der Verwendung als Betriebssystem-Umschaltplatine.
+Die Vario-Karte ist mit einem Reset-Taster, einem Ein/Aus-Schalter sowie
+einem 10fachen DIL-Schalter ausgerüstet. Der Ein/Aus-Schalter funktioniert
+in beiden Betriebsarten. Sobald die Karte ausgeschaltet ist, meldet sich
+das Original-Betriebssystem des Rechners. Nach einer Umschaltung auf
+der Karte ist wichtig, daß der Reset-Taster betätigt wird, um den Rechner
+in einen definierten Zustand zu bringen.
+
+Nur folgende DIL-Schalter-Stellungen verwenden:
+
+Einstellung des Codierschalters als Betriebsart für Betriebssysteme:
+DIL 1 = ON   DIL 2 = ON   DIL 3 = ON   DIL 4 = OFF   DIL 5 = OFF   DIL 6 = OFF
+
+Einstellung des Codierschalters als Betriebsart für Module:
+DIL 1 = OFF  DIL 2 = OFF  DIL 3 = OFF  DIL 4 = ON    DIL 5 = ON    DIL 6 = ON
+
+DIL7  = ON  ... es steckt ein 2732er-EPROM im Sockel
+DIL8  = ON  ... untere 8K, DIL8 = OFF ... obere 8K  (bei 27128er-EPROMs)
+DIL9  = ON  ... Sockel B ein (rechts)
+DIL10 = ON  ... Sockel A ein (links)
+
+Die Schalter 9 und 10 sowie Schalter 7 und 8 dürfen niemals gleichzeitig
+eingeschaltet werden, da sonst ein Kurzschluß entsteht bzw. beide EPROMs
+selektiert werden.
+
+ACHTUNG !!!
+Die EPROMs müssen immer mit der Kerbe zum Rechner zeigen !!!
+
+Wir wünschen Ihnen nun viel Spaß bei der Arbeit mit der Vario-Karte.
+
+REX DATENTECHNIK, 58 HAGEN
+-------------------------------------------------------------------------------

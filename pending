@@ -1,0 +1,395 @@
+From peter@softwolves.pp.se Sun Sep 11 11:18:16 2005 +0200
+Status: 
+X-Status: 
+X-Keywords:
+Received: from moutng.kundenserver.de (moutng.kundenserver.de [212.227.126.187])
+	by ds9.cixit.se (8.12.3/8.12.3/Debian-7.1) with ESMTP id j8B9IFe6028833
+	for <peter@softwolves.pp.se>; Sun, 11 Sep 2005 11:18:15 +0200
+Received: from p54B6A331.dip0.t-ipconnect.de [84.182.163.49] (helo=mail)
+	by mrelayeu.kundenserver.de with ESMTP (Nemesis),
+	id 0ML2ov-1EENyY3R08-0008N2; Sun, 11 Sep 2005 11:18:14 +0200
+Received: from trikalio by mail with local (Exim 3.35 #1 (Debian))
+	id 1EENyO-00057I-00; Sun, 11 Sep 2005 11:18:04 +0200
+Date: Sun, 11 Sep 2005 11:18:02 +0200
+From: Spiro Trikaliotis <cbm4win@trikaliotis.net>
+To: Peter Karlsson <peter@softwolves.pp.se>
+Subject: Die Floppy 1571 - PDF Version
+Message-ID: <20050911091802.GB16436@mail.trikaliotis.net>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-15
+Content-Disposition: inline
+User-Agent: Mutt/1.5.9i
+X-Provags-ID: kundenserver.de abuse@kundenserver.de login:3d2eeabd0c2821ae800fb0ab220b0ce9
+X-Bogosity: No, tests=bogofilter, spamicity=0.000834, version=0.92.8
+
+Hello Peter,
+
+I scanned and OCRed the german book "Die Floppy 1571" by Karsten
+Schramm, Markt & Technik. You can download it here:
+
+  http://www.trikaliotis.net/download/DieFloppy1571.pdf (approx. 1,4 MB)
+
+Neglecting the commented ROM listing which is quite a mess to be OCRed,
+it is complete and proof-read.
+
+Please note:
+
+1. Do not spread this link!
+
+2. If you want to put this PDF on some webspace, please do NOT mention
+   my name.
+
+Now, perhaps, you want to add this into iDOC. I read that you prefer
+plain text. I must admit that I am not good as ASCII-art. ;)
+
+Which way would be best to include this book into iDOC? Would it make
+sense to export the pictures into non-ASCII and "link" to them from the
+TXT file?
+
+Would you even be interested in getting that book?
+
+Regards,
+   Spiro.
+
+-- 
+Spiro R. Trikaliotis
+http://www.trikaliotis.net/
+http://cbm4win.sf.net/
+
+From peter@softwolves.pp.se Wed Oct 26 09:46:21 2005 +0200
+Status: 
+X-Status: 
+X-Keywords:
+Received: from moutng.kundenserver.de (moutng.kundenserver.de [212.227.126.186])
+	by ds9.cixit.se (8.12.3/8.12.3/Debian-7.1) with ESMTP id j9Q7k9ZI015851
+	for <peter@softwolves.pp.se>; Wed, 26 Oct 2005 09:46:21 +0200
+Received: from p54B6A29E.dip0.t-ipconnect.de [84.182.162.158] (helo=mail.trikaliotis.local)
+	by mrelayeu.kundenserver.de with ESMTP (Nemesis),
+	id 0MKwh2-1EUfz00ggi-0002mq; Wed, 26 Oct 2005 09:46:02 +0200
+Received: from trikalio by mail.trikaliotis.local with local (Exim 3.35 #1 (Debian))
+	id 1EUfyg-0003WH-00; Wed, 26 Oct 2005 09:45:42 +0200
+Date: Wed, 26 Oct 2005 09:45:41 +0200
+From: Spiro Trikaliotis <cbm4win@trikaliotis.net>
+To: cbm4win-devel ML <cbm4win@listserver.jonet.org>
+Subject: Books "Die Floppy 1541" und "Die Floppy 1571"
+Message-ID: <20051026074541.GA12918@mail.trikaliotis.net>
+Mail-Followup-To: cbm4win-devel ML <cbm4win@listserver.jonet.org>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+User-Agent: Mutt/1.5.9i
+X-Provags-ID: kundenserver.de abuse@kundenserver.de login:3d2eeabd0c2821ae800fb0ab220b0ce9
+X-Bogosity: No, tests=bogofilter, spamicity=0.056696, version=0.92.8
+
+Hello,
+
+it has been quiet on this list for some time, thus, I thought you might
+be interested in the following.
+
+
+I know, some of you already know, but there are news, thus, I am
+announcing to all of you.
+
+I'm proud to announce the availability of the scanned versions of the
+following books (in German only):
+
+a. Karsten Schramm: "Die Floppy 1541". 
+   Markt & Technik 806, 1985, ISBN 3-89090-098-4
+   http://www.trikaliotis.net/download/Floppy1541.zip (ca. 1.2 MB)
+
+b. Karsten Schramm: "Die Floppy 1570/1571". 
+   Markt & Technik 90185, 1986, ISBN 3-89090-185-9
+   http://www.trikaliotis.net/download/DieFloppy1571.zip (ca. 2.0 MB)
+
+If this is no reason to learn german (if you don't already know it), I
+do not know what else. ;)
+
+
+Both files are "complete", with the following remarks:
+
+1. All included file listings are included. The bigger files (Appendix
+   in a., BurstMon 3.1 in b.) have been generated with PETCAT from the
+   VICE package.
+   Remark: I have taken BurstMon 3.1 from the 64er SH 25 disk. To me,
+   it seems to be identical with the version in the book, but I am not
+   completely sure.
+
+2. a., "1541", is missing one page (151) which contains two pictures
+   which would need much space to reproduce in good quality.
+   This page is available separately as PNG from
+   http://www.trikaliotis.net/download/1541-platine.png (ca. 450 KB)
+   
+3. The page numbers are kept original, thus, the line numbers of the
+   contents and the index can be used to navigate the book. But: cf. 4.
+
+4. The formatting has changed slightly. If a paragraph was to be split
+   across two pages, I have left it on one page only. Thus, the contents
+   and index (cf. 3.) might deviate by 1 page.
+
+5. If I found errors in the contents, I have not corrected most of them.
+   This might be done in some future "revision".
+   Anyway, there were some slight corrections in the ROM listing of the
+   1570/1571, where the listing was not correct in all cases.
+
+Please note:
+
+1. Do not spread this link!
+
+2. If you want to put this PDF on some webspace, please do NOT mention
+   my name.
+
+Although I have tried to contact the original author to get permission
+to spread this file, I was not able to get a working address from him.
+Thus, if anyone knows how to contact Karsten Schramm, AFAIK one of the
+former "chiefs" of GMX, please tell me.
+
+
+If you have questions or remarks, please contact me directly or via the
+mailing list.
+
+
+What is new w.r.t. the previous releases of these files?
+
+1. (today) The ROM listing and the listing of the BurstMon have been added to
+   the "1571" book
+
+2. (Oct 8) The ROM listing and the listings of the files in the appendix
+   have been added to the 1541 book.
+
+
+Now, the next project is "64intern" (Data Becker) which is already
+scanned. Unfortunately, the OCR was much less effective on that book,
+thus, it needs much more afterwork. :(
+
+Have fun,
+   Spiro.
+
+-- 
+Spiro R. Trikaliotis
+http://www.trikaliotis.net/
+http://cbm4win.sf.net/
+
+From peter@softwolves.pp.se Wed Oct 26 10:28:40 2005 +0200
+Status: 
+X-Status: 
+X-Keywords:
+Received: from moutng.kundenserver.de (moutng.kundenserver.de [212.227.126.186])
+	by ds9.cixit.se (8.12.3/8.12.3/Debian-7.1) with ESMTP id j9Q8SeZI020691
+	for <peter@softwolves.pp.se>; Wed, 26 Oct 2005 10:28:40 +0200
+Received: from p54B6A29E.dip0.t-ipconnect.de [84.182.162.158] (helo=mail.trikaliotis.local)
+	by mrelayeu.kundenserver.de with ESMTP (Nemesis),
+	id 0ML2ov-1EUgeA1Jtc-0006eB; Wed, 26 Oct 2005 10:28:34 +0200
+Received: from trikalio by mail.trikaliotis.local with local (Exim 3.35 #1 (Debian))
+	id 1EUge4-0003mb-00; Wed, 26 Oct 2005 10:28:28 +0200
+Date: Wed, 26 Oct 2005 10:28:28 +0200
+From: Spiro Trikaliotis <cbm4win@trikaliotis.net>
+To: undisclosed-recipients: ;
+Subject: Re: [cbm4win] Books "Die Floppy 1541" und "Die Floppy 1571"
+Message-ID: <20051026082828.GE12918@mail.trikaliotis.net>
+References: <20051026074541.GA12918@mail.trikaliotis.net>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <20051026074541.GA12918@mail.trikaliotis.net>
+User-Agent: Mutt/1.5.9i
+X-Provags-ID: kundenserver.de abuse@kundenserver.de login:3d2eeabd0c2821ae800fb0ab220b0ce9
+X-Bogosity: No, tests=bogofilter, spamicity=0.000000, version=0.92.8
+
+Hello,
+
+I am sorry, one of the two links was wrong:
+
+* On Wed, Oct 26, 2005 at 09:45:41AM +0200 I wrote:
+ 
+> a. Karsten Schramm: "Die Floppy 1541". 
+>    Markt & Technik 806, 1985, ISBN 3-89090-098-4
+>    http://www.trikaliotis.net/download/Floppy1541.zip (ca. 1.2 MB)
+
+Please make this read
+
+    http://www.trikaliotis.net/download/DieFloppy1541.zip (ca. 1.2 MB)
+
+Regards,
+   Spiro.
+
+-- 
+Spiro R. Trikaliotis
+http://www.trikaliotis.net/
+http://cbm4win.sf.net/
+
+From peter@softwolves.pp.se Thu Nov 10 13:02:58 2005 +0200
+Status: 
+X-Status: 
+X-Keywords:
+Received: from moutng.kundenserver.de (moutng.kundenserver.de [212.227.126.177])
+	by ds9.cixit.se (8.12.3/8.12.3/Debian-7.1) with ESMTP id jAAC2w0F010152
+	for <peter@softwolves.pp.se>; Thu, 10 Nov 2005 13:02:58 +0100
+Received: from [84.182.153.225] (helo=mail.trikaliotis.local)
+	by mrelayeu.kundenserver.de (node=mrelayeu5) with ESMTP (Nemesis),
+	id 0ML25U-1EaB8a0HPr-0006UP; Thu, 10 Nov 2005 13:02:57 +0100
+Received: from trikalio by mail.trikaliotis.local with local (Exim 3.35 #1 (Debian))
+	id 1EaB8I-0007zc-00; Thu, 10 Nov 2005 13:02:22 +0100
+Date: Thu, 10 Nov 2005 13:02:19 +0100
+From: Spiro Trikaliotis <cbm4win@trikaliotis.net>
+To: cbm4win-devel ML <cbm4win@listserver.jonet.org>
+Subject: Book scans: Updates and new book
+Message-ID: <20051110120219.GA30372@mail.trikaliotis.net>
+Mail-Followup-To: cbm4win-devel ML <cbm4win@listserver.jonet.org>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+User-Agent: Mutt/1.5.9i
+X-Provags-ID: kundenserver.de abuse@kundenserver.de login:3d2eeabd0c2821ae800fb0ab220b0ce9
+X-Greylist: Default is to whitelist mail, not delayed by milter-greylist-2.0.2 (ds9.cixit.se [193.15.169.228]); Thu, 10 Nov 2005 13:02:58 +0100 (CET)
+X-Bogosity: No, tests=bogofilter, spamicity=0.000000, version=0.92.8
+
+Hello all,
+
+as I write this mail to some people which have not received previous
+versions, I include all the text in the sequel.
+
+For the "old ones": I integrated the changes into the book "1541", and I
+added another book "64 intern".
+
+
+I'm proud to announce the availability of the scanned versions of the
+following books (in German only):
+
+a. Karsten Schramm: "Die Floppy 1541". 
+   Markt & Technik 806, 1985, ISBN 3-89090-098-4
+   http://www.trikaliotis.net/download/DieFloppy1541-2.zip (ca. 1.2 MB)
+
+b. Karsten Schramm: "Die Floppy 1570/1571". 
+   Markt & Technik 90185, 1986, ISBN 3-89090-185-9
+   http://www.trikaliotis.net/download/DieFloppy1571.zip (ca. 2.0 MB)
+
+c. Angerhausen, Brückmann, Englisch, Gerits: "64 intern".
+   Data Becker, 3rd edition 1983.
+   http://www.trikaliotis.net/download/64intern-v1.zip (ca. 1.2 MB)
+ 
+If this is no reason to learn german (if you don't already know it), I
+do not know what else. ;)
+
+
+All files are "complete", with the following remarks:
+
+1. All included file listings are included. The bigger files (Appendix
+   in a., BurstMon 3.1 in b.) have been generated with PETCAT from the
+   VICE package.
+   Remark: I have taken BurstMon 3.1 from the 64er SH 25 disk. To me,
+   it seems to be identical with the version in the book, but I am not
+   completely sure.
+
+2. a., "1541", is missing one page (151) which contains two pictures
+   which would need much space to reproduce in good quality.
+   This page is available separately as PNG from
+   http://www.trikaliotis.net/download/1541-platine.png (ca. 450 KB)
+
+3. c., "64 intern", is missing the schematics and the register layouts
+   on pages 324 and later. The schematic is available in the known
+   places (for example, zimmers.net), and the register layouts are not
+   that good. It would be better to get the ones from the PRG.
+   
+4. The page numbers are kept original, thus, the line numbers of the
+   contents and the index can be used to navigate the book. But: cf. 4.
+
+5. The formatting has changed slightly. If a paragraph was to be split
+   across two pages, I have left it on one page only. Thus, the contents
+   and index (cf. 3.) might deviate by 1 page.
+
+6. If I found errors in the contents, I have not corrected most of them.
+   This might be done in some future "revision".
+   Anyway, there were some slight corrections in the ROM listing of the
+   1570/1571, where the listing was not correct in all cases.
+
+Please note:
+
+1. Do not spread these links!
+
+2. If you want to put the PDFs on some webspace, please do NOT mention
+   my name.
+
+Although I have tried to contact the original author to get permission
+to spread these files, I was not able to get a working address from them.
+Thus, if anyone knows how to contact Karsten Schramm, AFAIK one of the
+former "chiefs" of GMX, please tell me.
+
+
+If you have questions or remarks, please contact me directly or via the
+mailing list.
+
+
+What is new w.r.t. the previous releases of these files?
+
+1. (today) The ROM listing and the listing of the BurstMon have been added to
+   the "1571" book
+
+2. (Oct 8) The ROM listing and the listings of the files in the appendix
+   have been added to the 1541 book.
+
+
+Now, the next project is "64intern" (Data Becker) which is already
+scanned. Unfortunately, the OCR was much less effective on that book,
+thus, it needs much more afterwork. :(
+
+Have fun,
+   Spiro.
+
+-- 
+Spiro R. Trikaliotis
+http://www.trikaliotis.net/
+http://cbm4win.sf.net/
+
+From peter@softwolves.pp.se Sun Nov 13 16:04:14 2005 +0200
+Status: 
+X-Status: 
+X-Keywords:
+Received: from moutng.kundenserver.de (moutng.kundenserver.de [212.227.126.177])
+	by ds9.cixit.se (8.12.3/8.12.3/Debian-7.1) with ESMTP id jADF4E0F019772
+	for <peter@softwolves.pp.se>; Sun, 13 Nov 2005 16:04:14 +0100
+Received: from [84.182.152.11] (helo=mail.trikaliotis.local)
+	by mrelayeu.kundenserver.de (node=mrelayeu8) with ESMTP (Nemesis),
+	id 0ML2ov-1EbJOo2Z2U-00016F; Sun, 13 Nov 2005 16:04:09 +0100
+Received: from trikalio by mail.trikaliotis.local with local (Exim 4.50)
+	id 1EbJOg-0007WK-Gf; Sun, 13 Nov 2005 16:03:58 +0100
+Date: Sun, 13 Nov 2005 16:03:58 +0100
+From: Spiro Trikaliotis <cbm4win@trikaliotis.net>
+To: cbm4win-devel ML <cbm4win@listserver.jonet.org>
+Subject: Re: [cbm4win] Book scans: Updates and new book
+Message-ID: <20051113150358.GB27140@trikaliotis.net>
+Mail-Followup-To: cbm4win-devel ML <cbm4win@listserver.jonet.org>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+In-Reply-To: <20051110120219.GA30372@mail.trikaliotis.net>
+User-Agent: Mutt/1.5.9i
+X-Provags-ID: kundenserver.de abuse@kundenserver.de login:3d2eeabd0c2821ae800fb0ab220b0ce9
+X-Greylist: Default is to whitelist mail, not delayed by milter-greylist-2.0.2 (ds9.cixit.se [193.15.169.228]); Sun, 13 Nov 2005 16:04:14 +0100 (CET)
+X-Bogosity: No, tests=bogofilter, spamicity=0.000000, version=0.92.8
+
+Hello,
+
+just a short note:
+
+* On Thu, Nov 10, 2005 at 01:02:19PM +0100 I wrote:
+ 
+> c. Angerhausen, Brückmann, Englisch, Gerits: "64 intern".
+>    Data Becker, 3rd edition 1983.
+>    http://www.trikaliotis.net/download/64intern-v1.zip (ca. 1.2 MB)
+
+There is a newer version available:
+
+    http://www.trikaliotis.net/download/64intern-v2.zip (ca. 1.2 MB)
+
+It's almost the same size, but some bugs were corrected.
+
+Regards,
+   Spiro.
+
+-- 
+Spiro R. Trikaliotis
+http://www.trikaliotis.net/
+http://cbm4win.sf.net/
+

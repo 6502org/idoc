@@ -1,0 +1,233 @@
+# Åtkomstregler för iDOC=
+# -----------------------
+
+# $Id: .htaccess,v 1.18 2005/02/23 20:40:19 peter Exp $
+
+# ------------------------------------------------------------------------
+# Implementera automatiskt språkstöd
+
+AddType text/html .shtml
+     
+# Lägg till index+språkval som indexsida
+DirectoryIndex index
+
+# Slå på möjlighet till multipla val
+Options MultiViews ExecCGI FollowSymLinks Includes Indexes
+
+# Lägg till språk
+AddLanguage sv .sv
+AddLanguage no .no
+AddLanguage en .en
+AddLanguage de .de
+AddLanguage fi .fi
+AddLanguage es .es
+AddLanguage hu .hu
+AddLanguage nb .nb
+
+# Ange språkprioritet (Apachebug)
+LanguagePriority sv no en de fi es hu nb
+
+# ------------------------------------------------------------------------
+# Omdirigering för fuskadresser
+
+RewriteEngine on
+
+# TODO - Read is disabled
+RewriteRule ^read/(.*) - [R=404,L]
+
+# Hantera anrop till den virtuella "packa-upp-katalogen"
+RewriteRule ^read/(.*)          /lookat.cgi?$1      [L]
+RewriteRule ^download/(.*)      /docs/$1 [L]
+
+# Indexsidan hette tidigare "main"
+RewriteRule ^main		/idoc/                   [L,R=301]
+
+# ------------------------------------------------------------------------
+# Död åt spammarna!
+
+RewriteCond %{HTTP_USER_AGENT} ^\<a\ href			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^aaaaa				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^bbbbb				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^ccccc				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^ddddd				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^eeeee				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^fffff				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^ggggg				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^hhhhh				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^iiiii				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^jjjjj				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^kkkkk				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^lllll				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^mmmmm				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^nnnnn				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^ooooo				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^ppppp				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^qqqqq				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^rrrrr				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^sssss				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^ttttt				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^uuuuu				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^vvvvv				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^wwwww				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^xxxxx				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^yyyyy				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^zzzzz				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^8484\ Boston\ Project		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^amzn_assoc			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^BlackWidow			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Bot\ mailto:craftbot@yahoo.com	[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Brick\ House\ Browse		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Bridgetown\ Labs		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Calif\ Univ\ Tools		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Cam\ Finder			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^China\ Local\ Browse		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^ChinaClaw			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Class\ of\ 04			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^ConveraCrawler/0.		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^deltaSCAN			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Demo\ Bot			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^DIIbot				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^DISCo				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Download\ Demon			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^eCatch				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Educate\ Search			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^EirGrabber			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^EmailCollector			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^EmailSiphon			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^EmailWolf			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Express\ WebPictures		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^ExtractorPro			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^EyeNetIE			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^FlashGet			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Fort\ Smith\ College		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Franklin\ 			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Full\ Web\ Bot			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^gazz/				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Geog\ Survey\ WBot		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Go!Zilla			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Go-Ahead-Got-It			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^google$				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^GrabNet				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Grafula				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^HALO,\ the\ magical\ bot	[OR]
+RewriteCond %{HTTP_USER_AGENT} ^HenryTheMiragoRobot		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^HMView				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^HTTrack				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Holiday\ Shopping,\ Inc		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Hudson\ Search			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Image\ Stripper			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Image\ Sucker			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Indiana\ U\ Web			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Industry\ Program		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^InterGET			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Inter-Coastal			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Internet\ Ninja			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^InternetSeer.com		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^InternetLinkAgent		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^ISC\ Systems\ iRc\ Search	[OR]
+RewriteCond %{HTTP_USER_AGENT} ^IUFW\ Web			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^IUPUI\ Research\ Bot		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^IUS\ Spder\ Tch			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^JBH\ Agent			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^JetCar				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^JOC\ Web\ Spider		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Just\ a\ Browser		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^larbin				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^LeechFTP			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Lincoln\ State\ Web\ Browser	[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Links.SQL			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^LinkWalker			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mac\ Finder			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mass\ Downloader		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Microcomputers\ Etc		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Microsoft.URL			[OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Microsoft.Data.Access		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^MIDown\ tool			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Missauga\ Locat			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Missigua\ Locat			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Missouri\ College\ Brows	[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mister\ PiX			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mizzy\ Labs			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla.*Indy			[OR] 
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla.*NEWT			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla.*MS\ ?FrontPage		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Mozilla/4.0\(compatible\;\ MSIE\ 5\.5\;\ Windows\ 98\) [OR]
+RewriteCond %{HTTP_USER_AGENT} grub-client			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^MS\ ?FrontPage	 		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Navroad				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^NearSite			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^NetAnts				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^NetSpider			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Net\ Vampire			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^NetZIP				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Octopus				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Offline\ Explorer		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Offline\ Navigator		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^oBot				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^P\.Arthur			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^PageGrabber			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Papa\ Foto			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^pcBrowser			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^psbot				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Ping				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Port\ Huron\ Labs		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Production\ Bot			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Program\ Shareware		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Ram\ Finder			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^ReGet				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^River\ Technologies		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^River\ Valley\ Inc		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Share\ Program			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Siphon				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^SiteSnagger			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^SmartDownload			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Smith\ and\ Douglas		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^SMIWOWDMG			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^SuperBot			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^SuperHTTP			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Surfbot				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^tAkeOut				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^TCEYERLL			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Teleport\ Pro			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^TSW\ Bot			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^University\ of\ Illinois\ Web	[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Under\ the\ Rainbow		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^VoidEYE				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Web\ Image\ Collector		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Web\ Sucker			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebAuto				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^[Ww]eb[Bb]andit			[OR] 
+RewriteCond %{HTTP_USER_AGENT} ^webcollage			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebCopier			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebFetch			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebReaper			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebSauger			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Website\ eXtractor		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebStripper			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebVac				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebWhacker			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^WebZIP				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Wells\ Search			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^WEP\ Search			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Widow				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Xaldon\ WebSpider		[OR]
+RewriteCond %{HTTP_USER_AGENT} ^Zeus				[OR]
+RewriteCond %{HTTP_USER_AGENT} ^[PDR]Browse			[OR]
+RewriteCond %{HTTP_USER_AGENT} ^[PDR]Surf
+RewriteRule ^.*			-				[F]
+
+# ------------------------------------------------------------------------
+# Hantera bortplockad adress
+
+RewriteRule ^browserstats.cgi	-				[G]
+
+# ------------------------------------------------------------------------
+# Död åt trasiga webbläsare!
+
+RewriteRule ^en$		/href1ang.html			[L]
+RewriteRule ^sv$		/href1ang.html			[L]
+RewriteRule ^de$		/href1ang.html			[L]
+RewriteRule ^no$		/href1ang.html			[L]
+RewriteRule ^fi$		/href1ang.html			[L]
+RewriteRule ^hu$		/href1ang.html			[L]
+RewriteRule ^es$		/href1ang.html			[L]

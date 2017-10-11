@@ -1,0 +1,27 @@
+# Implementera automatiskt språkstöd
+# ----------------------------------
+
+# $Id: .htaccess,v 1.2 2002/05/22 06:58:15 peter Exp $
+
+# Först stänger vi av omskrivningsmotorn så vi inte får rekursion
+RewriteEngine off
+
+# Lägg till index+språkval som indexsida
+DirectoryIndex index
+
+# Slå på möjlighet till multipla val
+Options +MultiViews
+
+# Lägg till språk
+AddLanguage sv .sv
+AddLanguage no .no
+AddLanguage en .en
+AddLanguage de .de
+AddLanguage fi .fi
+AddLanguage es .es
+AddLanguage hu .hu
+AddLanguage nb .nb
+
+# Ange språkprioritet (Apachebug)
+LanguagePriority sv no en de fi es hu nb
+

@@ -1,0 +1,1404 @@
+[3.] The C128 Mode
+
+    In this chapter you'll learn:
+    * What the C128 mode is
+    * What the C128 mode has to offer
+    * What equipment you will need to use this mode
+    * The new features of BASIC 7.0
+    * About the C128 Disk Operating System
+    * Sources for additional information
+
+The C128 Mode is one of three possible operating modes for the Commodore 128
+personal computer. It is in this mode that the C128 distinguishes itself as
+more than just a slightly enhanced version of the Commodore 64. The purpose
+of the first part of this chapter will be to clarify this mode's more
+interesting features and its more unusual characteristics, and to explain
+the various applications suited to the C128 mode. The next part of the
+chapter explains which extra system components you should have to use this
+mode. Then we'll summarize the operations possible from the new version of
+BASIC, and the disk drive support provided by the new DOS. Lastly, we tell
+where you can go to get additional information or help about this mode.
+
+[3.1] What Is the C128 Mode?
+
+As you will recall from the introduction, Commodore had three different
+markets in mind when it designed the Commodore 128. It wanted the C128 to be
+"absolutely compatible" with the Commodore 64 (the C64 mode), but it also
+wanted the C128 to have sufficiently enhanced features, as compared to the
+C64, to attract new buying interest (the C128 mode). It also wanted the C128
+to run software written for CP/M based computers (the CP/M mode). In order
+to meet these three design goals Commodore had to literally design three
+modes of operation into the C128. At first thought, such a feat might seem
+very difficult, especially if the three personalities were really different,
+as they are in the case of the C64, C128, and CP/M modes.
+
+Building three computers into one multimode computer would have been an
+impossible task had Commodore limited itself to traditional computer
+designs. Instead, it compared the various hardware and software components
+that make up a C64, a C128, and a CP/M machine to see exactly how they
+overlapped with one another. Then it built the Commodore 128 using a
+composite pool of all these components, and used an organizer function (an
+intelligent memory/device manager) to arrange the parts to make a C64, a
+C128, or a CP/M computer on the fly. Figure 3-1 shows this arrangement of
+different components as used in the C128 mode. As you can see, some
+components of the Commodore 128 are not used in the C128 mode, and others
+are. The overall selection was to ensure the best possible arrangement of
+all C128 features. Details on how these components are rearranged for the
+C64 and CP/M modes will be found in chapters 4 and 5.
+
+  Figure 3-1. How C128 Mode Stacks Up
+  ##======================================##
+  ||        Keyboard, Controllers,        ||
+  ||          User Input/Output           ||
+  ##======================================##
+  ||    SID 3 Voice Sound Synthesizer     ||
+  ##======================================##
+  ||   VIC-II 40 Column Text + Graphics   ||
+  ##=========================##===========##
+  ||     8563 80 Column      || C64 Kernal |
+  ||     Text + Graphics     || BASIC 2.0  |
+  ##==========##=============##            |
+  |    CP/M   || C128 Kernal ||            |
+  |    3.0    ||  BASIC 7.0  ||            |
+  +-----------##=============##------------+
+  | 64 K RAM  ||  128 K RAM  ||  64 K RAM  |
+  +-----------##=============##------------+
+  |   Z80 A   ||    8502     ||    8502    |
+  +-----------##=============##------------+
+  | CP/M Mode ||  C128 Mode  ||  C64 Mode  |
+  ##==========##=============##===========##
+  ||   Intelligent Memory/Device Manager  ||
+  ##======================================##
+
+[3.2] What Does the C128 Mode Offer?
+
+When used in the C128 mode, the Commodore 128 is essentially an enhancement
+of the Commodore 64. As such, this mode offers all of the features of the
+C64 with very few of its disadvantages. The C128 mode has access to the same
+graphics and sound capabilities and the same input and output capabilities,
+including the expansion bus, the versatile programmable user port and the
+two internal real-time clocks. It will even operate with all C64
+peripherals, such as the 1702 color monitor and the 1541 disk drive. On the
+other hand, the C128 mode removes its users from having to work within the
+somewhat primitive confines of the C64's BASIC 2.0 and its equally
+antiquated DOS structure.
+
+So what are the enhancements? To begin with, the C128 mode has access to at
+least twice the memory of a C64. It also provides a second powerful,
+80-column color text and graphics system, a better equipped 96-key keyboard,
+and access to a friendlier and faster single- or dual-disk drive system.
+
+The C128 mode enhancements just mentioned are changes to the computer's
+hardware side. On the software side, Commodore updated the Kernal Operating
+System (its built-in operating instructions), added some important
+enhancements to the screen editor, built in a super powerful
+machine-language monitor utility, and threw in the most powerful BASIC ever
+in a Commodore computer. Lastly, when you use the C128 mode with one of the
+new multiformat disk drives, the 1571 or 1572, you get double-sided disk
+storage instead of single (twice as much room per disk) and a noticeably
+improved computer-to-disk-to-computer transfer rate. Let's examine each of
+these features in more detail.
+
+  What Types of Applications Does the C128 Have?
+
+The Commodore 128 is an extremely capable computer, with features that
+broaden its appeal to a much wider range of applications than those the C64
+focused on. For all its graphics and sound power, the C64 had a number of
+weaknesses that made it more useful for applications relying on eye and ear
+stimulation than for those requiring fast or versatile computing power. As a
+result, the C64 found its primary niche in applications such as
+entertainment and education. The C128, on the other hand, incorporates 128K
+of memory, a choice of both 40- and 80-column screens and a more
+business-capable disk storage system, plus a number of other enhancements
+that make it adaptable to just about any personal computer application.
+
+Because of the C128's unique balance of computing features it will find
+equal acceptance in homes, schools, offices and even industry. For example,
+the types of real-life situations the C128 can be used in include:
+
+  Office productivity
+  Business management
+  Computer aided design
+  Instrumentation control
+  Computer software design
+  Computer aided instruction
+  Personal productivity
+  Home management
+  Entertainment
+
+[3.3] What Are the C128 Mode Enhancements?
+
+In order for you to appreciate why the C128 is capable of such different
+working applications you need to understand how its new features affect its
+overall capabilities as a personal computer. That's what we'll explore in
+the following section.
+
+  More Memory
+
+The C128 mode offers 128K of user memory, or twice that found in the C64. It
+also has memory space for larger ROM-based software packages. A ROM based
+software package is software that is permanently stored in a special memory
+chip that can then be used by the C128. This type of software is merged into
+the C128 memory either as a cartridge through the C128's expansion slot or
+as a "ROM chip" addition inside the C128.
+
+For many C128 users, the expanded memory of the Commodore 128 means only one
+thing: they'll be able to run larger and more sophisticated software
+programs like Artificial Intelligence (AI), Expert Systems, large
+spreadsheets, and fuller-featured text editors. This is an important
+consideration, since many non-Commodore commercial application programs
+could only be made available to the C128 if it has a sufficient amount of
+memory. Whereas a few years ago, 64K of memory was more than satisfactory,
+today most popular business-oriented software packages are intended to run
+on systems with 128K or 256K of memory. The C128, with its ROM based
+operating system and unique intelligent memory manager, frees up virtually
+all of its 128K of RAM for program use. In contrast, most other personal
+computers using a disk-based operating system (like CP/M or MS-DOS) forfeit
+a fair amount of their available RAM to hold their DOS. Since the C128 does
+not have this type of overhead there is more of the 128K to use for
+programs.
+
+C128's memory power can be further enhanced through the external addition of
+up to 384K of additional RAM. This added memory is plugged into the C128 via
+the expansion bus in the same manner that you might plug in a software
+cartridge. Don't be misled, though - this additional 384K of memory is not
+intended to be an add on to the existing RAM area. Commodore has chosen
+instead to use it as a RAM disk. A RAM disk is a section of RAM memory that
+is used as if it were another disk drive. Programs and data can be moved
+back and forth from regular memory to the RAM disk area just as if a disk
+drive were involved. The major advantage of this type of memory use is
+speed, since programs and files can be moved from one area of memory to
+another in a fraction of a second. This is a quantum improvement in speed;
+even when compared to the typical transfer rate of a very fast disk drive. A
+RAM disk option is especially useful with a large application that normally
+has to continually read and write to a disk during operation. Of course,
+when you are finished using a particular program all data in the RAM disk
+area must be saved on a disk or it will be lost. Further, before a program
+can be used from the RAM disk area it must first be copied to it from a
+disk.
+
+  A Larger Keyboard Selection
+
+The Commodore 128 has a new keyboard. The C128's keyboard, shown in Figure
+3-2, has 26 more keys than the C64. To begin with, there is the original C64
+keyboard area. This section has all the familiar multifunction text and
+graphics keys, as well as the standard C64 control keys: <Shift>, <Control>,
+<Run/Stop>, <C=>, <Ins/Del>, <Clear/Home>, and <Restore>. The Commodore 128
+adds a 14-key numeric keypad just to the right of the main keyboard. This is
+perfect for long sessions of calculator style data entry. The keypad even
+has its own plus, minus, decimal and <Enter> keys to add to its convenience.
+Directly above the main keyboard is a single horizontal row of 16 keys,
+divided into four banks of four each. These key banks include the original
+C64 Function Keys, a new set of individual up, down, left, and right cursor
+motion keys, and eight special-purpose keys.
+
+The four physical "function keys," so familiar to C64 owners, are now
+located just above the numeric keypad section. As before, these keys can
+have two different values assigned to them (F1/F2, F3/F4, etc.); that is why
+Commodore refers to them as eight actual keys. Regardless of how you count
+them, they remain very important because of what they are not - they are not
+predefined in the same way as the other keyboard keys. Instead, they are
+user definable keys. This means that their definitions, either simple or
+complex, can be changed through software - a nice plus for creating menu
+driven application programs.
+
+The Commodore 128's new keyboard has two very important keys - ESCape and
+ALTernative (located in the leftmost bank of new keys). <Esc> and <Alt> keys
+have been pretty common to business-style small computers for a number of
+years now, so it was only natural for Commodore to provide them on the
+business oriented C128. The purpose of these two keys is to further extend
+the range of different code combinations that can be output from the
+keyboard. By doing so they make the C128 more attractive to those
+established business software developers who are used to working with more
+traditional keyboard arrangements.
+
+The <Help> key is of particular use to C128 users, especially those planning
+to write their own BASIC programs. When the C128 is in BASIC, pressing the
+<Help> key sends a special "give me help - where did I go wrong" signal to
+the BASIC interpreter. If used just after a BASIC program stops due to some
+error condition, then BASIC will respond with additional information as to
+where and possibly why the program ran into trouble. Of course, since the
+<Help> key, like all C128 keyboard keys, is also redefinable it is certain
+to become a favorite for application software developers too.
+
+The remaining new keys, summarized in Table 3-1, all add certain operating
+conveniences to the C128.
+
+  Figure 3-2. The C128 Keyboard
+  [Omitted]
+
+  Table 3-1. New Keys for the Commodore 128
+  --------------------------------------------------------------------------
+       Key                          Definition or Function
+  --------------------------------------------------------------------------
+  <Esc>          Used in conjunction with one or more text keys to generate
+                 an ESCape code sequence (used in the C128 in the CP/M
+                 terminal emulator mode).
+  <Tab>          Used to move the cursor to the next Tab Stop.
+  <Alt>          Used simultaneously with some other text key to generate a
+                 special ALT code.
+  <Caps Lock>    Used in the 80 column mode to allow independent selection
+                 of upper and lowercase letters and the two graphics sets.
+  <Help>         Used in BASIC 7.0 to locate errors while programming.
+                 May also be used as a general "HELP" key by some software
+                 applications.
+  <Line Feed>    Provides a LINE FEED without CARRIAGE RETURN.
+  <40/80 Disp>   Switches display from 40 to 80 columns.
+  <No Scroll>    Inhibits screen scrolling by preventing the cursor from
+                 going beyond the 25th display line.
+  <^>            Moves cursor up one line.
+  <v>            Moves cursor down one line.
+  <<->           Moves cursor left by one character position.
+  <->>           Moves cursor right by one character position.
+  Function Keys  Definable function keys (see BASIC 7.0 section).
+  14-Key Keypad  Calculator style keypad with separate plus, minus, decimal,
+                 and <Enter> keys.
+  --------------------------------------------------------------------------
+
+[3.4] 40- and 80-Column Text and Graphics
+
+Another new feature of the C128 mode is its ability to display 80 as well as
+40 characters on a line. This is possible because of a second video
+processor chip inside the C128. This chip, an 8563, can be used instead of
+the standard 40 column chip by depressing the <40/80 Disp> key to its
+locked-down position before either applying power to the C128, or by
+pressing the RESET button when power is on. When this is done, the C128
+initializes itself in the 80-column format. Of course, to use this new
+screen mode you must have a video monitor, capable of displaying 80 columns,
+connected to the C128's RGBI connector. Switching back to the 40-column mode
+also requires either turning the power off and on again or pressing RESET.
+Fortunately, there are ways to perform the screen mode switch from within a
+program, which is how most commercial software will ensure that the C128 is
+in the correct screen mode.
+
+The advantages to using the new 80-column screen mode are numerous.
+Naturally, you have an 80-character by 25-line display so you can have up to
+2000 characters on the screen at the same time, and they can be in color.
+What's more, because of the bit-mapped nature of this screen mode you can
+have the C128 display a total mix of all available text and graphics
+characters (not possible in the 40-column mode) and even mix text and
+graphics characters with high-resolution drawings. The character font
+definitions within the C128 (they determine what shapes will show up on the
+screen when you press a certain text or graphics key) can be changed to give
+the screen output a totally new set of characters - even a new language. It
+is possible by doing a little internal rearranging to use a reduced-size
+character set and obtain an even larger 132-column by 25-line screen
+display.
+
+Remember that the C128 has access to both the 40- and the 80-column screen
+video processors and the C128 can take advantage of that fact too. Not only
+can the C128 choose between these modes according to the position of the
+<40/0 Disp> key, the screen modes can also be switched from within a
+program. Therefore, it is possible to use two displays (a 40-column display
+and an 80-column one) to show outputs from the same program. Both displays
+can't be updated at the same time but changes can be alternated between the
+two. As long as both displays remain enabled, their outputs will stay
+visible. As the 40- and 80-column outputs come from separate screen
+processors, they can display different information and even be in totally
+different text and graphics modes. In order to take advantage of this
+dual-screen display ability the C128 must have both of its video outputs
+connected to appropriate video monitors. We'll discuss this more later.
+
+The Commodore 128 can actually be speeded up internally by using the
+80-column screen mode by itself. To do this, you must use software to
+actually turn the 40-column chip off. C128 data processing operations, when
+used in this manner, run at nearly twice the rate obtained when the 40
+column screen processor is enabled. This increase in processing power is
+greatly appreciated when a computer is required to do the type of data
+processing and number crunching typical of most business, industrial, and
+scientific applications.
+
+  Enhanced BASIC
+
+The enhanced BASIC, called BASIC 7.0, that is available to you in the C128
+mode is the most powerful version of BASIC yet offered by Commodore. In all
+there are 140 commands, operations, and functions - 20 commands, 35
+operations and 13 functions more than were found in the Commodore 64's BASIC
+version 2.0.
+
+BASIC 7.0 gives you increased control of: program flow; conditional testing;
+logical evaluations; mathematical functions and procedures; text
+manipulation and output; data input, processing, storage, retrieval, and
+presentation; file construction and usage; program testing; and just about
+every conceivable graphics and sound operation that the 128 can perform. In
+addition, BASIC 7.0 supports a full array of commands that greatly simplify
+the tasks of disk drive control and file maintenance. Despite its
+enhancements, BASIC 7.0 remains downward-compatible with earlier Commodore
+BASIC versions 2.0 and 4.0. That is, a program written for the earlier
+Commodore BASICs will run under 7.0, although not vice versa. Note that this
+downward compatibility applies to the program as written on paper. The disk
+versions of BASIC programs are stored differently, and are not compatible.
+
+BASIC 7.0 takes advantage of nearly the full 128K of the C128's RAM (122365
+bytes), and does it in such a way as to eliminate the old "garbage
+collection" delays that occurred when larger BASIC programs were run on the
+Commodore 64. (C64 programs would often halt on their own for several
+minutes while BASIC 2.0 tried to make room in memory for more operations.)
+64K of the Commodore 128's memory is set aside to hold just the program
+code, while all variables generated by that program are kept and maintained
+in the other 64K segment of memory. With so much memory space, it is
+possible to further divide the C128's memory so that a number of programs
+can be placed in memory at the same time.
+
+Another feature of BASIC 7.0 is that the C128's eight function keys come
+predefined with often-used BASIC commands. Of course, they can be easily
+redefined by BASIC commands to perform other operations of your choice.
+
+Later in this chapter we'll take a look at the various commands, statements,
+and functions found in BASIC 7.0.
+
+  Enhanced Screen Editor
+
+Commodore computers have always been famous for the versatility of their
+built-in screen editors. These "full screen" editors act as temporary
+working windows where you write and organize your BASIC commands or program
+statements. Through them you can move the cursor anywhere on the screen,
+insert and delete any number of characters, and erase the screen completely.
+Commodore screen editors have some interesting side capabilities too. For
+example, you can list a group of lines from a program in memory to the
+screen and then use the screen editor's cursor motion and editing keys to
+change anything on any BASIC line within the editing screen, although
+nothing actually changes in BASIC's program memory until you press the
+<Return> key. Duplicating entire lines is as simple as typing a new line
+number over the old and pressing <Return>. The screen editor also has a
+special quote mode that allows you to mix text, graphics, and even cursor
+actions right in your program code.
+
+Commodore has added some new features to the Commodore 128's screen editor
+to improve upon the C64's screen editor. For example, program lines can be
+160 characters long, as compared to 80 on the C64. This is made possible by
+an ingenious form of auto-wraparound within the screen editor that keeps
+track of where on the screen each BASIC line begins. In the 80-column screen
+mode a BASIC statement can be two screen lines in length, while in the
+40-column mode it can be up to four screen lines. Two other screen editor
+enhancements are line insert and delete and four way margin control.
+
+  Built In Monitor Program for Assembly Language Programmers
+
+The Commodore 128 has a built-in Machine Language Monitor. This special
+programming utility was once a built in feature on all Commodore PETs, but
+was later removed from the VIC 20 and C64 due to memory restrictions. The
+Monitor, as it is called, is an absolutely essential tool for anyone
+interested in writing, testing, or modifying programs written in 8502
+machine language. It will be used by professional software developers as
+well as by C128 owners who want to write short and fast machine language
+routines to speed up critical parts of their own BASIC programs. The Monitor
+is also an excellent learning tool for students who want to understand how
+machine language programs work (most commercial software is written in
+machine language, and so are programs like BASIC 7.0, Logo, and FORTH).
+
+The Monitor utility in the Commodore 128 is an enhanced version of the
+earlier Commodore monitors. A similar version was made available to
+Commodore 64 users as part of Commodore's "Assembler Development Package"
+for that machine. Table 3-2 summarizes the monitor commands built in to the
+C128. Complete details on how the monitor is used can be found in both the
+Commodore 128 User's Guide and the Commodore 128 System Guide.
+
+  Table 3-2. Commodore 128 Monitor Command Summary
+  --------------------------------------------------------------------------
+  Command  Command Name                   Command Description
+  --------------------------------------------------------------------------
+     A     ASSEMBLE        Assembles a line of 6502 machine code
+     C     COMPARE         Compares two sections of memory and reports the
+                           differences
+     D     DISASSEMBLE     Disassembles a line of 6502 machine code
+     F     FILL            Fills memory with the specified byte
+     G     GO              Starts 6502 code execution at the specified
+                           address
+     H     HUNT            Hunts through memory within a specified range for
+                           all occurrences of a set of bytes
+     L     LOAD            Loads a file from tape or disk
+     M     MEMORY          Displays the hexadecimal and ASCII values of
+                           memory locations
+     R     REGISTERS       Displays the 8502 registers
+     S     SAVE            Saves memory to tape or disk
+     T     TRANSFER        Transfers code from one section of memory to
+                           another
+     V     VERIFY          Compares memory with tape or disk
+     E     EXIT            Exits Commodore 128 MONITOR
+     .     (period)        Assembles a line of 6502 code
+     >     (greater than)  Modifies memory
+     ;     (semicolon)     Modifies 8510 register values
+     @     (at sign)       Displays disk status
+  --------------------------------------------------------------------------
+
+  Faster and Friendlier Disk System
+
+The last really important enhancement that the Commodore 128 provides is
+improved disk storage capabilities. Not only can the C128 operate using the
+Commodore 64's 1541 single-sided disk drive, it can also work with its own
+special "super intelligent" double sided disk systems - the 1571 (single
+drive) and the 1572 (dual drive).
+
+You can choose to use the C128 with one or more of the older 1541 disk
+drives as they are totally compatible. However, doing so does not provide
+you with the disk storage improvements that the C128 is capable of - more
+storage capacity per diskette and vastly improved data transfer rates. The
+advantage of the new disk system's increased friendliness is a function of
+BASIC 7.0, not the drives, so the C128's friendlier disk commands hold true
+even for the 1541s.
+
+The real improvement in disk storage capabilities happens when the C128 is
+used with the 1571 or 1572 disk drives. When these drives are used, the C128
+has immediate access to twice the storage space per disk of the 1541s. For
+example, the 1541 could store 170K of programs and data per disk, but the
+1571 and 1572 can store 340K per disk. Of course, the total disk storage
+space available to the C128 doubles to 680K when you consider both disks in
+a dual drive 1572. In addition to storage space improvements, these new
+drives are also fast. The 1541, with its typical data transfer rate of about
+320 characters per second, is extremely slow in operation and,
+unfortunately, doesn't get any faster when it is connected to a C128. On the
+other hand, the new drives, when used in the C128 mode, operate at up to
+5200 characters per second. High data transfer rates like this make the C128
+a viable machine for even the most disk-intensive business application.
+
+Finally, Commodore has provided the C128 with an easy to use set of DOS
+commands. The DOS commands are the same as those found in the late model
+Commodore PET and CBM machines (BASIC 4.0). DOS calls are used to perform a
+wide assortment of disk-related functions, including reading directories,
+formatting blank disks (using a command called HEADER), copying files,
+renaming files, or removing (scratching) files. When the 1572 dual drive is
+used there is even a command to copy one disk to another (BACKUP). These
+commands are very important to all C128 users, so we'll take a detailed look
+at them later in this chapter.
+
+[3.5] What Equipment Do I Need to Use the C128 Mode?
+
+As you learned in the previous chapter, the Commodore 128, with all its
+power and flexibility, is just the computing part of a system. You still
+need a monitor of some sort so you can view the messages it wants you to
+see, and you will probably want some form of external mass-storage device to
+hold your programs and data. Major C128 system accessories also include a
+printer for a permanent paper copy of important computing activities, and a
+modem to allow you to connect your C128 to other computers via the
+telephone. Other system add-ons would really depend on the requirements of
+your application.
+
+Since the Commodore 128 is still compatible with all Commodore 64 peripheral
+devices, you have a very wide assortment of peripherals to choose from -
+both old and new. If you already have a complete assortment of C64
+peripherals, than you can simply connect them to the C128. Of course, you
+won't be able to take advantage of all of the C128's features, like the 80
+column option or the increased storage ability and speed of the newer disk
+drives; but you will be able to do most anything you want, as long as you
+remain within the limitations of those C64 peripherals. The best way to take
+full advantage of your C128's capabilities is to use the system components
+that were designed specifically for it. Figure 3-3 shows the C128 system
+configuration that we would recommend for general use.
+
+  Figure 3-3. Recommended Commodore 128 System
+  [Picture showing: Commodore 128 Computer, 1670 Modem, 1571 Disk Drive,
+   1902 40 Column Monitor, MPS-802 Printer]
+
+If your computer needs are less complicated - for instance, if you simply
+want to experiment with BASIC 7.0 and 40-column graphics - then you might
+want to consider starting with a color television as a monitor and a
+Datasette as a mass storage device.
+
+Now that you know the major improvements the Commodore 128 has made over the
+Commodore 64, let's examine two of these improvements in more detail: BASIC
+7.0 and the new DOS.
+
+[3.6] All About BASIC 7.0
+
+In this section we'll describe the new BASIC 7.0 that is built into the
+Commodore 128. This section is presented in three parts. The first part
+examines the most general facts about BASIC 7.0, giving you a bird's eye
+view of the language. The second part explains and lists the BASIC
+statements and commands that are common to both the C64 (BASIC 2.0) and C128
+(BASIC 7.0) modes of the Commodore 128. This way you'll get a feel for the
+available statements if you wanted to write programs that would run in both
+the C64 and C128 modes. The third part lists and explains the statements
+unique to the C128 mode. If you are only interested in BASIC 7.0
+enhancements then you can read the third section directly, but if you want
+to know what BASIC 7.0 is like to program with, then you should read the
+first section as well. Chapters 6 and 7 explore the graphics and sound
+statements of BASIC 7.0.
+
+  Important Facts About BASIC 7.0
+
+Let's examine the major features of the new BASIC 7.0 that come with the
+Commodore 128.
+
+   Modes
+
+When you are in the C64 mode you are actually using BASIC 2.0; the same
+BASIC found in the Commodore 64. Therefore BASIC programs are written in
+exactly the same manner as they would be on a C64. When you are in the C128
+mode, however, BASIC 2.0 is replaced with BASIC 7.0 and you have virtually
+an entirely new programming environment to work in.
+
+   Modified Microsoft BASIC
+
+Commodore 128 BASIC is a modified version of Microsoft BASIC, commonly
+referred to in the CP/M universe as MBASIC (see description of MBASIC in
+Chapter 5, CP/M Mode). The new BASIC 7.0 is based on statements from the
+older C64 BASIC 2.0. Added to these are disk statements and commands from
+the Commodore PET/CBM BASIC 4.0 (the CBM line of business microcomputers).
+In addition there is a large number of new statements for controlling sound,
+graphics, windows, sprites, and peripherals. Microsoft BASIC was the first
+BASIC made available for the 8080, Z80, and 6502 microprocessors and enjoys
+a wide following. The new BASIC 7.0 has included several new statements that
+tend to completely remove several C64 BASIC 2.0 weaknesses, chiefly in the
+area of program control and looping. Also added are new statements for
+graphics, sound, windowing, external I/O devices, and keyboard access.
+
+   Onscreen Editor
+
+The new BASIC 7.0 is built around a cursor key controlled onscreen editor.
+This is much like the BASIC editor of the IBM PC, where to alter or edit a
+line of the program, you move the cursor to the line you wish to change,
+type the correct information, and press <Return> to capture the change. When
+using the 40-column screen mode, BASIC 7.0 allows the same keyboard
+character and graphics set combinations as on the C64. Therefore you still
+can't display upper- and lower-case letters with both sets of keyboard
+graphics. On the other hand, when BASIC 7.0 is used to program for the
+80-column screen mode, you can mix and match all available text and graphic
+symbols. Also when you enter a program in BASIC 7.0, putting spaces between
+keywords, variables, operators and such is strictly optional. Adding spaces
+will clarify the meaning of statements, and spaces consume very little
+additional memory space, so they can be used generously.
+
+   Graphics and PRINT Statements
+
+Any characters, any colors, and any cursor activity can go inside of
+quotation marks. That is, you can use any key on the keyboard directly in
+PRINT statements. Thus you can insert dozens of cursor direction keys,
+graphics symbols, and colors in PRINT statements, and thereby create complex
+images on the screen.
+
+   Programmable Function Keys and Other Keys
+
+There are four function keys, and each key can perform two functions. The
+keys are programmable from BASIC and thus can be used by your program for
+any function you want. When you first start BASIC the function keys are
+predefined, as shown in Table 3-3. F1, F3, F5, and F7 functions are accessed
+directly by pressing the appropriate key. You use the <Shift> key to
+access the F2, F4, F6, and F8 keys.
+
+You program a function key with the KEY command to stand for some other
+BASIC sequence or string. For example:
+
+        KEY 7, "GRAPHIC 0" + CHR$(13)
+
+would make the command GRAPHIC 0 followed by a carriage return occur when
+<F7> was pressed.
+
+BASIC also responds to the <Help>, <No Scroll>, <Caps Lock>, <Alt>, <40/80
+Disp>, <Tab>, and <Line Feed> keys. Each of these keys has its own initial
+definition and this definition can be changed in BASIC.
+
+  Table 3-3. Predefined Functions Keys in BASIC 7.0 (C128 Mode)
+  --------------------------------------------------------------------------
+   Key      BASIC Keyword                         Purpose
+  --------------------------------------------------------------------------
+   F1       GRAPHIC            Sets graphic mode you enter
+   F2       DLOAD"             Loads a filename you type
+   F3       DIRECTORY          Gives a directory of the disk
+   F4       SCNCLR             Clears the screen to current background color
+   F5       DSAVE"             Saves a filename you type
+   F6       RUN                Runs the program in memory or one on disk
+   F7       LIST               Lists the program in memory
+   F8       MONITOR            Enters the machine language monitor
+  --------------------------------------------------------------------------
+
+   Memory and BASIC 7.0
+
+BASIC 7.0 has access to all 128K of the Commodore 128's total RAM space.
+This 128K is split into two banks. The lower 64K bank is for the text
+portion of BASIC programs: the actual statements that make up the program.
+The upper 64K bank is used strictly as work space. This is where BASIC will
+keep the program's variables, arrays, and strings. The BASIC interpreter
+occupies 48K of ROM. Since arrays, strings, and variables are kept in a
+separate area of memory, this configuration allows the texts of a BASIC
+program to occupy a full 64K regardless of the length of strings or arrays.
+This means a 64K program on the C128 is actually equivalent to a much larger
+program on the C64; thus longer, more sophisticated programs are possible.
+
+   Variables and Limits of BASIC 7.0
+
+BASIC 7.0 allows three kinds of variables: normal numeric (floating point),
+integer, and string variables. A floating point variable is assumed as a
+default (that is, BASIC will assume you mean floating point unless you tell
+it otherwise). Floating point variables can have up to nine digits of
+significance and can range in size from ten to the -38 power to ten to the
++38 power.
+
+In BASIC 7.0, integer variables (whole numbers without fractions) range
+between -32768 and +32767 and are indicated in a program by appending the
+percent symbol (%) to the end of a variable name.
+
+String variables, used to hold symbolic data like text and graphics, can be
+up to 255 characters long and are indicated by a $ sign appended to the end
+of the variable name.
+
+A variable name in BASIC 7.0 can be as long as desired, but only the first
+two characters are significant. In other words, UNCOLA and UNLIMITED are
+legal variables, but are considered by BASIC to refer to the same variable.
+The first character has to be a letter but the second character may be a
+letter or a number. Graphic symbols are not allowed in variable names. Here
+are some legal BASIC 7.0 variables:
+
+        FOOBAR a floating point variable
+        NAME$ a string variable
+        P123% an integer variable
+
+BASIC arrays are defined by the DIM statement. The number of dimensions is
+limited only by the length of the program line. Arrays follow the same name
+rules as regular variables do. Besides BASIC keywords, there are eight
+variable names that are reserved to BASIC 7.0 and can't be used in your
+programs. These are listed in Table 3-4.
+
+The Commodore 128 has a built in 24 hour clock function that is
+automatically updated every 1/60th of a second. It is both set and read
+using the reserved variable TI$. This clock is not a separate real-time
+clock operation, but instead a software jiffy clock just like the one used
+in the C64. It is most appropriate for programming operations where short
+term accuracy is required as it does lose count during certain system
+operations (for example, when the disk drive is being used). Since there is
+no battery backup, the clock must be set each time the computer is powered
+up.
+
+You can use the error trapping variables with the new TRAP command to
+process errors in more creative ways than BASIC normally offers. The disk
+channel variable DS lets you find out why the red error light on the disk
+drive is blinking.
+
+  Table 3-4. Reserved Variable Names in BASIC 7.0
+  --------------------------------------------------------------------------
+   Variable                              Purpose
+  --------------------------------------------------------------------------
+     ST       Status variable: tells success of an I/O operation
+     TI       Holds the value of the 24 hour jiffy clock
+     TI$      Sets the jiffy clock with this variable
+     DS       Reads disk drive command channel, returns status
+     EL       Line where the last error occurred
+     ER       Returns last error (number) since the program was run
+     ERR$     Contains error message for last error
+  --------------------------------------------------------------------------
+
+   Other Details
+
+BASIC 7.0 offers all the normal math operators (+ - * / ^) and has the logic
+operators AND, OR, and NOT. The length of a BASIC 7.0 line is limited to 160
+characters (counting spaces). Thus a BASIC line can occupy two lines on an
+80-column screen and four lines on a 40-column screen.
+
+  Overview of C128/C64 Common BASIC Statements
+
+In this section we will briefly review the statements and commands that are
+common to both BASIC 2.0 and BASIC 7.0. The BASIC DOS commands are covered
+in a separate section later in this chapter.
+
+   Assignments and Equates
+
+Both BASIC 7.0 and BASIC 2.0 offer statements for clearing all variables,
+defining a custom function, and for dimensioning an array. These are shown
+in Table 3-5.
+
+  Table 3-5. BASIC Assignments and Equates
+  --------------------------------------------------------------------------
+   Statement                             Purpose
+  --------------------------------------------------------------------------
+    CLR       Clears out variables and arrays
+    DEF       Defines a custom function
+    DIM       Dimensions an array
+    LET       Optional assignment statement
+  --------------------------------------------------------------------------
+
+   Programming Commands
+
+As Table 3-6 shows, both BASICs have commands that let you manipulate the
+program in memory.
+
+  Table 3-6. BASIC Programming Commands
+  --------------------------------------------------------------------------
+   Statement                             Purpose
+  --------------------------------------------------------------------------
+    LIST      Lists program in memory to screen
+    REM       Adds a remark or comment to a line
+    STOP      Program will stop and print out line number
+    NEW       Erases current program and all variables
+    RUN       Runs or executes current program or filename
+    CONT      Continues a stopped program
+  --------------------------------------------------------------------------
+
+   Looping
+
+The statements for controlling program flow and looping are listed in Table
+3-7. The standard FOR...NEXT loop allows looping a fixed number of times. A
+STEP option allows making the loop index at some value other than one. GOSUB
+is used for branching to subroutines. A RETURN statement returns control to
+the line following the GOSUB. ONGOSUB is a more advanced GOSUB that allows
+indexed subroutine branching.
+
+  Table 3-7. BASIC Looping Statements
+  --------------------------------------------------------------------------
+   Statement                                Purpose
+  --------------------------------------------------------------------------
+   FOR...NEXT STEP   Loops a fixed number of times
+   GOSUB/RETURN      Used for branching and returning from subroutines
+   GOTO              Forces direct jump to a program line number
+   ONGOSUB           Indexed GOSUB
+   ONGOTO            Indexed GOTO
+   RETURN            Return from subroutine
+  --------------------------------------------------------------------------
+
+   Program Control Statements
+
+Several useful program control statements are provided, as shown in Table
+3-8. The WAIT statement is a way to make the program stop and wait for a
+particular bit in a specific memory location to change. It is mostly used to
+monitor the status of bits in input/output registers, such as sprite
+registers.
+
+  Table 3-8. Program Control Statements
+  --------------------------------------------------------------------------
+   Statement                             Purpose
+  --------------------------------------------------------------------------
+    END       End program execution
+    RESUME    Resume program execution at a certain line  <sic! BASIC7 only>
+    WAIT      Wait for a memory location to change
+  --------------------------------------------------------------------------
+
+   Machine and Memory Control
+
+As shown in Table 3 9, there are several useful statements for controlling
+the memory of the C128, including PEEK (which reads the contents of a memory
+location) and POKE (which places an integer between 0 and 255 in a memory
+location). The SYS statement performs a call (like a GOSUB) to a machine
+language subroutine at a certain address. It can also optionally load the
+arguments a, x, y, and s into the accumulator, x-register, y-register, and
+stack register of the 8502 microprocessor. The address range of SYS is 0 to
+65535 so the high bank of the 128K memory must be accessed indirectly with
+SYS. USR is another function that allows you access to a machine language
+subroutine. Unlike SYS, USR requires that you poke the starting address of
+the machine language routine into two specific memory locations (1281 and
+1282). USR can also pass a parameter (a variable value) from BASIC to that
+routine and from that routine back to BASIC. SYS will not allow you to pass
+this type of two way parameter.
+
+  Table 3-9. Machine/Memory Control
+  --------------------------------------------------------------------------
+   Statement                             Purpose
+  --------------------------------------------------------------------------
+    PEEK      Returns contents of memory location
+    POKE      Places a value in a memory location
+    SYS       Calls a machine language subroutine and loads registers
+    USR       Calls a machine language subroutine and passes parameter
+  --------------------------------------------------------------------------
+
+   Input/Output and Data Control
+
+Both BASIC 7.0 and BASIC 2.0, as shown in Table 3-10, provide numerous
+statements for controlling the input and output of information, as well as
+the storing of information and data within the program. The INPUT and GET
+statements are used to get information typed at the keyboard into variables
+(string or numeric) in a program. The <Return> key must always be pressed to
+terminate anything typed in response to the INPUT statement. The GET
+statement (used only with string variables) does not need a <Return> as it
+simply reads the keyboard for its current status and returns whatever key
+value (including none) that it received to its variable. INPUT# and GET# are
+two variations of INPUT and GET that are used to read from any file
+structured input devices like the Datasette disk drive, modem, and even the
+keyboard. PRINT is the statement used to output information to the display.
+PRINT# is used to output information to any file structured output device.
+CMD is a redirection command that allows you to redefine the default output
+device. DATA is used to store a list of constants, numbers or letters, in a
+program in an easy-to-read format. READ is used to assign these constants in
+the DATA statements to variables.
+
+  Table 3-10. Input/Output and Data Control Statements
+  --------------------------------------------------------------------------
+   Statement                             Purpose
+  --------------------------------------------------------------------------
+    GET       Allows inputting a keyboard character without ~ Return
+    GET#      Single character inputting from any legal input device
+    INPUT     Inputs a string or number from the keyboard
+    INPUT#    Inputs a string or number from any legal input device
+    PRINT     Displays a string or number on the screen
+    PRINT#    Displays a string or number to any legal output device
+    DATA      Holds a list of numbers or strings
+    READ      Reads numbers or strings in data statements into variables
+    RESTORE   Resets the DATA/READ pointer
+  --------------------------------------------------------------------------
+
+   Functions
+
+Functions perform operations on numbers, strings, output devices, and
+memory. Table 3-11 shows that BASIC 7.0 and BASIC 2.0 contain a large number
+of these functions. The functions are used for obtaining the SIN or COS of a
+number, converting a string to a number, or vice versa, and so on. It also
+tells if a joystick fire button has been pressed.
+
+This completes the description of the BASIC statements and keywords common
+to both BASIC 7.0 and BASIC 2.0. In the next section we will examine those
+enhanced keywords that are particular to BASIC 7.0.
+
+  Table 3-11. BASIC Functions
+  --------------------------------------------------------------------------
+   Statement                             Purpose
+  --------------------------------------------------------------------------
+    FRE       Tells how much memory space is left
+    ASC       Returns the ASCII value of a string
+    CHR$      Converts number to ASCII character
+    INSTR     Locates and returns a substring in another string
+              <sic! BASIC7 only>
+    LEFT$     Returns the left N characters of a string
+    LEN       Returns the length of a string
+    MID$      Returns the middle N characters of a string
+    ABS       Gives the absolute value of a number
+    ATN       Returns the arc tangent of a floating point number
+    COS       Gives the cosine of a number
+    DEC       Returns the decimal value of a hexadecimal string
+    EXP       Returns the value of e raised to the X power
+    FN        Allows custom functions with parameters
+    HEX$      Returns hexadecimal number string from decimal number
+              <sic! BASIC7 only>
+    INT       Truncates decimal portion of floating point number
+    LOG       Returns the natural log of X
+  --------------------------------------------------------------------------
+
+  Enhanced BASIC 7.0 Statements
+
+You can see the real power of the new BASIC 7.0 when you examine the new
+statements that have been added to it. Here we will present details on all
+of these except the new DOS, graphics, and sound commands, which we will
+explore later. The new statements are made up of bit-mapped graphics
+commands, sprite control statements, and very sophisticated three-voice
+sound and music control statements. There are also new looping statements
+that allow more structured programming constructs, and a new window
+statement that lets you control the rectangle where text will scroll.
+
+   New C128 Mode Bit-Mapped Graphics Statements
+
+Table 3-12 lists the new statements that allow drawing on the bit mapped
+display. You can draw lines, rectangles, polygons, and circles, and fill
+them with any color. You can capture a pixel area to a string (most BASICs
+capture a pixel area to an array) and then draw it anywhere on the screen
+quickly. There are statements for reading the color of any pixel, and
+scaling the entire screen to a 1024 by 1024 grid. These statements and how
+they work are covered in Chapter 6 - Graphics.
+
+  Table 3-12. BASIC 7.0 Graphics Statements
+  --------------------------------------------------------------------------
+   Statement                             Purpose
+  --------------------------------------------------------------------------
+    BOX       Draws a rectangle
+    CHAR      Displays characters at any pixel coordinate
+    CIRCLE    Draws a circle, oval, triangle, or polygon
+    COLOR     Chooses colors for foregrounds, backgrounds, border
+    DRAW      Draws lines and plots points
+    GRAPHIC   Chooses one of six graphics modes
+    LOCATE    Sets the pixel cursor to a certain pixel coordinate
+    PAINT     Fills any closed boundary with a color
+    SCALE     Scales the coordinates of the entire screen to 1024
+    SCNCLR    Clears the screen to the current background color
+    SSHAPE    Captures pixels of an area in a string
+    GSHAPE    Draws pixels captured in a string to the screen
+    WINDOW    Draws a window of defined boundaries
+    RCLR      Returns the color of a source
+    RDOT      Returns the color of a pixel on the screen
+    RGR       Returns the mode of the screen
+    RWINDOW   Reads the current window boundaries
+  --------------------------------------------------------------------------
+
+   New C128 Mode Sprite Control Statements
+
+One of the greatest enhancements to the C128 mode BASIC 7.0 is its sprite
+handling statements (see Table 3-13). Sprites, which are covered in more
+detail in Chapter 6, are programmable graphic objects used often in games
+and simulations. Since sprites live on independent bit planes that don't
+erase each other, and since they can be moved by the VIC II chip
+automatically, it makes great sense to exploit them in programs.
+Unfortunately, in the C64, sprites had to be controlled via POKE and PEEK
+statements, rendering sprites quite difficult to control. The new BASIC 7.0
+contains a set of clear, simple statements that allow sprites to be easily
+created, edited, saved, colored, expanded, and moved about on the screen.
+You can also find out when sprites cross over each other, or when they pass
+over background display data.
+
+  Table 3-13. BASIC 7.0 Sprite Control Statements
+  --------------------------------------------------------------------------
+   Statement                             Purpose
+  --------------------------------------------------------------------------
+    BUMP      Records what sprites (1 8) hit what
+    COLLISION Causes a GOSUB when sprites collide or sprite hits display
+              data
+    MOVSPR    Moves a sprite to new coordinates automatically
+    SPRCOLOR  Sets multicolor colors for all sprites
+    SPRDEF    Enters sprite editor
+    SPRITE    Turns on a sprite, colors it, expands size, sets priority and
+              mode
+    SPRSAV    Moves picture string to a sprite or sprite to a string
+    RSPCOLOR  Checks what sprite multicolor values last set
+    RSPPOS    Checks speed and position of sprite
+    RSPRITE   Returns sprite attributes
+  --------------------------------------------------------------------------
+
+   C128 Mode Sound Control Statements
+
+The Commodore 64 has always been known for its powerful SID (sound interface
+chip) and the incredible noises that can emanate from it: Bach-like sonnets,
+powerful symphonies, or screeching sound effects. BASIC 7.0 adds a set of
+powerful statements for easily creating these effects. Table 3.14 lists the
+six sound control statements. These are covered in detail in Chapter 7 -
+Sound. Note that these statements control a three voice music synthesizer.
+You can create custom envelopes with your own attack, sustain, and release
+curves, that in turn control one of the three voices. It is easy to have a
+guitar, drum, and saxophone playing simultaneously. A FILTER statement lets
+you attach a frequency filter to the output of the SID chip, thereby
+allowing strange synthesizer effects, like ring modulation.
+
+  Table 3-14. BASIC 7.0 Sound Control Statements
+  --------------------------------------------------------------------------
+   Statement                             Purpose
+  --------------------------------------------------------------------------
+    ENVELOPE  Creates instrument envelopes: ADSR, sustain, waveform, pulse
+              width 
+    FILTER    Defines sound filters: low, band or hi-pass, cut-off frequency
+    PLAY      Defines and plays notes with sophisticated instrument voices
+    SOUND     Sound effects: any frequency with sweep control
+    TEMPO     Sets up standard note duration for three voices
+    VOL       Sets output volume for SOUND statement
+  --------------------------------------------------------------------------
+
+   C128 Mode Program Control Statements
+
+Table 3-15 shows the new program control statements that are offered. There
+is now a DO UNTIL and DO WHILE looping structure. You can say something like
+this:
+
+       100 DO
+       110 INPUT "DO YOU LIKE YOUR COMPUTER"; ANS$
+       120 LOOP UNTIL ANS$="YES"
+       130 PRINT "THANKS"
+
+              or you can do this:
+
+       100 DO UNTIL ANS$="QUIT"
+       .
+       .
+          (statements)
+       .
+       200 INPUT "AGAIN OR QUIT"; ANS$
+       210 LOOP
+
+You can also say DO WHILE something is true or false. The EXIT statement is
+provided to let you force a program to exit a DO LOOP when a special
+condition is met. The ELSE statement has been added to the IF THEN statement
+to allow more elegant decision statements. The BEGIN/ BEND statements are a
+way of getting around the fact that you can't get a Microsoft BASIC IF THEN
+statement to allow multiple lines to be executed if the condition is true.
+Now you can do this in BASIC 7.0:
+
+       100 INPUT A
+       110 IF A<100 THEN BEGIN:
+       120 PRINT "NUMBER IS LESS THAN 100"
+       130 BEND: ELSE: PRINT "NUMBER IS GREATER THAN 100"
+
+  Table 3 15. BASIC 7.0 Advanced Program Control Statements
+  --------------------------------------------------------------------------
+   Statement                                  Purpose
+  --------------------------------------------------------------------------
+    DO/UNTIL/LOOP       Structured DO/UNTIL loop
+    DO/WHILE/LOOP       Structured DO/WHILE loop
+    EXIT                Causes immediate exit from a DO loop
+    IF THEN BEGIN/BEND  Allows multiple statements after a THEN
+    IF THEN ELSE        Allows processing for false and true conditions
+  --------------------------------------------------------------------------
+
+   PRINT USING, PUTDEF, and GETKEY
+
+The C128 now allows PRINT USING which means you can format how your numbers
+appear on the screen. This was one of the most missed statements among C64
+BASIC 2.0 users. Decimal points can be fixed and so can the number of digits
+that are displayed. There is also a PUTDEF statement that lets you replace
+format characters ($, etc) with any character from the keyboard. This means
+you can display in British pounds, for example. A GETKEY statement is
+provided that is similar to the GET statement (used to loop on the keyboard
+and wait for a key to be pressed). GETKEY eliminates the need to loop: it
+waits on its own for a keypress.
+
+   Program Aids
+
+Finally, the new BASIC 7.0 adds all the popular Microsoft program entry and
+aid commands, as shown in Table 3-16. Take special note that the TRAP
+statement allows you to process user errors and turn off BASIC's normal
+syntax error checking.
+
+  Table 3-16. BASIC 7.0 Programming Aids Statements
+  --------------------------------------------------------------------------
+   Statement                               Purpose
+  --------------------------------------------------------------------------
+    AUTO          Turns on automatic line numbers
+    RENUMBER      Renumbers line numbers of program
+    DELETE        Deletes groups of lines
+    HELP          Shows where line number error occurred on screen
+    TRAP          Branches to subroutine containing user error handler
+    TRON, TROFF   Trace mode: displays line numbers as program runs
+  --------------------------------------------------------------------------
+
+[3.7] What Is DOS and How Do I Use It?
+
+Commodore disk drives are random access mass storage devices. The term
+random applies somewhat loosely to a method of storing programs and their
+data (using files and records). The disk drive method of storage has many
+advantages over cassette storage, but at the cost of increased complexity.
+With cassette storage you are personally responsible for starting, stopping,
+and positioning the tape. Manual operations like these are simply
+inappropriate to the manner of storage used by disk drives. For example, a
+single floppy disk can store hundreds of programs or data files with
+thousands of individual records or both. And these programs and files are
+partitioned into very small data blocks that are spread all over the disk.
+It is ridiculous to attempt to control a disk device as you would a
+cassette. This type of storage control and accounting (knowing where things
+are, etc.) is better left to a computer. When you use a Commodore disk drive
+with your Commodore 128 you actually get a second computer with its own
+special Disk Operating System (DOS) program. Its only task is to manage all
+disk storage activities for you.
+
+  What is DOS?
+
+The term DOS is a sort of collective name for a group of single purpose disk
+utility programs. These utilities do things like preparing a brand new
+diskette for future storage operations, reading the current contents of a
+diskette, copying data from one diskette to another, and erasing old data to
+make room for new data. Some DOS utilities have disk operations whose actual
+functions are less apparent. These "specialty" DOS operations are the ones
+requested by programs operating in the C128. For example, if a mailing list
+program needs to see the list of names and addresses already stored on a
+diskette, the mailing list program must make a series of properly organized
+requests to the disk drive's DOS. The DOS, in turn, uses the requested DOS
+operations to locate and then send back this data to the program. DOS
+operations like these are seldom recognized or even used by C128 users who
+primarily use commercially written programs, but they are important for C128
+users who want to write their own programs. Commodore DOS has a number of
+disk operations that are primarily used within other C128 programs. The most
+familiar DOS operations, however, are those used by every disk drive user at
+one time or another.
+
+  Where is Commodore DOS Kept?
+
+Commodore disk drives are intelligent disk drives. They are intelligent
+because they have their own internal computer, running under a special
+Commodore DOS program that allows them to perform routine disk functions and
+maintenance. What's more, since this DOS program is actually stored in the
+intelligent disk drive's memory, the drive can do any DOS operation on its
+own. Most computers need to instruct their drives with a continuous flow of
+instructions. All the C128 need do is send a single command word or phrase
+over the serial bus to a Commodore disk drive. The disk drive's computer
+compares this command against a list of known commands within its own DOS
+program, selects the appropriate disk function, and the proper DOS operation
+is performed. Since the Commodore disk drive does all the real DOS work, the
+C128 need only pass along the appropriate commands and then go back to its
+normal processing activities.
+
+Commodore DOS is stored in ROM in the disk drive. The disk drive has its own
+computer, with a microprocessor, RAM and ROM memory, and I/O circuits. One
+advantage to storing DOS in ROM, as opposed to putting it on a diskette, is
+that a ROM based DOS is there and ready for use as soon as the disk drive is
+turned on. Another advantage is that the memory space needed to store DOS is
+taken from the disk drive's internal computer, not the C128's. This means
+there will be more room in the C128's memory for application programs.
+Finally, keeping DOS in ROM eliminates the need to keep it on your
+diskettes, therefore all of the diskettes' available storage can be used for
+programs and data.
+
+  Are All DOSs the Same?
+
+Commodore has three different disk drives that you can connect to the C128 -
+the 1541 (designed for the C64), the 1571, and the 1572 (designed to work on
+any current Commodore computer). All three drives have DOS already built-in.
+The 1541's DOS is slightly different than the DOS found in the 1571 and
+1572, but there is a high level of compatibility between the two. They are
+programmed by the user in the same way, but their capabilities differ.
+
+Many of the differences between the old and the new DOS have to do with the
+slower serial bus capabilities of the Commodore 64 and the fact that the
+1541 could only access one side of a floppy disk (single-sided). The new
+drives are precision instruments that are able to take advantage of the
+C128's faster serial bus capabilities. They are double-sided (that is, they
+use both sides of a floppy disk). Despite these differences, the new drives
+can read and write to any disks originating from a 1541 (only one side of
+the disk is used). They do this by changing their DOS "personality" to that
+of a 1541.
+
+  What Tasks Can the DOS Perform for Me?
+
+Since DOS is stored in the Commodore disk drive, it is running as soon as
+you turn on the disk drive's power. Thereafter, in order to get DOS to do
+something for you, all you need to do is get its attention and send it a
+command. Fortunately, the C128 has a complete set of easy to use DOS
+commands and statements that are accessible through BASIC 7.0. You will note
+that many of these commands and statements are similar to one another. This
+slight redundancy was necessary in order to remain compatible with the DOS
+structure used in BASIC 2.0 (Commodore 64), while providing an alternate set
+of disk based commands and statements that are easier to remember and use.
+Here is a list of these new DOS commands and statements:
+
+        APPEND          CONCAT          HEADER
+        BACKUP          COPY            LOAD
+        BLOAD           DCLEAR          OPEN
+        BOOT            DCLOSE          RECORD
+        BSAVE           DIRECTORY       RENAME
+        CATALOG         DLOAD           SAVE
+        CLOSE           DSAVE           SCRATCH
+        COLLECT         DVERIFY         VERIFY
+                        DOPEN
+
+Let's review these DOS commands and statements one by one. Those that are
+referred to as "commands" can be entered directly on the keyboard and can
+often be included within a program as well. Those listed specifically as
+"statements" are generally used from within programs only, so they will be
+of most use to C128 owners who plan to do their own programming using BASIC
+7.0. The descriptions we give here are just meant to give you a feel for
+their functions. Complete details on the actual syntax and modifiers can be
+found in C128 Users Guide.
+
+   APPEND
+
+The APPEND command is a special "open file" command that is used to add new
+data to the end of an existing file.
+
+   BACKUP
+
+The BACKUP command copies all files from one diskette onto another. This
+command can only be used with a dual drive system like the 1572 and it will
+not back up "copy protected" software.
+
+   BLOAD
+
+This command is used to load binary type files from a disk. The C128 has two
+disk specific file loading commands - DLOAD and BLOAD. DLOAD is used on
+files such as BASIC programs that are always placed in the same area of
+memory. However, not all programs are in BASIC so they don't necessarily go
+to that same portion of memory. Binary files can go just about any place in
+memory. Where they go during a load should be determined by the load address
+parameters that BSAVE automatically tags onto them when they are originally
+saved. BLOAD reads these parameters and puts the binary files back where
+they belong (see BSAVE).
+
+   BOOT
+
+BOOT is a completely new DOS command for Commodore computers. It is used to
+load (and subsequently run) an executable binary file from a disk. Like
+BLOAD, it does not automatically relocate the file to the start of BASIC
+memory.
+
+   BSAVE
+
+BSAVE is the binary file variation of DSAVE. It is used to save a segment of
+C128 memory to a binary disk file. Files created in this manner must be not
+be loaded with DLOAD as they would be automatically relocated to BASIC
+memory. Instead they should be loaded with BLOAD (see BLOAD).
+
+   CATALOG
+
+This command is used to read the contents of a diskette's file directory.
+Its operation is quite different from the C64 method of viewing a directory
+- LOAD"$",8:LIST. The old command did not work well on long directory
+listings because you could not stop and start the display once it started
+scrolling. Also the old method actually loaded the directory into memory as
+if it were a BASIC file, thus overwriting any BASIC programs already in
+memory. The CATALOG command corrects both of these deficiencies: its display
+scrolling can be controlled, and it is loaded directly into screen memory so
+as not to disrupt BASIC programs (see DIRECTORY).
+
+   CLOSE
+
+This statement completes and closes any files previously opened by either
+DOPEN or OPEN statements. CLOSE is normally used only in programs and is
+applicable to files of all types, including those meant for a printer or
+modem.
+
+   COLLECT
+
+This command is used to reclaim disk space that is currently allocated to
+improperly closed files.
+
+   CONCAT
+
+The CONCAT command (derived from the word concatenate) is used to merge two
+data files together.
+
+   COPY
+
+COPY is used to make copies of files. It can be used to copy from one disk
+to another (which requires a dual-disk drive) and it can be used to create a
+second copy of a file under a different name on the same disk.
+
+   DCLEAR
+
+This statement clears the contents of all currently open channels to disk
+files. It is used by programmers to insure the removal of any old data that
+may have been left in a channel from some previous file operation (see
+DCLOSE).
+
+   DCLOSE
+
+DCLOSE is used to close one or all currently opened channels to the disk
+drive. The term channel is used to indicate a specific communication path
+between the C128 and the disk drive's internal computer. Under normal
+operation there can be a number of channels open (each to different files),
+but there is a finite limit to just how many are open at any one time. The
+DCLOSE statement is issued by a program to close channels that are no longer
+needed (see DOPEN).
+
+   DIRECTORY
+
+The DIRECTORY command displays a disk directory on the C128 screen (same as
+CATALOG).
+
+   DOPEN
+
+This statement is used to open a communication channel to a disk drive. It
+is a disk-specific version of the OPEN statement.
+
+   DSAVE
+
+The DSAVE command saves a program currently located in BASIC memory to a
+disk file. It is a disk-specific form of the SAVE command (see BSAVE).
+
+   DVERIFY
+
+This command is used to compare a program in memory with one in a disk file.
+This is a disk-specific version of VERIFY.
+
+   HEADER
+
+The HEADER command is used to prepare a new diskette for its first write and
+read operations. It formats a blank diskette into storage blocks and then
+establishes a fresh block allocation table and a blank disk directory. It
+also gives the disk a specific disk title and ID code. This is a destructive
+command as it totally erases any files already on a diskette.
+
+   LOAD
+
+LOAD is used to load a file from either a Dataset or a disk drive.
+Variations of this command can be used for regular file types (BASIC
+programs) and binary file types (non-relocatable machine language programs
+of data) (see SAVE).
+
+   RECORD
+
+This statement is used from within a program as a relative file pointer to
+select any byte of any record in a relative file.
+
+   RENAME
+
+The RENAME command is used to change the name of a disk file. You should
+note that no two files on a single diskette can ever have the same name.
+
+   SAVE
+
+This version of DSAVE can be used to save a file to any legal Commodore
+destination device such as a dataset, a screen, a modem, a printer, or a
+disk drive. It can only be used to save a program located in the standard
+BASIC memory area. Binary-type programs must be saved using the C128's
+built-in MONITOR utility (see LOAD).
+
+   SCRATCH
+
+This command is used to erase or delete a file or group of files from a
+diskette. It is recommended that it be used to delete an existing file
+before attempting to save another file by that same name. Commodore DOS will
+not allow you to save a file if one by that name already exists.
+
+   VERIFY
+
+This version of DVERIFY works for files found on the Datasette as well as
+those from a disk drive.
+
+  Can DOS Be Changed?
+
+The DOS we've referred to thus far is one of two possible DOS systems that
+you can use with the Commodore 128. This particular DOS is the one already
+stored in the Commodore disk drives and is the easiest to access. It is also
+the only DOS you can use when the Commodore 12Sis used in the C128 or C64
+modes. However, the built-in DOS can be replaced with another DOS called
+CP/M. How, why, and when you would want to use a different DOS will be
+explained in Chapter 5.
+
+[3.8] Where Can You Learn More About the C128?
+
+No matter how "friendly" and reliable a computer is, and how complete its
+operations manual may be, its owner will always want to have access to more
+in depth documentation, special training, service, and a number of other
+forms of system support. Fortunately, there are numerous resources available
+that answer these needs for Commodore 128 owners.
+
+  Books You Should Own
+
+If the past Commodore 64 market is any indicator as to the number of books
+that will be written about the Commodore 128 then you will have a large
+number of books to choose from. Titles will cover such subjects as C128
+BASIC programming, getting started with the C128, inside the C128,
+applications for the C128, using C128 graphics and sound, business and the
+C128, and machine language programming. In addition to specific interest
+books like these you will also find a large assortment of books containing
+interesting programming hints and software. A quick check at your local book
+store will reveal an ever increasing number of C128 book titles for you to
+choose from.
+
+  Magazines for Commodore Computer Owners
+
+Commodore 128 owners will also have a wide range of magazines to choose
+from; many of them are completely devoted to Commodore computer owners.
+Their editorial formats differ sufficiently so that you can easily choose
+one or two magazines that are particularly suited to your needs. Here is a
+partial list of Commodore oriented magazines listed from those attempting to
+primarily reach the beginning C128 users to those whose aim is to reach the
+more sophisticated C128 hobbyists and programmers.
+
+Commodore Power Play by Contemporary Marketing, Inc.
+Commodore Microcomputers by Contemporary Marketing, Inc.
+COMPUTE!'s Gazette by COMPUTE! Publications, Inc.
+COMPUTE! by COMPUTE! Publications, Inc.
+RUN by CW Communications/Peterborough, Inc.
+The Transactor by Transactor Publishing, Inc.
+
+  Commodore User Groups
+
+One of the best and easiest organizations for new Commodore 128 owners to
+get help from is their own local Commodore users group. There are over 600
+of these organizations spread throughout 16 countries and 50 states. For
+example, there are 66 of these clubs in California alone. Complete lists of
+these user groups with their addresses are periodically published in
+magazines like Commodore Microcomputers and RUN.
+
+A computer user group is basically a club that is open to all parties who
+share common interests. The typical membership of a user group will be
+primarily new or fairly new computer users. Their goals will be to help each
+other by sharing information. Many user groups sponsor classes in
+applications and programming and maintain a library of public-domain (free
+to the general public) software. Some Commodore user groups also maintain
+their own electronic bulletin boards (self-answering computer systems
+contacted with a C128 and a modem). These electronic bulletin boards provide
+many of the same functions as the clubs themselves, like question and answer
+forums and software libraries.
+
+  The Commodore Information Network
+
+The Commodore Information Network is available to anyone with an interest in
+Commodore computers who has access to CompuServe, an electronic database
+system. Unlike other electronic bulletin boards, this network is maintained
+and run by the Commodore corporation itself. The Commodore Information
+Network is actually broken down into a number of smaller special interest
+groups (SIGs) that are quite distinct from one another. Each has its own
+help forum, a message database and a software library. More information
+about the various Commodore SIGs can be obtained by calling CompuServe,
+making a modem connection with your C128, and then following CompuServe's
+system of prompts till you get to their personal computing section (those
+more familiar with CompuServe's operation can use the command GO-PCS at any
+prompt). Details on CompuServe can be obtained from any computer products
+store.
+
+  Software Directories
+
+Another publication of interest to Commodore 128 owners is the Commodore
+Software Encyclopedia published and periodically updated by Commodore
+Business Machines. This encyclopedia contains hundreds of references
+describing the many different software products currently available for
+Commodore computers, including those for the Commodore 128.
+

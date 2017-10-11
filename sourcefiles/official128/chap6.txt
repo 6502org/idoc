@@ -1,0 +1,1722 @@
+[6.] Graphics on the C128
+
+    In this chapter you'll learn:
+    * What kinds of graphics are offered with the Commodore 128
+    * The history of Commodore 128 graphics
+    * How to use the new Commodore 128 graphics modes
+    * How bit-mapped graphics work
+    * How to make and manipulate sprites
+    * What the 80-column mode offers in the way of graphics
+
+In this chapter we will take a look at the exceptional graphics offered by
+the Commodore 128 personal computer. We will first briefly review the
+graphics of the C64 mode. However, the bulk of the material in this chapter
+focuses on the new C128 mode graphics. Since CP/M was designed to work only
+with text-based ASCII terminals, it has no commands for manipulating video
+graphics, and we will not discuss it in this chapter. It is possible
+however, using a CP/M programming language such as BASIC or C, to create
+graphics in the CP/M mode via the 8563 video chip.
+
+[6.1] C128 Graphics Overview
+
+This chapter is not meant to provide an exhaustive study of Commodore 128
+graphic programming techniques, but rather to give an overview of the
+features you get with C128 graphics, to provide insights into how the
+Commodore 128 uses the VIC II and new 8563 chip to send video to the screen,
+and finally to reveal the graphics operations now available from the BASIC
+7.0. language.
+
+  What Do We Mean by Graphics?
+
+What do we mean by graphics? In this book graphics means the display of
+pictures instead of just letters and numbers. A picture can be anything you
+can represent on the Commodore 128 screen: a rocket, a robot, an artistic
+pattern, an arrangement of specially designed characters, the outline and
+boxes of a report form, and so on.
+
+  6566 VIC II and 8563: The Chips Behind the Video
+
+Before we get too far into learning graphics, a major point is in order.
+What makes Commodore graphics so special when compared to other low-cost
+home computers is the way in which graphics are created and controlled
+inside the computer. Most computers use arrangements of cheap, off-the-shelf
+circuits to control graphics. But the Commodore 64 and 128 share a complex
+chip called the VIC II, custom-built by Commodore's MOS Technology
+semiconductor division. The VIC II chip evolved from the VIC I chip used in
+the old Commodore VIC 20 and is actually an entire microprocessor and video
+processor. Officially known as a video interface chip, because it translates
+computer signals into television or monitor signals, it is the fast and
+smart VIC II chip that gives the C128 and C64 its edge in graphics
+performance. In addition to the VIC II, the Commodore 128 also contains the
+brand new 8563 80-column video chip. This new device gives the C128 the kind
+of graphics that business users demand: highly detailed 80-column color text
+and graphics. Keep in mind as you read this chapter that everything you are
+doing from BASIC ultimately boils down to instructions to the powerful VIC
+II or 8563 80-column chip and that these chips are ultimately the reason the
+graphics work so well.
+
+  What Kind of Graphics Does Commodore 128 Offer?
+
+The C128 mode offers the same graphics modes as the old Commodore 64, plus a
+few important new ones. There are six different display modes, and sixteen
+different colors. There is a new 80-column mode. There are also eight
+programmable, movable objects called "sprites". Access to these modes, as we
+will soon see, has been greatly improved.
+
+Like the Commodore 64, the Commodore 128 has a 40-column text and character
+graphics mode that is programmable in up to four colors. It has the same
+graphics and text character set. The C128 also has a high-resolution 320 by
+200 dot bit-mapped mode. The new high resolution C128 bit mapped mode is now
+much more accessible and easy to use from BASIC. We'll say more on this
+soon.
+
+   New Graphics 80 Column Mode
+
+The Commodore 128 offers one new graphics mode not available on the
+Commodore 64, namely the new 80-column mode. As we mentioned in the
+introduction and in the chapter on CP/M, the 80-column mode is created by
+the new 8563 video processor chip. This chip has features that are nearly
+identical to the color circuitry used in the popular IBM PC color board,
+namely 640 x 200 resolution, and 16 colors. This chip allows twice the
+horizontal resolution of the Commodore 64 graphics (640 dots versus 320),
+four times more color (16 colors versus 4), and twice as many characters (80
+versus 40). This chip does require an 80-column monitor to use and will not
+work with a regular television set.
+
+This new mode also offers a bit-mapped character set, meaning that the
+shapes of the characters that appear on the monitor are stored in memory.
+This means you can create your own custom characters and even do bit-mapped
+graphics on this chip. Since there are no BASIC 7.0 statements to easily
+control the 8563, you will need to resort to using BASIC's PEEK and POKE
+statements to directly manipulate the registers of the new 8563 chip. This
+may make your programs more complex, but high-quality business graphics are
+now perfectly feasible from BASIC. With the 80-column chip and its high
+resolution, you can expect to see much more intense and detailed graphics
+programs, especially high-quality, business programs for the "power user".
+
+   New Additional Memory
+
+The C128 has twice the memory capacity of the C64. This extra memory is
+desperately needed. In graphics the amount of memory that is available to
+the programmer has a strong bearing on the degree of complexity and the size
+of the program that can be written. The problem is that the graphics
+information that you see on the Commodore 128 screen is actually represented
+in the computer's memory as a series of bytes. As we start to draw more
+complex or more detailed images on the C128 screen, we begin to consume more
+and more RAM memory. For example, one popular technique with games is to
+store several different graphics pictures (scenes) in the computer's memory
+at one time. You then make the VIC II rapidly switch between them, thereby
+creating brilliant animation effects, like those found in arcade games.
+Since each of these scenes consumes a piece of memory, we eventually reach a
+limit on how many can be stored.
+
+The extra 64K of memory in the Commodore 128 means that programs can have
+more complex and memory-hungry graphics programs. There can be many more
+graphics scenes stored in memory, as well as more depth and realism to the
+graphics. This means you can expect to see far richer games than ever
+before, with many more variations. This same idea applies to the user of
+custom character sets and sprites, which we will explain soon.
+
+   New Graphics BASIC Statements
+
+A major change in the graphics potential of the new C128 mode has to do with
+the way the graphics are now accessed and manipulated by the BASIC
+programmer. In the Commodore 64 the BASIC programmer was forced to use the
+commands POKE and PEEK to manipulate graphics. (Very briefly, the POKE
+command is used to change the contents of memory locations and the PEEK
+command is used to read the contents of memory locations.) Plotting a dot on
+the screen using these commands is quite a bizarre process. First you would
+have to figure out where in memory the bit corresponding to the dot you want
+to change is located (as we shall see, dots and bits are related). Then you
+must use a complex combination of POKE and PEEK statements to change this
+single bit without changing the neighboring bits around it. Another use of
+the POKE was to change the way the VIC II handled memory. Certain addresses
+in the VIC II would allow you to change where the chip looked for screen
+memory and how it interpreted this memory. One would frequently see
+statements in C64 programs like this; one that simply changes the mode to
+multicolor:
+
+        POKE 53270,PEEK(53270) OR 16
+
+Thus, without a clear understanding of the VIC II chip, and the knowledge
+that address 53270 was the mode register of the chip, no one but experts
+could really do wondrous things with graphics. Most programmers were left in
+the dark. Although we could give a long story about why Commodore chose to
+do things this way, we'll shorten it by simply saying that the reason was an
+early mandate to keep the cost of the Commodore 64 as low as possible.
+Adding any more statements to the Commodore 64 BASIC to make graphics easier
+would have consumed more memory and required higher costs.
+
+The Commodore 128 changed all that. We now have 128K of RAM and a large group of
+BASIC statements for manipulating the Commodore graphics. In the rest of this chapter we
+will describe these statements and show how they drastically increase the efficiency of
+your programs. You can still use the POKE and PEEK statements, and there are times
+when they will still make sense. But generally these new BASIC graphics statements
+greatly simplify the job of the graphics programmer: these statements, coupled with the
+other powerful new BASIC 7.0 statements, will create a new generation of exciting games
+and educational and business programs that use graphics.
+
+  Where Did the New BASIC Statements Come From?
+
+Most technological improvements evolve from earlier designs, and the
+statements that make up the new C128 mode are no exception. In 1983
+Commodore brought out a cartridge called the Super Expander 64. When plugged
+into the cartridge slot on the Commodore 64, the Super Expander 64 adds a
+set of new graphics, sound, function key, and game port statements to the
+built-in C64 BASIC language. Although these statements greatly improved
+BASIC, the Super Expander did not sell in very large quantities.
+
+What Commodore has done in the new C128 mode is take the enhanced statements
+from the Super Expander 64 and place them in the ROM of the BASIC 7.0
+language, thereby forcing them to be a standard. Anyone who buys a C128 gets
+the extended graphic statements. We can now expect to see dramatic use of
+these statements by the programming community, and by magazines creating new
+sections that explore the C128 mode.
+
+Now that you have a little history of the graphics for the Commodore 128,
+let's get a better look at just what modes are available and what they
+offer. The remainder of this chapter is divided into three sections:
+character (block) graphics, bit mapped graphics, and sprite graphics.
+
+  Overview of the C128 Modes
+
+There are six different graphics modes on the Commodore 128. Here we will
+give a brief overview of these modes.
+
+   Standard 40-Column Text and Block Graphics Mode
+
+This mode is identical to the standard C64 graphics mode. It allows up to
+1000 text or graphics characters to be displayed in a format of 25 lines of
+40 characters each. Each character in this mode consists of an 8 by 8 dot
+region and may be in any one of the 16 available colors. This is one of the
+most popular modes for doing graphics because the 8 by 8 dot regions can be
+easily controlled. We'll have a lot to say about this mode soon.
+
+   Standard Bit Map Mode
+
+The standard bit map mode is also referred to as the high resolution mode.
+Its purpose is to allow the highest degree of precision and detail. In this
+mode, the screen is treated as a rectangular array of 320 horizontal dots by
+200 vertical dots. In the 40-column text mode we cannot directly access
+these individual dots, but in the bit-mapped mode we can. As far as color is
+concerned, your choice is any two colors out of the available 16. One color
+is called foreground; the other, background. In the past, accessing the bit
+mapped mode from the C64 involved the complex usage of PEEKs and POKEs. The
+bit mapped mode is now easily accessed in a logical manner with BASIC 7.0
+statements. In fact, as we shall see, the bulk of the new BASIC 7.0 graphics
+statements are specifically used to manipulate the bit-mapped mode.
+
+  Standard Bit Mapped Mode - Split Screen
+
+The split screen mode mixes both the standard bit mapped mode and the
+standard 40-column text modes. When you request this mode from BASIC the top
+75 percent of the screen is in the standard bit-mapped graphics mode, and
+the lower 25 percent is in the standard 40-column text mode. Thus you get
+five lines of text that start on line 19 and extend down to line 24. This
+leaves the vertical size of the bit-mapped mode at 160 pixels (200 minus 5
+lines by 8 dots per line). You can even alter the line that the text mode
+starts on by specifying the s parameter to be any line from 0 to 24. The
+split screen mode is useful when you want to print information about events
+in high resolution. A frequent use of this technique is in games where, for
+example, the top of the high-resolution screen gives a view into space from
+a space cruiser, and the bottom of the screen gives text messages from the
+mother ship. You could also exploit this split screen for business graphics,
+perhaps to share the screen between a chart in the top half and a word
+processor document in the bottom half.
+
+  Multicolor Bit Map Mode
+
+In the multicolor mode horizontal resolution is sacrificed for increased
+color capability. The screen horizontal resolution is cut in half to 160
+dots and the vertical resolution stays the same at 200 dots. Each dot is
+twice as wide as each standard bit-mapped dot, so instead of a tiny dot you
+get more of an extended rectangle. However, you can now display up to four
+different colors in each 8 by 8 dot region. The four colors are the
+background, foreground, and two new colors called multicolors and
+multicolors. The Multicolor Bit Map Mode is also available in the split
+screen mode. The multicolor mode is not used very much in Commodore software
+because the large size of the pixels makes the pictures look crude.
+
+  80-Column Text Mode
+
+In 80-Column mode we are using the 8563 chip and are allowed 80 characters
+per line and 25 lines, for a total of 2000 characters. In the text mode each
+character can be any of 16 colors. The 8563 is actually a bit-mapped chip
+with a bit-mapped custom character set. However, Commodore has provided no
+direct way (for example, via BASIC statements) to access the bit map. We
+will no doubt see books that describe a way to access this graphics mode via
+POKEs and PEEKs, and eventually there should appear an extension to BASIC
+that will allow direct access. This is desirable because the 8563's graphics
+resolution is 640 by 200 dots, which is twice that of the VIC II. In fact,
+this chip has identical graphics and color resolutions to that found on the
+IBM PC, so once BASIC is extended in this way, transferring applications
+from the IBM PC to the C128 should be easy.
+
+[6.2] Character (Block) Graphics Mode
+
+Before we teach you the new BASIC 7.0 graphics statements that operate on
+the bit-mapped screen, it will be useful to understand how the 40-column
+text mode is exploited for block graphics. There is much power in this mode
+and no discussion would be complete without it. Since there is a split
+screen mode, a mixture of bit-mapped and block graphics is feasible and
+practical.
+
+Character, or block, graphics are accomplished by using the C128 in the
+40-column text mode. This mode is what the Commodore 128 starts in when
+first turned on, and can be accessed at any time with the statement GRAPHIC
+0. Although the 40-column text mode appears to be the least attractive for
+doing graphics, it is in fact perhaps the most popular mode in terms of the
+developed and high-performance software that exists today. This is the mode
+in which most Commodore 64 software is written.
+
+In this 40-column mode several techniques can be used for creating graphics.
+All these techniques make use of character graphics: the use of special 8
+dot by 8 dot pictures to form larger pictures. When using BASIC the simplest
+way to do graphics in this mode is to place combinations of keyboard graphic
+characters inside of PRINT statements. Like the C64, the C128 has a full
+complement of graphics characters that are shown on each key. In fact there
+are four possible graphics character sets you can use. When you press either
+the <Shift> or <C=> keys and the respective graphics key, the respective
+graphics character will appear on the screen. You can design a shape or
+object made up of graphics keys. You use the keyboard and the cursor keys to
+design the shape on-screen. The shape is then captured in BASIC PRINT
+statements.
+
+For example, to make up an automobile image you could use type in BASIC
+statements like these:
+
+        100 PRINT " ___"
+        110 PRINT "|    \__"
+        120 PRINT "|           |"
+        130 PRINT " O    O"
+
+When you run the program, an automobile-like image will appear on the
+screen. You can write a program that will redraw the automobile in different
+locations so that it appears to "run" across the screen.
+
+With 128 different Commodore graphics characters to choose from, this mode
+is very powerful. Colors can also be set by using the Commodore color keys
+along with the graphics keys. You type the keys for the color you want, then
+the next graphics character typed into the PRINT statement appears in that
+color. Let's take a closer look at this mode.
+
+In the Commodore 128 an area of memory is set aside to hold the characters
+and the colors displayed in this mode. The characters that you see on the
+screen are stored in an area of memory in a unique way, as shown in Figure
+6-1. Each possible character that you see on the screen is an 8 by 8 dot
+matrix and is represented by a unique "code" number stored in the memory.
+This can be a number between 0 and 255. The letter M, for example, is
+represented by the code 13; the graphic ball character by the code 81. The
+VIC II chip contains circuits that repeatedly go into the special screen
+area of memory one location at a time, read the code found there, convert it
+to a particular 8 by 8 letter or graphic character, and then display it at
+the right location on the screen.
+
+  Figure 6-1. Screen Codes in Memory Are Mapped to the Screen Display
+  |       |   ______
+  |-------|  //¯¯¯¯\\
+  |       | || /¯¯\ ||
+  |       | |||   +|++------------------+
+  |       | |||   |THE                  |
+  |       | |||   |                     |
+  |   T   |-+++---+-----------.         |
+  |   A   |-+++---+-----------\\        |
+  |   C   |-+++---+--------->CAT        |
+  |       | |||   |                     |
+  | E (5) |-'||   +---------------------+
+  | H (8) |--'|
+  | T (20)|---'
+  |       |
+
+How does each character get its color? In Figure 6-2 we see that there are
+actually two important areas of memory for graphics. One is the screen
+memory holding the character codes. The other is the color memory, which is
+used to hold the color for each screen location. Color memory is also 1000
+characters long, but instead of codes it contains color numbers between 0
+and 15 (only the lower 4 bits of each location is used). Each location in
+color memory maps to a location in the screen memory. Thus when you change a
+color code in the color memory you are actually changing the color of a
+certain character on the screen. Also shown in this figure are the locations
+that are used to control the border, background and foreground colors if you
+are going to POKE them. Since the color and text memory locations are
+organized in the same format, you can imagine that the two memory areas are
+like "planes" that overlap each other. This is shown in Figure 6-2 as well.
+
+  Figure 6-2. Screen Text and Color Memory Areas
+
+  65535 |¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|                    __________ _
+        |               |  COLOR MEMORY --> | 1 | 2 |
+  56295 |¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|             .-->|¯M¯|¯E¯|¯¯ ¯      
+        |               |  CHARACTER /    |¯\¯ ¯¯¯ ¯¯
+        |               |  MEMORY            13
+        |               |
+  55296 |       1       |<---COLOR OF CHAR. (1 = WHITE)
+        |¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|
+  53281 |===============|<---BACKGROUND COLOR (0-15)
+  53280 |===============|<---BORDER COLOR (0-15)
+        |               |
+        |_______________|
+   2023 |               |
+        |               |
+   1024 |     M (13)    |<---CHARACTER
+        |¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|
+    646 |===============|<---CHARACTER COLOR (0-15)
+        |               |
+      0 |_______________|
+
+Note that although there are only 1000 characters on a 40 by 25 screen,
+there are 1,024 locations set aside for the text screen. The extra 24
+characters are used for holding special Commodore system data.
+
+There is a third area of memory that is critical to maximizing use of the
+40-column text mode. That area is the one that holds the character set for
+the screen. After the VIC II chip picks up a character code from screen
+memory, it uses it to "look up" a particular dot pattern stored in the
+character font area. There dot patterns tell the VIC II chip what kind of 8
+by 8 pattern to draw on the screen for the code. For example, the dot
+pattern for the M is shown in Figure 6-3.
+
+  Figure 6-3. Dot Pattern for Letter M
+  ·#····#·
+  ·##··##·
+  ·#·##·#·
+  ·#·##·#·
+  ·#····#·
+  ·#····#·
+  ·#····#·
+  ········
+
+Here the dark areas stand for the dots that will be turned into the
+foreground color, and the light areas are the dots that will be turned into
+the background color. Just like the screen memory, the character set memory
+can be made to contain any set of patterns you want. This character set can
+contain custom characters that, when assembled together, create pictures of
+great detail. In fact, several popular font editors are available for the
+C64 that make creating custom character sets easy.
+
+The characters on the C128 keyboard are just not flexible enough to allow
+really detailed scenes. The most interesting software for the 40-column text
+mode exploits the use of custom character sets. In fact it is possible to
+have several sets of characters in memory at one time and make the VIC
+switch between them.
+
+Furthermore, the location of screen memory (the part of memory holding the
+actual codes that tell the C128 what characters to put on the screen) in the
+40-column mode is not fixed as it is in most computers. The VIC II chip can
+be made to go instantly to another area of memory and treat it like the new
+display memory. Since this screen memory only consumes about 1Kbytes of RAM,
+it is possible to have many predefined 40-column screens waiting in memory.
+This idea is exploited in many games where you want the user to be faced
+with different "rooms" or "caves" to explore. The initialization phase of
+the program builds the screens; then the VIC II chip is simply directed to
+the beginning of the desired area.
+
+Besides controlling characters in the 40-column mode with PRINT statements,
+you can also directly POKE them into screen memory. The use of this mode is
+not simple, and moving the screen memory and using custom characters
+requires intimate knowledge of the registers of the VIC II chip. See
+references in the back of this chapter for books that explain this.
+
+The 40-column text mode is particularly useful for games and educational
+programs, as well as for text and menu presentations. One popular game uses
+a custom character set and a large database of uniquely placed screen codes
+to simulate flying over a land mass. Trees, lakes, railroads, houses,
+factories, and gun encampments are made up of custom characters. From our
+view above a bomber airplane, we see the shadow of the plane on the ground.
+A feature of the VIC II chip called "smooth scrolling" moves the information
+on the screen by one dot row or column. This is exploited to make it appear
+we are flying over real terrain. In reality, different character codes are
+being moved in and out of the screen memory.
+
+[6.3] The Bit-Mapped Mode
+
+Now that you understand the block graphics mode, you will find the bitmapped
+mode much more straightforward. The bit-mapped mode is the mode affecting
+many of the new BASIC 7.0 graphics statements (the new sprite statements
+work with either bit-mapped or text modes). The bit-mapped mode is what you
+use to plot graphs and charts, draw lines, and control individual points on
+the display screen. In bit mapping, each dot (called a pixel) on the screen
+is assigned its own bit (location) in memory. If that memory bit is a one,
+the dot it is assinged to is "on". If the bit is set to zero, the dot is
+"off". "On" means that dot shows in the foreground color; "off" means it
+shows in the background color.
+
+A primary drawback to the bit-mapped mode is it consumes a great amount of
+memory and delivers only one color plus background, or 4 colors if you use
+the multicolor bit-mapped mode (but it offers only 160 horizontal dots). For
+example, in the C128 bit mapped mode the resolution is 320 by 200, meaning
+there are 64000 dots and each needs a bit of memory. Since 8 bits are in a
+byte, a full 8000 bytes are needed for the bit mapped display. Recall that
+in the 40-column text mode only 1000 bytes were needed to store the
+information for the entire screen.
+
+Bit-mapping is best confined to programs where high speed or animation is
+not critical, as in engineering, CAD/CAM, business graphs, and so on. You
+would use the bit-mapped mode to draw highly detailed objects or complex
+mathematical graphs.
+
+  Setting the Graphics Mode: GRAPHICS
+
+The Commodore 128 starts up in the 40-column text mode. To get into the high
+resolution bit-mapped modes, as well as to switch to the 80-column and split
+screen modes, you use the GRAPHIC statement. Let's see how that works. The
+format for the GRAPHIC mode statement is as follows:
+
+        GRAPHIC mode ,c,s
+
+The variable mode is a digit between 0 and 5 which selects the desired mode,
+as shown in Table 6-1. The c parameter means clear or do not clear the
+screen of text after switching to the mode. If c=1 it means clear, if c=0 it
+means don't clear. The s parameter sets the line number at which the
+40-column text screen starts in the split screen mode. It then defaults to
+line 19, giving 5 lines of text at the bottom of the screen.
+
+  Table 6-1. Graphics Modes for the C128
+  --------------------------------------------------------------------------
+        Mode      Description
+  --------------------------------------------------------------------------
+          0       Standard 40-column text
+          1       Standard bit map
+          2       Standard bit map split screen
+          3       Multicolor bit map
+          4       Multicolor bit map split screen
+          5       80-column text
+  --------------------------------------------------------------------------
+
+Look at these examples:
+
+        GRAPHIC O,1:REM 40-column text mode, clear screen
+        GRAPHIC 2,0,15: REM split screen, no clear, text starts on 15th
+                            line
+
+The first statement switches us into the 40-column text mode and clears the
+screen. The second statement switches into a split screen, doesn't clear,
+gives us 10 lines of text starting on line 15 and a bit-mapped display of
+320 by 120 pixels.
+
+To enter the bit mapped mode and clear the screen, we would put this
+statement in our program:
+
+        GRAPHIC 1,1
+
+When the GRAPHIC statement is issued with the bit-mapped mode, it allocates
+an area in memory for your bit-mapped screen information. The GRAPHIC CLR
+statement clears out this area and returns it to memory. This means the area
+is now available for program code. However, if you switch back into the
+graphics mode and your program has grown too long, you may get an error. Now
+that we have selected the bit-mapped mode with the GRAPHIC statement, let's
+see how color is selected.
+
+  Choosing Colors: COLOR
+
+The statement for choosing what colors to use for the screen foreground,
+background and border is set by the COLOR statement. The format of COLOR is:
+
+        COLOR source, color
+
+where source is the section of the screen you wish to color (the foreground,
+background or border for a specific mode) and color is the color code (1-16)
+for the color you want assigned to that source. Table 6-2 lists the colors
+and codes used with the Commodore 128. Table 6-3 lists the six color sources
+and their codes for this statement. The trick here is that you can assign
+different colors to different modes.
+
+  Table 6-2. Color Codes for the COLOR Statement
+  --------------------------------------------------------------------------
+        Color     Color Code
+  --------------------------------------------------------------------------
+          1       Black
+          2       White
+          3       Red
+          4       Cyan
+          5       Purple
+          6       Green
+          7       Blue
+          8       Yellow
+          9       Orange
+         10       Brown
+         11       Yellow-Green
+         12       Pink
+         13       Blue-Green
+         14       Lt. Blue
+         15       Dk. Blue
+         16       Lt. Green
+  --------------------------------------------------------------------------
+
+  Table 6-3. Source Codes for the COLOR Statement
+  --------------------------------------------------------------------------
+        Number    Source Affected
+  --------------------------------------------------------------------------
+          0       Background 40-column text mode
+          1       Foreground bit-mapped mode
+          2       Foreground multicolor1 mode
+          3       Foreground multicolor2 mode
+          4       Border 40-column or bit-mapped mode
+          5       Character color 40- or 80-column text mode
+          6       Background 80-column text mode
+  --------------------------------------------------------------------------
+
+Here are some examples of the use of the COLOR statement:
+
+        10 COLOR 0,15: REM background dark blue
+        20 COLOR 1,4: REM  set foreground color bit map (1) to cyan (4)
+        30 COLOR 4,11: REM set border color (4) to yellow green (11)
+
+In this example we are changing the normal color Commodore 128 defaults. The
+first line sets the background for text and graphics to dark blue. The
+second line sets the foreground color for the bit map to cyan and the last
+line sets the border color for the bit-mapped and text display to yellow
+green.
+
+  Other Color Oriented Statements
+
+The SCNCLR statement is used to clear the screen in any mode. For example,
+SCNCLR0 clears the 40-column text mode and SCNCLR2 clears the standard
+bit-mapped mode (by "clear" we mean sets it to the background color). If
+your program needs to know what color was assigned to a particular source,
+such as the color of the foreground of the bit mapped mode, you use the
+RCLR(N) function. You assign a number to N to represent the source mode you
+want to check, and it returns a color number between 1 and 16. A similar new
+function is RGR, which simply returns the current mode number 0 to 5.
+
+  Bit-Mapped Coordinate System
+
+There are several statements that help you draw pictures on the standard
+graphics mode screen. There are statements for plotting dots and for drawing
+lines, boxes, circles, and polygons.
+
+The coordinate system for the bit-mapped mode is shown in Figure 6-4. As you
+can see, the upper left corner is the home position (0,0) and the bottom
+right corner is the maximum value of the coordinate system (319,199). Each
+pixel on this display is indicated by an x and a y pair of "coordinates".
+For example, the pixel in the middle of the screen is at locations 160,100.
+Trying to plot a coordinate value outside the screen limits will cause the
+computer to stop and give a syntax error. The numbering of the axis (0 on
+top and maximum running toward the bottom) may appear to be upside-down to
+mathematicians (who expect positive numbers to grow upward), but in fact
+this is the way personal computers typically treat the screen.
+
+  Figure 6-4. Bit-Mapped Mode Coordinate System
+  (0,0)                                                (319,0)
+       \                                                 /
+        *-----------------------------------------------*
+        |                                               |
+        |                                               |
+        |                                               |
+        |                                               |
+        |                                               |
+        |                                               |
+        *-----------------------------------------------*
+       /                                                 \
+   (0,199)                                           (319,199)
+
+  Locating the Pixel Cursor: LOCATE
+
+Before we show you how to draw on the bit-mapped display, you need to
+understand something called the pixel cursor, or PC. A pixel corresponds to
+a dot location on the screen. The "pixel cursor" is similar to the flashing
+cursor you see in the Commodore 128 text mode that tells where the next
+character will be displayed. The pixel cursor indicates where the next dot
+will be placed, but there is no blinking dot to be seen. The PC is used
+differently in graphics. In BASIC statements where the optional coordinates
+are omitted, the pixel cursor is what is used as the default coordinates.
+For example, if we use the CIRCLE statement (we'll see it soon) without
+specifying the center coordinates for the circle, the pixel cursor is used
+as the default. How do we specify where the pixel cursor is located?
+
+The LOCATE statement is used to move the pixel cursor to the desired
+coordinates on the screen. The syntax of LOCATE is:
+
+        LOCATE x-coordinate, y-coordinate
+
+Here is an example of LOCATE that moves the PC to the center of the screen:
+
+        10 LOCATE 160,100
+
+Note that you will see nothing when this statment is executed, but the next
+time you draw something and leave out a beginning coordinate, it will start
+at the PC location. This statement can be used to control where text is
+printed on the graphics screen, as we shall see when we learn how to use the
+CHAR statement. Now let's see how you actually draw on the graphics screen.
+
+  Drawing Lines and Points: DRAW
+
+Now you know how to select the different graphic modes, set the color
+sources, and position the pixel cursor, let's learn how lines and points are
+easily drawn. The Commodore 128 BASIC 7.0 uses a format of linedrawing
+statement also found in the Apple II BASIC called the DRAW statement. The
+syntax of DRAW is as follows:
+
+        DRAW color source, a1, b1, TO a2, b2, . . .
+
+In this description "color source" is a value of 1 to 3 representing the
+source on which to draw. For example, if color source equals one it would
+mean draw in the color of the foreground for the bit-mapped mode, a two
+would mean draw in the color of the foreground for the multicolors mode, a
+three in the multicolors mode. The values al and bl represent the x-y
+coordinates for the starting point of the line, and the values a2 and b2 are
+the x-y coordinates for the ending point for the line. Thus the statement:
+
+        100 DRAW 1,10,10 TO 50,50
+
+will draw a line in the foreground color for the standard bit-mapped mode
+from the location 10,10 to the location 50,50 on the screen. The three
+periods in the syntax definition tell us that you can continue to specify
+coordinates to DRAW TO, and thereby create complex geometric figures. For
+example, the statements:
+
+        100 DRAW 1,100,100 TO 160,40 TO 220,100 TO 100,100: REM Triangle
+        110 DRAW 1,0,0 TO 0,199 TO 319,199 TO 319,0 TO 0,0: REM Border
+
+would draw a triangle centered on the screen and then a borderline around
+the edges of the screen.
+
+You can also use the DRAW statement to "plot" individual points by simply
+leaving out the TO and the ending coordinate specification. Think of this as
+a line with a length of one pixel. Thus the statements:
+
+        30 FOR X=1 to 319
+        40 Y=(X^2)/490: REM plot curve of Y=X**2
+        50 DRAW 1,X,Y: REM note special draw with no TO
+        60 NEXT X
+
+will produce a plot of the curving equation Y equals X squared. (Of course,
+you can use any equation you wish with the DRAW statement.)
+
+  Drawing Filled and Unfilled Rectangles: BOX
+
+The BOX statement allows you to draw the outlines of rectangles of any width
+and height and any location on the bit-mapped screen. What is more, you can
+specify that the rectangle be filled with the current color source, so you
+get a solid filled box. To make the statement even more powerful, you can
+set the degree of rotation for the rectangle, causing it to spin about its
+center a precise number of degrees before it is displayed. Such a feature is
+useful for plotting in color coordinates, doing simulations, for turtle
+graphics and for games.
+
+The syntax of the BOX statement is shown in Figure 6-5.
+
+  Figure 6-5. The BOX Statement Syntax
+  BOX color source#, a1, b1, a2, b2, angle, paint
+      ¯¯¯¯¯¯|¯¯¯¯¯¯  ¯¯¯|¯¯¯ ¯¯¯|¯¯¯ ¯¯|¯¯  ¯¯|¯¯
+            |           |       |      |      +----- Paint shape with color
+            |           |       |      |             0 = off
+            |           |       |      |             1 = on
+            |           |       |      +----- Rotation in degrees:
+            |           |       |             Clockwise, about center
+            |           |       |             rectangle (default is 0
+            |           |       |             degrees)
+            |           |       +----- Corner opposite to (a1, b1). Scaled.
+            |           |              Default is PC (pixel cursor)
+            |           +----- Corner coordinate. Scaled. (0 <= a1 <= 319,
+            |                  0 <= b1 <= 199)
+            +----- Color source (0-3)
+                   0 = 40-column background
+                   1 = standard graphics foreground
+                   2 = multicolor1 foreground
+                   3 = multicolor2 foreground
+
+A typical BOX statement would look like this:
+
+        100 BOX 1,10,1O,6O,60
+
+The first parameter, color source #, is used to specify what screen to use
+for the rectangle, and can be 0 to 3. Color source is normally the standard
+bit-mapped screen (color source# = 1) and is the default. It may also be the
+multicolors mode (2), multicolors mode (3), or the 40-column text mode (0).
+The next parameters, a1 and b1, are the coordinates of the upper left corner
+of the rectangle. The parameters a2 and b2 are the coordinates of the lower
+right corner of the rectangle. In the above statement a rectangle is drawn
+from the coordinate 10,10 to the coordinate 60,60. The box is drawn on the
+standard bit-mapped screen since color source number is 1. You can leave out
+a parameter by typing the comma that normally follows it. For example:
+
+        100 BOX ,10,10,16,60
+
+uses the default, or last value set for the color source #, which is not
+included in the statement above but is represented by a comma.
+
+The parameter following the opposite corner coordinates is called angle, and
+controls the number of degrees that the rectangle is rotated before it is
+displayed. For example, the statement:
+
+        110 BOX ,10,10,60,60,45,1
+
+will draw a box on the screen, centered about 35,35, and rotated 45 degrees
+as shown in Figure 6-6.
+
+  Figure 6-6. BOX Using the "Angle" Parameter of 45 Degrees
+  [Omitted]
+
+The final parameter in the BOX statement controls the color filling the
+rectangle. If the last parameter is a 1, then the box will be filled, while
+if the parameter is not included, or is 0, the box will not be filled and
+only its outline will appear. Painting is done in the same color as the
+current color source foregound color. Thus, if you want a box outlined in a
+different color you must first draw a filled box in the color you want, then
+change the color to the outline color, and finally draw a non-filled
+rectangle over the filled one.
+
+  Circles, Ovals, Arcs, Triangles and Polygons: CIRCLE
+
+We've mentioned that you can draw circles on the screen before, but we
+didn't tell you that the CIRCLE statement is provided to draw all kinds of
+regular shapes on the screen, from circles to ovals, arcs and many sided
+figures like octagons. The syntax for CIRCLE is shown in Figure 6-7.
+
+  Figure 6-7. The CIRCLE Statement Syntax Draws Many Regular
+  CIRCLE color source#, a, b, xr, yr, sa, ea, angle, inc
+         ¯¯¯¯¯¯|¯¯¯¯¯¯  ¯¯|¯¯  |   |   |   |    |     |
+               |          |    |   |   |   |    |     +-- Degrees between
+               |          |    |   |   |   |    |         segments (default
+               |          |    |   |   |   |    |         is 2°) Controls
+               |          |    |   |   |   |    |         number of sides of
+               |          |    |   |   |   |    |         polygon
+               |          |    |   |   |   |    +----- Rotation in clockwise
+               |          |    |   |   |   |           degrees, 0 to 360
+               |          |    |   |   |   |           (default is 0°)
+               |          |    |   |   |   +----- Ending arc angle
+               |          |    |   |   |          (default is 360°)
+               |          |    |   |   +----- Starting arc angle
+               |          |    |   |          (default is 0°)
+               |          |    |   +----- Y radius (default is xr)
+               |          |    +----- X radius (scaled)
+               |          +----- Center coordinate of circle, poly, etc.
+               |                 (scaled, defaults to PC)
+               +----- Color source number (0-3)
+
+The first parameter sets the color source number and the second two
+parameters control the center of the circle. If they are omitted the default
+is the pixel cursor. The second two parameters are the x-radius and the
+y-radius. Although it might seem strange to have two different radius
+parameters, two are included so that we can draw ellipses. The character of
+an ellipse is that it has two radius values. If you omit the y-radius it
+defaults to the value of the x-radius. However, this will not give a perfect
+circle because the X and Y axes are scaled differently.
+
+In the following example, an ellipse is drawn centered on the coordinates
+160,100.
+
+        10 CIRCLE ,16O,100,65,10
+
+To draw a perfect circle, the y-radius must be adjusted to compensate for
+the scaling. This statement will draw a circle:
+
+        20 CIRCLE ,160,100,65,50
+
+Here we see that the y-radius (50) is made smaller than the x-radius (65) by
+a ratio of about .77.
+
+The parameters after the radii are used to draw some portion of the
+circumference of the circle. The parameter sa is the starting angle for the
+circumference and the parameter ea is the ending angle for the
+circumference. Thus the statement:
+
+        100 CIRCLE ,160,100,65,50,90,270
+
+will draw an arc starting at the 90 degree mark (3 o'clock) and ending at
+the 270 degree mark (9 o'clock). This will look like a smile.
+
+Figure 6-8 shows an example of the meaning of the parameters of the CIRCLE
+statement.
+
+  Figure 6-8. Example of CIRCLE Parameters
+  [Omitted]
+
+The second to last parameter in the CIRCLE statement is called angle. As in
+the BOX statement, it sets the rotation for the shape drawn with CIRCLE. The
+angle of rotation is specified in degrees clockwise and the rotation center
+is the center of the circle (a,b). The rotation parameter allows us to
+rotate an ellipse or an arc easily. The last parameter in the CIRCLE
+statement is the most interesting one. The parameter inc sets increment in
+degrees between "segments" that will be drawn when the parameter is used.
+This works because the circle is actually being drawn already in very small
+2-degree segments. The segments connect along the circumference of the
+circle, but since the segments are so small the circle looks like a circle.
+If we include the inc parameter and put an angle in it, such as 120, the
+CIRCLE statement will interpret this to mean the number of degrees between
+segments, and will figure out that there are three segments, hence a
+triangle. Here are some examples of using the inc parameter:
+
+        100 CIRCLE ,60,40,20,18,,,,45: REM draws an octagon (8 sides)
+        110 CIRCLE ,260,40,20,18,,,,90: REM draws a diamond (4 sides)
+
+  Filling and Painting: PAINT
+
+You may have noticed that you could not specify a paint or not paint
+parameter in CIRCLE like you could in BOX. The statement PAINT allows you to
+fill any enclosed (completely outlined) shape with color. The color filling
+the outline must be either the same color as the fill outline or any
+non-background color if you are in a multi-color mode where there is more
+then one foreground color. The syntax of the PAINT statement is:
+
+        PAINT color source, a, b, mode
+
+Here, color source is a number between O and 3 and represents the screen
+that you wish to paint on. The parameters a and b represent the starting
+coordinates for the filling, with the PC being the default if omitted. The
+mode parameter if O specifies an area defined by the color source, and if 1
+specifies an area defined by any non-background source. If the location of a
+and b is already colored, the Commodore 128 will not paint the area enclosed
+by the boundry of your shape. You must pick a new starting point inside a
+shape not filled with a foreground color.
+
+Here is an example of using PAINT. We draw a circle and then fill it with
+foreground color:
+
+        10 CIRCLE ,160,100,65,50: REM draws a circle about 160,100
+        20 PAINT ,160,100:        REM fills circle with foreground color
+
+  Mixing Text with Graphics: CHAR
+
+As we explained the different graphic modes for the C128, we noted that the
+two text modes (40- and 80-column) could only be mixed with the bit-mapped
+graphics modes by using a split screen. If you are in the bit-mapped mode
+and you type a character, it will be send to the text mode screen and you
+will not see it unless you have the screen split. But what if you want to
+add labels right next to figures drawn on the bit-mapped display screen,
+such as graphs, forms, and so on? Commodore 128 BASIC 7.0 provides the CHAR
+statement for drawing characters on the bit-mapped screen. The syntax of
+CHAR is:
+
+        CHAR color source, x, y, string, reverse flag
+
+Here the color source is the screen mode you want to put the character on, x
+is the character column (0-39) and y is the character row (0-24). Note that
+CHAR does not start at a pixel coordinate, but rather a text row/column,
+which is much coarser. Therefore to (for instance) draw a title centered
+inside a circle, you will have to draw the title first, then draw the circle
+and adjust it pixel by pixel until it's right.
+
+The string parameter is the text you wish displayed. The string will wrap
+around if it's too long to fit on a line. The reverse flag parameter changes
+the character "field" to inverse if it's 1, and makes it "normal" if it's 0.
+
+CHAR gets its text directly from the Commodore 128 ROM. In the graphics
+mode, CHAR does not offer all the treats that PRINT does in the text mode.
+You can't put control characters or graphics in the CHAR statement and see
+them appear on the graphics screen. But CHAR can be used in the text mode,
+and then will allow control and graphics character features to work.
+
+Here is an example of drawing a circle and putting a label "Circle" inside
+it.
+
+        10 CIRCLE ,160,100,65,50:  REM draws a circle about 160,100
+        20 CHAR 1,17,12,"Circle":  REM puts a label in center
+
+  Finding Out About Pixels and Modes: RDOT and RCLR
+
+If you use the Commodore 128 in its BASIC mode one of the things you will
+find yourself doing frequently is moving objects, and then trying to
+determine whether the object is on top of or touching another object or a
+particular backgound. Sometimes you need to know where the PC is and do not
+want to have your program try to keep track of it. The function for
+determining the position of the PC and the color source for that location is
+called RDOT, and its syntax is as follows:
+
+        RDOT (N)
+
+Assuming the PC is set, if N is 0, the x position of the pixel cursor is
+returned, if N is 1, the y position of the pixel cursor is returned and if N
+is 2 the color source for the pixel is returned (i.e., a number representing
+the mode we are using).
+
+The RCLR function is used to return the color assigned to the color source
+N. where N is between 0 and 6 as shown earlier in Table 6-3. The RCLR
+returns a number between 1 and 16 (listed in Table 6-2). For example, if you
+set the foreground color of the graphics mode to six, then when you used:
+
+        10 X=RCLR(2)
+        20 PRINT X
+
+X will be equal to six. You use RCLR with RDOT to determine the exact color
+of a pixel for a particular color source. The RGR statement returns the
+current graphics mode, which is between 0 and 6.
+
+  Changing the Size of Images: SCALE
+
+One command in the Commodore 128 vocabulary that may be useful allows you to
+alter the normal scale on the screen from its normal 320 x 200 to a second
+format of 1024 by 1024! Before you go crazy thinking you have access to
+every point on such a large screen, take heed: there are still only 320x200
+pixels on the screen. But each one no longer represents a distance of just
+one. Now each horizontal dot is equivalent to 1024/320 or 3.2 units, and
+every vertical dot is equivalent to 5.12 dots.
+
+The new, larger screen matrix created by SCALE is useful for adapting
+graphic programs which are already written for many computers. Dozens of
+high-end graphics terminals have screen limits of 1024 by 1024, and there
+are hundreds of professional programs written to these scales. With the C128
+SCALE command it is possible to more easily adapt these program without
+having to recalculate all the coordinates.
+
+Understand that if you have designed a program that draws objects just in
+the area defined by the coordinates 320 x 200, should you forget to adjust
+the coordinates and switch to the 1024 x 1024 mode, your program will do all
+its output to a small area in the upper left corner segment of the 1024
+display.
+
+This statement also has the effect of equalizing the coordinates for shapes
+drawn in all graphics modes. That is, the normal multicolor mode is 160 x
+200, while standard graphics mode is 320 x 200. When SCALE is set to 1,
+these two modes both have the range 1024 x 1024 and respond in equal
+distances to the coordinates fed them.
+
+  Shape Saving and Drawing with Strings
+
+Suppose you want to draw a detailed object on the screen, then move it
+around to different locations. Suppose your shape had been drawn using
+dozens of graphic statements, like DRAW, and BOX, and took a long time to
+draw. You could make the drawing statements a subroutine and call it with a
+new set of coordinates each time. But this would really be very slow.
+However, BASIC 7.0 has a feature that allows you to transfer a graphic shape
+from the screen to a string variable, and to transfer the string back to
+anywhere on the screen almost instantly.
+
+    Capturing the Image: SSHAPE
+
+The syntax for the statment that captures a rectangular area of the
+bit-mapped screen into a BASIC string variable is:
+
+        SSHAPE string name, x1, y1, x2, y2
+
+Here string name is the name of the BASIC string variable that will receive
+the shape data. The coordinates x1,y1 are the upper left corner of the
+rectangle surrounding the shape to be transferred and x2,y2 are the lower
+right corner of the rectagle. Thus to save the image of an object that is in
+the rectangle 10,10 to 33,31 into the string F$, you would execute the
+statement:
+
+        100 SSHAPE F$,10,10,33,31
+
+Because BASIC string variables are limited to 255 characters, the size of
+the area that can be saved is limited. You can use these formulas to
+calculate the string size, given the two corners of the area to be saved are
+known.
+
+For standard bit-map:
+
+  Length = INT((ABS(x1-x2)+1)/8+.99)*(ABS(y1-y2)+1)+4
+
+For the muticolor mode the formula is:
+
+  Length = INT((ABS(x1-x2)+1)/4+.99)*(ABS(y1-y2)+1)+4
+
+The shape that you are transferring is copied row by row into the string.
+The last four bytes of the string will contain the row and column lengths
+and are used by GSHAPE, as we shall see.
+
+   Drawing the Image: GSHAPE
+
+The GSHAPE statement works in just the opposite way of the SSHAPE. It places
+the contents of the string variable onto the bit-mapped screen. The syntax
+of the statement is:
+
+        GSHAPE string, a, b, mode
+
+In this statement the parameter "string" is the string variable containing
+the transferred screen data, and a,b are the coordinates of where we want
+the top left corner of the object to be drawn. If a,b is omitted the current
+PC will be used as coordinate to draw from. Thus, assuming that our figure
+is stored in F$, here are some examples:
+
+        100 GSHAPE F$:          REM Draws the object at the current PC
+        110 GSHAPE F$,160,100:  REM Draws the object in F$ at 160,100
+
+    Graphics Modes
+
+GSHAPE does much more then just rubber stamp a graphic image on the screen.
+The "mode" parameter controls how the pixels of the graphic shape mix with
+pixels already on the screen. There are five different values for mode and
+these are shown in Table 6-4.
+
+Let's explore these modes in more detail.
+
+  Table 6-4. Graphics Modes for GSHAPE
+  --------------------------------------------------------------------------
+      Value     Meaning
+  --------------------------------------------------------------------------
+        0       AS IS       Replace or copy mode
+        1       INVERTED    Invert the foreground and background colors
+        2       OR          Logical OR with background
+        3       AND         Logical AND with background
+        4       XOR         Logical XOR with background
+  --------------------------------------------------------------------------
+
+   Replace or Copy Mode
+
+The AS IS mode completely overlays the shape on the backgound so that each
+bit in the background is replaced by the bits in the foreground. Therefore,
+regardless of what is drawn on the bit-mapped screen, when we draw with
+GSHAPE in the copy mode it will completely change every pixel that is under
+it.
+
+   The Inverted Mode
+
+The INVERTED mode draws the shape just as in the copy AS IS mode, but it
+changes all the foreground colors to background and vice versa. This means
+that if you have a red character showing on a black screen, and you use
+INVERTED mode, the character will change to black on a red background.
+
+   The OR Mode
+
+The OR mode "adds" the pixels of the shape image with the pixels of the
+background so that when either pixel (or both pixels) is in the foreground
+color, the result on the screen will also be in the foreground color. Only
+if both pixels are in the background color will the result on the screen be
+in the background color. This mode is referred to as "foreground wins"
+because it only takes one plane (image or bit-map) in the foreground color
+to get foregound color. This mode follows the logic shown in Table 6-5.
+
+  Table 6-5. Logic for the OR Mode with GSHAPE
+  --------------------------------------------------------------------------
+               Shape                Screen          Result on Screen
+  --------------------------------------------------------------------------
+             foreground           foreground           foreground 
+             foreground           background           foreground
+             background           foreground           foreground
+             background           background           background
+  --------------------------------------------------------------------------
+
+   The AND Mode
+
+The AND mode logically ANDs the shape and the screen data, effectively
+erasing the parts of the shapes that do not coincide. The rule is that only
+when both image and bit-mapped pixels are in the foreground will the result
+on the screen be in foreground. Any other combination gives the background
+color for result. The result is that only parts of the two shapes that are
+the same show up. Table 6-6 shows the logic for the AND mode.
+
+  Table 6-6. Logic for the AND Mode with GSHAPE
+  --------------------------------------------------------------------------
+               Shape                Screen          Result on Screen
+  --------------------------------------------------------------------------
+             foreground           foreground           foreground
+             foreground           background           background
+             background           foreground           background
+             background           background           background
+  --------------------------------------------------------------------------
+
+   The XOR mode
+
+The XOR mode is very useful. It performs an exclusive OR of the shape pixels
+with the screen pixels so that only the coordinates that have different
+pixels are displayed! In other words, only pixels of the image and bit map
+that are different in color (one is in foreground and the other in
+background) will result in a foreground color pixel. Table 6-7 shows the
+logic for the XOR mode.
+
+  Table 6-7. Logic for the COR Mode with GSHAPE
+  --------------------------------------------------------------------------
+               Shape                Screen          Result on Screen
+  --------------------------------------------------------------------------
+             foreground           foreground           background
+             foreground           background           foreground
+             background           foreground           foreground
+             background           background           background
+  --------------------------------------------------------------------------
+
+The XOR mode is used frequently when you want to draw an object over a
+background and you do not want to erase or change the background. The trick
+is to draw the shape with GSHAPE on the background in the XOR mode, then
+draw it again without changing the coordinates. The second time you draw the
+image, the original background will be completely restored. Then you move to
+a new location and repeat this process. Note that the other modes do not
+allow this "non destructive" type of drawing.
+
+The program below shows an example of SSHAPE and GSHAPE. We draw a circle on
+the screen, transfer it to a string variable with SSHAPE, clear the screen,
+print a line of text, then move the object across the screen with GSHAPE in
+the XOR mode. The text is not erased.
+
+         90 GRAPHIC 2,1
+        100 CIRCLE 1,10,S,10,8:      REM draws circle at 10,8
+        110 SSHAPE A$,0,0,20,16:     REM gets circle into string
+        115 SCNCLR
+        120 PRINT CHAR 1,0,0,"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        130 FOR X=0 TO 295 STEP 2:   REM loops the x coordinate
+        140 GSHAPE A$,X,0,4:         REM draws the shape using XOR
+        150 FOR D=1 TO 50: NEXT D:   REM delays
+        160 GSHAPE A$,X,0,4:         REM erase the shape using XOR
+        170 NEXT X:                  REM till done
+
+[6.4] Sprite Graphics
+
+We just learned that moving graphic objects on the bit-mapped display
+requires close attention to how the object's pixels combine with those of
+the background. We must use the XORmode to avoid changing or erasing the
+background pixels. If you spent more time writing programs that move and
+draw objects, you would quickly discover another problem: not enough speed.
+As the size of the object you are animating grows in pixels, it takes more
+time to draw it on the screen. This slows down the maximum speed of the
+object because we must wait longer for it to be drawn. Further, every single
+position of the object must be laboriously calculated by your program: this
+involves looping, incrementing a pair of position coordinates, testing when
+they are at the desired spot, and so on. Further, imagine trying to keep
+track of several graphic objects on the screen in a program at the same
+time. How would you know, for example, when one object struck another - or
+if it collided with the edge of the playfield? The truth is that this would
+require extremely complicated BASIC code, and that it would be so slow as to
+be ineffective for animation, simulations or today's arcade quality games.
+
+The Commodore 128 and C64 both provide a way to move and animate objects
+through a software mechanism called a "sprite" (much harder to control from
+C64 BASIC, however). Sprites are not soft drinks but rather software
+"intelligent" graphic objects that you can program from BASIC 7.0 (and C64
+BASIC 2.0 if you are willing to use POKEs and PEEKs). A sprite is a
+rectangular area 24 pixels wide by 21 pixels high. There are eight such
+sprites in the Commodore 128. You draw an image in the sprite with a special
+sprite editor built into BASIC (or you can use DATA statements and POKEs).
+There are two major points that make sprites extremely important and
+powerful programming tools:
+
+1. Each sprite exists and moves on its own independent sprite screen
+   "plane". Each sprite has its own color and shape. The sprite planes are
+   totally independent of each other, and totally independent of the
+   information in the bit map screen (see Figure 6-9). When you request a
+   sprite to move across the screen, it does so in a manner that does not
+   erase or affect in any way the pixels of the standard bit-mapped
+   background; nor does it affect the pixels in another sprite plane. This
+   wonderful feature means your program does not have to concern itself with
+   keeping track of what sprite overlapped with what sprite or what
+   background. If you did, your program would be much more complex.
+
+2. Sprites can be automatically moved by the VIC II chip to any position on
+   the screen - you just give the sprite the final coordinates and it will
+   move smoothly from its original position to the resting position you
+   desire. Or you can give the sprite a "heading" (an angle between 0 and
+   360 degrees) and a speed (between 0 and 15), and it will automatically
+   start moving as specified - wrapping around when it hits the screen
+   boundary, and moving forever until you command it to stop. This type of
+   control of objects results in very powerful animation with very little
+   demand on the programmer, and is the reason such good graphics software
+   exists for the C64.
+
+  Figure 6-9. Sprites Exist on Independent Sprite Planes
+  [Omitted]
+
+Sprites can also be combined with each other to create large and colorful
+graphic images. Connecting four sprites together gives an object that is 96
+pixels wide by 84 pixels tall, which is quite large: 30% to 40% the size of
+the entire screen.
+
+Each sprite can be given a display "priority" that makes the sprite move
+either behind or in front of your background images. This feature allows
+three dimensional effects in programs, where, for example, a truck can be
+drawn moving behind a row of trees and in front of a row of houses.
+
+Your program can easily determine when sprites collide with each other or
+with the background. Such a collision will cause an "interrupt" to your
+BASIC program, and then you can branch to a special routine for processing
+the collision. This means it is easy to write a game where there are lots of
+moving players, or where there are sections of objects exploding. There is
+no need to constantly check the coordinates of the graphic objects as you
+would in non-sprite driven programs.
+
+Sprites can also be expanded in the x or y directions to give the effect of
+rapid growth. When this happens, the pixels double in size. You can also
+define a sprite as a standard bit-mapped mode sprite or a multicolor mode
+sprite. Let's learn how sprites are created and used.
+
+  How Sprites are Created
+
+There are three methods for creating sprites:
+
+1. Drawing and defining the object with built in statements. In this
+   approach you draw your desired sprite object using the various graphics
+   statements, such as DRAW, CIRCLE, BOX and PAINT. Then you use SSHAPE
+   statement to get the picture into a string. Next, you transfer the string
+   picture to the sprite with a SPRSAV statement. Then you enable and color
+   the sprite with the SPRITE statement and move it around with the MOVSPR
+   move sprite statement. You save your sprite to disk with the BSAVE
+   filename command. (By the way, BSAVE lets you specify a range of RAM
+   memory and have the binary values in it stored directly to a file on the
+   disk. BLOAD gets the binary file and loads it exactly back into RAM.)
+
+2. Using the SPRDEF Sprite Definition mode (sprite editor or designer). In
+   this approach you use the built in Commodore 128 sprite editor to draw
+   your sprite right on the screen. You can control how the picture looks in
+   a magnified format by moving a cursor and turning different parts of the
+   grid on or off. When completed, the sprite is enabled and moved with the
+   SPRSAV and MOVSPR statements.
+
+3. Using the same method as the Commodore 64. In this approach, you had to
+   draw your sprite on a 24 x 21 grid, convert the pattern to a series of
+   numbers and then POECE these numbers into the special sprite area of
+   memory. We won't cover this method.
+
+Both methods 1 and 2 are useful. Let's first describe how to use the sprite
+editor, because it takes such a small amount of program code and typing to
+get a sprite moving on the screen.
+
+  Sprite Designer Mode: SPRDEF
+
+A sprite designer is built into the Commodore 128, which makes it easy to
+design sprite images. The sprite designer is modeled after sprite editors
+available for the C64. To enter the sprite designer mode from BASIC 7.0,
+type the command SPRDEF. The screen immediately clears and then displays a
+sprite grid in the upper left portion of the screen, as shown in Figure
+6-10. At the bottom of the screen you will see the prompt SPRITE NUMBER ?.
+
+  Figure 6-10. Sprite Definition Screen
+  [Omitted]
+
+When you enter this mode the normal execution of BASIC 7.0 is suspended. The
+keyboard enters a new mode where the keys are redefined to control the
+making of sprites. When you type in a sprite number between 1 and 8, the
+sprite grid (work area) is filled with the magnified sprite while the sprite
+itself is displayed in the upper right corner of the screen. The work area
+has the dimensions of 24 characters wide by 21 characters high so that each
+character position corresponds to one pixel in the sprite. While you are in
+the sprite designer mode, you use the cursor keys to move a special + cursor
+in the work area. As you fill in a character position within the work area,
+you can see the corresponding pixel in the displayed sprite turn on.
+
+A sprite may be defined as a standard bit-mapped sprite or a multicolor bit
+mode sprite. You can select any of the eight foreground colors for the
+sprite using the keyboard (this is for convenience only - the final color
+for a sprite is set with the SPRITE statement). You can also double the size
+of the sprite horizontally or vertically or save the sprite by holding down
+<Schift> while pressing <Return>. Further details of editor use are
+discussed in the documentation accompanying the Commodore 128.
+
+  Turning On and Defining Sprites: SPRITE
+
+Once you leave the sprite designer, any sprites you defined are stored in a
+sprite storage area in memory. However, the sprites have no color at this
+point, and are not "on", or visible on the screen. The SPRITE statement is
+used to turn the sprites on and off and to give them a foreground color. The
+syntax for the SPRITE statement is shown in Figure 6-11.
+
+  Figure 6-11. The Syntax for the SPRITE Statement
+  SPRITE number, on/off, fgnd, priority, x-exp, y-exp, mode
+         ¯¯¯|¯¯¯ ¯¯¯|¯¯¯ ¯¯|¯¯ ¯¯¯¯|¯¯¯¯ ¯¯|¯¯  ¯¯|¯¯  ¯|¯¯
+            |       |      |       |       |      |     +--- Type of sprite
+            |       |      |       |       |      |          1 = standard
+            |       |      |       |       |      |          bit-mapped
+            |       |      |       |       |      |          (24x21 pixels)
+            |       |      |       |       |      |          0 = multicolor
+            |       |      |       |       |      |          (12x21 pixels)
+            |       |      |       |       |      +----- Y-expansion
+            |       |      |       |       |             1 = double height
+            |       |      |       |       |             0 = normal height
+            |       |      |       |       +----- X-expansion
+            |       |      |       |              1 = double width
+            |       |      |       |              0 = normal width
+            |       |      |       +----- Behind or in front of bit map
+            |       |      |              background 1 = behind (default)
+            |       |      |              0 = in front
+            |       |      +----- Foreground color, 1 to 16
+            |       +----- Turn sprite on or off  1 = sprite on
+            |                                     0 = sprite off
+            +----- Sprite number to control, 1-8
+
+        SPRITE number, on/off, fgnd, priority, x-exp, y-exp, mode
+
+In this statement the parameter "number" is the sprite number 1 through 8
+that you wish to control. The "on/off" parameter determines whether the
+sprite is on or off. A 1 means it's on; a O means it's off. The parameter
+"fgnd" is the foreground color you want to set the sprite to, and can be a
+value between 1 and 16.
+
+   Priority of Sprites
+
+The "priority" parameter controls whether the sprite is behind (1) or in
+front of (0) images in the bit-mapped display. With respect to each other, a
+sprite's priority is set by its number - a lower number sprite will appear
+"in front of" a higher number sprite. Thus, sprite number 1 has the highest
+priority and sprite number 8 the lowest. The x-exp and y-exp parameters
+control the sprite's horizontal and vertical expansion. When either
+parameter is a 1, the sprite becomes twice as large in the corresponding
+direction.
+
+The mode parameter determines if the sprite will be a standard bit-mapped
+sprite or a multicolor sprite. A multicolor sprite occurs when this
+parameter is 1, and that sprite changes size to 12 dots wide by 21 dots
+high. The horizontal direction shrinks because the horizontal resolution of
+the multicolor mode is only 160 pixels. You can combine multicolor and
+standard bit-mapped sprites in any bit-mapped mode, but you can't display
+sprites in the text mode. The standard bit-mapped sprites can have two
+colors: the background color set with the COLOR statement and the foreground
+color set with the SPRITE statement. Multicolor sprites can have two
+foreground colors and these are set with the SPRCOL statement. Here are some
+examples of setting up sprites:
+
+        100 SPRITE 1,1,7:       REM sprite 1, on, blue
+        110 SPRITE 2,1,5,1:     REM sprite 2, on, purple, behind
+        120 SPRITE 8,0,8,,1,1:  REM sprite 8, off, yellow, in front,
+                                    x-exp, y-exp
+        130 SPRITE 8,1,7,,,,1:  REM sprite 8, on, blue, frnt, no exp,
+                                    multicolor mode
+
+The example in line 120 turns sprite number 8 off, changes its color to
+yellow, its priority defaults to in front, and the x and y sizes of the
+sprite are doubled. Note when a sprite parameter is not specified its
+default is normally 0.
+
+  Animating Sprites: MOVSPR
+
+Now that we know how to define a sprite with the sprite designer and how to
+turn the sprite on and off, color it, and set its priority, let's see how to
+put it in motion. The MOVSPR statement is used to set a sprite's position,
+start it moving and stop it. There are three syntaxes for MOVSPR, as
+follows:
+
+        MOVSPR number, x, y:          REM absolute position
+        MOVSPR number, +/-x, +/-y:    REM relative position
+        MOVSPR number, x#y:           REM angle and speed
+
+Here the parameter "number" is the sprite number you wish to move (1 to 8),
+while x and y are the coordinates of the new sprite location. When you put
+the values of x and y in the sprite statement, the sprite will move to the
+new location automatically. For example:
+
+        100 MOVSPR 1, 285, 178
+
+will move sprite number 1 from its current position to the lower right
+corner of the screen.
+
+If you use relative values for x and y, (i.e., you give them + or - signs, as
+shown in the second example) the sprite is moved relative to the last sprite
+position (not relative to the PC). For example:
+
+        110 MOVSPR 1, +50, -50
+
+will move sprite number 1 from its last position to 50 pixels toward the
+right screen horizontally and 50 pixels towards the top of the screen
+vertically. Note this is not the same as the statement:
+
+        110 MOVSPR 1, 50, 50
+
+which will move the sprite to the location 50, 50.
+
+The third form of the MOVSPR statement allows you to set sprites into
+automatic motion and to stop them. In this "turtle mode" case we use the
+third syntax for MOVSPR, where x and y are separated by a # sign. In this
+case the value of x specifies a clockwise angle in degrees for the direction
+the sprite will move between 0 and 360 degrees. The value for y represents a
+constant speed for the sprite, from 0 through 15. In this example:
+
+        100 MOVSPR 2,135#8:   REM sprite 2, 135 degrees, speed 8
+
+sprite number 2 will move on a 135 degree angle (down and to the right) at a
+relative speed of 8. This is shown in Figure 6-12.
+
+  Figure 6-12. Automatic Motion with MOVSPR
+               0°
+               |     HEADING
+               |--. ANGLE
+               |   \ 135°
+             |¯¯¯|  |
+             |   |  |
+  270° ------| + |--|--- 90°
+           / |  \|  |
+          /  |___ \ V   SPEED =
+         /     |    \   8 PIXELS/TIME
+   SPRITE 2    |     |¯¯¯|         SPRITE  SPEED
+               |     |   |         V      /
+             180°    |   |  MOVSPR 2,135#8
+                     |   |            ^
+                     |___|           HEADING
+
+What is wonderful about these sprites is that you can set one or all of them
+in motion and they will continue to move, wrapping around the screen and
+passing over each other, without any slowdown in the program. When a sprite
+is turned off with the SPRITE command, it remembers its last position. When
+it is turned on again with SPRITE, the object moves off in the last heading
+and speed, unless it is changed.
+
+  Handling Sprite Collisions: COLLISION and BUMP
+
+Another very useful feature of Commodore BASIC and its sprites is that you
+can determine when sprites collide with each other or with the background.
+The COLLISION statement is used to allow your program to be signaled when
+sprites collide and the BUMP statement to determine which sprites collided.
+
+   Event Trapping: COLLISION
+
+The COLLISION statement detects three different types of "events":
+collisions between sprites, collisions between sprites and the bit map
+images, and light pen activation. When one of these events occurs, BASIC
+will finish whatever statement it was executing, and then it will transfer
+control to the the first line in your collision-handling routine, as
+specified by the COLLISION statement. When your routine is complete, a
+RETURN statement must be executed. This causes the program to resume on the
+line following the one that was executing when the event occurred.
+
+Thus your program is interrupted by a collision, and sent to a specific
+routine which controls what happens when there is a collision. This is
+called event "trapping". The event subroutine might reverse the direction of
+the sprite if it hits a wall on the screen edge, or it might make a sprite
+"blow up" and disappear if it hits another sprite, and so on. The COLLISION
+statement effectively "arms" the program to respond to such collisions.
+
+The syntax of the COLLISION statement is:
+
+        COLLISION event, line number
+
+Here the event parameter represents the type of event to be detected, as
+shown in Table 6-8.
+
+  Table 6-8. Meaning of Event Numbers in MOVSPR Statement
+  --------------------------------------------------------------------------
+        Value     Event to Detect
+  --------------------------------------------------------------------------
+          0       Sprite to sprite collision
+          1       Sprite to display data collision
+          2       Light pen activation
+  --------------------------------------------------------------------------
+
+The parameter line number is the line number you wish the program to branch
+to when the type interrupt occurs. When line number is not included in the
+statement, trapping is disabled. Understand that a collision occurs only
+when a non-background part of a sprite overlaps the nonbackground part of
+another sprite. Although the sprite (moving image) pixels are independent of
+the bit-mapped screen pixels, the VIC II chip can tell when the sprite image
+and bit-mapped screen contents are overlapping. Thus a sprite-to-bit-mapped
+collision occurs whenever part of a sprite that is in the foreground color
+occupies the same location as a pixel in the bit map that is in the
+foreground color. Sprites that are turned off will not cause collisions to
+occur.
+
+Although you may have several types of event detection active at the same
+time, only one collision can be processed on the C128 at a time. Therefore
+the first thing that must be done by your event handling routine is to turn
+off further processing of events until it is finished. After you process the
+event and return to the main program, any event that occurred while you were
+in the previous process will be remembered and cause a new event interrupt.
+Hopefully your event handling routine will be brief so that any sprite
+collisions won't be missed.
+
+Here is how a typical program that used COLLISION detection of sprites might
+look:
+
+        100 COLOR statement to set color
+        110 GRAPHIC statement to set mode
+
+        (BASIC statements to set up program, draw screen background, etc.)
+
+        500 COLLISION 1,1000: REM start detecting sprite to sprite collisions
+        510 COLLISION 2,2000: REM start detecting sprite to bkgnd collisions
+
+        520 (Loop here while waiting for sprites to collide with each
+        other or with the background)
+
+        1000 COLLISION 1: COLLISION 2: REM disable all sprite
+        collision detection
+        1005 (process sprite to sprite collision, reenable collision
+        detection)
+        1500 RETURN
+
+        2000 COLLISION 0: COLLISION 1: REM disable all sprite collision
+        detection
+        2005 (process sprite to background collision, reenable collision
+        detection)
+        2500 RETURN
+
+Here you can see that after the program has set up its initial screens and
+other parameters, it "arms" the collision detection in lines 500 and 510.
+Next the program enters a loop where it can refresh the various things that
+the program is doing, moving any objects that are not sprites, playing
+music, reading the joystick, and so on. We call this the treadmill part of
+the program. Whenever a sprite hits another sprite or hits the background,
+the program will branch to the subroutine in lines 1000 or 2000
+respectively, process the collision and return. For example, a sprite
+colliding with an edge of a rectangle surrounding the screen can be
+"bounced" off it by performing a mathematical computation on the angle in
+the MOVSPR statement. Note that the light pen type of event will cause an
+interrupt if enabled.
+
+   What Sprites Collided: BUMP
+
+Just knowing that a sprite collided with another sprite or with the
+background may not be enough. Suppose there is more than one sprite? In a
+sprite-to-sprite collision you need a way to tell what sprites collided. Or
+if there is a sprite-to-bit-mapped image collision you need to know what
+sprite hit the image. The BUMP function is provided for this purpose.
+
+After you get a collision event interrupt and have branched to the
+processing routine, the BUMP function is used to tell what sprites have
+collided with each other or the background. The syntax of BUMP is:
+
+        BUMP (event type)
+
+Since bump is a function its result must be returned to a variable to be
+used in the program, such as R=BUMP(1). The parameter event type is used to
+tell BUMP what type of event you wish to know about. It corresponds exactly
+to the event types in the COLLISION statement, as listed in the previous
+table. BUMP returns a number between 0 and 255. The number is interpreted as
+an 8 bit binary value, with each bit position representing a sprite that has
+collided with another sprite or with the background. When that bit is on (1)
+there was a collision, when off (0) there was no collision for that sprite.
+When there are multiple collisions between sprites several bit positions
+will become active. In such a case you would use the RSPPOS function
+(described later). This function returns the current x-position, the
+y-position and the speed (1-15) if the sprite is moving.
+
+Here is an example of BUMP:
+
+        1000 A=BUMP(0): B=BUMP(1)
+
+This line reads the sprite to sprite collisions, puts the result in the
+variable A, reads the sprite to bit-map collisions, and puts the results in
+the variable B. The example shown below uses the logical AND operator to
+tell when sprite #2 has collided with the edge of the screen.
+
+        100 GOSUB 3000:  REM  draw screen boundary for sprite to hit
+        110 COLLISION 1,1000:REM enable sprite to sprite collision detect
+        120 MOVSPR 1,160,190,45#8:   REM start sprite1, move on angle
+        130 MOVSPR 2,160,190,135#8:  REM start sprites, move on angle
+        200 GOTO 200
+
+        1000 REM  SPRITE COLLISION - DETERMINE WHAT ONE
+        1010 COLLISION 1:  REM DISABLE INTERRUPTS
+        1020 IF RBUMP(1) AND 2 THEN GOSUB 2000: REM SPRITE 2 HIT?
+        1030 COLLISION 1,1000: RETURN:  REM REARM COLLISION
+
+        2000 REM  GOT A SPRITE #2 COLLISION
+        2510 (Process sprite2 hit with screen edge)
+        2600 COLLISION 1,1000: RETURN: REM REARM COLLISION
+
+  Where are Sprites: RSPPOS function
+
+The RSPPOS function is used to determine the position and speed of a sprite.
+If you didn't have the RSPPOS function you would have to keep track of
+sprite position and speed with variables in your program, which is possible
+but complex. The syntax of RSPPOS is:
+
+        RSPPOS (sprite, data)
+
+Here the sprite parameter is the sprite number you wish to get information
+about, while the data parameter determines what type of information is
+returned by RSPPOS, as shown in Table 6-9. A good use of RSPPOS is to
+determine which of many bit-mapped images you might have struck with a
+sprite. For example, in a game of Breakout you would make the ball a sprite
+and the many bricks bit-mapped images. Then each time there was a collision
+with the bit map you would use the RSPPOS function to return the x and y
+position of the sprite, and thus find out what brick was struck. Then you
+could erase the individual brick from the screen.
+
+  Table 6-9. Meaning of Data Parameter in RSPPOS Statement
+  --------------------------------------------------------------------------
+        Data      What is Returned
+  --------------------------------------------------------------------------
+         0        Current x-position of sprite
+         1        Current y-position of sprite
+         2        Current speed (0-15) of sprite
+  --------------------------------------------------------------------------
+
+  Special Notes about Sprites
+
+You can make a sprite invisible by making its foreground color that same as
+your bit map background color. The sprite will continue moving if it is in
+the automatic heading and speed mode but it will not be seen. There are many
+games where such a technique is useful. However, if collision detection is
+enabled, the sprite will still cause an interrupt with other sprites or the
+bit-mapped screen images. If the routine that processes sprites can be told
+not to bother with the invisible sprites, then this "clocking" technique
+will work.
+
+Although there are only eight sprites, since you can use strings to hold
+images that can be transferred into sprites with SPRSAV, you can have many
+sprite definitions stored in strings and read them into sprites while the
+program is running A game with eight race cars, for example, can easily be
+changed into a game with eight rocket ships.
+
+The speed value in the MOVSPR statement (0-15) is used to control the actual
+number of dot positions to skip over in an equal time interval before
+drawing. Therefore, the movement is a series of instantaneous relocations.
+Thus, a sprite moving at a high enough speed or a sprite that has little
+foreground color in it (recall that it's only the foreground portion of
+sprites that interact) may miss colliding with a thin line or small shape,
+or another small sprite, by "jumping" over it.
+
+[6.5] Windows
+
+Now that we understand bit-mapped graphics and sprites, let's take a look at
+one more modern feature of the Commodore 128; its windows.
+
+Windows are text areas on the screen that can be independently controlled,
+either from BASIC or from the keyboard with the <Esc> key. You can change a
+window's dimensions (its width and height) and you can change its position.
+Once a window is set up all the text you send to the screen, everything you
+type (including input to INPUT or GET statements) and listings of your BASIC
+program appear within the window's boundaries and do not affect any other
+text on the screen. Statements for clearing the screen, moving the cursor,
+and so on, still work - but only in the area defined by the new window. The
+windows can be moved to any column or row. When its position is altered to a
+different row and column, the upper left corner of the window becomes the
+new home position (0,0).
+
+  What Are Windows Good For?
+
+With windows you can organize the output of your program so that different
+areas of the screen are dedicated to specific functions. For example, in a
+Computer Aided Instruction type program, you might have an explanatory part
+of lessons restricted to one window, questions about the lesson output to a
+second window and the user input restricted to a third window. The nice part
+about this is that when you output or input to or from the different windows
+you do not have to worry about interfering with the other windows:
+everything is protected that is outside the current active window.
+
+If you move the window from the old position, the information in it will not
+be changed unless you overlap it with a newly positioned window. There is no
+automatic refresh of window contents in BASIC 7.0, so you will have to write
+your own routines to handle that.
+
+The syntax for the window statement is:
+
+        WINDOW top-left column, top-left row, bottom-right column,
+               bottom-right row, clear
+
+Here the maximum and minimum values for the column and row depend on whether
+you are in the 40-column or 80-column mode. If the clear option is 1 the
+window is cleared after being set. For example, to set up a window that is
+15 columns wide, 10 lines deep, starts at row 10 and column 10 and clears
+the window, we would use the statement:
+
+        100 WINDOW 10, 10, 15, 20, 1
+
+One advantage of using windows is that their contents can be manipulated
+with the Commodore <Esc> key. Commodore provides a powerful screen editor
+feature via the <Esc> key that can be exploited by your program. If you
+display any information on the screen in a window, you can allow the user of
+your program to delete lines, insert, scroll the contents of the window,
+change its size and position, and so on. This is not a word processing
+editor, but rather a screen editor; if you scroll up one line the text that
+moves outside the window is gone. It is also possible to control the screen
+from inside the program by sending the <Esc> key sequence in a PRINT
+statement to the screen. Some of the escape key functions are mnemonic; that
+is, the letter of the command represents the first letter of the function.
+For example, to insert a line in a window you type <Esc> I, to delete a line
+you type <Esc> d.
+
+  Get the Status of Current Window and Display: RWINDOW
+
+Suppose the user with the <Esc> key functions resizes the window used to
+display program output information, and you want to send information to this
+window. Since its size has changed, the program would want to know the new
+parameters, so it could adjust its output accordingly (you would not want to
+output text in 40-columns if the window has been set to 20).
+
+We can find out the size of a window with the RWINDOW function, whose syntax
+is:
+
+        RWINDOW(n)
+
+where the parameter "n" represents the parameter you wish to know about. If
+n is set to 0 the number of lines is returned, while if n is set to 1 the
+number of rows is returned. If n is set to 2, the RWINDOW command returns
+either 40 or 80, depending on what current console device is in use. Suppose
+a window was 20 columns wide and you were printing text that was 40-columns
+wide. You could write your program so that it always first checked the width
+of the window with the RWINDOW(1) function. Then it used this number to
+control the number of words that were output to the window so that they
+always wrapped on at the end of a word before reaching 20 columns. To do
+this, the program's display output routines would have to check the length
+of each line and adjust it to break correctly.
+
+You've come a long way in this chapter! Now that you've been introduced to
+some of the major aspects of graphics on the Commodore 128, let's move on
+and look at ways to generate sound effects and music.
+

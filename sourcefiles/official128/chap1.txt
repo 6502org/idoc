@@ -1,0 +1,382 @@
+ACKNOWLEDGMENTS
+
+The authors would like to acknowledge the assistance of the following
+people, without whom this book could neither have been written in the first
+place, nor changed from a manuscript into an actual product: Jim Gracely and
+Bob Kenny of Commodore Business Machines; Damon Davis, Phil Debrabant,
+Esther Eisman, John Obst, and Barbara Sams of Howard W. Sams, Inc.; and Lyn
+Cordell and Joan Frank of The Waite Group. AH these people made sacrifices
+far beyond the call of duty; we salute their dedication.
+
+CONTENTS
+
+  Acknowledgments
+
+1 Introduction to the Commodore 128
+    1.1 What's in This Book
+    1.2 The Commodore 128: Three Computers in One
+    1.3 The C64 Mode
+    1.4 The C128 Mode
+    1.5 The CP/M Mode
+    1.6 The Bottom Line
+
+2 Peripherials: Displays, Disk Drives, Printers and More
+    2.1 What's Already Inside the Commodore 128
+    2.2 Display Devices
+    2.3 Program Cartridges
+    2.4 Cassette Units
+    2.5 Disk Drives
+    2.6 Printers
+    2.7 Modems
+    2.8 Joysticks
+    2.9 Other Peripherial Devices
+    2.10 Connecting Peripherials to the Commodore 128
+    2.11 The User Port
+
+3 The C128 Mode
+    3.1 What Is the C128 mode?
+    3.2 What Does the C128 Mode Offer?
+    3.3 What Are the C128 Mode Enhancements?
+    3.4 40- and 80-Column Text and Graphics
+    3.5 What Equipment Do I Need to Use the C128 Mode?
+    3.6 All About BASIC 7.0
+    3.7 What is DOS and How Do I Use It?
+    3.8 Where Can You Learn More About C128?
+
+4 The C64 Mode
+    4.1 What Is the C64 Mode?
+    4.2 What External Devices Do You Need to Use the C64 Mode?
+    4.3 How and When Do You Change to the C64 Mode?
+    4.4 What Can You Do While in This Mode?
+    4.5 What Can't You Do While in the C64 Mode?
+    4.6 How Does BASIC Differ in the C64 Mode?
+    4.7 About C64 Mode DOS
+
+5 The CP/M Mode
+    5.1 What Is CP/M and What Is the CP/M Mode?
+    5.2 What Does CP/M Offer?
+    5.3 What Equipment Do You Need to Run CP/M?
+    5.4 Important Programs on the CP/M Owner's List
+    5.5 Free Software for CP/M
+    5.6 The Structure of CP/M: Layout, Commands and Utilities
+    5.7 Where Can You Learn More About CP/M?
+
+6 Graphics on the C128
+    6.1 C128 Graphics Overview
+    6.2 Character (Block) Graphics Mode
+    6.3 The Bit-Mapped Mode
+    6.4 Sprite Graphics
+    6.5 Windows
+
+7 Sound and Music
+    7.1 What Can You Do with Sound on the Commodore 128?
+    7.2 Commercial Software and Hardware for Sound Generation
+    7.3 Sound Ideas
+    7.4 Sound and BASIC 7.0
+
+A Addresses of Companies and Organizations
+
+[1.] Introduction to the Commodore 128
+
+    In this chapter you'll learn:
+    * What this book is about
+    * The main features of the Commodore 128
+    * The three modes of operation of the Commodore 128
+    * Why you might want to buy a Commodore 128
+
+The Commodore 128 Personal Computer (Shown in Figure 1-1) is one of the best
+values ever to appear on the home computer scene. It incorporates an amazing
+variety of features, at a price of less than $300. Some of these features
+represents firsts in the computer industry. The Commodore 128 is, of course,
+the first upgrade of the ubiquitous Commodore 64 computer, of which over
+three million has been sold to date. the Commodore 128 is the first low-cost
+personal computer to offer a full one-eight megabyte (128K) of memory. It is
+also the first computer to combine the high resolution color graphics of the
+Commodore 64 with a serious business operating system (CP/M). The Commodore
+128 is the first computer to offer two entirely separate microprocessor
+brains and view graphic chips, giving it essentially two different
+personalities: home computer and small business computer. It is also the
+first low-cost personal computer to offer an intelligent disk drive capable
+of reading dozens of storage formats. Finally, and most importantly, it is
+the first computer to combine, in one case, what amounts to three separate
+computers: the C64 mode, the C128 mode and CP/M mode.
+
+[1.1] What's in This Book
+
+This book describes the features of the Commodore 128, what it does, how it
+does it, and what kinds of things you can use it for. In this first chapter
+we'll give you a quick overview of the Commodore 128, explaining how it came
+to be and what its major features are. In later chapters we'll go into more
+detail about particular features of the C128, and how to use these features.
+We'll discuss the kinds of external devices (peripherals) you may need to
+operate the Commodore 128, and then we'll explore in some detail the three
+modes of operation available: the C128 mode, the C64 mode, and the CP/M
+mode. We'll finish up with chapters describing the sound and graphics
+capabilities of the C128, and how to make use of them in your own programs.
+
+Our purpose in this book is not to give you an entire course in computers
+from the ground up, nor to teach you the fundamentals of BASIC or computer
+programming. Rather, we focus on those features of the Commodore 128 that
+make it unique and interesting.
+
+From time to time in this book we'll mention the names of manufacturers of
+peripheral equipment and software, as well as organizations that are
+involved in the Commodore industry. The addresses of these manufacturers and
+organizations will be found in the back of the book.
+
+  Figure 1-1. The Commodore 128
+  [Omitted]
+
+If you have bought a Commodore 128, or if you are thinking of buying one,
+this book should answer most of your questions concerning the operation of
+the computer and whether it can do what you want.
+
+   A Word about Names
+
+   In a computer that contains three other computers, it's easy to get
+   confused about whether you mean the main computer case or the individual
+   computers inside. Commodore refers to the inside computers as modes, and
+   that's what we'll do in this book. The main computer we'll refer to as
+   the Commodore 128, or as the C128, for short. The three modes built into
+   it are the C128 mode, the C64 mode, and the CP/M mode. The earlier
+   computer on which the Commodore 128 was based we'll call the Commodore
+   64, or the C64, for short.
+
+[1.2] The Commodore 128: Three Computers in One
+
+The main feature of the Commodore 128 - what sets it apart from almost every
+other computer ever manufactured - is that it is really three separate
+computers packed into one case. These three computers share the same
+keyboard, and can share external equipment, like the display screen and disk
+drives; so that when the C128 is sitting on your desk it may look as if
+there is only one computer system there. However, buried inside its handsome
+case there are really three separate computers, as shown somewhat fancifully
+in Figure 1-2. What are these three computers, and why did Commodore put
+them together in one case?
+
+The first computer hidden inside the Commodore 128 is a faithful copy of an
+earlier computer: the Commodore 64. Introduced in 1982, the C64 turned out
+to be one of the most successful home computers of all time, with sales of
+over three million (and still climbing). The C64 was successful because it
+offered excellent color graphics and sound, which made it a perfect computer
+for such applications as education and entertainment. It was also, with its
+built in Microsoft BASIC, easy for users to learn to program, and, most
+importantly, it was priced below the competition.
+
+Because the Commodore 64 was so successful, a large software industry grew
+up to support it. Today there are more than six thousand programs which run
+on the C64, with new ones being written every day. As we'll see, this huge
+existing software base has played a major part in the evolution of the
+Commodore 128.
+
+The Commodore 64 was not without its faults. For one thing, the speed at
+which the disk system could transfer data was woefully slow. Users who
+needed to load a really long program or data file from a disk got used to
+brewing a cup of coffee while the transfer took place. Also, the C64 could
+display only 40 characters on one line of the screen. This was fine for
+simple business programs and for games, but users who wanted to use
+professional-quality software needed a screen capable of displaying 80
+columns, the industry standard.
+
+Commodore, in the face of competition from other home computer
+manufacturers, wanted to introduce a new computer which, using more advanced
+technology, would eliminate some of the problems found on the C64. However,
+because there were so many Commodore 64 programs in existence, they did not
+want a new machine which would be unable to run these programs. The millions
+of people who had invested heavily in programs designed to run on the C64
+would not look kindly on a computer that was supposed to improve on the C64
+but would not run the existing software.
+
+However, it is difficult to make a computer better, without at the same time
+making it different. If Commodore made major changes in the Commodore 64,
+then the new computer would not have been able to run the old C64 programs.
+Many manufacturers have wrestled with this problem, and decided on one
+course or another: compatibility versus innovation.
+
+  Figure 1-2. Three Computers in One
+  [Picture of a Commodore 128 with three blocks depicting the three modes]
+
+Commodore decided to have their cake and eat it too: in one machine they
+would combine both the old C64, and a new computer called the C128, which
+would be similar to the C64, but better.
+
+As we noted earlier, these two computers-within-a-computer are referred to
+as modes: the C64 mode, which lets the Commodore 128 emulate a Commodore 64;
+and the C128 mode, which is an entirely new computer with many enhancements
+and improvements over the C64. In addition to the C64 and C128 modes,
+Commodore added a third mode: the CP/M mode, which turns the Commodore 128
+into a serious business computer. We'll describe these modes briefly here,
+and explore them in more detail in the chapters to come.
+
+  It is difficult to make a computer better without, at the same time,
+  making it different. You will soon see why the Commodore 128 is both  - a
+  different computer, and a better one.
+
+[1.3] The C64 Mode
+
+As we noted, the Commodore 64 featured excellent color graphics and sound;
+in fact, the most advanced in the industry for a home computer. The color
+graphics made use of sprites - sophisticated, intelligent graphics entities
+which could be programmed to represent objects like race cars and space
+ships. These sprites could be told to move anywhere on the screen and they
+would do so automatically, without slowing the program down. The sound
+generating capability provided amazing versatility for a machine in this
+price range, including three voices and a wide variety of ways to shape the
+sound to produce almost any imaginable effect, from musical instruments to
+space ships to the human voice.
+
+All these features have been retained in the C64 mode of the Commodore 128.
+In fact, in C64 mode the Commodore 128 is almost identical to the old
+Commodore 64. It will run all the same software. The screen display is the
+same, the keyboard operates the same way, and the disk drives and other
+peripherals that worked on the C64 will work the same way on the C128.
+
+If you are a Commodore 64 owner you'll find this mode invaluable, because
+all your software will work on the new machine, without any modification,
+just as it did on the old one. Even if you never owned a Commodore C64,
+you'll still profit from the C64 mode, because you'll be able to buy and use
+any of the thousands of programs already written for the Commodore 64. This
+mode will be discussed further in Chapter 4.
+
+[1.4] The C128 Mode
+
+The C128 mode is, in effect, a brand new computer inside the Commodore 128.
+What improvements does this mode offer over the C64 mode? We've already
+mentioned two areas where the Commodore 64 needed improvement: the slow disk
+access, and the lack of an 80-column screen display. The C128 mode
+eliminates both problems, offering both much faster disk access and the
+choice - with the push of a button - of either 80-column or 40-column color
+displays.
+
+  Disk Data Transfer Speed
+
+Data transfer times using the disk have been increased more than five times.
+This is possible using an entirely new family of accessory drives for the
+C128. These new drives are called the Commodore 1571 and 1572. The 1571
+(shown with other peripherals in Figure 1-3) is a single drive, and the 1572
+is a dual-drive unit. These drives will be discussed in more detail in the
+chapter on peripherals.
+
+  80-Column Mode
+
+There are two different screen displays on the Commodore 128: 40 column, and
+80 column, selected by a key on the keyboard. The 80 column display makes
+possible the use of much more sophisticated business-oriented software on
+the Commodore 128 than was possible on the Commodore 64. Note that not all
+monitors will work in 80-column mode; we'll have more to say about this in
+the next chapter.
+
+The innovations introduced by the C128 mode don't end with faster disk
+access and the 80 column screen display. In addition, there is a vastly
+improved BASIC, increased memory capacity, and a machine language monitor,
+to name only the most obvious improvements.
+
+  Advanced BASIC 7.0
+
+Most home computers come with a programming language built in, so that users
+can learn programming, write their own programs, or customize programs
+written by others. The standard language built into most small computers is
+BASIC, which is probably the easiest programming language to learn. The
+version of BASIC built into the Commodore 64, called BASIC 2.0, in general
+served very well, but it had some drawbacks. For one thing, it was difficult
+to take advantage of the excellent graphics and sound capabilities of the
+Commodore 64. Also, it was difficult to write programs in the modern
+"structured" style, since C64 BASIC did not have certain statements designed
+to make this kind of programming easy. Several accessories, notably Simons
+BASIC and SuperExpander, provided add on commands to improve the BASIC, but
+they were not a part of the standard language.
+
+  Figure 1-3. The Commodore 128 System
+  [Picture of a c128 with monitor, disk drive, printer, mouse and modem]
+
+The new version of BASIC that is accessible from C128 mode, called BASIC
+7.0, remedies these deficiencies and adds many other new features as well.
+It provides a greatly increased number of statements, including those that
+make modern structured programming easier, such as DO...LOOP, BEGIN...BEND,
+and IF...THEN...ELSE. Graphics is simplified by the addition of commands
+that let you instantly draw circles, boxes, dots, and lines; fill areas with
+color; and split the screen into a text section and a graphics section.
+Sprites (the colored graphics objects which can be programmed to move
+independently on the screen, like race cars and space ships) are supported
+by simple commands which create sprites, move them, and check for collisions
+between them. There is even a built in sprite editor that lets you design
+sprites on the Commodore screen and then save them for use in a program.
+There are also better statements to use the disk system (the DOS, or Disk
+Operating System), and a variety of new statements to help make the
+programming process easier, like AUTO, to automatically number program
+lines; RENUM, to renumber program lines; and TRACE, to allow line by line
+analysis of a program's operation.
+
+In general, the new BASIC is a programmer's delight. It is probably the best
+and most powerful BASIC available to anyone buying a computer in the
+Commodore 128's price range.
+
+  Increased Memory
+
+As its name implies, the Commodore 128 has 128K of memory, twice that of the
+Commodore 64. Because of various technicalities, the actual effect of this
+increased memory is that BASIC programs in C128 mode can be more than twice
+as large as they could be in C64 mode, as we'll discover in the chapter on
+C128 mode. And, if 128K of memory isn't enough, it's possible to expand it
+still further with optional plug in memory modules, up to a maximum of 512K.
+
+  Improved Keyboard
+
+A numeric keypad (the number keys clustered together as they are on a
+calculator) is useful for anyone entering large amounts of numeric data, but
+this feature was lacking on the Commodore 64. Since many Commodore 64 owners
+spent hours entering machine language programs in the form of long lists of
+numbers, this feature was often asked for. The Commodore 128 provides a full
+featured numeric keypad, built into the computer on the right side of the
+keyboard.
+
+In addition, the new keyboard has (among other new keys) additional cursor
+keys to make moving the cursor easier, a <HELP> key to ask for explanatory
+messages from those programs that use this capability, and the 40 column/80
+column key for switching between display modes. We'll talk more about the
+new keyboard in the chapter on the C128 mode.
+
+  Built in Machine Language Monitor
+
+If you're a machine language or assembly language programmer, or even if you
+just like to explore various technical aspects of your computer, you'll
+appreciate this new feature of the Commodore 128: a built in monitor program
+that lets you assemble, disassemble, and debug assembly language or machine
+language programs; and examine and modify memory.
+
+[1.5] The CP/M Mode
+
+As if two computers in one weren't enough, Commodore also added a third,
+entirely different mode, to the Commodore 128. This is the CP/M mode. CP/M
+stands for "Control Program for Microcomputers." It's a disk operating
+system (a program which controls disk operations) developed by Digital
+Research, Inc., and available since the early days of microcomputers, almost
+a decade ago. You'll learn more about what operating systems are in general
+and about CP/M in particular in Chapter 5.
+
+CP/M is an operating system that attempts to standardize program writing and
+usage, so that a program written to work on CP/M on one computer will work
+on CP/M on any other computer. CP/M has, in fact, been enormously
+successful, and tens of thousands of programs - mostly professional level
+business programs - have been written for it. Thus, by making CP/M available
+on the C128, Commodore is tapping into this vast reservoir of existing
+software. Since so much of this software is business-oriented, the addition
+of CP/M (along with the 80 column screen and faster disk drives) transforms
+the Commodore 128 into a serious business-oriented machine. Chapter 5
+details some of the more popular CP/M programs. It also describes the great
+amount of free "public domain" software available for CP/M.
+
+[1.6] The Bottom Line
+
+If you're interested in owning one of the most versatile computers designed
+to date, with the ability to run thousands of existing educational,
+entertainment, and other programs, with many new enhanced features, and at
+the same time, a computer that can serve as a serious business machine, the
+Commodore 128 represents an excellent value. In the chapters that follow,
+we'll tell you more about this computer and explore its capabilities in
+detail. We'll begin by discussing peripherals for the C128: display screens,
+disk drives, printers, and other external devices. Then we'll discuss the
+three modes available on the Commodore 128: the C128 mode, the C64 mode, and
+the CP/M mode; and finally we'll show you something about the C128's most
+exciting features: graphics and sound.
+

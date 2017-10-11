@@ -1,0 +1,435 @@
+*********
+
+Welcome to iDOC= - the international CBM documentation project!
+
+The goal of iDOC= is to preserve (non-English) Commodore related documents
+in electronic text format that might otherwise cease to exist with the rapid
+advancement of computer technology and declining interest in 8-bit computers
+on the part of the general population. If you would like to help by
+converting Commodore related hardcopy documents to electronic texts please
+contact the manager of iDOC=, Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names consists of a reasonably short unique title, followed by the
+document language. Two optional fields follow; first the document version (0
+for incomplete texts, version 1 is usually unnumbered), and then the
+document source, if there are more than one. Finally, the document is given
+a .txt extension.
+
+The author(s) of the original document and members of iDOC= make no
+representations about the accuracy or suitability of this material for any
+purpose. This etext is provided "as-is". Please refer to the warranty of the
+original document, if any, that may included in this etext. No other
+warranties, express or implied, are made to you as to the etext or any
+medium it may be on. Neither the author(s) nor the members of iDOC= will
+assume liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext. Therefore
+if you read this document or use the information herein you do so at your
+own risk.
+
+*********
+
+The iDOC= etext of the Serve and volley German manual, converted to text by 
+Christian Janoff <mepk@rbg.informatik.tu-darmstadt.de>
+
+serveandvolley_de.txt, February 1999, etext #45.
+
+*********
+
+                           SERVE & VOLLEY
+                              ACCOLADE
+
+                               INHALT
+
+        VORBEREITUNG..................................... 1
+        SPIELEINSTELLUNGEN............................... 2
+        WAHL DER SPIELER................................. 3
+        FUNKTIONSTASTEN.................................. 4
+        DIE KONTROLLTAFEL................................ 5
+        WIE GEZÄHLT WIRD................................. 6
+        DER SERVICE...................................... 7
+        ERMÜDUNG (FATIGUE)............................... 8
+        TURNIERSPIEL..................................... 9
+
+[1]
+                           SERVE & VOLLEY
+
+Center Court, in der Hitze der Mittagssonne. Von der Zuschauertribüne dringt
+ein leises Raunen an Dein Ohr, Wortfetzen. Die Balljungen lungern herum. Du
+machst Dich für den Aufschlag bereit, nimmst Deine Stellung hinter der
+Grundlinie ein. Deine Finger umschließen fest den Schläger, Du stopfst Dir
+einen Tennisball in die Hosentasche. Drüben auf der anderen Seite des
+Netzes, geht Dein Gegner auf und ab wie ein Löwe im Käfig, in stiller
+Konzentration. Noch einige Minuten vorher hast Du ihn im Umkleideraum
+gesehen. Da hat er ganz menschlich dreingeschaut, sympathisch sogar. Aber
+jetzt siehst Du ihn anders: als einen Tennis-Riesen mit Nerven wie
+Stahlseilen, einer knallharten Rückhand und eiskalter Entschlossenheit, Dich
+in drei Sätzen in die Knie zu zwingen.
+
+Willkommen bei SERVE & VOLLEY!
+
+VORBEREITUNG
+
+* Joystick über Steckplatz 2 anschließen. Für ein Spiel mit zwei Teilnehmern
+  einen zweiten Joystick über Steckplatz 1 anschließen.
+
+* Etwaige Cartridges entfernen, Commodore 64/128 und Diskettenlaufwerk
+  einschalten.
+
+* Diskette mit Beschriftung nach oben ins Laufwerk einlegen.
+
+* LOAD"*",8,1 eingeben.
+
+* In wenigen Sekunden erscheint der Titelbildschirm.
+
+[2]
+
+SPIELEINSTELLUNGEN
+
+Zweimal den Feuerknopf drücken, um zu den Spieleinstellungs-Menüs zu
+gelangen. Zum Anwählen der gewünschten Menü-Optionen diese mit Hilfe des
+Joysticks ansteuern und "markieren", dann zur Bestätigung den Feuerknopf
+drücken.
+
+Wettspielarten
+
+Match:              Standard-Match
+Tournament:         Organisieren und Spielen eines Einzel-
+                    Eliminationsturniers
+Resume Match:       Das letzte auf Diskette gespeicherte Wettspiel
+                    wiederaufnehmen
+Resume Tournament:  Das letzte auf Diskette gespeicherte Turnier
+                    wiederaufnehmen
+
+Schwierigkeitsgrad
+
+Easy:               Anfängerstufe
+Medium:             Schnelleres Spiel
+Hard:               Schnelleres, größere Präzision erforderliches Spiel
+Instruct:           Trainingsoption zum Erlernen der Schläge
+Demo:               Automatisches Demospiel
+
+[3]
+
+SETS PER MATCH (SÄTZE PRO WETTSPIEL)
+
+Ein Satz besteht aus sechs bis dreizehn Spielen, Gewinner des Satzes ist,
+wer sechs Spiele gewinnt.
+
+1                   Nur ein Satz
+2/3                 Die besten zwei aus drei Sätzen (internationaler
+                    Standard bei den Damen)
+3/5                 Die besten drei aus fünf Sätzen (internationaler
+                    Standard bei den Männern)
+
+SPIELFELD
+
+Hard Court:         Hartplatz: sehr schnelles Spiel, hoher Aufsprung des
+                    Balls
+Grass:              Rasen: langsamer, länger gezogener Aufsprung
+Clay:               Länger gezogener Aufsprung, schneller als Rasen, jedoch
+                    mit weniger Beweglichkeit
+
+AUSTRAGUNGSORT
+
+Centre Court:       Komplett mit Tribüne und Fans
+Seaside:            Mit Zuschauern
+Country Club:       Privat-Tennisplatz neben einem Swimming-Pool
+
+WAHL DER SPIELER
+
+Wenn die Spieleinstellungen vorgenommen wurden, wird automatisch der
+Bildschirm zur Auswahl der Spieler eingeblendet (Player Selection Screen).
+In der oberen Bildschirmhälfte werden die Plazierungen der Spieler
+angezeigt.
+
+WIE MAN DIE AUSWAHL TRIFFT
+
+* Den gewünschten Spieler mit Hilfe des Joysticks markieren. (Spieler,
+  deren Name ein C vorangestellt ist, können ausschließlich vom Computer
+  gesteuert werden.)
+
+* Zur Auswahl des Spielers den Feuerknopf drücken.
+
+* Bei Aufforderung mit Joystick und Feuerknopf den gewählten Spieler einem
+  der Joystick-Steckplätze (bzw. dem Computer) zuordnen.
+
+* Die obigen Schritte für den zweiten Spieler wiederholen. (Auf Wunsch
+  kann man auch den ersten Spieler ein zweites Mal wählen und ihn so gegen
+  sich selbst spielen lassen.)
+
+* Wenn Sie ein Turnier organisieren, geben Sie so lange Spieler ein,
+  bis die ganze Tabelle gefüllt ist. Mit F3 kann man sich die Tabelle
+  anzeigen lassen, mit dem Feuerknopf kehrt man auf die Plazierungsliste
+  zurück.
+
+* Nach Auswahl des letzten Spielers fragt das Programm, ob noch
+  Änderungen vorgenommen werden sollen. Wenn Sie mit allem zufrieden sind,
+  antworten Sie mit NO, worauf der Spielbildschirm erscheint.
+
+SPIELER-STATISTIK
+
+Die Leistungsmerkmale der einzelnen Spieler erscheinen im unteren Teil des
+Bildschirms. Zu der statistischen Information gehört das Verhältnis zwischen
+Siegen und Niederlagen, der Prozentwert der Siege und der Prozentwert der
+erfolgreichen Aufschläge (Serves). Außerdem informieren drei Balkendiagramme
+über die Stärken und Schwächen der Spieler, z.B. Tempo im Verhältnis zur
+Ausdauer, Vorgegen Rückhand und Kraft im Verhältnis zur Präzision. Wie bei
+allen Sportarten verbessert sich auch hier die Leistung durch Übung. Der
+Computer trägt dem Rechnung und aktualisiert die Spielerstatistik
+entsprechend.
+
+EIGENE SPIELER KREIEREN
+
+Die Felder 11 und 12 der Plazierungsliste sind leer. Sie sind für
+Spielernamen vorgesehen, die Sie selbst sich ausdenken.
+
+* Ein unbesetztes Tabellenfeld wählen und bei Aufforderung einen Namen
+  eingeben.
+
+* Mit Hilfe des Joysticks den Schiebebalken für SPEED vs. ENDURANCE
+  (Tempo-Ausdauer) an die gewünschte Position versetzen. Die Einstellung mit
+  dem Feuerknopf bestätigen.
+
+* Die übrigen zwei Schiebebalken in der gleichen Weise einstellen. Danach
+  den Feuerknopf drücken, worauf der neu kreierte Spieler in der
+  Plazierungsliste erscheint. Wenn bereits alle Tabellenfelder belegt sind
+  und man einen weiteren Spieler aufnehmen will, wählt man entweder Feld 11
+  oder 12 und befolgt die vorstehenden Anweiungen. Der neue Spieler tritt
+  dann an die Stelle des vorher dort befindlichen.
+
+EMPORSTEIGEN IN DER PLAZIERUNG
+
+Ein Spieler wird automatisch höher eingestuft, wenn es ihm gelingt, einen
+Konkurrenten mit höherer Rangordnung zu schlagen. Spieler, die es einfach
+nie schaffen, fallen mit der Zeit aus der Liste heraus. Um sie erneut in die
+Wettspiele mit einzubeziehen, müssen sie als neue Spieler kreiert werden und
+dann einen etablierten Spieler zu einem Match herausfordern.
+
+[4]
+
+FUNKTIONSTASTEN
+
+Während des Spiels sind die folgenden Funktionstasten verfügbar:
+
+RESTORE    Spiel neu starten (jederzeit aufrufbar)
+
+F3         Bei der Auswahl der Turnierteilnehmer: zur Anzeige der
+           Turniertabelle
+F3         Während des Turniers: zum Abspeichern des Turniers
+F3         Während eines Match: zum Abspeichern des Match
+F5         Anzeige der RECAP-Screen (Replay des zuletz verfehlten Balls)
+Run/Stop   Spielpause (jederzeit verfügbar)
+Q          Zum Beenden eines Turnierspiels zwischen zwei computergesteuerten
+           Gegnern
+
+[5]
+
+DIE KONTROLLTAFEL
+
+Die Kontrolltafel erscheint während des Spiels auf Ihrer Seite des Netzes.
+Sie dient zum Aufrufen der Schläge:
+
+* Für eine Einführung in die Verwendung der Tafel die Option INSTRUCT wählen
+  und die Anleitungen auf dem Bildschirm befolgen.
+
+* RUN/STOP drücken, um das Spiel nach Eingabe der Instruktionen
+  fortzusetzen. Auf Wunsch können die Instruktionen einzeln trainiert
+  werden, bevor man weitergeht.
+
+WIE MAN SCHLÄGE AUSFÜHRT
+
+Der Aufschläger (engl.: Server) führt den Aufschlag (Service) aus dem
+SERVING AIM SCREEN aus. Dieser Bildschirm enthält eine Darstellung des
+Spielfelds (auf dem Sie Ihre eigene Position definieren und die Schläge
+vorbereiten) und einen Auswahlbalken (zur Auswahl der Art des Aufschlags).
+
+* Den Feuerknopf drücken, dann mit dem Joystick das gelbe Feld auf den
+  gegnerischen Service-Rahmen plazieren. Auf diese Weise wird eine Position
+  angepeilt.
+
+* Während Sie die Plazierung Ihres Aufschlages planen, erscheint links ein
+  grauer Auswahlbalken und daneben ein Balken mit den Buchstaben F, S und T.
+
+Flat-Service:       Feuerknopf drücken, wenn der Balken auf F steht
+Slice-Aufschlag:    Feuerknopf drücken, wenn der Balken auf S steht
+Topspin-Aufschlag:  Feuerknopf drücken, wenn der Balken auf T steht
+
+Wird keine Aufschlagart gewählt, wird automatisch auf Flat-Service
+eingestellt.
+
+* Nach Auswahl des Aufschlags erscheint der SERVE-SCREEN und ein
+  grauer Balken - der Leistungsbalken, auf dem die Präzision eingestellt
+  wird.
+  Im Balken erkennen Sie ein grünes Rechteck, und im DIFFICULTY-LEVEL
+  (Schwierigkeitsgrad-) Fenster verschiedene Zahlen. Der Computer übernimmt
+  die Aufschlag-Informationen und berechnet, bis auf welche Distanz der
+  Schlag Aussicht auf Erfolg hat. Ein kleines grünes Rechteck und eine
+  kleine Zahl signalisieren, daß ein schwieriger Service gewählt wurde, so
+  daß es dem Gegner schwerfallen dürfte, mit einem Rückschlag zu kontern.
+
+* Zum Abgeben des Balls den Feuerknopf drücken, wenn der senkrechte Balken
+  möglichst nahe an der Mittellinie des grünen Rechtecks ist. Dabei
+  erscheine eine Nah-Ansicht in STROBE-O-STROBE(tm)-Technik im
+  KONTROLLTAFEL-Fenster. Die Fehlertoleranz kann im DIFFICULTY LEVEL-Fenster
+  abgelesen werden.
+
+* Unmittelbar nach dem Aufschlag erscheint ein neuer Bildschirm mit dem
+  Titel "RUN TO WHERE" (wohin rennen?) in der KONTROLLTAFEL. Fahren Sie das
+  gelbe Feld mit dem Joystick in den Bereich der Spielhälfte, wo Sie den
+  Rückschlag des Kontrahenten erwarten. Die Position mit dem Feuerknopf
+  bestätigen.
+
+* Wenn Ihr Gegner zum Abwurf ausholt, erscheint der AIM SCREEN in der
+  KONTROLLTAFEL. Bewegen Sie dort das kleine gelbe Feld zum Plazieren Ihres
+  nächsten Balls, und drücken Sie den Feuerknopf. Dies ist eine kritische
+  taktische Entscheidung: versuchen Sie, den Ball so zu plazieren, daß der
+  Gegner ins Schwitzen gerät!
+
+* Beim Zielen steigt der GRAUE AUSWAHLBALKEN:
+
+  Für Vor-/Rückhand:     Feuerknopf drücken, wenn der Balken bei F/B steht.
+  Für Hochschlag (Lob):  Feuerknopf drücken, wenn der Balken bei L steht.
+  Für Volley/Smash
+  (Flug-/Schmetterball): Feuerknopf drücken, wenn der Balken auf V/S steht.
+
+  Wird keine Schlagart gewählt, nimmt der Computer automatisch die
+  Standardvorgabe (F/B).
+
+* Nun geht der Leistungsbalken wieder nach unten. Drücken Sie den
+  Feuerknopf, sobald er durch das grüne Feld läuft.
+
+[6]
+
+WIE GEZÄHLT WIRD
+
+Wie Sie wissen, stammt Tennis aus England: das Zählsystem mag uns
+Kontinentaleuropäer etwas seltsam anmuten, aber so ist es:
+
+Anfangspunkt        0 (sog. Love)
+Erster Punkt       15
+Zweiter Punkt      30
+Dritter Punkt      40
+
+* Der Sieger muß einen Punkt über 40 erzielen und wenigstens zwei Punkte im
+  Vorsprung sein. Angenommen, es steht 30-40, dann muß der im Vorteil
+  befindliche Spieler einen weiteren Punkt erzielen, um zu gewinnen.
+
+* Erreichen beide Spieler drei Punkte, also 40:40, spricht man von einem
+  "EINSTAND" (engl.: deuce). Der nächste Punkt, der vom Aufschläger nach
+  einem Einstand gemacht wird, heißt "AD-IN" (Advantage in = Vorteil
+  Aufschläger); erzielt hingegen der Rückschläger den nächsten Punkt,
+  spricht man von einem "AD-OUT" (Advantage out = Vorteil Rückschläger).
+  Wenn es beiden gelingt, nach Einstand je einen Punkt zu erzielen, dann
+  herrscht wieder Einstand (deuce).
+
+[7]
+
+DER SERVICE
+
+Stellen Sie sich für den Aufschlag auf die Grundlinie. Sie haben zwei
+Chancen (Versuche), den Bal über das Netz und ins Spiel zu bringen. Der
+Aufschlag muß ins gegenüberliegende Aufschlagfeld (Service Court) plaziert
+werden (das Feld in der vorderen Hälfte der gegnerischen Spielfeldhälfte,
+die Ihnen diagonal gegenüberliegt). Landet der Aufschlag an irgendeiner
+Stelle außerhalb des Aufschlagfeldes, wird vom Schiedsrichter ein Fehler
+(fault) ausgerufen, worauf Sie noch einen weiteren Versuch gut haben.
+Schlägt auch dieser fehl, gilt dies als double fault, und der Punkt geht an
+Ihren Gegner. Danach stellen Sie sich an das andere Ende der Grundlinie und
+führen einen weiteren Service aus. Die Statistik "% of first serves in"
+informiert darüber, wie gut der Service des Spielers ist.
+
+[8]
+
+ERMÜDUNG (FATIGUE)
+
+Der Fatigue-Balken in der Kontrolltafel zeigt an, wie es um die Ermattung
+Ihres Spielers steht. Mit zunehmender Erschöpfung geht in der Regel eine
+Verringerung der Stärke, der Treffgenauigkeit und der Geschwindigkeit
+einher.
+
+[9]
+
+TURNIERSPIEL
+
+* Aus dem Wettspiel-Menü ("Type of Competition") zu Anfang des Programms die
+  Option "Tournament" (Turnier) wählen.
+
+* Die übrigen Spieleinstellungen genau wie für das 2-Spieler-Match
+  vornehmen.
+
+* In der Spielerauswahl-Phase (Player Selection Screen) zur Besichtigung der
+  Turniertabelle F3 drücken.
+  Mit dem Feuerknopf gelangen Sie zurück in die Plazierungsliste und wählen
+  dort die acht Spieler, die für das Turnier notwendig sind (vgl. die
+  Beschreibung unter "SELECT PLAYERS"). Sie können an allen Spielen
+  teilnehmen oder nur an einigen, oder auf Wunsch können Sie alles dem
+  Computer überlassen. Wenn alle 8 Felder gefüllt sind, offeriert das Menü
+  im unteren Bildschirmbereich eine Fülle von Optionen, je nachdem, wer den
+  Spieler manövriert:
+
+  View Match: Sie können ein Match zwischen zwei computergesteuerten
+  Spielern als Beobachter verfolgen. (Zum Aussteigen Q drücken.)
+
+  See Match Results: Die beiden vom Computer gesteuerten Spieler tragen ein
+  Match außerhalb der Bildschirmfläche aus (dies dauert nur einige
+  Sekunden), wonach die Punkte und der Sieger angezeigt werden. Mit dem
+  Feuerknopf gelangen Sie in die Turnierliste zurück.
+
+  Zum Starten eines Match, in dem Sie einen Spieler steuern, den Feuerknopf
+  drücken.
+
+© 1988 Accolade, Inc. Commodore ist ein Warenzeichen der Commodore
+Business Machines, Inc.
+Serve & Volley und Strobe-o-Strobe sind Warenzeichen
+von Accolade, Inc.
+Design: Artech Digital Entertainments, Inc.
+Produzent: Jay Stevens
+Mit speziellem Dank an: Eric LaBadie und Al Miller für
+ihre schöpferischen Beiträge.
+Originalanleitung: Sara Reeder
+Übersetzung: I. Weiss, Alpha Translations
+
+NOTICE
+
+ELECTRONIC ARTS RESERVE THE RIGHT TO MAKE IMPROVEMENTS IN THE PRODUCT
+DESCRIBED IN THIS MANUAL AT ANY TIME WITHOUT NOTICE.
+
+THIS MANUAL, AND THE SOFTWARE DESCRIBED IN THIS MANUAL IS UNDER COPYRIGHT.
+ALL RIGHTS RESERVED. NO PART OF THIS MANUAL OR THE DESCRIBED SOFTWARE MAY BE
+COPIED, REPRODUCED, TRANSLATED OR REDUCED TO ANY ELECTRONIC MEDIUM OR
+MACHINE-READABLE FORM WITHOUT THE PRIOR WRITTEN CONSENT OF ELECTRONIC ARTS
+LIMITED, 11/49 STATION ROAD, LANGLEY, BERKS SL3 8YN, ENGLAND.
+
+ELECTRONIC ARTS MAKES NO WARRANTIES, EXPRESS OR IMPLIED, WITH RESPECT TO
+THIS MANUAL, ITS QUALITY, MERCHANTIBILITY OR FITNESS FOR ANY PARTICULAR
+PURPOSE. THIS MANUAL IS PROVIDED "AS IS". ELECTRONIC ARTS MAKES CERTAIN
+LIMITED WARRANTIES WITH REGARD TO THE SOFTWARE AND THE MEDIA FOR THE
+SOFTWARE. PLEASE SEE THE ELECTRONICS ARTS LIMITED WARRANTY ENCLOSED WITH
+THIS PRODUCT.
+
+                       SOFTWARE © 1988 DYNAMIX, INC.
+                          ALL RIGHTS RESERVED.
+
+                         MANUAL BY DYNAMIX, INC.,
+                       GREG JOHNSON, AND Z.J. YEE
+
+                                  ECA
+                             ELECTRONIC ARTS®
+                         Home Computer Software
+A71641GM
+
+*********
+
+End of the iDOC= etext of the Serve and Volley manual.
+
+*********

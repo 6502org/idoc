@@ -1,0 +1,457 @@
+POWERPLAY
+
+BÖRJA SÅ HÄR:
+
+Anslut joysticken till "Control Port 2"
+Datorn måste vara avstängd. Stoppa försiktigt in Powerplay-cartridgen i
+porten på baksidan av datorn. Slå först då på strömmen på normalt sätt.
+Använd joysticken för att välja. Genom att trycka på joystickknappen väljer
+du det spel vars titel lyser upp på skärmen.
+
+Vill du spela ett annat spel måste datorn stängas av. Vänta tio sekunder och
+slå på strömmen på nytt. Välj nytt spel med joysticken.
+
+Ta aldrig ut eller stoppa in en cartridge när strömmen är på. Du kan
+förstöra både cartridgen och datorn!
+
+*********
+
+MICROPROSE SOCCER
+	
+Så gör du
+
+Välj MICROPROSE SOCCER och tryck ner joystickknappen.
+
+Snabbstart
+
+En spelare: välj MICROPROSE INTERNATIONAL CHALLENGE från huvudmenyn. Tryck
+på joystickknappen för att hoppa över utmanartabellen (challenge table).
+Välj PLAY BALL och tryck på knappen två gånger för att börja spela. Du är
+"Player 1" och spelar din första match mot Oman som Är tävlingens första
+lag.
+
+Om ni är två som vill spela, välj då TWO PLAYER FRIENDLY från huvudmenyn.
+Tryck på joystickknappen. Vem som blir spelare ett och två avgörs av den som
+trycker på knappen. På det här sättet kan du börja spela omedelbart. Titta
+dock först igenom avdelningen om hur man kontrollerar spelarna för att få
+ett hum om finesserna och hur du styr dina spelare.
+
+Bruksanvisning
+
+* Namnregister (Name Bank)
+
+Skriv in spelarnas namn för att utnyttja MICROPROSE SOCCERs finesser till
+fullo. Det görs genom att välja NAME BANK. Namnen "Player 1" och "Player 2"
+används genomgående i de olika ligasystemen förutsatt att de inte tas bort.
+Om du vill radera dem, välj DELETE, tryck på knappen, och välj de namn du
+vill ta bort. Tryck en gång till och namnet är borta.
+
+På det här sättet kan man ta bort namn under hela spelets gång. Om en
+deltagare exempelvis måste sluta spela innan turneringen är slut är det bara
+att använda DELETE NAME så är han eller hon borta från de resterande
+matcherna.
+
+Välj INSERT NAME och tryck på knappen. Skriv sedan in den första spelarens
+namn med joysticken. En spelares namn kan vara upp till åtta bokstäver
+långt. Välj sedan första spelarens två lagfärger. Dra joysticken mot dig för
+att bläddra fram de tillgängliga färgkombinationerna. Tryck på knappen för
+passande färg. Upprepa proceduren för lagets reservfärger.
+
+Observera: Programmet hindrar dig från att välja två snarlika färger.
+Anledningen är att om två lags första färger är identiska är det svårt att
+skilja spelarna åt. Därför ska man ha reservfärger som skiljer sig åt.
+
+När samtliga spelares namn och färger valts så väljer du EXIT för att komma
+tillbaks till huvudmenyn.
+
+* Kontrollpanelen
+Kontrollpanelen (CONTROL PANEL) låter dig välja hur spelet ska gå till i
+MICROPROSE SOCCER.
+
+Det finns många möjligheter att förändra matchbilden och de flesta är
+självklara. För att du lättare ska kunna planera ditt spel kommer här en
+kort förklaring över funktionerna:
+
+* Selection Mode 
+I automatiskt läge styr du spelaren som är närmast bollen. Datorn väljer
+automatiskt vilken spelare du styr. Detta kan också ske manuellt vilket
+innebär att du måste trycka på joystickknappen för att byta spelare under
+matchens gång.
+
+* Weather (Väder)
+Precis som i verkligheten regnar det ibland i MICROPROSE SOCCER. Och då och
+då åskar det och blixtrar. Vädret påverkar både spelarnas och bollens
+rörelser, så om du inte gillar att spela på en dyblöt plan i hällande regn
+så stäng av vädret (OFF).
+
+* Boll med skruv (Banana power)
+Ställ in hur mycket skruv du vill ha på bollen (Detta beskrivs närmare
+längre ner) med Hl, MED eller LO. Mest realistisk effekt får du med MED.
+
+* Matchlängd (Match Length)
+Matcherna varar 2, 4, 6, 8, 10 eller t2 minuter. Ska du spela långa
+turneringar rekommenderar vi 2 eller 4 minuter.
+
+* Repriser (Replays)
+MICROPROSE SOCCER bjuder på perfekta slow motion-upptagningar av varje mål.
+Ger att välja bort om du vill.
+
+* Skärmfärger (Colour mode)
+Spelar du MICROPROSE SOCCER på en svart-vit TV, ställ in skärmfärgerna. Det
+blir nämligen enklare när ett svart lag spelar mot ett vitt.
+
+* Musik (In Game Music)
+Förutom ljudeffekterna kan du också höra musik genom att trycka på denna
+knapp.
+
+
+* Demonstration (Demo game)
+Två slumpmässigt valda lag spelar mot varandra. Tryck på joysticken två
+gånger och luta dig tillbaka för att avnjuta datormatchen.
+
+* Två spelare (Two Player Friendly)
+Välj detta och tryck på knappen om ni är två. En meny visar vilka val du
+gjort inför den kommande matchen och vilka som deltar, tillsammans med
+följande möjligheter:
+
+Välj nytt lag (RE-SELECT TEAMS)
+Spela (PLAY BALL)
+Gå tillbaka (EXIT)
+
+Finns det två namn inskrivna i namnregistret välis dessa automatiskt. Gå
+till RE-SELECT TEAM om de två valda spelarna från registret inte ska spela
+mot varandra. De korrekta namnen kan därefter skrivas in.
+
+Inomhusligan (Soccer Indoor League)
+
+Upp till 16 spelare kan vara med och spela mot varandra i SOCCER LEAGUE.
+Detta inklusive spelarna vars namn är lagrade i namnregistret. Gå till
+RE-SELECT för att välja spelarna som ska vara med i respektive match.
+Matchen startas på samma sätt som i TWO PLAYER FRIENDLY. Det är upp till
+varje deltagare att hålla reda på vem som har spelat mot vem. Datorn håller
+dock koll på skillnaden i antalet vinster. Varje spelare börjar på 0. Vinst
+ökar spelarens siffra med 1. Oavgjort ger oförändrad siffra och vid förlust
+minskar talet med 1. (En spelares poäng kan aldrig sjunka under 0.) Spelaren
+med högst poängtal i slutet av en turnering vinner.
+
+VM-slutspel (World Cup/All Star Tournament)
+
+Endast de namn som finns lagrade i namnregistret får vara med i slutspelet.
+För att de ska tävla måste de väljas först. Gå till RE-SELECT TEAM och välj
+den första deltagaren. När joystickknappen trycks ner kan du välja
+nationalitet för spelare 1. Rör joysticken uppåt eller neråt för att bläddra
+bland 29 tillgängliga nationer. Tryck på knappen för att välja land. Upprepa
+proceduren för varje spelare som vill vara med.
+
+Välj START NEW TOURNAMENT när samtliga lag har valts och en ny turnering ska
+börja. Datorn fixar en VM-tabell med 24 nationer, inklusive alla valda
+spelares lag.
+
+Varje lag rankas efter förmåga. Eftersom lagen seedas i fyra nivåer påverkar
+valet av lag också motståndet i gruppen. Seedningen ändrar också förmågan
+hos de datorkontrollerade lagen. Om ditt lag exempelvis lottas i samma grupp
+som Oman, Nordirland och Mexiko har du stora chanser att vinna. På
+motsvarande sätt har du större chanser att vinna om du väljer att spela för
+Brasilien än Kamerun.
+
+        1:a-seedade     2:a-seedade     3:e-seedade     4:e-seedade
+        1) Brasilien    7) Frankrike    14) Sverige     22) Algeriet
+        2) Italien      8) Uruguay      15) Ungern      23) USA
+        3) Argentina    9) Spanien      16) Skottland   24) Australien
+        4) Västtyskland 10) England     17) Österrike   25) Kanada
+        5) Holland      11) Polen       18) Irland      26) Kamerun
+        6) Sovjetunionen 12) Danmark    19) Wales       27) Japan
+                        13) Mexiko      20) Chile       28) Nya Zeeland
+                                        21) Nordirland  29) Oman
+
+Tabellen fungerar också som en vägledning i turneringen. Den berättar när
+turneringens matcher äger rum.
+
+När två datorkontrollerade lag mats visas enbart slutresultatet.
+
+När en mänsklig spelare ska tävla (antingen mot datorn eller en kamrat)
+visas det vem han eller hon lottats mot på menyn före matchstart. Matchen
+startas som vanligt med kommandot PLAY BALL.
+
+Gör så här om någon under turneringens gäng vill byta lag av politiska skäl
+(exempelvis om landet har blivit utslaget), eller önskar lämna turneringen
+före det att laget blivit utslaget, eller plötsligt vill vara med (någon som
+inser sina möjligheter): Välj RE-SELECT TEAM i stället för PLAY BALL. Här
+kan spelaren byta lag, välja ett lag ingen annan kontrollerar eller helt
+enkelt hoppa av.
+
+Observera: En spelare kan bara hoppa in i pågående turnering om hans eller
+hennes namn finns i registret (Name Bank).
+
+Den första omgången av VM-slutspelet är avslutad när samtliga deltagare har
+spelat tre matcher. Lagen får poäng för vunna och oavgjorda matcher. Två
+poäng för vinst, en för oavgjort och noll poäng för förlust. Målskillnad
+räknas också ut, vilket är avgörande om två lag hamnar på samma poäng.
+
+De två bästa lagen i varje grupp avancerar till andra omgången som är en
+utslagningstävling. Lottningen görs slumpartat och de sex vinnande lagen går
+tillsammans med de två bästa förlorarna vidare till kvartsfinal.
+Utslagningen fortsätter genom semifinalen till finalen. Slutar en match
+oavgjord blir det förlängning där det lag som gör första målet vinner.
+
+Microprose International Challenge
+
+Microprose International Challenge är utformat för den som spelar ensam
+eller för dem som hellre vill spela mot datorn än mot varandra.
+
+I början syns en rekordtabell (High score table) som visar uppnådd nivå
+tillsammans med den sammanlagda poängen för varje spelare som finns med i
+namnregistret. Man kan hoppa mellan denna tabell och matchmenyn. Dessutom
+finns det ytterligare en undermeny:
+
+Välj nytt lag (RE-SELECT TEAMS)
+Spela (PLAY BALL)
+GÅ tillbaka (EXIT)
+
+Tryck på PLAY BALL om du är nöjd med de val som finns på matchmenyn.
+Fortsätt sedan som vanligt. RE-SELECT TEAM ger det möjligt att utmana de
+tillgängliga lagen i namnregistret. MICROPROSE INTERNATIONAL CHALLENGE är en
+organiserad liga som gör det möjligt att tävla mot 16 datorkontrollerade lag
+som bara blir bättre och bättre. Lagen har valts ur VM-tabellen. Varje gång
+ett lag besegras förbättras din position i rekordtabellen, men förlorar du
+trillar du ner. Du kan dock inte förlora din plats i ligan och om du spelar
+oavgjort görs matchen om tills en vinnare kan utses.
+
+Det slutgiltiga målet är att gå igenom samtliga 16 nivåer för att
+slutgiltligen besegra Brasilien.
+
+Kontrollerna
+
+Spelarna i MICROPROSE SOCCER rör sig på ett stort antal sätt. Trycker du
+inte ner knappen följer spelaren joystickens rörelser. Drar man exempelvis
+joysticken upp springer spelaren uppåt på motsvarande sätt.
+
+Joystickens rörelser får fotbollsspelarna att agera på tre olika sätt,
+beroende på:
+
+a) Inget lag har bollen
+b) Din spelare kontrollerar bollen.
+c) Motståndarna har bollen.
+
+a) Styr spelaren med joysticken för att försöka ta bollen. Din spelare får
+automatiskt kontroll över bollen när han rör den. Spelaren springer hela
+tiden med bollen så länge den är i hans förvar. Om joystickknappen släpps
+när spelaren får kontakt med bollen, slås den i en kort volley i den
+riktning som spelaren stor vänd mot.
+
+b) Din spelare springer automatiskt och dribblar med bollen. Han sparkar den
+bara när joystickknappen trycks ner.
+
+Spelaren kan välja mellan ett stort antal sparkar. Detta görs genom att
+rikta joysticken och hälla nere knappen. Med ett kort, snabbt tryck på
+knappen skjuts bollen last, medan man avlossar ett kanonskott automatiskt
+genom att hålla knappen intryckt.
+
+När man trycker ner knappen styr joysticken inte längre spelarens rörelser,
+utan vilken typ av skott som avlossas. Tryck ner knappen och rör joysticken
+omedelbart på följande sätt för att skjuta:
+
+  Joysticken framåt: slå en volley i en rak linje.
+  Joysticken till vänster/höger: Ett skruvat skott ät vänster/höger.
+  Joystick i mitten: Spelaren slår en rak boll.
+
+Observera: Skottets riktning är helt beroende av spelarens riktning när han
+springer med bollen. Exempelvis: springer spelaren i sydvästlig riktning
+Åstadkommer han en skruv på skottet frän vänster till höger genom att trycka
+ner knappen och dra joysticken rakt nedåt.
+
+c) Om motståndaren för bollen måste du försöka tackla bollförande spelare.
+Om spelaren är tillräckligt nära försöker han sig på en glidtackling när du
+trycker ner joystickknappen. Detta kan bara göras om din spelare rör sig.
+
+När en motståndare kommer i närheten av målet ringer en signal som betyder
+att du nu styr målvakten. Det finns flera olika regler. När du trycker på
+knappen i det här fallet kastar sig din målvakt efter bollen, på det sätt
+som beskrivs nedan:
+
+  Joystick åt häger: Målvakten kastar sig åt höger.
+  Joystick åt vänster: Målvakten kastar sig åt vänster.
+  Joysticken i mitten: Målvakten kastar sig uppåt.
+
+Målvakten är alltid bäst på att fånga bollen. Bara han får kontakt med
+bollen lyckas han ta den från motståndaren.
+
+* Inkast
+Ett inkast görs i en av tre riktningar: diagonalt till vänster eller höger,
+eller rakt fram. Inkastets längd bestäms på samma sätt som för en spark.
+
+* Inspark
+Varje gång målvakten tar bollen startas spelet på nytt med en inspark från
+samma del av målområdet som bollen togs ifrån. Insparken kan bara slås rakt
+fram och längden bestäms som vid en vanlig spark.
+
+* Avspark
+När matchen börjar, eller kommer igång på nytt efter halvlek, eller efter
+ett mål, startar spelet med ett tryck på joystickknappen. En spelare slår
+bollen till en medspelare som får full kontroll över den.
+
+*********
+
+RICK DANGEROUS
+
+Kan Rick Dangerous, dödsföraktande superhjälte och frimärkssamlare på
+deltid, överleva sitt första uppdrag i Aztekernas tempel? Och hur går det
+sen, när han kastas huvudstupa in i nya riskabla äventyr i ett egyptiskt
+gravmonument och i fiendens fästning? Här startar äventyret...
+
+Rick är utrustad med:
+
+* "Dynamit"
+Placera ut dynamiten för att utlysa fällor, spränga väggar, fiender eller
+bara för att förstöra i största allmänhet. Dynamiten behövs för att vår
+hjälte ska kunna klara sitt uppdrag. Men dynamiten är mycket farlig i tänt
+tillstånd, så vår hjälte måste snabbt ta sig därifrån innan det smäller.
+
+* "Den långa staven" - kan användas för att "peta!"
+
+* "Pistolen" - avlossar kulor
+Det finns bara ett begränsat antal kulor. Men när Rick dödar en otäcking
+dyker det då och då upp en bonuspryl. Om Rick hämtar denna fylls förråden.
+Men detta innebär att han äter måste ge sig in i fiendens gap. Använd
+ammunitionen sparsamt. Kom ihåg att pistolen ofta kan utlösa fällor och inte
+bara är till för att skjuta fiender med.
+
+* "Fällor"
+För att undvika fällor gäller det att hitta flyktvägar för Rick. Fällorna är
+förrädiska. För att klara dessa måste du använda pinnen, pistolen, dynamiten
+eller enbart ditt goda omdöme. Det finns inga självklara lösningar till hur
+fällorna fungerar eller hur de undviks. Så det gäller att vara försiktig.
+Tänk framåt, saker är inte alltid vad de ser ut att vara
+
+Joystickkontroller
+CBM 64
+* Utan att trycka ner knappen:
+  Joysticken till vänster eller höger får Rick att gå åt vänster eller höger.
+  Joysticken uppåt får Rick att hoppa upp i luften.
+  Joysticken uppåt och till vänster/höger får Rick att hoppa åt vänster eller höger.
+  Joysticken neråt får Rick att ducka.
+  Joysticken neråt och åt vänster/höger får Rick att krypa åt vänster/höger.
+
+* När knappen är Intryckt:
+  Joysticken åt vänster eller häger får Rick att peta med sin långa stav.
+   Används för att peta på knappar eller hålla fiender på avstånd.
+  Joysticken uppåt får Rick att skjuta i den riktning han är vänd.
+  Joysticken neråt får Rick att placera ut en dynamitgubbe.
+
+Game Copyright © Core Design Ltd.
+
+*********
+
+STUNT CAR RACER
+
+1. Joystickkontroller:
+Styrning: Joystick vänster/höger
+Öka hastigheten: För joysticken framåt.
+Bromsa/backa: Dra joysticken bakåt.
+Raketmotor (begränsad bränslemängd): Tryck ner joystickknappen.
+
+* Öva
+En spelare kan övningsköra på vilken bana som helst genom att välja
+"Practice" i huvudmenyn samt välja den division som önskad bana finns på.
+
+* Instrumentbräda
+
+Varvräknare
+Antalet avklarade varv visas längst ner till vänster efter bokstaven "L"
+(Laps). L2 betyder att du är inne på andra varvet.
+
+* Raketmotor (boost)
+Den visar hur mänga bränsleenheter du har kvar till raketmotorn. Bokstaven
+är "B" och B30 innebär att du har 30 enheter kvar.
+
+* Avstånd
+Längst ner till vänster finns en siffra som visar avståndet till din
+motståndare i meter. Om den visar "-" betyder det att du leder. I annat fall
+ligger du efter.
+
+* Varvtid/stoppur
+Flaggan på vänster sida lyser om du leder loppet. Längst upp till höger syns
+den senaste varvtiden. Under visas tiden för det snabbaste varvet (din eller
+din motståndares). Symbolen för stoppuret lyser om du har den bästa tiden.
+
+Andre kännetecken
+
+* Skada
+
+1. Skador på chassit.
+När bilen utsätts för stora påfrestningar kan det uppstå sprickor i chassit
+som växer från vänster till höger och som förstör buren som föraren sitter
+i. När sprickan när högra sidan är bilen trasig och du måste bryta loppet.
+Skadorna repareras dock efter varje lopp. Går bilen sönder kommer du inte i
+mål och poängen går till din motståndare.
+
+2. Plåtskador
+Drar du på dig mänga skador går det hål i taket. Dessa skador kan inte lagas
+mellan loppen, så du får dras med dem under hela säsongen. Dock får du en
+helt ny bil varje gång du startar en säsong i division 4. Skadar du chassit
+i kombination med plåtskador spricker bilen fortare.
+
+Loppen
+
+* Tävlingssäsong för en spelare
+Målet är att sluta som etta i Stunt Car Racer-ligans förstadivsion. Det
+finns fyra divisioner med tre förare och två banor i varje. För den verkligt
+duktige finns dessutom Superligan! Superligan kan du bara komma till när du
+vunnit division 1. Du startar då om i Superligans division 4 med samma banor
+som i den varliga ligan. Skillnaden är att både du och dina motståndare
+fortare och accelererar snabbare.
+
+* Säsongen
+En komplett tävlingssäsong innehåller sex lopp. Alla är uppbyggda på samma
+sätt med tre tävlande och två banor. Två av säsongens sex lopp kars mellan
+de två datorförarna och visas inte. Därför är det möjligt att säsongens
+första lopp är lopp 3 (Race 3 of 6). Föraren som leder ligan efter sex
+omgångar flyttas automatiskt upp i en högre division.
+
+* Poäng ges för:
+Vinst - 2 poäng
+Snabbaste varv: 1 poäng.
+
+Flera spelare:
+
+* Förarmästerskap
+Ända upp till åtta spelare kan vara med. Och ett mästerskap kan vara upp
+till fyra säsonger. Samtliga spelare kör under en säsong i samma division.
+Där tar spelarna poäng genom att tävla mot datorförarna. Speciella
+bonuspoäng delas ut till föraren med snabbaste varvtid och snabbaste tid för
+ett lopp.
+
+* Välj banor
+Tack vare att alla divisioner är åtkomliga går det att tävla på alla åtta
+banor under ett fyra säsonger långt mästerskap. Det går också att välja
+Superligans fyra divisioner för att få mer fart och spänning i tävlingen.
+
+* Tävlingssäsong för flera tävlanden
+En tävlingssäsong bestar av två omgångar, en för varje bana i divisionen. I
+varje omgång tävlar deltagarna mot en datorstyrd förare.
+I slutet av varje omgång delas bonuspoäng ut till spelaren/spelarna med den
+bästa varvtiden (1 poäng) och den bästa sammanlagda tiden (2 poäng),
+förutsatt att någon klarade av loppet. När andra omgången är klar (på den
+andra banan) delas bonuspoäng ut på nytt.
+
+* Råd och tips
+Det är viktigt att hitta rätt del av banan att passera sin motståndare på.
+Välj rätt avsnitt och använd raketmotorn för att passera. Kom ihåg att det
+är betydligt svårare att köra om än att hålla ledningen från start till mål.
+Raketbränslet är begränsat så använd det sparsamt. Kom ihåg att du inte
+behöver pressa joysticken framåt hela tiden. I allmänhet är det viktigt att
+köra så fort som möjligt, men det finns ställen där du måste begränsa farten
+för att inte köra av banan. "Stepping Stones" är ett exempel där du måste
+hälla en jämn fart (prova dig fram). På andra banor som "High Jump" måste du
+köra så långsamt du kan för att klara hindren. Har du kraschat och lyfts upp
+på banan med lyftkranen kan du faktiskt släppa ned din bil på motståndarens
+när den kar under!
+
+Programidé, utformning och programmering: Geoff Crammond med assistans av:
+Norah Crammond
+Ytterligare grafik: John Cummins
+Kvalitetskontroll: Peter Moreland
+Karaktären av spelet såsom beskrivet i dokumentationen kan variera beroende
+på datortyp.
+Copyright för spelet © Geoff Crammond
+

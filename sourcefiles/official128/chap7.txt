@@ -1,0 +1,1048 @@
+[7.] Sound and Music
+
+    In this chapter you'll learn:
+    * What kinds of sounds the Commodore 128 can produce
+    * The software and hardware available for generating music
+    * The principles behind Commodore 128 sound generation
+    * How to use the new BASIC 7.0 sound producing commands
+
+The sound chip built into the Commodore 128 is probably the most
+sophisticated sound-producing device on any personal computer, regardless of
+price. Originally designed to generate the professional-quality sounds of
+video games, the sound chip is capable of truly amazing performance and
+versatility. It can reproduce the sound of almost any musical instrument,
+and an almost infinite variety of sound effects, including the human voice.
+
+In this chapter we'll first introduce you to the general sound capabilities
+of the Commodore 128, and explore some of the existing software for music
+generation. Then we'll discuss in some detail how the Commodore 128 produces
+sound, and finally we'll show you how to achieve sound effects and music
+using BASIC 7.0.
+
+[7.1] What Can You Do with Sound on the Commodore 128?
+
+The easiest way to take advantage of the Commodore 128's sound capability is
+to purchase commercial software. Mostly oriented toward music, this software
+will typically let you turn your C128 into a sophisticated music
+synthesizer, rivaling professional machines costing thousands of dollars.
+Many musicians, composers, and rock groups are already using the Commodore
+64 as a synthesizer, and the C128 has all the music power of the C64.
+
+On the other hand, you may be interested in learning how to write your own
+sound-generation programs. If so, you'll find the Commodore 128, used in
+C128 mode, the ideal vehicle. The new BASIC 7.0 makes controlling the sound
+much easier than on previous Commodore computers, and the instant feedback
+provided by BASIC means that you can easily experiment with the various
+statements until you achieve just the effect you like.
+
+Of course, you can also write programs in C64 mode - using BASIC 2.0 - that
+generate sound. However, you will be at a considerable disadvantage, since
+the Commodore 64 (and the C64 mode on the Commodore 128) lack the BASIC
+commands which make programming sound in the C128 mode so easy. Instead, you
+must resort to using BASIC's POKE instruction to insert numbers into certain
+memory locations (which are in turn connected to the SID chip). Having to
+know what numbers to POKE in, and what memory locations to POKE them into,
+makes programming sound effects considerably more difficult and inflexible
+in C64 mode than in C128 mode.
+
+  In the Chips with SID
+
+The Commodore 128 has a special custom-made chip, called SID (for Sound
+Interface Device), which handles all its sound generation tasks. This chip
+can produce three separate channels, (called voices) of sound at the same
+time. Thus the C128 can easily play music with three-part harmony. The
+individual character of each of these three voices can be separately
+modified, so that one voice can sound like a trumpet, another like a guitar,
+and a third like a piano. This is achieved by modifying the waveform and the
+envelope of the sound. We'll describe what this means later in the chapter.
+By changing the envelope and waveform any of the three voices can also be
+made to produce a rich variety of sound effects, from machine guns and bombs
+falling, to the rustle of leaves on an autumn afternoon.
+
+Once you know how to use BASIC to create sounds, you can add sound effects
+or music to any program you write. Most people think about games when they
+think about sound effects, and certainly the Commodore is a perfect
+environment for creating games with great graphics and astonishing sound
+effects. However, sound is also useful in programs besides games, such as
+word-processor and spreadsheet programs. For instance, keystrokes can be
+signalled by a small clicking sound, so you're sure you've pressed the key,
+and incorrect input can be signalled by beeps. The sound-generating
+abilities of the Commodore 128 can even be used in electronics. For example,
+the C128 could generate a variety of waveforms, including white noise, to
+test audio and TV equipment.
+
+  What Equipment Do You Need to Use Sound?
+
+Although the Commodore 128 has the SID sound generator chip built into it,
+the output of this chip needs to be amplified by an external device before
+it is audible, since there is no amplifier or speaker built into the C128.
+
+Often, the TV set or monitor you're using as a display has an amplifier and
+speaker built in. The new Commodore 1902 color monitor, for example, has
+these features, as well as a volume control. By connecting the audio output
+from the C128 (either from the TV outlet or the Direct Video connection) to
+your display device, you'll be able to hear the sounds the C128 is making.
+(See the diagram in the chapter on peripherals for where these connections
+are.)
+
+You can also run this audio output to your stereo amplifier (although the
+sound will not be in stereo). This is useful if you're using a monitor
+without audio capability. With the volume turned up and the right program,
+this can generate awe-inspiring effects: you (and your neighbors too, if
+you're not careful) will swear that an intergalactic battle cruiser is
+passing overhead. Even at low volume levels your stereo amplifier will
+produce better sound, and will do a better job of reproducing the very high
+and very low tones of which the Commodore 128 is capable.
+
+[7.2] Commercial Software and Hardware for Sound Generation
+
+There is a wide variety of music software and add-on hardware devices, such
+as keyboards, already available for the Commodore 64. All of these products
+will work with the Commodore 128 in C64 mode, and some may also work in C128
+mode. Manufacturers are also beginning to produce products specifically for
+the C128 mode.
+
+In this section we'll describe, in general terms, what some of these
+products do. We won't describe specific products; rather we'll try to give
+you an idea of what sort of features are available and what to look for when
+buying music oriented programs and equipment for your Commodore 128. At the
+end of the chapter we include a list of companies producing music software
+and hardware.
+
+  Add-on Piano Keyboards
+
+It's possible to use the regular keyboard keys on the Commodore 128 for
+playing and composing music. Some available software uses this approach.
+Sometimes only one row of keys is used, accessing a single octave; other
+products use all four rows of keys, assigning each row to a different
+octave.
+
+However, for anyone used to playing the piano or a similar keyboard
+instrument, using typewriter type keys to play music is difficult. To solve
+this problem, a variety of manufacturers offer piano-style keyboards which
+can be added to the C128. Which one of these is right for you depends on how
+serious you are about music on the Commodore 128, and how deep your
+pocketbook is.
+
+The simplest and least expensive (less than $50) of these keyboards fits
+right over the C128 keyboard. It's called an overlay keyboard. It looks like
+a small piano keyboard, but pressing each note causes one of the character
+keys on the keyboard to be depressed. Special software interprets these key
+presses and translates them into musical notes. This type of keyboard is not
+as easy to learn to play as a real piano or synthesizer keyboard, and you
+probably won't be able to play as fast on it. However, practice makes
+perfect, and there are virtuosos of even this humble approach to keying in
+music.
+
+The next step up in sophistication are membrane type keyboards which plug
+into the controller (joystick) ports of the C128. These are somewhat more
+convenient to use than the overlay keyboard, but still do not have the same
+action or feel as a synthesizer keyboard. Cost is between $50 and $100.
+
+If you don't mind spending a little more - from $150 to $300 - you can buy a
+full featured add on keyboard that rivals those on commercial-grade
+synthesizers. A variety of firms makes these keyboards, which typically
+feature several octaves of notes.
+
+  Music Software
+
+Music software available for the Commodore 128 serves a variety of
+functions. We'll talk about each of these functions in turn, although some
+software integrates some or all of the functions together in one product.
+Other manufacturers offer specific products aimed at specific functions, but
+at lower prices than the integrated products.
+
+   As a Simple Musical Instrument
+
+First, you can simply use the Commodore 128 as a musical instrument. Either
+using the regular Commodore 128 keyboard, or using an add-on keyboard, you
+play a melody, and the C128 generates the sounds of the notes and sends them
+out to be amplified by your TV set, monitor, or stereo amplifier. In this
+mode the C128 is operating as a simple music synthesizer. You can typically
+play using a variety of different voices and instruments.
+
+Some packages offer a rhythm section which plays along with you, giving you
+a choice of rock, waltz, samba, and so forth. You can change octaves, use
+vibrato, change the tempo, and mold the sound of the C128 to imitate a wide
+variety of instruments, all while you're playing. Some products let you play
+several notes at once, or play notes and chords at the same time. However,
+no more than three notes can be played at once, since the Commodore 128 has
+only three voices.
+
+   As a Playback Device
+
+Many software manufacturers have recorded albums of music which you can play
+on your Commodore 128, somewhat as if it were a record or tape player. The
+music generally comes on disks, and must be used with a master program to
+interpret the disks and turn them into music. Almost every variety of music
+has been recorded for the C128: rock, jazz, classical, country, and so on.
+
+You can not only listen to these albums, you can also use them as take-off
+points for your own experimentation. You can rewrite them, using the
+composing programs to be described below. You can eliminate one voice in a
+composition and play that part yourself. You can change the voices,
+instruments, and tempo, to see what new effects you can create.
+
+Many of these playback programs show you the note being played on the
+screen, as it's being played. Typically these programs display the note on a
+musical staff. Other programs provide a more complex visual display to
+accompany the music. This can range from simple shapes and colors to complex
+animation: in effect you're watching a complete computer-generated video.
+
+   As Composition Devices
+
+Probably the most exciting kind of music software for the Commodore 128 lets
+you compose your own music. Typically, as you write notes, they are stored
+in memory where they can be retrieved and modified. There are a variety of
+different ways to do this, depending on the particular software package.
+With some products you type the notes in at the keyboard; with others you
+use the joystick to position notes on a musical staff shown on the screen.
+You can use sharps and flats, and notes of different duration such as half,
+quarter, and sixteenth notes. You can write in three different voices, and
+assign the sound of different instruments to each voice. When you've
+finished any part of the music, you can play it to see how it sounds. If you
+don't like it, you can edit it and replay it until you do.
+
+Many programs that let you play or compose music also let you print out the
+musical score on your printer. If you're a composer, this is invaluable. As
+soon as you finish your masterpiece, you can print it out, then mail off
+copies to your agent or the major studios so you can start making your
+fortune. A typical printout will have all the professional features of
+printed music: treble and bass clefs, sharps and flats, different length
+notes, key signatures, and so forth.
+
+   Teaching Music
+
+There are several programs on the market which teach you music, or teach you
+specifically about the music-generation capabilities of the SID chip. These
+can provide a far more interactive and exciting environment for learning
+about music than traditional classroom methods.
+
+We've given you some idea of the capabilities of commercial sound-generation
+software. But suppose you want to write your own sound-generating programs?
+The next sections explore how sound works on the Commodore 128, and how you
+can use BASIC 7.0 to take control of the sound generation.
+
+[7.3] Sound Ideas
+
+If you want to write your own programs to generate sounds, you'll need to
+know something about sound in general, and about how the SID chip "thinks"
+about sound. That's the purpose of this section. In the section following
+this one, we'll show you what BASIC statements to use to achieve the effects
+we describe here. If you're already an old hand at programming sound on the
+Commodore 64, and you just want to learn about the new statements for
+generating sound in BASIC 7.0, then you can skip this section and go on to
+the next one, called Sound and BASIC 7.0.
+
+Simple musical sounds have three major characteristics: frequency, volume,
+and duration. Let's look at these in turn.
+
+  Frequency
+
+One of the most important aspects of any sound is its frequency. The
+frequency specifies how high or how low a pitch the sound has: a flute is
+higher pitched than a cello; that is, its sound has a higher frequency.
+Frequency is measured in cycles per second, or cps. Human hearing extends
+from about 40 cps to somewhat under 20,000 cps, depending on the particular
+person. The C128 can't generate this wide a range of tones directly: the
+highest it can generate is somewhere around 4,000 cps. However, the
+harmonics produced by the SID chip extend much higher. (We'll define
+harmonics in a moment.)
+
+When you program the C128 to generate a sound, you'll give the SID chip a
+number to tell it what frequency you want to generate. This number is not
+the frequency itself, but a number related to it, as we'll see in the
+section on BASIC.
+
+All sound consists of waves in the air. These waves can be thought of as
+looking something like waves in the ocean, with troughs and crests repeating
+themselves over and over. In a high-pitched (high-frequency) sound the
+crests are closer together; in a low-pitched (low-frequency) sound they are
+further apart.
+
+We mentioned harmonics. What are they? Briefly, almost any musical note
+consists not only of the fundamental frequency of the note, but of a variety
+of other frequencies as well. The other frequencies are multiples of the
+original frequency, and are called harmonics. The first harmonic is twice
+the frequency of the note itself. The second harmonic is three times the
+original frequency, and so forth. The harmonics are not as loud as the
+original frequency. Which specific harmonics are loud, and which soft,
+determines the characteristics of the note: its timbre and voice. It is
+these characteristics which the SID chip alters to generate the sounds of
+different instruments.
+
+  Volume
+
+Next to the frequency, the volume (sometimes called "loudness" or
+"amplitude") of a sound is probably its most obvious feature. If you think
+of sound as a series of waves, then the volume is the height of the waves.
+You can control the volume of all the sound output of the Commodore 128 from
+your program, in much the same way that you can turn down the volume on a
+radio with a knob. You can also regulate the volume of sounds individually.
+We'll have more to say about this later.
+
+  Duration
+ 
+Any sound has a given duration, or length of time it lasts. The crack of a
+stick breaking, for instance, is shorter than the wail of a train whistle.
+When you use the Commodore 128 to generate sound, you'll give it a number to
+tell it how long a sound should last.
+
+There are several aspects to specifying duration in music. First, there is
+tempo. The tempo specifies how long a measure is. A measure is a fundamental
+unit of music notation. There are a certain fixed number of notes in each
+measure. A note can be a whole note, a half note, which is half as long as a
+whole note, a quarter note (half as long as a half note), an eighth notè, or
+a sixteenth note. The exact number of notes in a measure depends on the time
+of the music. For instance, if a musical piece is in 4/4 time, then there
+will be four quarter notes (or two half notes or one whole note) in a
+measure. If a piece is in 3/4 (waltz) time, then there will be three quarter
+notes in a measure.
+
+So to establish how long a musical note will last, you need to specify both
+the tempo, and the kind of note it is: whether half, quarter, or whatever.
+We'll have more to say about musical notation when we discuss the PLAY
+statement in the next section.
+
+Figure 7-1 shows the frequency, duration, and volume of some typical sound
+waves. If you connected a microphone to an oscilloscope (a device that makes
+pictures of electrical wave forms), and held the microphone next to a source
+of sound, you would see waves shaped something like this. Usually, however,
+a note generated by a musical instrument is considerably more complicated
+than these simple shapes.
+
+  Figure 7-1. Frequency, Volume, and Duration of Sound Waves
+  |<------------DURATION------------>|^|<------------DURATION------------>|
+     /\          /\          /\       V     /\                      /\
+  | /  \        /  \        /  \     |O|  /    \                  /    \  |
+   /    \      /    \      /    \     L /        \              /        \
+  |----------------------------------|U|----------------------------------|
+         \    /      \    /      \    M             \        /
+          \  /        \  /        \   E               \    /
+           \/          \/          \/ |                 \/
+  ------------------------------------V------------------------------------  
+       HIGH FREQUENCY SOUND WAVES            LOW FREQUENCY SOUND WAVES
+
+On many home computers what we have told you about frequency, volume, and
+duration is all you need to know about sound. These computers can make
+simple beeping sounds of different pitches, but that's all. They cannot
+perform the more sophisticated sound operations needed to shape the sounds
+to accurately imitate different musical instruments and other effects.
+
+  Wave Forms
+
+In Figure 7-1 we showed only one kind of waveform: the triangle. However, the SID chip
+can also generate several others: sawtooth, noise, and pulse. These four waveforms are
+shown in Figure 7-2.
+
+  Figure 7-2. The Four Different Wave Forms
+  [Omitted]
+
+Sawtooth and triangle are similar in that they produce simple melodic
+sounds. The triangle sounds are more mellow, like woodwinds; while the
+sawtooth is brassier. (These sounds are different because they have
+different harmonics.)
+
+The noise waveform is used for an entirely different purpose. Rather than
+generating musical tones, it generates rumbling and hissing sounds. It's
+used for sound effects such as explosions, gunshots, and avalanches. It
+achieves these effects by using a very irregular waveform. This creates
+what's called "white" noise, a mixture of many different frequencies which
+sounds like static. Low frequencies produce a rumbling sound, while higher
+frequencies produce "shhh" and "sass" sounds. By molding this white noise
+with the envelope (to be described next) or filters, you can create an
+amazing variety of effects.
+
+The pulse wave generates tones which work best at reproducing certain kinds
+of instruments, such as pianos. This waveform requires you to specify the
+width of the pulses. Different pulse widths produce different effects.
+
+  The Envelope
+
+When a note is played on a musical instrument - a violin, for example  - it
+doesn't simply start suddenly, continue at a fixed volume for a period of
+time, and then stop suddenly, as Figure 7-1 implies. If you could look at a
+picture of the sound made by a real musical instrument on the oscilloscope,
+you'd see something different and more complicated happening. Imagine a note
+as having a lifetime of its own, and going through a series of phases in its
+life. A man is born, grows larger and stronger, loses some of his strength
+but hangs in there for many decades, and finally dies. A musical note goes
+through a similar process, but its phases are called attack, decay, sustain,
+and release.
+
+When these four parts of the note are put together, the resulting waveform
+is called the envelope of the note. Let's look at the envelope's parts in
+more detail.
+
+   Attack
+
+First, the sound of our violin note takes a certain length of time to build
+up to a peak volume. This length of time is called the attack, and can be
+thought of as the growth period of the note. The attack does not take a long
+time (it's measured in.milliseconds, or thousandths of a second), but it
+does influence how the note will sound. Cymbals, for instance, have a
+shorter attack than a violin or flute.
+
+   Decay
+
+Once the note has reached it's peak volume, it immediately begins to die
+away. You can think of this as a person beginning to lose maximum athletic
+ability soon after reaching full size - peak ability begins to decline
+almost as soon as it's been achieved.
+
+   Sustain
+
+During its decay phase, a note will lose some of its strength, but not all.
+It will drop to a level somewhat lower than its peak. This level is called
+the sustain level. Note that sustain refers to a volume level, not to a
+length of time, as with attack and decay. The length of time that a note
+remains at the sustain level is determined by the duration of the note, as
+mentioned earlier.
+
+   Release
+
+After a note has been sounded for a certain length of time (the duration),
+it comes to an end. However, it does not end instantly, but dies away more
+or less gradually. The length of time during which it dies away is called
+the release part of the note.
+
+   Putting It All Together
+
+Figure 7-3 shows the envelope of a note with the attack, decay, sustain and
+release phases.
+
+  Figure 7-3. The Envelope of a Musical Note
+  [Omitted]
+
+Notice that the envelope serves only to shape the existing sound waves. The
+sound waves and the envelope are different kinds of things. The sound waves
+have their own frequency and duration, which is not changed by the envelope.
+The envelope only specifies how the waves will grow and die away. Notice
+that in the diagrams of the sound waves we showed both the upper and lower
+parts of the waves; while in the diagram of the envelope only the upper
+parts of the soundwaves are shown. This is done only to simplify the
+diagram, the individual waves still oscillate both above and below the line,
+even though the oscillations below the line are not shown.
+
+Not all instruments use all four phases of the envelope. Woodwinds (like
+clarinets and flutes) do, as do the strings (violins) and the brass
+instruments (trumpets and French horns). But percussion instruments may omit
+the sustain phase altogether. In the case of a piano (a percussion
+instrument), there is a decay phase, so that the envelope goes up sharply,
+slides down the decay slope, and then during release drops to zero; but with
+drums and cymbals the decay and release phases are merged together, so that
+their envelope goes up sharply, and then returns immediately to zero. This
+is shown in Figure 7-4.
+
+  Figure 7-4. Envelopes for Piano and Drums
+  [Piano: Attack, Decay, Release
+   Drums: Attack, Release]
+
+Actually, there is usually a variety of different envelope shapes which will
+generate the sound of a particular instrument. Often, for instance, you can
+eliminate either the decay or the release phase and achieve roughly the same
+effect.
+
+In the next section of this chapter, on BASIC 7.0, you'll learn how to
+generate the sounds of particular instruments by designing "custom"
+envelopes; that is, selecting appropriate values for attack, decay, sustain,
+and release. Commodore has also built the envelopes for some instruments
+right into BASIC; for these instruments you don't need to design your own
+envelope.
+
+  Sweep
+
+Another way that notes can be modified by the SID chip is by using sweep.
+Sweep lets you start a note at a certain frequency and then vary the
+frequency while the note is in progress. You need to tell SID whether you
+want the sweep to go up or down, what frequency you want to end on, and what
+frequency step value to use in sweeping (this determines how rapidly the
+sweep will take place).
+
+  Voices
+
+We've already mentioned that the SID chip is capable of producing three
+independent voices or channels of sound output. Each of these voices can be
+programmed independently, so the effect is almost like that of having three
+separate sound chips. Each voice can be given its own frequency, duration,
+and envelope. Notice, however, that the volume control on the SID chip
+operates on all three voices at once. You can specify the sustain volume for
+individual voices, but the overall volume affects them all the same way.
+
+  Filters
+
+Besides the envelope, there are other more subtle ways to modify the sounds
+created by the SID chip. One way is through the use of filters.
+
+A filter is an electronic circuit which blocks out certain frequencies of
+sound. The bass and treble tone controls of your stereo are filters. When
+you turn the treble control to its minimum setting, the higher-frequency
+parts of the sound are filtered out; and when you turn the bass knob to
+minimum, the lower-frequency sounds are filtered out. You can use the
+filters in SID in very much the same way you use the tone controls on your
+stereo: to emphasize sounds of certain frequencies and diminish sounds of
+other frequencies.
+
+   High- and Low-pass Filters
+
+There are three kinds of filters available in the SID: high-pass, low-pass,
+and band-pass. When you use the high pass filter, you block out the
+low-frequency sounds, and pass the highs, just as you do when you turn down
+the bass on your stereo. This creates tinny, high pitched sounds. The
+low-pass filter, on the other hand, blocks out the high frequencies, and
+creates deep, solid tones.
+
+   Cutoff Frequency
+
+What frequencies, exactly, are we talking about when we discuss filtering
+out the low or the high frequencies? On your stereo you have no way of
+knowing exactly what frequencies are eliminated when you turn the knob. The
+SID chip, on the other hand, lets you specify exactly where you want the
+cutoff point to be. For instance, if you're using a high-pass filter and you
+specify a cutoff frequency of 1000 cps, then all the frequencies below 1000
+cps will be filtered out or eliminated. Similarly, if you're using a
+low-pass filter with the same cutoff frequency, then all the sounds with a
+frequency higher than 1000 cps will be filtered out.
+
+The electronic circuits that act as filters aren't perfect, so the cutoff
+frequencies are not exact. The frequencies on the "wrong" side of the cutoff
+will be transmitted to some extent, but the further a frequency is from the
+cutoff, the more it will be attenuated. Figure 7-5 shows the effect of
+filters on the sound levels at a range of frequencies.
+
+  Figure 7-5. Filters
+  [Omitted]
+
+Bandpass Filter
+
+SID offers a third kind of filter called the bandpass filter. As its name
+implies, this circuit filters out both high and low frequencies, so that
+only those in the midrange can get through. In the case of this filter the
+term "cutoff" frequency is a misnomer, since the number used for this
+frequency now specifies the point at which the sound will pass through the
+filter, rather than being cut off.
+
+Figure 7-5 shows the effects of these three kinds of filters on the amplitude of sound
+transmitted at different frequencies.
+
+By combining the high- and low-pass filters you can create a filter which is
+the opposite of the band-pass filter: it filters out mid-range frequencies,
+rather than letting them pass through.
+
+Another aspect of the filters that can be varied is the resonance. This
+determines how the frequencies of the sound near the cutoff frequency
+behave, and can be modified to achieve varying degrees of "sharpness" in the
+resulting sound.
+
+Something to note about the filters is that they operate on all three voices
+at once. Thus you can't use filters to emphasize the bass on one voice and
+the treble on another.
+
+  Ring Modulation and Synchronization
+
+It is possible to combine two voices together to produce interesting musical
+effects. In ring modulation, the outputs of two voices are added together.
+This can produce the "ringing" effect heard in bells and gongs. In
+synchronization two voices are logically ANDed together. This can be used to
+produce a rising and falling sound, such as a mosquito might make, and other
+complex harmonic structures.
+
+This review has only scratched the surface of sound generation on the
+Commodore 128. There are many other ways to shape and modify sound, but at
+this point let's turn to the specifics of sound generation with BASIC.
+
+[7.4] Sound and BASIC 7.0
+
+In this section we'll describe the commands that BASIC 7.0 uses to control
+the sound and music capabilities of the SID chip. There are six of these
+statements: VOL, SOUND, ENVELOPE, PLAY, TEMPO, and FILTER. We'll describe
+each of these statements in turn.
+
+  The VOL Statement
+
+As we mentioned above, the volume of all three voices can be controlled
+together by one BASIC statement. This statement is VOL, for volume. This is
+one of the simpler statements, since it has only one parameter. Here's a
+typical program line in BASIC, using this statement:
+
+        100 VOL 8
+
+The possible settings for the volume range from 0 to 15, where 0 is off (no
+sound) and 15 is maximum.
+
+Since you can adjust overall sound volume using the knob on your TV set or
+stereo, you may find yourself keeping the VOL at its highest level most of
+the time, and controlling individual notes with the sustain level. However
+VOL is useful in sound effects, and for turning the sound on and off. Notice
+however, that you must use VOL before you con use the SOUND statement to
+actually generate sound. You can't get any sound out of the SID chip until
+you've used VOL to select a non-zero volume level.
+
+  The SOUND Statement
+
+The SOUND statement is the keystone of BASIC 7.0's sound effects capability.
+With it you can set the frequency, duration, sweep, and waveform of a sound.
+It's not usually used for playing music; the PLAY statement does that. SOUND
+is used for sound effects and other situations where you want very close
+control of the frequency and other characteristics of the sounds you're
+producing.
+
+   The Simple Version of SOUND
+
+In its simplest form, SOUND can be used to set only the frequency and
+duration of a sound. You must also specify which voice is to be used, since
+every sound produced must be made by one of SID's three voices. For
+instance, the program line
+
+        100 SOUND 2, 4291, 60
+
+will cause a tone with the frequency of middle C to be played by voice
+number 2 for one second. Lets look at the three parameters used in this
+statement.
+
+The first parameter in SOUND (the 2 in this case) specifies the voice. The
+range of choices here is from 1 to 3.
+
+The second parameter is the frequency. This is a number from 0 to 65535.
+Unfortunately, this number does not correspond to the actual frequency of
+the sound. However, it's related to it by the following simple formula:
+
+          Parameter value = Frequency / 0.06097
+
+Thus while the range of values for the frequency parameter runs from 0 to
+65535, the range of actual frequencies runs from 0 to about 4000 cps
+(although values below about 40 cps will sound more like a series of clicks
+than a tone).
+
+Middle C on the musical scale has a frequency of 262 cps, so, dividing this
+number by 0.06097, we find the value of the parameter to generate this note
+is 4297. Table 7 1 shows the frequencies and parameter values for the notes
+in the octave starting with middle C. The notes in the next higher octave
+can be found by doubling these values, and the notes in the octave below can
+be found by dividing them by 2.
+
+  Table 7-1. Frequencies and Frequency parameter Values for Musical Notes
+  --------------------------------------------------------------------------
+       Note         Actual Frequency         Sound Frequency Parameters
+  --------------------------------------------------------------------------
+        C                 262                           4297
+        C#                277                           4543
+        D                 294                           4822
+        D#                311                           5100
+        E                 330                           5412
+        F                 349                           5724
+        F#                370                           6069
+        G                 392                           6429
+        G#                415                           6807
+        A                 440                           7217
+        A#                466                           7643
+        B                 494                           8102
+        C                 523                           8578
+  --------------------------------------------------------------------------
+
+The third parameter in the sound statement is the duration. This is the
+length of time the sound will last, expressed in units of 1/60 of a second.
+Thus if this parameter is set to 60, the sound will last for one second. A
+setting of 30 will give you 1/2 second, a setting of 120 will give you two
+seconds, and so on.
+
+  Setting the Sweep and Waveform
+
+The SOUND statement can be used just as we've shown it above, with only
+three parameters. However, it can also be used to specify the sweep and the
+waveform of the sound. Figure 7-6 shows a SOUND statement with all the
+parameters identified.
+
+  Figure 7-6. The SOUND Statement
+  SOUND 1, 2145, 30, 0, 1072, 50, 2, 2047
+        ^  ¯¯|¯¯  ^  ^  ¯¯|¯¯  ^  ^  ¯|¯
+        |    |    |  |    |    |  |   +----- Pulse width (0-4095)
+        |    |    |  |    |    |  +----- Waveform
+        |    |    |  |    |    |         0 = Triangle
+        |    |    |  |    |    |         1 = Sawtooth
+        |    |    |  |    |    |         2 = Variable Pulse
+        |    |    |  |    |    |         3 = Noise
+        |    |    |  |    |    +----- Sweep step size (0-32767)
+        |    |    |  |    +----- Minimum sweep frequency (0-65535)
+        |    |    |  +----- Sweep direction
+        |    |    |         O = Up
+        |    |    |         1 = Down
+        |    |    |         2 = Oscillating
+        |    |    +----- Duration (sixtieths of a second)
+        |    +----- Frequency (0-65535)
+        +----- Voice (1, 2, or 3)
+
+When the sweep parameters are used, the note will start at one frequency and
+move up or down to another frequency as it's being played. To cause this
+sweep to take place you must specify three parameters in addition to voice,
+frequency and duration. These new parameters are sweep direction, minimum
+sweep frequency, and sweep step size.
+
+Sweep direction specifies whether you want the sound to sweep up in
+frequency while it's being played (a value of 0), to sweep down (a value of
+1), or to oscillate between a high and low value (a value of 2).
+
+The minimum sweep frequency specifies the lower of the two frequencies used
+for the sweep: the sound will either sweep down to this frequency from the
+value specified in the original frequency parameter (if you specified down
+as the direction), or it will start at the minimum frequency and sweep
+upward (if you specified up as the direction). If you specified the
+oscillating mode, the pitch of the sound will oscillate between the two
+values.
+
+The sweep step size determines how rapidly the sweep will take place.
+Although this parameter can have a value as high as 32,767, it is often used
+with values in the hundreds or lower.
+
+The following short program will cause the frequency to sweep down through
+one octave, to middle C, using a frequency step size of 100:
+
+        100 VOL 15
+        110 SOUND 2, 8578, 60, 1, 4291, 100, 0
+
+For the sound of a police siren, try this program, which uses the
+oscillating sweep between the frequency parameters of 30000 and 40000, for 5
+seconds:
+
+        100 VOL 15
+        110 SOUND 1, 40000, 300, 2, 30000, 1
+
+You can also use the SOUND statement to select one of the four waveforms the
+SID chip is capable of generating: triangle, sawtooth, variable pulse, or
+white noise. If you select the variable pulse waveform, then you must also
+specify the pulse width. This parameter can run from 0 to 4095. When its
+value is half the maximum, or 2048, the wave shape is that of a square wave,
+and the sound produced has the "fullest" or most sonorous quality. Values
+close to this are often used to imitate the sound of a piano. Other values
+for the pulse width make a sharper, more buzzy sound.
+
+This program will use the sawtooth waveform to generate the note A above
+middle C. Notice that since sweep is not used, the three parameters that
+pertain to sweep are all zero.
+
+        100 VOL 15
+        110 SOUND 1, 7216, 30, 0, 0, 0, 1, 0
+
+The following program will make the sound something like an organ, using the
+variable pulse waveform and a square wave:
+
+        100 VOL 15
+        110 SOUND 1, 7216, 30, 0, 0, 0, 2, 2047
+
+Here's a program that makes a short sound like a shot, using the white noise
+waveform. By combining a stream of these sounds with a FOR...NEXT loop, you
+could generate the sound of a machine gun.
+
+        100 VOL 15
+        110 SOUND 1, 1000, 10, O. O. 0, 3, 0
+
+Note that the SOUND statement causes the sound to be produced as soon as
+it's executed. Once started, the sound will continue for the duration
+specified.
+
+  The ENVELOPE Statement
+
+Now that we know how to generate sounds, we'll move on to music generation
+on the Commodore 128. The principal statement used to generate music is
+PLAY. However, to understand the PLAY statement, you'll first need to know
+how three other statements work: ENVELOPE, TEMPO, and FILTER. We'll cover
+these in order, then discuss PLAY.
+
+ENVELOPE defines the characteristics of a particular envelope. After an
+envelope has been defined, you can then use PLAY to specify what particular
+notes are to be played using this envelope. By itself ENVELOPE does not
+generate sound; it only provides a definition for later use in the PLAY
+statement. (To understand the purpose of ENVELOPE, you must be familiar with
+the idea of envelopes and attack decay sustain release phases of the
+envelope as discussed in the first part of this chapter.)
+
+   Predefined Instruments
+
+The Commodore 128 actually has built into it the parameters for ten
+"standard" instruments, from calliope to xylophone. That is, the envelopes
+for these instruments have been predefined and stored in the computer, so
+that you don't need to figure them out yourself Table 7-2 shows these
+instruments; the attack, decay, sustain, and release (ADSR) settings; and
+the waveforms for each one.
+
+  Table 7-2. Predefined Instruments
+  --------------------------------------------------------------------------
+    Number  Instrument  Attack  Decay  Sustain  Release   Waveform   Width
+  --------------------------------------------------------------------------
+      0     Piano          0      9       0        0         2       1536
+      1     Accordion     12      0      12        0         1
+      2     Calliope       0      0      25        0         0
+      3     Drum           0      5       5        0         3
+      4     Flute          9      4       4        0         0
+      5     Guitar         0      9       2        1         1
+      6     Harpsichord    0      9       0        0         2        512
+      7     Organ          0      9       9        0         2       2048
+      8     Trumpet        8      9       4        1         2        512
+      9     Xylophone      0      9       0        0         0
+  --------------------------------------------------------------------------
+
+The purpose of the ENVELOPE statement is to change these predefined
+envelopes to create new instruments with new sounds. This is done simply by
+executing the ENVELOPE statement containing the number of the envelope you
+wish to change, and the various parameters you want to substitute for the
+standard ones. Figure 7-7 shows the various parameters of the ENVELOPE
+statement.
+
+  Figure 7-7. The ENVELOPE Statement
+  ENVELOPE 4, 5, 8, 10, 5, 2, 1024
+           ^  ^  ^   ^  ^  ^  ¯|¯
+           |  |  |   |  |  |   +----- Pulse width (0-4095)
+           |  |  |   |  |  +----- Waveform
+           |  |  |   |  |         0 = Triangle
+           |  |  |   |  |         1 = Sawtooth
+           |  |  |   |  |         2 = Variable pulse
+           |  |  |   |  |         3 = Noise
+           |  |  |   |  |         4 = Ring modulation
+           |  |  |   |  +----- Release rate (0-15)
+           |  |  |   +----- Sustain level (0-15)
+           |  |  +----- Attack rate (0-15)
+           |  +----- Decay rate (0-15)
+           +----- Envelope number (0-9)
+
+The first parameter in this statement is the envelope number. If you want to
+change the standard flute, which is envelope number 4, for example, then you
+would use a 4 here.
+
+The next four parameters of ENVELOPE specify the envelope itself. They are
+attack, decay, sustain, and release (these terms were defined earlier in
+this chapter). All these parameters can have values between 0 and 15. Note
+that while attack, decay, and release refer to times, sustain refers to the
+volume or amplitude of the note during its sustain phase. (The actual
+duration of the sustain phase is specified in the PLAY statement.)
+
+How long attack, decay, or release will last when set to a particular value
+is shown in Table 7-3. (The abbreviation "ms" means milliseconds, or
+thousandths of a second.)
+
+  Table 7-3. Attack, Decay, and Release Durations
+  --------------------------------------------------------------------------
+      Parameter Value    Attack Duration    Decay and Release Durations
+  --------------------------------------------------------------------------
+             0                 2 ms                     6 ms
+             1                 8 ms                    24 ms
+             2                16 ms                    48 ms
+             3                24 ms                    72 ms
+             4                38 ms                   114 ms
+             5                56 ms                   168 ms
+             6                68 ms                   204 ms
+             7                80 ms                   240 ms
+             8               100 ms                   300 ms
+             9               250 ms                   750 ms
+            10               500 ms                   1.5 s
+            11               800 ms                   2.4 s
+            12                 1 s                      3 s
+            13                 2 s                      9 s
+            14                 5 s                     15 s
+            15                 8 s                     24 s
+  --------------------------------------------------------------------------
+
+The final two parameters in ENVELOPE specify the waveform and (if the
+variable pulse waveform is selected) the pulse width. These two parameters
+are the same as those used in the SOUND statement, with one addition:
+besides the four waveforms we could specify with SOUND, it is also possible
+to specify ring modulation.
+
+In ring modulation, voice 3 is used as a sort of envelope to modulate voice
+1. Try selecting a very low-frequency value for voice 3, and playing it at
+the same time as a normal note from voice 1. You should obtain a variety of
+"ringing" sounds, such as a bell makes. Experimentation will be helpful
+here.
+
+As an example of using ENVELOPE, the following statement will redefine the
+trumpet envelope, lengthening the release phase so the sound dies away more
+slowly, and increasing the sustain volume from 4 to 6.
+
+        100 ENVELOPE 8, 8, 9, 6, 3, 2, 512
+
+  The TEMPO Statement
+
+The TEMPO statement acts like the setting on a metronome. It specifies how
+long a measure will take, and thus the duration of whole notes, half notes,
+and so on. Here's TEMPO being used to specify a tempo of 40:
+
+        100 TEMP0 40
+
+The parameter in the TEMPO statement can have any value between 0 and 255.
+At a setting of 0 the notes will sound continuously, one after the other.
+The default setting is 8. The higher the value of the TEMPO parameter, the
+shorter the notes will be. Thus a value of 6 will provide slow dance music,
+while a value of 200 will be useful for sequences of fast sounds in games.
+
+Here's the formula relating the values used in TEMPO to the actual time in
+seconds that a measure takes:
+
+duration (seconds) = 19.22 / tempo setting
+
+Thus if you use the statement TEMPO 10, a measure will be about 2 seconds
+long; while if you specify TEMPO 80, then a measure will be about 1/4 of a
+second long.
+
+  The FILTER Statement
+
+Earlier in this chapter we described the actions of various filters:
+high-pass, low-pass, and band-pass. The FILTER statement in BASIC 7.0
+enables us to turn on these filters in the SID chip, thus filtering the
+sound generated by our program before it reaches the outside world.
+
+Here's a typical example of the FILTER statement:
+
+        100 FILTER 1000, 0, 0, 1, 10
+
+The first parameter in the FILTER statement is the cutoff frequency, which
+can have a value from 0 to 2047. The next three parameters act as switches,
+and have a value of either 0 - meaning off, or 1 - meaning on. The first one
+is the switch for the low-pass filter, the second for the band-pass, and the
+third for the high-pass filter. Note that we can turn on several filters at
+the same time. The fifth and last parameter is the resonance, which can
+range in value from 0 to 15.
+
+The statement above thus sets the cutoff frequency to 1000, turns off the
+low- and band-pass filters, turns on the high-pass filter, and sets the
+resonance at 10.
+
+  The PLAY Statement
+
+The PLAY statement is an amazingly powerful statement. It not only plays
+sequences of musical notes, it also lets you set the envelope of the notes,
+play with multiple voices, and specify a filter, among other things.
+
+   Notes
+
+The notes to be played by PLAY are specified by their letter values. These
+values are written in a string called the "play string." Thus the statement
+
+        100 PLAY "C D E C"
+
+plays the first four notes of "Frere Jacques" in the key of C. The play
+string is everything in quotes following the PLAY. The spaces aren't really
+needed between the notes, but are good to include for clarity.
+
+You can use sharps and flats as well. Here are the same four notes
+transposed into the key of D, with an F# note:
+
+        100 PLAY "D E #F D"
+
+Notice that the sharp sign must precede the note, unlike the usual musical
+notation. A flat note is indicated by a dollar sign ($).
+
+You can also play a rest, which is no sound for the same length of time
+ordinarily used by a particular note. The letter for this is R. and is used
+just like other notes.
+
+   Timing
+
+The notes we've been playing so far are whole notes, which is the default
+note duration. However, you can specify any length note you wish. For
+example, the statement
+
+        100 PLAY "HA QB"
+
+plays A as a half note and B as a quarter note. The list below shows how
+letters can be used to specify the different time values of the notes.
+
+         W = Whole note
+         H = Half note
+         Q = Quarter note
+         I = Eighth note
+         S = Sixteenth note
+Period (.) = Dotted note (1½ times usual value)
+
+Once you've used one of these letters to specify a time value for a note,
+all notes following will have the same time value until you change it by
+using a different letter.
+
+As an example, the following PLAY statement will play the first two measures
+of "Mary Had a Little Lamb."
+
+        100 PLAY ".QE SD QC D E E HE"
+
+Or, how about the first four measures of "Claire de Lune:"
+
+        100 PLAY "Q C C C D H E D Q C E D D H C"
+
+The values given to individual notes are relative. That is, when you specify
+a quarter note, for example, you aren't specifying a particular period of
+time the note will take. To do this, you need to use the TEMPO statement. If
+you've used the TEMPO statement with a parameter of 20, for example, then a
+measure will be about one second long, and so a quarter note will be one
+quarter of this, or ¼ of a second. If your TEMPO parameter was 40, on the
+other hand, a measure will be ½ second long, so a quarter note will only
+take 1/8 of a second.
+
+Here, for example, is a program which sets the volume level to the maximum,
+redefines the piano envelope, sets the tempo to 40, and plays the notes of
+the scale as quarter notes, which will give them a duration of 1/8 of a
+second.
+
+        100  VOL 15
+        110  ENVELOPE 0, 2, 10, 10, 1O, 2, 2047
+        120  TEMPO 40
+        130  PLAY "Q C D E F G A B"
+
+   Synthesizer Control
+
+You con specify a variety of other characteristics of the sounds generated
+by a PLAY statement. Together these characteristics are referred to as
+synthesizer control. Using PLAY, you can specify what voice to use, what
+octave to play in, what envelope to use, the volume of the sound, and
+whether the filter is on or off. These attributes are all specified with
+single letters followed by a number. Because none of the letters is the same
+as the notes of the scale or the letters used for the notes' time values,
+BASIC doesn't get confused.
+
+Table 7-4 shows the range of values possible for each of these characteristics.
+
+  Table 7-4. Single letter Controls for the PLAY Statement
+  --------------------------------------------------------------------------
+     Control Character      Characteristic      Range      Default Value
+  --------------------------------------------------------------------------
+            V                   Voice            1-3             1
+            O                   Octave           0-6             4
+            T                  Envelope          0-9             0
+            U                   Volume           0-15            9
+            X                   Filter     0 = off, 1 = on       0
+  --------------------------------------------------------------------------
+
+Thus the control code V2 would turn on the second voice, 06 would specify
+the 6th octave, T7 would specify the seventh envelope, U4 would set the
+volume to 4, and X1 would turn the filter on. You can use some or all of
+these codes at any time in a play statement. However, if you use more than
+one, then you should put them in the order shown in the table; SID can
+process them faster that way.
+
+The following program line selects voice 1 and envelope 5, sets the volume
+to 15, and plays all the notes of the scale as quarter notes:
+
+        100 PLAY "V1 T5 U15 Q C D E F G A B C"
+
+  Multiple Voices
+
+To play multiple voices you start the first voice going by specifying what
+notes it is to play, then, using the V control code, you shift to the next
+voice and tell it what notes to start playing. Because BASIC is so fast,
+there is no discernable lag between when the first voice starts and when the
+next one starts. However, to keep the voices in synchronization, it's
+important to start longer notes before sequences of shorter notes. Thus if
+one voice will be playing two quarter notes at the same time a second voice
+will be playing one half note, you should start the half note first.
+
+The basic unit of time in music is the measure, and this is a good interval
+to focus on when writing multiple-part music. Write the codes for one
+measure at a time, giving the codes for each voice in turn. For example, the
+line,
+
+        100 PLAY "V1 04 W C   V2 Q 06 C 05 G E C"
+
+starts the first voice off playing one whole note, C, then starts the second
+voice off playing four quarter notes, C, G. E, and C. The note played by the
+first voice is in the 4th octave. The first C played by the second voice is
+in the 6th octave, while the remaining notes are in the 5th octave.
+
+With this background, you should have a good start on making music on your
+Commodore 128.
+

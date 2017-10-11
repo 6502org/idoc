@@ -1,0 +1,6 @@
+#!/bin/bash
+for file in $*; do
+	echo -n 'Branding '$file' ... '
+	zip -z $file < ~peter/public_html/idoc/docs/zipfilecomment > /dev/null
+	echo done
+done

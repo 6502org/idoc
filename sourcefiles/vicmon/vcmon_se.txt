@@ -1,0 +1,1412 @@
+*********
+
+The iDOC= etext of the user manual for "VIC MON", Swedish version. Converted
+to text by Anders Carlsson <dal95acn@mds.mdh.se>. This release of the manual
+was part of a Swedish VIC magazine called VIC=news, nr 2/3, 1982.
+
+vcmon_se.txt, August 1999, etext #??
+
+Notes and corrections from the etexter (in Swedish):
+
+Texten på omslaget var delvis oläslig, så jag har gissat mig fram till vad
+det står. Ett antal stavfel och särskrivningar är korrigerade. Längst bak
+följer ett antal tryckta programexempel (som inte har något med VIC-MON
+att göra) som fanns i den utgåva som scannades.
+
+I figur 2-2 har en sökning ägt rum mellan $1000-$2000, fast originalexemplet
+arbetade med intervallet $2000-$3000. Exemplet är korrigerat.
+
+I avsnitt 3.3.2 angavs blankstegskaraktärens värde till $41, fast det är
+värdet för "A" som man byter till. Blankstegskaraktärens värde är här rättat
+till $20.
+
+------------------------------------------------------------------------
+
+VIC MASKINKODSMONITOR
+
+6502 maskinspråksmonitor. Ett måste för dig som programmerar assembler.
+Innehåller följande funktioner: Mini-Assembler, Dissassembler,
+Hexdump/Relokering, Breakpoint och mycket mer.
+
+(omslag : en slank man som står på ett labyrintmönstrat underlag, troligen
+          fyllt med assemblerfunktioner - INC syns. Mannen pekar med högra
+	  armen på en vägvisare med fyra riktningar, varav "Data Bus Buffer"
+	  leder åt det håll han kommer ifrån, och "Accumulator" är till höger.
+	  I bakgrunden fem stjärnor av samma typ som på Super Expander. )
+
+------------------------------------------------------------------------
+
+MASKINKODS MONITOR (VICMON) - ANVÄNDARHANDBOK
+
+Del (1) - Introduktion
+
+1.1	Allmänt ..................................  1
+1.2	VICMON handboken .........................  1
+1.3	VICMON funktioner ........................  1
+1.4	Uppstart av VICMON .......................  1
+1.5	Kommandosyntax ...........................  2
+1.6	Hur ge kommandon .........................  2
+1.7	Felutskrift ..............................  2
+
+Del (2) - VICMON. Kommandon
+
+2.1	Allmänt ..................................  3
+2.2	Förenklingar .............................  3
+2.3	Kommandon ................................  3
+2.3.1	A  - Assemblering ........................  3
+2.3.2	B  - Breakpunkt ..........................  3
+2.3.3	D  - Dissassemblering ....................  4
+2.3.4	E  - Enable (Flyttning av sid-0) .........  5
+2.3.5	F  - Fyll minnet .........................  5
+2.3.6	G  - Go (Start) ..........................  5
+2.3.7	H  - Hunt (Finn) .........................  6
+2.3.8	I  - Interpret (Översätt) ................  6
+2.3.9	J  - Jump (Hoppa) ........................  7
+2.3.10	L  - Load (Ladda) ........................  7
+2.3.11	M  - Memory (Visa minnet) ................  7
+2.3.12	N  - New (Relokera) ......................  8
+2.3.13	Q  - Quick trace (Snabbsök) ..............  8
+2.3.14	R  - Register ............................  9
+2.3.15	RB - Remove break (Break bort) ...........  9
+2.3.16	S  - Save (Spara) ........................  9
+2.3.17	T  - Transfer (Flytta) ...................  9
+2.3.18	W  - Walk (Stega) ........................ 10
+2.3.19	X  - Exit (Avsluta) ...................... 10
+
+Del (3) - Användning av VICMON som felsökare
+
+3.1	Allmänt .................................. 11
+3.2	Programexempel ........................... 11
+3.3	Programmet ............................... 12
+3.3.1	Inmatning av programmet .................. 12
+3.3.2	Hur finna felet .......................... 12
+3.4	Summering ................................ 14
+
+Figure	Titel
+
+1-1	Exempel på VICMON utskrift ...............  1
+2-1	6502 Registerutseende ....................  4
+2-2	Exempel på strängutskrift ................  6
+2-3	Utskrift på skrivbara karaktärer .........  6
+2-4	Exempel på Registerutskrift ..............  9
+3-1	Exempel på flödeschema ................... 11
+3-2	Resultat av första körningen ............. 12
+3-3	Skärm fylld med A:n ...................... 13
+
+------------------------------------------------------------------------
+
+DEL 1 : INTRODUKTION AV VICMON
+
+1.1	Allmänt
+
+VICMON är smeknamnet för den hexadecimala maskinkodsmonitorn som är gjord med
+tanke på felsökning och skapade av program i VIC-20. Denna handbok gör inte
+anspråk på att lära ut maskinkodsprogrammering på VIC. Innan du försöker
+använda Maskinkod på din VIC föreslås referenser till följande handböcker.
+
+MOS 6502 Programmeringshandbok
+VIC Programmerarens referenslista
+VIC Minneskarta
+VIC Revealed av Nick Hampshire
+eller
+6502 Assembly Language Programming by Leventhal.
+
+Dessa finns hos de flesta VIC/PET-Återförsäljare.
+
+VICMON och denna handbok är tänkt för personer med någon kännedom om
+6502-assemblerings programmering, men inte nödvändigtvis någon expert.
+
+1.2	VICMON handboken
+
+Denna handbok är uppdelad i tre sektioner.
+
+DEL-1	Är en introduktion av VICMON
+Denna del behandlar VICMON i allmänna ordalag, samt förklarar förkortningar
+som finns i följande delar. Hur man aktiverar VICMON finns i denna del.
+
+DEL-2	VICmonitorns kommandon
+Är den del där varje VICMON kommando förklaras och exemplifieras. Kommandon
+listas i bokstavsordning.
+
+DEL-3	VICMON som felsökare
+Denna del använder ett verkligt maskinkodsprogram för att lära dig finna felen
+i detsamma, och andra program.
+
+1.3	VICMONITORNS funktioner
+
+VICMON erbjuder följande funktioner:
+
+* Utskrift av vald minnesdel.
+* Ändring av minnespositionens innehåll
+* Blocksförflyttning i minnet.
+* Utfyllnad av minnesblock med givet data.
+* Minnessökning efter givet data (kod).
+* Utskrift samt ändring av register.
+* Sättning av brytpunkter (BREAK-POINTS).
+* Programkörning under brytpunktskontroll.
+* Ladda/spara program eller data.
+* Programkörning i tre hastigheter.
+
+1.4	Uppstartning av VICMON
+
+Stäng av strömmen till din VIC. Sätt i VICMON-Kassetten i kassettuttaget eller
+i expansionslådans uttag för kassetter. Om expansionslådan VIC-1010 används
+måste strömmen även brytas till denna innan kassetten anslutes. Texten uppåt
+eller framåt i VIC-1010.
+
+VICMON kan användas tillsammans med VIC-1212 Programmer's Aid och/eller med
+VIC-1211A Super Expander kassetter. Tänk emellertid på att byte mellan olika
+kassetter kan ställa till oreda, vad gäller aktiveringen av VICMON. Därför bör
+man alltid stänga av strömmen till VIC + Tillbehör vid byte av kassetter.
+VICMON kan med fördel användas tillsammans med expanderat minne. För att
+aktivera VICMON skrivs SYS 24576 eller SYS 6*4096 och tryck på RETURN.
+
+VIC kommer nu att visa 6502-processorns nuvarande register. Se exempel i
+fig. 1-1. VICMON är nu klar och avvaktar ett kommando.
+
+.-----------------------.
+| SYS 24576		|
+| B*			|
+|    PC  SR AC XR YR SP |
+| .;603E 33 00 63 00 F6 |
+| .			|
+|			|
+`-----------------------'
+Figur 1-1 Exempel på VICMON utskrift
+
+
+1.5	Kommandosyntax
+
+VICMONitorns flesta kommandon består av en bokstav följt av parametrar om så
+önskas. Alla kommandon förklaras i detalj i DEL-2. Parametrarna innehåller
+normalt start/stopp-adress, operationskoder, operander, hex-värden o.s.v.
+Regler och gränser för dessa finns under del 2.2. Alla kommandon (utom J)
+aktiveras genom att trycka på RETURN efter givet kommando. En sammanställning
+av samtliga kommandon med parametrar finns på sista sidan av denna handbok.
+
+1.6	Ge ett kommando
+
+Om VIC arbetar med VICMON aktiverad d.v.s. först på raden skrivs en punkt
+".". Så kan du när som helst ge ett kommando till VICMON genom att trycka på
+önskad tangent(er) därefter önskad parameter. Önskas flera parametrar bör
+dessa avdelas med ett lämpligt tecken t.ex. blanksteg, komma eller kolon.
+Givet kommando exekveras när RETURN-tangenten nedtryckes (gäller ej J).
+
+1.7	Felindikering
+
+Om du ger ett felaktigt kommando eller parameter, kommer VICMON att placera
+ett frågetecken "?" i positionen efter det upptäckta felet. I detta läge
+skriv om kommandot eller använd VIC-skärmeditor för att rätta felet. Tryck
+ånyo på RETURN för att aktivera kommandot.
+
+[ Tecknad bild på alarmklocka med två ringklockor ]
+
+------------------------------------------------------------------------
+
+DEL 2 : VICMON KOMMANDON
+
+2.1	Allmänt
+
+I denna del ges VICMONitorns kommando i alfabetisk ordning. Det önskade
+formatet visas och kommandots funktion förklaras. Ett enkelt exempel som
+visar kommandot och vad resultatet blir vid olika användningar. I del-3
+förklaras kommandona mera i detalj samt att ett maskinkodsexempel används
+för felsökning.
+
+2.2	Förkortningar
+
+Parametrarna innehåller följande förkortade ord.
+
+(adr)                En två bytes hex adress, som 0400
+(enh)                En enkel hex byte enhetsnummer som 08 (disk).
+(opkod)              En godkänd 6502 assembler mneumonic, som LDA
+(operand)	     En godkänd operand till föregående som #$01
+(värde)		     En enkel hex byte, ett värde som FF
+(data)               En sträng av bokstäver innesluten av apostrof eller
+		     hex-värden upprepade data avdelade med komma ","
+(ref)                En två bytes hex adress, som 2000
+
+2.3	Kommandon
+
+2.3.1	A-ASSEMBLER
+
+Format  : A(adr)(opkod)(operand)
+Funktion: Att assemblera hexkod från en given adress
+
+Kommandot tillåter dig att ge assemblerkod rad för rad och få den sparad som
+maskinkod i minnet. När kommandot ges skrivs motsvarande assemblerkod in till
+minnet, med start på en given adress. Nästa tillåtna adressen efterföljande
+förra instruktionen visas och VIC avvaktar nästa kod. För att avsluta
+A-kommandot tryck bara på RETURN när den nya adressen dyker upp. Om du ger ett
+felaktigt värde i A-kommandot kommer VICMON att placera ett frågetecken efter
+den felaktiga positionen och därefter återgå till monitorn med "." på nästa
+rad. Om du inte ger värdet för operand eller opkod kommer VICMON att ignorera
+denna rad och återvända till monitorn med en "." på nästa rad.
+
+OBS! Alla operander måste ges som hexvärden föregångna av ett dollartecken
+     "$".
+
+EXEMPEL   : För att assemblera följande maskinkod
+	    LDA #$19
+	    JSR $FFD2
+	    RTS
+	    Med start på $1000.
+
+Kommando  : A 1000 LDA #$19 (RETURN)
+På skärmen: .A 1000 LDA #$19
+            .A 1 002.
+Skriv     : JSR $FFD2 (RETURN)
+På skärmen: .A 1000 LDA #$19
+	    .A 1002 JSR $FFD2
+	    .A 1005
+Skriv     : RTS (RETURN)
+På skärmen: .A 1000 LDA #$19
+	    .A 1002 JSR $FFD2
+	    .A 1005 RTS
+	    .A 1006
+Resultat  : Den givna assemblerkoden är nu lagrad som maskinkod mellan
+	    minnespositionerna 1000 till och med 1005.
+
+2.3.2	B-BRYTPUNKT (BREAKPOINT)
+
+Format  : B (adr)
+eller   : B (adr),n
+	  Där n står för en 4 siffrig hexkod som är antalet gånger adressen
+	  passeras utan att stoppa (BREAK).
+Funktion: För att sätta en brytpunkt i ditt program.
+
+En brytpunkt tillåter att du kör ditt program till en viss adress.
+
+Om du använder kommando "G" (se 2.3.6) för att starta programmet kommer
+6502-registret att visas vid en "BREAK" vilket tillåter dig att kontrollera
+att registerinnehållet är det riktiga. Om du använder "Q"-kommandot (se
+2.3.13) kommer inte registret att visas. Istället kommer du automatiskt att
+bli kopplad till "W"-kommandot (se 2.3.18). För att i detta läge se på
+registret måste "STOP"-tangenten nedtryckas och därefter "R"-kommandot (se
+2.3.14). Observera att programmet stoppas alldeles innan den aktuella adressen
+behandlas. Du måste se upp med att INTE sätta brytpunkt mellan opkoden och
+operanden eller mitt i datasatser. Om du gör det kommer programmet att
+ignorera brytpunkten och resultatet blir oförutsett. Det är möjligt att
+passera en brytpunkt ett givet antal gånger innan en "BREAK" utföres. Antalet
+gånger "frivarv" anges av parameter "n" (se format B-kommando). Om parameter
+"n" ej anges kommer programmet att stoppa vid brytpunkten redan första gången.
+
+Skriv in din brytpunkt och tryck på RETURN. Starta programmet med kommando "G"
+eller "Q". Programmet går nu tills den finner brytpunkten och därefter stoppas
+(d.v.s. om INTE ditt program innehåller något logiskt fel som bryter det innan
+brytpunkten). Du kan bara sätta EN brytpunkt innan körning av programmet. När
+brytpunkten är funnen kan en ny brytpunkt definieras om så önskas.  Fortsatt
+körning av programmet efter en brytpunkt gör du med ett av "G, Q, W, J"-
+kommandona, du är alltså inte tvingad att köra ditt program med samma kommando
+rakt igenom. Om en brytpunkt inte upptäcks av VICMON så kan programmet stoppas
+manuellt med "STOP"-tangenten och sedan "RESTORE"-tangenten.  Detta gör att du
+återgår till BASIC. Återaktivera VICMON och flytta brytpunkten till ett
+tidigare ställe för att finna felet (se del-3).
+
+Exempel : Säg att du har ett maskinkodsprogram från $1000 till $1200 och vill
+	  bryta detta före $1050
+
+Kommando: B 1050 (RETURN)
+Kommando: Q 1000 (RETURN)
+Resultat: Programmet körs nu sakta och kommer att stoppa före instruktionen i
+	  $1050 är utförd. Du lämnar nu programmet i "W"-mode.
+
+Exempel : Att sätta en brytpunkt så att den aktiveras först tredje gången den
+	  passerar $1100.
+Kommando: B 1100,0003 (RETURN)
+Kommando: G 1050 (RETURN)
+Resultat: Programmet körs nu och stoppar 3:e gången det passerar adr $1100.
+	  Nu visas 6502-registret (se fig. 2-1).
+
+.-----------------------.
+| B*			|
+|    PC  SR AC XR YR SP |
+| .;1100 30 11 63 00 F6 |
+| .			|
+|			|
+`-----------------------'
+Figur 2-1 6502 Registerutseende
+
+
+2.3.3	D-DISSASSEMBLER
+
+Format: D (adr)
+eller :	D (adr), (adr)
+Avsikt: Att dissassemblera kod från en viss minnesposition eller att
+	dissassemblera mellan två givna positioner.
+
+OBS! Cursor UPP och NED tangenterna kommer att fortsätta ev. avbruten
+     dissassemblering.
+
+"D"-kommandot översätter den lagrade maskinkoden till assemblerspråkets
+normala utseende. Du kan ange en startadress och dess kod översätts till
+assembler på skärmen. VIC stannar kvar i "D"-mode och du kan dissassemblera
+ytterligare rader med hjälp av markörförflyttningar (Markör upp, ned). Markör
+ned kommer att visa raderna som följer den angivna adressen. Observera dock
+att skärmen inte börjar dissassemblera förrän markören har nått bottenraden
+(eller toppraden) och skrollningen startar.
+
+VARNING Att arbeta baklänges (markör upp) ger inte alltid rätt översättning.
+
+Alternativt kan du ge en start och stopp-adress för det område du önskar. Om
+du anger ett större område än vad skärmen kan visa, börjar skrollning av
+skärmen. Skrollningen kan avslutas med "STOP"-tangenten och VIC är fortfarande
+kvar i "D"-mode. Du kan nu fortsätta att dissassemblera med hjälp av markör
+ned/upp.
+
+När du befinner dig i "D"-mode kan du lätt modifiera en rad assemblerkod på
+skärmen genom att ändra befintlig kod till önskat utseende med hjälp av
+marköreditering därefter tryck på RETURN. "A"-kommandot aktiveras i detta läge
+automatiskt. När du gjort ändringen står du kvar i "A"-mode med markören i
+adresspositionen efter den ändrade koden. För att avbryta "A"-mode kan du bara
+trycka på RETURN.
+
+Exempel     : För att dissassemblera det exempel du skrev i assemblerrutinen
+	      och förändra koden i andra raden till FFD0.
+Kommando    : D 1000 1005 (RETURN)
+På skärmen  : .1000 LDA #$19
+	      .1002 JSR $FFD2
+	      .1005 RTS
+Gör följande: Flytta markören till att ligga över 2:an i FFD2.
+Skriv       : 0 (RETURN)
+På skärmen  : .1000 LDA #$19
+	      .A 1002 JSR $FFD0
+	      .A 1005 RTS
+Resultat    : Koden från $1000 till $1005 har blivit dissassemblerad. En
+	      ändring är gjord och sparad i minnet med RETURN-tangenten. Du är
+	      kvar i assembler-mode "A".
+
+2.3.4	FLYTTNING AV SIDAN-0 (ZERO-PAGE)
+
+Format  : E (adr)
+Funktion: Flytta upp hela sidan-0 endast för VICMON så dess variabler inte
+	  stör dina ev. program.
+
+Med sidan-0 menas hexadresserna $0000 till $00FF.
+
+VICMON använder minnespositionerna $00 till $71 av sidan-0 och operativ-
+systemet i VIC använder resten + delar av $0200-$0800 sidorna. Eftersom ditt
+program förmodligen innehåller data som måste lagras på sid-0 och vid körning
+av programmet kan detta innebära kollisioner med redan befintligt data. För
+att undvika detta finns kommando "E". Detta kommando skapar en skenbild av
+sid-0 på av dig givet ställe i minnet. Här sparas VICMONitorns arbetsvariabler
+under programmets körning för att vid avslutat program återställas till
+originalutseende.
+
+När ditt program arbetar felfritt kan du återställa sid-0 genom att ge en
+sid-0 adress som E 0000.
+
+Exempel : Att flytta sid-0 till $1000:
+Kommando: E 1000 (RETURN)
+Resultat: Minnespositionerna $1000 till $10FF är nu upptagna för en skenbild
+	  av sid-0.
+
+2.3.5	F-FYLL MINNET
+
+Format  : F (adr), (adr), (värde)
+Funktion: Att fylla ett givet minnesblock med ett givet värde (data).
+
+"F"-kommandot ger dig möjligheten att fylla ett bestämt minnesblock med ett
+känt värde. Detta är användbart vid uppläggning av strukturerat data och vid
+nollställning av ett minnesblock (programblock). Ange bara start/stopp
+adressen till det block du önskar fylla med ett känt värde. Naturligtvis anges
+inte adresserna för sid-0 och sid-1 $0000 till $01FF. Om du använder
+"E"-kommandot (se 2.3.4) så bör givetvis dessa adresser inte användas.
+
+Exempel : Att skriva in $EA (NOP-instruktion) från $1000 till och med $2000.
+Kommando: F 1000,2000, EA (RETURN)
+Resultat: Värdet $EA är nu inskrivet i alla minnespositioner från $1000 till
+	  och med $2000.
+
+2.3.6	G-GO (START)
+
+Format  : G
+eller   : G (adr)
+Funktion: Att starta ett program vars startadress nu finns i PC
+	  (program-räknaren) eller adressen given efter kommandot "G".
+
+"G"-kommandot kan användas med eller utan startadress. När "G" används UTAN
+startadress antas adressen ligga i programräknaren i 6502-REGISTRET, detta
+kan visas genom kommando "R" (se 2.3.14). PC=program counter. När "G" användes
+med startadress kommer starten att ske från denna adress.
+
+"G"-kommandot återställer registret till sitt sista kända värde och om man har
+använt "E"-kommandot (flyttning av sid-0) så flyttas VICMON till sin kopia
+någonstans i minnet. Härefter startas programmet som fortsätter att gå tills
+en brytpunkt (se "B"-kommando) upptäcks (om sådan finnes) eller tills
+programmet tar slut.
+
+Detta förutsätter att programmet inte innehåller något logiskt fel. Om
+programmet avslutas med en brytpunkt kommer 6502-registret att visas i sitt
+nuvarande status. Om programmet avslutas med en RTS kommer du automatiskt till
+BASIC-mode. Om den sista instruktionen är en BRK återgår du till VICMON. Om
+intet uthopp finns i programmet måste det avslutas med STOP-tangenten samt
+RESTORE-tangenten. Detta innebär att du hamnar i BASIC-mode och måste
+återstarta VICMON.
+
+OBS! Ett flitigt användande av brytpunkter brukar förhindra att ditt program
+     löper amok.
+
+Exempel : Vi förutsätter att du har ett program i minnet och vill starta det
+	  på adress $2000.
+Kommando: G 2000 (RETURN)
+Resultat: Registret återställs och programräknaren sätts till $2000. Om en
+	  skenbild av sidan-0 användes kommer denna att vara en kopia av den
+	  riktiga sidan-0 samt att programmet startas på adress $2000.
+
+2.3.7	H-HUNT (SÖK)
+
+Format  : H (adr), (adr), (data)
+Funktion: Att söka genom ett givet minnesblock efter likheter med en given
+	  kombination av data eller strängar.
+
+"H"-kommandot finner och anger ett angivet mönster av data eller strängar som
+är lagrade i datorns minne. Du kan använda detta kommando för att söka data,
+då angivet i hexkod eller strängar maximalt 88 karaktärer på en rad. Strängar
+markeras med accent "'". Alla platser inom det angivna sökområdet som
+innehåller exakt det sökta mönstret kommer att anges på skärmen. Skulle
+mönstret finnas på flera ställen inom området kommer denna plats också att
+visas. Om skärmen inte räcker för att visa alla minnespositioner kommer den
+att skrolla uppåt. Stoppknappen förhindrar skrollningen och avslutar
+H-kommandot därefter återgår till VICMON. Kontrolltangenten går att
+skrollningen utföres långsammare. När hela sökområdet genomsökts återvänder du
+automatiskt till VICMON.
+
+Exempel : Antag att data-strängen $A92F3C är lagrad i minnet någonstans mellan
+	  $C000 och $C0FF. För att finna var:
+Kommando: H C000, C0FF, A9, 2F, 3C (RETURN)
+Resultat: Minnet genomsökes från $C000 till $C0FF och positionen där $A92F3C
+	  finns visas på skärmen.
+
+Exempel   : Antag att ordet COMMODORE är lagrat på tre ställen i minnet mellan
+	    $1000 och $2000:
+Kommando  : H 1000, 2000,'COMMODORE (RETURN)
+På skärmen: SE FIG. 2-2.
+
+.------------------------.
+| .H 1000,2000,'COMMODOR |
+| E			 |
+| 1000 1100 1200 1300	 |
+| .			 |
+| .I 1000		 |
+| .' 1000COMMODORE.2R	 |	(de funna strängarna i reverserad video)
+| .I 1100		 |
+| .' 1100COMMODORE.2#	 |
+| .I 1200		 |
+| .' 1200COMMODORE.2.	 |
+| .I 1300		 |
+| .' 1300COMMODORE.2-	 |
+| .			 |
+| 			 |
+`------------------------'
+Figur 2-2 Exempel på strängutskrift
+
+
+2.3.8	I-INTERPRET (ÖVERSÄTT)
+
+Format  : I (adr), (adr)
+eller   : I (adr)
+Funktion: Att finna samt översätta alla på skärmen skrivbara tecken inom ett
+	  givet minnesblock.
+
+I-kommandot kommer att visa alla 96 skrivbara tecken (ASC-II eller CBM-kod)
+med REVERSERAD-VIDEO, detta inom ett angivet minnesblock. Alla övriga tecken
+kommer att skrivas som en punkt ".". Om utskrivet data ej får plats på skärmen
+startar skrollningen. STOPP-knappen avslutar skrollningen och KONTROLL-
+tangenten gör skrollningen långsammare. När det givna minnesblocket är
+genomgånget så är du fortfarande kvar i I-mode. Genom att trycka på CURSOR-NED
+kommer nästa rads ASC-II eller CBM-kod att visas, alltefter som skrollningen
+fortsätter.
+
+Exempel   : Antag att koden för C, RETURN, RADMATNING, CB, RETURN, RADMATNING,
+	    CBM, RETURN, RADMATNING är lagrade i minnet med start $1000:
+Kommando  : I 1000 (RETURN)
+På skärmen: SE FIG. 2-3.
+
+.------------------------.
+| .M 1000,100A		 |
+| .:1000 43 0D 0A 43 42  |
+| .:1005 0D 0A 43 42 4D  |
+| .:100A 0D 0A 7F 7F 7F  |
+| .I 1000,100A		 |
+| .' 1000C..CB..CBM..	 | (strängen i reverserad video)
+| 			 |
+`------------------------'
+Figur 2-3 Utskrift på skrivbara karaktärer
+
+
+2.3.9	J-JUMP (HOPPA TILL SUBRUTIN)
+
+Format  : J
+Funktion: Att exekvera en subrutin och återgå utan att stegningen är inkopplad
+	  under "W"-mode.
+
+W-kommandot utför ditt program en rad i taget, eller utför en rad och avvaktar
+ett kommando från dig innan den fortsätter med nästa rad. Det kan ibland hända
+att du snabbt vill köra förbi en subrutin som du redan har kontrollerat.
+J-kommandot tillåter detta. Tryck bara på "J" när raden på skärmen innehåller
+adressen till den aktuella subrutinen. Det är inte nödvändigt att trycka på
+RETURN. Obs! "J" kommer inte att skrivas på skärmen. När J-kommandot är
+avklarat kommer den undanstoppade returadressen att exekveras. Detta under
+förutsättning att subrutinen lämnades på rätt sätt. D.v.s. med RTS. När den
+slutgiltiga RTS-instruktionen är funnen kommer programräknaren att sättas till
+den adress som lagrats på STACKEN när du tryckte på "J". Nu befinner du dig
+åter i "W"-mode.
+
+Exempel : Antag att du är i "W"-mode och följande text är på skärmen.
+	  147F LDA #$00
+	  1481 JSR $A2C7
+Kommando: J
+Resultat: $1481 lagras på stacken. Subrutinen på $A2C7 exekveras. När RTS
+	  upptäcks kopieras stackens adress till PC. Du är nu i "W"-mode.
+
+2.3.10	L-LOAD (LADDA PGM.)
+
+Format  : L "FILNAMN", (dev)
+Funktion: Att ladda en programfil till minnet från en given enhet.
+
+"L"-kommandot tillåter att VIC läser och laddar en programfil som är lagrad
+på kassett eller skivminne. För skivfiler gäller att adressen dit programmet
+skall lagras finns i programfilens två första bytes. Kassettfilen har
+startadressen som en del av första huvudblocket.
+
+OBSERVERA! Endast programfiler som tillverkats och som sparats under
+VICMONitorns "S"-kommando kan laddas med "L"-kommandot (se 2.3.76).
+
+Kommandot består av "L" samt filnamnet och enhetsnummer på den enhet där
+data-filen finns lagrad. Filnamnet måste omges med citationstecken " och kan
+vara vilket godkänt VIC-filnamn som helst. Enhetsnumret till kassetten är
+01. Skivminnets enhetsnummer är 08.
+
+När "L"-kommandot används, kommer den specificerade filen att läsas från den
+enhet du valt och lagras i VICs minne tills en EOF (Slut på filen) upptäcks.
+Om inte signalen EOF hittas kommer laddningen inte att avslutas och du måste
+då trycka på STOP samt RESTORE för att manuellt avsluta laddningen,
+
+Om filen inte finns eller enheten inte svarar, ges ett felmeddelande och du
+återgår i BASIC-mode.
+
+Exempel : Antag att du har en skiv-programfil med namnet TEST som 258 bytes
+	  lång. De två första bytarna (tecknen) är 00CA. Denna skall nu laddas
+	  till VIC.
+Kommando: L"TEST", 08 (RETURN)
+Resultat: Programmet med namnet "TEST" som är lagrat på en diskett laddas nu
+	  till VIC från $CA00 och med $CB00.
+
+2.3.11	M-MEMORY (MINNE)
+
+Format   : M (adr),(adr)
+Funktion : Att visa hexkoden som är lagrad i ett givet minnesblock.
+
+"M"-kommandot visar hexkoden från den först angivna adressen till och med den
+sista angivna adressen i kommandot. Skärmen visar koden i rader om 5 bytes med
+sin adress. Om endast en adress givits kommer denna samt 5-bytes att visas.
+Ytterligare 5-bytes kan visas genom att använda cursorkontrollen. Observera
+om du ger en stoppadress som är mindre än startadressen så kommer VICMON att
+starta från slutet av minnet, snurra runt och starta i början av minnet.
+
+Minnesinnehållet kan lätt förändras. Detta sker lämpligt genom att skriva över
+aktuell minnesinformation och därefter trycka på "RETURN". Om minnespositionen
+är felaktig (trasigt-RAM) eller om du försöker ändra i ett ROM (Read only
+memory) så kommer ett frågetecken "?" att visas på skärmen. Detta innebär att
+minnespositionen inte går att ändra.
+
+Exempel   : Visa 5-bytes av minnet från $1000 och ändra 00 till FE.
+Kommando  : M 1000 (RETURN)
+På skärmen: 1000 A0 00 EA EA FF
+Åtgärd    : Sätt markören över första nollan av 00. Skriv FE och tryck på
+	    RETURN.
+Resultat  : De 5-bytes från som startar på $1000 läses nu som A0 FE EA EA FF.
+
+2.3.12	N-NUMBER (FÖRFLYTTNING AV PROGRAM)
+
+Format  : N (adr), (adr), (offset), (undre-gräns), (övre-gräns), W
+	  Här menas offset i hexkod vilkens värde adderas till den befintliga
+	  startadressen. Undre resp. övre-gräns anger det område inom vilket
+	  operanderna kommer att förändras till ny adress (adr+offset). "W"
+	  kan tilläggas om så önskas, den anvisar att givet område är en
+	  tecken (ORD)-tabell.
+Funktion: Att återställa 3-bytes instruktionerna i ett av "T"-kommandot
+	  flyttat program.
+
+Med "T"-kommandot kan du flytta program internt i minnet (se 2.3.17). Om
+ditt program innehåller specifika minnesadresser kan dessa ej användas.
+"N"-kommandot låter automatiskt ändra dessa adresser. Först måste du beräkna
+hur många bytes som du flyttat.
+
+OBSERVERA! Om ditt program från början låg i övre delen av minnet och
+flyttades nedåt så måste du beräkna 'omkastningsvärdet', d.v.s. om ditt
+program låg på $A000 och flyttades till $0400. Detta innebär att du flyttade
+$6400 eftersom $A000+$10400. Värdet $6400 är alltså lika med OFFSET.
+
+Med "N"-kommandot kan du ändra ALLA fasta adresser eller endast de inom ett
+angivet block. Minnesblocket anges med undre resp. övre-gränsen i kommandot.
+Du måste också ange gränserna för var ändringen skall ske. VICMON kommer att
+ta varje operand inom de givna gränserna och addera till 'offset-värdet',
+d.v.s. VICMON kontrollerar alla 3-bytes instruktioner och adderar 'offset'
+till de 2 sista bytarna i instruktionen. Om du använder detta i en ordtabell
+(Textmassa) så blir givetvis resultatet katastrofalt. VICMON är försedd med
+ett kommando "W", som kan sättas efter "N"-kommandots variabler. "W" står för
+WORD eller ORD. När "W"-kommandot ges kontrolleras alla "ORD" eller 2-bytes
+instruktioner, i detta fall kommer alla 2-bytes instruktioner att vara OFFSET
+i stället för det tidigare nämnda exemplet.
+
+VARNING! Använd INTE "N"-kommandot i en data-area. Det kan förstöra dess
+         användbarhet.
+
+Exempel : Antag att vi använt "T"-kommandot (TRANSFER/FLYTTA) för att flytta
+	  ditt program, som först låg mellan $1000 till $2000 och nu ligger
+	  mellan $1500 till $2500. För att ändra alla fasta adresser inom
+	  detta område gör vi följande.
+Kommando: N 1500,2500,0500,1000,2000 (RETURN)
+Resultat: I minnet mellan $1500 till $2500 är nu alla absolutadresser som
+	  faller inom ramen för $1000 till $2000 adderade med $500.
+
+2.3.13	Q-QUICK TRACE (SNABBSÖKNING)
+
+Format  : Q
+eller   : Q (adr)
+Funktion: Att köra ditt program i långsam takt från en given startadress, samt
+	  kontrollera 'brytpunkter', STOPP-tangenter eller X-tangenten efter
+	  varje utförd instruktion.
+
+"Q"-kommandot precis som "G"-kommandot (se 2.3.6) kan användas som det är
+eller med en given startadress. När det används ensamt är startadressen den
+samma som programräknaren (PC). För att se programräknarens adress användes
+"R"-kommandot (se 2.3.14). När en adress ges tillsammans med "Q"-kommandot
+blir denna startadressen. "Q"-kommandot lämnar helt över kontrollen till
+VIC-CPU (6502-processorn) vid körning av ett program. "Q"-kommandot
+kontrollerar och söker efter brytpunkter eller om du önskar avbryta
+exekveringen. Denna brytpunkts-kontroll tillåter dig att sätta brytpunkter
+även i ROM likväl som i RAM. När en brytpunkt indikeras avstannar programmet
+och du befinner dig i "Walk"-mode (se 2.3.18). För att se registerinnehållet i
+denna position tryck på STOP, R och RETURN. Inbrytning i det exekverande
+programmet kan ske när du önskar. Tryck bara på STOP och sedan "X"-tangenten.
+Programmet avbrytes och innehållet i registret visas på skärmen.
+
+Exempel : Vi kör ett program i SNABBSÖKNINGS-mode. Start $1000.
+Kommando: Q 1000 (RETURN)
+Resultat: PC sätts till 1000. Registrena initialiseras. Om ersättningsadresser
+	  för sid-0 används (se "E"-kommando 2.3.4) kommer dessa att ersätta
+	  sid-0. Programmet startar nu på $1000.
+
+2.3.14 R-REGISTER (REGlSTERINNEHÅLL)
+
+Format  : R
+Funktion: Att visa registerinnehållet.
+
+"R"-kommandot låter dig se VICs processorstatus (6502). Följande register
+visas:
+
+programräknaren    PC.
+status registret   SR.
+ackumulatorn	   AC.
+indexregister X    XR.
+indexregister Y    YR.
+stackpekaren	   SP.
+
+Detta är användbart vid felsökning av program då för att se att registret
+innehåller den information som DU förutsatte. Du kan ändra registerinnehållet
+genom att skriva över befintligt data på skärmen och därefter (RETURN).
+Registret visas automatiskt när VICMON aktiveras, när en brytpunkt
+identifieras (se 2.3.2) under "G"-mode (se 2.3.6), och när "Q"-kommandot
+användes (se 2.3.13) och avslutas med STOP och X-tangenterna i kombination.
+
+Exempel : Visa registerinnehållet.
+Kommando: R (RETURN)
+Resultat: Se fig 2-4, som exempel.
+
+.------------------------.
+| .R			 |
+|    PC  SR AC XR YR SP	 |
+| .;603E 33 00 63 00 F6  |
+| .R			 |
+|    PC  SR AC XR YR SP	 |
+| .;1002 B1 F2 63 00 F6  |
+| .R			 |
+|    PC  SR AC XR YR SP	 |
+| .;0000 A0 00 00 00 F6  |
+| 			 |
+`------------------------'
+Figur 2-4 Exempel på Registerutskrift
+
+
+2.3.15	RB-REMOVE BREAKPOINT (BRYTPUNKT-BORT)
+
+Format  : RB
+Funktion: Att ta bort ev. brytpunkt.
+
+En brytpunkt sätts med kommando "B" (se 2.3.2) och tas bort med kommando "RB".
+Skriv bara "RB" och den brytpunkt som du satt tidigare försvinner nu. Om ingen
+brytpunkt fanns då kommando "RB" gavs, kommer VIC att se kommando "RB" som "R"
+och visar då registret.
+
+Exempel : Antag att vi satt en brytpunkt i $1050. För att ta bort denna.
+Kommando: RB 1050 (RETURN)
+Resultat: Brytpunkten i $1050 är borttagen.
+
+2.3.16	S-SAVE (SPARA/LAGRA PROGRAM)
+
+Format  : S"FILNAMN",(dev),(adr),(adr)
+Funktion: Att kopiera en given RAMarea till någon yttre enhet.
+
+"S"-kommandot tillåter dig att spara program på kassett eller diskett så att
+det kan användas vid senare tillfälle. Kommandot består av ett FILNAMN samt
+numret på den yttre enheten på vilket programmet skall sparas samt start och
+stopp-adressen för detsamma. Filnamnet måste börja och sluta med ett
+citationstecken (") och måste följa syntaxreglerna för ett VIC-filnamn,
+d.v.s. det börjar med en bokstav och att namnet inte är mer än 16 tecken
+långt. Enhetsnumret för kassetten är 01 och för skivminnet 08. Stopp eller
+slutadressen måste alltid vara en byte mer än den egentliga slutadressen i
+RAM.
+
+VARNING! Om du inte ökar stoppadressen med ett kommer sista byten att gå
+	 förlorad.
+
+Om den angivna enheten inte är inkopplad eller frånslagen, ges ett
+felmeddelande och du återgår till BASIC.
+
+OBSERVERA! VICMON sparar inte program över adressen $7FFF. Stoppadressen måste
+	   vara större än $0000 och mindre än $7FFF. Om du försöker att spara
+	   program utanför denna area kommer endast filnamnet att sparas nu
+	   utan data.
+
+Exempel : Antag att du har ett program i minnet mellan $1000 och $10FF. Du
+	  vill spara detta på en diskett med filnamnet TEST 1.
+Kommando: S"TEST 1", 08,1000,1100 (RETURN)
+Resultat: En fil med namnet "TEST 1" sparas på disketten. Den kommer att
+	  innehålla en kopia av hexkoderna mellan adresserna $1000 till och
+	  med $10FF.
+
+2.3.17	T-TRANSFER (FLYTTA PROGRAM)
+
+Format  : T (adr),(adr),(adr)
+Funktion: Att flytta ett givet block av minnet till en annan adress i RAM.
+
+"T"-kommandot hjälper dig med att flytta ett givet minnesblock från en plats
+till en annan i arbetsminnet. Detta kan vara användbart när det gäller att
+utöka ett program eller då en del av ett program skall användas i annan del av
+minnet utan att behöva skriva om alltsammans. Kommandot innehåller tre
+adresser. De två första indikerar vilket block av minnet som skall kopieras.
+Den tredje adressen visar den nya startadressen för kopieringen. Om ett
+flyttat program innehåller absoluta adresser eller datafält, kommer dessa inte
+att vara överensstämmande med den nya platsen. "N"-kommandot (se 2.3.11)
+tillåter emellertid att dessa förändras till sina rätta värden så att
+programmet kan köras även här.
+
+Exempel : Antag att vi har ett program i minnet mellan $3000 till $3500. Vi
+	  skall nu flytta detta till $4000 och framåt.
+Kommando: T 3000,3500,4000 (RETURN)
+Resultat: Programmet finns nu i block $3000 till $3500 och i blocket $4000
+	  till $4500
+
+2.3.18	W-WALK (STEGA I MINNET)
+
+Format  : W
+eller   : W (adr)
+Funktion: Att exekvera (köra) ett program en instruktion i taget.
+
+"W"-kommandot kommer att exekvera en rad av assemblerkod på adressen som finns
+i programräknaren, om "W"-kommandot användes ensamt. Om en adress gavs i
+kommandot kommer starten att ske från denna adress. När "W"-kommandot används
+och den första instruktionen exekveras visas den andra instruktionen på
+skärmen. VICMON avvaktar nu att du skall trycka på SPACE-tangenten innan nästa
+instruktion exekveras. När SPACE-tangenten trycks ned kommer alltså följande
+instruktion att exekveras och nästföljande att visas på skärmen. På detta sätt
+kan du stega dig fram genom ditt program. För att lämna "W"-kommandot och
+återvända till VICMON, tryck på STOP-tangenten. Du kan använda "R"-kommandot
+(se 2.3.14) för att visa processor-REGISTRET när du vill. Tryck på STOP sedan
+"R"-tangenten plus RETURN så visas REGISTRET. Varje subrutin måste stegas
+igenom, såvida du inte använder kommando "J" vilket behandlar subrutinen som
+"en instruktion" (se 2.3.9).
+
+Exempel : Stega igenom ett program som startar på $1000
+Kommando: W 1000 (RETURN)
+Resultat: Instruktionen på adress $1000 exekveras samt nästa instruktion visas
+	  på skärmen.
+Åtgärd  : Tryck på SPACE-tangenten.
+Resultat: Den andra instruktionen exekveras och den tredje visas på skärmen.
+
+2.3.19	X-EXIT (HOPPA TILL BASIC)
+
+Format  : X
+Funktion: Att lämna VICMON och fortsätta i BASIC
+
+Använder du "X"-kommandot kommer du tillbaka till BASIC-mode. Ditt program
+ligger kvar i minnet men eventuell BRYTPUNKT eller ersättning av SID-0 kommer
+att försvinna.
+
+Exempel : Att avsluta VICMON och hoppa till BASIC.
+Kommando: X (RETURN)
+Resultat: Du kommer till BASIC. VIC skriver "READY".
+
+------------------------------------------------------------------------
+
+DEL 3 : HUR ATT ANVÄNDA VICMON TILL FELSÖKNING
+
+3.1	Introduktion
+
+Följande är ett exempel som visar några av VICMONITORNS editerings samt
+felsökningsfunktioner. Det använder ett 6502 maskinkodsprogram där VICMON
+användes för att finna och korrigera funna fel. Mera detaljer om varje
+kommando finns i DEL-2 av denna manual.
+
+Om du vill prova detta exempel, följ instruktionerna i del 3.3. Om INTE
+föreslår jag att du åtminstone läser igenom exemplet.
+
+3.2	Programexemplet
+
+Programmet som här används som fyller skärmen med skrivbara karaktärer en i
+taget. Två skärmpositioner har lämnats fria för att förhindra att skärmen
+skrollar. Ett flödeschema på programmet visas i FIG 3-1.
+
+Programmet använder ROM-rutinen $FFD2 för att skriva karaktärer på skärmen.
+Först rensas skärmen med följande kommando:
+
+	LDA #$93
+	STA $FFD2
+
+Sedan fylls skärmen utom de två sista fälten med 'SPACE'-karaktärer.
+VIC-skärmens totala antal teckenpositioner är 506 st därför skrivs då endast
+504 st ut. Detta är lika med 2*252 eller ($FC).
+
+När detta väl är gjort sätts en indirekt pekare till skärmen. Pekaren ligger
+på sid-0. Pekaren använder innehållet i $0288 för skärmstarten position. Talet
+2 adderas till detta för att ha en referens till skärmslutet vid test. Med
+hjälp av en 'LOOP' (programsnurra) fylls skärmen (vilken nu består av
+spacekaraktärer) med första karaktären (värde-0) därefter andra karaktären
+o.s.v. tills alla 256 karaktärerna har varit i alla skärmpositionerna som
+innehöll 'SPACE'.
+
+Det är av vikt att skriva på skärmen eftersom man då har en kontroll på att
+karaktären verkligen lagras på den önskade minnespositionen (STA ($01),Y). Det
+är fullt möjligt att lagra värden i skärmens färgminne också men det fordrar
+en extra indirekt pekare.
+
+Skärmens SlD-Nr (som sid-0) lagras i position $0288. Denna metod är nödvändig
+eftersom adderat RAM-minne förändrar skärmens minnesposition.
+
+		 .-------.
+	        (  START  )
+                 `---+---'
+             ________|________
+	     | RENSA SKÄRMEN |
+	     ¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯
+	  ___________|____________
+	  | SÄTT RÄKNAREN TILL 0 |
+	  ¯¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯
+ .------------------>|
+ |	     ________|_________
+ |	     | SKRIV EN SPACE |
+/|\	     ¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯
+ |	 ____________|_____________
+ |	 | ADDERA 1 TILL RÄKNAREN |
+ |	 ¯¯¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯¯
+ |		  ___|___
+ |		 /  ÄR   \
+ |____/_________/RÄKNAREN \
+      \      JA	\MINDRE ÄN/
+		 \  505? /
+		  ¯¯¯|¯¯¯
+		    \|/ NEJ
+	   __________|___________
+	   | FLYTTA 0 TILL CHAR |
+	   ¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯
+ .------------------>|
+ |	_____________|_____________
+ |	| SÄTT PEKAREN ÅT SKÄRMEN |
+ |	¯¯¯¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯¯
+ |   .-------------->|
+ |   |	_____________|______________
+ |   |	| LAGRA KARAKTÄR (PEKAREN) |
+ |   |	¯¯¯¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+ |  /|\	      _______|_______
+ |   |	      | ÖKA PEKAREN |
+ |   |	      ¯¯¯¯¯¯¯|¯¯¯¯¯¯¯
+/|\  |	 	   __|__
+ |   |		  / ÄR  \
+ |   |____/______/SKÄRMEN\
+ |	  \  NEJ \ FULL? /
+ |		  \_____/
+ |		     |
+ |	            \|/ JA
+ |	   __________|___________
+ |	   | ADDERA 1 TILL CHAR |
+ |	   ¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯
+ |		  ___|___
+ |		 /ÄR CHAR\
+ |_______/______/MINDRE ÄN\
+	 \   JA \   256?  /
+		 \_______/
+		     |
+		    \|/ NEJ
+		     |
+		 .---+---.
+	        (  STOPP  )
+                 `-------'
+
+ Figur 3-1 Exempel på flödeschema
+
+
+3.3	Förfaringssätt
+
+3.3.1	ATT SKRIVA IN PROGRAMMET
+
+Följ dessa steg för att skriva in ovan beskrivna program och felsöka detsamma.
+Koppla in din VICMON-kassett till VIC eller VIC-expansionslåda. Slå till
+spänningen för VIC (och på expansianslådan om sådan finns). Skriv nu
+SYS (6*4096) för att aktivera (starta) VICMON. Härefter använd "A-kommandot"
+(se 2.3.1) och skriv in följande kod:
+
+1000 LDA #$93
+1002 JSR $FFD2
+1005 LDY #$00
+1007 LDX #$00
+1009 LDA #$20
+100B JSR $FFD2
+100E INX
+100F CPX #$FC
+1011 BNE $1009
+1013 INY
+1014 CPY #$02
+1016 BMI $1009
+1018 LDX #S00
+101A STX $01
+101C LDA $0288
+101F STA $02
+1021 CLC
+1022 ADC #$02
+1024 STA $00
+1026 LDY #$00
+1028 TXA
+1029 STA ($01),Y
+102B INY
+102C BNE $1029
+102E INC $02
+1030 LDA #$02
+1032 CMP $00
+1034 BNE $1029
+1036 INX
+1037 BNE $101C
+1039 BRK
+103A BRK
+
+När du nu skrivit detta, spara programmet på kassettbandspelaren med följande
+kommando:
+	S"PROGRAM",01,1000,103A (RETURN)
+(Om du använder disketter byt bara ut 01 mot 08 i raden ovanför.)
+
+Detta är en säkerhetsåtgärd om strömmen försvinner eller något går galet så
+slipper du skriva in programmet en gång till.
+
+Antag att programmet fungerar perfekt redan första gången (vilket oftast inte
+händer med maskinkodsprogram), använd "GO" eller "G"-kommandot och skriv:
+	G 1000 (RETURN)
+
+Om du skrivit in programmet exakt som tidigare beskrivits så kommer övre delen
+av bildskärmen att snabbt visa en serie med tecken. De tre sista raderna
+kommer att var tomma. Efter ytterligare en kort stund kommer programmet att
+stanna och skärmen skall nu se ut som i FIG 3-2.
+
+.------------------------.			  __
+|\\\\\\\\\\\\\\\\\\\\\\\\|	(där \ motsvarar | #|-tecknet
+|\\\\\\\\\\\\\\\\\\\\\\\\|			 |# |
+|\\\\\\\\\\\\\\\\<-<-<-<-|			  ¯¯
+|<-<-<-<-<-<-<-<-<-<-<-<-|	 och <- motsvarar vänsterpilen)
+|<-<-<-<-<-<-<-<-<-<-<-<-|
+|<-<-			 |
+|			 |
+| B*			 |
+|    PC   SR AC XR YR SP |
+| .;1039  33 20 00 00 F6 |
+| .			 |
+|			 |
+`------------------------'
+
+Figur 3-2 Resultat av första körningen
+
+
+3.3.2	Felsökning
+
+Helt klart är emellertid att något har gått snett i programmet och du måste
+finna felet. Här är en användbar teknik för felsökning. Dela först upp
+programmet i två delar, den första som rensar skärmen och fyller den med
+blanktecken. Denna del slutar på $1018, så sätt en brytpunkt (se 2.3.2) på
+$1018 genom att skriva:
+	B 1018 (RETURN)
+
+För att du skall kunna se vad som händer ersätt blankstegskaraktären ($20)
+till ett "A" ($41). Gör detta med:
+	A 1009 LDA #$41 (RETURN) (RETURN)
+
+Sakta ned exekveringshastigheten genom att använda QUICKTRACE
+("Q"-kommandot. Se 2.3.13):
+	Q 1000 (RETURN)
+
+Detta gör att programmet körs med en betydligt långsammare takt än normalt.
+
+Om du använder minnespositioner på sid-0, vilket föredras (och i vissa fall är
+nödvändigt) kan det vara lämpligt att använda ersättningen för sid-0 (se
+2.3.4). Eftersom VICMON använder flertalet sid-0 adresser kan dessa skrivas
+över av ditt program och vice versa. Denna möjlighet till ersättningsadresser
+behövs inte i denna del, men i nästa måste denna option användas.
+
+Efter inkoppling av ersättningsadresser för sid-0 innan quicktrace "Q" används
+kommer rensningen av skärmen att ta ca 2 min och dubbelt så lång tid att
+fyllas med tecken efteråt, så koppla inte in denna funktion nu.
+
+När instruktionerna ($1000 till $1018) körs kan du lägga märke till att
+istället för att stoppa 3 rader från botten skriver VIC över skärmen vilket
+gör att skärmen skrollar 4 rader uppåt samt att ytterligare 2 karaktärer
+skrivs ut. På grund av detta kan vi konstatera att 4 oönskade tecken skrivits
+ut. Den mest troliga orsaken till detta är att kontrollen av att rätt antal
+tecken skrivits ut ej fungerar tillfredsställande. Värdet i X-registret skall
+var mellan $00 och $FC medan Y=0 och Y=1. Om du noggrant undersöker rutinen
+finner du att när X-reg. kommit till $FC, så ökar Y. Om den är mindre än 2,
+skrivs ett blanksteg (space). Med detta ser vi att X går från $00-$FF och inte
+$00-$FC detta ger de 4 oönskade karaktärerna. För att korrigera detta måste
+branschen (villkorligt hopp) $1016 peka på $1007 i stället för $1009. Eftersom
+QUICKTRACE lämnar dig i WALK-mode måste detta avslutas med att trycka på
+STOP-tangenten. Nu! Skriv följande:
+	A 1016 BMI $1007 (RETURN) (RETURN)
+
+Om du skriver:
+	Q 1000 (RETURN)
+
+så kommer programmet att stoppa på rätt ställe i skärmen. Se FIG. 3-3.
+
+.-----------------------.
+| AAAAAAAAAAAAAAAAAAAAA |
+| AAAAAAAAAAAAAAAAAAAAA |
+| AAAAAAAAAAAAAAAAAAA   |
+|  1018 LDX #00		|
+`-----------------------'
+Figur 3-3 Skärm fylld med A:n
+
+Vi kan nu konstatera att första delen av rutinen fungerar bra. Nu skall vi
+koppla in ersättningsadresserna för sid-0. Tryck på STOP, skriv nu:
+	E 1800 (RETURN)
+
+Detta kommer att ge ett block med ersättningsadresser med start på $1800. Nu
+skall koden köras med långsam hastighet från det ställe där vi avslutade
+första delen $1018 som du kan se i PC-registret. "Q"-kommandot eller
+Quicktrace hjälper dig med att stega fram i programmet samt att stanna när du
+vill, så nu skriver vi:
+	Q (RETURN)
+
+Nu kan du se att alla A:n bytes mot "#"-tecknet och ungefär ner till halva
+skärmen. De återstående A-karaktärerna kommer att bytas mot 'vänsterpilar'.
+Därefter kommer alla #-karaktärerna att bytas tillbaka till A:n igen.
+Observera att efter sista #-tecknet ändrade sig tog det en längre stund innan
+alla A byttes mot B. Vänsterpilen kvarstod. OBSERVERA att skärmkoden för # är
+0, A=1, 2=B, o.s.v.
+
+Tryck på STOP och X tillsammans för att stoppa programmet, eftersom du ser att
+vi fortfarande har lite problem.
+
+Använd "W"-kommandot (WALK/STEGA se 2.3.18) för att stega dig genom programmet
+för att se om du hittar var den felande karaktären kommer ifrån. Skriv:
+	W 1018 (RETURN)
+
+Efter en kortare tid (tidslängden beror på om du trycker på SPACE-tangenten
+eller håller den nere) kommer följande att skrivas på skärmen:
+
+1010 2E INC #$02		(eller snarare	102E INC 02
+1030 LDA 02					1030 LDA #02 )
+1032 CMP 00					
+1034 BNE 1029					
+1029 STA (01),Y					
+
+I detta läge innehåller Ackumulatorn Högbyten av skärmpekaren (för andra
+hälften av skärmen). Denna skrivs på skärmen som en 'vänsterpil'. Om du
+avslutar WALK-mode (genom att trycka på STOP) och tittar på registret genom
+att skriva R och därefter RETURN (se 2.3.13) så får du följande:
+
+	R
+	 PC  SR AC XR YR SP
+	102B AG 1F B0 00 F2
+
+Värdet på PC, SR, YR kan variera beroende på när du tryckte på STOP-tangenten
+eller vilken instruktion som stod på tur.
+
+I detta läge av programmet skall ackumulatorn innehålla samma värde som
+X-registret. När högbyten av skärmpekaren laddas i ackumulatorn, så är det
+nödvändigt att flytta innehållet i X-reg. till ackumulatorn. Instruktionen som
+utför detta heter TXA vilken syns på adress $1028 av detta följer branchen på
+$1029 måste ändras. Skriv nu:
+
+	A 1034 BNE $1028 (RETURN) (RETURN)
+
+Observera att branchen på $102C inte behöver ändras eftersom värdet på
+ackumulatorn förhindrar att den positionen nås inom sin minsta loop (Snurra).
+
+Tag bort brytpunkten, återställ blankstegskoden i början av programmet, och
+spara programmet igen genom att skriva:
+
+	RB (RETURN)
+	S"PROGRAM",01,1000,103A (RETURN)
+	G 1000 (RETURN)
+
+Nu skall det fungera. Om det inte gör det, jämför med det följande programmet
+genom att använda "D"-kommandot som visar den lagrade koden. Sök reda på felet
+och korrigera det med "A"-kommandot. Tänk på att då du gör dina egna program
+eller rutiner behövs inte en listkopia att jämföra med. Emellertid är sättet
+det samma för att sätta brytpunkter, stega långsamt, och kontrollera registret
+i samtliga program.
+
+., 1000 LDA #$93
+., 1002 JSR $FFD2
+., 1005 LDY #$00
+., 1007 LDY #$00
+., 1009 LDA #$20
+., 100B JSR $FFD2
+., 100E INX
+., 100F CPX #$FC
+., 1011 BNE #1009
+., 1013 INY
+., 1014 CPY #$02
+., 1016 BMI $1007
+., 1018 LDX #$00
+., 101A STX $01
+., 101C LDA $0288
+., 101F STA $02
+., 1021 CLC
+., 1022 ADC #$02
+., 1024 STA $00
+., 1026 LDY #$00
+., 1028 TXA
+., 1029 STA ($01),Y
+., 102B INY
+., 102C BNE $ 1029
+., 102E INC $02
+., 1030 LDA $02
+., 1032 CMP #$00
+., 1034 BNE $1028
+., 1036 INX
+., 1037 BNE $101C
+., 1039 BRK
+., 103A ???
+
+3.4 Summering
+
+Här följer en sammanfattning av stegen vi använder för att använda VICMON som
+felsökare:
+
+1. Initiera VICMON.
+
+2. Ladda ditt program med "L". Eller skriv in det och spara det med "S".
+
+3. Försök att köra programmet från början med "G".
+
+4. Sätt brytpunkter för att finna den felaktiga delen.
+
+5. Dissassemblera den felaktiga delen (eller hela programmet om kort), använd
+   "D"-kommandot. Det är fördelaktigt att skriva ut dissassembleringslistan på
+   skrivaren.
+
+6. Quicktrace eller "Q"-kommandot för att snabbt passera den felaktiga delen
+   (speciellt då där finns skärmrutiner).
+
+7. Stega eller "W" genom hela den felaktiga delen.
+
+8. Kontrollera registret på olika ställen.
+   Använd "M" och "I" för att söka i datafält.
+
+9a. Använd "A" för att rätta i programmen
+
+9b. Använd "M" för att rätta i datafält.
+
+10. Notera alla ändringar du gör i programmet.
+
+11. Observera att du kan komma att behöva ersättningsadresser för sid-0 "E"
+    när du använder Quicktrace "Q" eller "W" walk-kommandona.
+
+12. Om du inte finner felet. Gå tillbaka i ditt flödeschema och kontrollera
+    att det stämmer.
+
+------------------------------------------------------------------------
+
+SUMMERING AV KOMMANDON
+
+Kommando				   Syntax			  Sida
+Assemblering				   A (adr),(opkod),(operand) ......  3
+Brytpunkt				   B (adr) eller B (adr),n ........  3
+Dissassembler				   D (adr) eller D (adr),(adr) ....  4
+Ersättningsadresser för sid-0		   E (adr) ........................  5
+Fyll minne				   F (adr),(adr),(värde) ..........  5
+Go (run program)			   G eller G (adr) ................  5
+Hunt (sök i minne)			   H (adr),(adr),(data) ...........  6
+Interpret (översätt)			   I (adr),(adr) eller I (adr) ....  6
+Jump to subroutine (hoppa till subrutin)   J ..............................  7
+Load (ladda program)			   L "Filnamn",(dev) ..............  7
+Memory (visa minnet)			   M (adr),(adr) eller M (adr) ....  7
+Number (relokering)			   N (adr),(adr),(offset),
+					     (l-gräns),(h-gräns),W ........  8
+Quick trace (snabbsökning)		   Q eller Q (adr) ................  8
+Register				   R ..............................  9
+Remove Breakpoints (radera brytpunkt)	   RB .............................  9
+Save (lagra program)			   S "Filnamn",(dev),(adr),(adr) ..  9
+Transfer (flytta data)			   T (adr),(adr),(adr) ............  9
+Walk (stega)				   W .............................. 10
+Exit to BASIC (hoppa till BASIC)	   X .............................. 10
+
+Alla kommandon UTOM "J" aktiveras av RETURN tangenten.
+
+Följande är förklaring på parenteserna härovan.
+
+(adr)     En 2-bytes hex adress, ex. 0400
+(dev)     Ett 1-bytes hex enhetsnummer, ex. 08 (disk).
+(opkod)   En 6502 maskinkods instruktion, ex. LDA
+(operand) En godkänd operand som följer opkoden ex. #$01
+(värde)   En 1-bytes hexkodsvärde ex. FF
+(data)    En sträng av data avskiljda med " eller hexvärden avskiljda med
+	  komma.  
+(ref)     En 2-bytes hexadress ex. 2000
+(Offset)  En 2-bytes hex offsetvärde ex. 3000
+
+Uppstart av VICMON sker med SYS 24576 eller SYS 6*4096.
+
+------------------------------------------------------------------------
+
+EXTRA PROGRAMEXEMPEL SOM INTE FINNS I ORIGINALUTGÅVAN AV MANUALEN
+
+10 REM A=ASC  /O=OPEN
+11 REM B=STEP /P=POKE
+12 REM C=CHR$ /Q=PEEK
+13 REM B=DIM /R=RIGHT$
+14 REM E=END  /S=STR$
+15 REM F=GET  /T=TAB(
+16 REM H=STOP /
+17 REM I=INPUT/U=USR
+18 REM J=GOTO /V=VAL
+19 REM K=GOSUB/W=DATA
+20 REM L=LEFT$/X=READ
+21 REM M=MID$ /Y=REST
+22 REM N=NEXT /  ORE
+28 REM T=TAB( /Z=SYS
+100 POKE55,77:POKE56,29
+110 PRINT"(CLR)(6 CRSR DOWN)(6 CRSR RIGHT)VÄNTA...."
+120 FORI=7501TO7679
+130 READA:POKEI,A:X=X+A
+140 NEXT
+150 PRINT"(3 CRSR RIGHT)(2 CRSR DOWN)SYS7501
+	  (CRSR DOWN)(15 SPC)FÖR ATT ACTIVERA" 
+160 IF X<>22351 THEN PRINT"(CLR)(3 CRSR DOWN)(2 CRSR RIGHT)FEL I DATASATSERNA"
+170 REM NEW
+180 DATA120,173,20,3,72,173,21,3,72,173,116,29,208,2,169,118
+190 DATA141,20,3,173,117,29,208,2,169,29,141,21,3,104,141,117
+200 DATA29,104,141,116,29,88,96,0,0,72,138,72,152,72,165,215
+210 DATA72,165,212,240,4,104,76,221,29,104,201,193,144,82,201,219
+220 DATA176,78,56,233,193,170,189,229,29,162,0,134,198,170,160,158
+230 DATA132,34,160,192,132,35,160,0,10,240,16,202,16,12,230,34
+240 DATA208,2,230,35,177,34,16,246,48,241,200,177,34,48,17,8
+250 DATA142,255,29,230,198,166,198,157,119,2,174,255,29,40,208,234
+260 DATA230,198,166,198,41,127,157,119,2,169,20,141,119,2,230,198
+270 DATA104,168,104,170,104,76,191,234,198,169,199,134,128,129,161,144
+280 DATA133,137,141,200,202,130,159,151,194,201,196,163,183,197,131,135
+290 DATA140,158,127
+
+------------------------------------------------------------------------
+
+200 PRINT"VÄNTA ETT TAG"
+210 T=256*PEEK(56)+PEEK(55):X=T-1
+220 GOSUB310:T(1)=L:T(2)=H%
+230 X=T-71
+240 GOSUB310:T(3)=L:T(4)=H%
+250 POKE55,T(3):POKE56,T(4)
+260 FORA=T-84TOT-1
+270 READD$:IFLEFT$(D$,1)="T"THENS=VAL(RIGHT$(D$,1)):D=T(S):GOT0290
+280 D=VAL(D$)
+290 POKEA,D:NEXT
+300 SYS(T-84):NEW
+310 H%=X/256:L=X-256*H%:RETURN
+320 DATA120,169,T3,141,20,3,169,T4,141,21,3,88,96,72,138,72
+330 DATA152,72,165,211,208,5,162,248,142,T1,T2,201,80,208,44,173
+340 DATAT1,T2,240,39,173,14,144,72,169,15,141,14,144,173,T1,T2
+350 DATA41,254,141,10,144,162,16,160,255,136,208,253,202,208,248,238
+360 DATAT1,T2,208,233,142,10,144,104,141,14,144,104,168,104,170,104
+370 DATA76,191,234,170
+
+------------------------------------------------------------------------
+
+10 REM **** FUNKTIONSTANGENTS DEFINITION ****
+30 POKE55,56:POKE 56,29:S=7480
+40 READ A$:IF A$ = "*" THEN PRINT "(2 CRSR DOWN)STARTA MED, SYS 7480":END
+50 H = ASC(A$)-48
+60 L = ASC(RIGHT$(A$,1)) - 48
+70 IF H>9 THEN H=H-7
+80 IF L>9 THEN L=L-7
+90 M=H*16+L:POKE S,M:S=S+1:GOTO 40
+100 DATA78,A9,52,8D,14,03,A9,1D,8D,15,03,58,60,78,A9,BF,8D
+110 DATA14,03,A9,EA,8D,15,03,58,60,A2,00,A5,C5,C9,27,D0,18
+120 DATABD,8D,02,C9,00,D0,05,A9,08,8D,0F,90,BD,8D,02,C9,01
+130 DATAD0,05,A9,1B,8D,0F,90,A5,C5,C9,2F,D0,18,BD,8D,02,C9
+140 DATA00,D0,05,A9,0F,8D,0E,90,BD,8D,02,C9,01,D0,05,A9,00
+150 DATA8D,0E,90,A5,C5,C9,37,D0,22,BD,8D,02,C9,00,D0,05,A9
+160 DATA00,8D,1C,91,BD,8D,02,C9,01,D0,05,A9,FE,8D,1C,91,BD
+170 DATA8D,02,C9,07,D0,03,4C,22,FD,A5,C5,C9,3F,D0,22,BD,8D
+180 DATA02,C9,00,D0,05,A9,FF,8D,8A,02,BD,8D,02,C9,01,D0,05
+190 DATAA9,00,8D,8A,02,BD,8D,02,C9,07,D0,03,4C,22,FD,4C,BF,EA,*
+
+F1 = GÖR SKÄRMEN SVART2
+F2 = SKÄRMEN ÅTERGÅR TILL NORMAL
+F3 = FULL VOLYM PÅ LJUDET
+F4 = LJUDET AVSTÄNGT
+F5 = SÄTTER BANDSTATIONENS MOTORSTRÖM I TILLÄGE
+F6 = SÄTTER BANDSTATIONENS MOTORSTRÖM I FRÅNLÄGE
+F7 = GÖR ALLA TANGENTER REPETERANDE
+F8 = ÅTERGER TANGENTERNA NORMALFUNKTION
+
+------------------------------------------------------------------------
+
+  5 REMSAVE"@:DEF F1-F8",9:VERIFY"DEF F1-F8",9
+ 10 DATA120,169,128,141,20,3,169,29
+ 20 DATA141,21,3,88,133,56,169,96
+ 30 DATA133,55,96,160,64,169,0,153
+ 40 DATA191,29,136,208,250,96,234,234
+ 50 DATA72,138,72,152,72,165,197,197
+ 60 DATA251,240,44,133,251,41,39,201
+ 70 DATA39,208,36,24,165,251,42,41
+ 80 DATA240,172,141,2,240,3,24,105
+ 90 DATA8,105,126,133,252,169,29,133
+100 DATA253,160,0,177,252,153,119,2
+110 DATA200,192,8,208,246,132,198,104
+120 DATA168,104,170,104,76,191,234,170
+199 REM**LADDA MASKINKODESRUTIN
+200 POKE55,96:POKE56,29:CLR:Z=0:FORX=0TO95
+210 READ Y:Z=Z+9:POKE7520+X,Y:NEXTX
+220 IFZ<>12268THENPRINT"DATA FEL!"
+225 REM*KONTROLERA DATA SATSERNA
+230 SYS(7520):SYS(7539)
+235 REM***SYS7520 AKTIVERAR F1-F8 
+236 REM***SYS7539 RADERAR   F1-F8
+240 FORX=1TO8:READN$
+250 L=LEN(N$):IFL>8THENPRINTX;N$:PRINT"8 TECKEN MAX":STOP
+260 FORY=1TOL:F=ASC(MID$(N$,V,1)):IFP=95THENP=13
+270 POKE7607+Y+8*X,P:NEXTY:NEXTX
+280 PRINT"(CLR)(2 CRSR DOWN)F1-F8 DEFINIERADE":CLR:NEW
+285 REM**SKRIV DINA FUNKTIONER HÄR
+286 REM**OM DU VILL AVSLUTA MED 'RETURN' SKRIV '<-' EFTER
+300 DATA "LIST<-","GOSUB","RUN<-","PRINT"
+310 DATA "GOTO","CHR$(","LOAD","RETURN<-"
+
+------------------------------------------------------------------------
+
+5 REMSAVE"@:INVERSES REM",9:VERIFY"INVERSES REM",9
+10 REM*ABCDEFGHIJKL**					(i reverserad video)
+20 REM*123456678899**					(i reverserad video)
+10000 N=PEEK(43)+256*PEEK(44)
+10010 IFPEEK(N+4)=143ANDPEEK(PEEK(N+5)=42THENPOKE(N+5),18
+10020 N=PEEK(N)+256*PEEK(N+1)
+10030 IFN>0 GOTO 10010
+10040 END
+
+------------------------------------------------------------------------
+
+5 REMSAVE"@:BIG LETTERS",8:VERIFY"BIG LETTERS",8
+10 POKE56,28:CH=32776
+30 FORX=7184 TO 7600 STEP 2
+40 POKEX,PEEK(CH):POKEX+1,PEEK(CH)
+50 CH=CH+1:NEXT X
+60 POKE 36879,25:POKE36869,255:POKE36867,47
+90 PRINT"(CLR)ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ":END

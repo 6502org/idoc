@@ -1,0 +1,1491 @@
+ADD-ON-M*......PAGE 0001
+
+LINE# LOC   CODE        LINE
+
+
+
+00001 0000              ;*****************************************
+00002 0000              ;*                                       *
+00003 0000              ;*  AAA  DDDD  DDDD       000  N   N     *
+00004 0000              ;* A   A D   D D   D     O   0 NN  N     *
+00005 0000              ;* A   A D   D D   D *** O   0 N N N     *
+00006 0000              ;* AAAAA D   D D   D *** O   O N N N     *
+00007 0000              ;* A   A D   D D   D     O   O N  NN     *
+00008 0000              ;* A   A DDDD  DDDD       OOO  N   N     *
+00009 0000              ;*                                       *
+00010 0000              ;*       M   M  OOO  N   N               *
+00011 0000              ;*       MM MM O   O NN  N               *
+00012 0000              ;*  ***  M M M O   O N N N               *
+00013 0000              ;*  ***  M   M O   O N N N               *
+00014 0000              ;*       M   M O   O N  NN               *
+00015 0000              ;*       M   M  OOO  N   N               *
+00016 0000              ;*                                       *
+00017 0000              ;****************************************
+
+
+00019 0000              ;*****************************************
+00020 0000              ;*                                       *
+00021 0000              ;*  64K-ADD-ON MONITOR                   *
+00022 0000              ;*                                       *
+00023 0000              ;*  THIS PROGRAM ALLOWS A USER TO        *
+00024 0000              ;*  EXAMINE, MODIFY, AND RUN PROGRAMS    *
+00025 0000              ;*  WITH BREAKPOINTS IN THE 64K ADD-ON   *
+00026 0000              ;*  MEMORY. IT IS FUNCTIONALLY THE SAME  *
+00027 0000              ;*  AS THE PET RESIDENT MONITOR.         *
+00028 0000              ;*                                       *
+00029 0000              ;*  29JAN81 RJF         29JUL81 RJF      *
+00030 0000              ;*                                       *
+00031 0000              ;*  CBM PART # 8032118 - 01 REV B        *
+00032 0000              ;*                                       *
+00033 0000              ;*****************************************
+
+
+
+ADD-ON-M*......PAGE 0002
+
+LINE# LOC   CODE        LINE
+
+00035 0000              ;
+00036 0000              ;VIRTUAL REGISTERS
+00037 0000              ;
+00038 0000              PCH    *=*+1           ;PROGRAM COUNTER
+00039 0001              PCL    *=*+1
+00040 0002              FLGS   *=*+1           ;PROCESSOR STATUS
+00041 0003              ACC    *=*+1           ;ACCUMULATOR
+00042 0004              XR     *=*+1           ;X INDEX
+00043 0005              YR     *=*+1           ;Y INDEX
+00044 0006              SP     *=*+1           ;STACK POINTER
+00045 0007              INVH   *=*+1           ;USER  IRQ VECTOR
+00046 0008              INVL   *=*+1
+00047 0009              MEMMAP *=*+1           ;ADD-ON CONTROL REG
+00048 000A              ;
+00049 000A              ;INDIRECT POINTERS
+00050 000A              ;
+00051 000A              STAL   *=*+1           ;SAVE STORE POINTER
+00052 000B              STAH   *=*+1
+00053 000C              ;
+00054 000C              SAL    *=*+1           ;LOAD/SAVE START
+00055 000D              SAH    *=*+1
+00056 000E              ;
+00057 000E              EAL    *=*+1           ;LOAD/SAVE END
+0005B 000F              EAH    *=*+1
+00059 0010              ;
+00060 0010              TMP0   *=*+2           ;MONITOR INDIRECTS
+00061 0012              ;
+00062 0012              TMP2   *=*+2
+00063 0014              ;
+00064 0014              ;WORKING VARIABLES
+00065 0014              ;
+00066 0014              TMPC   *=*+1
+00067 0015              SAVX   *=*+1
+00068 0016              WRAP   *=*+1           ;WRAP FLAG FOR DISPLYM
+00069 0017              ;
+00070 0017              TMPA   *=*+1           ;.A SAVE FOR IRQ
+00071 0018              TMPPS  *=*+1           ;.P SAVE FOR IRQ
+
+
+
+ADD-ON-M*......PAGE 0003
+
+LINE# LOC   CODE        LINE
+
+00073 0019              ;.
+00074 0019              CINV   =$90
+00075 0019              CBINV  =$92
+00076 0019              BUF    =$200
+00077 0019              FNADR  =$DA
+00078 0019              FNLEN  =$D1
+00079 0019              CR     =$D
+00080 0019              BAD    =$100
+00091 0019              STATUS =$96
+00082 0019              FA     =$D4
+00093 0019              SA     =$D3
+00084 0019              RCLRCH =$F2A6
+00095 0019              RLISTN =$FOD5
+00086 0019              RSECHO =$F143
+00097 0019              RCIOUT =$F19E
+00088 0019              RUNLSN =$F1B9
+00089 0019              RTALK  =$F0D2
+00090 0019              RTKSA  =$F193
+00091 0019              RACPTR =$F1C0
+00092 0019              RUNTLK =$F1AE
+00093 0019              ROPENI =$F4A5
+00094 0019              STKEY  =$9B
+00095 0019              NDX    =$9E
+
+
+
+ADD-ON-M*......PAGE 0004
+
+LINE# LOC   CODE        LINE
+
+00097 0019              ;
+00098 0019                     * =1024
+00099 0400              SYS    =158            ;BASIC TOKEN VALUE
+00100 0400              ;
+00101 0400              ;ENTER COMPILED BASIC TEXT
+00102 0400              ;
+00103 0400  00                 .BYT 0
+00104 0401  00 04              .WOR INIT-2
+00105 0403  10 00              .WOR $10
+00106 0405  9E                 .BYT SYS
+00107 0406  28 31              .BYT '(1039)',0,0,0
+00107 040C  00
+00107 0400  00
+00107 040E  00
+00108 040F              ;
+00109 040F              ;INITIALIZE INTERRUPT PROCESS
+00110 040F              ;
+00111 040F  79          INIT   SEI
+00112 0410  A9 80              LDA #%10000000
+00113 0412  85 09              STA MEMMAP
+00114 0414  BD FO FF           STA $FFF0
+00115 0417  20 2B 04           JSR SETIRQ
+00116 041A  A9 98              LDA #%10001000
+00117 041C  BD FO FF           STA $FFF0
+00118 041F  20 2B 04           JSR SETIRQ
+00119 0422  A5 09              LDA MEMMAP
+00120 0424  8D FO FF           STA $FFF0
+00121 0427              ;
+00122 0427  5B                 CLI
+00123 0428  4C 7A 04           JMP TIMC
+
+
+
+ADD-ON-M*......PAGE 0005
+
+LINE# LOC   CODE        LINE
+
+00125 042B  A9 40       SETIRQ LDA #<IRQ
+00126 0420  OD FE FF           STA $FFFE
+00127 0430  A9 04              LDA #>IRQ
+00129 0432  8D FF FF           STA $FFFF
+00129 0435  A9 59              LDA #<NMI
+00130 0437  8D FA FF           STA $FFFA
+00131 043A  A9 04              LDA #>NMI
+00132 043C  8D FB FF           STA $FFFB
+00133 043F  60                 RTS
+
+
+00135 0440              ;PROCESS IRQ
+00136 0440              ;
+00137 0440  85 17       IRQ    STA TMPA        ;PRESERVE A
+00139 0442              ;
+00139 0442  68                 PLA
+00140 0443  48                 PHA
+00141 0444  85 18              STA TMPPS
+00142 0446              ;
+00143 0446  A9 00              LDA #%00000000
+00144 0448  8D F0 FF           STA $FFF0
+00145 044B              ;
+00146 044B              ;PUSH RETURN FROM INTERRUPT ADDRESS
+00147 044B              ;
+00148 044B  A9 04              LDA  #>RTIP
+00149 0440  48                 PHA
+00150 044E  A9 72              LDA  #<RTIP
+00151 0450  48                 PHA
+00152 0451              ;
+00153 0451  A5 16              LDA TMPPS
+00154 0453  48                 PHA             ;PUSH DUMMY STATUS
+00155 0454              ;
+00156 0454  A5 17              LDA TMPA        ;RESTORE A
+00157 0456              ;
+00158 0456              ;GO TO ROM IRQ SERVICE
+00159 0456              ;
+00160 0456  6C FE FF           JMP ($FFFE)
+
+
+00162 0459              ;PROCESS NMI
+00163 0459              ;
+00164 0459              ;PROCESS NMI
+00165 0459              ;
+00166 0459  85 17       NMI    STA TMPA        ;PRESERVE A
+00167 045B              ;
+00168 045B  68                 PLA
+00169 045C  48                 PHA
+00170 045D  85 18              STA TMPPS
+00171 045F              ;
+
+
+
+ADD-ON-M*......PAGE 0006
+
+LINE* LOC   CODE        LINE
+
+00172 045F              ;
+00173 045F  A9 00              LDA #%00000000
+00174 0461  8D F0 FF           STA $FFF0
+00175 0464              ;
+00176 0464              ;PUSH RETURN FROM INTERRUPT ADDRESS
+00177 0464              ;
+00178 0464  A9 04              LDA #>RTIP
+00179 0466  49                 PHA
+00180 0467  A9 72              LDA #<RTIP
+00181 0469  48                 PHA
+00192 046A              ;
+00183 046A  A5 19              LDA TMPPS
+00184 046C  48                 PHA             ;PUSH DUMMY STATUS
+00185 0460              ;
+00186 0460  A5 17              LDA TMPA
+00187 046F              ;
+00188 046F              ;G0 TO ROM IRQ SERVICE
+00189 046F              ;
+00190 046F  6C FA FF           JMP  ($FFFA)
+
+
+00192 0472              ;RETURN FROM INTERRUPT PROCESS
+00193 0472              ;
+00194 0472  49          RTIP   PHA
+00195 0473              ;
+00196 0473              ;MAP BACK TO ORIGINAL RAM
+00197 0473              ;
+0019B 0473  A5 09              LDA MEMMAP
+00199 0475  8D F0 FF           STA $FFF0
+00200 0479              ;
+00201 0478              ;RESTORE OLD .A
+00202 0478              ;
+00203 0478  68                 PLA
+00204 0479              ;
+00205 0479              ;BACK TO USER
+00206 0479              ;
+00207 0479  40                 RTI
+
+
+
+MONITOR......PAGE 0007
+
+LINE# LOC   CODE        LINE
+
+00209 047A              ;************************************************
+00210 047A              ;*                                              *
+00211 047A              ;* KERNAL MONITOR                               *
+00212 047A              ;*                                              *
+00213 047A              ;* ENTRY VIA CALL (JMP) OR BREAKPOINT (BRK)     *
+00214 047A              ;* --- FUNCTIONS---                             *
+00215 047A              ;* <:> ALTER MEMORY                             *
+00216 047A              ;* <;> ALTER REGISTERS                          *
+00217 047A              ;* <R> DISPLAY REGISTERS                        *
+00218 047A              ;* <M> DISPLAY MEMORY                           *
+00219 047A              ;* <G> START EXECUTION OF CODE                  *
+00220 047A              ;* <L> LOAD MEMORY                              *
+00221 047A              ;* <S> SAVE MEMORY                              *
+00222 047A              ;* <@> DISK COMMAND                             *
+00223 047A              ;* <*> ADD-ON CONTROL REGISTER                  *
+00224 047A              ;* <OTHER> LOAD AND EXECUTE FROM DISK           *
+00225 047A              ;*                                              *
+00226 047A              ;* FOR SYNTAX & SEMANTICS SEE CBM KERNAL MANUAL *
+00227 047A              ;* COPYRIGHT (C) 1980 BY CBM                    *
+0022e 047A              ;************************************************
+
+
+
+MONITOR......PAGE 0008
+
+LINE# LOC   CODE        LINE
+
+00230 047A              ;*****CALL ENTRY*****
+00231 047A              ;
+00232 047A              TIMC
+00233 047A  A9 88              LDA #<TIMB
+00234 047C  85 92              STA CBINV
+00235 047E  A9 04              LDA #>TIMB
+00236 0480  85 93              STA CBINV+1
+00237 0492  A9 5E              LDA #MS34-MS1   ;CALL ENTRY
+00238 0484  95 14              STA TMPC
+00239 0486  D0 10              BNE B3          ;BRANCH ALWAYS
+00240 0489              ;
+00241 0489              ;*****BREAK ENTRY*****
+00242 0489              ;
+00243 0488  20 91 09    TIMB   JSR CLRCH       ;CLR CHANNELS
+00244 046B  A9 75              LDA #MS36-MS1   ;BREAK ENTRY
+00245 048D  85 14              STA TMPC
+00246 048F  D8                 CLD
+00247 0490              ;
+00248 0490              ;SAVE .Y,.X,.A,FLAGS, AND PC
+00249 0490              ;
+00250 0490  A2 05              LDX #5
+00251 0492  68          B1     PLA
+00252 0493  95 00              STA PCH,X
+00253 0495  CA                 DEX
+00254 0496  10 FA              BPL B1
+00255 0498              ;
+00256 0498  A5 90       B3     LDA CINV
+00257 049A  85 08              STA INVL        ;SAVE IRQ LOW
+00250 049C  A5 91              LDA CINV+1
+00259 049E  95 07              STA INVH        ;SAVE IRQ HIGH
+00260 04A0              ;
+00261 04A0  BA                 TSX
+00262 04A1  86 06              STX SP          ;SAVE ORIGINAL SP
+00263 04A3  58                 CLI             ;CLEAR INTS
+00264 04A4              ;
+00265 04A4  A4 14       B5     LDY TMPC        ;MESSAGE CODE
+00266 04A6  20 62 09           JSR MSG         ;PRINT BREAK/CALL
+00267 04A9              ;
+0026e 04A9  A9 52              LDA #'R         ;DISPLAY REGS ON ENTRY
+00269 04AB  DO 17              BNE SO          ;BRANCH ALWAYS
+0027C 04AD              ;
+00271 04AD              ;*****ERROR ENTRY*****
+00272 04AD              ;
+00273 04AD  20 50 05    ERROPR JSR OUTQST
+00274 04B0  68                 PLA
+00275 04B1  60                 PLA
+00276 04B2              ;
+00277 04B2              ;*****COMMAND INTERPRETER ENTRY*****
+0027B 04B2              ;
+00279 04B2              STRTM1=*-1
+00280 04B2  A2 00              LDX #<BUF       ;PLACE TO PUT FILE NAME
+00281 04B4  AO 02              LDY #>BUF
+00292 04B6  86 DA              STX FNADR
+00203 04B8  94 DB              STY FNADR+1
+002E4 04BA  20 53 05           JSR CRLF
+
+
+
+MONITOR......PAGE 0009
+
+LINE# LOC   CODE        LINE
+
+00285 04BD              ;
+00286 04OD  20 71 09    ST1    JSR BASIN       ;READ COMMAND
+00287 04C0  C9 20              CMP #$20
+00289 04C2  FO F9              BEG ST1         ;SPAN BLANKS
+002B9 04C4              ;
+00290 04C4              ;COMMAND INTERPRETER
+00291 04C4              ;
+00292 04C4  A2 00       SO     LDX #0
+00293 04C6  96 16              STX WRAP
+00294 04C8  86 D1              STX FNLEN
+00295 04CA  A8                 TAY             :SAVE CURRENT COMMAND
+00296 04C8              ;
+00297 04CB              ;PUT RETURN ADDRESS FOR COMANDS ON STACK
+00299 04CB              ;
+00299 04CB  A9 04              LDA #>STRTM1
+00300 04CD  48                 PHA
+00301 04CE  A9 B1              LDA #<STRTM1
+00302 04D0  48                 PHA
+00303 04D1              ;
+00304 04D1  98                 TYA             ;CURRENT COMMAND IN .A
+00305 04D2              ;
+00306 04D2  DD 16 05    S1     CMP CMDS,X      ;IS IT THIS ONE?
+00307 04D3  DO OF              BNE S2          ;NOTIT
+00309 04D7              ;
+00309 04D7  85 15              STA SAVX        ;SAVE CURRENT COMMAND
+00310 04D9              ;
+00311 04D9              ;INDIREKT JMP FROM TABLE
+00312 04D9              ;
+00313 04D9  BD 17 05           LDA CMDS+1,X
+00314 04DC  85 10              STA TMP0
+00315 04DE  BD 18 05           LDA CMDS+2,X
+00316 04E1  85 11              STA TMP0+1
+00317 04E3  6C 10 00           JMP (TMP0)
+00318 04E6              ;
+00319 04E6              ;EACH TABLE ENTRY IS 3 LONG---SKIP TO NEXT
+00320 04E6              ;
+00321 04E6  E8          S2     INX
+00322 04E7  E8                 INX
+00323 04E9  E8                 INX
+00324 04E9  EO 1B              CPX #CMDEND-CMDS
+00325 04EB  90 E5              BCC S1          ;LOOP F0R ALL COMMANDS
+00326 04ED              ;
+00327 04ED              ;COMMAND NOT IN TABLE.,.LOOK ON DISK.
+0G328 04ED              ;COMMAND NAME CAN BE ANY LENGTH AND
+00329 04ED              ;HAVE PARAMETERS.
+00330 04ED              ;
+00331 04ED  A2 00              LDY #0          ;LENGTH TO ZERO
+00332 04EF  C9 00       S3     CMP #$D         ;END OF NAME?
+00333 04F1  FO 00              BEQ S4          ;YES...
+00334 04F3  C9 20              CMP #$20        ;BLANK?
+00335 04F5  FO 09              BEQ S4          ;YES
+00336 04F7  9D 00 02           STA BUF,X
+00337 04FA  20 71 09           JSR BASIN       ;GET NEXT
+00338 04FD  E8                 INX             ;COUNT CHAR
+00339 04FE  DO EF              BNE S3          ;AND CONTINUE
+
+
+
+MONITOR......PAGE 0010
+
+LINE# LOC   CODE        LINE
+
+30340 0500              ;
+00341 0500  85 14       S4     STA TMPC
+30342 0502  8A                 TXA             ;COUNT
+00343 0503  F0 10              BEQ S6          ;IS ZERO
+00344 0505              ;
+00345 0505  85 01              STA FNLEN
+00346 0507  A9 08              LDA #8
+00347 0509  85 04              STA FA          ;WILL USE DEVICE #8
+00348 050B  20 96 07           JSR LOAD        ;TRY TO LOAD COMMAND
+00349 050E  BO 05              BCS S6          ;BAD LOAD...
+00350 0510              ;
+00351 0510  A5 14              LDA TMPC        ;PASS LAST CHARACTER
+00352 0512  6C OA 00           JMP (STAL)      ;GO DO IT
+00353 0515              ;
+00354 0515  60          S6     RTS
+
+00356 0516  3A          CMDS   .BYT ':'        ;ALTER MEMi3RY
+00357 0517  OF 06              .WOR ALTM
+00359 0519  3B                 .BYT ';'        ;ALTER REGISTERS
+00359 051A  F5 05              .WOR ALTR
+00360 051C  52                 .BYT 'R'        ;DISPLAY REGISTEPS
+00361 0510  73 05              .WOR DSPLYR
+00362 051F  40                 .BYT 'M'        ;DISPLAY MEMORY
+00363 0520  84 05              .WOR DSPLYM
+00364 0522  47                 .BYT 'G'        ;START EXECUTION
+00365 0523  32 06              .WOR GO
+00366 0525  4C                 .BYT 'L'        ;LOAD MEMORY
+00367 0526  5E 06              .WOR LD
+00368 0529  53                 .BYT 'S'        ;SAVE MEMORY
+00369 0529  5E 06              .WOR LD
+00370 052B  2A                 .BYT '*'        ;MAP MEMORY
+00371 052C  2C 06              .WOR MAPPER
+00372 052E  40                 .BYT '@'        ;DISK COMMAND (ALTERNATE)
+00373 052F  49 07              .WOR DISK
+00374 0531              CMDEND
+
+00376 0531  A5 10       PUTP   LDA TMP0        ;MOVE TMP0 TO PCH,PCL
+00377 0533  85 01              STA PCL
+00378 0535  A5 11              LDA TMP0+L
+00379 0537  95 00              STA PCH
+00380 0539  60                 RTS
+
+00382 053A  A9 02       SETR   LDA #<FLGS      ;SET TO ACCESS REGS
+00393 053C  85 10              STA TMP0
+00384 053E  A9 00              LDA #>FLGS
+
+
+
+MONITOR......PAGE 0011
+
+LINE# LOC   CODE        LINE
+
+00395 0540  95 11              STA TMP0+L
+00386 0542  A9 05              LDA #5
+00397 0544  60                 RTS
+
+00389 0545              ;PRINTS ':' OR ';' BEFORE DATA TO PERMIT
+00390 0545              ;ALTER AFTER 'M' OR 'R' COMMAND
+00391 0545              ;
+00392 0545  48          ALTRIT PHA             ;PRESERVE ALTER CHARACTER
+00393 0546  20 53 05           JSR CRLF
+00394 0549  6e                 PLA
+00395 054A  20 81 09           JSR BSOUT
+
+00397 0540  A9 20       SPACE  LDA #$20        ;OUTPUT A SPACF
+00398 054F  2C                 .BYT $2C        ;SKIP TWO BYTES
+00399 0550  A9 3F       OUTQST LDA #'?'        ;OUTPUT QUESTION
+00400 0552  2C                 .BYT $2C        ;SKIP TWO BYTES
+00401 0553  A9 OD       CRLF   LDA #$D         ;DO CARRIAGE RETURN
+00402 0555  4C 91 09           JMP BSOUT
+
+00404 0559              ;DATA FOR REGISTER DISPLAY HEADING
+00405 055B              ;
+00406 0558  00  REGK           .BYT CR,$20,$20 ;3 SPACES
+00406 0559  20
+00406 055A  20
+00407 0552  20 50              .BYT ' PC ',' IRQ ',' SR AC XR YR SP'
+00407 055F  20 49
+00407 0564  20 53
+
+00409 0573              ;DISPLAY REGISTER FUNCTION
+00410 0573              ;
+00411 0573  A2 00       DSPLYR LDX  #0
+00412 0575  BD 58 05    D2     LDA REGK,X
+00413 0578  20 81 09           JSR BSOUT       ;PRINT HEADING
+00414 057B  E8                 INX
+00415 057C  E0 1B              CPX #DSPLYR-REGK ;MAX LENOTH
+00416 057E  DO F5              BNE D2
+00417 0580  A9 39              LDA #';'
+00418 0582  20 45 05           JSR ALTRIT      ;ALLOW ALTER AFTER DISPLAY
+00419 0585  A6 00              LDX PCH
+00420 0587  A4 01              LDY PCL
+00421 0589  20 DC 06           JSR WROA        ;PRINT PROGRAM CMMTER
+
+
+
+MONITOR......PAGE 0012
+
+LINE# LOC   CODE        LINE
+
+00422 058C  20 4D 05           JSR SPACE
+00423 058F  A6 07              LDX INVH
+00424 0591  A4 08              LDY INVL
+00425 0593  20 DC 06           JSR WROA        ;PRINT IRQ VECTOR
+00426 0596  20 3A 05           JSR SETR        ;SET TO PRINT .P,.A,.X,.Y,.S
+00427 0599              ;
+00429 0599              ;DISPLAY MEMORY SUBROUTINE
+00429 0599              ;
+00430 0599  85 14       DM     STA TMPC        ;BYTE COUNT
+00431 059B  AO 00              LDY #0          ;INDIRECT INDEX
+00432 059D  20 40 05    DM1    JSR SPACE       ;SPACE TWEEN BYTES
+00433 05A0  81 10              LDA (TMP0),Y
+00434 05A2  20 E1 06           JSR WROB        ;WRITE BYTE OF MEMORY
+00435 05A5              ;
+00436 05A5              ;INCREMENT INDIRECT
+00437 05A5              ;
+00438 05A5  E6 10              INC TMP0
+00439 05A7  DO 06              BNE DM2
+00440 05A9  E6 11              INC TMP0+1
+00441 05AB  DO 02              BNE DM2
+00442 05AD  E6 16              INC WRAP
+00443 05AF              ;
+00444 05AF  C6 14       DM2    DEC TMPC        ;COUNT BYTES
+00445 0581  DO FA              BNE DM1         ;UNTIL ZERO
+00446 0583  60                 RTS
+
+00448 05B4              ;DISPLAY MEMORY FUNCTION
+00449 05B4              ;
+00450 05B4  20 09 07    DSPLYM JSR RDOA        ;READ START ADR
+00451 05B7  DO 39              BCS ERRS1       ;ERR IF NO SA
+00452 05B9  20 F9 06           JSR T2T2        ;SA TO TMP2
+00453 059C              ;
+00454 05BC              ;ALLOW USER TO TYPE JUST ONE ADDRESS
+00455 05BC              ;
+00456 05BC  20 09 07           JSR RDOA        ;READ END ADR
+00457 05BF  90 06              BCC DSP1O       ;G00D.. NO DEFAULT
+00458 05C1              ;
+00459 05C1  A5 12              LDA TMP2
+00460 05C3  05 10              STA TMP0        ;DEFAULT LOW BYTE
+00461 05C5  A5 13              LDA TMP2+1
+00462 05C7  85 11              STA TMP0+1      ;DEFAULT HI BYTE
+00463 05C9              ;
+00464 05C9  20 F9 06    DSP10  JSR T2T2        ;SA TO TMP0, EA TO TMP2
+00465 05CC  20 AA 08    DSP1   JSR STOP        ;STOP KEY?
+00466 05CF  FO 20              BEQ BEQS1       ;YES...BREAK LIST
+00467 05D1              ;
+00468 05D1  A9 3A              LDA ':'
+00469 05D3  20 45 05           JSR ALTRIT      ;ALLOW ALTER
+00470 05D6  A6 11              LDX TMP0+1
+00471 05D8  A4 10              LDY TMP0
+00472 05DA  20 DC 06           JSR WROA        ;WRITE START ADDRESS
+
+
+
+MONITOR......PAGE 0013
+
+LINE# LOC   CODE        LINE
+
+00473 05DD  A9 09              LDA #8          ;COUNT OF BYTES
+00474 05DF  20 99 05           JSR DM          ;DISPLAY BYTES
+00475 05E2  A5 16              LDA WRAP
+00476 05E4  DO OB              BNE BEQS1
+00477 05E6              ;
+00478 05E6              ;CHECK FOR END OF DISPLAY
+00479 05E6              ;
+00400 05E6  38                 SEC
+00481 05E7  A5 12              LDA TMP2
+004B2 05E9  E5 10              SBC TMP0
+00483 05EB  A5 13              LDA TMP2+1
+00484 05ED  E5 11              SBC TMP0+L
+00485 05EF  BO DB              BCS DSP1        ;END >= START
+00486 05F1              ;
+00487 05F1  60          BEQS1  RTS             ;A.O.K. EXIT
+00488 05F2              ;
+00499 05F2  4C AD 04    ERRS1  JMP ERROPR      ;SYNTAX ERROR
+
+00491 05F5              ;ALTER REGISTER FUNCTION
+00492 05F5              ;
+00493 05F5 20 09 07     ALTR   JSR RDOA        ;READ NEW PC
+00494 05F8 BO FS               BCS ERRS1       ;ERROR... NO ADORESS
+00495 05FA              ;
+00496 05FA 20 31 05            JSR PUTP        ;ALTER PC
+00497 05FD              ;
+00498 05FD 20 09 07            JSR RDOA        ;READ NEW IRQ
+00499 0600 BO FO               BCS ERRS1       ;ERROR...NO ADDRESS
+00500 0602              ;
+00501 0602 A5 10               LDA TMP0
+00502 0604 85 08               STA INVL        ;ALTER IRQ VECTOR
+00503 0606 A5 11               LDA TMP0+1
+00504 0608 85 07               STA INVH
+00505 060A              ;
+00506 060A 20 3A 05            JSR SETR        ;SET TO ALTER R'S
+00507 060D D0 07               BNE A4          ;BRANCH ALWAYS
+
+00509 060F              ;ALTER MEMORY - READ ADR AND DATA
+00510 060F              ;
+00511 060F  20 09 07    ALTM   JSR RDOA        ;READ ALTER ADR
+00512 0612  BO DE              BCS ERRS1       ;IF SPACE,ERR
+00513 0614              ;
+00514 0614  A9 08              LDA #8          ;ALLOW EIGHT BYTES CHANGE
+00515 0616              ;
+00516 0616              ;COMMON CODE FOR ':' AND ';'
+00517 0616              ;
+00519 0616  85 14       A4     STA TMPC        ;NUMBER OF BYTES TO CHANGE
+00519 0618              ;
+
+
+
+MONITOR......PAGE 0014
+
+LINE# LOC   CODE        LINE
+
+00520 0618  20 16 07    A5     JSR RDOB        ;READ BYTE
+00521 061B  BO OE              BCS A9          ;NONE...END OF LINE
+00522 061D              ;
+00523 061D  A2 00              LDX #0
+00524 061F  81 10              STA (TMP0,X)    ;STORE IT AWAY
+00525 0621              ;
+00526 0621              ;INCREMENT STORE ADDRESS
+00527 0621              ;
+00528 0621  E6 10              INC TMP0
+00529 0623  DO 02              BNE A6
+00530 0625  E6 11              INC TMP0+1
+00531 0627              ;
+@0532 0627  C6 14       A6     DEC TMPC        ;COUNT BYTE
+00533 0629  DO ED              BNE A5          ;UNTIL ZERO
+00534 062B              ;
+00535 062B  60          A9     RTS
+
+00537 062C              ;MAP MEMORY
+00538 062C              ;
+00539 062C  20 16 07    MAPPER JSR RDOB
+00540 062F  95 09              STA MEMMAP
+00541 0631  60                 RTS
+
+00543 0632              ;START EXECUTION FUNCTION
+00544 0632              ;
+00545 0632  20 45 07    GO     JSR RDOC        ;SEE IF DEFAULT
+00546 0635  FO 08              BEQ G1          ;YES... PC IS ADDRESS
+00547 0637              ;
+00548 0637  20 09 07           JSR RDOA        ;N0.. GET NEW ADDR
+00549 O63A  BO 1F              BCS ERRL        ;ERROR.. ADDRESS SCREWED UP
+00550 063C              ;
+00551 063C  20 31 05           JSR PUTP        ;MOVE ADDR TO P.C.
+00552 063F              ;
+00553 063F  A6 06       G1     LDX SP
+00554 0641  9A                 TXS             ;ORIG OR NEW SP VALUE TO SP
+00555 0642              ;
+00556 0642  78                 SEI             ;PREVENT DISASTER
+00557 0643              ;
+00559 0643  A5 07              LDA INVH
+00559 0645  85 91              STA CINV+1     ;SET UP IRQ VECTOR
+00560 0647  A5 08              LDA INVL
+00561 0649  85 90              STA CINV
+00562 064B              ;
+00563 064B              ;GET FLAGS,PCH,PCL,.A,.X,.Y
+00564 064B              ;
+00565 0648  A2 00              LDX #0
+00566 064D  B5 00       G2     LDA PCH,X
+
+
+
+MONITOR......PAGE 0015
+
+LINE# LOC   CODE        LINE
+
+00567 064F  48                 PHA            ;EVERYBODY ON SIACK
+00568 0650  E8                 INX
+00569 0651  E0 06              CPX #6
+00570 0653  D0 FS              BNE G2
+00571 0655              ;
+00572 0655              ;INTERRUPT RETURN SETS EVERYBODY UP
+00573 0655              ;FROM DATA ON STACK
+00574 0655              ;
+00575 0655  68          PREND  PLA
+00576 0656  A8                 TAY
+00577 0657  68                 PLA
+00579 0658  AA                 TAX
+00579 0659  69                 PLA
+00590 065A  40                 RTI
+
+
+00582 065B  4C AD 04    ERRL   JMP ERROPR     ;SYNTAX ERROR JUMP
+
+
+00594 065E              ;LOAD RAM FUNCTION
+00595 065E              ;
+00586 065E  A0 01       LD     LDY #1
+00587 0660  94 04              STY FA         ;DEFAULT DEVICE #l
+00588 0662  88                 DEY            ;.Y=0 TO COUNT NAME LENGTH
+00589 0663              ;
+00590 0663  20 45 07    L1     JSR RDOC       ;DEFAULT?
+00591 0666  F0 1C              BEQ L5         ;YES...TRY LOAD
+00592 0668              ;
+00593 0668  C9 20              CMP #'
+00594 066A  FO F7              BEG L1         ;SPAN BLANKS
+00595 066C              ;
+00596 066C  C9 22              CMP #'"        ;STRING NEXT?
+00597 066E  D0 EB       L2     BNE ERRL       ;N0 FILE NAME
+00598 0670              ;
+00599 0670  20 45 07    L3     JSR RDOC       ;GET CHARACTER OF NAME
+00600 0673  FO OF              BEQ L5         ;END...ASSSUME LOAD
+00601 0675              ;
+00603 0675  C9 22              CMP #'"        ;END OF STRING?
+00603 0677  F0 14              BEQ L8         ;YES...COULD STILL BE 'L' OR
+00604 0679              ;
+00605 0679  91 DA              STA (FNADR)Y   ;STORE NAME
+00606 067B  E6 01              INC FNLEN
+00607 0670  C8                 INY
+00608 067E  CO 10              CPY #16        ;MAX FILF NAME LENGTH
+00609 0680              ;
+00610 0680  FC 09       L4     BEQ ERRL       ;FILE NAME TOD LONG
+00611 0682  DO EC              BNE L3         ;BRANCH ALWAYS
+00612 0684              ;
+00613 0684              ;SEE IF WE GOT A LOAD
+00614 0b84              ;
+00615 0684  A5 15       L5     LDA SAVX       ;GET LAST COMMAND
+00616 0696  C9 4C              CMP #'L
+00617 0688  DO E4              BNE L2         ;NO..NOT A LOAD..ERROR
+
+
+MONITOR......PAGE 0016
+
+LINE# LOC   CODE        LINE
+
+00618 068A              ;
+00619 068A  4C 96 07           JMP LOAD       ;YES...DO LOAD
+00620 068D              ;
+00621 068D              L8     JSR RDOC       ;MORE STUFF?
+00622 0690  FO F2              BEQ L5         ;NO... DEFUALT LOAD
+00623 0692              ;
+00624 0692  C9 2C              CMP #',        ;DELEIMETER?
+00625 0694  DO D8       L9     BNE L2         ;ND...BAD SYNTAX
+00626 0696              ;
+00627 0696  20 16 07           JSR RDOB       ;YES...GET NEXT PARM
+00628 0699  DO 3E              BCS L15        ;NOT GOOD
+00629 0690              ;
+00630 069B  85 04              STA FA
+00631 0690              ;
+00632 0690  20 45 07           JSR RDOC       ;MORE PARMS?
+00633 06A0  FO E2              BEQ L5         ;NO... DEFAULT LOAD
+00634 06A2              ;
+00635 06A2  C9 2C              CMP #',        ;DELIMETER?
+00636 06A4  D0 EE       L12    BNE L9         ;NO...BAD SYNTAX
+00637 06A6              ;
+00638 06A6  20 09 07           JSR RDOA       ;START ADDRESS?
+00639 06A9  B0 2E              BCS L15        ;NO...BAD
+00640 06AB              ;
+00641 06A8  20 F9 06           JSR T2T2       ;PRESERVE START
+00642 06AE  20 71 09           JSR BASIN      ;DELIMETER?
+00643 06B1  C9 2C              CMP #',
+00644 06B3  D0 EF       L13    BNE L12        ;NO...
+00645 06B5  20 09 07           JSR RDOA       ;TRY TO READ END
+00646 06Be  DO 1F              BCS L15        ;NONE...ERROR
+00647 06BA              ;
+00648 06BA              ;SET UP END SAVE ADDRESS
+00649 06BA              ;
+00650 068A  A5 10              LDA TMP0
+00651 06BC  85 0E              STA EAL
+00652 06BE  A5 11              LDA TMP0+L
+00653 06C0  85 OF              STA EAH
+00654 06C2  20 F9 06           JSR T2T2
+00655 06C5              ;
+00656 06C5  20 71 09    L20    JSR BASIN
+00657 06C8  c9 20              CMP #$20       ;SPAN BLANKS
+00658 06CA  FO F9              BEQ L20
+00659 06CC              ;
+00660 06CC  C9 OD              CMP #CR
+00661 06CE  DO E3       L14    BNE L13        ;MISSING CR AT END
+00662 06D0  A5 15              LDA SAVX       ;WAS COMMAND SAVE?
+00663 06D2  C9 53              CMP #'S
+00664 06D4  DO FE              BNE L14        ;NO...LOAD CAN'T HAVE PARMS
+00665 06D6  4C 20 08           JMP SAVE
+00666 06D9              ;
+00667 06D9  4C AD 04    L15    JMP ERROPR
+
+
+MONITOR......PAGE 0017
+
+LINE  LOC   CODE        LINE
+
+00669 06DC              ;WRITE ADR FROM TMP0 STORES
+00670 06DC              ;
+00671 06DC 8A           WROA   TXA            ;HI-BYTE
+00672 06DD 20 E1 06            JSR WROB
+00673 06E0 98                  TYA            ;LOW--BYTE
+
+00675 06E1              ;WRITE BYTE --- A = BYTE
+00676 06E1              ;UNPACK BYTE DATA INTO TWO ASCII
+00677 06E1              ;CHARACTERS. A=BYTE; X,A=CHARS
+00678 06E1 49           WROB   PHA
+00679 06E2 4A                  LSR A
+00690 06E3 4A                  LSR A
+006el 06E4 4A                  LSR A
+00692 06E5 4A                  LSR A
+00683 06E6 20 ED 06            JSR ASCII             ;CONVERT TO ASCII
+00684 06E9 AA                  TAX
+00685 06EA 69                  PLA
+00696 06EB 29 OF               AND #$OF
+
+00688 06ED              ;CDNVERT NYBBLE IN A TO ASCII AND
+00699 06ED              ;PRINT IT
+00690 06ED              ;
+00691 06ED 18           ASCII  CLC
+00692 06EE 69 F6               ADC #$F6
+00693 06F0 90 02               BCC ASC1
+00694 06F2 69 06               ADC #$06
+00695 06F4 69 3A        ASC1   ADC #$3A
+00696 06F6 4C 81 09            JMP BBOUT
+
+
+00698 06F9              ;EXCHANGE TEMPOPARIES
+00699 06F9              ;
+00700 06F9 A2 02        T2T2   LDX #2
+00701 06FB B5 OF        T2T21  LDA TMP0-1,X
+00702 06FD 49                  PHA
+00703 06FE B5 11               LDA TMP2-1,X
+00704 0700 95 OF               STA TMP0-1,X
+00705 0702 68                  PLA
+00706 0703 95 11               STA TMP2-1,X
+00707 0705 CA                  DEX
+00709 0706 D0 F3               BNE T2T21
+00709 0709 60                  RTS
+
+00711 0709              ;READ HEX ADR,RETURN HI IN TMP0,
+
+
+MONITOR......PAGE 0018
+
+LINE# LOC   CODE        LINE
+
+00712 0709              ;LO IN TMP0+1,AND CY=1
+00713 0709              ;IF SP CY=0
+00714 0709              ;
+00715 0709 20 16 07     RDOA   JSR RDOB              ;READ 2-CHAR BYTE
+00716 070C BO 07               BCS RDOA2             ;SPACE
+00717 070E 85 11               STA TMP0+1
+00719 0710 20 16 07            JSR RDOB
+00719 0713 85 10               STA  TMP0
+00720 0715 60           RDOA2  RTS
+00721 0716              ;READ HEX BYTE AND RETURN IN A
+00722 0716              ;AND CY=0 IF SP CY=1
+00723 0716 A9 00        RDOB   LDA #0                ;SPACE
+00724 0718 BD 00 01            STA BAD               ;READ NEXT CHAR
+00725 0719 20 45 07            JSR RDOC
+00726 07lE FO 19               BEQ RDOB4             ;FAIL ON CR
+00727 0720 C9 20               CMP #'                ;BLANK?
+00729 0722 FO F2               BEQ RDOB              ;SPAN BLANKS...
+00729 0724              ;
+00730 0724 20 3A 07            JSR HEXIT             ;CONVERT TO HEX NYBBLE
+00731 0727 OA                  ASL A
+00732 0729 OA                  ASL A
+00733 0729 OA                  ASL A
+00734 072A OA                  ASL A
+00735 072B 8D 00 01            STA BAD
+00736 072E 20 45 07            JSR RDOC              ;2ND CHAR ASSUMED HEX
+00737 0731 FO 06               BEQ RDOB4             ;FAIL ON CR
+00738 0733 20 3A 07            JSR HEXIT
+00739 0736 OD 00 01            ORA BAD
+00740 0739              ;
+00741 0739 60           RDOB4  RTS
+
+00743 073A              ;CONVERT ASCII CHAR TO HEX NYBBLE
+00744 073A              ;
+00745 073A C9 3A        HEXIT  CMP #$3A
+00746 073C 08                  PHP                   ;SAVE FLAGS
+00747 0730 29 OF               AND #$OF
+00749 073F 2a                  PLP
+00749 0740 90 02               BCC HEX09             ;0-9
+00750 0742 69 08               ADC #8                ;ALPHA ADD 8+CY=9
+00751 0744 60           HEX09  RTS
+
+00753 0745              ;GET CHARACTER AND TEST FOR CR
+00754 0745              ;
+00755 0745 20 71 09     RDOC   JSR BASIN
+00756 0748 C9 OD               CMP #$OD              ;IS IT A CR
+00757 074A 60                  RTS                   ;RETURN WITH FLAGS
+
+
+MONITOR......PAGE 0019
+
+LINE# LOC   CODE        LINE
+
+00759 074B              ;SEND DISK COMMAND OR READ STATUS
+00760 0740              ;
+00761 0748 A9 00        DISK   LDA #0                ;CLEAR STATUS @ I/0 BEGIN
+00762 0740 85 96               STA STATUS
+00763 074F              ;
+00764 074F 20 45 07            JSR RDOC              ;SEE IF STATUS CHECK
+00765 0752 FO 22               BEQ DISK20            ;YES
+00766 0754              ;
+00767 0754 48                  PHA
+00768 0755 A9 08               LDA #8                ;FLOPPY IS DEVICE #8
+00769 0757 20 9F 09            JSR LISTN             ;TELL FLOPPY TO RECEIVE
+00770 075A A9 6F               LDA #15+$60
+00771 075C 20 AF 09            JSR SECND             ;ON COMMAND CHANNEL
+00772 075F              ;
+00773 073F 68                  PLA
+00774 0760 A6 96               LDX STATUS            ;ERROR?
+00775 0762 10 06               BPL DISK15            ;NO... OK
+00776 0764              ;
+00777 0764 4C C6 08     DISK5  JMP ERROR5            ;DEVICE NOT PRESENT
+00778 0767              ;
+00779 0767 20 71 09     DISK10 JSR BASIN             ;GET A CHARACTER
+00780 076A C9 OD        DISK15 CMP #$D               ;SEE IF END
+00791 076C 08                  PHP                   ;SAVE FOR LATER
+00792 0760 20 BF 09            JSR CIOUT             ;OUT TO FLOPPY
+00783 0770 28                  PLP                   ;END?
+00784 0771 D0 F4               BNE DISK10            ;NO,..CONTINUE
+00785 0773              ;
+00786 0773 4C CF 09            JMP UNLSN             ;YES... FLOPPY DONE
+00797 0776              ;
+00788 0776 20 53 05     DISK20 JSR CRLF
+00799 0779 A9 06               LDA #8                ;FLOPPY IS DEVICE #8
+00790 077B 20 DD 09            JSR TALK              ;TELL FLOPPY TO SPEAK
+00791 077E A9 6F               LDA #15+$60
+00792 0780 20 ED 09            JSR TKSA              ;FROM ERROR CHANNEL
+00793 0783              ;
+00794 0783 A5 96               LDA STATUS            ;AN ERROR?
+00795 0785 30 DD               BMI DISK5             ;YES...
+00796 0787              ;
+00797 0787 20 FD 09     DISK25 JSR ACPTR             ;GET A CHARACTER
+00798 076A C9 OD               CMP #$D               ;SEE IF END
+00799 07EC 09                  PHP                   ;TEST LATER
+00800 0780 20 81 09            JSR BSOUT             ;OUT TO SCREEN
+00801 0790 28                  PLP                   ;END?
+00802 0791 00 F4               BNE DISK25            ;N0 ..
+00803 0793 4C OD OA            JMP UNTLK             ;YES,. FLOPBPY DONE
+
+
+LOAD FUNCTION......PAGE 0020
+
+LINE# LOC  CODE         LINE
+
+00805 0796              ;**********************************
+00806 0796              ;* LOAD RAM FUNCTION              *
+00807 0796              ;*                                *
+00808 0796              ;* LOADS FROM CASSETTE 1 OR 2, OR *
+00809 0796              ;* IEEE BUS DEVICES >=4 TO 31 AS  *
+00810 0796              ;* DETERMINED BY CONTENTS OF      *
+00811 0796              ;* VARIABLE FA. VERIFY FLAG IN .A *
+00812 0796              ;* HIGH LOAD RETURN IN X,Y.       *
+00813 0796              ;* .A=0 PERFORMS LOAD,<> IS VERIFY*
+00814 0796              ;*                                *
+00815 0796              ;**********************************
+
+00817 0796              LOAD
+00818 0796 A9 00               LDA #0
+00819 0799 95 96               STA STATUS
+00820 079A              ;
+00821 079A A5 D4               LDA FA                ;CHECK DEVICE NUMBER
+00822 079C C9 04               CMP #4
+00823 079E BO 03               BCS LD20
+00824 07A0              ;
+00825 07A0 4C 02 08     LD10   JMP ERROR9            ;BAD DEVICE #
+00826 07A3              ;
+00827 07A3              LD20
+00828 07A3              ;
+00829 07A3              ;LOAD FROM CBM IEEE DEVICE
+00830 07A3              ;
+00831 07A3 A9 60               LDA #$60              ;SPECIAL LOAD COMMAND
+00832 07A5 85 D3               STA SA
+00833 07A7              ;
+00834 07A7 A4 D1               LDY FNLEN             ;MUST HAVE I@ILE NAME
+00835 07A9 DO 03               BNE LD25              ;YES...OK
+00836 07AB              ;
+00837 07AB 4C CF 09            JMP ERROR8            ;MISSING FILE NAME
+00838 07AE              ;
+00839 07AE 20 OD 08     LD25   JSR LUKING            ;TELL USER LOOKING
+00840 07B1 20 1B OA            JSR OPENI             ;OPEN THE FILE
+00841 07B4              ;
+00842 07B4 A5 04               LDA FA
+00843 07B6 20 DD 09            JSR TALK              ;ESTABLISH THE CHANNEL
+00844 07B9 A5 03               LDA SA
+00845 07BB 20 ED 09            JSR TKSA              ;TELL IT TO LOAD
+00846 07BE              ;
+00847 07BE 20 FD 09            JSR ACPTR             ;GET FIRST BYTE
+00849 07C1 85 OE               STA EAL
+00849 07C3 85 OA               STA STAL
+00850 07C5              ;
+00851 07C5 A5 96               LDA STATUS            ;TEST STATUS FOR ERROR
+00852 07C7 4A                  LSR A
+00853 07C9 4A                  LSR A
+00854 07C9 BO 39               BCS LD90              ;FILE NOT F0UND...
+00855 07C3 20 FD 09            JSR ACPTR
+00856 07CE 85 OF               STA EAH
+00057 07D0 85 OB               STA STAH
+
+
+LOAD FUNCTION......PAGE 0021
+
+LINE# LOC  CODE         LINE
+
+00858 0702              ;
+00859 0702 20 28 09            JSR LODING            ;TELL USER LOADING
+00860 0705              ;
+00861 0705 A9 FD        LD40   LDA #$FD              ;MASK OFF TIMEOUT
+00962 0707 25 96               AND STATUS
+00863 0709 9596                STA STATUS
+00864 07DB              ;
+00865 07DB 20 AA 08            JSR STOP              ;STOP KEY?
+00866 07DE DO 03               BNE LD45              ;NO...
+00867 07E0              ;
+00968 07E0 4C 78 08            JMP BREAK             ;STOP KEY PRESSED
+00069 07E3              ;
+00870 07E3 20 FD 09     LD45   JSR ACPTR             ;GET BYTE OFF IEEE
+00971 07E6 AA                  TAX
+00072 07E7 A5 96               LDA STATUS            ;WAS THERE A TIMEOUT?
+00873 07E9 4A                  LSR A
+00874 07EA 4A                  LSR A
+00875 07EB BO ES               BCS LD40              ;YES...TRY AGAIN
+00976 07ED 8A                  TXA
+00877 07EE AO 00               LDY #0
+00879 07F0 91 OE               STA (EAL)Y
+00679 07F2 E6 OE        LD60   INC EAL               ;TNCREMENT STORE ADDR
+00090 07F4 DO 02               BNE LD64
+00881 07F6 E6 OF               INC EAH
+00892 07F8 24 96        LD64   BIT STATUS            ;EOI?
+00883 07FA 50 09               BVC LD40              ;NO...CONTINUE LOAD
+00994 07FC              ;
+00895 07FC 20 OD OA            JSR UNTLK             ;CLOSE CHANNEL
+00986 07FF 20 OA 08            JSR CLSEI             ;CLOSE THE FILE
+00887 0802 90 03               BCC LD180             ;BRANCH ALWAYS
+00888 0804              ;
+00629 0804 4C C3 08     LD90   JMP ERROR4            ;FILE NOT FOUND
+00090 0807              ;
+00891 0807              ;
+00892 0807 16           LD180  CLC                   ;GOOD EXIT
+00893 0808              ;
+00894 0808              ;SET UP END LOAD ADDRESS
+00895 0808              ;
+00896 0808 A6 OE               LDX EAL
+00897 080A A4 0F               LDX EAH
+00898 080C              ;
+00899 OBOC 60           LD190  RTS
+
+00901 O80D              ;SUPRDUIINE TO PRINT TO CONSOLE:
+00902 OBOD              ;
+00903 OBOD              ;SEARCHING [FOR NAME]
+00904 OOOD              ;
+00905 09OD              LUKING
+00906 OBOD A0 OC               LDY #MS5-MS1          ;"SEARCHING"
+00907 OOOF 20 62 09            JSR MSG
+00908 0812 A5 D1               LDA FNLEN
+
+
+LOAD FUNCTION......PAGE 0022
+
+LINE# LOC  CODE         LINE
+
+00909 0814 FO 11               BEQ LD115
+00910 0816 AO 17               LDY #MS6-MS1          ;"FOR"
+00911 0818 20 62 09            JSR MSG
+
+00913 O81B              ;SUBROUTINE TO OUTPUT FILE NAME
+00914 081B              ;
+00915 081B              OUTFN
+00916 O81B AO 00               LDY #0
+00917 081D B1 DA        LD110  LDA (FNADR)Y
+00918 081F 20 81 09            JSR BSOUT
+00919 0822 C8                  INY
+00920 0823 C4 D1               CPY FNLEN
+00921 0825 DO F6               BNE LD110
+00922 0927              ;
+00923 0927 60           LD115  RTS
+
+00925 0828              ;SUBROUTINE TO PRINT:
+00926 0828              ;
+00927 0828              ;LOADING/VERIFING
+00928 0B28              ;
+00929 0828 AO 39        LODING LDY #MS10-MS1         ;ASSUME 'LOADING'
+00930 082A 4C 62 09     LD410  JMP SPMSG
+
+
+
+SAVE FUNCTION......PAGE 0023
+
+LINE# LOC  CODE         LINE
+
+00932 082D              ;***********************************
+00933 082D              ;* SAVE                            *
+00934 082D              ;*                                 *
+00935 082D              ;* SAVES TO CASSETTE 1 OR 2, OR    *
+00936 082D              ;* IEEE DEVICES 4>=N>=31 AS SELECT-*
+00937 082D              ;* ED BY VARIABLE FA.              *
+00938 082D              ;*                                 *
+00939 082D              ;* START OF SAVE IS MEMSTR...END OF*
+00940 082D              ;* SAVE IS .X,.Y                   *
+00941 082D              ;***********************************
+
+00943 082D A5 D4        SAVE   LDA FA  ***MONITOR ENTRY
+00944 082F C9 04               CMP #4
+00945 0831 BO 03               BCS SV20
+00946 0833              ;
+00947 0833 4C 02 08     SV10   JMP ERROR9            ;BAD DEVICE
+00948 0836              ;
+00949 0836              SV20
+00950 0836 A9 61               LDA #$61
+00951 0838 85 03               STA SA
+00952 083A A4 D1               LDY FNLEN
+00953 083C DO 03               BNE SV25
+00954 083E              ;
+00955 083E 4C CF 08            JMP ERROR8            ;MISSING FILE NAME
+00956 0841              ;
+00957 0841 20 1E OA     SV25   JSR OPENI
+00958 0844 20 A1 08            JSR SAVING
+00959 0947 A5 04               LDA FA
+00960 0849 20 9F 09            JSR LISTN
+00961 084C A5 03               LDA SA
+00962 084E 20 AF 09            JSR SECND
+00963 0851 AO 00               LDY #0
+00964 0853 A5 OB               LDA STAH
+00965 0855 85 OD               STA SAH
+00966 0857 A5 OA               LDA STAL
+00967 0959 85 OC               STA SAL
+00968 0858 20 BF 09            JSR CIOUT
+00969 085E A5 OD               LDA SAH
+00970 0860 20 BF 09            JSR CIOUT
+90971 0863 38           SV30   SEC
+00972 0964 A5 OC               LDA SAL
+00973 0866 E5 OE               SBC EAL
+00974 0668 A5 OD               LDA SAH
+90975 086A E5 OF               SBC EAH
+00976 OS6C DO 19               BCS SV50              ;HAVE REACHED END
+00977 086E B1 OC               LDA (SAL)Y
+00978 0870 20 BF 09            JSR CIOUT
+30979 0873 20 AA 09            JSR STOP
+00990 0B76 DO 07               BNE SV40
+0O9B1 0878
+30992 0878 20 SA 08     BREAK  JSR CLSEI
+30983 087B A9 00               LDA #0
+30984 087D 38                  SEC
+
+
+SAVE FUNCTION......PAGE 0024
+
+LINE# LOC  CODE         LINE
+
+00985 087E 60                  RTS
+00986 097F              ;
+009B7 097F E6 OC        SV40   INC SAL
+00999 0891 DO 02               BNE INCR
+00999 0893 E6 OD               INC SAH
+00990 0895              INCR
+00991 0985 DO DC               BNE SV30
+00992 0887 20 CF 09     SV50   JSR UNLSN
+
+00994 088A 24 D3        CLSEI  BIT SA
+00995 OBBC 30 11               BMI CLSEI2
+00996 OBBE A5 D4               LDA FA
+00997 0990 20 9F 09            JSR LISTN
+00999 0893 A5 D3               LDA SA
+00999 0895 29 EF               AND #$EF
+01000 0897 09 EO               ORA #$EO
+01001 0999 20 AF 09            JSR SECND
+01002 OS9C 20 CF 09            JSR UNLSN
+01003 089F              ;
+01004 089F 18           CLSEI2 CLC
+01005 OBAO 60                  RTS
+
+01OO8 08A1              ;SUBROUTINE TO OUTPUT:
+01009 08A1              ;'SAVING <FILE NAME>'
+01010 08A1              ;
+01011 OBA1              SAVING
+01012 08A1              ;
+01013 08A1 AO 41               LDY #MS11-MS1         ;'SAVING'
+01014 08A3 20 62 09            JSR MSG
+01015 08A6 20 1B 08            JSR OUTFN             ;<FILE NAME>
+31016 08A9              ;
+31017 09A9 60           SAV100 RTS
+
+
+ERROR HANDLER......PAGE 0025
+
+LINE# LOC  CODE         LINE
+
+01019 OBAA              ;***************************************
+01020 OBAA              ;* STOP -- CHECK STOP KEY FLAG AND     *
+01021 OBAA              ;* RETURN Z FLAG SET IF FLAG TRUE.     *
+01022 OBAA              ;* ALSO CLOSES ACTIVE CHANNELS AND     *
+01023 OBAA              ;* FLUSHES KEYBDARD QUEUE.             *
+01024 OBAA              ;* ALSO RETURNS KEY DOWNS FROM LAST    *
+01025 OBAA              ;* KEYBOARD ROW IN .A.                 *
+01026 OBAA              ;***************************************
+01027 OBAA A5 9B        STOP   LDA STKEY             ;VALUE OF LAST ROW
+01028 OBAC C9 EF               CMP #$EF              ;CHECK SIOP KEY POSITION
+01029 OBAE 00 09               BNE STOP2             ;NOT DOWN
+01030 OBBO OB                  PHP
+01031 OBB1 20 91 09            JSR CLRCH             ;CLEAR CHANNELS
+01032 09B4 A9 00               LDA #0
+01033 0606 85 9E               STA NDX               ;FLUSH GUEUE
+01034 OBDB 29                  PLP
+01035 0889 60           STOP2  RTS
+
+01037 08BA              ;***********************************
+01038 O8BA              ;*                                 *
+01039 O8BA              ;* ERROR HANDLER                   *
+01040 O8BA              ;*                                 *
+01041 OBBA              ;* WITH ERROR # IN A AND CARRY.    *
+01042 OBBA              ;*                                 *
+01043 OBBA              ;***********************************
+01044 OSBA              ;
+01045 088A A9 01        ERROR1 LDA #1                ;TOO MANY FILES
+01046 OBBC 2C                  .BYT $2C
+01047 OBBD A9 02        ERROR2 LDA #2                ;FILE OPEN
+01048 OBBF 2C                  .BYT $2C
+01049 OSCO A9 03        ERROR3 LDA #3                ;FILE NOT OPEN
+01050 08C2 2C                  .BYT $2C
+01051 08C3 A9 04        ERROR4 LDA #4                ;FILE NOT FOUND
+01052 08C5 2C                  .BYT $2C
+01053 08C6 A9 05        ERROR5 LDA #5                ;DEVICE NOT PRESENT
+01054 OSCB 2C                  .BYT $2C
+01055 08C9 A9 06        ERROR6 LDA #6                ;NOT INPUT FILE
+01056 OSCB 2C                  .BYT $2C
+01057 0eCC A9 07        ERROR7 LDA #7                ;NOT OUTPUT FILE
+01058 OSCE 2C                  .BYT $2C
+01059 OBCF A9 08        ERRORS LDA #8                ;MISSING FILE NAME
+91060 0eD1 2C                  .BYT $2C
+01061 09D2 A9 09        ERROR9 LDA #9                ;BAD DEVICE #
+01062 0eD4              ;
+01063 08D4 48                  PHA                   ;ERROR NUMBER ON STACK
+01064 09D5 20 91 09            JSR  CLRCH            ;RESTORE I/0 CHANNELS
+01065 OBDB              ;
+01066 OBDB AO 00               LDY  #MS1-MS1
+01067 OBDA              ;
+01068 OBDA 20 62 09            JSR  MSG              ;PRINT "CBM I/0 ERROR #"
+01069 OSDD 66                  PLA
+
+
+ERROR HANDLER......PAGE 0026
+
+LINE* LOC  CODE         LINE
+
+01070 OBDE 48                  PHA
+01071 OBUF 09 30               ORA #$30              ;MAKE ERROR ASCII
+01072 OBEI 20 81 09            JSR BSOUT             ;PRINT IT
+01073 OBE4              ;
+01074 OBE4 68           EREXIT PLA
+01075 OBE5 39                  SEC
+01076 OBE6 60                  RTS
+
+
+MESSAGES......PAGE 0027
+
+LINE# LOC  CODE         LINE
+
+01079 OBE7 OD           MS1    .BYT $D,'I/O ERROR ',$A3
+01078 OBES 49 2F
+01078 08F2 A3
+01079 08F3 OD           MS5    .BYT $D,'SEARCHING',$AO
+01079 08F4 53 45
+01079 O8FD AO
+01080 OBFE 46 4F 52     MS6    .BYT 'FOR',$AO
+01080 0901 AG
+01081 0902 OD           MS7    .BYT $D,'PRESS PLAY',$AO
+01091 0903 50 52
+01091 0900 AG
+01082 090E 26 20        MS8    .BYT '& RECORD',$AO
+01082 0916 AO
+01083 0917 4F 4E        MS9    .BYT 'ON TAPE ',$A3
+01083 091F A3
+01084 0920 OD           MS10   .BYT $D,'LOADIN',$C7
+01084 0921 4C 4F
+01094 0927 C7
+01095 0928 OD           MS11   .BYT $D,'SAVING',$AO
+010B5 0929 53 41
+01065 092F AO
+01096 0930 OD           MS21   .BYT $D,'VERIFYIN',$C7
+01096 0931 56 45
+01096 0939 C7
+01087 093A OD           MS17   .BYT $D,'FOUND",$A0
+01087 093B 46 4F
+01097 0940 AO
+010B8 0941 OD           MS18   .BYT $D,'OK',$8D
+01099 0942 4F 4B
+01099 0944 SD
+01089 0945 OD           MS34   .BYT $D,'***CBM MONITOR 1.0***',$8D
+31089 0946 2A 2A
+21089 095B SD
+01090 095c OD           MS36   .BYT $D,'BREA",$CB
+31090 0950 42 52
+21090 0961 CB
+
+01092 0962              ;PRINT MESSAGE TO SCREEN ONLY IF
+01093 0962              ;OUTPUT ENABLED
+01094 0962              ;
+01095 0962              SPMSG
+01096 0962 59 E7 08     MSG    LDA MS1,Y
+01097 0965 08                  PHP
+01098 0966 29 7F               AND #$7F
+01099 0968 20 91 09            JSR BSOUT
+01100 096B CB                  INY
+01101 096C 28                  PLP
+01102 0960 10 F3               BPL MSG
+01103 096F 18           MSG10  CLC
+01104 0970 60                  RTS
+
+
+MESSAGES......PAGE 0028
+
+LINE# LOC  CODE         LINE
+
+01106 0971              ;
+01107 0971              BASIN
+01109 0971 A9 00               LDA #0
+01109 0973 BD FO FF            STA $FFF0
+01110 0976 20 CF FF            JSR $FFCF
+01111 0979 48                  PHA
+01112 097A A5 09               LDA MEMMAP
+01113 097C BD FO PF            STA $FFF0
+01114 097F 6B                  PLA
+01115 0980 60                  RTS
+
+01117 0981              BSOUT
+01110 0961 48                  PHA
+01119 09B2 A9 00               LDA #0
+01120 0984 50 FO FF            STA $FFF0
+01121 0987 60                  PLA
+01122 0999 20 D2 FF            JSR $FFD2
+01123 099B A5 09               LDA MEMMAP
+01124 0980 50 FO FF            STA $FFF0
+01125 0990 60                  RTS
+
+01127 0991 A9 00        CLRCH  LDA #0
+01128 0993 SD FO FF            STA $FFF0
+01129 0996 20 A6 F2            JSR RCLRCH
+01130 0999 A5 09               LDA MEMMAP
+01131 099B GD FO FF            STA $FFF0
+01132 099E 60                  RTS
+
+01134 099F 95 D4        LISTN  STA FA
+01135 09A1 A9 00               LDA #0
+01136 09A3 00 FO FF            STA $FFF0
+01137 09A6 20 D5 FO            JSR RLISTN
+01138 09A9 A5 09               LDA MEMMAP
+01139 09A0 50 FO FF            STA $FFF0
+01140 09AE 60                  RTS
+
+01142 09AF 49           SECND  PHA
+01143 09B0 A9 00               LDA #0
+01144 09B2 BD FO FF            STA $FFF0
+
+
+MESSAGES......PAGE 0029
+
+LINE# LOC  CODE         LINE
+
+01145 09B5 68                  PLA
+01146 09B6 20 43 Fl            JSR RSECND
+01147 09B9 A5 09               LDA MEMMAP
+01148 09BB BD FO FF            STA $FFF0
+01149 09BE 60                  RTS
+
+01151 099F 48           CIOUT  PHA
+01152 09C0 A9 00               LDA #0
+01153 09C2 BD FO FF            STA $FFF0
+01154 09C5 68                  PLA
+01155 09C6 20 9E Fl            JSR RCIOUT
+01156 09C9 A5 09               LDA MEMMAP
+01157 09C8 BD FO FF            STA $FFF0
+0115B 09CE 60                  RTS
+
+01160 09CF              UNLSN
+01161 09CF A9 00               LDA #0
+01162 0901 BD FO FF            STA $FFF0
+01163 09D4 20 B9 Fl            JSR RUNLSN
+01164 09D7 A5 09               LDA MEMMAP
+01165 09D9 OD FO FF            STA $FFF0
+01166 09DC 60                  RTS
+
+01168 09DD 85 D4        TALK   STA FA
+01169 09DF A9 00               LDA #0
+01170 09E1 BD FO FF            STA $FFF0
+31171 09E4 20 D2 FO            JSR RTALK
+11172 09E7 A5 09               LDA MEMMAP
+01173 09E9 BD FO FF            STA $FFF0
+31174 09EC 60                  RTS
+
+01176 09ED 48           TKSA   PHA
+01177 09EE A9 00               LDA #0
+01178 09F0 00 FO FF            STA $FFF0
+31179 09F3 68                  PLA
+01180 09F4 20 93 Fl            JSR RTKSA
+01181 09F7 A5 09               LDA MEMMAP
+01182 09F9 00 FO FF            STA $FFF0
+31183 09FC 60                  RTS
+
+
+MESSAGES......PAGE 0030
+
+LINE# LOC  CODE         LINE
+
+01185 09FD              ACPTR
+01186 09FD A9 00               LDA #0
+01187 09FF 50 FO FF            STA $FFF0
+01188 0A02 20 CO Fl            JSR RACPTR
+01189 0A05 48                  PHA
+01190 0A06 A5 09               LDA MEMMAP
+01191 OAOB BD FO FF            STA $FFF0
+01192 OAOB 68                  PLA
+01193 OAOC 60                  RTS
+
+01195 OAOD              UNTLK
+01196 GAOD A9 00               LDA #0
+01197 OAOF BD FO FF            STA $FFF0
+01198 0A12 20 AE Fl            JSR RUNTLK
+01199 0A15 A5 09               LDA MEMMAP
+01200 0A17 BD FO FF            STA $FFF0
+01201 OAIA 60                  RTS
+
+01203 OAIB 48           OPENI  PHA
+01204 OAIC A9 00               LDA #0
+01205 OAIE BD FO FF            STA $FFF0
+01206 0A21 68                  PLA
+01207 0A22 20 A5 F4            JSR ROPENI
+01208 0A25 A5 09               LDA MEMMAP
+01209 0A27 BD FO FF            STA $FFF0
+01210 0A2A 60                  RTS
+01211 0A2B                     .END
+
+ERRORS = 00000
+
+SYMBOL TABLE
+
+SYMBOL VALUE
+ A4        0616    A5        0618    A6        0627    A9        062B
+ ACC       0003    ACPTR     09FD    ALTM      060F    ALTR      05F5
+ ALTRIT    0545    ASC1      06F4    ASCII     06ED    B1        0492
+ B3        0498    B5        04A4    BAD       0100    BASIN     0971
+ BEQS1     05F1    BREAK     0878    BSOUT     0981    BUF       0200
+ CBINV     0092    CINV      0090    CIOUT     09BF    CLRCH     0991
+ CLSEI     088A    CLSEI2    089F    CMDEND    0531    CMDS      0516
+ CR        0OOD    CRLF      0553    D2        0575    DISK      074B
+ DISK1O    0767    DISK15    076A    DISK20    0776    DISK25    0787
+ DISK5     0764    DM        0599    DM1       059D    DM2       05AF
+ DSP1      05CC    DSP10     05C9    DSPLYM    05B4    DSPLYR    0573
+
+SYMBOL TABLE
+
+SYMBOL VALUE
+ EAH       OOOF    EAL       OOOE    EREXIT    08E4    ERRL      065B
+ ERROPR    04AD    ERROR1    O8BA    ERROR2    08B0    ERROR3    O8CO
+ ERROR4    08C3    ERROR5    08C6    ERROR6    08C9    ERROR7    08CC
+ ERROR8    O8CF    ERROR9    O8D2    ERRS1     05F2    FA        0004
+ FLGS      0002    FNADR     OODA    FNLEN     00D1    G1        063F
+ G2        064D    GO        0632    HEX09     0744    HEXIT     073A
+ INCR      0885    INIT      040F    INVH      0007    INVL      0008
+ IRQ       0440    L1        0663    L12       06A4    L13       06B3
+ L14       06CE    L15       06D9    L2        066E    L20       06C5
+ L3        0670    L4        0680    L5        0684    L8        068D
+ L9        0694    LD        065E    LD10      07A0    LD110     081D
+ LD115     0B27    LD180     0807    LD190     080C    LD20      07A3
+ LD25      07AE    LD40      07D5    LD410     082A    LD45      07E3
+ LD60      07F2    LD64      07F8    LD90      0804    LISTN     099F
+ LOAD      0796    LODING    0828    LUKING    O8OD    MAPPER    062C
+ MEMMAP    0009    MS1       O8E7    MS10      0920    MS11      0928
+ MS17      093A    MS18      0941    MS21      0930    MS34      0945
+ MS36      095C    MS5       O8F3    MS6       08FE    MS7       0902
+ MS8       090E    MS9       0917    MSG       0962    MSG10     096F
+ NDX       009E    NMI       0459    OPENI     0A1B    OUTFN     081B
+ OUTQST    0550    PCH       0000    PCL       0001    PREND     0655
+ PUTP      0531    RACPTR    F1C0    RCIOUT    F19E    RCLRCH    F2A6
+ RDOA      0709    RDOA2     0715    RDOB      0716    RDOB4     0739
+ RDOC      0745    REGK      0558    RLISTN    F0D5    ROPENI    F4A5
+ RSECND    F143    RTALK     F0D2    RTIP      0472    RTKSA     F193
+ RUNLSN    F1B9    RUNTLK    F1AE    S0        04C4    S1        04D2
+ S2        04E6    S3        04EF    S4        0500    S6        0515
+ SA        00D3    SAH       OOOD    SAL       000C    SAVIOO    08A9
+ SAVE      082D    SAVING    08A1    SAVX      0015    SECND     09AF
+ SETIRQ    042B    SETR      053A    SP        0006    SPACE     054D
+ SPMSG     0962    ST1       04BD    STAH      OOOB    STAL      000A
+ STATUS    0096    STKEY     009B    STOP      O8AA    STOP2     08B9
+ STRTM1    04B1    SV10      0833    SV20      0836    SV25      0841
+ SV30      0863    SV40      087F    SV50      0887    SYS       009E
+ T2T2      06F9    T2T21     06FB    TALK      09DD    TIMB      0488
+ TIMC      047A    TKSA      09ED    TMP0      0010    TMP2      0012
+ TMPA      0017    TMPC      0014    TMPPS     0018    UNLSN     09CF
+ UNTLK     0A0D    WRAP      0016    WROA      06DC    WROB      06E1
+ XR        0004    YR        0005
+END OF ASSEMBLY
+
+

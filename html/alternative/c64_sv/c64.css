@@ -1,0 +1,243 @@
+/* Stilmall för iDOC=s version av Commodore 64 användarmanual
+ * © 2000,2002-2003 Peter Karlsson
+ * $Id: c64.css,v 1.6 2003/05/01 20:33:03 peter Exp $
+ * http://www.softwolves.pp.se/idoc/
+ */
+
+/* Dokumentkropp */
+body {
+    color: black;
+    background: #ffc;
+    font-family: sans-serif;
+}
+
+/* Länkar */
+a:link {
+    color: #00c;
+}
+
+a:active, a:hover {
+    color: #800;
+}
+
+a:visited {
+    color: #008;
+}
+
+/* Dessa rubriker är skrivna med blå text */
+h2 {
+    color: #00a;
+    font-weight: bold;
+}
+
+/* Se till att vi får fetstil */
+h3, 34 {
+    font-weight: bold;
+}
+
+/* Titelrutan */
+div.logo {
+	clear: both;
+	margin: 0.5em 0.5em 0 0.5em;
+	border: 2px solid #00a;
+	border-bottom: none;
+	background: #eee;
+	padding: 0.5em 1em;
+	text-align: center;
+}
+
+div.logo a {
+	text-decoration: none;
+}
+
+/* Navigeringspanel */
+div.navigation, div.bottomnavigation {
+	text-align: center;
+	border: 2px solid #00a;
+	background: #eee;
+	padding: 0.5em 1em;
+}
+
+div.navigation {
+	margin: 0 0.5em 0.5em;
+	border-top: none;
+}
+
+div.bottomnavigation {
+	margin: 0.5em;
+}
+
+/* Fejka en markör genom att rita ett tecken svart mot svart */
+pre span.block {
+    background: black;
+    color: black;
+}
+
+/* Skärmutdata skrivs med ljusblå text mot mörkblå bakgrund */
+pre.screen {
+/*	background: black;
+	color: white;*/
+	background: #006;
+	color: #55f;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	margin-left: 1em;
+/*	margin-right: 1em;*/
+	font-family: monospace;
+	width: 40em;
+}
+
+/* Fejkmarkör på skärmutdata */
+pre.screen span.block {
+/*  background: white;
+    color: white;*/
+	background: #55f;
+	color: #55f;
+}
+
+/* Tangent på skärmutdata */
+pre.screen span.key {
+	padding-left: 2px;
+	padding-right: 2px;
+	margin-left: 2px;
+	margin-right: 2px;
+	color: black;
+	background: white;
+}
+
+/* Färgbalkar (kap.1) på skärmutdata */
+pre.screen span.blockred {
+    background: #800;
+    color: #800;
+}
+
+pre.screen span.blockgreen {
+    background: #080;
+    color: #080;
+}
+
+pre.screen span.blockblue {
+    background: #008;
+    color: #008;
+}
+
+pre.screen span.blockyellow {
+    background: #ff8;
+    color: #ff8;
+}
+
+/* Introblocket, som motsvarar försättsbladet, har vit text mot blått */
+div.intro {
+	background: #008;
+	color: white;
+	font-weight: bold;
+	padding-right: 1em;
+	padding-bottom: 1em;
+	margin: 0 0.5em 0 0.5em;
+}
+
+/* Kapitelrubriken högerjusteras */
+div.intro H1 {
+	text-align: right;
+}
+
+/* Innehållsförteckningen för kapitlet skrivs i mitten */
+div.intro UL {
+	margin-left: 50%;
+}
+
+/* Tipsrutor skrivs med blå ram */
+div.tips {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    border-style: solid;
+    border-width: thin;
+    border-color: #00c;
+	padding: 0.1em;
+}
+
+/* Ta bort onödiga mellanrum runt tipsrutornas rubriker */
+div.tips H3 {
+	margin-top: 0;
+}
+
+div.tips H4 {
+	margin-top: 0;
+}
+
+/* Ruta med svart ram */
+div.box {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+	padding: 0.1em;
+}
+
+/* Dokumentet har normal bokindentering */
+p {
+	text-indent: 1em;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+p.first {
+	text-indent: 0;
+	margin-top: 0.5em;
+}
+
+/* Gör ett stycke med tomrum runt */
+p.spacing {
+	text-indent: 0;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+/* Felmeddelandelistan i bilaga K */
+dl.error dt {
+	display: run-in;
+	font-weight: bold;
+}
+
+dl.error dt:after {
+	content: "... ";
+	font-weight: bold;
+}
+
+dl.error dd {
+	text-indent: 0;
+	margin-left: 0;
+	margin-bottom: 1em;
+}
+
+/* Få tangenter att se ut som tangenter */
+kbd {
+	color: #333333;
+	background-color: #ffffee;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 80%;
+	text-align: center;
+	border-top: 2px double #cfcfef;
+	border-left: 3px solid #babada;
+	border-right: 4px solid #aaaaca;
+	border-bottom: 4px solid #9090c0;
+	padding-left: 0.2em;
+	padding-top: 0em;
+	padding-right: 0.2em;
+	padding-bottom: 0em;
+	line-height: 1.6em;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+/* Validerings- och datumrutan */
+
+div.bottom {
+	clear: both;
+	margin: 1em 0 0 0;
+	color: black;
+	padding: 2px 1em;
+}
+

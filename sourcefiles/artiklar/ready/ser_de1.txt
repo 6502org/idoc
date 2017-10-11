@@ -1,0 +1,427 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore 64
+related documents in electronic text format that might otherwise cease to
+exist with the rapid advancement of computer technology and declining
+interest in 8-bit computers on the part of the general population. If you
+would like to help by converting C64 related hardcopy documents to
+electronic texts please contact the manager of International Project 64,
+Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The first
+characters of the file name are an abbreviation of the original document
+name and the language of the etext. The version number of the etext follows
+next. After that a letter may appear to indicate the particular source of
+the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International Project
+64 make no representations about the accuracy or suitability of this
+material for any purpose. This etext is provided "as-is". Please refer to
+the warranty of the original document, if any, that may included in this
+etext. No other warranties, express or implied, are made to you as to the
+etext or any medium it may be on. Neither the author(s) nor the members of
+International Project 64 will assume liability for damages either from the
+direct or indirect use of this etext or from the distribution of or
+modification to this etext. Therefore if you read this document or use the
+information herein you do so at your own risk.
+
+*********
+
+The International Project 64 etext of the article "Bits der Reihe nach",
+written and donated for IP64 distribution by Nikolaus Heusler
+<nikolaus.heusler@lrz.tu-muenchen.de>.
+
+SER_DE1.TXT, June 1997, etext #13.
+
+Note from the etexter: 
+
+This is german text.
+
+It's a copy of an article I published some years ago in a german computer
+magazine. The text describes programming the serial bus (for example for
+data transfer with the 1541 drive) in assembler (machine language).
+
+No part of this text may be copied, stored or published in any way without
+prior written permission by the author. It is not allowed to store copies of
+this text or of parts of it on computer-discettes or on computers which can
+be accessed in the public, for example on the internet.
+
+Das Werk einschliesslich aller seiner Teile ist urheberrechtlich geschuetzt.
+Jede Verwertung ausserhalb der engen Grenzen des Urheberrechtsgesetzes ist
+ohne vorherige schriftliche Zustimmung des Verfassers unzulaessig und
+strafbar. Dies gilt insbesondere fuer Vervielfaeltigungen, Uebersetzungen
+und die Verarbeitung in elektronischen Systemen.
+
+Einwilligungen zur Weiterverarbeitung wird der Verfasser im Einzelfall auf
+schriftliche Anfrage gern geben, falls keine kommerziellen Interessen mit
+der Verarbeitung verfolgt werden.
+
+Produkt- und Herstellerangaben in dem Text werden ohne Ruecksicht auf
+eventuellen Patentschutz veroeffentlicht. Warennamen werden ohne Gewaehr-
+leistung der freien Verwendbarkeit benutzt. Die Texte wurden mit groesster
+Sorgfalt zusammengestellt. Trotzdem sind Fehler nicht vollstaendig
+auszuschliessen. Fuer fehlerhafte Angaben und deren Folgen kann der Autor
+weder juristische Verantwortung noch irgendeine Haftung uebernehmen.
+
+Verfasser / Author: Nikolaus Heusler
+                    Zwengauerweg 18
+                    D-81479 Muenchen
+                    Germany
+
+Bei schriftlichen Anfragen bitte Rueckporto beilegen, ich antworte gern.
+
+This version was published in the internet on the project "IP 64" in June
+1997.
+
+*********
+
+   Objekt: 64'er Magazin
+  Ausgabe: 1/94
+   Rubrik: Proficorner
+    Thema: serieller Bus, Programmierung der 1541
+
+Zu diesem Artikel gehört ein Bild, keine Listings
+
+Profi-Corner
+
+Bits der Reihe nach
+
+Nachdem wir in der letzten Folge gesehen haben, wie man von Diskette liest,
+untersuchen wir diesmal den seriellen Bus näher. Ohne ihn ist an eine
+Datenübertragung zwischen Laufwerk und Computer gar nicht zu denken.
+
+von Nikolaus Heusler
+
+Im letzten Heft haben Sie gelernt, wie man direkt im Speicher der Floppy
+1541 Maschinenprogramme unterbringt, die mit Hilfe der »Jobcodes« Sektoren
+von Diskette lesen und schreiben. Bevor wir uns näher mit den weitergehenden
+Tricks beschäftigen, die sich hinter dieser hochinteressanten Technik noch
+verbergen, wollen wir erst einmal Klarheit schaffen und untersuchen, wie der
+serielle Bus genau funktioniert. Schließlich haben wir die Daten von
+Diskette ja erst in einem 1541-Puffer, wollen sie aber in den Speicher des C
+64 bringen. Sie werden vier Routinen kennenlernen, mit deren Hilfe der
+serielle Bus bedient wird. Alle vier Routinen sind in abgewandelter Form
+auch schon im DOS und im Kernal des C 64 enthalten, die jeweiligen
+Startadressen werden später bekanntgegeben. Sollten Sie also ein ROM-Listing
+von C 64 und/oder 1541 besitzen, ist es eine gute Idee, diese jetzt
+herauszuholen.
+
+Daten Takt für Takt
+
+Wie der Name schon sagt, werden die Daten auf der seriellen Bus »seriell«,
+also nacheinander übertragen. Während man bei einem »parallelen« Bus
+(Beispiele: Speeder-Kabel oder Centronics-Userport-Kabel) acht Leitungen
+findet, über die immer acht Bit (also ein Byte) gleichzeitig übertragen
+werden, gibt es beim seriellen Bus nur eine Datenleitung. Zu einem Zeitpunkt
+kann also immer nur ein Bit gesendet oder empfangen werden. Dadurch ist der
+serielle Bus dem parallelen deutlich unterlegen, was die Geschwindigkeit der
+Übertragung betrifft. Dafür spart man sich beim seriellen Bus sieben Kabel,
+was vor allem bei längeren Verbindungen nicht nur billiger, sondern vor
+allem weniger störanfällig ist. Stellen Sie sich ein handfestes Beispiel
+vor: Auf einer achtspurigen Autobahn können acht Autos nebeneinander fahren,
+was im Vergleich zu einer einspurigen Straße wesentliche Verbesserungen in
+Bezug auf die Verkehrsdichte hätte: Dort müssen die Wägen hintereinander
+fahren. Allerdings würden Umweltschützer zu Recht gegen acht Fahrspuren
+protestieren.
+
+Betrachten Sie das Bild. Es zeigt das »Protokoll«, also das
+Übertragungsformat, wie es praktisch bei allen seriellen Bussen in der
+Computertechnik Verwendung findet, auch zwischen Floppy und C 64 sowie bei
+seriell angeschlossenen Druckern.
+
+Es gibt neben der Datenleitung (oben gezeichnet) noch eine Takt- oder
+Clock-Leitung (unten). Wozu braucht man die? Bei nur einer Datenleitung
+wüßte der Empfänger nie, ob und wann gültige Daten vorhanden sind. Er könnte
+zwei aufeinanderfolgende Null-Bits nicht von einem einzigen Null-Bit
+unterscheiden, das der langsam arbeitende Sender geschickt hat. Daher wird
+auf der Datenleitung immer dann ein kurzer High-Impuls ausgelöst, wenn die
+Daten auf der DATA-Ader gültig sind. Man sagt: Bei steigender Flanke auf
+CLOCK übernimmt der Empfänger das Datum.
+
+Übrigens werden die Daten beim C 64 nach »negativer Logik« übertragen: Ein
+LOW- oder Null-Bit entspricht +5 Volt, bei HIGH oder Eins ist die Leitung
+spannungslos.
+
+Die Tür nach draußen
+
+Nach diesen Vorüberlegungen machen wir uns nun daran, dan seriellen Bus
+selbst zu programmieren. Dazu brauchen wir erst einmal die Register der
+I/O-Bausteine, die für die Kommunikation zuständig sind (in Klammern die
+dezimale Wertigkeit des jeweiligen Bits):
+
+Im C 64: Die CIA U2
+Adresse $DD00 (dez. 56576)
+Bit 7 (128): Daten Eingabe
+Bit 6 (64):  Takt Eingabe
+Bit 5 (32):  Daten Ausgabe
+Bit 4 (16):  Takt Ausgabe
+Adresse $DD02 (dez. 56578): Datenrichtung
+
+In der VC 1541: Die VIA UC3
+Adresse $1800 (dez. 6144)
+Bit 0 (1): Daten Eingabe
+Bit 1 (2): Daten Ausgabe
+Bit 2 (4): Takt Eingabe
+Bit 3 (8): Takt Ausgabe
+Adresse $1802 (dez. 6146): Datenrichtung
+
+Nur diese vier Adressen werden wir zur seriellen Übertragung brauchen. Genau
+genommen sind auch die beiden Datenrichtungsregister (Data Direction
+Register, DDR) nicht erforderlich, da Sie bereits auf ihre Sollwerte dez. 63
+($DD02 im C 64) und dez. 26 ($1802 in der 1541) gesetzt sind. Diese Werte
+müssen Sie also nur dann in die DDR schreiben, falls Sie zuvor größere
+Änderungen vorgenommen haben.
+
+Wir möchten Ihnen nicht verschweigen, daß die Routinen, welche gleich
+vorgestellt werden, einige Schönheitsfehler haben. Beispielsweise verwenden
+wir keine Maschinerie mit Geräteadresse, das heißt, daß immer alle Geräte am
+seriellen Bus angesprochen werden. Schalten Sie also Ihren Drucker und alle
+Diskettenlaufwerke aus, bis auf dasjenige, mit dem Sie kommunizieren
+(lassen) möchten. Außerdem erfolgt in diesen Routinen im Gegensatz zu den
+normalen System-Programmen keinerlei Test, ob das empfangende Gerät auch
+eingeschaltet und bereit ist, bzw. ob die gesendeten Daten überhaupt
+angekommen sind. Diese Punkte können Sie als Programmierer ohne weiteres
+ergänzen, indem beispielsweise eine Geräteadresse bzw. Prüfsummen übertragen
+werden. Im Original-Protokoll wird außerdem jeweils vor und nach der
+Übertragung von jeweils einem Byte die Datenleitung manipuliert, um die
+Verfügbarkeit des Empfängers zu prüfen bzw. um zu bestätigen, daß ein
+komplettes Byte empfangen und verarbeitet wurde. Solches fehlt in unseren
+Beispiel-Routinen ebenfalls. In Einzelfällen kann es daher also vorkommen,
+daß die Übertragung nicht auf Anhieb funktioniert. Wer näheres dazu wissen
+möchte, findet im ROM-Listing entsprechende Informationen.
+
+Fertige Routinen...
+
+Fangen wir mit der Übertragung vom C 64 zur Floppy an. Was wir dazu
+brauchen, ist eine Routine im C 64 zum Senden und eine Empfangsroutine im
+Speicher der 1541. Alle Angaben erfolgen falls nicht anders angegeben
+hexadezimal. In allen Fällen wird zuerst das LSB (Bit 0) gesendet, zuletzt
+das MSB (Bit 7).
+
+Hier ist erst die Sende-Routine im C 64 (bitte beachten Sie die negative
+Logik wie oben erklärt):
+
+C64_SEND            ; Byte im Akku zur Floppy senden
+        STA 95      ; dez. 149, Byte merken
+        LDA #3F     ; zur Sicherheit
+        STA DD02    ; DDR setzen
+        SEI         ; für Timing wichtig
+        LDA #8      ; acht Bit
+        STA A5      ; dez. 165: Bitzähler
+LOOP1   LDA DD00
+        ORA #10     ; dezimal 16
+        STA DD00    ; CLOCK LOW
+        ROR 95      ; nächtes Bit bereitstellen
+        LDA DD00
+        BCS GESETZT ; Bit gesetzt?
+        ORA #20     ; dez. 32, DATA LOW
+        BNE WEITER  ; unbedingter Sprung
+GESETZT AND #DF     ; dez. 223, DATA HIGH
+WEITER  AND #EF     ; dez. 239, CLOCK HIGH
+        STA DD00    ; gültige Daten senden
+        NOP
+        NOP
+        NOP         ; kurze Pause für Empfänger
+        NOP
+        NOP
+        ORA #10     ; CLOCK LOW, Daten ungültig
+        STA DD00
+        NOP
+        NOP
+        NOP         ; kurze Pause für Empfänger
+        NOP
+        NOP
+        DEC A5      ; nächstes Bit
+        BNE LOOP1   ; noch nicht acht Bit
+        AND #DF     ; Bus-Default (DATA HIGH)
+        STA DD00
+        CLI
+        RTS         ; und fertig
+
+Das ist alles. Die einzelnen Bit werden per ROR $95 nacheinander auf den Bus
+gebracht (invertiert). Nach jeder Bit-Ausgabe setzt der C 64 die Taktleitung
+kurz auf High, um die Gültigkeit der Daten anzuzeigen. Falls die Übertragung
+nicht klappen sollte, könnten Sie die Anzahl der NOP-Befehle erhöhen. Dies
+gibt der empfangenden Station mehr Zeit für den Empfang. Eine solche Routine
+(erweitert) enthält das Kernal des C 64 ab $ED40. Der Computer enthält
+bereits fertige Routinen zur Manipulation der Datenleitungen, die wir hier
+jedoch nicht verwenden:
+
+EE85    CLOCK HIGH
+EE8E    CLOCK LOW
+EE97    DATA HIGH
+EEA0    DATA LOW
+EEA9    DATA nach Carry lesen
+
+Jetzt folgt das Gegenstück, das in der Diskettenstation ein Byte empfängt,
+welches nach obiger Routine übertragen wurde. Wieder handelt es sich um ein
+vereinfachtes Beispiel:
+
+1541_REC            ; Byte vom C 64 empfangen -> Akku
+        SEI         ; Timing
+        LDA #1A     ; zur Sicherheit
+        STA 1802    ; DDR setzen
+        LDA #8      ; acht Bit
+        STA 98      ; dez. 152: Bitzähler
+LOOP2   LDA 1800    ; Port lesen
+        CMP 1800    ; und entprellen
+        BNE LOOP2
+        EOR #1      ; Datenbit invertieren
+        LSR         ; und ins Carry schieben
+        AND #2      ; CLOCK IN
+        BNE LOOP2   ; auf CLOCK HIGH warten
+        ROR 85      ; dez. 133: Datenpuffer
+TAKT    LDA 1800    ; Port lesen
+        CMP 1800    ; und entprellen
+        BNE TAKT
+        AND #4      ; CLOCK IN
+        BEQ TAKT    ; CLOCK LOW abwarten
+        DEC 98      ; nächstes Bit
+        BNE LOOP2   ; noch nicht alle Bit
+        LDA 1800
+        ORA #2	    ; DATA LOW
+        STA 1800    ; Port auf Default
+        LDA 85      ; gelesenes Byte laden
+        CLI
+        RTS         ; und übergeben
+
+Das Programm wartet so lange, bis ein High-Signal auf der Taktleitung ein
+gültiges Datum anzeigt. Dann wird die Datenleitung invertiert über das
+Carry-Flag in das Byte rotiert (ROR $85). Sobald die Taktleitung wieder Low
+ist, kann das nächste Bit empfangen werden. Für Besitzer des ROM-Listings
+der 1541: Eine entsprechende Routine ist ab $E9C9 enthalten. Auch das DOS
+der 1541 bietet einige hilfreiche Service-Routinen:
+
+E99C    DATA HIGH
+E9A5    DATA LOW
+E9AE    CLOCK LOW
+E9B7    CLOCK HIGH
+E9C0    Port nach Akku lesen und entprellen
+
+Stichwort »Entprellen«: Sie haben gesehen, daß das Laufwerk beim Lesen des
+Ports immer einen Vergleich mit dem Port (CMP 1800) anstellt. Erst, wenn
+zweimal hintereinander der selbe Wert gelesen wurde, wird er akzeptiert.
+Zufallswerte, die aufgrund von hochfrequenten Störungen manchmal auftreten,
+werden dadurch unterdrückt.
+
+... zur seriellen Datenübertragung
+
+Jetzt soll ein Byte vom Laufwerk über den seriellen Port in den C 64 geladen
+werden. Wieder beginnen wir mit dem sendenden Teil, der diesmal im Speicher
+des Laufwerk zu finden ist:
+
+1541_SEND           ; Byte im Akku zum C 64 senden
+        SEI         ; Timing
+        STA 85      ; dez. 133: Puffer
+        LDA #1A     ; zur Sicherheit
+        STA 1802    ; DDR setzen
+        LDA #8      ; acht Bit
+        STA 98      ; dez. 152: Bitzähler
+LOOP3   LDA 1800
+        ORA #8      ; CLOCK LOW
+        STA 1800    ; zum Port
+        ROR 85      ; nächtes Byte bearbeiten
+        BCS SET     ; Bit gesetzt
+        ORA #2      ; DATA LOW
+        BNE RESET   ; unbedingter Sprung
+SET     AND #FD     ; dez. 253, DATA HIGH
+RESET   AND #F7     ; dez. 247, CLOCK HIGH
+        STA 1800    ; Datum ausgeben
+        NOP
+        NOP
+        NOP         ; kurze Pause für Empfänger
+        NOP
+        NOP
+        NOP
+        ORA #8      ; DATA LOW
+        STA 1800    ; senden
+        DEC 98      ; schon alle Bit gesendet?
+        BNE LOOP3   ; nein, dann weiter
+        AND #FD     ; DATA HIGH
+        STA 1800    ; Port auf Default
+        CLI
+        RTS         ; und schluß
+
+Sollte die Übertragung Probleme bereiten, kann es hilfreich sein, einige
+zusätzliche NOP zu spendieren, damit der der Empfänger mehr Zeit für seine
+Reaktion hat. »Vorbild« für diese Routine war die Sende-Routine der
+Diskettenstation ab $E909. Das Gegenstück dazu im C 64 könnte so aussehen:
+
+C64_REC             ; ein Byte von der 1541 empfangen -> Akku
+        SEI         ; Timing
+        LDA #3F     ; zur Sicherheit
+        STA DD02    ; DDR setzen
+        LDA #8      ; acht Bit
+        STA A5      ; Bitzähler
+LOOP4   LDA DD00    ; Port lesen
+        CMP DD00    ; und entprellen
+        BNE LOOP4
+        ASL         ; DATA ins Carry schieben
+        BPL LOOP4   ; auf CLOCK HIGH warten
+        ROR A4      ; dez. 164: Byte empfangen
+CONT    LDA DD00    ; Taktleitung holen
+        CMP DD00    ; entprellen
+        BNE CONT
+        ASL         ; CLOCK ins S-Flag
+        BMI CONT    ; auf CLOCK LOW warten
+        DEC A5      ; nächstes Bit bearbeiten
+        BNE LOOP4
+        LDA DD00
+        ORA #20     ; dez. 32, DATA LOW
+        STA DD00    ; Port auf Default
+        CLI         ; Interrupt freigeben
+        LDA A4      ; gelesenes Byte lesen
+        RTS         ; und übergeben
+
+Wenn Sie aufmerksam lesen, ist Ihnen sicherlich etwas aufgefallen. Genau:
+Beim Empfangen arbeitet der C 64 mit positiver Logik. Dies ist die einzige
+Ausnahme bei den vier Fällen. Diese Routine arbeitet im Prinzip genau so wie
+die Routine zum Empfang in der Floppy. Im Kernal ist der Bereich ab $EE13
+dafür zuständig.
+
+Offen für eigene Ideen
+
+Damit wären wir eigentlich am Ende unserer Streifzüge durch die
+Programmierung des seriellen Busses angelangt. Sicherlich werden Sie noch
+ein wenig damit experimentieren müssen, bis die Übertragung einwandfrei
+klappt. Es liegt bei Ihnen, entweder unsere Beispiel-Minimal-Routinen oder
+die vorhandenen Routinen von DOS bzw. Betriebssystem zu benutzen.
+Wahrscheinlich ist es auch erforderlich, die Routinen noch zu erweitern,
+beispielsweise um einen Programmteil, der die Bytes nacheinander auf einem
+Puffer liest und dann Stück für Stück sendet. Aber das wird Ihnen als Profi
+keine größeren Probleme bereiten.
+
+In der nächsten Folge werden wir voraussichtlich wieder einen Blick auf die
+Programmierung der Floppy werden und dabei besondere Gemeinheiten
+kennenlernen, die es dabei gibt: Fehler auf der Diskette erzeugen und
+bereinigen, Kopierschutz, Schnell-Lader, schnelles Formatieren,
+Direktzugriff auf den Schreib-/Lesekopf und so weiter. Diese Tricks sind
+dann wirklich nur etwas für ausgekochte Profis. In diesem Sinn - bis dann!
+
+(pk)
+
+Bild. Datenübertragung via serieller Bus - das Protokoll. Das sendende Gerät
+setzt die Leitungen -CLOCK und -DATA, das empfangende Gerät frägt diese
+Leitungen ab. Zu den mit dem Pfeil markierten Zeitpunkten übernimmt die
+empfangende Station die Daten. In diesem Beispiel wurde die Bitfolge 1001
+übertragen.
+
+*********
+
+End of the International Project 64 etext of the article "Bits der Reihe
+nach".
+
+*********

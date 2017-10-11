@@ -1,0 +1,277 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore 64
+related documents in electronic text format that might otherwise cease to
+exist with the rapid advancement of computer technology and declining
+interest in 8-bit computers on the part of the general population. If you
+would like to help by converting C64 related hardcopy documents to
+electronic texts please contact the manager of International Project 64,
+Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The first
+characters of the file name are an abbreviation of the original document
+name and the language of the etext. The version number of the etext follows
+next. After that a letter may appear to indicate the particular source of
+the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International Project
+64 make no representations about the accuracy or suitability of this
+material for any purpose. This etext is provided "as-is". Please refer to
+the warranty of the original document, if any, that may included in this
+etext. No other warranties, express or implied, are made to you as to the
+etext or any medium it may be on. Neither the author(s) nor the members of
+International Project 64 will assume liability for damages either from the
+direct or indirect use of this etext or from the distribution of or
+modification to this etext. Therefore if you read this document or use the
+information herein you do so at your own risk.
+
+*********
+
+The International Project 64 etext of the Schwert und Magie manual,
+converted to text by Patrick Heck <drummer@online.de>
+
+SUMAGDE1.TXT, January 1998, etext #24.
+
+*********
+
+Schwert und Magie / 1993 boeder
+
+Diese Abenteuerspiel reihe ist im Fantasybereich angesiedelt. Das heißt, in 
+einer Welt, die etwa der unseres Mittelalters entspricht und in der oft das
+Schwert regiert. In dieser Welt gibt es aber auch noch Magie, Dämonen,
+Monster, Drachen und Zauberer.
+
+Es sind Abenteuerspiele, bei denen der Spieler einen Held (oder eine
+Heldin verkörpert; der eine bestimmte Aufgabe lösen muß. Anders  als bei
+den gängigen Abenteuerspielen werden hier in jeder Situation Vorschläge
+gemacht, was Dein Held als nächstes tun kann, und Du mußt Dich für eine
+Alternative entscheiden.
+
+Das mag Dir vielleicht im ersten Moment unflexibler vorkommen; hat aber
+zwei Vorteile. Einmal konnte der Speicherplatz für einen Parser
+(Programmteil, der die Betehle des Spielers analysiert) auf ein Minimum
+beschränk, und so das Spiel selbst etwas umfangreicher gestaltet werden.
+Zum anderen wird hier niemand scheitern, weil er nicht auf einen bestimmten
+Begriff oder eine bestimmte Art zu handeln kommt; alle Möglichkeiten sind
+sofort erkennbar.
+
+Es ist ein reines Text-Abenteuer; eine schöne Grafik verbraucht zuviel
+Speicherplatz, und grob gemachte Bilder oder ständiges Nachladen wollten
+wir Dir ersparen. Wir haben dafür die Beschreibungstexte sehr ausführlich
+gestaltet, was oft eine bessere Atmosphäre schafft, als es durch ein Bild
+erreicht werden kann.
+
+Es ist aber gleichzeitig auch ein Rollenspiel, denn Deine Spielfigur
+bekommt zu Anfang bestimmte Eigenschaften zugewiesen, die sie im Verlauf
+des Spieles oftmals unter Beweis stellen muß. Diese Eigenschaften im
+Einzelnen:
+
+Die Vitalität (Vif) gibt die körperliche Verfassung wieder. Wird Dein Held
+verwundet, so sinkt sie. Fällt sie auf Null, ist Dein Held tot. Auch Deine
+Gegner haben eine bestimmte Vitalität. 
+
+Die Tapferkeit (Ta) entspricht dem überlegten Mut ebenso wie der 
+Tollkühnheit Deines Helden. Tapferkeit entscheidet über die Initiative im
+Kampf, ob man dem Anblick eines Monsters standhalten kann, sich traut,
+unheimliche Orte zu betreten oder gefährliche Dinge zu tun etc.
+
+Die Intelligenz (In) ist die Fähigkeit, Situationen zu erfassen und
+logische Schlüsse daraus zu ziehen. Wer intelligent ist, kann Rätsel oder
+Zusammenhänge besser verstehen und hat schon eher mal eine gute 
+Idee.
+
+Der Charme (Ch) ist die Fähigkeit. andere zu beeinflussen und für sich zu
+gewinnen. Das ist von vielen Faktoren abhängig, z.B. Aussehen, Klang der
+Stimme, Auftreten etc. Charme ist nützlich zum Gewinnen von Freunden, beim
+Handeln oder Verhandeln, bei Gebeten etc.
+
+Diee Stärke (St) braucht wohl nicht weiter erläutert zu werden. Wer hier
+einen Wert über 60 Prozent erreicht, kann im Kampf so kräftig zudreschen,
+daß er für jede zusätzliche 10 Prozent ab 65% zusätzliche Trefferwirkung
+erzielt.
+
+Die Geschicklichkeit (Ge) ist notwendig zum Ausweichen von Fallen, Öffnen
+von Schlössern etc. Wer hier einen Wert über 60% besitzt, dessen
+Kampfwerte werden um je 5 Prozent gesteigert.
+
+Der Angriff (An) ist die Fähigkeit, im Kampf einen Schlag gegen den Gegner
+zu führen; also die aggressive Fertigkeit seine Waffe zu führen.
+
+Die Verteidigung (Ve) ist die Fähigkeit, im Kampf den Angriff eines
+Gegners, der den Helden treffen würde, abzuwehren; also die defensive
+Kampffertigkeit.
+
+Die Eigenschaftswerte werden in Prozenten ausgedrückt, wobei der Wert 100 %
+natürlich perfekt ist. Da aber niemand vollkommen ist, kann kein Wert 90 %
+übersteigen. 50 % sind guter Durchschnitt. Wann immer eine heikle Situation
+entsteht, bei der eine dieser Eigenschaften eine besondere Rolle spielt,
+wird Dein Held einer Prüfung unterzogen. Dabei wird ein Wert bestimmt, der
+von dem Eigenschaftswert des Helden und der Schwierigkeit der abzulegenden
+Prüfung abhängt. Sodann wird durch Zufall ermiftelt, wie gut sich Dein Held
+dabei anstellt. Erreicht er den erforderlichen Wert, ist die Prüfung
+gelungen, und das, was Dein Held vorhatte, klappt. Das Mißlingen einer
+solchen Prüfung hat allerdings meist ziemlich unangenehme Konsequenzen.
+
+Die folgenden Werte sind keine echten Eigenschaften, da sie von der
+Ausrüstung abhängig sind:
+
+Die Trefferwirkung (Tw), bzw. die Waffenklasse (Wk) ist ein Maßstab für den
+Schaden, den ein durchschnittlich kräftiger Krieger mit der Waffe, die er
+gerade führt, maximal anrichten kann. Nimmt man eine andere Waffe, kann
+sich auch dieser Wert ändern.
+
+Der Schutzfaktor (Sf) ist ein Index dafür, wie gut man vor gegnerischen
+Hieben geschützrt ist. Je besser die Rüstung, desto besser ist auch der
+Schutz. Er gibt die Höhe der Treffe rwirkung an, die dte Rüstung
+kompensiert. Ein Schild kann den Faktor erhöhen.
+
+Die obige Beschreibung läßt Dich wohl schon vermuten, daß hier nicht
+einfach der Befehl "Töte Monster" gegeben, sondern in der Tat ein richtiger
+Kampf simuliert wird, dessen Ausgang höchst ungewiß ist. Natürlich sind
+auch wir der Auffassung, daß es immer besser ist, Gewalt zu vermeiden und
+Probleme besser mit dem Kopf als mit dem Schwert gelöst werden sollten,
+aber manchmal geht es einfach nicht anders. Für diese Fälle wollen wir das
+Gefecht so realistisch wie möglich ablaufen lassen.
+
+Kommt es zum Kampf, steht Dein Held dem Gegner gegerüber, der auch gewisse
+Eigenschaften haben wird, woraus Du ersehen kannst, wle gut er kämpft und
+wie leicht oder schwierig er zu besiegen ist. Es können auch mehrere Gegner
+auf einmal sein, die alle gleichzeitig angreifen. Die folgende Beschreibung
+des Kampfablaufs gilt für beide Seiten gleichennäßen:
+
+Wer einen Gegner angreift, muß eine Prüfung auf seinen Angriffswert
+ablegen. Mißlingt diese, geht der Schlag fehl. Gelingt sie jedoch, ist der
+Hieb so gut geführt, daß er den Gegner treffen würde - würde, weil dieser
+nun versuchen wird, den Schlag abzuwehren. Dies kann er, wenn eine Prüfung
+auf seine Verteidigung gelingt. Mißlingt diese Prüfung, kann erden Hieb
+nicht abwenden und wird getroffen.
+
+Wenn man seinen Gegner trifft, wird die Wirkung ermittelt, die der Schlag
+erzielt. Sie liegt zufällig zwischen der Hälfte und dem Maximum der Waffen-
+klasse, da nicht jeder Hieb gleich kräftig geführt wird und gleich gut
+trifft. Bei Deinem Helden kommt eventuell noch ein Bonus für große Stärke
+hinzu.
+
+Nun wird von der Trefferwirkung noch der Schutztaktor des Getroffenen
+abgezogen. Das Ergebnis ist der Schaden, der von dessen Vitalität
+subtrahiert wird.
+
+Beispiel: Ein Schwerthieb (Tw max. 10) trifft mit der Wucht von 9. Der
+Getroffene trägt eine Lederrüstung (St 3) und eipen Holzschild (Sf1), dann
+werden 4 Punkte von der Wirkung abgezogen. Übrig bleiben 5 Punkte Schaden,
+die von der Vit abgezogen werden.
+
+Für Deinen Helden gibt es zwei Sonderregeln bei seinen Angriffen:
+
+Mit einer Wahrscheinlichkeit von 10% gelingt ihm ein "guter Treffer". Das
+ist ein Hieb, der so gut geführt ist. daß der Gegner keine Gelegenheit mehr
+zur Abwehr hat.
+
+Mit einer 5%igen Wahrscheinlichkeit gelingt ihm ein sogenannter
+Glückstreffer". Dies ist ein "guter Treffer", der durch Zufall eine
+ungeschützte oder empfindliche Stelle des Gegners trifft und nicht von der
+Rüstung abgeschwächt wird.
+
+Deine Gegner können dies zum Glück nicht. Dafür haben sie einen Vorteil,
+wenn sie zu mehreren sind. In diesem Fall kann in einem Kampfzug für jeden
+Gegner ein Angriff gegen Dich geführt werden, während Du nur einmal
+angreifen kannst.
+
+Da es sich um eine Abenteuerreihe handelt, die auch weiter fortgesetzt
+werden soll, wird ein erstellter Held auf Diskette gespeichert, und kann so
+in mehreren Abenteuern seine "Karriere" aufbauen. Nach jedem bestandenen
+Abenteuer werden nämlich seine Eigenschaften verbessert, was ihm das
+nächste Abenteuer etwas leichter macht.
+
+Stirbt ein Spieler jedoch auf irgendeine Weise im Spiel, so ist er wirklich
+"tot", und seine Laufbahn ist für immer zu Ende, denn er ist auch auf
+geheimnisvolle Weise von der Speicherdiskette ins Jenseits verschwunden.
+Dann bleibt Dir nichts weiter übrig, als einen neuen Helden zu erstellen,
+der dann natürlich noch entsprechend schwach ist Daher solltest Du Helden,
+die schon weit gekommen sind, mit entsprechender Umsicht führen, wenn Du
+sie nicht verlieren möchtest.
+
+Für jedes bestandene Abenteuer steigt Dein Held einen Grad höher. Je nach
+der Schwierigkeit des Abenteuers erhöhen sich seine Eigenschaften und seine
+Vitalität. Dies erleichtert das. folgende Abenteuer beiden Prüfungen, aber
+nicht immer im Kampf, wo sich die Gegner manchmal der Stufe des Spielers
+angleich er.
+
+Hebe Deine gespeicherten Heldeh gut auf, denn es werden bald weitere
+Abenteuer dieser Reihe erscheinen...
+Wir wünschen Dir spannende Unterhaltung!
+
+Game Credits:
+
+Design: R.K. Rien
+Programmierung: Andreas Keil, Jörg Neumann
+Grafik: The Dark One
+Titelbild: Helmut Joch. Grafik & Design
+Anleitung: R. K. Rien
+Testphase: Markus Zock, Thomas Beckmann, R. K. Rien
+
+Prograrnrnstart:
+Commodore 64 und Diskettenlaufwerk aus- und wieder einschalten. 
+Programmdiskette
+einlegen. Geben Sie nun folgenden Befehl ein.
+
+LOAD"*"8,1
+
+und drücken Sie die <RETURN>-Taste
+
+Das Programm startet sich nun von selbst
+
+Rechtliches:
+Das volle Urheberrecht fürdieses Programm und dessen Anleitung sowie alle weiteren Rechte
+bleiben der GERMAN DESIGN GROUP vorbhalten. Das Programm ist nicht kopiergeschützt.
+Es sei dem Eigentümer erlaubt, sich eine einzige Sicherheitskopie des Programms anzulegen
+und diese für den privaten Gebrauch zu benutzen.
+
+
+(c) 1993 boeder software gmbh
+Alle Rechte vorbehalten. Dieses Handbuch und die dazugehörige Software ist urheberrecht-
+lich geschützt. Es darf in keiner Form (auch nicht auszugsweise) mittels irgendwelcher
+Verfahren reproduziert, gesendet. vervielfältigt bzw. verbreitet oder in eine andere Sprache
+übersetzt werden.
+
+Bei der Erstellung des Programmes, der Anleitung sowie der Abbildungen wurde mit
+allergrößter Sorgfalt vorgegangen und unter Einhaltung wirksamer Kontrollmaßnahmen
+reproduziert. Trotzdem lassen sich Fehler nicht ausschließen. Aus diesem Grund übernimmt
+boeder software gmbh keinerlei Haftung tür Schäden, die aufgrund von Fehltunktionen von
+Programmen enstanden oder auf fehlerhafte Angaben zurückzuführen sind.
+
+Alle Marken- und Produktnamen sind Warenzeichen oder eingetragene Warenzeichen der
+jeweiligen Titelhalter.
+
+
+German Design Group
+R. K. Rien
+Buchholzstr. 17
+D-59439 Halzwickede
+Hotline: 02301/12678
+
+
+
+boeder software
+Postfach 1368
+D-65434 Flörsheim am Main
+(ab 1.7.93 65438 Flörsheim am Main)
+
+*********
+
+End of the International Project 64 etext of the Schwert und Magie manual.
+
+*********

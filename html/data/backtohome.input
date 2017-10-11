@@ -1,0 +1,17 @@
+all;<hr noshade class=decorative><!--htdig_noindex--><p>
+link3;[ <a href="%s.en.html">English</a>
+link3;| <a href="%s.sv.html">Svenska</a>
+link3;| <a href="%s.de.html">deutsch</a>
+link3;| <a href="%s.fi.html">suomeksi</a>
+link3;| <a href="%s.es.html">Espa&ntilde;ol</a>
+link3;| <a href="%s.hu.html">Magyar</a>
+all;]</p>
+
+all;<hr noshade><a href="./">
+en;Back to iDOC= homepage</a>
+sv;Tillbaka till iDOC=s ingångssida</a>
+de;Zurück zur iDOC= Homepage</a>
+fi;Takaisin iDOC=:n kotisivulle</a>
+es;Vuelve a la página principal de iDOC=</a>
+hu;Vissza az iDOC= kezdõoldalhoz</a>
+all;<!--/htdig_noindex-->

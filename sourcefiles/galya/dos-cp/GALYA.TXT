@@ -1,0 +1,354 @@
+
+
+[bor¡t¢:]
+
+A GLYA
+
+[rajz egy haj¢r¢l ‚s k‚t fick¢r¢l]
+
+KEZELSI —TMUTAT•
+
+
+[bell:]
+
+
+A G lya
+
+Ez a kit–n“ adventure - hogy mndj rt egy ilyen elcs‚pelt fr zissal
+kezdjk - egy kl”n”s vil gba var zsolja a vakmer“ ‚s kev‚sb‚ vakmer“
+j t‚kosokat egyar nt; ez pedig nem volna m s, mint a Kard ‚s M gia
+misztikus vil ga, mely, l‚v‚n az ut¢bbi esztend“k el‚gg‚ divatos t‚m ja,
+alighanem m r minden kalandj t‚kkedvel“ sz m¡t¢g‚ptulajdonos el“tt
+ismeretes var zsl¢ival, s rk nyaival ‚s egy‚b k‚pz“dm‚nyeivel egyetemben,
+¡gy nem szorul kl”n”sebb bemutat sra. Nem csek‚ly azon kalandj t‚koknak
+a sz ma, melyek hasonl¢ t‚m kat vari lnak kl”nb”z“ sz¡nvonalon, mi m‚gis
+rem‚ljk, hogy sikerl valamilyen egy‚ni ‚lm‚nyt ny£jtanunk azzal, hogy
+ebben a - kiss‚ szat¡rikus hangv‚tel– -  programban, el“deit“l elt‚r“en,
+nem csup n egy, hanem egyszerre k‚t szerepl“vel is azonosulhat a tisztelt
+j t‚kos: egy moderniz lt barb rral valamint egy k‚tbalkezes var zsl¢val -
+akiket term‚szetesen elt‚phetetlen rokoni sz lak f–znek egym shoz...
+Tal n kerljnk is beljebb...
+
+A kiv l¢ grafik kkal illusztr lt esem‚nyek ez£ttal Athar f”ldj‚n
+zajlanak, mely orsz g t”bb ‚vsz zados elszigetelts‚gben pergeti egyhang£
+napjait egy t voli szigeten, mit sem tudv n a k”rnyez“ vil gban v‚gbement
+‚s v‚gbemen“ v ltoz sokr¢l ‚s esem‚nyekr“l, s“t, voltak‚ppen m‚g mag r¢l
+a k”rnyez“ vil gr¢l sem sejtve t£ls gosan sokat. V‚rengz“ trollok,
+ambici¢zus m gusok, boszork ny‚get“, b”lcs uralkod¢k, kast‚lyaikban
+rejt“zk”d“ titokzatos ”zvegyasszonyok, boldogtalan gn¢mok, harci tehenek,
+”njel”lt zsarnokok, kalandra ‚hesen kajtat¢ kalandj t‚kosok ‚s idi¢ta
+programoz¢k haz ja ez, ahol b‚k‚sen h bor£znak egym ssal az orkok ‚s az
+emberek, meg a hozz juk hasonl¢ egy‚b torzszl”ttek - ahogyan tett‚k azt
+az id“k kezdet‚t“l fogva mindenkor - eg‚szen addig, m¡gnem egy sz‚p napon
+v ratlanul megny¡lik a kapu a klvil g fel‚... Aki pedig a folytat sra is
+k¡v ncsi volna, az legyen sz¡ves, ‚s a saj t j¢lfelfogott ‚rdek‚ben
+j tssza v‚gig a j t‚kot!
+
+Miut n a lemezt (a j t‚k k‚t lemezoldal, sz¢val kazett s verzi¢ nincs!)
+k‚nyelembe helyeztk a meghajt¢ban, a bet”lt‚s a szok sos LOAD"*",8,1
+paranccsal t”rt‚nhet, ami ut n a program term‚szetesen mag t¢l el is
+indul. A k‚perny“, mint  ltal ban, itt is k‚t f“ r‚szb“l  ll: a f”ls“
+grafikus ‚s az als¢ sz”veges ablakb¢l. A sz”veg a grafika m”g”tt is
+folytat¢dik, de a legfels“ sor fenn van tartva a st tuszsor (l sd k‚s“bb)
+sz m ra. A grafikus k‚perny“ is tov bb oszthat¢ h rom r‚szre: baloldalt
+az aktu lis szerepl“ arck‚p‚ben gy”ny”rk”dhetnk, k”z‚pen a pillanatnyi
+helys‚grajz tal lhat¢, jobbra pedig egy csod latos ir nyt– terpeszkedik,
+melyr“l rendes k”rlm‚nyek k”zt mindig kiderl, hogy merre haladhatunk
+tov bb. (S rg val jel”ltek a j rhat¢ ir nyok.) A st tuszsorban
+folyamatosan kijelz‚sre kerl az eddig el‚rt pontsz m, a szerepl“ neve,
+tov bb  k”z‚pen egy szer‚nyen  csak "Spp"-vel (Spell Power) jel”lt fontos
+tulajdons g. Ez ut¢bbinak csup n Raernonn l (az ifjabbik fiv‚r - “ a
+var zsl¢) van ‚rtelme, ‚s a var zserej‚t jelzi, amely minden egyes
+var zsl s ut n cs”kken. (De n‚ha az‚rt n”velhet“ is.) Ugyanebben a sorban
+jelennek meg a lemezcser‚re ‚s hasonl¢ b–ncselekm‚nyekre felsz¢l¡t¢
+zenetek is.
+
+A j t‚k a hagyom nyos m¢don: beg‚pelt parancsokkal ir ny¡that¢. G‚pel‚s
+k”zben kis- ‚s nagybet–ket egyar nt haszn lhatunk; az ‚kezetes karakterek
+a C= (commodore) billenty– egyidej– lenyom s val ‚rhet“ek el, illetve:
+œ = ”,  = “, @ = , * = –. Van ezenk¡v–l n‚h ny speci lis billenty– is:
+a "CLR/HOME" t”rli az input-sort, a "" megism‚tli az el“z“ parancsot, az
+"F1" pedig  tkapcsol a sz”veges ‚s grafikus ablakok k”z”tt. Ez ut¢bbi
+funkci¢r¢l k‚s“bb m‚g sz¢ esik.
+
+A program ‚rtelmez“je felsz¢l¡t¢ m¢dban megfogalmazott, a magyar
+nyelvtannak megfelel“, ‚rtelmes parancsokat v r el t“lnk, mint p‚ld ul
+L§DD F§BE MAGAD vagy DARLD LE A SZERZETEST A H—SDARL•BAN stb. A
+gyorsabb ‚s k‚nyelmesebb be¡r s kedv‚‚rt a n‚vel“k - illetve legt”bbsz”r
+az igek”t“k is - elhagyhat¢k. Emellett a j t‚knak kellemes von sa az is,
+hogy a parancsok sz¢rendje gyakorlatilag teljesen szabad, teh t pl. a
+NYISD AJT•T KULCCSAL, KULCCSAL AJT•T NYISD vagy teszemazt AZ AJT•T NYISD
+KI A KULCCSAL stb. parancsok egym st t”k‚letes m‚rt‚kben helyettes¡tik.
+Ennek fej‚ben viszont gyelnnk kell a ragoz sra, mivel itt ez
+kl”nb”zteti meg egym st¢l a sz¢fajokat! Ha egy f“nevet ragozatlanul
+¡runk le, azt a g‚p £gy ‚rtelmezi, mintha t rgyesetben lenne. A program
+sz¢kincse egy‚bk‚nt meglehet“sen b“s‚ges: mintegy 1400 (ezern‚gysz z!)
+kl”nb”z“ sz¢t ‚rt meg, s ez a sz¢t r t”bb, mint 10 kilobyte helyet
+foglal el a mem¢ri b¢l. Ugyanakkor ezek m‚g csak a sz¢t”vek - a hozz juk
+illeszthet“ ragokat kl”n t bl zatban t rolja a g‚p. (A ragoz st a
+sz¢‚rtelmez“ rutin v‚gzi el.) T”bb hasonl¢ t rgy eset‚n a f“nevek
+megkl”nb”ztet‚s‚hez mell‚knevek haszn lat ra is szks‚g lehet, ¡gy pl.
+VEDD FEL A KK KRISTLYT vagy VEDD FEL A Z™LD KRISTLYT stb. - ezelnek
+minden esetben az adott f“n‚v el“tt kell  llniuk. Egy mondaton bell
+tetsz“leges sz m£ parancs szerepelhet: ilyenkor valamilyen ¡r sjellel
+(pont, vessz“) vagy az S sz¢csk val kell “ket elv lasztanunk. N‚vm sok
+is haszn lhat¢ak a legut¢bbi f“n‚v helyettes¡t‚s‚re - ¡gy le¡rhat¢v 
+v lik ak r olyan ”sszetett mondat is, mint pl. VEDD FEL A Z™LD KULCSOT S
+NYISD KI VELE AZ AJT•T. Ha valamilyen fontos ‚s n‚lkl”zhetetlen sz¢
+(rendszerint f“n‚v vagy ige) kimaradt a mondatunkb¢l, akkor a g‚p
+r k‚rdez - ilyenkor elegend“ m r csak a hi nyz¢ szavakat beg‚pelni.
+Term‚szetesen, ha nem ‚rt meg egy sz¢t, azt is jelzi a program.
+
+[k‚t fick¢ rajza]
+
+A mozg s az ‚gt jak megnevez‚s‚vel vagy azok r”v¡d¡t‚s‚vel t”rt‚nik: ,
+D, K, NY, K, NY, DK, DNY, F(EL), L(E), KI, BE ir nyok lehets‚gesek; s
+hogy mindezek k”zl ‚ppen melyik haszn lhat¢, azt megtudhatjuk az
+ir nyt–re val¢ fut¢ r pillant s m–velet‚t alkalmazva, vagy pedig az ir ny
+(r”vid¡tve IR) parancs beg‚pel‚s‚vel. K”zled‚s lebonyol¡t s ra igen
+k‚nyelmes lehet“s‚get biztos¡tanak a MENJ, KERESD ‚s K™VESD parancsok -
+ez ut¢bbi seg¡ts‚g‚vel egy, a helysz¡nr“l frissen elt vozott szerepl“
+nyom ba eredhetnk, az el“bbiekkel pedig t volabbi helyekre juthatunk le
+egyszer–bben. Pl.: K™VESD A VNDORT vagy MENJ A KASTLYHOZ stb.
+Megjegyzend“, hogy a program nem felt‚tlenl a legr”videbb £tvonalat
+v lasztja erre a c‚lra... (Amennyiben megunn nk a dolgot, a "RUN/STOP"
+billenty–vel b rmikor f‚lbeszak¡thatjuk a hosszadalmas gyalogl st.)
+
+T”bb ige is r”vid¡thet“ a k”vetkez“k‚ppen: N = NZZ K™RšL; V = NZD v.
+VIZSGLD; LI v. I = LISTA; VF = VEDD FEL; R = RAKD LE; S = SEGTSG;
+E = EREDMNY; P = PNZ. A program kl”nleges funkci¢i k”z‚ tartoznak m‚g
+az al bbi parancsok: LOAD/SAVE -  ll s t”lt‚se/ment‚se lemezre (save-disk
+gyan nt nyugodtan haszn lhat¢ a j t‚klemez A. oldala); DIR v. $ - az
+adott lemezen t rolt kimentett  ll sok list z sa; ISM(T) - a legut¢bbi
+parancs megism‚tl‚se; FELADOM v. ADD FEL - a j t‚k felad sa ‚s
+£jrakezd‚se; SEGTSG (S) - n‚mi seg¡ts‚gny£jt s a tov bbjut shoz egyes
+helysz¡neken; PNZ (P) - na ez vajon mi lehet? Ha egy helysz¡nen m r
+j rtunk, ut na m r csak r”vid - p r szavas - le¡r st kapunk r¢la; ezt
+megv ltoztathatjuk a LERS (LR) parancs beg‚pel‚se ut n.
+
+Ha egyszerre akarjuk felvenni az adott helysz¡nen tal lhat¢ ”sszes
+t rgyat vagy eldobni a birtokunkban l‚v“ ”sszes t rgyat, haszn lhatjuk
+a VF MINDENT/R MINDENT (VEGYL FEL MINDENT/DOBJ EL MINDENT) formul kat
+is. Amennyiben a felveend“ t rgyak valamilyen kitntetett helyen vannak,
+£gy azt is meg kell adni, pl. VF MINDENT AZ ASZTALR•L.
+
+Az "F1/F3" gombok buzg¢ nyomogat s val a grafik t kapcsolgathatjuk ki/be.
+M¡g az "F1" csak ideiglenesen eltnteti (ill. megjelen¡ti) a k‚pet, addig
+az "F3" - azaz a RAJZ KI/RAJZ BE utas¡t sok - v‚glegesen ki (ill. be) is
+kapcsolj k azt, teh t ezut n m r be sem t”lt“dnek a helyis‚gek rajzai a
+lemezr“l, ameddig vissza nem kapcsolunk grafikus zemm¢dba. A
+vissza ll¡t s a funkci¢billenty– ism‚telt megnyom s val lehets‚ges.
+
+A k‚t f“szerepl“ k”zti v laszt s a nevk - Tongrak ill. Raernon -
+szorgalmas bep”ty”g‚s‚vel vagy az ezzel egyen‚rt‚k– "F5/F7" billenty–k
+lenyom s val lehets‚ges.
+
+A j t‚kban szerepl“ kl”nb”z“ ‚l“l‚nyekkel h rom ige seg¡ts‚g‚vel
+kommunik lhatunk; ezek: BESZLJ, K™SZ™NJ ‚s MONDD. Ez ut¢bbin l azt sem
+ rt megadnunk, hogy mit akarunk mondani - illetve, amennyiben t”bben is
+tart¢zkodnak a k”zelnkben, azt is, hogy kinek. (Pl.: MONDD §RNEK
+"HELLO"). N‚melyik szerepl“vel aj nlatos t”bb ¡zben is elcsevegni, h tha
+mondanak m‚g valami ‚rdekeset azonk¡vl, amit m r hallottunk. A MONDD ige
+legnagyobb jelent“s‚ge pedig abban  ll, hogy ezzel mondhatunk ki
+kl”nb”z“ var zsig‚ket, bizonyos var zslatok haszn lat hoz; erre azonban
+csak Raernon eset‚ben van lehet“s‚g, hiszen “ a var zsl¢. P‚ld ul a XRUIH
+sz¢ (vannak m‚g ilyen sz‚p kifejez‚sek a j t‚kban...) a lid‚rcf‚ny
+var zsszava. MONDD XRUIH - ‚s m ris f‚ny gy£lt a k”rl”ttnk terjeng“
+s”t‚ts‚gben. Mindig csak a j t‚k folyam n m r megtanult var zsig‚ket
+alkalmazhatjuk (automatikusan be¡r¢dnak a m gusunk  ltal m ni kusan
+mindenhov  mag val hurcolt var zsk”nyvbe), amellett nem  rt m‚g
+megeml¡teni, hogy a komolyabb var zsl shoz term‚szetesen a var zsbotunkra
+is szks‚gnk lesz... A MONDD ige egy‚bk‚nt helyettes¡thet“ egy egyszer–
+id‚z“jellel. Egy‚b var zsszavak nev‚re ‚s jelent‚s‚re majd a j t‚k sor n
+fokozatosan f‚ny derl.
+
+
+V‚gl pedig n‚h ny hasznos tipp a j t‚k teljes¡t‚s‚hez:
+
+- Minden el‚rhet“ dolgot ‚rdemes megvizsg lni, mivel sok hasznos
+  inform ci¢t (vagy po‚nt) tudhatunk meg ¡gy.
+
+- S”t‚t helyeken vil g¡tsunk l mp val vagy gyerty val (ki hitte volna?),
+  de ha m r nem kell, oltsuk el, mert hamar le‚g.
+
+- A boltban nemcsak venni lehet, hanem eladni is! De vigy zzunk, mert
+  amit eladunk, azt k‚s“bb csak k‚tszeres  ron v s rolhatjuk vissza.
+
+- Rengeteg (t”bb, mint 250) helyis‚g van, rajzoljunk t‚rk‚pet.
+
+- Els“ feladatunk Raernon kiszabad¡t sa lesz; ehhez a kolostor
+  k”nyvt r ban hasznos inf¢t szerezhetnk. Vigynk magunkkal k”telet is!
+  (Persze, ha £gy jobban tetszik, a v lts gd¡jat is ”sszegy–jthetjk
+  ‚rte.)
+
+- Vizsg l¢d s mellett a gyan£sabb dolgokat  t is kutathatjuk. Meg‚ri!
+
+- P‚nzszerz‚si lehet“s‚g: fedezzk fel az alag£trendszert!
+
+- A thrangok szeretik az emberh£st...
+
+- ...az “r”k pedig az alkoholt...
+
+- ...a v mp¡rok meg nem szeretik a fokhagym t...
+
+- Raernonnal menjnk el a f“m gushoz, “ majd eligaz¡t, hogyan tov bb?
+
+- Az arany- ‚s ezstt rgyakat j¢ p‚nz‚rt el lehet adni! (S“t: a
+  krist lyokat is...)
+
+- A rejt‚lyes zeneteket nem kell  m mindig sz¢ szerint ‚rtelmezni!
+
+- Aki  lruh t visel, nem biztos, hogy felismerik.
+
+- Egy p nc‚l nem v‚d meg a biol¢giai fegyverek ellen...
+
+- Varangyb¢l nem lesz kir lyl ny,  m egy kir lyn‚ att¢l m‚g kedvelheti a
+  varangyokat... vagy t n m‚gsem...
+
+- Mif‚le m¢don lesz a sz“l“cukorb¢l p linka?
+
+- s a leghasznosabb j¢tan cs: haszn ld az eszed ‚s a fant zi d,
+  gondolkodj, s a t”bbit tal ld ki magadt¢l! Kezd“ adventurereknek m‚g
+  annyit, hogy semmik‚ppen se  lljanak neki mindj rt a j t‚k m¢dszeres
+  ‚s alapos v‚gigj tsz s nak. Ehelyett induljanak el valamerre, amerre
+  ‚ppen kedvk tartja, ‚s pr¢b ljanak ki mindenf‚l‚t, ami ‚pp az eszkbe
+  jut, c‚ltalanul ‚s felel“tlenl, ‚s ne t”r“djenek a v‚geredm‚nnyel -
+  hiszen pontosan ez az, ami a j t‚kot JTKk  teszi, ‚s csakis ezen a
+  m¢don lehet ‚lvezni egy igazi kalandj t‚kot.
+
+[a hal l rajza]
+
+Tekintve, hogy a j t‚k rendk¡v–l bonyolult ‚s t”bbf‚le m¢don is
+v‚gigj tszhat¢, amellett el‚g sok olyan dolog is szerepel benne, ami nem
+okvetlenl szks‚ges a teljes¡t‚s‚hez, alighanem sok ig nem fog
+unatkozni, aki arra vetemedik, hogy elkezdjen vele j tszani. Kellemes
+kalandoz st ‚s j¢ sz¢rakoz st k¡v n a szerz“:
+
+Oless k R¢bert
+
+Valamint a kiad¢:
+
+a COM-WARE Kft.
+
+Figyelem! A kalandj t‚kosok szervezet‚ben a program nem rendeltet‚sszer–
+haszn lata k”vetkezt‚ben be ll¢ b rminem– testi vagy lelki s‚rl‚sek‚rt
+sem a szerz“, sem a forgalmaz¢ felel“ss‚get nem v llal! Sz¡ves
+meg‚rt‚sket el“re is k”sz”njk...
+
+[egy £jabb rajz]
+
+
+A GLYA - kerett”rt‚net
+
+Nolk egy eldugott kis hegyi falucska valahol a t voli
+szaki-hegyvid‚kben. Ezen a helyen szletett, pontosabban itt l tta meg
+a napvil got Tongrak, a hatalmas termet– (1 m‚ter 43 centi), legend s
+h¡r– barb r harcos valamint ”ccse, Raernon, a nem annyira h¡res, mint
+ink bb h¡rhedt fiatal var zsl¢. T”rt‚netnk idej‚n mindketten a
+huszonvalahanyadik ‚let‚vket taposs k, noha nem t£ls gosan sokat l tt k
+m‚g egym st addigi ‚letk sor n; m¡g ugyanis Tongrak egy d‚li nom d t”rzs
+tagjak‚nt tengette ‚let‚t, addig Raernon a messzi ‚szakon, a Szent
+H£sdar l¢t im d¢ - mindamellett k”zut latnak ”rvend“ - szerzetesek  ltal
+lakott kolostorban a var zstudom nyt tanulta. Azaz csak tanulta volna,
+hisz miut n egyre nagyobb bakl”v‚seket k”vetett el, v‚gl alkalmatlannak
+¡t‚lt‚k a var zsl sra, ‚s p ros l bbal kir£gt k a kolostorb¢l. Minthogy
+semmihez sem ‚rtett, ¡gy csavarg¢k‚nt c‚ltalanul l‚zengett mindenfel‚,
+s k”zben r‚gi k”nyvekb“l ‚s rosszh¡r– boszork nyokt¢l szerzett
+inform ci¢kkal autodidakta m¢don fejlesztette tud s t. Csavarg sa sor n,
+hogy n‚mi romantika is keveredj‚k a dologba, ”sszeismerkedett Zeld val,
+a gy”ny”r–,  m tehets‚g dolg ban kb. vele egy szinten  ll¢ fiatal
+boszork nnyal - ezut n egyttes er“vel pr¢b ltak az emberis‚g haszn ra
+lenni. Mivel azonban - amint az eddigiekb“l az m r sejthet“ - mindketten
+meglehet“sen amat“rnek bizonyultak dics“ mesters‚gkben, ez‚rt
+j¢sz nd‚kuk ellen‚re is mindenhol hatalmas z–rt ‚s felfordul st okoztak,
+tov bb  fergeteges kudarcot arattak, amerre csak megfordultak. A der‚k ‚s
+becsletes  llampolg rok ezt term‚szetesen nem n‚zt‚k valami j¢ szemmel,
+aminek k”vetkezt‚ben a k‚t j¢mad r m r j¢p rszor a m gly n fejezte volna
+be a p lyafut s t, ha a szerencse - ‚s Tongrak, a szeret“ b ty - nem
+sietett volna mindig az utols¢ pillanatban a seg¡ts‚gkre...
+
+Kalandjaink el“tt azonban hadd sz¢ljunk p r sz¢t arr¢l az orsz gr¢l, ahol
+ez a j t‚k j tsz¢dik. Athar a neve, ‚s az eg‚sz  llam egy nagy sziget
+nyugati r‚sz‚n helyezkedik el, amely - n‚h ny k”rnyez“ apr¢
+szigetecsk‚t“l eltekintve - mag nyosan  ll a hatalmas ¢ce n kell“s
+k”zep‚n, messze d‚lre a sz razf”ldt“l. Valaha, m‚g a r‚gi sz‚p id“kben,
+kiterjedt kereskedelem ‚s szoros kapcsolat  llt fenn a sziget ‚s a
+klvil g k”z”tt, ami¢ta azonban a kisebb ‚szaki szigeteken vesz‚lyesen
+elszaporodtak a s rk nyok, a trollok ‚s a v‚c‚s n‚nik, az¢ta egyetlen
+haj¢ sem volt k‚pes  thatolni ezen a terleten: Athar ¡gy lassank‚nt
+teljesen elszigetel“d”tt. R”videsen m r h¡rek sem ‚rkeztek a sz razf”ld
+fel“l, s az az¢ta eltelt mintegy h romsz z esztend“ alatt az itt ‚l“
+emberek t”k‚letesen elfeledkeztek a klvil gr¢l. Az egym st k”vet“
+uralkod¢kat lefoglalta az  lland¢ h bor£skod s a - kl”n”sen az
+‚szakkeleti terleteken - mind nagyobb sz mban jelentkez“ orkokkal, az
+emberek pedig lassan-lassan hozz szoktak, hogy a tengert tekints‚k a
+vil g hat r nak. N‚ha egy-egy vakmer“ haj¢s megpr¢b lt eljutni t volabbi
+vizekre, de ezek a haj¢k t”bb‚ nem t‚rtek vissza. A haj¢z s ¡gy
+t”bbnyire a partk”zelre korl toz¢dott.
+
+Egy napon azonban kl”n”s dolog t”rt‚nt. Keron kir ly emberei egy furcsa,
+l that¢an idegen f”ldr“l sz rmaz¢ haj¢ roncs t fogt k ki a tengerb“l.
+Alaposan  tkutatt k, de embert nem tal ltak rajta - val¢sz¡n–leg az eg‚sz
+leg‚nys‚g az ‚szaki sz”rnyetegek martal‚k ul esett - , tal ltak viszont
+egy kl”n”sen ‚rdekes t rgyat, mellyel eleinte ugyan nemigen tudtak mit
+kezdeni, de azt n, amikor sikerlt v‚gre m–k”d‚sre b¡rniuk, mind nagyobb
+‚rdekl“d‚ssel figyelt‚k, mif‚le dolgok t”rt‚nnek benne. M‚g Queldrin,
+Athar f“m gusa is elj”tt, hogy saj t szem‚vel l ssa a kl”n”s jelens‚get.
+Egyikk sem tudta persze, de egy hordozhat¢ telev¡zi¢val  lltak
+szemk”zt...
+
+[a kir ly rajza]
+
+A kir ly ekkor a kincst r ba vitette az ”rd”gi masin t, megk‚tszerezte
+el“tte az “rs‚get, ‚s att¢l kezdve nem volt hajland¢ kimozdulni err“l a
+helyr“l. Eg‚sz  ll¢ nap csak a t‚v‚t b multa s¢sperecet r gcs lva, s a
+fotel mellett gylekeztek a kir¡tett s”r”svegek, mik”zben egyre
+gyengl“ birodalma lassan, de biztosan a teljes sz‚thull s fel‚ haladt.
+
+Csakhogy az idegen haj¢roncson sok m s ‚rdekes dolog volt m‚g
+megtal lhat¢ a telev¡zi¢k‚szl‚ken k¡vl - k”ztk az athariak sz m ra
+ismeretlen fegyverek is, amiket a Cs”p”g“ Genny ‚s a Zuhan¢ Guan¢
+fed“nevet visel“ terrorista ork-szervezetek sikeresen megkaparintottak
+maguknak, ‚s nyomban mer‚nyleteket kezdtek tervezni az egyre
+tehetetlenebb‚ v l¢ kir ly ‚s annak hitvese ellen. Mindek”zben egyre
+t”bb, orkokb¢l ‚s egy‚b mocskos teremtm‚nyekb“l  ll¢ banda t”rt be kelet
+fel“l az orsz gba, s g tl stalanul raboltak ‚s fosztogattak mindenfel‚
+Csattog¢ Prot‚zis, a fogatlan v mp¡r vezet‚s‚vel. šv”lt“ trollok ‚s
+”nuralmukat vesztett kishivatalnokok d£lt k sz‚t az eladdig b‚k‚snek
+mutatkoz¢  falvakat. Emberi mivoltukb¢l kivetk“z”tt k”ztisztas gi
+alkalmazottak ‚s ”rj”ng“ gyors- ‚s g‚p¡r¢k randal¡roztak az aranyl¢
+b£zamez“k”n szertesz‚t; acsarg¢ orkok ‚s sz”rny– d‚monok szedtek
+‚letbenmarad si ad¢t az emberekt“l, ki-ki a maga szak ll ra
+term‚szetesen. Az eg‚sz birodalmat a k”zelg“ ork uralom r‚me fenyegette,
+mely gyakorlatilag a k osszal ‚s anarchi val lett volna egyenl“.
+
+Queldrin, a f“m gus ekkor £gy gondolta, most m r t‚nyleg tenni k‚ne
+valamit. Felkereste h t a fentebb m r eml¡tett d¡szes testv‚rp rt: a
+dilett ns m gust ‚s nagydarab b tyj t, ‚s besz‚lt nekik egy elfeledett
+“si kik”t“r“l, amely tal n m r csak a mes‚kben l‚tezik, ‚s ahol
+mindazon ltal megtal lhat¢ egy olyan haj¢ - egy g lya -, amivel a
+legend k szerint b rmilyen helyre el lehet jutni a vil gon. Ezt a haj¢t
+kell megtal lniuk, ‚s seg¡ts‚get hozniuk vele az ismeretlen kontinensr“l,
+ahonnan a veszedelem j”tt - ez az utols¢ es‚ly az orsz g megment‚s‚re.
+"s ne feledd: haszn ld a funkci¢billenty–ket ‚s a SAVE/RAMSAVE
+funkci¢kat j t‚k k”zben!" - e szavakkal b£cs£zott a m gus.
+
+Az “si kr¢nik k itt m‚g megeml¡tik, hogy a kalandj t‚kos ekkor egy
+lelkesed‚st“l f–t”tt mozdulattal behelyezte az eredeti gy ri lemezt a
+meghajt¢ba, ‚s bet”lt”tte r¢la a j t‚kot, hogy v‚g‚re j rhasson ennek az
+“rlt legend nak - a t”rt‚net folytat sa azonban ett“l a pontt¢l kezdve
+s–r– hom lyba burkol¢dzik...
+
+
+A kldet‚s teljes¡t‚s‚hez sok sikert k¡v n a The Molotow Cocktails
+valamint a Commodore Vil g Szerkeszt“s‚ge.
+
+A visszakld”tt hib s j t‚kokat d¡jmentesen kicser‚ljk.
+
+Figyelem! A j t‚k jogv‚dett, ¡gy m sol sa ‚s terjeszt‚se a szerz“
+enged‚lye n‚lkl tilos ‚s t”rv‚nyellenes!
+
+COM-WARE Kft., Budapest, XI. V s rhelyi P l u. 8. 1114.
+Postac¡m: 1519 Budapest, Pf. 363.
+
+[az utols¢ rajz]

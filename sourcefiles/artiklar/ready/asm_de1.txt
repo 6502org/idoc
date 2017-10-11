@@ -1,0 +1,1663 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore 64
+related documents in electronic text format that might otherwise cease to
+exist with the rapid advancement of computer technology and declining
+interest in 8-bit computers on the part of the general population. If you
+would like to help by converting C64 related hardcopy documents to
+electronic texts please contact the manager of International Project 64,
+Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The first
+characters of the file name are an abbreviation of the original document
+name and the language of the etext. The version number of the etext follows
+next. After that a letter may appear to indicate the particular source of
+the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International Project
+64 make no representations about the accuracy or suitability of this
+material for any purpose. This etext is provided "as-is". Please refer to
+the warranty of the original document, if any, that may included in this
+etext. No other warranties, express or implied, are made to you as to the
+etext or any medium it may be on. Neither the author(s) nor the members of
+International Project 64 will assume liability for damages either from the
+direct or indirect use of this etext or from the distribution of or
+modification to this etext. Therefore if you read this document or use the
+information herein you do so at your own risk.
+
+*********
+
+The International Project 64 etext of the article "Das Salz in der Suppe",
+written and donated for IP64 distribution by Nikolaus Heusler
+<nikolaus.heusler@lrz.tu-muenchen.de>.
+
+ASM_DE1.TXT, June 1997, etext #9
+
+Note from the etexter: 
+
+This is german text.
+
+Topic: How to program the C 64 in assembler (machine language).
+
+No part of this text may be copied, stored or published in any way without
+prior written permission by the author. It is not allowed to store copies of
+this text or of parts of it on computer-discettes or on computers which can
+be accessed in the public, for example on the internet.
+
+Das Werk einschliesslich aller seiner Teile ist urheberrechtlich geschuetzt. 
+Jede Verwertung ausserhalb der engen Grenzen des Urheber- rechtsgesetzes ist
+ohne vorherige schriftliche Zustimmung des Verfassers unzulaessig und
+strafbar. Dies gilt insbesondere fuer Vervielfaeltigungen, Uebersetzungen
+und die Verarbeitung in elektronischen Systemen.
+
+Einwilligungen zur Weiterverarbeitung wird der Verfasser im Einzelfall auf
+schriftliche Anfrage gern geben, falls keine kommerziellen Interessen mit
+der Verarbeitung verfolgt werden.
+
+Produkt- und Herstellerangaben in dem Text werden ohne Ruecksicht auf
+eventuellen Patentschutz veroeffentlicht. Warennamen werden ohne Gewaehr-
+leistung der freien Verwendbarkeit benutzt. Die Texte wurden mit groesster
+Sorgfalt zusammengestellt. Trotzdem sind Fehler nicht vollstaendig
+auszuschliessen. Fuer fehlerhafte Angaben und deren Folgen kann der Autor
+weder juristische Verantwortung noch irgendeine Haftung uebernehmen.
+
+Verfasser / Author: Nikolaus Heusler
+                    Zwengauerweg 18
+                    D-81479 Muenchen
+                    Germany
+
+Bei schriftlichen Anfragen bitte Rueckporto beilegen, ich antworte gern.
+
+This version was published in the internet on the project "IP 64" in June
+1997.
+
+*********
+
+Das Salz in der Suppe
+
+Erst in Assembler läßt sich ein Computer wie der C 64 richtig ausnutzen.
+Haben Sie die ersten Schritte bereits hinter sich, lernen Sie jetzt wichtige
+Kniffe kennen, die den Doktor der Maschinensprache« ausmachen.
+
+Nikolaus M. Heusler
+
+Was macht einen wirklich guten Maschinensprache-Programmierer aus? Sicher,
+er sollte alle Befehle kennen, die diese Sprache bietet. Auch Begriffe wie
+»hexadezimal«, »Adressierungsart« und »Variablen« dürfen ihm keine Probleme
+mehr bereiten. Das alles ist selbstverständlich. Es gibt ja inzwischen auch
+mehr als genügend Kurse zur Einführung in Assembler. Nein, wir meinen die
+vielen kleinen »Kunstgriffe«, die »Gemeinheiten«, die der Programmierer in
+sein Werk einbauen und dieses damit beschleunigen, verkürzen, kurz gesagt,
+verbessern kann. In unserem wirklich neuartigen Mini-Kurs präsentieren wir
+Ihnen eine geballte Auswahl fortschrittlicher Maschinensprache-Tricks, die
+Ihnen dabei helfen werden, eigene Projekte noch professioneller zu
+gestalten.
+
+Eine kleine Übersicht: Was ist alles drin? Wir beginnen mit ausführlichen
+Erläuterungen zum sehr weiten Feld der Selbstmodifikation anhand zahlreicher
+Beispiele, die Sie gleich ausprobieren können und werden dabei auch wichtige
+Aspekte der Initialisierung von Programmen kennenlernen. Danach betrachtn
+wir die Vorteile der relativen Programmierung genauer. Sie glauben gar
+nicht, welche Vorteile in Bezug auf Programmlänge und -laufzeit sich durch
+Verwendung der relativen Adressierung ergeben. Ein Stichwort lautet
+relokatibler Code.
+
+Das nächste Thema heißt »Puffer«. Nach einer Betrachtung, was das überhaupt
+ist, stellen wir Ihnen wichtige Puffer im C 64 im Detail vor.
+
+Kaum ein größeres Maschinenprogramm kommt ohne Tabellen aus. Wir geben
+wichtige Entscheidungshilfen, wann eine Tabelle sinnvoll einzusetzen ist und
+wann nicht. Als Beispiel dient dann eine Turbo-Plot-Routine für den
+hochauflösenden Grafikbildschirm.
+
+Ein wichtiges Kapitel sind schließlich die Zufallszahlen. Auf den ersten
+Blick ist es nicht möglich, in Maschinensprache zufällige Werte zu erhalten.
+Mit einigen Tricks, die wir Ihnen besonders ausführlich zeigen, geht's
+trotzdem.
+
+Den Abschluß machen wichtige Hinweise zum Zeropage. Nutzt man diesen
+Speicherbereich richtig, können eigene Programme nochmals erheblich
+verschnellert und gestrafft werden.
+
+Selbstmodifikation
+
+Bevor wir uns mit einer neuen unstrukturierten Programmiertechnik, der
+»Selbstmodifikation«, befassen, soll der Begriff geklärt werden.
+
+Unter Modifikation versteht man »Änderung«, »Anpassung«. Wenn Sie bei einem
+Spiel einen der vielen POKE-Befehle eingeben, die auch schon im
+64'er-Magazin veröffentlicht wurden, haben Sie es dadurch modifiziert. Die
+Änderung ist zum Beispiel eine Erhöhung der Anzahl an Spielfiguren oder
+Leben. Selbstmodifikation bedeutet, daß das Programm eine Änderung an sich
+selbst vornimmt. Enthielte das Spiel eine Routine, die den POKE durchführt,
+würde es sich dadurch selbst modifizieren.
+
+Wir werden uns hier mit der Selbstmodifikation (oder Selbstmodifizierung)
+von Maschinenprogrammen befassen. Als erstes Beispiel soll das folgende
+Listing dienen. Wir haben die kurzen Listings hier einfach in den Artikel
+mit einbezogen, sie können mit jedem beliebigen Assembler oder Monitor
+eingegeben werden. Die linke Spalte enthält die Adresse, danach folgen
+das/die Bytes, ganz rechts in symbolischer Schreibweise der entsprechende
+Maschinenbefehl. Alle Zahlenangaben erfolgen, soweit nicht anders angegeben,
+hexadezimal.
+
+6000 a0 00	ldy #00
+6002 b9 00 20	lda 2000,y
+6005 49 ff	eor #ff
+6007 99 00 20	sta 2000,y
+600a c8	iny
+600b d0 f5	bne 6002
+600d ee 04 60	inc 6004
+6010 ee 09 60	inc 6009
+6013 ad 09 60	lda 6009
+6016 c9 40	cmp #40
+6018 d0 e8	bne 6002
+601a 60	rts
+
+Es handelt sich um eine selbstmodifizierende Schleife, die den
+Speicherbereich $2000 bis $3fff mit $ff EOR-verknüpft, also zum Beispiel ein
+dort gespeichertes Hires-Bild invertiert. Was passiert? Wir erkennen von
+6000 bis 600c eine normale Schleife, die eine »Page« von 2000 bis 20ff
+invertiert. Als Indexzähler kommt das Y-Register zur Anwendung. Die beiden
+interessanten Befehle stehen in den Zeilen 600d und 6010. Hier werden die
+Speicherzellen 6004 und 6009 »INC«rementiert, also um eins erhöht. Das
+Besondere dabei: Diese Speicherzellen 6004 und 6009 stehen mitten in unserer
+kurzen Routine! Es handelt sich jeweils um die Highbytes der Befehle
+
+6002 b9 00 20	lda 2000,y
+
+und
+
+6007 99 00 20	sta 2000,y
+
+Deutlich erkennt man hier an dem Hexdump, wie ein Maschinenbefehl im
+Speicher aufgebaut ist. Nach dem Kenncode für den Befehl ($b9 bedeutet LDA
+...,Y, $99 bedeutet STA ...,Y) folgend das Lowbyte (0) und das Highbyte
+($20) der zu bearbeitenden Adresse, hier der Adresse $2000. Wird nun
+beispielsweise mit INC 6004 der Inhalt der Speicherzelle 6004 um eins
+erhöht, steht keine $20 mehr drin, sondern $21. Der Befehl lautet jetzt:
+
+6002 b9 00 21	lda 2100,y
+
+Beachten Sie, daß aus »2000,y« jetzt »2100,y« geworden ist. Die Schleife,
+die bei $6018 erneut aufgerufen wird, invertiert jetzt den Bereich $2100 bis
+$21ff. Dann wird wiederum das Highbyte der Adresse erhöht. Das geht so lange
+weiter, bis der Computer ab $6013 das aktuelle Highbyte ausliest, testet und
+feststellt, daß er schon am Ende des Grafikbildschirms bei $4000 angelangt
+ist. Dann wird auch die äußere Schleife verlassen, das Programm ist fertig.
+
+Im folgenden sehen Sie, wie diese Routine dann aussieht, nachdem sie
+verlassen wurde:
+
+6000 a0 00	ldy #00
+6002 b9 00 40	lda 4000,y
+6005 49 ff	eor #ff
+6007 99 00 40	sta 4000,y
+600a c8	iny
+600b d0 f5	bne 6002
+600d ee 04 60	inc 6004
+6010 ee 09 60	inc 6009
+6013 ad 09 60	lda 6009
+6016 c9 40	cmp #40
+6018 d0 e8	bne 6002
+601a 60	rts
+
+Wie man sieht, wurden die beiden Befehle bei $6002 und $6007 verändert, sie
+haben jetzt ihren Endwert $4000 erreicht.
+
+Und wenn man diese Routine jetzt nochmal startet? Nun, der Computer geht
+ganz streng nach seiner Programmvorschrift vor: Es soll erst einmal die
+Speicherseite $4000 bis $40ff invertiert werden. Danach erhöht das Programm
+wieder das Highbyte von zwei seiner Befehlen, ergibt jetzt $4100. Invertiert
+wird jetzt $4100 bis $41ff. Achtung: Bei $6016 wird nicht auf »größer
+gleich« geprüft, nur auf Gleichheit. Aus diesem Grund beginnt unsere Routine
+jetzt allmählich, Unsinn zu produzieren. Sie invertiert sich so lange durch
+den Speicher durch, bis sie bei $6000 angelangt ist und sich auf diese Weise
+dann selbst invertiert und damit zerstört. Der Computer wird abstürzen.
+
+Initialisieren
+
+Was nämlich unserem Listing fehlt, damit es mehr als einmal arbeitet, ist
+eine »Initialisierung«, die vor dem Start den gewünschten Ausgangswert
+(Startwert) $2000 in die beiden geänderten Befehle schreibt.
+
+»Initialisierung« nennt man eine Routine, die vor einem Programm(teil),
+meist einer Schleife, steht und diese vorbereitet. Die Initialisierung wird
+nur einmal, die Schleife aber mehrfach durchlaufen. Deshalb bringt es einen
+Gewinn an Geschwindigkeit, wenn die Initialisierung der Schleife Arbeit
+abnimmt.
+
+Ein Beispiel: Beim Start eines Basicprogramms löscht der RUN-Befehl alle
+Variablen, schließt alle noch geöffneten Dateien und berechnet die Position
+im Speicher, an der Variablen angelegt werden sollen. Dies ist die
+Initialisierung der Interpreterschleife. Danach werden die einzelnen Befehle
+des Programms schrittweise bearbeitet.
+
+Stößt der Interpreter auf einen Sprungbefehl (GOTO, GOSUB), so liest er die
+gewünschte Zeilennummer aus dem Programmtext. Diese Zeile muß nun im
+Programm gesucht werden. Wie Sie sicher schon bemerkt haben, treten im
+Programmablauf deutlich spürbare Verzögerungen auf, wenn zu einer Zeile
+gesprungen werden soll, die am Ende eines langen Programms liegt. Der
+Interpreter durchsucht das Programm beginnend bei der ersten Zeile so lange,
+bis das Sprungziel gefunden wurde.
+
+Es wäre viel sinnvoller, gleich beim Start mit RUN eine große Tabelle
+anzulegen, in der nach Zeilennummern die Adressen aller Basiczeilen
+gespeichert sind. Bei einem Sprung müßte dann nur noch diese Tabelle
+durchsucht werden. Allerdings kostet so eine Tabelle, wie sie zum Beispiel
+grundsätzlich bei Compilern Verwendung findet, unter Umständen sehr viel
+Speicherplatz.
+
+Damit haben wir noch ein wesentliches Merkmal der Initialisierung gefunden:
+Sie kann Tabellen anlegen, die dann von der Schleife gelesen und benutzt
+werden kann, und entlastet damit die Schleife.
+
+Doch zurück zu unserem Beispiel. Eine bessere Lösung sieht so aus:
+
+6000 a9 00	lda #00
+6002 8d 13 60	sta 6013
+6005 8d 18 60	sta 6018
+6008 a9 20	lda #20
+600a 8d 14 60	sta 6014
+600d 8d 19 60	sta 6019
+6010 a0 00	ldy #00
+6012 b9 ff ff	lda ffff,y
+6015 49 ff	eor #ff
+6017 99 ff ff	sta ffff,y
+601a c8	iny
+601b d0 f5	bne 6002
+601d ee 14 60	inc 6014
+6020 ee 19 60	inc 6019
+6023 ad 19 60	lda 6019
+6026 c9 40	cmp #40
+6028 d0 e8	bne 6012
+602a 60	rts
+
+Die Initialisierung, die den Startwert $2000 in die LDA- und STA-Befehle
+einträgt, steht von 6000 bis 600f. Es handelt sich im Prinzip um vier
+POKE-Befehle. Die Adresse $ffff bei 6012 und 6017 ist ein Dummy-Wert, das
+heißt, er ist nicht von Bedeutung und dient nur zum vorläufigen Ausfüllen
+von Adressen. Der Dummy-Wert wird von der Initialisierung überschrieben; wir
+hätten statt ffff also auch 1234 oder irgend einen anderen Wert vorgeben
+können. Wichtig ist nur, daß »LDA Dummy,y« genau drei Byte belegt, damit die
+Länge der Routine insgesamt stimmt.
+
+Ein besonderer Vorteil von Selbstmodifikationen ist, daß solche Schleifen
+keine Zähler in der Zeropage benötigen, da der Zähler praktisch im Programm
+selbst steckt. In puncto Geschwindigkeit sind selbstmodifizierende Schleifen
+den herkömmlichen meist unterlegen.
+
+Ein weiterer Vorteil: Man kommt auch mit weniger Prozessorregistern aus,
+sofern man hier Einsparungen vornehmen will. Das folgende Listing
+beispielsweise invertiert den Bereich von $2135 bis $6394.
+
+8000 a9 35	lda #35
+8002 8d 11 80	sta 8011
+8005 8d 16 80	sta 8016
+8008 a9 21	lda #21
+800a 8d 12 80	sta 8012
+800d 8d 17 80	sta 8017
+8010 ad 00 00	lda 0000
+8013 49 ff	eor #ff
+8015 8d 00 00	sta 0000
+8018 ee 11 80	inc 8011
+801b ee 16 80	inc 8016
+801e d0 06	bne 8026
+8020 ee 12 80	inc 8012
+8023 ee 17 80	inc 8017
+8026 ad 11 80	lda 8011
+8029 c9 95	cmp #95
+802b ad 12 80	lda 8012
+802e e9 63	sbc #63
+8030 90 de	bcc 8010
+8032 60	rts
+
+Bei den fünf Befehlen von 8026 bis 8031 handelt es sich um eine sehr
+trickreiche Methode, zwei 16-Bit-Zahlen auf Übereinstimmung zu prüfen.
+Dieses Verfahren wendet der C 64 beispielsweise auch beim Speichern von
+Dateien an, um auf Erreichen der Endadresse zu prüfen.
+
+Fällt Ihnen etwas auf? Diese Invertierungs-Routine ist weder auf das X-,
+noch auf das Y-Register angewiesen. Beide werden nicht verändert, könnten
+also zum Beispiel Werte aus einer übergeordneten Routine zwischenspeichern.
+Alle verwendeten Befehle (LDA, STA, CMP, SBC) gibt es so oder ähnlich (außer
+SBC) auch für das X- oder Y-Register, so daß man diese Aufgabe auch
+vollkommen ohne den Akku lösen könnte. Lediglich für die Prüfung der
+Endadresse ab $802b müßte man sich etwas anderes einfallen lassen.
+
+Der praktische Einsatz
+
+Nun wollen wir sehen, wie man bei der Entwicklung von selbstmodifizierenden
+Programmen mit Hilfe eines Assemblers vorgehen muß. Alle Stellen, an denen
+später etwas modifiziert werden soll, müssen mit einem Label versehen
+werden. Von diesen Label aus können die Stellen im Speicher, auf die INC,
+STA oder LDA wirken soll, leicht berechnet werden:
+
+Befehlscode = Label + 0
+Low_Operand = Label + 1
+High_Operand = Label + 2
+
+Bei 2-Byte-Befehlen wird der Operand wie der Low_Operand eines
+3-Byte-Befehles berechnet.
+
+Hier ein Beispiel für einen Assembler-Quelltext. Die Routine hat die
+Aufgabe, zum Inhalt aller Zellen von $8000 bis $8fff eine eins zu addieren.
+Die Label, an denen Modifizierungen vorgenommen werden, heißen AMOD und
+BMOD. AMOD ist zugleich die Startadresse der Schleife.
+
+START	lda #$80	; Highbyte Startadresse
+	sta AMOD+2	; AMOD initialisieren
+	sta BMOD+2	; BMOD initialisieren
+AMOD	lda $8000	; Dummy-Wert (Lowbyte = 0!)
+	clc	; für die Addition
+	adc #1	; eins addieren
+BMOD	sta $8000	; zurückspeichern
+	inc AMOD+1	; Lowbytes erhöhen
+	inc BMOD+1
+	bne AMOD	; keine Null, dann weiter
+	inc AMOD+2	; sonst auch die
+	inc BMOD+2	; Highbytes erhöhen
+	lda AMOD+2	; ein Highbyte lesen
+	cmp #$90	; Endadresse erreicht?
+	bcc AMOD	; nein, weiter
+	rts	; sonst fertig
+
+Diese Routine kann mit JSR START aufgerufen werden. Wir haben es uns für
+dieses Beispiel etwas leichter gemacht: Die Lowbytes der Start- und der um
+eins erhöhten Endadresse sind jeweils Null. Daher brauchen wir dieses
+Nullbyte bei der Initialisierung nicht mehr nach AMOD+1 und nach BMOD+1 zu
+schreiben. Die Werte in diesen Speicherzellen werden zwar innerhalb der
+Routine verändert, nach dem Verlassen stehen aber sicher immer wieder die
+Nuller drin. Aus diesem Grund kann diese Routine beliebig oft ohne
+Vorarbeiten aufgerufen werden. Verstehen Sie jetzt, warum man eine
+selbstmodifizierende Routine nicht mit »Gewalt« (<RUN STOP/RESTORE>)
+abbrechen darf?
+
+Noch mehr praktische Beispiele
+
+Die absoluten Sprungbefehle des C 64 lauten JSR und JMP. Während man ein mit
+JSR (Jump to Subroutine) aufgerufenenes Unterprogramm mit RTS (Return from
+Subroutine) beenden kann, vergißt der C 64 bei JMP, von wo er »kam«. Und
+noch einen Unterschied gibt es: JMP kann auch relativ adressiert werden. Der
+Befehl JMP (2) springt zu dem Programmteil, dessen Adresse in den
+Speicherzellen 2 und 3 steht. So etwas gibt es für JSR »ab Werk« leider
+nicht. Mit Hilfe eines Tricks und etwas Selbstmodifikation können wir uns
+aber helfen. Der folgende Ausschnitt simuliert JSR (2):
+
+	LDA 2	; Lowbyte Sprungziel lesen
+	STA JUMP+1	; Selbstmodifikation
+	LDA 3	; Highbyte lesen
+	STA JUMP+2	; und im Programm vermerken
+JUMP	JSR 0000	; 0000 = Dummy-Wert
+	...	; weiter
+
+Steht in den Adressen 2 und 3 beispielsweise das Wertepaar $44 (low, Adresse
+2) und $e5 (high, in 3), so bewirkt der obige Ausschnitt eine Änderung von
+JSR 0000 in JSR $e544. Beim Label JUMP wird dann die Systemroutine ab $e544
+aufgerufen, die den Bildschirm löscht. Jetzt sollte allmählich auch die
+Bedeutung der »Dummy-Werte« deutlich werden: Bei JUMP wird der C 64 niemals
+nach 0000 springen, da er, wenn er dieses Label erreicht, dort stets den
+entsprechend modifizierten Wert vorfindet. Versuchen Sie, sich das
+klarzumachen. Es handelt sich um eine wichtige Eigenart der
+Selbstmodifikation.
+
+Oft müssen berechnete Werte auf dem Stapel oder im Speicher abgelegt werden.
+Manchmal steht man auch vor dem Problem, ein Register sichern und später
+wieder holen zu müssen. Im Falle des Akkumulators sähe die klassische Lösung
+so aus:
+
+PHA	; Akku auf Stack sichern
+...	; weiter im Programm
+PLA	; geretteten Wert von Stack zurückholen
+
+Beim X-Register wird es schon umständlicher:
+
+TXA	; X nach A bringen (A := X)
+PHA	; A sichern
+...	; weiter
+PLA	; A zurückholen
+TAX	; und nach X kopieren
+
+Hier wird also zusätzlich der Akku beeinflußt. Soll dies vermieden werden,
+geht man einen anderen Weg, indem man zum Beispiel die sonst unbenutzte
+Speicherzelle 2 in der Zeropage bemüht:
+
+STX 2
+...
+LDX 2
+
+Für die Sicherung des X-Registers gibt es aber noch eine andere Möglichkeit,
+die auf dem Prinzip der Selbstmodifikation beruht. Modifiziert wird der
+Befehl, der nach dem Abschluß des zwischen beiden Befehlen liegenden
+Programmteils (»...«) den ursprünglichen Wert von X wieder ins X-Register
+bringt:
+
+TEST	STX STORE+1	; beeinflußt STX
+	...
+STORE	LDX #00	; 00 = Dummy-Wert
+
+Wird diese Routine TEST beispielsweise mit einer 12 im X-Register
+aufgerufen, bewirkt der STX-Befehl, daß der LDX #00 umgewandelt wird in LDX
+#12. Nach Abschluß des Programmteils »...« lädt der Computer dann eine 12 in
+das X-Register, die »rein zufällig« genau dem zuvor gemerkten Wert
+entspricht. Das Beispiel läßt sich leicht auf Akku oder Y-Register ummodeln.
+Auf ähnliche Weise könnten wir auch neuartige arithmetische Verknüpfungen
+definieren. Es gibt keinen Befehl, um den Inhalt des Y-Registers zum Akku zu
+addieren. Lösung:
+
+	STY LATCH+1	; Y merken
+	CLC	; Addition vorbereiten
+LATCH	ADC #00	; 00 = Dummy
+
+»Latch« bedeutet soviel wie »Zwischenspeicher«.
+
+Modifizierung kompletter Befehle
+
+Bisher haben wir nur die Parameter der Befehle verändert. Es ist
+selbstverständlich auch möglich, die Befehlscodes oder ganze Befehle zu
+verändern: Sie möchten aus einem AND #04 nachträglich ORA #04 machen? Aus
+JSR FCE2 soll INC 2321 werden? Alles kein Problem. Einzige Bedingung: Der
+alte Befehl muß im Speicher die selbe Länge haben wie der neue. Aus einem
+RTS, das im Speicher ein Byte belegt, können Sie durch einfache
+Modifizierung kein JSR FCE2 machen, weil dieser Befehl drei Bytes, also zwei
+zuviel benötigt. Durch Ändern der impliziten Befehle (aus INX wird DEX)
+könnte man in einer Schleife die Zählrichtung umkehren.
+
+Als letztes Beispiel zum Thema Selbstmodifikation zeigen wir Ihnen, wie man
+die Abarbeitung eines Unterprogramms verhindert. Wir werden dazu drei
+Lösungen entwickeln: Erst eine klassische, dann zwei, die auf Modifikation
+beruhen.
+
+Das Unterprogramm beginnt bei dem Label UP. Um ersten Fall verwenden wir ein
+»Signal«, ein »Flag«, das dem Programm anzeigt, ob die Abarbeitung von UP
+gewünscht ist oder nicht. Der Wert dieses Signals sei 0, wenn das
+Unterprogramm gesperrt sein soll, bei jedem anderen Wert soll der Computer
+in das Unterprogramm springen. Das ist nicht weiter schwer: Wir schalten das
+Unterprogramm erst frei, indem ein anderer Wert als Null in das Flag
+geschrieben wird, dann folgt evtl. weiterer Programmtext, und dann prüfen
+wir durch Auslesen von FLAG, ob das Unterprogramm gestartet werden soll oder
+nicht.
+
+FLAG	= 2	; unbenutzte Speicherzelle
+	LDA #1	; ungleich 0
+	STA FLAG	; merken
+	...	; evtl. weitere Befehle
+	LDA FLAG	; Unterprogramm starten?
+	BEQ NEIN	; Null, dann nicht
+	JSR UP	; sonst UP starten
+NEIN	...	; weiter
+
+Das Flag könnte auch zu Beginn des Unterprogramms abgefragt werden. Bei
+Feststellen einer Null müßte dieses dann sofort wieder verlassen werden (mit
+RTS). Nachteil: Für FLAG muß eine eigene Speicherzelle, in diesem Fall die
+Speicherzelle 2, bereitgestellt werdenn.
+
+Daher verwenden wir beim zweiten Versuch ein spezielles Unterprogramm. Seine
+Besonderheit: Der erste Befehl besteht nur aus einem einzigen Byte,
+beispielsweise ein NOP-Befehl.
+
+UP	NOP	; Einbyter
+	...	; weiter im Unterprogramm
+
+Die Ausführung dieses Unterprogramms, das in jedem Fall einfach mit JSR UP
+aufgerufen werden kann, gestatten folgende Befehle:
+
+LDA #$EA	; dezimal 234, Code für NOP
+STA UP	; als erstes Byte ins Unterprogramm
+
+Wird das UP jetzt aufgerufen, findet es dort als erstes ein NOP vor, das
+einfach überlesen wird. Soll die Ausführung gesperrt werden, sorgen wir
+einfach dafür, daß der erste Befehl in der Subroutine den augenblicklichen
+Rücksprung ins Hauptprogramm auslöst: Ein RTS-Befehl mit dem Code $60.
+
+LDA #$60	; dezimal 96, Code für RTS
+STA UP
+
+Der Befehl JSR UP hat von jetzt an keine Wirkung mehr - bis das RTS wieder
+gegen ein NOP ausgetauscht wird. Eine Tabelle dieser sogenannten »Opcodes«
+($60 für RTS, $EA für NOP und so weiter) findet man in einschlägiger
+Literatur, zum Beispiel im Programmierhandbuch zum Commodore 64. Immerhin
+gibt es 256 verschiedene Codes.
+
+Wer noch ein Byte für das NOP einsparen möchte, den NOP-Befehl im UP
+entfallen lassen. Dann muß aber auch der Opcode $EA beim Erlauben des
+Unterprogramms gegen den Wert des ersten Bytes des »freigegebenen«
+Unterprogramms ausgetauscht werden. Weil das unter Umständen sehr mühsam und
+fehlerträchtig ist, ist die Lösung mit Verwendung eines NOPs eindeutig
+vorzuziehen.
+
+Jetzt folgt der dritte Streich: Wir ändern nichts am Unterprogramm, sondern
+schalten per Selbstmodifizierung einfach den Aufruf an und aus.
+
+AUFRUF	JSR UP	; Unterprogramm aufrufen
+
+Aufruf erlauben:
+
+LDA #$20	; dezimal 32, Code für JSR
+STA AUFRUF	; -> JSR UP
+
+Aufruf verbieten:
+
+LDA #$2C	; Code für BIT
+STA AUFRUF	; -> BIT UP
+
+Wird der Aufruf verboten, so wandelt der Computer den JSR-Befehl in einen
+BIT-Befehl um. Gelangt er nun an das Label AUFRUF, findet er dort den Befehl
+BIT UP vor. Er bewirkt alles, nur nicht den Aufruf des Unterprogramms.
+Anstelle des BIT könnte man zum Verbieten auch den Code $0c einsetzen. Dabei
+handelt es sich um einen »illegalen« Opcode für ein Dreibyte-NOP, das auf
+allen uns bekannten Versionen des C 64 arbeitet. Ob das auch beim C 128
+funktioniert, konnte ich noch nicht überprüfen. Allerdings werden einige
+Monitore und Deassembler damit Probleme haben.
+
+Die Stärken der relativen Adressierung
+
+Oft muß in einem Programm eine bestimmte Stelle in jedem Fall angesprungen
+werden, also ohne daß eine Bedingung geprüft wird. Klar, das erledigt der
+JMP-Befehl für uns:
+
+BEQ NULL
+JMP STELLE
+
+Falls das Zero-Flag gesetzt wird, soll es bei NULL weitergehen, andernfalls
+bei STELLE. Nicht selten liegt die STELLE nur wenige Bytes von dem
+aufrufenden JMP entfernt, und wir könnten die relative Adressierung
+verwenden:
+
+BEQ NULL
+BNE STELLE
+
+hat die gleiche Wirkung, kostet aber nur vier statt fünf Bytes
+Speicherplatz. Der Grund: bei dem BNE STELLE ist das Zeroflag in jedem Fall
+gelöscht - dafür hat ja der Abzweig-Befehl BEQ schon gesorgt. In jedem Fall
+wird nach STELLE verzweigt.
+
+Man könnte den BEQ-Befehl in dieser Anwendung als
+»Pseudo-Verzweigungsbefehl« bezeichnen, da die Bedingung gar nicht überprüft
+werden müßte (weil sie sowieso immer erfüllt ist).
+
+Der Branchbefehl übertrifft ein JMP deutlich an Effektivität, da ein Byte
+weniger verbraucht wird.
+
+Im übrigen ist zum Beispiel auch bei
+
+BVS GESETZT
+CLV
+
+das CLV überflüssig, solange davor der BVS-Befehl abgearbeitet wird.
+
+Daß solche Kapriolen unter Umständen sehr fehlerträchtig sind, hat Commodore
+bestens im Betriebssystem des C 64 gezeigt. Sicherlich kennen Sie schon die
+Eigenart, daß eine Zeile wie
+
+20 REM {SHIFT L}
+
+beim LISTen einen ?SYNTAX ERROR auslöst. Der Grund dafür liegt in der
+LIST-Routine, im Betriebssystem ab $A73D:
+
+a73d 20 47 ab	jsr $ab47	; ein Zeichen ausgeben
+a740 d0 f5	bne $a737	; weiter listen
+************************	; FOR-Befehl
+a742 a9 80	lda #$80	; Integer sperren
+
+und so weiter. Der BNE-Befehl in a740 sollte eigentlich immer ausgeführt
+werden: Das Zeroflag ist an dieser Stelle immer gelöscht, weil in einem
+Basicprogramm keine Nullbytes vorkommen (der Befehl jsr ab47 davor gibt das
+aktuelle Zeichen des Programms aus). Durch Zusammentreffen unglücklicher
+Umstände ergibt aber eine interne Konvertierung ausgerechnet bei dem Symbol
+{SHIFT L} ein Nullbyte beim Listen, welches in a73d ausgegeben wird. Da das
+Zeroflag jetzt gesetzt ist, wird ausnahmsweise der BNE-Befehl bei a740 nicht
+ausgeführt, und die LIST-Routine rutscht versehentlich in die Routine, die
+den FOR-Befehl bearbeitet, und die zufällig direkt hinter dem LIST-Befehl im
+Speicher beginnt. Diese erwartet jetzt die Parameter eines FOR-Befehles, die
+wir ihr natürlich nicht bieten können. Dadurch kommt der ?SYNTAX ERROR
+zustande.
+
+Hätte Commodore hier nicht am falschen Ende gespart und statt
+
+a740 bne a737
+
+ein Byte mehr spendiert und
+
+a740 jmp a737
+
+geschrieben, hätte der C 64 einen Systemfehler weniger.
+
+Sie merken anhand dieses Beispieles also, wie wichtig eine sorgfältige
+Planung bei dieser Technik ist.
+
+Nebenbei ist an dieser Programmstelle zufälligerweise immer das Carry-Flag
+gelöscht, daher hätten die Systementwickler auch
+
+a740 bcc a737
+
+schreiben können und gegenüber dem JMP ebenfalls ein Byte gespart - völlig
+wasserdicht und fehlerfrei!
+
+Textspeicher löschen
+
+Durch geschickten Einsatz der relativen Sprungbefehle lassen sich auch in
+anderen Fällen Bytes sparen. Nehmen wir ein konkretes Beispiel: In einem
+Textprogramm kann auf Tastendruck der gesamte Textspeicher gelöscht werden.
+Wenn der Anwender den entsprechenden Befehl gibt, soll erst eine
+Sicherheitsabfrage erfolgen. Wird diese mit <Ja> beantwortet, löschen wir
+den Speicher. Bei <Nein> passiert nichts. Uns stehen zwei Unterprogramme
+fertig zur Verfügung: JANEIN für die Sicherheitsabfrage. Dieses
+Unterprogramm übergibt in Speicherzelle 2 eine eins, falls die Antwort <Ja>
+war, bei <Nein> eine Null. Andere Werte treten in Speicherzelle 2 nicht auf.
+Die zweite vorgegebene Routine heißt ERASE und löscht den Textspeicher.
+Haben Sie eine Idee, wie man die folgende Lösung noch vereinfachen könnte?
+Drei Schwachpunkte habe ich absichtlich eingebaut.
+
+RETURN	RTS	; Ende der vorigen Routine
+LÖSCHEN	JSR JANEIN	; Sicherheitsabfrage
+	LDA 2	; deren Ergebnis lesen
+	CMP #0	; 0 bedeutet <Nein>
+	BNE CLEAR	; Eins, dann Text löschen
+	RTS	; bei <Nein> sofort beenden
+CLEAR	JSR ERASE	; Textspeicher löschen
+	RTS	; und fertig
+
+Haben Sie es gemerkt? Es handelt sich bei diesem Beispiel um eine Abwandlung
+der ersten Möglichkeit, die wir weiter oben kennengelernt haben, um ein
+Unterprogramm - in diesem Fall ERASE - zu sperren oder freizugeben. Das Flag
+ist hier die Speicherzelle 2. Der Übersicht halber verzichten wir in diesem
+Fall auf Selbstmodifikation. Welche Bedeutung hat das RTS beim Label RETURN?
+Nun, dabei handelt es sich wahrscheinlich noch um das Ende der Routine, die
+vor unserer Routine im Speicher steht. Es könnte sich zum Beispiel um das
+Ende der Routine handeln, die im Textprogramm den Text auf Diskette
+speichern. Ist ja auch egal. Wie gesagt: An drei Stellen könnte man noch
+sparen. Fangen wir unten an: Die ERASE-Routine endet selbstverständlich
+selbst mit einem RTS. Es ist daher überflüssig, sie erst mit JSR aufzurufen
+und dann mit RTS in das Hauptprogramm zurückzukehren. Ein JMP ERASE hat
+mithin die gleiche Wirkung wie JSR ERASE gefolgt von RTS.
+
+Die zweite Einschränkung: Das RTS vor dem Label CLEAR, mit dem dieses
+Unterprogramm beendet werden soll, falls der Anwender die Sicherheitsabfrage
+verneint. Man könnte es ja auch umgekehrt formulieren: Nur wenn die Antwort
+<Ja> ist, darf der Textspeicher gelöscht werden. Aus BNE CLEAR wird dann ein
+BEQ RETURN (wir zweckentfremden das schon vorhandene RTS bei RETURN), und
+das RETURN hinter BNE CLEAR entfällt ersatzlos, ebenso wie das Label CLEAR:
+Ein Byte im Objektcode und ein Label bei der Assemblierung gespart!
+
+Die dritte Sparmaßnahme betrifft ein anderes Detail: Wir haben gehört, daß
+die Routine JANEIN keinen anderen Wert als 0 oder 1 in Adresse 2 übergibt.
+Es würde also auch genügen, auf Gleich oder Ungleich Null zu testen. Der LDA
+2-Befehl setzt oder löscht automatisch das Zeroflag.
+
+Die verbesserte, immerhin vier Bytes kürzere Version sieht dann so aus:
+
+RETURN	RTS	; Ende der vorigen Routine
+LÖSCHEN	JSR JANEIN	; Sicherheitsabfrage
+	LDA 2	; deren Ergebnis lesen
+	BEQ RETURN	; <Nein>, dann beenden
+	JMP ERASE	; Textspeicher löschen und fertig
+
+Relokatible Programme
+
+Schauen wir uns ein kurzes Programmbeispiel an:
+
+c000 a9 02	lda #02
+c002 a0 00	ldy #00
+c004 4c 02 c0	jmp c002
+
+Bei diesem Programm handelt es sich um eine Endlosschleife. Das Programm
+springt ständig zwischen c002 und c004 hin und her. Warum es das tut, soll
+uns hier nicht interessieren. Wir wollen das Programm »relokatibel«, also an
+einem anderen Speicherplatz lauffähig machen. Stellen Sie sich vor, sie
+möchten diese drei Befehle ab $8000 ablegen, weil der Speicherplatz ab $c000
+für andere Zwecke benötigt wird. Die ab $8000 lauffähige Lösung sieht so
+aus:
+
+8000 a9 02	lda #02
+8002 a0 00	ldy #00
+8004 4c 02 80	jmp 8002
+
+Sehen Sie sich dieses Beispiel genau an: Außer den Zeilenadressen in der
+ersten Spalte tritt noch ein kleiner Unterschied zum Original auf: Es heißt
+jetzt JMP 8002, nicht mehr JMP c002. Im Code (mittlere Spalte) macht sich
+der Unterschied im Highbyte des JMP-Operanden bemerkbar: $80 statt $c0. Es
+reicht also offenbar in diesem Fall nicht, einfach nur die Programmbytes in
+den neuen Speicherbereich zu kopieren, man muß für bestimmte »absolute«
+Befehle auch eine Adreßumrechnung durchführen: Der Code ist nicht
+»relokatibel«.
+
+Bei den Branchbefehlen, also den bedingten Sprungbefehlen wird im Opcode
+nicht die absolute Adresse abgelegt, sondern ein »Offset«, also die
+Entfernung zwischen Ziel- und Startadresse.
+
+Jetzt formulieren wir das Problem mit Hilfe eines relativen Sprungbefehles:
+
+c000 a9 02	lda #02
+c002 a0 00	ldy #00
+c004 18	clc
+c005 90 fb	bcc c002
+
+Der Befehl CLC löscht das Carry-Flag und sorgt so dafür, daß die Bedingung
+für den BCC-Befehl immer erfüllt ist. Die Zieladresse c002 steht codiert in
+dem Wert $fb. $fb bedeutet nichts anderes als »minus 5«, der Computer soll
+in der Ausführung also fünf Bytes hinter dem BCC-Befehl zurückgehen und
+landet bei $c002.
+
+Dieser Code ist relokatibel! Wird er nach $8000 assembliert, sieht er bis
+aufs Byte gleich aus:
+
+8000 a9 02	lda #02
+8002 a0 00	ldy #00
+8004 18	clc
+8005 90 fb	bcc 8002
+
+Der Vorteil: Sollen in Ihrem Maschinenprogramm unbedingte Sprünge an
+Adressen erfolgen, die nicht allzu weit entfernt liegen (maximale Distanz
+cirka 127 Bytes, sonst meldet Ihr Assembler einen BRANCH OUT OF RANGE),
+ersetzen Sie JMP-Befehle durch bedingte Sprungbefehle, deren Bedingungen
+immer erfüllt sind. Dadurch spart man zwar keinen Speicherplatz (CLC plus
+BCC kostet ebenso 3 Byte wie ein JMP). Aber der Assemblercode wird somit
+relokatibel, kann also einfach durch Kopieren an eine andere Stelle im
+Speicher gelegt werden und ist dort ohne Adreßumrechnung sofort wieder
+lauffähig. Auf größeren Computern wie dem Amiga oder PCs gibt es aus diesem
+Grund übrigens gar keine absoluten Befehle mehr (»virtueller Speicher«), der
+Programmierer weiß bei der Programmentwicklung noch gar nicht, wo das
+Programm später einmal ablaufen wird.
+
+Puffer-Technik
+
+»Puffer« sind nichts Unanständiges, sondern dienen als Zwischenspeicher.
+Beim C 64 gehören das Kassetten- und das Tastaturpuffer zu den bekanntesten
+Puffern.
+
+Welche Komponenten gehören zu einen Puffer? Da wäre zum einen der
+»Pufferspeicher«, also der Speicherplatz, den der Puffer belegt, in dem die
+Werte zwischengespeichert werden.
+
+Ebenso muß die maximale Puffergröße festgelegt werden, damit geprüft werden
+kann, ob der Puffer schon voll ist. Beim Kassettenzugriff werden alle Daten,
+die auf Band sollen, erst einmal im Kassettenpuffer ab Adresse 820 ($33c) im
+Speicher des C 64 abgelegt, bis die Tape-Station Gelegenheit hat, sie
+abzuholen. Ist dieser Puffer vollständig gefüllt, würde er beim nächsten
+Zeichen, das er aufnehmen soll, überlaufen, das heißt, seine maximale
+Aufnahmekapazität von etwa 200 Bytes wäre überschritten. Deshalb wird dann
+Byte für Byte der Puffer geleert, indem die Bytes auf Kassette geschrieben
+werden. Jedes auf Band geschriebene Byte belegt keinen Speicherplatz im C 64
+mehr, so daß der Puffer wieder aufnahmefähig ist. Von einem »Unterlauf«
+spricht man, wenn in diesem Beispiel die Datasette Daten aus dem Puffer
+benötigt, dieser aber leer ist.
+
+Auf dem Flughafen treffen sich alle Passagiere für einen bestimmten Flug in
+der Wartehalle, bis das Flugzeug aufgetankt und überprüft ist. Erst dann
+laufen sie alle gemeinsam in das Verkehrsmittel. Die Wartehalle dient hier
+als Puffer. Auch, wenn die Fluggesellschaften dieses unfeine Wort sicherlich
+nicht gern verwenden würden.
+
+Damit das Programm, das den Puffer verwaltet, auch weiß, aus welcher Adresse
+im Puffer es sich das nächste Byte holen soll bzw. in welche Pufferadresse
+das nächste Byte zu schreiben ist, gibt es noch zwei Pufferzeiger: Einen
+Lese-Zeiger und einen Schreib-Zeiger. Auf englisch heißt er »Buffer
+Pointer«, woher auch die Abkürzung beim »B-P« Befehl der Diskettenstation
+zur Manipulation des Pufferzeigers stammt.
+
+Dieser Pufferzeiger kann mit dem Stapelzeiger verglichen werden. Auf keinen
+Fall sollten Sie ihn mit dem »Puffer-Vektor« verwechseln, der immer starr
+auf die erste Adresse (Speicherstelle) des Puffers zeigt. Ein solcher Vektor
+ist nicht unbedingt erforderlich, erhöht aber die Flexibilität.
+
+Wozu braucht man Puffer? Puffer dienen in der Regel als Zwischenspeicher,
+wie zum Beispiel der Basic-Eingabepuffer ab $200. Während Sie eine Zeile
+über Tastatur eingeben, wird sie hier gespeichert. Nach <RETURN> liest der
+Basic-Interpreter dann die Zeile auf dem Eingabepuffer und kann sie Zeichen
+für Zeichen bearbeiten und beispielsweise einen ?SYNTAX ERROR ausgeben.
+
+Im Fall der Tastatur- oder Diskettenpuffer aber sind die Puffer als
+Verbindungsstelle zwischen zwei parallel arbeitenden Instanzen
+(interruptgesteuerte Tastaturabfrage - Betriebssystem) oder Geräten
+(Betriebssystem des C 64 - DOS der Diskettenstation) im Einsatz. Die Puffer
+sind in diesen Fällen Speicherbereiche, auf die zwei (quasi-) parallel
+arbeitende Programme zugreifen.
+
+Bei Computern, die wirklich ein echtes Multitasking bieten (Amiga, PC),
+finden Puffer weitaus mehr Verwendung als beim C 64 mit seinem
+quasiparallelen Ablauf. Daher werden dort Puffer nur für
+Ein-/Ausgabeoperationen eingesetzt. Stellen Sie sich vor, Sie drucken einen
+mehrere Seiten langen Text. Natürlich braucht der Printer dafür einige Zeit.
+Müßte das Textprogramm nun jedes Zeichen abwarten, bis es gedruckt ist,
+würde das eine strenge Geduldsprobe für den Anwender bedeuten. Daher ist
+heute jeder Drucker mit einem mehrere Kilobyte großen Puffer gesegnet, der
+die vom Terminal kommenden Daten mit hoher Geschwindigkeit aufnimmt. Das
+langsame Druckwerk kann nun in aller Ruhe den Puffer auslesen, ohne den
+Computer weiter zu blockieren - falls der Puffer groß genug ist und nicht
+überläuft.
+
+Tabellen
+
+Was kann man schon groß über Tabellen sagen, fragen Sie? Weit gefehlt!
+Gerade bei der Anwendung von Tabellen, die ja immerhin einiges an
+Speicherplatz verbrauchen, kann man grobe Fehler machen. Es ist wirklich
+eine Kunst, zu entscheiden, wann setze ich eine Tabelle ein und wann nicht.
+Mit unserem kleinen Exkurs können wir Ihnen diese Entscheidung aber in
+vielen Fällen erleichtern.
+
+Im allgemeinen Sprachgebrauch werden Tabellen als »geordnete
+Zusammenstellungen von Daten« verstanden. Diese Funktion haben sie auch in
+Computerprogrammen, wo man sie daran erkennt, daß sie keinen
+Befehlscharakter haben.
+
+Wozu werden Tabellen verwendet? In der Regel dienen sie in Programmen als
+»elektronische Rechenschieber«. So, wie das Kopfrechnen durch den
+Rechenschieber ersetzt werden kann, weil man nur in einer geordneten
+Zusammenstellung von Ergebnissen das passende heraussuchen muß, kann ein
+Programm aus seinen Tabellen den selben Nutzen ziehen. Die Berechnungen
+entfallen bzw. sind nur einmal bei der Programmentwicklung vonnöten, das
+fertige Programm wird erheblich schneller und die Programmierung einfacher.
+
+Betrachten wir zunächst solche Tabellen, die Ergebnisse von Berechnungen
+bereitstellen. Es geht im Kopf viel schneller, 4 x 10 auszurechnen als 4 x
+7. Bei einem Rechenschieber besteht dagegen kaum ein Unterschied in der
+Ausführungszeit. Dementsprechend existiert fast kein Algorithmus, der
+unabhängig von den Eingabeparametern immer die gleiche Bearbeitungszeit
+kostet. Ersetzt (bzw. unterstützt) man die Berechnung durch eine Tabelle,
+fällt eine einheitlichere und meistens kürzere Rechenzeit an.
+
+Ein Problem, das nicht nur im Gebiet der Grafik gelegentlich auftritt, ist,
+Zweierpotenzen zu berechnen. Es soll also die Formel
+
+2 hoch Akku
+
+berechnet werden, wobei im Akku Werte von 0 bis sieben stehen, das Ergbnis
+bewegt sich also zwischen 1 und 128. Um die Rechnung auszuführen, könnte man
+nun den Akku-Inhalt in des X-Register laden, dann eine 1 in den Akku packen
+und diesen so oft mit zwei multiplizieren bzw. verdoppeln (ASL), bis die im
+X-Register vorgegebene Anzahl erreicht ist. Diese Methode ist nicht nur sehr
+langsam, sie kostet auch je nach dem Exponenten ganz unterschiedlich viel
+Zeit. Also legen wir eine nur acht Byte große Tabelle mit Zweierpotenzen an,
+die dann nur noch indiziert ausgelesen werden muß:
+
+RECHNE	TAX	; Akku in Indexregister
+	LDA POTENZ,X	; Zweierpotenz bilden
+	RTS	; und fertig
+POTENZ	.BYT 1,2,4,8,16,32,64,128
+
+Das war es schon. Wer ein besseres und kürzeres und sogleich so einfaches
+Verfahren kennt, soll sich unbedingt melden!
+
+Auch im DOS der Floppy 1541 ist ab Adresse $efe9 eine solche Tabelle zu
+finden, im Betriebssystem des C 64 fehlt sie leider.
+
+Die Turbo-Plot-Routine
+
+Als praktisches Anwendungsbeispiel folgt jetzt eine Routine, die Punkte auf
+dem hochauflösenden Grafikbildschirm des C 64 in Maschinensprache setzt.
+Diese Routine verwendet eine Potenztabelle, um das Grafikbit in der zuvor
+berechneten Speicherzelle zu setzen. Dank einer ebenfalls integrierten
+Multiplikationstabelle mit 320 arbeitet dieses Unterprogramm sehr schnell.
+Mir ist es bisher noch nicht gelungen, eine noch schnellere Grafik-Routine
+zu finden (wenn man einmal von Tricks wie dem Blockieren des Interrupts und
+dergleichen absieht).
+
+Die Zeile (0 bis 199) wird im X-Register übergeben, die Spalte (0 bis 319)
+des gewünschten Pixels in den Speicherzellen 20 und 21 ($14, low und $15,
+high). Auf eine Überprüfung, ob die übergebenen Koordinaten im erlaubten
+Bereich liegen, wurde aus Geschwindigkeitsgründen verzichtet. Die Routine
+verwendet die Speicherzellen 2 und 3 als Speicherzeiger.
+
+TURPLOT	TXA	; Zeile
+	LSR	; durch 8 teilen
+	LSR	; dabei abrunden
+	LSR
+	ASL	; mal 2
+	TAY	; ergibt Lores-Zeilennr.
+	LDA MULT+1,Y	; Adresse Zeilenanfang
+	STA 3	; merken
+
+	TXA	; Zeile
+	AND #7	; Lownibble festhalten
+	CLC	; plus Zeilenanfang
+	ADC MULT,Y	; ergibt Startadresse
+	STA 2	; der Zeile
+
+	LDA 20	; Spalte
+	AND #$F8	; obere fünf Bytes
+	ADC 2	; ergeben Offset
+	STA 2	; zur Adresse
+
+	LDA 3	; High-Offset
+	ADC 21	; zum Highbyte der Spalte
+	STA 3	; addieren
+
+	LDA 20	; Spalte
+	AND #7	; daraus Bitnummer
+	TAX	; berechnen und Bitwert
+	LDA GRBIT,X	; aus Tabelle lesen
+
+	LDY #0	; Byte indirekt adressieren
+	ORA (2),Y	; Bit einschalten
+	STA (2),Y	; und in Grafik schreiben
+	RTS	; das war es schon!
+GRBIT	.BYT 128,64,32,16,8,4,2,1
+MULT	.WOR $2000,$2140,$2280,$23C0
+	.WOR $2500,$2640,$2780,$28C0
+	.WOR $2A00,$2B40,$2C80,$2DC0
+	.WOR $2F00,$3040,$3180,$32C0
+	.WOR $3400,$3540,$3680,$37C0
+	.WOR $3900,$3A40,$3B80,$3CC0,$3E00
+
+Die Potenztabelle GRBIT ist diesmal aus technischen Gründen in absteigender
+Reihenfolge geordnet. Bei der Tabelle MULT handelt es sich um eine typische
+Multiplikationstabelle, die die Formel 320 mal Zeile + $2000 wiedergibt. 320
+ist die Anzahl der Bytes in acht Grafikzeilen, $2000 ist die Startadresse
+der Grafik im Speicher. Probieren Sie die Turbo-Routine ruhig einmal aus!
+Wir behaupten ja gar nicht, daß nicht doch noch irgendwo eine Verbesserung
+möglich wäre...
+
+Menüsteuerung
+
+Weiter oben beim Thema Selbstmodifizierung wurde schon eine Methode
+vorgestellt, ein indirektes JSR (ADR) zu simulieren. Diese erweist sich in
+Zusammenarbeit mit einer Tabelle, in der die Sprungadressen gespeichert
+sind, als sehr nützlich. So kann beispielsweise eine Parallele zum
+Basicbefehl ON..GOTO geschaffen werden.
+
+Stellen Sie sich ein Programm vor, in dessen Hauptmenü Sie per Zifferntasten
+<1> bis <5> zwischen fünf verschiedenen Unterpunkten wählen können. Dazu sei
+eine Routine PRINTMEN vorgegeben, die den Menütext am Bildschirm ausgibt.
+Weiter verwenden wir die Systemroutine GETIN (65508), die ein Zeichen von
+der Tastatur liest und im Akku ASCII-codiert übergibt.
+
+MENU	JSR PRINTMEN	; Menütext ausgeben
+WAITKEY	JSR GETIN	; Taste holen
+	CMP #49	; kleiner als »1«?
+	BCC WAITKEY	; ja, dann weiter warten
+	CMP #54	; größer als »5«?
+	BCS WAITKEY	; ja, dann weiter warten
+	SEC	; für Subtraktion
+	SBC #49	; Code für »1« subtrahieren
+	ASL	; mal zwei
+	TAX	; ergibt Index
+	LDA ADR,X	; Sprungadresse Lowbyte
+	STA JUMP+1	; Selbstmodifikation
+	LDA ADR+1,X	; Highbyte lesen
+	STA JUMP+2	; und in Sprungbefehl
+JUMP	JSR 0	; 0 = Dummy
+	JMP MENU	; weiter im Hauptmenü
+
+Zunächst noch ein kleiner Verbesserungsvorschlag dazu: Nachdem geprüft
+wurde, daß die gedrückte Taste wirklich eine der Tasten von <1> bis <5> war
+(49 ist der dezimale Ascii-Code von »1«, »54« ist der um eins erhöhte
+dezimale Code von »5«), ziehen wir per SBC #49 den Wert 49 von der Eingabe
+ab. Das ergibt den Wert 0, falls die Taste <1> gedrückt wurde und so weiter
+bis zur 4 bei der Eingabe <5>. Vor dem Subtrahieren muß mit SEC das
+Carry-Flag gesetzt werden. Dieses Einbyte-Befehl können wir uns aber auch
+sparen: Wir wissen ja vom vorhergehenden BCS-Befehl noch, daß an dieser
+Stelle das Carry-Flag immer gelöscht ist (sonst hätte der BCS den Sprung
+durchgeführt). Also streichen wir das SEC und ziehen dafür eins weniger ab.
+Also: Als SEC und SBC #49 wird SBC #48. Der Computer zieht bei SBC nämlich
+immer noch das invertierte Carry-Flag mit ab.
+
+Der berechnete Wert von 0 bis 4 wird mit ASL mit zwei multipliziert und dann
+in das Indexregister X gebracht. Dort dient es als Index in die Tabelle mit
+Sprungzielen. Diese Tabelle enthält fünfmal jeweils in der Reihenfolge
+Lowbyte-Highbyte die Sprungadressen der Funktionen, die die fünf Menüpunkte
+ausführen. Beispiel: Wenn das Menü so aussieht:
+
+1 - Textspeicher löschen
+2 - Text laden
+3 - Text speichern
+4 - Editor
+5 - Programmende
+
+dann könnte man folgende Sprungtabelle verwenden:
+
+ADR .WOR LÖSCHEN,LOAD,SAVE,EDIT,ENDE
+
+Dabei könnte man als Routine »LÖSCHEN« direkt die schon weiter oben
+vorgeschlagene Routine zum Löschen des Textspeichers einsetzen. Liegt diese
+Routine beispielsweise bei $C432, so lauten die ersten beiden Einträge der
+ADR-Tabelle $32 und $C4. Jedes Sprungziel belegt also zwei Bytes, dies ist
+der Grund dafür, daß die Nummer der eingegebenen Taste mit zwei
+multipliziert wurde.
+
+Bei dieser praktischen Anwendung gibt es noch ein Problem: Wie man sieht,
+wurde unser Menü mit einer Endlosschleife programmiert. Auf welche Weise
+kann man dann aber beim Menüpunkt <5> das gesamte Programm verlassen? Im
+Prinzip wäre es vorstellbar, diesen Programmteil nach einer
+Sicherheitsabfrage einfach mit
+
+JMP 64738
+
+zu verlassen. Dieser Befehl ruft die bekannte Reset-Routine auf, die sowieso
+alle Brücken hinter sich abreißt und den Computer neu startet.
+
+Programm verlassen
+
+Es geht aber auch »sauberer«. Sollte es aus welchem Grund auch immer
+notwendig sein, das Menü mit einem einfachen RTS zu verlassen. Was passiert,
+wenn wir diesen Befehl einfach bei dem Label ENDE ablegen?
+
+ENDE	RTS
+
+Drückt der Anwender im Hauptmenü jetzt die Taste <5>, so ergibt die
+Umwandlung einen X-Wert von 8, es wird also das achte und das neunte Byte
+der ADR-Tabelle als Sprungziel gelesen. Das ergibt den korrekten Wert ENDE.
+Wenn das Programm jetzt aber JSR ENDE ausführt, stößt es dort nur auf den
+RTS-Befehl, kehrt also sofort ins Hauptmenü zurück. Wir müssen also zunächst
+die Rückkehradresse löschen, gewissermaßen nachträglich aus dem JSR ein JMP
+machen. Nichts leichter als das: Zwei PLA-Befehle erledigen das.
+
+ENDE	PLA
+	PLA
+	RTS
+
+Für Tabellen gibt es noch zahlreiche weitere Anwendungsmöglichkeiten.
+Beispielsweise funktioniert die Befehlserkennung weder beim normalen Basic
+noch bei Befehlserweiterungen mit einer langen Kette von CMP #-Befehlen.
+Stattdessen ist eine lange Tabelle enthalten, in der die Befehlswörter im
+Ascii-Code hintereinander vermerkt sind. Bei der Programmierung einer
+solchen Tabelle muß immer beachtet werden, daß das lesende Programm auch
+mitbekommt, wo ein Datensatz (hier: ein Befehlswort) endet. Dazu gibt es
+viele verschiedene Methoden: Man kann Nullbytes zwischen die Befehlswörter
+setzen (sog. »null-terminiert«), oder vor jedem Befehlswort wird die Länge
+in Bytes in den Speicher geschrieben (sog. »counted string«). Eine andere
+Möglichkeit wäre, eine zweite Tabelle mit den Start- und Endadressen
+einzuführen.
+
+Tabellen im C 64
+
+Die Systementwickler des C 64 indes haben sich eine sehr pfiffige Variante
+einfallen lassen, die sehr sparsam mit dem Speicherplatz umgeht: Man weiß
+ja, daß die Befehlswörter Texte im Ascii-Code sind, und damit vor allem aus
+Buchstaben und Satzzeichen bestehen. Bei allen diesen Zeichen ist das
+höchste Bit normalerweise gelöscht - nur nicht im letzten Zeichen jedes
+Befehlswortes. Ein gesetztes Bit 7 in dieser Tabelle markiert also das Ende
+eines Tabelleneintrags. Als Nachteil solcher Verfahren, die einzelne Bits
+testen müssen, kann immer die niedrigere Geschwindigkeit genannt werden.
+
+Diese Tabelle mit den Befehlswörtern finden Sie im Basic-Interpreter ab
+Adresse $A09E im ROM. Daran anschließend stehen die Basic-Fehlermeldungen.
+
+Zufallszahlen
+
+Wir werden sehr oft gefragt, wie man in Maschinensprache Zufallszahlen
+erzeugt. So etwas wie die RND-Funktion in Basic gibt es ja eigentlich nicht.
+Aber kein Spiel kommt ohne den programmierten Zufall aus. Also muß es
+irgendwie gehen. Tatsächlich ist das ganz einfach, wenn man einige Tricks
+kennt.
+
+So wie ja auch die RND-Funktion abhängig von ihrem Parameter verschiedene
+Arten von Zufallszahlen erzeugen kann, hat der Programmierer auch in
+Maschinensprache mehrere Varianten zur Auswahl.
+
+Da wären zunächst die »Pseudo-Zufallszahlen«. Sie sind nicht wirklich
+zufällig, die entsprechenden Routinen erzeugen vielmehr gleichverteilte
+Folgen von Zahlen. Dazu ein Beispiel: Betrachten Sie die folgende kurze
+Routine, die Pseudo-Zufallszahlen erzeugt:
+
+c000 a5 02	lda 02
+c002 49 06	eor #06
+c004 18	clc
+c005 69 4d	adc #4d
+c007 85 02	sta 02
+c008 60	rts
+
+Auf den ersten Blick wirken die Befehle sehr unsinnig. Der Inhalt der
+Speicherzelle 2 wird gelesen, mit der Zahl 6 EOR-verknüpft, dann wird zum
+Ergebnis 77 (hex. $4d) addiert. Das Ergebnis ist die Zufallszahl, es wird in
+Speicherzelle 2 vermerkt.
+
+Man erkennt, daß die Zahl, welche diese Routine ausgibt, nur vom alten
+Inhalt der Speicherzelle 2 abhängt. Geben Sie einmal
+
+POKE 2,0
+
+ein und starten dann den Zufallsgenerator mit
+
+SYS 49152
+
+Die erzeugte Zufallszahl steht jetzt in Speicherzelle 2. Lesen Sie diese
+Zelle mit PEEK aus, und Sie werden die erzeugte Zufallszahl finden: Es ist
+die 83. Starten wir das Maschinenprogramm jetzt nochmal, ohne vorher den
+Wert in Speicherzelle 2 zu ändern, wird als nächste Zahl die 162
+»erwürfelt«. Das geht nun immer so weiter: Die Reihe, welche unser Generator
+erzeugt, lautet ausgehend bei Null:
+
+0, 83, 162, 241, 68, 143, 214, 29, 104, 187, 10, 89
+
+und so weiter, bis die Routine erst nach dem 256. Durchlauf wieder die Null
+erzeugt. Dann beginnt die Folge von vorn. Seien Sie ehrlich: Können Sie auf
+Anhieb eine Systematik in dieser wirren Folge von Zahlen erkennen? Daher
+werden diese Zahlen eben auch »Pseudo-Zufallszahlen« genannt. Der aktuelle
+Wert in Speicherzelle 2, insbesondere der in unserem Fall gewählte Startwert
+0, wird »Samen« (engl. »seed«) genannt.
+
+Die erzeugte Zahlenfolge hat eine ganz wichtige und besondere Eigenschaft:
+In dieser Folge kommen alle (!) Zahlen von 0 bis 255 genau einmal vor - nur
+eben in absolut wirrer Reihenfolge. Keine Zahl wird ausgelassen, keine kommt
+doppelt vor. Sie glauben das nicht? Es gibt einen ganz einfachen Weg, die
+Qualität eines Zufallsgenerators zu testen. Folgendes Basicprogramm macht es
+vor:
+
+10 PRINT "{CLR}":REM Bildschirm löschen
+20 POKE 2,0:REM Samen vorgeben
+30 FOR I = 1 TO 256:REM 256 Zufallszahlen testen
+40 SYS 49152:REM würfeln
+50 A=PEEK(2):REM die neue Zufallszahl
+60 POKE A+1024,42:REM am Bildschirm markieren
+70 NEXT
+80 PRINT"{12 DOWN}"
+90 END
+
+Starten Sie das Programm mit RUN, erkennen Sie, daß sich die ersten 256
+Positionen des Bildschirms langsam mit Sternchen füllen. Da es ein guter
+Algorithmus, wird wirklich an jede der ersten 256 Bildschirmzeichen (das
+entspricht in etwa den ersten 6 ½ Zeilen) ein Stern erscheint. Je weniger
+deutlich der Betrachter das Muster erkennt, nach dem die Grafik aufgebaut
+wird, desto besser ist der Zufallsgenerator.
+
+Es ist wirklich eine sehr hohe Kunst, dieser Art der Zufallserzeugung die
+richtigen Parameter mitzugeben. Unser Algorithmus besitzt zwei Parameter:
+Die Zahl 6 in Speicherzelle $c003 und die Zahl $4d in $c006. Einzig und
+allein diese beiden Zahlen entscheiden darüber, ob der Algorithmus wirklich
+alle 256 Zahlen eines Bytes erreichen kann, und in welchem Muster. Ändern
+Sie doch nach Belieben einmal eine der beiden Werte, machen Sie zum Beispiel
+aus dem Befehl EOR #06 ein EOR #07. Wenn Sie jetzt das Basic-Testprogramm
+starten, werden Sie eine traurige Beobachtung machen: Der Algorithmus kann
+nur noch 16 Werte erreichen! Bereits nach dem 16. Wert wiederholt sich die
+Folge, die jetzt so lautet:
+
+0, 84, 160, 244, 64, 128, 224, 52, 128, 212, 32, 116, 192, 20, 96, 180
+
+Nur durch die Änderung einer Zahl (der 6 in die 7) ist unser schöner
+Qualitäts-Algorithmus so sehr in der Qualität »abgestürzt«. Andererseits
+kann es natürlich auch sinnvoll sein, eine Zufallszahlenroutine, die
+beispielsweise einen elektronischen Würfel steuern soll, so zu trimmen, daß
+Sie nur sechs verschiedene Werte liefern kann. Bei den Recherchen zu diesem
+Artikel wurden die beiden Vorgabeparameter 6 und $4d übrigens mit Hilfe
+eines Spezialprogramms durch Experimentieren ermittelt.
+
+Echten Zufalls gibt es nicht!
+
+Einen wesentlichen Nachteil hat unsere Pseudo-Zufallszahlenfolge indes doch
+noch. Sie lautet nämlich immer gleich. Wenn Sie das Basicprogramm mehrmals
+mit RUN starten, wird der Bildschirm immer nach dem selben Schema mit
+Sternchen gefüllt. Ein Spiel, das von dieser Routine gesteuert wird, würde
+immer auf die gleiche Art und Weise reagieren.
+
+Als Experiment sollten Sie jetzt einmal den POKE-Befehl in Zeile 20, der den
+Samen definiert, ändern. Geben Sie doch einmal ein:
+
+20 POKE 2,123
+
+Wenn Sie ein gutes fotografisches Gedächtnis haben, ist Ihnen bestimmt nicht
+entgangen, daß die Sternchen jetzt nach einem anderen Muster erscheinen. Die
+immer noch 256 Bytes lange Zufallszahlenfolge (mit EOR #6) lautet jetzt:
+
+123, 202, 25, 108, 183, 254, 69 ...
+
+Auch hier setzt erst nach dem 256. Wert die Wiederholung bei 123 ein.
+Übrigens handelt es sich natürlich wieder um unsere Ausgangs-Folge, wie
+steigen diesmal nur eben nicht bei der Zahl 0, sondern bei 123 ein. Aber das
+soll zunächst nicht weiter stören. Das Hauptproblem ist halt nur, daß wir
+den Samen (im ersten Fall 0, jetzt 123) irgendwie zufällig wählen müssen.
+Man könnte dafür einen Zufallsgenerator einsetzen, aber irgendwie beißt sich
+die Katze da »in den Schwanz«.
+
+Probieren wir jetzt einmal, auch andere Einflüsse in die Generierung der
+Zahlen einfließen zu lassen. Zum Beispiel die Uhrzeit, die beim C 64 in der
+Variablen TI bzw. in den Speicherzellen 160 bis 162 steht. Dabei ändert sich
+die Speicherzelle 162, das Lowbyte der Zeit, 60 mal in der Sekunde. Eine
+Vorhersage ist also kaum möglich.
+
+Diese Erkenntnis könnten wir auf zweierlei Art nutzen: Zum einen haben wir
+einen Weg gefunden, einen Samen vorzugeben, der wirklich praktisch nicht
+vorhergesagt werden kann. Ändern Sie nochmal das Programm:
+
+20 POKE 2,PEEK(162)
+
+Wenn Sie jetzt mehrmals hintereinander RUN eingeben, stellen Sie fest, daß
+die Sternchen diesmal wirklich scheinbar zufällig verteilt werden, und zwar
+bei jedem Neustart des Basicprogramms anders.
+
+Das ändert aber nichts an der Tatsache, daß wir es immer noch mit der
+gleichen Folge von Zahlen zu tun haben. Nur der Einsprungpunkt ist jetzt
+jeweils unterschiedlich.
+
+Viel vernünftiger ist es, die Speicherzelle 162 (oder eine andere Zelle, die
+sich sehr schnell ändert) irgendwo in den eigentlichen Zufallsgenerator
+einzubauen. Vorschlag:
+
+c000 a5 02	lda 02
+c002 49 06	eor #06
+c004 18	clc
+c005 65 a2	adc a2
+c007 85 02	sta 02
+c008 60	rts
+
+Geändert wurde nur der Addierbefehl bei c005. Er addiert jetzt zum Akku
+keine Konstante ($4d) mehr, sondern den Inhalt der Speicherzelle 162 (hex.
+$a2).
+
+Dieser Weg hat einen Vor- und einen Nachteil, die beide zu Tage treten, wenn
+Sie mit der neuen Version das Basicprogramm zum Test starten.
+
+Zwar erscheinen die Sterne jetzt wirklich ganz wild und ohne irgendein
+Muster auf dem Bildschirm, und sie werden auch bei jedem Neustart des
+Programms anders verteilt.
+
+Dem steht aber der Nachteil gegenüber, daß nun nicht mehr garantiert werden
+kann, daß bei 256 maligem Aufruf der Routine wirklich alle 256 Zahlen von 0
+bis 255 erreicht werden: Das Programm läßt einige Zeichen frei.
+
+Dieses Problem läßt sich relativ unproblematisch beseitigen, indem der
+Zufallsgenerator eben einfach öfters aufgerufen wird. Dazu ändern Sie den
+Endwert in Zeile 30 zum Beispiel von 256 in 1600. Bei einem Start sollten
+jetzt wirklich alle 256 Zeichen mit Sternchen gefüllt werden. Das ist der
+Beweis dafür, daß auch die neue Routine alle Werte von 0 bis 255 erreichen
+kann, nur braucht sie dafür eben vielleicht etwas länger. Welche der beiden
+vorgestellten Varianten sagt Ihnen mehr zu?
+
+Zufallszahlen hardwaremäßig
+
+Der Trick, mit dem der EDV-Profi seine Zufallszahlen bestimmt, haben wir
+bisher freilich schamhaft verschwiegen. Er ist aber auch wirklich gemein.
+Genauer gesagt gibt es sogar zwei Techniken, die sich beide spezielle
+Eigenschaften von Bausteinen im C 64 zu nutze machen: Einmal der Videochip
+VIC, zum anderen mit Hilfe des Soundchips SID.
+
+Das haben Sie ja schon gemerkt: Worauf es ankommt, ist, daß man eine
+Speicherzelle findet, deren Inhalt sich selbständig möglichst schnell und
+möglichst ohne System ändert. Davon gibt es im Bereich der Ein/Ausgabe eine
+ganze Menge. Auf die Möglichkeit, einen CIA-Timer zu benutzen, gehe ich hier
+nicht näher ein.
+
+Viel besser eignet sich da nämlich das Raster-Register des Videobausteins.
+In diesem Register steht immer, welche Rasterzeile des Monitorbildes gerade
+zum Sichtgerät geschickt wird. Der C 64 erzeugt 50 mal in der Sekunde ein
+neues Bild mit über 600 Zeilen, diese Speicherzelle mit der Adresse 53266
+($D012) wird vollautomatisch also etwa 30000 mal in der Sekunde geändert. Da
+ist sicher auch in Maschinensprache keine Vorhersage mehr möglich:
+
+FOR I=1TO3000:PRINT PEEK(53266):NEXT
+
+Wie Sie diese Zelle nun konkret nutzen, bleibt Ihnen überlassen. Sie könnten
+sie einfach nur mit LDA auslesen und das Ergbnis direkt als Zufallszahl
+verweden. Wem das zu unsicher ist, kann den gelesenen Wert auch irgendwie
+mit dem obigen Pseudo-Zufallszahlengenerator verbinden, zum Beispiel zur
+Vorgabe des Samens oder noch besser als Argument hinter EOR oder ADC.
+
+Die zweite Hardwaremöglichkeit liefert die besten Zufallszahlen auf dem C
+64. Mir ist jedenfalls keine bessere Methode in Assembler bekannt. Der
+Soundchip SID kann auf Rauschen geschaltet werden. Seine dritte Stimme hat
+eine wichtige Besonderheit: Der aktuelle Wert des Tongenerators kann aus der
+Speicherzelle 54299 ($d41b) gelesen werden. Dazu müssen wir als Wellenform
+für die dritte Stimme Rauschen wählen:
+
+POKE 54290,129
+
+Auch schadet es nicht, eine einigermaßen hohe Frequenz einzuschalten:
+
+POKE 54287,100
+
+Dieser Wert 100 ist nicht kritisch für die Erzeugung von Zufallszahlen. In
+einem Maschinenprogramm bietet sich vielmehr folgendes an:
+
+LDA #$81	; dezimal 129
+STA $d412	; 54290
+STA $d40f	; 54287
+
+Das Rauschen, das der SID jetzt erzeugt, hören wir nicht, da die Lautstärke
+nicht gesetzt wurde. Der Audioausgang ist stumm. Der Nachteil bei dieser
+Methode ist selbstverständlich, daß bei gleichzeitig zu hörenden Musik- oder
+Toneffekten ein Rauschen zu hören sein wird. Das Rauschen wird innerhalb des
+SID übrigens natürlich nicht mit einer Germanium-Diode erzeugt, wie ich
+einmal versehentlich im Leserforum 64'er 7/91 schrieb (der SID ist ein
+Silizium-Chip!), sondern vermutlich von einer Transistorschaltung.
+
+Für die Erzeugung der Zufallszahl können Sie jetzt irgendwo in Ihrem
+Programm die Speicherzelle 54299 lesen:
+
+LDA $d41b	; 54299
+
+Das Ergebnis ist ein wirklich zufälliger Wert von 0 bis 255.
+
+Die bisher vorgestellten Methoden zur Zufallszahlenerzeugung können (und
+sollten!) Sie nach Belieben kombinieren, zum Beispiel so:
+
+LDA $d41b
+EOR $d012
+EOR $a2
+
+Was nun noch fehlt, ist die Möglichkeit, Zufallszahlen in einem kleineren
+Bereich als von 0 bis 255 zu erhalten. Wenn Zufallszahlen von 0 bis zu einer
+Zweierpotenz (zum Beispiel von 0 bis 15) gebraucht werden, kann man sich
+einfach mit einer AND-Maske helfen:
+
+JSR RANDOM
+AND #$0f
+
+RANDOM liefert im Akku eine Zufallszahl von 0 bis 255, der AND-Befehl setzt
+die vier höchsten Bit auf Null, das Ergebnis ist ein Wert von 0 bis 15. Das
+geht aber nur so lange, wie die Obergrenze plus eins eine Zweierpotenz (hier
+16 = 2 hoch 4) ist. Brauchen wir beispielsweise für einen Lottogenerator
+Zahlen von 1 (nicht Null) bis 49, gehe man beispielsweise folgendermaßen
+vor:
+
+TEST	JSR RANDOM
+	CMP #0	; Null unerwünscht
+	BEQ TEST	; also ausfiltern
+	CMP #50	; (50 = $32) größer als 49?
+	BCS TEST	; ja, weiterprobieren
+
+Der Nachteil: Diese Routine kann das »Pech« haben, daß erst nach dem 20.
+Aufruf von RANDOM der Wert wirklich im gewünschten Bereich 1 bis 49 liegt.
+Höhere Laufzeiten ergeben sich. Alternativ wäre es auch denkbar, eine Art
+Modulo-Division durchzuführen, also den Divisionsrest durch 50 zu nehmen und
+dann nur noch die Null auszusondern. Dieser Weg ist vor allem dann zu
+empfehlen, wenn der Wert in einem sehr kleinen Bereich landen muß.
+
+Wohin mit all den Daten?
+
+In jedem Assembler-Lehrbuch werden die besonderen Vorzüge der
+Zeropage-Adressierung gepriesen. Hohe Verarbeitungsgeschwindigkeit und
+Speicherplatzersparnis sind nicht die einzigen Vorteile; die
+indirekt-indizierte Adressierung kann nur auf die Zeropage zugreifen, nicht
+auf absolute 16-Bit-Adressen. Damit wird der Leser bereits alleine gelassen.
+Er erfährt nicht, welche Adressen der C 64-Zeropage in der Praxis geeignet
+sind. Das wird nun nachgeholt.
+
+Auf die Adressen 2 bis 6 und $FB-$FE wird weder vom Basic-Interpreter noch
+vom Betriebssystem zugegriffen. Der Computer setzt diese Adressen lediglich
+beim Einschalten auf Null oder andere definierte Werte. Für die Praxis
+bedeutet dies, daß Ihnen diese Adressen uneingeschränkt zur Verfügung
+stehen.
+
+Von anderen Adressen hingegen sollte man besser die Finger lassen. Dazu
+gehören an vorderster Stelle die Speicherstellen 0 und 1. Sie beinhalten für
+die CPU sehr wichtige System-Parameter, außerdem können bestimmte Bits
+dieser Zellen gar nicht vom Programmierer manipuliert werden. Der Bereich
+von $C5 bis $F6 wird vom Bildschirmeditor des Betriebssystems benutzt,
+Änderungen in diesem Bereich können zu unvorhergesehenen Störungen führen.
+Wichtig für den Basicinterpreter sind die Speicherzellen 8 bis $8F.
+Unsachkundige POKEs in eine dieser Zellen bringen das Basicprogramm zum
+Absturz. Bei dem Bereich $90 bis $C4 handelt es sich um Zellen, die vor
+allem bei Ein-/Ausgabeoperationen gebraucht werden.
+
+Tabu sind die Speicherzellen 8 bis $56 und $73 bis $8B für solche
+Maschinenprogramme, die von einem Basicprogramm aufgerufen werden und nach
+Beendigung wieder in dieses zurückkehren sollen.
+
+Die meisten Programme kommen ohne die RS 232 Schnittstelle und ohne die
+Datasette aus. In diesem Fall können Sie auch über die Zellen $9B, $9C und
+$A6 bis $AB sowie $F7 bis $FE frei verfügen.
+
+Die Adressen $22-$2A und $57-$60 sind sogenannte »verschieden genutzte
+Arbeitsspeicher«. Sie werden vom Basicinterpreter vor allem bei
+arithmetischen Operationen als Zwischenspeicher verwendet und stehen Ihnen
+zu diesem Zweck natürlich auch zur Verfügung. Sobald wir allerdings
+bestimmte Interpreterroutinen aufrufen, können die Inhalte dieser Adressen
+verloren gehen. Eine längere Aufbewahrung von Daten ist hierin also nicht
+möglich, andererseits kann durch Schreibzugriffe aber auch das System nicht
+verwirrt werden.
+
+Kopieren der Zeropage
+
+Zum Abschluß des Exkurses über die Zeropage soll noch ein Trick verraten
+werden, der vor allem von professionellen Programmen angewendet wird: Das
+Kopieren der Zeropage. Wir sichern die Zeropage an einem anderen Platz, zum
+Beispiel ab $6000. Solange dann keine Interpreter- oder Basicroutinen
+aufgerufen werden, können dann praktisch alle Adressen in der Zeropage ohne
+Einschränkung genutzt werden. Danach schreiben wir die Zeropage wieder von
+der Kopie zurück und können wie gehabt weiter arbeiten.
+
+Die Adressen 0 und 1, die zur direkten Steuerung der Hardwareumgebung
+sorgen, sind nach wie vor von Manipulationen ausgenommen.
+
+Da Sie auf diese Weise viel Platz in der Zeropage gewonnen haben, ist es
+jetzt sogar möglich, eine Tabelle aus Geschwindigkeitsgründen in die Tabelle
+zu verlegen. Damit steigt auch der Wert der indiziert-indirekten
+Adressierung LDA (ADRESSE,X) erheblich.
+
+Dennoch ist der Speicherplatz in der Zeropage begrenzt. Überlegen Sie also
+gut, welche Daten und Variablen Sie besonders oft und/oder schnell brauchen
+und verlegen nur diese »nach unten«.
+
+Nun werfen wir noch einen Blick auf allgemeine Möglichkeiten, den
+Speicherplatz eines Programms niedrig zu halten. Mit übermäßig viel Speicher
+ist der C 64 ja nicht gesegnet.
+
+Jedes Programm benötigt eine Menge Schalter, sogenannte »Flags«. Meist
+belegt ein Flag genau ein Byte, für dessen Inhalt es oft nur zwei
+Möglichkeiten gibt: 0 bedeutet »nein«, 1 meint »ja«. Für diese primitive
+digitale Entscheidung genügt aber auch 1/8 Byte, also ein Bit. Auf diese
+Weise lassen sich acht Schalter in ein Byte packen. Wenn Sie sich zum
+Beispiel die Steuerregister des Videocontrollers ansehen, werden Sie
+feststellen, daß fast jedes VIC-Register mehrere Funktionen hat, wobei jedem
+Bit eine eigene Bedeutung zukommt. Der VIC wäre viel langsamer, würde er auf
+Bytes statt auf Bits zugreifen. Außerdem würde der Speicherplatz für seine
+Register auf das Mehrfache steigen.
+
+Man sollte also jedem Bit dieser Speicherzellen eine eigene Bedeutung geben
+und nur die Bits prüfen. Dazu gibt es in Maschinensprache die logischen
+Befehle:
+
+ORA #$10
+
+setzt das Bit mit dem Wert $10 = 16 (Bit 4).
+
+AND #$FE
+
+löscht das Bit mit dem Wert 2 (Bit 1). Auf diese Weise kann zunächst der
+Wert der zu manipulierenden Speicherzelle geladen werden, dann führen wir
+die »Maskierung« durch, und anschließend kann der Wert wieder in die Zelle
+wandern.
+
+Um ein Bit zu prüfen, verwendet man ebenfalls den AND-Befehl:
+
+AND #$20
+
+ergibt Null, falls das Bit mit dem Wert $20 = 32 (Bit 5) gesetzt war. Das
+Ergbnis lautet $20 bei gesetztem Bit 5. Auch der BIT-Befehl, sonst kaum
+bekannt, bietet da Möglichkeiten:
+
+BIT Speicherzelle
+
+läßt den Inhalt dieser Speicherzelle unverändert. Danach ist das N-Flag
+gesetzt, falls das Bit 7 (Wert 128) der Speicherzelle gesetzt war. Das
+V-Flag wird gesetzt, falls Bit 6 gesetzt war.
+
+Die übrigen Bits erhält man mit Hilfe des Akkus über das Zero-Flag des
+Prozessors. Soll beispielsweise das Bit 0 (Wert 1) getestet werden,
+schreiben Sie:
+
+LDA #1
+BIT Speicherzelle
+BEQ Bit nicht gesetzt
+BNE Bit gesetzt
+
+Der Bit-Befehl »andet« den Inhalt des Akkumulators mit dem Inhalt der
+angegebenen Speicherzelle. Möchte man Bit 1 testen, so ersetze man LDA #1
+durch LDA #2 und so weiter.
+
+Durch Selbstmodifikation können Flags bekanntlich vermieden werden. Aber
+auch sonst bietet die Selbstmodifikation die Möglichkeit, Speicherbereiche
+mehrfach zu nutzen und so Speicherplatz zu sparen: Die Steuerung einer
+Sprungtabelle ist nur ein Beispiel.
+
+Auch die »Wegwerfmethode« ist sehr praktisch. Programme werden einmal
+abgerabeitet und dann zum Beispiel durch Nachladen überschrieben und
+gelöscht.
+
+Der BIT-Trick
+
+Bei der Gelegenheit soll noch eine weitere sehr wichtige Anwendung des
+BIT-Befehles erklärt werden. Dieser Trick, die Systemprogrammierer des C 64
+haben ihn massiv angewendet, wird erstaunlicherweise in der Literatur fast
+immer verschwiegen. Dabei ist er so praktisch und spart wieder einige Bytes.
+
+Wir wollen diesen Trick anhand seiner Anwendung im Kernal des C 64 erklären.
+Wer einen Monitor besitzt, kann den Bereich ab $F6FB bis $F72B
+disassemblieren:
+
+f6fb a9 01	lda #$01
+f6fd 2c a9 02	bit $02a9
+f700 2c a9 03	bit $03a9
+f703 2c a9 04	bit $04a9
+f706 2c a9 05	bit $05a9
+f709 2c a9 06	bit $06a9
+f70c 2c a9 07	bit $07a9
+f70f 2c a9 08	bit $08a9
+f712 2c a9 09	bit $09a9
+f715 48	pha
+....
+
+Ab Adresse $f716 folgt dann die Routine, die den Inhalt im Akku, der zuvor
+auf den Stack gerettet wurde, weiter verarbeitet. Es handelt sich um die
+Routine, die den Text »I/O ERROR #« und dahinter die Nummer, die im Akku
+stand ausgibt. Diese Fehlermeldung werden Sie nicht kennen. Sie ist
+normalerweise abgeschaltet. Durch Setzen eines Bits in Speicherzelle 157
+wird dieser Modus jedoch aktiviert. Geben Sie folgende Befehle zusammen in
+einer Basiczeile ein:
+
+POKE 157,64 : LOAD "$",12
+
+Da es das Gerät Nr. 12 nicht gibt, erscheint ein ?DEVICE NOT PRESENT ERROR.
+Davor steht der neue Text: »I/O ERROR #5«.
+
+Doch zurück zur Routine. An dem Disassemblerlisting fallen sofort die
+BIT-Befehle auf. Wir wissen: der BIT-Befehl ändert weder den Inhalt einer
+Speicherzelle noch greift er auf Akku, X oder Y zu. BIT beeinflußt nur die
+Flags.
+
+Wenn wir also obige Routine bei $f6fb »betreten« (dezimal 63227), passiert
+folgendes: In den Akku wird per LDA eine Eins geladen. Die folgenden acht
+Bit-Befehle verändern diesen Inhalt nicht: Bei $f715 steht immer noch die
+eins im Akku. Wenn Sie probeweise eingeben:
+
+POKE 157,64 : SYS 63227
+
+(bitte wieder in einer Zeile), erscheint brav ein »I/O ERROR #1« am
+Bildschirm. Es funktioniert also.
+
+Und hier kommt der eigentliche Trick: Jetzt werden die seltsamen BIT-Befehle
+erläutert. Vorher haben wir gesehen, daß es nicht nur den I/O ERROR #1 gibt,
+sondern auch andere Nummern, beispielsweise die Nummer 5. Wir müssen also
+dafür sorgen, daß bei $f715 eine fünf im Akku steht. Und jetzt sehen Sie
+sich einmal die Bit-Befehle genauer an: Fällt Ihnen etwas auf? Richtig: Es
+handelt sich in Wirklichkeit um verkappte LDA #-Befehle! Wenn Sie nämlich
+zum Beispiel ab $f707 disassemblieren (diese Zeilennummer gar es im obigen
+Listing gar nicht), erscheint folgendes:
+
+f707 a9 05	lda #$05
+f709 2c a9 06	bit $06a9
+f70c 2c a9 07	bit $07a9
+f70f 2c a9 08	bit $08a9
+f712 2c a9 09	bit $09a9
+f715 48	pha
+....
+
+Aha! Aus einem der BIT-Befehle ist ein LDA #5 geworden! Wird die Routine
+jetzt also ab $f707 angesprungen, gibt de Computer den I/O ERROR #5 aus!
+Probieren Sie's aus:
+
+POKE 157,64 : SYS 63239
+
+Der POKE-Befehl ist hier übrigens immer erforderlich, da die Routine sonst
+gar nichts ausgibt. Der Test, ob Bit 6 in der Zelle 157 gesetzt ist, folgt
+bei $f71b - übrigens auch mit der BIT-Methode, die wir oben schon
+kennengelernt haben.
+
+Und was haben Sie nun davon? Die Alternative wäre ja gewesen, mit
+Sprungbefehlen die nicht erwünschten LDAs zu umgehen. So zum Beispiel:
+
+f6fb lda #1
+f6fd jmp f800
+f700 lda #2
+f702 jmp f800
+f705 lda #3
+f708 jmp f800
+f70b lda #4
+und so weiter
+f800 (hier weiter im Programm)
+
+Diese Konstruktion ist aufwendiger und verbraucht viel mehr Speicherplatz.
+Statt der JMP-Befehle hätte man auch BNE-Befehle schreiben können, aber auch
+die hätten pro LDA noch ein Byte mehr verbraucht als die Lösung über das
+»Ausmaskieren« durch den Bit-Befehl.
+
+Im Assemblerformat könnte eine Routine, die drei Einsprungpunkte besitzt und
+dann je nach Einsprung den Bildschirm löscht, einen Stern ausgibt oder ein
+Leerzeichen, so aussehen (wir zeigen erst die »klassische Methode mit
+Sprungbefehlen, dann die verkürzte):
+
+CLEAR	lda #$93	; 147, Bildschirm löschen
+	bne AUSGABE	; immer springen, da A <> 0
+STERN	lda #$2a	; 42 Stern
+	bne AUSGABE	; unbedingter Sprung
+SPACE	lda #$20	; 32 Leerzeichen
+AUSGABE	jmp $ffd2	; PRINT Zeichen drucken
+
+Und hier die kompakte Version:
+
+CLEAR	lda #$93	; 147, Bildschirm löschen
+	.byt $2c	; Code für BIT-Befehl
+STERN	lda #$2a	; 42 Stern
+	.byt $2c	; lda #$20 verhindern
+SPACE	lda #$20	; 32 Leerzeichen
+	jmp $ffd2	; PRINT Zeichen drucken
+
+Auch das Label AUSGABE wurde eingespart. Zum Aufruf der Routine haben Sie
+drei Möglichkeiten, je nachdem, was ausgegeben werden soll:
+
+JSR STERN oder JSR CLEAR oder JSR SPACE
+
+Eine ähnliche Routine, die entweder ein Leerzeichen ($ab3f), ein Cursor
+Right ($ab42) oder ein Fragezeichen ($ab45) ausgibt, ist ebenfalls im
+Basic-Interpreter des C 64 enthalten.
+
+$2c ist der hexadezimale Code für ein Dreibyte-BIT, also den absoluten
+BIT-Befehl. Der Dezimalwert von $2c ist 44. Soll nur ein Einbyte-Befehl
+wegmaskiert werden, verwenden Sie ein Zeropage-Bit mit dem Code $24 (dezimal
+36). Hier ein Beispiel dazu für eine Routine, die je nach Ansprung entweder
+mit gesetztem (SEC) oder mit gelöschtem (CLC) Carry-Flag aktiviert wird:
+
+GESETZT	SEC	; Carry setzen
+	.BYT $24	; CLC ausmaskieren
+GELOESCHT	CLC	; Carry löschen
+	...	; weiter
+
+Mit dem Disassembler betrachtet sieht die Routine so aus:
+
+c000 38	sec
+c001 24 18	bit $18
+c003 ...
+
+Der BIT-Befehl beeinflußt das Carryflag nicht. Sonst wäre diese Routine ja
+sinnlos. Der Einsprungpunkt GESETZT liegt also bei $c000. Der Aufruf für
+gelöschtes Carry liegt bei $c002:
+
+c002 18	clc
+c003 ...
+
+Damit wären wir am Ende unseres kleinen Kurses angelangt. Hoffentlich
+konnten wir Ihnen viele gute Tips geben, die Ihnen bei Ihren
+Eigenentwicklungen gute Hilfestellung leisten. Sollten Sie noch Fragen haben
+(vielleicht erst aufgrund dieses Artikels), schreiben Sie uns doch! Auch für
+Verbesserungsvorschläge finden Sie bei uns immer ein offenes Ohr.
+
+(Nikolaus Heusler)
+*********
+
+End of the International Project 64 etext of the article "Das Salz in der
+Suppe".
+
+*********

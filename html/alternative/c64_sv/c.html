@@ -1,0 +1,1072 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="sv" dir="LTR">
+<head>
+ <title>iDOC= | Commodore 64 användarmanual</title>
+ <link rev="made" href="m&#65;ilto:peter&#64;softwolves.pp&#46;se">
+ <meta name="author" content="Peter Karlsson">
+ <meta name="description" content="iDOC=:s HTML-version av den svenska Commodore 64-användarmanualen, bilaga C">
+ <link rel="stylesheet" type="text/css" href="c64.css">
+ <link rel="next" href="d-j.html" title="Nästa">
+ <link rel="previous" href="a-b.html" title="Föregående">
+ <link rel="first" href="0.html" title="Första">
+ <link rel="last" href="k-p.html" title="Sista">
+ <link rel="toc" href="./" title="Innehållsförteckning">
+ <link rel="copyright" href="./" title="Upphovsrättsinformation">
+ <link rel="help" href="../../../help/" title="Vävplatshjälp">
+ <link rel="search" href="../../search" title="Sök">
+ <link rel="index" href="../" title="iDOC=:s textindex">
+ <link rel="home" href="../../main" title="iDOC=">
+ <!-- $Id: c.html,v 1.8 2003/09/24 18:48:02 peter Exp $ -->
+</head>
+
+<body>
+<div class="logo">
+
+<h1>
+ <a href="../../">
+  <img src="../../../pics/idoccbm.gif" width=211 height=150 border=0
+       alt="iDOC="></a>
+ <a href="../../../pics/cbm/c64anvmanual.jpg">
+  <img src="../../../pics/cbm/c64anvmanual-tumnagel.jpg" border=0
+       alt="Commodore 64 användarmanual" width=100 height=149></a>
+</h1>
+
+</div>
+
+<div class="navigation">
+ [ <a href="a-b.html">&lt;-- Föregående</a>
+ | <a href="./">Innehållsförteckning</a>
+ | <a href="d-j.html">Nästa --&gt;</a>
+ ]
+</div>
+
+<div class="intro">
+<h1>BILAGOR</h1>
+</div>
+
+<div class="body">
+<h2 id="c">C. BILAGA C:</h2>
+
+<h2>Commodore 64 BASIC</h2>
+
+<p>
+ Denna handbok har hittills introducerat för dig ett fåtal kommandon i
+språket BASIC. Du vet litet om programmering och hur program ser ut. l denna
+bilaga finns en komplett lista på alla regier (dvs den SYNTAX) som gäller
+för de olika BASIC-kommandona, plus en beskrivning av vad de utför. Du
+rekommenderas an experimentera med alla kommandon för att komma ihåg att du
+inte kan skada din C-64 genom att skriva program. Det bästa sättet att lära
+sig är att undersöka saker.
+<p>
+ Denna bilaga har delats upp i fyra olika delar. Dessa delar är:
+
+<ol>
+ <li>Variabler och operationer: beskriver olika typer av variabler och de
+      olika aritmetiska och logiska operationer som kan göras på dessa.
+ <li>Kommando: beskriver de kommandon som används för att arbeta med
+     programmen, editera, spara och radera dem.
+ <li>Programinstruktioner: beskriver de kommandon som används i programmen.
+ <li>Funktioner: beskriver sträng- och numeriska utskriftsfunktioner.
+</ol>
+
+<p>
+ I varje sektion finner du kommandona listade i bokstavsordning. En komplett
+beskrivning av alla BASIC-kommandon finner du i C-64ans
+programmeringshandbok. Den finns där du köpte din dator.
+
+
+<h3>1. VARIABLER OCH OPERATIONER</h3>
+
+<h4>a. Variabler</h4>
+
+<p>
+ C-64an använder tre typer av variabler i BASIC. Dessa är: decimaltal,
+heltal och strängvariabler.
+<p>
+ DECIMALTAL är numeriska variabler inom området 10E-38 till 10E+38 med en
+noggrannhet av nio siffror. När talet blir längre än 9 siffror skrivs det ut
+i exponentform: Ett tal med en siffra och 8 decimaler följt av ett E och ett
+tal som är 10-exponenten av talet. Till exempel, kommer talet 123456789001
+att skrivas som 1.2345689E+11.
+<p>
+ HELTAL är variabler för tal inom intervallet -32768 till 32767, utan
+decimaler. En heltalsvariabel kräver mindre plats i minnet. Skillnaden är
+inte värd att lägga märke till om du inte har stora mängder med variabler i
+så kallade matriser. Exempel på heltal är 5, 10 och -103.
+<p>
+ STRÄNGAR eller TEXTSTRÄNGAR används för att lagra tecken av olika slag,
+bokstäver, siffror eller andra tecken som VIC kan skriva ut. Ett exempel på
+en strängvariabel är "Commodore 64".
+<p>
+ Ett variabelnamn kan bestå av en eller två bokstäver eller också av en
+bokstav följt av en siffra. Egentligen kan det vara längre, men datorns
+Basic "ser" bara de två första tecknen.
+<p>
+ En heltalsvariabel specificeras genom att variabelnamnet följs av ett
+%-tecken. Strängvariabler har ett $-tecken som sista tecken i namnet.
+<p>
+EXEMPEL:<br>
+Namn på: A, A5, BZ<br>
+Namn på heltal: A%, A5%, BZ%<br>
+Namn på strängar: A$, A5$, BZ$<br>
+<p>
+ MATRISER används för att samla ihop en större mängd variabler under samma
+namn. Detta gör man genom att använda ett antal extra siffror i
+variabelnamnet. Vilken typ av variabel och hur många anges i DlM-kommandot.
+Alla typer av variabler kan användas. Efter DlM-kommandot anges
+variabelnamnen och inom parentes hur många variabler de får innehålla.
+<p>
+EXEMPEL: DIM A(7), BZ%(11), A$(87)
+<p>
+ Matriserna kan ha mer än en dimension. En tvådimensionell matris kan ses
+som en tabell med rader och kolumner där första siffran innanför parentesen
+anger raden och den andra kolumnen.
+<p>
+EXEMPEL: DIM A(7,2), BZ%(2,3,4), Z$(3,2)
+<p>
+Det finns tre variabelnamn som är reserverade för C-64ans interna bruk och
+normalt inte kan användas. Dessa variabler är ST, TI och TI$. ST är en
+status(läges)variabel för kommandon som berör in/ut-operationer. Värdet på
+ST kommer till exempel att ändra sig när det är problem med en
+programladdning från kassettband eller flexskivminne. En mera detaljerad
+beskrivning av ST finns i programmeringshandboken för C-64an.
+<p>
+ TI OCH TI$ är variabler som berör den inbyggda klocka som finns i C-64an.
+Variabeln TI ökas med 1 varje 1/60 sekund. Den börjar på noll när din C-64
+slås på. Värdet kan endast ändras genom att förändra värdet i TI$.
+<p>
+ TI$ är en sträng som kontinuerligt uppdateras av systemet. De första två
+tecknen innehåller antalet timmar, det tredje och fjärde antalet minuter och
+det femte och sjätte antalet sekunder. Denna variabel kan ges ett annat
+värde (så länge tecknen är siffror) och kommer automatiskt att uppdateras
+från detta tal.
+<p>
+EXEMPEL: TI$ = "101530" ställer klockan till 10:15:30.
+<p>
+ Klockan nollställs när datorn slås på.
+
+
+<h4>b. OPERATIONER</h4>
+De aritmetiska operationerna anges med följande tecken:
+
+<table border=0>
+ <tr><td>+<td>addition
+ <tr><td>-<td>subtraktion
+ <tr><td>*<td>multiplikation
+ <tr><td>/<td>division
+ <tr><td>&#8593;<td>exponentiering eller potensupphöjning
+</table>
+<p>
+ På en rad som innehåller flera utförs operationerna i en bestämd ordning.
+Om flera operatorer används tillsammans ger datorn följande
+prioritetsordning på dem: Först exponering, sedan multiplikation och
+division, och sist addition och subtraktion. Om du vill att operationerna
+skall ske i en viss ordning, tillåter C-64ans BASIC att du isolerar en
+beräkning genom att omge den med parenteser. Operationer inom parentes görs
+först av alla. Var noga med att formeln innehåller lika många
+vänsterparenteser som högerparenteser, annars får du ett "SYNTAX ERROR" när
+du kör programmet.
+<p>
+
+Det finns också operatorer för att jämföra två värden:
+
+<table border=0>
+ <tr><td>=<td>lika med
+ <tr><td>&lt;<td>mindre än
+ <tr><td>&gt;<td>större än
+ <tr><td>&lt;= eller =&lt;<td>mindre eller lika med
+ <tr><td>&gt;= eller =&gt;<td>större eller lika med
+ <tr><td>&lt;&gt; eller &lt;&gt;<td>inte lika med
+</table>
+<p>
+Till slut så finns det tre logiska operaturer:
+
+<table border=0>
+ <tr><td>AND
+ <tr><td>OR
+ <tr><td>NOT
+</table>
+<p>
+ Dessa används oftast för att lägga ihop flera villkor i ett
+IF...THEN-kommando.
+<p>
+EXEMPEL:
+
+<table border=0>
+ <tr><td>IF A=B AND C=D THEN 100<td>både A=B och C=D skall vara sanna.
+ <tr><td>IF A=B OR C=D THEN 100<td>någon av A=B eller C=D skall vara sann.
+</table>
+
+<h3>2. KOMMANDON</h3>
+
+<h4 id="cont">CONT (continue = fortsätt)</h4>
+
+<p>
+ Kommandot används för att starta upp ett program där programmet blev
+avbrutet t ex genom att STOP-tangenten trycktes, ett STOP eller END-kommando
+i programmet. Programmet körs igång på samma ställe där det blev avbrutet.
+<p>
+ CONT fungerar inte om du ändrat något i programmet inte ens om du bara
+flyttat markören upp till en rad och tryckt RETURN utan att ändra någonting
+i raden. Inte ens om programmet stannades genom ett fel, eller om du gör ett
+fel innan du kör igång programmet med CONT. I dessa fall svarar C-64an med
+"CAN'T CONTINUE  ERROR".
+
+<h4 id="list">LIST</h4>
+
+<p>
+ LIST-kommandot tillåter att du tittar på de programrader som du skrivit
+eller laddat in i C-64ans minne. Skriver du LlST-kommandot utan några
+siffror kommer hela programmet att listas ut på din skärm.
+(Listningshastigheten kan sänkas genom att trycka på CTRL eller stoppas
+genom att trycka på STOP-tangenten.) Om LIST fölls av ett radnummer listas
+endast raden med det numret ut. Anges två nummer med ett streck emellan
+listas alla rader mellan dessa två nummer ut. Skriver du LIST med ett nummer
+följt av ett streck listas raderna från och med denna rad till programmets
+slut. Och skriver du LIST med ett streck och ett nummer listas alla rader
+till och med det numret. Med dessa variationer på kommandot kan du lista
+vilken del av programmet du vill och få fram raderna på skärmen för att göra
+ändringar.
+<p>
+EXEMPEL:
+
+<table border=0>
+ <tr><td>LIST        <td>Listar hela programmet.
+ <tr><td>LIST 10-    <td>Listar rad 10 till programmets slut.
+ <tr><td>LIST 10     <td>Listar rad 10.
+ <tr><td>LIST -10    <td>Listar programmet från början till rad 10.
+ <tr><td>LIST 10-20  <td>Listar rad 10 till 20.
+</table>
+
+<h4 id="load">LOAD</h4>
+
+<p>
+ Detta kommando används när du har ett program på kassettband eller
+flexskiva och vill hämta programmet för att köra det. Om du bara skriver
+LOAD och trycker RETURN, kommer C-64an att ladda in det första program den
+hittar på kassettbandet. Programmet kan du sedan köra, lista eller göra vad
+du vill med. Du kan också skriva LOAD följt av ett programnamn mellan
+citationstecken. Efter citationstecknet kan du lägga till ett kommatecken
+och ett tal eller en numerisk variabel som visar varifrån programmet skall
+laddas. Om inget nummer anges antar C-64an att den skall ladda från enhet nr
+1, kassettenheten.
+<p>
+ En annan vanlig enhet som program laddas in från är flexskivminnet, enhet
+nr 8.
+<p>
+EXEMPEL:
+<table>
+ <tr><td>LOAD             <td>Läser in första programmet från kassettbandet.
+ <tr><td>LOAD "HEJSAN"    <td>Söker efter programmet med namnet "HEJSAN" på
+                              kassettbandet och läser in det om den hittar det.
+ <tr><td>LOAD A$          <td>Söker efter programmet med namnet som finns i A$ och
+                              läser in det.
+ <tr><td>LOAD "HEJSAN",8  <td>Söker efter programmet med namnet HEJSAN" flexskiveminnet.
+ <tr><td>LOAD "*",8       <td>Laddar in det första programmet på flexskivan.
+</table>
+<p>
+ LOAD-kommandot kan användas i ett program för att ladda in och köra nästa
+program på bandet.
+
+<h4 id="new">NEW</h4>
+
+<p>
+ Detta kommando raderar hela programmet som ligger i C-64ans minne och
+nollställer alla variabler som har använts. Om du inte tidigare sparat undan
+programmet på kassettband eller flexskiva så är ditt program borta för evigt
+om du inte skriver in det igen. VAR FÖRSIKTIG när du använder detta
+kommando!
+<p>
+ NEW-kommandot kan också användas i programmet. När C-64an kommer fram till
+detta kommando raderar den allt som finns i minnet och stannar. Detta är bra
+om man vill lämna allt städat och klart när ett program har körts.
+
+<h4 id="run">RUN</h4>
+
+<p>
+ När du har ett program i minnet och vill köra det, skriver du RUN och
+C-64an börjar utföra alla kommandon i programmet. Om inget radnummer anges
+börjar C-64an på raden med det lägsta numret. Om numret finns börjar
+körningen på det radnumret.
+<p>
+EXEMPEL:
+<table>
+ <tr><td>RUN      <td>Programmet kör igång från första raden.
+ <tr><td>RUN 100  <td>Programmet kör igång i rad 100.
+ <tr><td>RUN X    <td>SYNTAX ERROR (Du måste alltid skriva ut numret och inte använda
+                      bokstäver.)
+</table>
+
+<h4 id="save">SAVE</h4>
+
+<p>
+ Detta kommando sparar undan det program som för tillfället finns i C-64ans
+minne på kassettband eller flexskiva. Skriver du bara SAVE försöker C-64an
+att spara programmet på kassettbandet. Det finns ingen kontroll att bandet
+redan innehåller ett program, så var försiktig så inget program går förlorat
+när du sparar ditt program. Om du anger ett namn efter SAVE-kommandot så
+skrivs det namnet in på bandet eller flexskivan. Det blir då enklare att
+hitta programmet när du skall hämta det igen. Efter namnet, mellan
+citationstecknen, kan du lägga till ett kommatecken och ett nummer eller en
+variabel. Numret talar om på vilken enhet som programmet skall sparas. Enhet
+nummer 1 är kassettenheten och nummer 8 är flexskivminnet. Efter det första
+numret kan det läggas ett kommatecken och ett nummer till, som kan vara 1
+eller 2. Om numret är en 2:a skrivs end slut på bandet markering (end of
+tape) in på bandet. Om C-64an söker efter ett program och finner denna
+markering så skriv "FILE NOT FOUND ERROR" ut.
+<p>
+EXEMPEL:
+<table>
+ <tr><td>SAVE              <td>Sparar programmet på kassettband utan namn.
+ <tr><td>SAVE "HEJSAN"     <td>Sparar programmet med namnet HEJSAN på bandet.
+ <tr><td>SAVE A$           <td>Sparar programmet med namnet som finns i A$.
+ <tr><td>SAVE "HEJSAN",8   <td>Sparar programmet med namnet HEJSAN på flexskivan.
+ <tr><td>SAVE HEJSAN",1,2  <td>Sparar programmet med namnet HEJSAN och lägger in en
+                               "end of tape" dvs bandslut-markering på bandet.
+</table>
+
+<h4 id="verify">VERIFY</h4>
+
+<p>
+ Detta kommando gör att C-64an går tillbaka och jämför programmet på bandet
+eller flexskivan med det i minnet. Har programmet utförts utan klagomål så
+är det ett bevis på att ditt program blev sparat korrekt. Det kunde ha varit
+ett dåligt band du sparade programmet på. Detta kommando är bra om du vill
+lägga in ett program på första tomma position på bandet. Vad du gör är att
+säga åt VIC att jämföra det sista programmet med det i minnet. Detta kommer
+den att göra och upptäcka att programmen inte stämde överens, vilket du
+redan visste. Nu är bandet där du vill ha det. Nu kan du spara nästa program
+utan någon risk att förstöra något annat program.
+<p>
+ Enbart VERIFY gör att C-64an jämför det första program den hittar på
+bandet, oavsett namn, med det som finns i minnet. VERIFY med ett namn eller
+citationstecken söker efter programmet med det namnet för att jämföra det
+med minnet. Dessutom kan du lägga till ett kommatecken och ett nummer elkar
+en variabel som talar om för C-64an vilken enhet den skall söka på (1 för
+kassettband, 8 för flexskiva).
+<p>
+EXEMPEL:
+<table>
+ <tr><td>VERIFY             <td>Jämför med nästa program på band.
+ <tr><td>VERIFY "HEJSAN"    <td>Söker efter "HEJSAN" på band, och jämför det med
+                                minnet.
+ <tr><td>VERIFY "HEJSAN",8  <td>Söker efter "HEJSAN" på flexskiva, och jämför det med
+                                minnet.
+</table>
+
+<h3>3. PROGRAMINSTRUKTIONER</h3>
+
+<h4 id="close">CLOSE</h4>
+
+<p>
+ Detta kommando stänger en fil som du tidigare öppnat med <a href="#open">OPEN</a>-kommandot.
+Det nummer som följer efter kommandot är det filnummer som skall stängas.
+<p>
+EXEMPEL:
+<table>
+ <tr><td>CLOSE 2  <td>Endast fil nr 2 stängs.
+</table>
+
+<h4 id="clr">CLR</h4>
+
+<p>
+ Kommandot raderar alla variabler som finns i minnet, men lämnar programmet
+intakt. Detta kommando utförs automatiskt när du kör i gång programmet
+(RUN).
+
+<h4 id="cmd">CMD</h4>
+
+<p>
+ Ändrar den normala utenheten (skärmen) till en annan. Alla
+<a href="#print">PRINT</a>- och <a href="#list">LlST</a>-utskrifter
+kommer istället att göras på den angivna enheten. Denna
+enhet kan vara en skrivare, kassettenhet, flexskivminne eller något annat.
+Innan CMD-kommandot utföres måste en fil öppnas till önskad enhet
+(<a href="#open">OPEN</a>). I
+CMD-kommandot skall anges filnumret som använts i <a href="#open">OPEN</a>-satsen.
+<p>
+EXEMPEL:
+<table>
+ <tr><td>OPEN 1,4  <td>Öppnar en fil till enhet nr 4 (skrivare).
+ <tr><td>CMD 1     <td>All normal utskrift går nu till skrivaren.
+ <tr><td>LIST      <td>Listningen av programmet går ut till skrivaren, inte till
+                       skärmen - till och med ordet LIST.
+</table>
+<p>
+ För att få tillbaka utskriften till skärmen, stäng bara filen, men
+observera att före CLOSE-satsen måste skrivas en PRINT#-sats till den
+aktuella filen.
+
+<h4 id="data">DATA</h4>
+
+<p>
+ Kommandot följs av en lista med data som används av kommandot READ. Data
+kan vara numeriska variabler eller text och separeras med kommatecken. Text
+behöver inte omges av citationstecken, om inte texten innehåller något av
+följande tecken: Blanktecken, kolon, kommatecken. Om det finns två
+kommatecken utan någonting mellan dem, tas det som värdet 0 eller en tom
+textsträng.
+<p>
+EXEMPEL:
+<p>
+DATA 100,100,FRED,"HEJ MAMMA",,3.14,ABC123
+<p>
+ Eftersom DATA-kommandot inte behöver utföras för att data skall bli läsbar,
+så är det en god idé att lägga alla DATA-kommandon sist i programmet. Detta
+gör att ditt program går fortare att köra.
+
+<h4 id="deffn">DEF FN</h4>
+
+<p>
+ Med detta kommando kan du definiera en komplex funktion som du sedan kan
+anropa i programmet på ett enkelt sätt. Så här kan mycket plats sparas i
+programmet om det innehåller samma beräkning flera gånger.
+<p>
+ Funktionens namn blir FN plus ett variabelnamn (1 eller 2 tecken). Först
+måste funktionen definieras genom att du skriver DEF följt av
+funktionsnamnet. Efter namnet följer ett par med parenteser med en variabel
+innanför (i exemplet ett X). Därefter kommer likhetstecknet och formeln för
+funktionen. När du vill använda funktionen byter du ut X mot det aktuella
+värdet, som i rad 20 i exemplet nedan:
+<p>
+EXEMPEL:
+<pre>
+  10 DEF FNA(X)=12*(34.75-X/.3) &lt;--- Asterisk används som
+                          ^-.        multiplikationstecken
+  20 PRINT FNA(7) &lt;---------+- Talet 7 byts mot X i formeln
+</pre>
+<h4 id="dim">DIM</h4>
+
+<p>
+ Innan du kan använda matrisvariabler som har fler än 11 variabler, måste
+ett DlM-kommando utföras för matrisvariabeln. DlM-kommandot följs av
+variabelnamnet på matrisen (ett normalt variabelnamn, 1 eller 2 tecken).
+Efter namnet kommer två parenteser med värden (eller numeriska variabler)
+innanför, som betecknar antalet variabler i varje dimension. Antalet
+dimensioner är inte begränsat, men kom ihåg att minnesutrymmet inte räcker
+till för hur stora matriser som helst. För att beräkna antalet variabler som
+ett DlM-kommando skapar så multiplicerar du antalet element i varje
+dimension i matrisen.
+<p>
+EXEMPEL:
+<pre>
+  10 DIM A$(40),B7(15),CC%(4,4,4)  &lt;-- 125 element
+           ^       ^
+   41 element    16 element
+</pre>
+<p>
+ Du kan dimensionera fler matriser i samma DlM-kommando genom att separera
+dem med kommatecken. Om programmet försöker att utföra ett DlM-kommando på
+samma variabel mer än en gång, får du ett felmeddelande. Det är bäst att
+placera DlM-kommandot i början på programmet.
+
+<h4 id="end">END</h4>
+
+<p>
+ När C-64an kommer till detta kommando på en rad slutar den att köra
+programmet precis som om det vore sista raden i programmet. Du kan använda
+CONT-kommandot för att starta upp programmet igen.
+
+<h4 id="for">FOR...TO...STEP</h4>
+
+<p>
+ Detta kommando används tillsammans med
+<a href="#next">NEXT</a> för att lägga upp en sektion i
+programmet som skall repeteras ett antal gånger (en loop eller slinga). Du
+vill kanske bara att C-64an räknar upp till ett högt tal, för att få den att
+vänta ett tag (tidsfördröjning), eller du kanske vill räkna någonting. Detta
+är det mest förekommande BASIC-kommandot i programmen.
+<p>
+ Uppställningen för kommandot är följande:
+<p>
+ FOR (loopvariabel) = (startvärde) TO (slutvärde). Loopvariabel är en helt
+vanlig variabel som kan ändras under pågående loop. Start och slutvärdet är
+gränserna för loopvariabeln.
+<p>
+ Följande händer vid FOR-kommandot. Loopvariabel tilldelas värdet
+"startvärde". Slutvärdet lagras undan i C-64an för senare referens. När
+datorn kommer fram till ett NEXT-kommando, ökar den värdet av loopvariabeln
+med 1. Variabeln jämförs sedan med slutvärdet. Om loopvariabeln inte är
+större än slutvärdet hoppar C-64an tillbaka till raden efter FOR-kommandot.
+Är loopvariabeln större fortsätter C-64an med nästa rad efter
+NEXT-kommandot.
+<p>
+EXEMPEL:
+<pre>
+  10 FOR L=1 TO 10
+  20 PRINT L
+  30 NEXT L
+  40 PRINT "FÄRDIG! L="L
+</pre>
+<p>
+ Detta program skriver ut talen från 1 till 10 på skärmen följt av
+meddelandet "FÄRDIG! L=11". Förstår du hur det fungerar? Om inte, läs då
+igenom texten och följ med i programmet steg för steg.
+<p>
+ Slutvärdet kan följas av ordet STEP och ett värde eller en variabel. I
+detta fall kommer C-64an att använda värdet och addera till loopvariabeln
+vid NEXT-kommandot (istället för 1). Detta gör det möjligt att räkna
+baklänges eller med decimaler.
+<p>
+ Du kan lägga upp slingor inuti en annan slinga. Detta kallas för kapslade
+slingor. Du skall vara försiktig vid kapslade slingor och komma ihåg att den
+första slingan slutar sist.
+<p>
+EXEMPEL:
+<pre>
+  10 FOR L=1 TO 100
+  20 FOR A=5 TO 11 STEP 2  &lt;--+- Denna FOR...NEXT-loop är nästlad innanför
+  30 NEXT A   &lt;---------------'  den större
+  40 NEXT L
+</pre>
+Felaktigt:
+<pre>
+  10 FOR L=1 TO 100
+  20 FOR A=5 TO 11 STEP 2
+  30 NEXT L
+  40 NEXT A
+</pre>
+<h4 id="get">GET</h4>
+
+<p>
+ GET-kommandot används för att läsa data från tangentbordet, ett tecken i
+taget. När GET-kommandot utföres läses det tecken som trycks på
+tangentbordet in. Har ingen tangent tryckts ned, fås ett "tomtecken"
+tillbaks. RETURN-tangenten behöver inte tryckas ned för att inläsning skall
+ske (jämför <a href="#input">INPUT</a>). RETURN kan också läsas av.
+<p>
+ Efter ordet GET så följer ett variabelnamn, vanligen en strängvariabel.
+Används en numerisk variabel kommer C-64an att svara med ett felmeddelande
+(om någon annan än en siffertangent trycks ned). GET används mest för att
+konstruera en slinga som väntar på att en tangent skall tryckas ned.
+<p>
+EXEMPEL:
+<pre>
+  10 GET A$:IF A$="" THEN 10 &lt;--- Denna rad väntar på att en tangent ska
+                                  tryckas ned. Trycks någon tangent
+                                  fortsätter programmet.
+</pre>
+<h4 id="getf">GET#</h4>
+
+<p>
+ Används tillsammans med en tidigare öppnad fil
+(<a href="#open">OPEN</a>) för att läsa in ett
+tecken i taget.
+<p>
+EXEMPEL:
+<pre>
+  GET#1,A$
+</pre>
+<h4 id="gosub">GOSUB</h4>
+
+<p>
+ Detta kommando gör likadant som
+<a href="#goto">GOTO</a> men den kommer dessutom ihåg var den
+kom ifrån. När C-64an kommer till en rad med kommandot
+<a href="#return">RETURN</a>, så hoppar den
+tillbaka till raden efter det senaste GOSUB-kommandot. Detta är användbart
+om du vill ha samma programsektion utförd på flera ställen i programmet.
+Istället för att upprepa programsektionen på varje ställe så läggs
+GOSUB-kommandot in med ett efterföljande radnummer, som visar var
+programsektionen ligger. GOSUB 800 betyder att C-64an hoppar till rad 800
+och fortsätter programkörningen där.
+
+<h4 id="goto">GOTO eller GO TO</h4>
+
+<p>
+ När C-64 kommer till ett GOTO-kommando, hoppar den till raden som anges
+efter kommandot.
+
+<h4 id="if">IF...THEN</h4>
+
+<p>
+ IF...THEN-kommandot gör det möjligt för C-64an att analysera en situation
+och välja en av två möjliga vägar. Om uttrycket som beräknas blir sant (dvs
+&lt;&gt;0), utförs ordet som står efter THEN. Ordet kan vara ett tal som C-64an då
+hoppar till. Det kan också vara ett kommando av något slag. Om uttrycket är
+falskt (dvs &gt;0) fortsätter C-64an på nästa programrad (inte nästa kommando
+på raden).
+<p>
+ Uttrycket som undersöks kan vara en variabel eller en formel, där sant är
+skilt från noll (&lt;&gt;0) och falskt lika med noll (=0). Ofta används
+relationsoperanderna i uttrycken (=, &lt;, &gt;, AND, OR, NOT). Om uttrycket är
+sant blir värdet -1 och falskt 0. Se kapitlet om relationsoperatorer och hur
+de fungerar.
+
+<h4 id="input">INPUT</h4>
+
+<p>
+ INPUT-kommandot gör det möjligt för C-64an att låta personen som sitter vid
+tangentbordet skriva in värdet på en variabel. Programmet stannar, skriver
+ut ett frågetecken och väntar på att personen i fråga skall skriva in svaret
+och trycka på RETURN-tangenten.
+<p>
+ Kommandot följs av ett eller flera variabler separerade med kommatecken.
+Det kan också förekomma ett meddelande mellan citationstecknen innan
+variablerna. Detta meddelande (eng.prompt) måste följas av ett semikolon
+efter sista citationstecknet. Om fler variabler skall skrivas in måste de
+separeras med kommatecken vid inskriften.
+<p>
+EXEMPEL:
+<pre>
+  10 INPUT "SKRIV ETT VÄRDE PÅ A";A
+  20 INPUT "OCH DITT NAMN TACK";A$
+  30 INPUT B$
+  40 PRINT "NU HADE DU INGEN ANING OM VAD JAG VILLE VETA"
+</pre>
+<h4 id="inputf">INPUT#</h4>
+
+<p>
+ Fungerar som INPUT men tar data från en tidigare öppnad
+(<a href="#open">OPEN</a>) fil.
+
+<h4 id="let">LET</h4>
+
+<p>
+ Ordet LET används mycket sällan i program, eftersom det inte har någon
+praktisk betydelse, men det är faktiskt grunden till alla BASIC-program.
+Variabeln som skall få resultatet av beräkningen finns på vänstra sidan av
+likhetstecknet medan formeln och värdena finns på den högra.
+<p>
+EXEMPEL:
+<pre>
+  10 LET A=5
+  20 B=6
+  30 C=A*B+3
+  40 D$="HEJSAN"
+</pre>
+<h4 id="next">NEXT</h4>
+
+<p>
+ NEXT-kommandot används alltid tillsammans med
+<a href="#for">FOR</a>-kommandot. När programmet kommer till ett NEXT-kommando
+går det tillbaka till <a href="#for">FOR</a>-kommandot för att kontrollera
+slingan. (Se <a href="#for">FOR</a>-kommandot för mera information.) Om
+slingan är slut fortsätter programmet till nästa kommando efter NEXT. NEXT
+kan följas av ett variabelnamn eller flera variabelnamn separerade med
+kommatecken. Om inget variabelnamn anges utförs den senast påbörjade
+slingan. Om flera variabler anges utförs de från vänster till höger.
+
+<p>
+EXEMPEL:
+<pre>
+  10 FOR L=1 TO 10:NEXT
+  20 FOR L=1 TO 10:NEXT L
+  30 FOR L=1 TO 10:FOR M=1 TO 10:NEXT M,L
+</pre>
+<h4 id="on">ON</h4>
+
+<p>
+ Detta kommando gör <a href="#goto">GOTO</a> och <a href="#gosub">GOSUB</a>
+till specialvarianter av IF-kommandot.
+Ordet ON följs av en formel som ger ett värde. Efter ordet
+<a href="#goto">GOTO</a> eller <a href="#gosub">GOSUB</a>
+följer en lista med radnummer skilda åt med kommatecken. Om resultatet av
+beräkningen blir 1, hoppar programmet till det första radnumret i listan. Är
+resultatet 2 hoppar den till det 2:a radnumret. Om resultatet är negativt, 0
+eller större än antalet radnummer i listan, hoppar programmet till raden
+efter ON-kommandot.
+<p>
+EXEMPEL:
+<pre>
+  10 INPUT X
+  20 ON X GOTO 10,50,50,50
+  30 PRINT "NäHä"
+  40 GOTO 60
+  50 PRINT "HÄPP!"
+  60 ON X GOTO 10,30,30
+</pre>
+<h4 id="open">OPEN</h4>
+
+<p>
+ OPEN-kommandot gör att C-64an kan kommunicera med andra enheter såsom
+kassettenhet, flexskivminne, skrivare eller skärmen. Ordet OPEN följs av ett
+nummer som övriga BASIC-kommandon refererar till. Detta nummer är mellan 1
+och 255. Efter det första numret kommer ett andra separerat med kommatecken.
+Detta är enhetsnumret, 0 för tangentbordet, 1 för kassettenheten, 2 för
+RS232, 3 för bildskärm, 4 för skrivare och 8 för flexskivminne. Det är bäst
+att använda samma filnummer som enhetsnummer, det blir lättare att hålla
+reda på filerna då. Efter det andra numret kan ett kommatecken och ett
+tredje nummer förekomma, vilket är sekundäradressen. Detta talar om för
+kassettenheten om den ska skriva eller läsa. 0 för läsning, 1 för skrivning
+och 2 för skrivning med "end of tape"-markering på slutet. Är enheten
+flexskivminne så betyder numret ett visst buffer- eller kanalnummer. I
+skrivaren betyder numret olika kommandon. (Se C-64ans programmeringshandbok
+för mera detaljer om detta.) Efter det tredje numret kan det dessutom finnas
+en sträng med text som ger ett kommando till flexskivminnet eller ger ett
+programnamn på kassetten.
+<p>
+EXEMPEL
+<pre>
+  10 OPEN 1,0        Öppnar en fil till skärmen.
+  20 OPEN 2,1,0,"D"  Öppnar en fil för läsning på kassettenheten. Filen som
+                     den skall söka efter heter "D".
+  30 OPEN 3,4        Öppnar en fil till skrivaren.
+  40 OPEN 4,8,15     Öppnar kommandokanalen till skivminnet.
+</pre>
+<p>
+ Se också: <a href="#close">CLOSE</a>, <a href="#cmd">CMD</a>,
+<a href="#getf">GET#</a>, <a href="#inputf">INPUT#</a>,
+<a href="#printf">PRINT#</a>, systemvariabeln ST och
+<a href="a-b.html#b">appendix B</a>.
+
+<h4 id="poke">POKE</h4>
+
+<p>
+ POKE-kommandot följs alltid av två stycken nummer eller formler. Det första
+numret är positionen i C-64ans minne. Positionsnumret kan vara mellan 0 och
+65000. En del av positionerna kan du använda till att ändra på färg eller
+ljud som du sett i tidigare kapitel. En del positioner använder C-64an för
+att hålla reda på progrannet och så vidare. Om du experimenterar med
+POKE-kommandot kan du säkert få en del intressanta effekter. Om någonting
+händer och du inte kan stoppa det, är det bara att stänga av datorn eller
+trycka på STOP och RESTORE.
+<p>
+ Det andra numret har ett värde mellan 0 och 255, och placeras i den
+position som angavs i det första numret.
+<p>
+EXEMPEL:
+<pre>
+  10 POKE 36879, 8
+  20 POKE 9*16&#8593;3+15, 27
+</pre>
+<h4 id="print">PRINT</h4>
+
+<p>
+ PRINT-kommandot är det första kommando som de flesta lär sig att använda,
+men det finns många finesser med kommandot som man får lära sig använda.
+Tillsammans med PRINT-kommandot kan man ha:
+<ul>
+ <li>Text mellan citationstecken
+ <li>Variabelnamn
+ <li>Funktioner
+ <li>Formateringstecken
+</ul>
+ Tecken innanför citationstecken skrivs ut som de är. Namn utanför
+citationstecken tas för ett variabelnamn och värdet på denna variabel skrivs
+ut. Funktionernas värden kommer också att skrivas ut. Formateringstecken
+används för att få en snygg utskrift. Kommat används för att dela in skärmen
+i fyra delan, medan semikolon inte ger några blanktecken alls mellan
+utskrifterna. Båda tecknen kan användas sist i kommandot. Detta får då
+effekten att nästa utskrift skrivs ut som om den fanns på samma rad.
+<p>
+EXEMPEL:
+<pre>
+  10 PRINT "HEJSAN"
+  20 PRINT "HEJSAN," A$
+  30 PRINT A+B
+  50 PRINT J;
+  60 ? A,B,C,D
+</pre>
+<p>
+ Se också: <a href="#pos">POS()</a>-, <a href="#spc">SPC()</a>-,
+<a href="#tab">TAB()</a>-funktionerna
+
+<h4 id="printf">PRINT#</h4>
+
+<p>
+ Det finns några skillnader mellan det vanliga
+ <a href="#print">PRINT</a>-kommandot och
+PRINT#-kommandot. För det första följs kommandot av ett nummer som refererar
+till en fil som du nyss öppnade (<a href="#open">OPEN</a>) till någon enhet.
+Efter numret kommer
+ett kommatecken och en lista med de saker som skall skrivas ut. Kommatecknet
+och semikolonet har samma effekt, de adderar blanktecken.
+<a href="#tab">TAB</a> och <a href="#spc">SPC</a> kan på
+vissa enheter fungera dåligt.
+<p>
+EXEMPEL:
+<pre>
+  100 PRINT#1,"HEJSAN DU!";A$,B$
+</pre>
+<h4 id="read">READ</h4>
+
+<p>
+ Detta kommando används för att läsa information från rader med
+<a href="#data">DATA</a>-kommandon och lägga in information i variabler.
+Du bör se upp med att försöka läsa in text när READ-kommandot vill ha ett
+numeriskt värde. Om så sker svarar datorn med "TYPE MISMATCH ERROR"
+(dvs typefel).
+
+<h4 id="rem">REM</h4>
+
+<p>
+ REMark (anmärkning) används för att lägga in kommentarer i programmet.
+Detta gör att den som läser programmet har lättare att förstå vad
+programmeraren menat med sina kommandon. REM-kommandot påverkar inte på
+något sätt programmet utom att det blir större. Texten efter kommandot kan
+vara vilken text som helst, men grafiska tecken ger konstiga resultat. (Se
+Programmerarens handbok för mera information).
+
+<h4 id="restore">RESTORE</h4>
+
+<p>
+ Den pekare, som anger vilket objekt i <a href="#data">DATA</a>-kommandot
+som ligger på tur för att läsas av <a href="#read">READ</a>-kommandot,
+nollställs till det första objektet när detta
+kommando utförs.. Detta gör det möjligt att läsa om informationen från
+början. Kommandot RESTORE skall stå ensamt på en rad för sig utan extra
+text.
+
+<h4 id="return">RETURN</h4>
+
+<p>
+ Detta kommando används alltid tillsammans med
+<a href="#gosub">GOSUB</a>-kommandot. När C-64an kommer till ett
+RETURN-kommando hoppar den tillbaka till första kommandot efter
+<a href="#gosub">GOSUB</a>. Om inget GOSUB-kommando fanns före, svarar den med
+"RETURN WITHOUT GOSUB ERROR" (dvs ett RETURN utan GOSUB-fel). Ingen extra
+text på RETURN.
+
+<h4 id="stop">STOP</h4>
+
+<p>
+ Detta kommando stannar programmet. C-64an skriver ut, "BREAK IN LINE xxxx"
+(dvs avbrott på rad xxxx), där xxxx är raden som innehåller STOP-kommandot.
+Med <a href="#cont">CONT</a>-kommandot kan programmet startas om igen där
+det stannade. STOP-kommandot används för att leta fel i program.
+
+<h4 id="sys">SYS</h4>
+
+<p>
+ Kommandot följs av ett nummer eller en numerisk variabel i området 0-65535.
+När C-64an får detta kommando hoppar den ner i minnet och utför det
+maskinspråksprogram som finns på den angivna adressen. Det påminner om
+<a href="#usr">USR</a>-funktionen, men den kan inte överföra parametrar.
+
+<h4 id="wait">WAIT</h4>
+
+<p>
+ Kommandot används för att stanna programmet till dess en viss
+minnesposition ändrar sitt värde på ett specificerat sätt. Ordet WAIT följs
+av ett nummer som är den position som skall kontrolleras. Därefter kommer
+ett kommatecken och ett nummer. Det kan även finnas ännu ett kommatecken och
+ett tredje nummer. Dessa två sista nummer måste vara inom området 0-255.
+<p>
+ På innehållet i minnespositionen görs först en exklusive-OR med det tredje
+numret om det finns, sedan görs AND med det andra numret. Om resultatet är 0
+går C-64an tillbaka och kontrollerar innehållet igen. Är resultatet inte 0
+fortsätter programmet till nästa kommando.
+
+
+<h3>4. FUNKTIONER</h3>
+
+<h4>a. NUMERISKA</h4>
+
+<h5 id="abs">ABS(X)</h5>
+
+<p>
+ Du får tillbaka absolutvärdet av talet, utan tecken. resultatet är alltid
+positivt.
+
+<h5 id="atn">ATN(X)</h5>
+
+<p>
+ Ger vinkeln i radianer, vars tangent är X, (dvs arcus tangens för X).
+
+<h5 id="cos">COS(X)</h5>
+
+<p>
+ Ger cosinus för vinkel X i radianer.
+
+<h5 id="exp">EXP(X)</h5>
+
+<p>
+ Ger värdet av den matematiska konstanten e (2.71827183) upphöjd med X.
+
+
+<h5 id="fn">FNXX(X)</h5>
+
+<p>
+ Ger värdet av den användardefinierade funktionen XX skapad genom
+FNXX-kommandot.
+
+<h5 id="int">INT(X)</h5>
+
+<p>
+ Ger ett avkortat värde av X, det vill säga utan decimaler. Resultatet blir
+alltid mindre eller lika med värdet av X. Detta gäller även negativa tal.
+<p>
+ Om INT-funktionen används för att avrunda uppåt eller nedåt ser formeln ut
+så här.
+<p>
+EXEMPEL:
+<pre>
+  X = INT(X*100+.5)/100  Avrundar till närmaste öre.
+</pre>
+<h5 id="log">LOG(X)</h5>
+
+<p>
+ Ger den naturliga logaritmen av X. Naturliga logaritmen har basen e (Se
+<a href="#exp">EXP(X)</a>).
+För att konvertera till bas 10 så dividerar du med LOG(10).
+
+<h5 id="peek">PEEK(X)</h5>
+
+<p>
+ Detta används för att ta reda på innehållet i minnespositionen X
+(X=0-65535). Resultatet blir 0-255. Denna funktion används ofta tillsammans
+med POKE-kommandot.
+
+<h5 id="rnd">RND(X)</h5>
+
+<p>
+ Denna funktion ger som resehat ett slumptal mellan 0 och 1. Detta är
+användbart i spel, där du vill simulera tärningskast eller olika utfall. Det
+kan också användas i vissa statistiska sammanhang. Det första slumptalet bör
+genereras genom formeln RND(-TI), så att det första värdet blir olika varje
+gång. Efter detta bör värdet X vara 1 eller något positivt värde. Om X är 0
+blir resultatet samma som föregående slumptal. Ett negativt värde sätter ett
+nytt "frö" i slumpgeneratorn. Användningen av samma negativa tal ger samma
+sekvens av slumptal.
+<p>
+ För att simulera ett tärningskast använd formeln INT(RND(1)*6+1). Först
+multipliceras slumptalet från 0-1 med 6 och intervallet utökas till 0-6
+(större än 0 och mindre än 6). Addering med 1 ger 1-7. INT-funktionen tar
+bort alla decimaler och kvar finns ett heltal mellan 1 och 6.
+<p>
+ För att simulera 2 tärningar adderar du värdet från två stycken slumptal
+enligt ovanstående formel.
+<p>
+EXEMPEL:
+<table border=0>
+ <tr><td>100 X=INT(RND(1)*6)+ INT(RND(1)*6)  <td>Simulerar två tärningar
+ <tr><td>100 X=INT(RND(1)*1000)+1            <td>Ett heltal från 1-1000.
+ <tr><td>100 X=INT(RND(1)*150)+100           <td>Ett heltal från 100-249.
+</table>
+
+<h5 id="sgn">SGN(X)</h5>
+
+<p>
+ Ger tecknet på värdet X, om det är positivt, negativt eller lika med 0.
+Resultatet blir +1 om positivt, 0 om noll och -1 om negativt,
+
+<h5 id="sin">SIN(X)</h5>
+
+<p>
+ Ger sinus av vinkeln X. Vinkel X anges i radianer.
+
+<h5 id="sqr">SQR(X)</h5>
+
+<p>
+ Ger kvadratroten ur värdet X. Om X är positivt. Om X är negativt svarar
+datorn med "ILLEGAL QUANTITY ERROR".
+
+<h5 id="tan">TAN(X)</h5>
+
+<p>
+ Ger tangenten av X där X är vinkeln i radianer.
+
+<h5 id="usr">USR(X)</h5>
+
+<p>
+ När denna funktion används hoppar C-64an till ett maskinspråksprogram vars
+startadress finns i minnespositionerna 785 och 786. Parametern X överförs
+till maskinspråksprogrammet, vilken kommer att ge tillbaka ett annat värde.
+Se C-64ans PROGRAMMERINGSHANDBOK för mera detaljer om detta och
+maskinspråksprogram.
+
+
+<h4>b. STRÄNGFUNKTIONER</h4>
+
+<h5 id="asc">ASC(X$)</h5>
+
+<p>
+ Funktionen ger som resultat ASCII-koden för första tecknet i X$.
+
+<h5 id="chr">CHR$(X)</h5>
+
+<p>
+ Detta är motsatsen till ASC, den ger tecknet vars ASCII-kod är X.
+
+<h5 id="left">LEFT$(X$,X)</h5>
+
+<p>
+ Ger X stycken tecken av den vänstra delen av X$.
+
+<h5 id="len">LEN(X$)</h5>
+
+<p>
+ Ger antal tecken i X$ (inkluderar blanktecken och symboler).
+
+<h5 id="mid">MID$(X$,S,X)</h5>
+
+<p>
+ Ger som resultat X stycken tecken ur strängen X$ med början i det S-te
+tecknet.
+
+<h5 id="right">RIGHT$(X$,X)</h5>
+
+<p>
+ Ger X stycken tecken av den högra delen av X$.
+
+<h5 id="str">STR$(X)</h5>
+
+<p>
+ Ger en sträng som motsvarar den utskrift du får av variabeln X.
+
+<h5 id="val">VAL(X$)</h5>
+
+<p>
+ Denna funktion är motsatsen till STR$. Funktionen omvandlar en sträng till
+ett numeriskt värde. Strängen söks av från vänster till höger så länge den
+innehåller numeriskt format. Upptäcker C-64an ett tecken som inte hör dit
+slutar den att konvertera.
+<p>
+EXEMPEL:
+<table border=0>
+ <tr><td>10 X=VAL("123.456")      <td>X = 123.456
+ <tr><td>10 X=VAL("12A13B")       <td>X = 12
+ <tr><td>10 X=VAL("RIUO17")       <td>X = 0
+ <tr><td>10 X=VAL("-1.23.23.23")  <td>X = -1.23
+</table>
+
+<h4>c. ÖVRIGA FUNKTIONER</h4>
+
+<h5 id="fre">FRE(X)</h5>
+
+<p>
+ Denna funktion ger antalet lediga minnespositioner, oavsett värdet på X.
+
+<h5 id="pos">POS(X)</h5>
+
+<p>
+ Funktionen visar i vilken kolumn (0-39) nästa utskrift kommer att börja. X
+kan vara vilket värde som helst och används inte.
+
+<h5 id="spc">SPC(X)</h5>
+
+<p>
+ Används i PRINT-kommandot för att skriva ut X stycken blanktecken.
+
+<h5 id="tab">TAB(X)</h5>
+
+<p>
+ Används i PRINT-kommandot för att påbörja nästa utskrift i kolumnen X.
+
+
+</div>
+
+<div class="bottomnavigation">
+ [ <a href="a-b.html">&lt;-- Föregående</a>
+ | <a href="./">Innehållsförteckning</a>
+ | <a href="d-j.html">Nästa --&gt;</a>
+ ]
+</div>
+
+
+<div class="bottom">
+
+<a href="http://validator.w3.org/check?uri=http://www.softwolves.pp.se/idoc/alternative/c64_sv/c.html">
+ <img src="../../../pics/vh401.gif" width=88 height=31 border=0
+  alt="[HTML 4.01]">
+</a>
+
+<address>
+ <a href="../../../">Peter Karlsson</a> /
+ $Date: 2003/09/24 18:48:02 $ /
+ <a href="m&#65;ilto:peter&#64;softwolves.pp&#46;se">peter&#64;softwolves.pp&#46;se</a>
+</address>
+</div>
+</body>
+</html>

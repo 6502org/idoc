@@ -1,0 +1,363 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore
+64 related documents in electronic text format that might otherwise
+cease to exist with the rapid advancement of computer technology and
+declining interest in 8-bit computers on the part of the general
+population. If you would like to help by converting C64 related
+hardcopy documents to electronic texts please contact the manager of
+International Project 64, Peter Karlsson, at m9944@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document.  However, certain portions, such as diagrams, program
+listings, and indexes may have been either altered or sacrificed due
+to the limitations of plain vanilla text.  Diagrams may have been
+eliminated where ASCII-art was not feasible.  Program listings may be
+missing display codes where substitutions were not possible.  Tables
+of contents and indexes may have been changed from page number
+references to section number references. Please accept our apologies
+for these limitations, alterations, and possible omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The
+first characters of the file name are an abbreviation of the original
+document name. The version number of the etext follows next. After
+that a letter may appear to indicate the particular source of the
+document. Finally, the document is given a .TXT extension.
+
+The author(s) of the original document and members of International
+Project 64 make no representations about the accuracy or suitability
+of this material for any purpose.  This etext is provided "as-is".
+Please refer to the warantee of the original document, if any, that
+may included in this etext.  No other warantees, express or implied,
+are made to you as to the etext or any medium it may be on.  Neither
+the author(s) nor the members of International Project 64 will assume
+liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext.
+Therefore if you read this document or use the information herein you
+do so at your own risk.
+
+*********
+
+The International Project 64 etext of the Crime Time German manual
+and addendum, converted to text by Peter Karlsson
+<dat95pkn@idt.mdh.se>
+
+CRIMDE10.TXT, March 1997, etext #1.
+
+*********
+Crime Time
+
+SPIEL DEFEKT?
+
+Ist Ihr Spiel defekt, oder haben Sie Probleme mit dem Laden des Spiels? Dann
+schicken Sie die Diskette, egal woher Sie das Programm bezogen haben bitte
+direkt und ohne Verpackung an uns zurück.
+
+Viel Spass wünscht Ihnen
+
+Starbyte Software GmbH  Nordring 71  4630 Bochum
+
+Inhaltverzeichnis
+=================
+
+  I. Crime Time Story
+ II. Bildschirmaufbau
+III. Ladeanweisung-Information
+
+Crime Time
+==========
+
+I. Teil Eins: Mord im Hotel
+---------------------------
+
+Es begann eigentlich alles ganz harmlos, als du und dein Freund Rainer den
+Entschluß fassten, trampenderweise in den Sommerferien durch Europa zu
+reisen. Kurzerhand wurden die wichtigesten Sachen (Alkohol und ein paar
+Klamotten) in einem geräumigen Rucksack verstaut und ihr begabt euch auf die
+lange Reise. Nach einigen Tagen, ihr hattet gerade die Grenze zur Schweiz
+überquert, kamt ihr in einen sclagartig einsetzenden Regenschauer, der euch
+in kürzerster Zeit bis auf die Knochen durchnässte. Glücklicherweise hattet
+ihr euch gerade vor ein paar Wochen ein negelneues Zelt sowie zwei
+wasserdichte und ultrawarme Schlafsäcke gekauft, um solchen Fällen nicht
+unvorbereitet entgegensehen zu können. Dummerweise lagen diese Sachen aber
+nun originalverpackt zuhase in deinem Keller, so daß ihr nicht umhin kamt,
+ein nahelgelegenes kleines Hotel aufzusuchen. Dort angekommen, ergab eine
+weitere Untersuchung eurer Hebseligkeiten, daß ihr zwar daran gedacht
+hattet, für einen solchen Notfall etwas Bargeld mitzunehmen, dieses jedoch
+zusammenaddiert gerade noch für die Unterbringung im Hotel sowie etwas
+Proviant reichte. So vergingen also einige Stunden, in denen sich der Regen
+erwartungsgemäß in eine kleine orkanartige Sintflut verwandelte und an eine
+Fortsetzung eurer Reise vorerst nicht zu denken war. Bald hatte Rainer, der
+sich zu Tode langweilte, die Vorzüge der Fernbedienung des Fernsehers in
+eurem Zimmer entdeckt, und machte sich daran, sie mit gezieltem Hin- und
+Herschalten außer Gefecht zu setzen, während du eine kleine Exkursion an die
+Hotelbar machtest.
+
+Am späten Abend dann, kamst du zu dem Entschluß, daß es nun allmählich Zeit
+für eine Mütze voll Schlaf wäre. Gemeinerweise machte dir dabei Alex, der
+Hotelkoch, Barmann und Rausschmeisser in einer Person war, einen Strich
+durch die Rechnung, indem er Dich under dem Tisch vorzog und dir nahelegte,
+für dienen Schönheitsschlaf euer Zimmer aufzusuchen. Benebelt wanktest du
+also die Treppe hinauf, dabei unaufhörlich Verwünschungen über das
+Mistwetter sowie gewisse Schlasstörer murmelnd. An der Tür zu eurem Zimmer
+angekommen erwartete dich eine erneute Überraschung: Dein Zimmerschlüssel
+weigerte sich, seiner Bestimmung nachzukommen und das Schloß zu öffnen und
+Rainer reagierte weder auf dein Klopfen an der Tür noch auf dein Winseln.
+Kurzerhand riefst du dir dein aus etlichen Miami-Vice Folgen angeeignetes
+Fachwissen über solche Fälle ins Gedächtnis und ranntest mit Schwung gegen
+die Tür an, die in diesem Moment von innen geöffnet wurde, ohne daß irgend
+jemand zu sehen war. Kaum hattest du den Raum auf diese Weise betreten,
+spürtest du einem harten Schlag am Hinterkopf und fielst endlich in einen
+tiefen und erholsamen Schlaf...
+
+Als du kurze Zeit später etwas unsanft mit einem Eimer Wasser geweckt
+wurdest, kam dir die verblüffende Erkenntnis, daß dein unfreiwillig
+gewählter Schlafplatz ausgerechnet ein offensichtlich toter Mann war, der,
+den Einschußlöchern in seinem Köper nach zu urteilen, keines natürlichen
+Todes gestorben war! Erst jetzt wurde dir klar, daß du dich in deinem Tran
+wohl ins verkehrte Zimmer verirrt hattest und dort offensichtlich vom Mörder
+dieses Mannes niedergeschlagen wurdest! Dummerweise ließen die um dich
+herumstehende Leute, ebenfalls Hotelgäste, nicht den geringsten Zweifel
+darüber aufkommen, wen sie für diese Tat verantwortlich machten...
+
+Ja, so begann die ganze Sache. Du hast nun verflucht wenig Zeit, dich von
+dem auf dir lastenden Verdacht zu entledigen, bevor der Sturm aufhört und
+die Polizei entrifft...
+
+II. Die Bildschirmaufbau
+------------------------
+
+In der oberen Hälfte des Bildschirms wird das Bild des Raumes dargestellt,
+in dem Sie sich momentan befinden. Beim erstmaligen Betreten eines Raumes
+erschient in diesem Teil des Screen auch der dazugehörige Raumtext, der
+durch Druch auf den Feuerknopf bzw. auf den linken Mausbutton
+weitergeblättert, durch Betätigen der Taste 'Space' bzw. des rechten
+Mausbutton abgebrochen wird. Im unteren Bereich des Bildschirms befindet
+sich eine Art Kompass, der anzeigt in welche Richtungen man gehen kann. Um
+in eine Richtung zu gehen, klicken Sie einfach auf die entschprechende
+Richtung auf dem Kompass. Wenn Sie in die Mitte des Kompasses klicken, wird
+der jeweilige Raumtext nochmals angezeigt. Daneben befinden sich eine Liste
+von Verben, die Sie in Verbindung mit den auf der rechten Seite befindlichen
+Objekten aufrufen können. Die obere Spalte zeigt Ihnen alle Objekte und
+Personen an, die sich im aktuellen Raum befinden. Die untere Spalte enthält
+die Gegenstände, die Sie im Spiel mit sich führen. Diese können durch das
+Anklicken der Pfeilsymbole nach oben und unten gescrollt werden.
+
+III. Ladeanweisung-Information
+------------------------------
+
+Die für Ihr System notwendigen Informationen über Ladeanweisung und
+Tastaturbelegung entnehmen Sie bitte dem beigefügten Zusatzblatt
+
+- 7 -
+
+
+                              Raumdarstellung
+                                     |
+   +---------------------------------+-----------------------------+
+   |                                 |                             |
+   |                                                               |
+   |                                                               |
+   |                                                               |
+   |                                                               |
+   +---------------------------------------------------------------+
+   +-----------------------------------------------+
+   |####### #######################################|       ----Objekte
+   |#### ##^## #################                 ##|
+   |## ####O#### ###############                 ##|#\/##########/\#
+   |#### ##v## #################        |        ##|
+   |####### ############################|##########|      \
+   +-------|----------------------------|----------+       \
+           |                            |                Inventory
+        Kompass                       Verben
+
+*********
+
+Crime Time
+Zusatzanleitung
+
+Ladeanweisung Crime Time AMIGA
+==============================
+
+Laden Sie Diskette A in Ihr Laufwerk df0: ein und schalten Sie den Computer
+ein. Das Programm lädt und started selbständig. Folgen Sie desweitern den
+Meldungen auf dem Bildschirm.
+
+Festplatteninstallation
+=======================
+
+Booten Sie ganz normal Ihre Festplatte hoch, bis Sie auf die Workbench-Ebene
+kommen. Legen Sie Diskette B in ein Laufwerk ein, wo Sie das 'Crime-Time'
+Icon anklicken und danach das Icon 'HD-Install' anklicken. Folgen Sie nun
+den weiteren Anweisungen auf dem Bildschirm.
+
+Handhabung Crime Time AMIGA
+===========================
+
+Das Programm ist vollständig mausgesteuert. Generell: Mit der linken
+Maustaste wählen Sie eine Option an. Mit der rechten Maustaste verlassen Sie
+diese Option.
+
+Optionen bei Programmstart
+--------------------------
+
+Spielende
+
+Hier können Sie das Programm nach einer Sicherheitsabfrage verlassen.
+
+Neustart
+
+Hiermit starten Sie das Adventure.
+
+Einstellungen
+
+Hier können Sie die Effekte, die Musik, die Bilderblende und die
+Nachfrageoption ein- und ausschalten
+
+Laden
+
+Hier besteht die Möglichkeit das Adventure and einer zuvor gespeicherte
+Stelle vortzufühern. Wählen Sie eine der belegten (sichtbaren) Positionen
+an.
+
+Optionen nach dem Programmstart
+-------------------------------
+
+In das oben aufgeführte Menü gelangen Sie auch jederzeit im Spiel, wenn das
+Programm von Ihnen eine Kommandoeingabe erwartet, durch Drücken des rechten
+Maustaste, mit der Sie es auch wieder verlassen können.
+
+Hier ist das Menü geringfügig anders als beim Programmstart. Sie haben nun
+die Möglichkeit einen Spielstand zu speichern und zwar wahlweise ins RAM
+oder auf eine der 10 Diskettenplätze. Ab hier können Sie natürlich auch
+einen im RAM befindlichen Spielstand laden.
+
+Ladeanweisung Crime Time ATARI ST/TT
+====================================
+
+legen Sie Diskette A in Ihr Laufwerk A ein und schalten den Computer ein.
+Das Programm lädt und startet sebständig. Folgen Sie desweitern den
+Meldungen auf dem Bildschirm.
+
+Handhabung Crime Time ATARI ST/TT
+=================================
+
+Das Programm ist vollständig mausgesteuert. Generell: Mit der linken
+Maustaste wählen Sie eine Option an. Mit der rechte Maustaste verlassen Sie
+diese Option.
+
+Optionen bei Programmstart
+--------------------------
+
+Desktop
+
+Hier können Sie das Programm nach einer Sicherheitsabfrage verlassen.
+
+Neustart
+
+Hiermit starten Sie das Adventure.
+
+Einstellungen
+
+Hier können Sie die Effekte, die Musik, die Bilderblende und die
+Nachfrageoption ein- und ausschalten.
+
+System
+
+Hier sehen Sie eine Systeminformation und können zwischen 50 und 60 Hz
+Bilderwiederholfrequenz umschalten, sowie aussuchen ob die Effekte über den
+Soundchip oder mittels des STE! Soundchips gespielt werden sollten (nur STE!
+und TT). Auch ein vorhandener Blitter kann hier selektiert und deselektiert
+werden.
+
+Laden
+
+Hier besteht die Möglichkeit das Adventure an einer zuvor gespeicherten
+Stelle fortzuführen. Wählen Sie eine der belegten (sichtbaren) Positionen
+an.
+
+Installieren
+
+Diese Option erscheint nur dann, wenn Sie das Programm von Diskette geladen
+haben und zuvor einen Festplattentreiber geladen haben, der Laufwerke ab "C"
+angemeldet hat. Oder aber eine RAM-Disk. Wollen Sie das Programm
+installieren, so gehen Sie bitte folgendermaßen vor:
+
+	1. Booten Sie Ihr System hoch (von Platte), bis Sie im Desktop
+	   landen
+	2. Starten Sie Crime Time indem Sie die Datei CRIME.PRG im
+	   AUTO-Ordner der A-Diskette laden.
+	3. Wählen Sie nun INSTALLIEREN und folgen den Meldungen auf dem
+	   Bildschirm.
+	   Von nun an können Sie Crime Time starten, indem Sie im Ordner
+	   "CRIME_TI.ME" (Wird angelegt!) die Datei CRIME.PRG ausführen
+
+Optionen nach Programmstart
+---------------------------
+
+In das oben aufgeführte Menü gelangen Sie Sich auch jederzeit im Spiel, wenn
+das Programm von Ihnen eine Kommandoeingabe erwartet, durch Drücken der
+rechten Maustaste, mit der Sie es auch wieder verlassen können.
+
+Hier ist das Menü geringfügig anders als beim Programmstart. Sie haben nun
+die Möglichkeit einen Speilstand zu speichern und zwar wahlweise ins RAM
+oder auf eine der 10 Diskettenplätze. Ab hier können Sie natürlich auf einen
+im RAM befindlichen Spielstand laden.
+
+Ladeanweisung Crime Time C-64
+=============================
+
+Legen Sie Ihre 'Crime-Time' Diskette in Ihr Laufwerk ein und schalten Sie
+den Computer ein und Ihr Laufwerk ein. Geben Sie nun folgendes Kommando an:
+
+	LOAD"CRIME TIME",8,2
+
+Das Programm lädt und starten selbstständig. Wenn das Titelbild erscheint
+und der Titelsound erklingt, drücken Sie die Leertaste. Folgen Sie
+desweitern den Meldungen auf dem Bildschirm.
+
+Handhabung Crime Time C-64
+==========================
+
+Das Progarmm wird vollständig über den Joystick in Port 2 gesteuert.
+Grundsätzlich gilt folgendes:
+
+Erscheinende Texte werden mit dem Feuerknopf weitergeblättert bzw. mit der
+Leertaste abgebrochen.
+
+Tastaturbelegung
+================
+
+F1 - Diskmenü
+-------------
+
+F1 = Spielstand von Diskette laden
+F3 = Spielstand auf Diskette saven
+F7 = Zurück ins Spiel
+
+F3 - Rammenü
+------------
+
+F1 = Spielstand aus dem Ram laden
+F3 = Spielstand ins Ram speichern
+F7 = Zurück ins Spiel
+
+F7 - Optionsmenü
+----------------
+
+F1 = Spiel neu starten
+F3 = Spiel verlassen (Reset)
+F7 = Zurück ins Spiel
+
+F5, Leertaste = Zeigen des Raumtextes
+
+S = Sound an/aus
+
+*********
+
+End of the International Project 64 etext of Crime Time German manual
+and addendum.
+
+*********

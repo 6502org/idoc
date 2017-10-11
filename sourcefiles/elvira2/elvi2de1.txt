@@ -1,0 +1,523 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore 64
+related documents in electronic text format that might otherwise cease to
+exist with the rapid advancement of computer technology and declining
+interest in 8-bit computers on the part of the general population. If you
+would like to help by converting C64 related hardcopy documents to
+electronic texts please contact the manager of International Project 64,
+Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The first
+characters of the file name are an abbreviation of the original document
+name and the language of the etext. The version number of the etext follows
+next. After that a letter may appear to indicate the particular source of
+the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International Project
+64 make no representations about the accuracy or suitability of this
+material for any purpose. This etext is provided "as-is". Please refer to
+the warranty of the original document, if any, that may included in this
+etext. No other warranties, express or implied, are made to you as to the
+etext or any medium it may be on. Neither the author(s) nor the members of
+International Project 64 will assume liability for damages either from the
+direct or indirect use of this etext or from the distribution of or
+modification to this etext. Therefore if you read this document or use the
+information herein you do so at your own risk.
+
+*********
+
+The International Project 64 etext of the Elvira II German manual, converted
+to text by Patrick Heck <drummer@online.de>
+
+ELVI2DE1.TXT, January 1997, etext #23.
+
+*********
+
+Elvira II / Flair 
+
+WILLKOMMEN ZU MEINEM STUDIO
+
+Seit wir uns das letzte Mal getroffen haben, hatte ich das Glück genügend
+Penunzen (d.h. Geld für Sie) durch den Verkauf meines geerbten Besitzes,
+Schloß Killbragant, zu sparen, um das Filmstudio, daß ich mir schon
+immer gewünscht hatte, zu kaufen. In diesem Studio werde ich die tollsten
+Horrorfilme machen, die man sich nur vorstellen kann, nur hoffe ich, daß
+ich nichts mit all dem Blut und der Halsschneiderei die in diesen Dingern
+passiert, zu tun haben werde. Ich habe jetzt einen Freund, der all meine
+Wünsche erfüllt, Sie wissen schon was ich meine. Er hätte schon längst
+hier sein müssen, um mir mit ein paar Szenen hinter den Grabsteinen zu
+helfen aber wie üblich ist er wahrscheinlich wieder irgendwo
+einge-schlafen, er scheint tagsüber immer zu schlafen und nachts ist er
+hellwach.
+Ich frage mich was das bedeutet!
+Wenn Sie ihn zufallig auf dem Parkplatz sehen, dann sagen Sie ihm er soll
+sofort hierher kommen!
+
+
+Wie Sie Elvira in den Griff bekommen.
+Installation des Programmes: Diskette 1 Seite A einlegen.
+LOAD"*",8,1 eingeben. Dann den Anweisungen auf dem Bildschirm folgen.
+
+Sie befinden sich nun am Eingangstor des Filmstudios, die Nacht ist still,
+es herrscht eine geisterhafte Stille und das einzige Auto, das Sie auf dem
+Parkplatz sehen gehort Ihrer Freundin Elvira.
+Aber wo sind die Wächter? Die sind doch jetzt im Dienst und sollen mich
+herein lassen. Sie rütteln das Tor, aber es ist verschlossen. Sie versuchen
+die Tür zum Förtnerhaus zu öffnen aber sie ist auch verschlossen, sie
+schauen durch das Fenster und merken, daß etwas nicht stimmt.
+Es ist Ihre Aufgabe in das Filmstudio einzudringen, um festzu-stellen das
+Elvira nicht in Gefahr ist und daß sie mit der Arbeit fertig ist und nach
+Hause will.
+Während Sie sich umsehen, um etwas zu finden mit dem Sie in das
+Fortnerhaus einbrechen können finden Sie ein   das Ihnen helfen wird. Ihre
+Suche beginnt.
+
+Die Spielbildschirmseite
+
+SCHLAGENDES HERZ - oben/links
+KÖRPERANZEIGER - mitte/links
+STATUSANZEIGER - unter Hauptfenster
+BESCHREIBUNGSFENSTER - unten/mitte
+
+Wie Sie aus Abbildung 1 ersehen, ist der Bildschirm so aufgeteilt, daß Sie
+mit Hilfe der verschiedenen Informationen das Spiel spielen konnen.
+
+RICHTUNG
+Um sich auf der Bildschirmseite des Spiels zu bewegen, benutzen Sie die
+grünen Richtungspfeile. Diese Pfeile ermoglichen Ihnen vorwärts zu gehen,
+sich herum zu drehen, nach links oder rechts zu gehen oder nach oben oder
+unten zu klettern. Wenn Sie sich einen Gegenstand genau ansehen wollen
+konnen Sie eine Abkürzung machen indem Sie den Feuerknopf an Ihrem
+Steuerknüppel drücken, dann werden Sie sofort zu dem Gegenstand
+befördert. Wenn Sie eine Tür öffnen wollen einfach mit dem Cursor
+anklicken. (Es sei denn, daß Sie ein Rätsel lösen müssen bevor Sie die Tür
+öffnen können.)
+
+ÜBERPRÜFEN
+Um sich einen Gegenstand auf dem Bildschirm anzusehen, drücken Sie den
+Feuerknopf an Ihrem Steuerknüppel und schleifen Sie den Gegenstand zum
+Inventärfenster. Wenn der Gegenstand im Fenster ist, klicken Sie ihn an
+(lassen Se den Feuerknopf los), dann den ÜBERPRÜFKASTEN, der jetzt auf
+dem Bildschirm erscheint, anklicken.
+Nun erscheinen alle Informationen über den Gegenstand den Sie in das
+Inventarfenster gebracht haben.
+
+Manche Gegenstande sind zu groß, um sie zu entfernen. Um lnformationen
+über den Gegenstand zu erhalten, den Gegenstand auf der
+Hauptbildschirmseite des Spiels anklicken.
+
+SPRECHEN
+Einige der Leute die Sie treffen sind so freundlich, daß sie sich mit Ihnen
+unterhalten wollen, wenn dies der Fall ist erscheint eine Mundabbildung.
+Wenn Sie diese Abbildung anklicken dann haben Sie verschiedene
+Möglichkeiten. Klicken Sie die Option an die Sie wahlen mochten und
+warten Sie auf die Antwort und setzen Sie dies fort bis Ihre Unterhaltung
+zu Ende ist.
+
+KOPIERSCHUTZ
+
+SCHUTZNUMMERN.
+REIHE
+	1	7647	5048	4891
+	2	8424	3456	1890
+	3	9433	9842	7472
+	4	2238	8776	2716
+	5	9814	2329	2229
+	6	4560	1080	2699
+	7	2633	3333	8888
+	8	5794	6724	6745
+	9	7874	1426	4642
+	10	3237	3777	5391
+	11	6267	9433	2866
+	12	1884	7402	2555
+	13	9557	4616	4759
+	14	7464	2037	7143
+	15	3537	7814	3520
+	16	3332	2374	1143
+	17	3312	3985	4616
+	18	4012	8039	7814
+	19	3599	5165	7685
+	20	4717	7685	8927
+	21	9903	1947	3452
+	22	1623	1403	4444
+	23	5188	8927	8768
+	24	5737	9693	3087
+	25	2937	3312	4771
+	26	4921	2793	4852
+	27	8805	2335	3488
+	28	6933	1386	8695
+	29	8121	5977	1890
+	30	1007	3452	2699
+	31	6850	4665	5391
+	32	1997	7554	4759
+
+SAMMELN
+Wenn Sie Ihrer Sammlung einen Gegenstand beifügen wollen, dann müssen
+Sie das Kofferbild aus der oberen rechten Seite des Bildschirmes
+anklicken. Dann schleppen Sie den Gegenstand für Ihre Sammlung zum
+Inventarfenster. Er wird dann automatisch Ihrer Sammlung beigefügt.
+Wenn Sie den gesammelten Gegenstand benutzen wollen brauchen Sie Ihn
+nur anzuklicken, ein Cptionmenü erscheint und der Gegenstand wird das tun
+was Sie gewählt haben. Manche Gegenstände können direkt zur
+Hauptbildschirmseite geschleppt werden, um eine Handlung durchzuführen;
+d.h. einen Schlüssel zur verschlossenen Tür schleppen usw.
+Sie können viele Gegenstände in Ihrem Inventar sammeln. Wenn Sie sich
+Ihre Last erleichtern wollen, können Sie einige gesammelte Gegenstände
+liegenlassen und sie vielleicht später wieder holen wenn sie benötigt
+werden.
+BESCHREIBUNGSFENSTER
+In diesem Fenster erscheinen die Meldungen und das Inventar.
+Es kann dazu benutzt werden um, Gegenstände in Ihrem Inventar zu
+besichtigen.
+Fragen über diese Gegenstände zu stellen.
+Gegenstände, die Sie in einem Raum liegen gelassen haben, zu besichtigen.
+Ein sprechendes Meldungsfenster zu sehen, wenn Sie m;t jemand eine
+Unterhaltung führen.
+Den Zustand Ihres Sekundärstatus zu besichtigen.
+Sellte das Beschreibungsfenster voll sein dann benutzen Sie die kleinen
+,hoch' oder ,runter'  Pfeile neben dem Fenster, um die Informationen im
+Fenster hoch oder runter zu rollen.
+SCHLAGENDES HERZ
+Das schlagende Herz rechts oben im Bildschirm zeigt Ihren
+Gesundheitszustand an, während Sie mit gefuährlichen Situationen ringen.
+Der Herzschlag wird in gefährlichen Situatonen unregelmäßig und er wird
+wieder normal wenn Sie Ihre Angst bewältigen. Die kleine Nummer neben
+dem Herz gibt eine komplette Anzeige des Zustandes Ihrer verschiedenen
+Körperteile an.
+KÖRPERANZEIGER
+Sechs Gesundheitsanzeiger sind um Ihren Körper herum angebracht. Die
+Anzeiger überwachen, wieviele Treffer Ihren Kopf, Ihre Schultern, Ihren
+linken Arm, Ihren rechten Arm, Ihr rechtes Bein, Ihr linkes Bein getroffen
+haben.
+Zu Beginn des Spiels haben Sie einen gesunden Körper aber während des
+Spiels wird Ihr Körper getroffen und der Zähler reduziert sich bis auf Null.
+Sie sind dann entweder tot wenn es Treffer auf den Kopf waren oder wenn
+eines Ihrer Glieder nicht mehr funktioniert, denn dies wird Ihren
+restlichen Körper so beeinträchtigen, daß Sie große Schwierigkeiten
+haben werden Ihre Suche fortzusetzen.
+
+Es ist möglich, daß Ihr Körper sich erholt indem Sie einen heilenden
+Zauberspruch erfinden und benutzen.
+
+Buttons am rechten Rand (von links nach rechts/oben nach unten):
+
+KOFFER
+RAUM RADAR
+ZAUBERSPRÜCHE INVENTAR 
+BUCH DER ZAUBERSPRÜCHE 
+KÄMPFEN
+MOUTHICON
+BEFEHLSMENÜ
+SEKUNDÄRSTATUS
+PAUSE/SPEICHERN/WIEDERHERSTELLEN/BEEEDEN
+
+
+INFORMATIONEN ÜBER ZAUBERSPRÜCHE
+Dieses kleine Fenster zeigt an welchen Zauberspruch oder welche
+Zaubersprüche Sie im Moment benutzen. Benutzen Sie die kleinen ,hoch'
+oder ,runter' Pfeile links neben dem Inventartenster um den Text der
+Zaubersprüche hoch oder runter zu rollen.
+Folgende sechs Abbildungen erscheinen rechts oben im Bildschirm:-
+Koffer: -   Wie schon beschrieben ein lnventa.- aller Gegenstände die Sie
+bei sich haben.
+Raumradar:-Wenn Sie dies anklicken werden Sie in dem
+Beschreibungsfenster sehen was Sie aus diesem Raum mitgenommen haben
+und was Sie in diesem Raum liegen gelassen haben, um es später
+abzuholen.
+Wahl des Zauberspruchs/sprechen:-
+Wie schon beschrieben, dies ermöglicht Ihnen sich die Zaubersprüche die
+zur Verfügung stehen, anzusehen.
+Buch der Zaubersprüche:-
+Wenn Sie dies anklicken können Sie sich das Zauberbuch ansehen und es
+wird lhnen helfen den richtigen Zaubertrunk zu mischen. Weitere
+Einzelheiten der Zauberherstellung.
+Angriff:- Funktioniert nur im Kampfmodus - einen Satz vorwärts machen
+und hacken.
+Abwehr:-   Funktioniert nur im Kampfmodus - Schlägen ausweichen.
+BEFEHLSMENU
+Wenn Sie einen Gegenstand anklicken erscheinen Optionen im Befehlsmenü,
+rechts neben dem Hauptspielbildschirm. Sie müssen Ihre Optionswah
+anklicken und die erwünschte Funktion wird durchgeführt.
+STATUSANZEIGER
+Dies sind eine Reihe von Anzeiger die Ihnen zeigen wie gut oder schlecht
+Sie im Spiel voran kommen.
+LEV-STUFE: - Die Zähler zeigr an wie Sie durch die ver- schiedenen Stufen
+vorankommen. Je mehr Rätsel Sie lösen und je mehr außerirdische Wesen
+Sie zerstören um so mehr (EXP)-Erfahrungspunkte bekommen Sie.
+Je mehr Punkte Sie bekommen um so besser können Sie kämpfen und um so
+verheerender werden Ihre Zaubersprüche sein.
+EXP-ERFAHRUNG:-Dies zeigt an wie erfolgreich Sie auf dieser Stufe sind.
+PP- KRAFTPUNKTE:- Dieser Anzeiger steigt an wieviele Kraftpunkte  Sie
+sammeln und je mehr Kraftpunkte Sie sammeln um so mehr Zaubersprüche
+können Sie benutzen.
+HP- TREFFERPUNKTE:- Gibt an wie widerstandsfähig Sie sind.
+
+SEKUNDÄRSTATUS
+Die Abbildung des Sekundärstatus ist unter dem Befehlsmenä. Wenn Sie
+dies anklicken erscheinen weitere acht Titel in dem Beschreibungsfenster.
+WS-WAFFENFERTIGKEIT:- Je besser Sie mit Waffen umgehen können um so
+höher geht der Zähler,
+ACC-GENAUIGKEIT:- Zeigt an wie genau Sie Ihre Zaubersprüche anwenden.
+WP-WILLENSSTÄRKE:- Wenn Sie mit den auflerirdischen Wesen kämpfen,
+anstatt wegzulaufen wird Ihre Willensstärke in die Höhe schieBen.
+MR-Widerstand gegen Zauberkratt:- Je höher der Zähler steht um so mehr
+Widerstandskraft haben Sie gegen Zauberkräfte:
+STR-STÄRKE:- Wenn der Zähler hoch steht sind Sie wahrscheinlich
+stärker wie das außerirdische Wesen,
+
+CONST-KONSTITUTION:- Je höher der Zähler steht, um so mehr Treffer
+können Sie verkraften ohne Ihre Gesundheit zu beeinträchtigen.
+
+INT-INTELLIGENZ:- Dies erhöht sich je weiter Sie in dem Spiel voran
+kommen.
+
+PAUSE/SPEICHERN/WIEDER HERSTELLE/BEENDEN
+
+Um eine Pause einzulegen die Diskettenabbildung anklicken, dann Pause
+anklicken.
+Um weiter zu spielen einfach den ,Feuerknopf' drücken.
+Um ein Spiel zu speichern die Diskettenabbildung anklicken, dann
+speichern anklicken. Den Steuerknüppel nach oben oder unten bewegen um
+einen Namen für Ihre Datei zu wählen und Feuer drücken. Sie können auf
+der B-Seite von Diskette 4 speichern oder auf einer Ihrer eigenen
+vorformattierten Disketten.
+NUR AUF SEITE B DER DISKETTE 4 SPEICHERN, NIEMALS AUF EINER
+ANDEREN.
+
+Um ein Spiel wieder herzustellen wenn Sie nicht weiter kommen oder
+wenn Sie gestorben sind, können Sie ein gespechertes Spiel wieoer
+herstellen.
+Diskettenabbildung anklicken und dann wieder herstellen (restore)
+anklicken.
+Drücken Sie den Steuerknüppel nach oben oder unten um die Datei zu
+wählen, die Sie wieder herstellen wollen und dann drücken Sie ,Feuer' um
+die Wiederherstellung zu aktivieren.
+
+Um ein Spiel zu beenden die Diskettenabbildung anklicken dann beenden
+(quit) anklicken. Antworten Sie JA (yes) um das Spiel zu beenden oder NEIN
+(no) um weiter zu spielen.
+
+
+Abwehrende Kampfart
+Bei Kämpfen verwandelt sich Ihre Abbildung in ein kleines Schild, das
+Schild schützt oder wehrt Treffer ab.
+
+Angreifende Kampfart
+Um die auflerirdischen Wesen anzugreifen die Angriffabbildung (attack)
+anklicken und der Cursor wird zum Schwert. Dies bedeutet, daß Sie in
+Angriffsmodus sind und Sie können eine Waffe benutzen, die Sie schon
+vorher benutzt haben sollten. Wenn Sie während des Kampfes keine Waffe
+benutzen, können Sie das Inventar aufrufen und irgend etwas wie zum
+Beispiel einen Dolch eine Axt oder ein Schwert benutzen.
+Nun müssen Sie die Waffe auf dem Kampfbildschirm und gegen Ihren
+Gegner einsetzen. Setzen Sie den Cursor über den Körper Ihres Gegners und
+drücken Sie ständig den ,Feuerknopr. Nun hacken Sie an Ihrem Gegner
+herum. Je nach dem wie gut Ihre Waffe ist und je nach dem wie stark Sie
+sind werden Sie Ihren Gegner bald töten. Jedes bösartige außerirdische
+Wesen kann man an bestimmten Körperstellen leichter treffen als auf
+anderen und jeder Körperteil kann unterschiedlich viel Beschädigung
+aushalten. Sie sollten daher Ihr Schwert hin und her bewegen (immer noch
+den ,Feuerknopf drücken) um die schwache Stelle Ihres Gegners zu treffen.
+
+ZAUBERSPRÜCHE
+Sie brauchen sehr viel Zauber in der Form von Zaubersprüchen, um Ihnen
+durch das Spiel zu helfen.
+
+Bevor Sie starten müssen Sie folgendes haben.
+
+Elviras Zauberbuch. (Dies wurde Ihnen gegeben als Sie die
+Filmstudios betraten)
+Die richtigen Zutaten, um den gewählten Zauber herzustellen.
+Sie müssen die richtige Stufe, genügend Erfahrung und die Möglichkeit
+haben den Zauberspruch anzuwenden.
+
+Es gibt mehrere Voraussetzungen die beachtet werden müssen bevor ein
+Zauber entstehen oder angewendet werden kann.
+
+1-Stufe:- In dem Zauberbuch steht neben jedem Zauber eine Nummer. Dies
+ist der Mindestbetrag den Sie erreicht haben müssen bevor der Zauber
+angewendet werden kann.
+2-Kosten:- Die Anzahl der PP(Kraftpunkte) die bei der Anwendung des
+Zauberspruches verbraucht werden, sie werden auch vom Gesamtbetrag
+Ihrer Kraftpunkte abgezogen.
+3-Zutaten:- Sie müssen alle erforderlichen Zutaten in Ihrem Inventar
+haben, die zur Herstellung des gewählten Zaubers benötigt werden.
+
+Einen Zaubertrunk Mischen.
+Sie müssen Elviras Zauberbuch haben bevor Sie den Zaubertrunk mischen
+können. Nun müssen Sie die Buchabbildung auf der rechten Bildschirmseite
+anklicken, damit Sie die vielen Zauber, die Ihnen zur Verfügung stehen,
+sehen können.
+Sie können in den Seiten blättern, indem Sie die Buchabbildung links oben
+auf der Seite anklicken. Wenn Sie einen Zauber gewählt haben, muß der
+Zaubername angeklickt werden um die Zutaten, die benötigt werden,
+aufzuzeigen.
+Um zu dem Inhaltsverzeichnis des Zauberbuches zurückzukehren ohne einen
+Zauber zu benutzen oder um einen anderen Zauber zu wählen die
+Ausgangabbildung (exit) oben rechts anklicken.
+Nun wird es interessant, um einen Zauber zu mischen muß die
+Buchabbildung oben links auf der Seite, angeklickt werden.
+Dann erscheint die Zauberseite.
+Schleppen Sie alle benötigten Zutaten aus dem Inventar auf diese Seite und
+lassen Sie sie fallen.
+Die Zutaten werden nun auf der Seite erscheinen.
+Die Buchabbildung anklicken und der Zauber wird im Inventar als neue
+Abbildung ersoneinen. Ihr Inventar kann mehrere Zauber-abbildungen
+enthalten, bis sie benutzt werden sollen.
+Wenn Sie zum Inhaltsverzeichnis zurückkehren wollen dann muß die
+Ausgangsabbildung (exit) oben rechts auf der Seite angeklickt werden.
+
+ZAUBERSPRÜCHE ANWENDEN
+Wenn ein Zauber gemischt wurde und in Ihrem Inventar ist, dann kann er
+benutzt werden. Wenn Sie einen Zauber benutzan wollen muß die Abbildung
+des Zaubers den Sie benutzen wollen in Ihrem Inventar angeklickt werden.
+Wenn Sie dies getan haben dann erscheint die Abbildung "benutzen" (use) im
+Befehlsmenü und wenn Sie dies anklicken wird der Zaiber in Kraft treten.
+Sie können sich alle fertig gemischten Zauber ansehen, indem Sie die
+hoch/runter Pfeile des Zauberwählers links neben dem Inventar-fenster
+anklicken.
+
+Bestimmte Zauber können mehrmals benutzt werden, während andere nach
+einer Anwendung verbraucht sind. Wenn die Abbildung eines Zaubers aus
+dem Inventar verschwindet dann wurde er entweder benutzt und ist nun
+verbraucht oder er ist abgestorben weil er für lange Zeit nicht benutzt
+wurde.
+
+ZUR VERFÜGUNG STEHENDE ZAUBER
+Dies ist eine Liste der Zauber, die in diesem Spiel zur Verfügung stehen.
+Jeder Zauber hat seinen eigenen Namen, Stufe und Krattpunkte, die er
+verbraucht und die Zutaten die er benötigt um ihn herzustellen. Außerdem
+wird die Wirkung des angewendeten Zaubers beschrieben.
+Zum Beispiel.
+
+NAME	STUFEPP	ZUTATEN
+ABSORB MAGIC:8,  8,  Ein Granat und jedes absorbierend Objekt
+(Absorbierender Zauber)
+WIRKUNG: Kein Zauber wirkt, für kurze Zeit, auf den Anwender des Zauber.
+
+ZAUBER ABSORBIEREN:8,8, ein Granat und jedes absorbierende Objekt. Kein
+Zauber wirkt, für kurze Zeit, auf den Anwender des Zauber.
+
+DÄMON FESSELN: 9,15, UNBEKANNT. In der richtigen Situation können
+dämonische Lebensformen durch diesen Zauber gefesselt werden.
+
+SEGNEN:1, 5, WEIHWASSER UND EIN KREUZ.- Eine geweihte Waffe schadet
+unheiligen Kreaturen besonders viel.
+
+GEHIRNFÖRDERUNG: 3, 6, Alles was Informationen speichern kann. Die
+Intelligenz des Anwenders des Zaubers wird bedeutend erhöht.
+
+MUT:3, 8, Ein kleines Glas Alkohol. Der Anwender des Zaubers verliert alle
+Angst.
+
+WUNDEN HEILEN: 9,12, Ein Glas Weihwasser. Die Gesundheit des Anwenders
+des Zaubers wird wieder völlig hergestellt.
+
+VERZAUBERTE WAFFE: 3, 6, Ein Samaragd urid eine Feile (Waffe). Dieser
+Zauber ist besonders schadenverheerend und ist einfacher zu handhaben.
+
+ANGST: 6, 7, Ein Hexenauge. Dieser Zauber versetzt schwächere Feinde in
+große Angst.
+
+FEUER BALL:4, 8, Ein leicht entzündbares Material. Ein Feuerball wird auf
+ein Ziel gefeuent und richtet mittleren Schaden an.
+GEFRORENE KLINGE: 8, 9, zwei kalte Gegenstände. Die Waffe wird sehr kalt
+und richtet besonders viel Schaden an.
+
+HEILENDE He.NDE:1, 3, keine. Dieser Zauber hat eine geringfügige heilende
+Wirkung auf einen Körperteil.
+
+KRÄUTERHEILUNG:5, 6, einen eßbaren Pilz. Dieser Zauber wirkt sehr
+heilend auf einen Körperteil oder geringfügig auf alle Körperteile.
+
+HEILIGER BLITZ: 5, 6,Zwei gute religiöse Gegenstände. Ein Blitz des Guten
+wird auf unheilige Monster gefeuert und richtet mittelmäßigen Schadenan.
+
+EISPFEIL: 1, 4, keine Zutaten. Bei der Anwendung dieses Zaubers werden
+Eisscherben auf das Ziel geschossen, die aber nur wenig Schaden anrichten.
+
+BLITZ: 7,11, ein Amethyst und ein Teller. Aus den Fingerspitzen des
+Spieler strömt Elektrizität de großen Schaden zur Folge hat.
+
+GLÜCK: 2, 4, Etwas, daß mit Glück verbunden ist. Der Anwender des
+Zaubers wird sehr viel Glück haben.
+
+ZAUBERMUSKELN: 5, 7, drei Metallgegenstände. Der Benutzer dieses Zaubers
+wird Riesenkräfte erhalten.
+
+ZAUBERRÜSTUNG: 7,12 Zwei Gegenstände aus Edelmetall. Dies ist eine
+stärkere Version des Schutzzaubers.
+
+NOVA: 9,15, eine entzündbare Flüssigkeit. Ein Feuerstrom zerstört alle
+Monster.
+
+SCHUTZ: 2, 6, ein Gegenstand aus Metall. Der Anwender des Zaubers wird
+von einem Zauberfeld umgeben, das Schäden reduziert.
+
+FEUER WIDERSTEHEN: 5, 7 , Feuerlöscher. Wenn Sie von diesem Zauber
+beschützt werden, können Sie von Feuer nicht angegriffen werden.
+
+WIEDERAUFERSTEHEN: iG, 12, nicht bekannt. Eine heilige Person wird
+wieder zum Leben gebracht.
+
+WIEDERBELEBEN: 4, 6, ein stark riechender Gegenstand. Der Anwender des
+Zaubers wird ohnmächtig und wird automatisch geheilt.
+
+STURM HERAUF BESCHWÖREN: 7, 9, ein Baromßter. Ein Sturm wird 
+herauf beschworen.
+
+WIRKLICHE FLUCHT: 8, 9, Federn. Zauber trifft immer die schwachen 
+Stellen der Feinde.
+
+UNTOTE ABWEHREN: 3,12, ein Gehirn. Dieser Zauber wehrt Untote ab.
+
+UNHEILIGE BARRIERE : 3, 5, eine Bibel. Unheiliges kann nicht 
+durch diese Barriere.
+
+UNSICHTBARES SCHILD: 1, 3, keine Zutaten. Die Luft die den 
+Anwender des Zaubers umgibt, verdickt sich zu einem Schild, das Angriffe und
+Kampfschäden abwehrt.
+
+
+
+HABEN SIE SICH IN MEINEN FILMKULISSEN VERIRRT?
+
+Keine Angst, da ich schon das Gefühl hatte, daß Sie vielleicht Hilfe
+brauchen habe im ein Hilfs- und Hinweisbuch zusammen gestellt, das Sie
+erhalten können wenn Sie £5.00 (engl. Pfund) per Euroscheck an 
+die unten angegebene Adresse schicken. Wir können Ihnen auch ein Video (nur VHS)
+des ganzen Spieles für £7.00 (engl. Pfund) anbieten, das Ihnen zeigt wie
+Sie das Spiel spielen sollten, um Ihre Suche zu vervollständigen. Buch und
+Video können separat bestellt werden oder £10.00 (engl. Piund) für beide.
+Porto und Verpackung gratis.
+
+
+
+
+
+Wenn Ihnen Elvira 2 gefallen hat, dann versuchen Sie das 
+aufregende Spiel Elvira 1" Gebieterin der Dunkelheit". Von Ihrem Händler 
+erhältlich oder direkt von Flair £ 19.99 einschließlich Porto und Verpackung.
+
+Flair Software, The Smithy Side, Ponteland, Newcastle,
+NE 20 9BD ENGLAND.
+
+*********
+
+End of the International Project 64 etext of the Elvira II manual.
+
+*********

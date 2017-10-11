@@ -1,0 +1,36 @@
+TEKNISKA APPLIKATIONER PÅ VIC
+
+Sune Windisch
+
+©1982, författaren och Förlagsgruppen för Teknisk utbildning i Norrköping AB
+Upplaga 1:1
+Illustrationer: Höran Wikhäll
+Tryck: Grafax, Uppsala 1982
+ISBN 91-86398-07-5
+
+Distribution: Litteratur och föreningstjänst
+              Box 1338
+              171 26 SOLNA
+              Tel: 08-730 02 75
+
+              Handic electronic ab
+              Box 1063
+              463 00 ASKIM/GÖTEBORG
+              TEl: 031-28 97 90
+
+INNEHÅLLSFÖRTECNKNING
+
+0. FÖRORD
+1. VIC:S I/O-REGISTER
+ 1.1 Tidsfördröjningar
+ 1.2 Analog/digital-omvandlare
+ 1.3 Digital/analog-omvandlare
+ 1.4 Datorn ersätter fasta komponenter i styrapplikationer
+ 1.5 Automatisk telefonuppringare
+2. VIC-RELÄKASSETT
+ 2.1 Sammanfattning över POKE för utgångarna
+ 2.2 Ingångarna på VIC-REL
+3. RS 232C-SNITTET
+ 3.1 Överföring av data mellan olika enheter
+ 3.2 Mottagande av data på RS 232
+4. EPROM-PROGRAMMERARE

@@ -1,0 +1,173 @@
+*********
+
+Welcome to iDOC= - the international CBM documentation project!
+
+The goal of iDOC= is to preserve (non-English) Commodore related documents
+in electronic text format that might otherwise cease to exist with the rapid
+advancement of computer technology and declining interest in 8-bit computers
+on the part of the general population. If you would like to help by
+converting Commodore related hardcopy documents to electronic texts please
+contact the manager of iDOC=, Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names consists of a reasonably short unique title, followed by the
+document language. Two optional fields follow; first the document version (0
+for incomplete texts, version 1 is usually unnumbered), and then the
+document source, if there are more than one. Finally, the document is given
+a .txt extension.
+
+The author(s) of the original document and members of iDOC= make no
+representations about the accuracy or suitability of this material for any
+purpose. This etext is provided "as-is". Please refer to the warranty of the
+original document, if any, that may included in this etext. No other
+warranties, express or implied, are made to you as to the etext or any
+medium it may be on. Neither the author(s) nor the members of iDOC= will
+assume liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext. Therefore
+if you read this document or use the information herein you do so at your
+own risk.
+
+*********
+
+The iDOC= etext of the Miami Vice manual (Finnish), converted to text by 
+Vesa-Matti J Kari <vmkari@cc.helsinki.fi>
+
+miamivice_fi.txt, April 2000, etext #62.
+
+*********
+
+                  MIAMI VICE
+
+MIAMI VICE-TV:STƒ TUTTU POLIISISARJA ON NYT MY÷S PELINƒ, JOSSA SINUN TƒYTYY
+TEHDƒ VUOSIKYMMENEN SUURIN HUUMEPIDƒTYS.
+
+Crockett ja Tubbs ovat saaneet tiet‰‰, ett‰ tiistaina saapuu maahaan [sic ->
+'maahan'] miljoonan dollarin arvoinen huume-er‰, jonka takana on
+salaper‰inen Mr J. Heid‰n on nyt aloitettava pohjalta, katukauppiasta ja
+pienv‰litt‰jist‰, teht‰v‰ pid‰tyksi‰ ja ker‰tt‰v‰ tietoa, jotta he p‰‰sev‰t
+isoihin kaloihin kiinni.
+
+-----------------------------------------------
+KONTROLLIT
+-----------------------------------------------
+
+SHIFT LOCK-paussi. Uusi peli aloitetaan painamalla SHIFT LOCKia kaksi
+kertaa.
+E-n‰pp‰in -katkaisee k‰ynniss‰ olevan pelin ja aloittaa uuden
+
+JOYSTICK (AUTOLLA AJATTAESSA)[sic -> 'AJETTAESSA']
+-----------------------------
+
+YLOS-kiihdyt‰ [sic -> 'YL÷S']
+ALAS-jarruta
+OIKEA/VASEN -k‰‰nny oikealle/vasemmalle
+FIRE-ammu (paina nopeasti)
+
+K‰‰nnytt‰ess‰ huomaa:hiljaisilla nopeuksilla auto EI k‰‰nny, nopeasti
+ajettaessa auto liukuu oikealle/vasemmalle, muttei k‰‰nny.
+
+
+-----------------------------------------------
+KUVARUUTU
+-----------------------------------------------
+|                                          |
+|        -------- --------------           |
+|--------|AUTO- | |  CROCKETT  |           |
+||PƒIVƒ+||NƒYTT÷| -------------- --------- |
+||KELLO ||      |    STATUS      |PISTEET| |
+|---------------- -------------- --------- |
+|                 |   TUBBS    |           |
+|                 --------------           |
+|---------------------------------------   |
+||     VIESTIRUUTU                     |   |
+|---------------------------------------   |
+|------------------------------------------|
+
+
+-----------------------------------------------
+AMPUMINEN AUTOSTA
+-----------------------------------------------
+
+Pys‰yt‰ paikan eteen, jonne haluat menn‰ (kaikki paikat, jolla [sic ->
+'joilla' on nimi] on nimi. Paina fire‰ ja liikuta keppi‰ vasemmalle.
+N‰yttˆˆn tulee nyt auto, jossa on nuolet kummallakin puolella. Valitse
+henkilˆ, joka menee sis‰‰n, painamalla fire‰. Muut symbolit: kun s‰kin
+n‰kˆinen ruutu vilkkuu, tarkoittaa se, ett‰ autossa on todistusaineistoa ja
+kun miessymboli vilkkuu, tarkoittaa se, ett‰ autossa on pid‰tetty henkilˆ.
+
+
+JOYSTICK (SISƒTILOISSA LIIKUTTAESSA)
+------------------------------------
+
+YLOS-mene ovesta [sic -> 'YL÷S']
+ALAS-pois valikosta
+OIK/VAS-mene oikealle/vasemmalle
+FIRE-ammu (kuusi laukausta k‰ytett‰viss‰)
+
+Todistusaineisto (s‰kin n‰kˆinen) ker‰t‰‰n k‰velem‰ll‰ sen yli. Jos roisto
+tavataan paikalta, h‰nen nimens‰ n‰kyy viestiruudussa. Valitse valikosta
+mit‰ haluat tehd‰ h‰nen kanssaan (pid‰tt‰‰, kuulustella ym.). Vie vangitut
+roistot ja todistusaineisto kaupungintalolle (CITY HALL), jotta saat niist‰
+pisteet.
+
+-----------------------------------------------
+ERIKOISPAIKAT
+-----------------------------------------------
+
+Et p‰‰se sis‰lle, mutta kone antaa ‰‰nimerkin kun n‰iss‰ k‰yd‰‰n.
+-CITY HALL-t‰nne j‰tet‰‰n roistot ja todistusaineisto. Roistoja, jotka eiv‰t
+puhuneet, kuulustellaan t‰‰ll‰ ja tieto v‰litet‰‰n 3 (peli)tunnissa
+Crockettille ja Tubbsille.
+-HOSPITAL-voit k‰yd‰ kerran p‰iv‰ss‰. Palauttaa jonkin verran voimia.
+
+-----------------------------------------------
+AJOITUS
+-----------------------------------------------
+
+1 peliminuutti=1 sekunti normaaliaikaa
+-Jos saavut paikalle ennen kuin kokous on alkanut, n‰kev‰t roistot autosi ja
+kokous j‰‰ pit‰m‰tt‰. Jos saavut paikalle alkaen kokouksen alusta:
+ <  4 min: Roistot paenneet, lˆyd‰t todistusaineistoa
+ 4- 8 min: Roistot ehk‰ paikalla
+ 8-12 min: Roistot paenneet, mutta voit n‰hd‰ heid‰n autonsa (punainen)
+ > 12 min: Olet liian myˆh‰ss‰
+
+-----------------------------------------------
+PISTEYTYS
+-----------------------------------------------
+
+-Saat pisteit‰ kun tuot pid‰tettyj‰ roistoja ja todistusaineistoa City
+Halliin ja ammut punaisia autoja.
+-Menet‰t pisteit‰ jos kolaroit, ammut v‰‰r‰n v‰risi‰ autoja, Crockett tai
+Tubbs haavoittuu sek‰ ep‰onnistuneesta pid‰tyksest‰.
+Jos et onnistu pid‰tt‰m‰‰n Mr J:t‰ tiistai puoleenp‰iv‰‰n menness‰, menet‰t
+kaikki pisteesi. Peli alkaa seuraavan sunnuntain keskiyˆst‰ ja kokoukset
+noudattvat [sic -> 'noudattavat'] edellisen viikon aikataulua, paitsi jos
+kyseinen roisto on tapettu tai pid‰tetty.
+
+-----------------------------------------------
+KOKOUKSET
+-----------------------------------------------
+
+Kapteeninne on antanut teille aikataulun maanantain kokouksista. (kts
+englanninkieliset ohjeet kohta SCHEDULES: MONDAY ONLY). Vaikeutena on se,
+ett‰ aamup‰iv‰ll‰ on kaksi mahdollisuutta ja iltap‰iv‰ll‰ nelj‰, joina
+konnat voivat pit‰‰ kokouksiaan. Kun saat ensimm‰isen konnan kiinni, loput
+kokoukset noudattavat samaa aikataulua.
+
+Peli p‰‰ttyy jos Mr J saadaan kiinni tai Crockett & Tubbs kuolevat.
+
+*********
+
+End of the iDOC= etext of Miami Vice.
+
+*********

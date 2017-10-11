@@ -1,0 +1,2856 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore
+64 related documents in electronic text format that might otherwise
+cease to exist with the rapid advancement of computer technology and
+declining interest in 8-bit computers on the part of the general
+population. If you would like to help by converting C64 related
+hardcopy documents to electronic texts please contact the manager of
+International Project 64, Peter Karlsson, at m9944@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document.  However, certain portions, such as diagrams, program
+listings, and indexes may have been either altered or sacrificed due
+to the limitations of plain vanilla text.  Diagrams may have been
+eliminated where ASCII-art was not feasible.  Program listings may be
+missing display codes where substitutions were not possible.  Tables
+of contents and indexes may have been changed from page number
+references to section number references. Please accept our apologies
+for these limitations, alterations, and possible omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The
+first characters of the file name are an abbreviation of the original
+document name and the language of the etext. The version number of the
+etext follows next. After that a letter may appear to indicate the
+particular source of the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International
+Project 64 make no representations about the accuracy or suitability
+of this material for any purpose.  This etext is provided "as-is".
+Please refer to the warantee of the original document, if any, that
+may included in this etext.  No other warantees, express or implied,
+are made to you as to the etext or any medium it may be on.  Neither
+the author(s) nor the members of International Project 64 will assume
+liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext.
+Therefore if you read this document or use the information herein you
+do so at your own risk.
+
+*********
+
+The International Project 64 PRE-RELEASE etext of the Swedish
+Comal-80 0.12/0.14 manual, converted to text by Peter Karlsson
+<m9944@abc.se>
+
+COMALSE0.TXT, May 1997, etext #7.
+
+Note from the etexter (in Swedish):
+
+Ofta förekommande stavfel (som **sekvensiella (sekventiella) och
+**formattera (formatera)) har rättats, men inte feluttryck som initialisera
+(initiera), och saker som det numera finns andra ord för (printer -
+skrivare, mod - läge). Ej heller har onödiga bindestreck tagits bort
+(kommando-rad, sprite-grafik).
+
+Danska namn har skrivits om med danska bokstäver, och vissa saknade tecken
+har lagts till. I övrigt har ingen ändring gjorts, mer än layoutmässig, för
+att det ska vara enklare att läsa som text. Rubriker är markerade med
+en asterisk (*) i vänstermarginalen, och uppslagsord i kommandolistninger är
+markerade med plustecken, för att underlätta sökning. Om du vill söka efter
+kommandot "PRINT" söker du på "+ PRINT".
+
+Förhandsversion - programlistningar saknas.
+
+Eftersom texten är inläst via bildläsare och OCR-program kan vissa ord vara
+helt uppåt väggarna fel. Om du hittar sådana, rapportera de gärna, så det
+kan rättas.
+
+*********
+
+HANDBOK
+för
+VIC 64 ***** COMAL-80
+
+av
+BØRGE R. CHRISTENSEN
+################################
+
+(Diskettversion: rev. 00.12 för VIC-64 med VIC 1541)
+
+© 1984, författaren och Förlagsgruppen för teknisk utbildning i Norrköping AB
+
+Upplaga 1:1 1000 ex
+Översättning: Å Fredriksson
+Sättning: DELTA
+Tryck: GRAFAX
+ISBN 91-86398-32-6
+
+Distribution: Handic Electronic AB
+              Box 1063
+              436 00 ASKIM/GÖTEBORG
+              Tel: 031-28 97 90
+
+              Litteratur och föreningstjänst
+              Box 1338
+              17126 SOLNA
+              Tel: 08-730 02 75
+
+              Förlagsgruppen
+              Nygatan 85
+              602 34 NORRKÖPING
+              Tel: 011-13 40 80
+
+
+* Förord
+
+Programspråket COMAL (COMmon Algorithmic Language) definierades 1973 av
+Benedict Løfstedt och undertecknad med utgångspunkt i en önskan att göra
+tillvaron lättare för de människor, som vill programmera datorer utan att
+nödvändigtvis vara professionella programmerare. Vi startade med språket
+BASIC och det på den tiden helt nya Pascal.
+
+Om man ser lite närmare på BASIC finner man; att huvudanledningen till att
+det är så lätt att använda, kan sökas i dess s k operativa miljö mer än i
+språket som sådant. En nybörjare som använder BASIC, kan knappa in en eller
+några programsatser och få dessa utfärda med hjälp av ett enkelt kommando.
+Radnumren används för att radera eller sätta in nya satser och ange deras
+ordningsföljd, dvs när de skall utföras. Man behöver ingen krävande editor
+eller ett invecklat kommandospråk till ett operativsystem. Indata och utdata
+förmedlas enkelt över terminalen/datorns tangentbord/bildskärm eller över en
+printer.
+
+Å andra sidan råder det inget tvivel om, att BASIC som programspråk
+betraktat är hopplöst föråldrat. Det har aldrig varit något speciellt bra
+språk och ur modern synvinkel är det en ren katastrof. Om man börjar att
+programmera i BASIC kommer man lätt på avvägar och får efter kort tid
+problem att slåss med, som kan lösas mycket lättare med ett programspråk som
+i högre grad är anpassat till det sätt som människan tänker på.
+
+COMAL har samma enkla operativa miljö som kännetecknar BASIC. Det har även
+detta språks enkla kommandon som t ex INPUT, PRINT, READ osv. Därtill har
+det också några kommandon som hämtas från Pascal. Med COMAL är det lätt - ja
+nästan oundvikligt - att skriva välstrukturerade program. I stället för att
+leda användaren bort från de moderna, effektiva strukturerade metoderna i
+programmeringen ger COMAL en nära nog perfekt inlärning av denna metod.
+
+Med COMAL-80 till VIC-64 är det nu för var och en möjligt att lära känna och
+kunna öva sig i att använda moderna programmeringsprinciper. Som den Farsta
+COMAL-80 någonsin, omfattar VIC-64 COMAL-80 enkla men effektiva
+styrinstruktioner för högupplösningsgrafiken, som är inbyggd i VIC-64. Detta
+ger helt nya mödligheter- inte minst för undervisningen i skolorna.
+
+VIC-64 COMAL-80 ger en hittills osedd kombination av slagkraftig
+programmering och ett material med många inbyggda mödligheter.
+
+Tønder, oktober, 1983
+
+Børge R. Christensen
+
+
+* Inläsning och start av COMAL-80
+
+Din COMAL-80-tolk levereras på två disketter. De är identiskt lika. Du kan
+inte kopiera disketterna och du bör alltså använda den ena disketten i ditt
+dagliga programmeringsarbete med COMAL-80 och förvara den andra på en
+skyddad plats. Använd bara denna andra diskett, om du på grund av någon
+olyckshändelse får din arbetsdiskett förstörd. Skulle olyckan vara framme
+och arbetsdisketten bli förstörd, då kan du mot en mindre expeditionsavgift
+få en ny arbetsdiskett. Du bör dock lägga märke till att ett sådant ombyte
+är förbundet med två villkor:
+
+1. Att den förstörda eller defekta disketten lämnas till säljaren.
+
+2. Att ditt registerkort, som finns längst bak i denna bok, har fyllts i och
+finns hos Förlagsgruppen vid bytestillfället.
+
+Du bör därför, innan du överhuvudtaget börjar arbeta med din COMAL-80-tolk,
+fylla i och sända in detta registreringskort till Förlagsgruppen Nygatan 85,
+602 34 Norrköping. Märk kuvertet "Comal-garantikort".
+
+På disketten finns olika slags programfiler. Av dessa skall speciellt
+nämnas:
+
+BOOT COMAL
+AUTOBOOT
+COMAL.1
+COMAL.2
+GENERROR.E.L
+
+De två första är programfiler i BASIC, som kan användas för att starta upp
+din nyförvärvade COMAL-80. Du kan använda följande metoder:
+
+[1] Skriv:
+
+LOAD "BOOT COMAL",8 och tryck på <RETURN>-tangenten
+
+När texten READY kommer fram, slår du in:
+
+RUN och trycker på <RETURN>-tangenten.
+
+Nu sätter inlåsningen av COMAL-80-tolken igång och efter ca 1,5 minuter är
+COMAL-80 inläst och klar att använda.
+
+I stället för ovanstående startprocedur kan du göra så här:
+
+[2] Skriv:
+
+LOAD"AUTOBOOT",8,1 och tryck på <RETURN>.
+
+Nu startar inläsningen av COMAL-80 automatiskt och efter ca 1,5 minuter är
+den inläst och klar att använda.
+
+Programmen COMAL.1 och COMAL.2 används under uppstartningen efter denna
+procedur och kan inte läsas in av dia.
+
+Programmet GENERROR.E.L är en listfil, som kan läsas in i COMAL-80, (se
+ENTER). Efter inläsning av filen kan programmet köras, och det kan användas
+för att förse varje diskett med alla COMAL-80:s feltexter. Detta program är
+speciellt värdefullt, om du vill nyformatera oanvända disketter för att
+spara COMAL-80-program. Utan GENERROR.E.L, kommer COMAL-80-tolken endast att
+skriva ut ett felnummer, om du t ex skulle ha ett syntaxfel. Om Du däremot
+har kört in programmet GENERROR.E.L på den nyformaterade disketten, kan
+COMAL-80 istället skriva ut felmeddelandena i klartext (se även SETMSG).
+
+Utöver de här nämnda programmen, innehåller disketten en mängd program, som
+fungerar som förklarande exempel till denna användarhandbok. Dessa program
+finns också listade längst bak i boken. Programmen kan kopieras fritt från
+diskett till diskett (använd LOAD och SAVE eller LIST och ENTER). Men var
+snäll och kom ihåg att programmen omfattas av normal upphovsrätt och därför
+inte får användas i kommersiellt bruk!
+
+Denna handbok är inte någon lärobok utan snarare en uppslagsbok, där alla
+kommandon och funktioner har listats i alfabetisk ordning tillsammans med en
+översikt över deras individuella syntax. Vi gör inget försök att lära ut
+COMAL-80 till användaren, som därför hänvisas till litteraturhänvisningen
+som finns längst bak i boken. Du kan köpa extra exemplar av handboken från
+din VIC-handlare eller direkt från Förlagsgruppen.
+
+Såväl programdiskett och dess innehåll som denna handbok omfattas av
+copyright, upphovsmannarätt, som innehas av författaren och det förlag som
+angivits. De må därför icke i någon form kopieras, rättas, ändras eller
+försäljas. Försäljning kan endast ske genom auktoriserade
+VIC-representanter.
+
+Lycka till!
+
+
++ ABS
+
+Se under STANDARDFUNKTIONER
+
++ AND
+
+Se under UTTRYCK
+
++ APPEND
+
+Se under OPEN
+
++ ATN
+
+Se under STANDARDFUNKTIONER
+
++ AUTO
+
+AUTO är ett kommando, som får COMAL-systemet att sätta radnummer automatiskt
+under programskrivningen. Efter AUTO har knappats in, och man tryckt på <RE
+TURN> skriver systemet:
+
+	0010
+
+och väntar på att man skriver in en rad. När raden avslutas med tryck på
+<RETURN>, svarar systemet:
+
+	0020
+
+och väntar på ytterligare en rad. Man stänger av AUTO genom att avsluta en
+rad med två nedslag på <RETURN> tangenten.
+
+Om ordet AUTO följs av ett tillåtet radnummer, börjar listan av framtagna
+nummer med detta. T ex får kommandot:
+
+	AUTO 110
+
+systemet att ta fram följande radnummer:
+
+	0110, 0120, 0130, ...
+
+Lägger man till ett komma, följt av ytterligare ett heltal, använder
+systemet detta som tillväxtfaktor för radnumren. Alltså får kommandot:
+
+	AUTO ,2
+
+systemet att ta fram denna följd av radnummer
+
+	0010, 0012, 0014, ...
+
+och
+
+	AUTO 110,2
+
+får systemet att numrera inslagna rader med:
+
+	0110, 0112, 0114, ...
+
++ BASIC
+
+BASIC är ett kommando, som får systemet att skifta över till den inbyggda
+BASIC-tolken. COMAL-tolken kan endast återstartas genom att man företar en
+förnyad inläsning av den från disketten (se Inläsning och uppstartning av
+COMAL i inledningen till handboken).
+
++ CASE WHEN
++ OTHERWISE
++ ENDCASE
+
+CASE-satsen används som inledning till en CASE-struktur som anger en
+flerfaldig förgrening. Syntaxen för en CASE-sats är:
+
+CASE <uttryck> [OF]
+
+är ett numeriskt uttryck, ett textuttryck eller ett logiskt uttryck.
+
+Nyckelordet OF står inom hakparentes för att ange, att det automatiskt sätts
+dit av systemet, om användaren inte själv skriver det.
+
+En CASE-sats kan bara användas, om det sker tillsammans med WHEN- och
+ENDCASE-satserna. Syntaxen för en WHEN-sats är:
+
+	WHEN <lista på uttryck>
+
+Uttrycken i listan skall vara av samma typ som uttrycket i den tillhörande
+CASE-satsen. Uttrycken i listan skall vara skilda med kommatecken (,).
+
+ENDCASE-satsen består endast av ett ord:
+
+	ENDCASE
+
+Man kan också ha en OTHERWISE-sats i CASE-strukturen. Syntaxen är:
+
+	OTHERWISE
+
+CASE-strukturen är uppbyggd som visas i följande diagram:
+
+CASE <uttryck> OF
+
+WHEN <uttrycks-lista>           ,',
+                              ,'   ',        +---------.
+programavsnitt A-1           <uttryck>---+---| lista 1  > A-1
+                              ',   ,'    |   +---------'   ·
+WHEN <uttrycks-lista>           ',' _____|_________________|
+                                  ,'     |   +---------.
+programavsnitt A-2                |      |---| lista 2  > A-2
+                                  |      |   +---------'   ·
+                                  |______|_________________|
+...                               |      |
+                                  :      :
+WHEN <uttrycks-lista>             :      :
+                                  |      |   +---------.
+programavsnitt A-n                |      |---| lista n  > A-3
+                                  |      |   +---------'   ·
+OTHERWISE                         |______|_________________|
+                                  |      |
+Programavsnitt B                  |      `-------------->  B
+                                  |                        ·
+ENDCASE                           |________________________|
+                                  |
+                                  v
+
+Efter det att uttrycket efter CASE har utvärderats, undersöks listan efter
+det första WHEN. Om ett av uttrycken ger samma värde som CASE-uttrycket,
+utförs programavsnittet A-t, och därefter fortsätts med de satser som står
+efter ENDCASE. Om värdet av CASE-uttrycket inte återfinns bland uttrycken i
+den första WHEN-satsen, undersöks nästa lista och om likhet hittas där,
+utförs satserna A-2 och därefter fortsätts efter ENDCASE. Har värdet ännu
+inte återfunnits, fortsätts med den tredje WHEN-listan osv.
+
+Ett alternativt programavsnitt, B, kan sättas in och blir utfört, om
+uttryckets värde (i CASE-satsen) inte återfinns i någon WHEN-lista. Detta
+avsnitt skall inledas med en OTHERWISE-sats. OTHERWISE-delen kan utelämnas,
+men i så fall stoppar COMAL-tolken programutförandet med ett felmeddelande,
+om uttrycket efter CASE-satsen inte återfinns i någon av WHEN-satserna.
+
+Lägg märke till, att högst ett av programavsnitten blir utfört. Skulle det
+vara så, att uttryckets värde kan finnas i mer än en av listorna (efter
+WHEN), blir bara programavsnittet för den första listan som har "rätt" värde
+utförd. Programtexten i A-1, A-2, ...  A-n och B kommer att visas med
+"indrag" under utlistning av programmet. Detta ser COMAL-tolken till
+automatiskt.
+
+Exempel: se angivna rader i programmen "småtexter": 540-690,1610-1700;
+"kartotek": 400-530 OBS! kolla efter pgmövers.! <sic!>
+
++ CAT
+
+CAT är ett kommando, som används för att skriva ut diskens
+innehållsförteckning (katalogen) som visar de filer som finns på disketten.
+
++ CHAIN
+
+Satsen:
+
+	CHAIN "<programnamn>"
+
+gör, att programmet <programnamn> blir inläst i datorns minne från diskett i
+1541-stationen. Ett program med tillhörande variabler, som kanske finns i
+arbetsminnet innan CHAIN-satsen utförs, kommer att raderas. Det inlästa
+programmet körs omedelbart efter inläsningen.
+
+CHAIN kan också användas som kommando:
+
+Exempel:
+	CHAIN "inläsning",
+	CHAIN "huvudprogram".
+
++ CHR$
+
+Se under STANDARDFUNKTIONER
+
++ CLOSE
+
+Satsen:
+
+	CLOSE
+
+gör, att alla filer stängs. Fogar man till ett numeriskt uttryck, får man:
+
+	CLOSE <uttryck>
+
+Denna utgåva av CLOSE stänger endast den fil, som har samma nummer som
+svarar mot värdet av <uttryck>.
+
+CLOSE kan också utföras som direktkommando.
+
+Exempel: se angivna rader i "kartotek": 2590, 2710.
+
++ CLOSED
+
+Om ett procedurhuvud avslutas med nyckelordet CLOSED blir de variabler, som
+förekommer i proceduren, antagna att vara lokala, dvs samma variabler kan
+användas i "ytterprogrammet" utan risk för påverkan. Normalt sker detta
+endast för parametrarna (se även PROCsatserna).
+
+Exempel:
+
+	PROC FÖNSTER(FRÅN,TILL) CLOSED
+	  SCREEN(FRÅN,1)
+	  FOR I := FRÅN TO TILL DO EXEC RADERA'RAD(I)
+          SCREEN(FRÅN,1)
+        ENDPROC FÖNSTER
+
+	PROC SCREEN(L,C) CLOSED
+	  PRINT CHR$(19) // HOME
+	  FOR I := 1 TO L-1 DO PRINT CHR$(17), // NED
+	  FOR I := 1 TO C-1 DO PRINT CHR$(29), // FRAM
+	ENDPROC SCREEN
+
+	PROC RADERA'RAD(L) CLOSED
+	  SCREEN(L,1)
+	  FOR I := 1 TO 40 DO PRINT " ",
+	ENDPROC RADERA'RAD //
+
++ CON
+
+Kommandot:
+
+	CON
+
+återupptar utförandet av ett program, som stoppats med nedtryckning av
+STOP-tangenten eller med en STOP-sats. På grund av hur den interna lagringen
+av variabler etc. sker, kan inte detta kommando utföras sedan man har lagt
+till eller tagit bort programrader eller tillfogat nya variabelnamn.
+
++ COS
+
+Se under STANDARDFUNKTIONER
+
++ DATA
+
+DATA-satsen används för att ange konstanter, som skall läsas med READ-satser
+(se även READ). Konstanterna skiljs åt med kommatecken. DATA-satserna kan
+placeras var som helst i programmet, de läggs vid programmets start i en
+datakö, vars element läses i den ordning de förekommer i programmet.
+Talkonstanter kan skrivas med förtecken. Textkonstanter skall omges med
+citationstecken (").
+
+Exempel:
+
+	DATA "Hans Andersson", 5678, "Peter Jansson", 1245
+	DATA "Lina Hansson", 4567, "Lisa Jakobsson", 2578
+
++ DEL
+
+DEL-kommandot används för att ta bort en eller flera rader från programmet i
+maskinens minne. T ex tar kommandot:
+
+	DEL 100
+
+bort rad 100. Kommandot:
+
+	DEL 100-200
+
+tar bort alla rader mellan och inklusive 100 till 200.
+Kommandot:
+
+	DEL -300
+
+tar bort alla rader till och med rad 300 och kommandot:
+
+	DEL 300
+
+tar bort alla rader från och med rad 300
+
+OBS! man kan inte ta bort en rad bara genom att skriva radnumret följt av
+tryck på <RETURN>. Det går bara i BASIC!
+
++ DELETE
+
+DELETE-kommandot används för att radera filer på disk. Exempel: Kommandot
+DELETE "0:gammaltext" raderar filen "gammaltext" på disketten (se även PASS)
+
++ DIM
+
+DIM-satsen används som i BASIC till att deklarera tabeller och
+textvariabler. I COMAL-80 kan man deklarera tabeller med hur många
+dimensioner som helst och indexnumreringen behöver inte börja med 0 eller 1.
+Låt oss se på några exempel:
+
+	DIM TABELL(100)
+
+deklarerar en tabell med reella tal med index gående från 1 till 100. Vill
+man att undre gränsen skall vara 0, skall man skriva:
+
+	DIM TABELL(0:100)
+
+Man kan använda vilket heltal som helst till nedre eller övre gräns, om bara
+det första är mindre än eller lika med det andra heltalet.
+
+	DIM FÄLT (-7:7)
+
+deklarerar en tabell med index från och med -7 till och med 7. Satsen:
+
+	DIM ELEV(30:100,8:10)
+
+deklarerar en tvådimensionell siffertabell med index från 30 till 100 och
+från 8 till 10.
+
+Satsen:
+
+	DIM NAMN$(30:100,8:10) OF 30
+
+deklarerar en tvådimensionell texttabell med index från 30 till 100 och från
+8 till 10. Varje komponent har plats för 30 tecken.
+
+	DIM NAMN$ OF 30
+
+deklarerar en enkel textvariabel med plats för 30 tecken. Enkla
+textvariabler måste alltid deklareras i COMAL-80.
+
+Exempel: se angivna radnummer i "småtext": 50-170; "kartotek": 80-160.
+
++ DIV
+
+DIV är en operator som används vid heltalsdivision. Den definieras av:
+
+A DIV B = INT(A/B) (heltalsdelen av div.)
+
+där A och B kan vara reella tal eller hela tal. Se även under MOD och under
+UTTRYCK.
+
++ DO
+
+DO är ett nyckelord, som används för att avsluta en FOR eller en WHILE-sats.
+Se under FOR och WHILE.
+
++ EDIT
+
+EDIT-kommandot används för att skriva ut programraderna i maskinens minne,
+men utan den indragning, som vanligen skapas av LIST-kommandot.
+
+EDIT används for att skriva ut rader från ett program, som skall rättas med
+hjälp av skärmeditorn, i de fall några av dessa rader skulle bli överskrivna
+om kommandot LIST används.
+
++ ELIF
+
+ELIF-satsen ("elseif") kan endast användas i samband med en IF-sats. Se
+under IF.
+
++ ELSE
+
+ELSE-satsen kan endast användas i samband med en IF-sats. Se IF.
+
++ END
+
+END-satsen gör, att utförandet av programmet stoppas.
+
++ ENDCASE
+
+ENDCASE används för att avsluta det sista programblocket i en
+CASE-konstruktion. Se under CASE.
+
++ ENDFOR
+
+ENDFOR används för att avsluta en FORslinga och ersätter automatiskt
+kommandot NEXT. Se under FOR.
+	
++ ENDIF
+
+ENDIF används för att avsluta det sista blocket med satser i en
+IF-konstruktion. Se IF.
+
++ ENDFUNC
+
+ENDFUNC-satsen används för att avsluta en användardefinierad funktion. Se
+under FUNC.
+
++ ENDPROC
+
+ENDPROC-satsen används för att avsluta en procedur. Se under PROC.
+
++ ENDWHILE
+
+ENDWHILE-satsen används för att avsluta det satsblock som styrs av en
+tillhörande WHILE-sats. Se under WHILE.
+
++ ENTER
+
+Kommandot:
+
+	ENTER "<programnamn>", <enhetsnummer>
+
+gör att programmet <programnamn> läses in från enheten som har numret
+<enhetsnummer>. Om inget enhetsnummer är angivet, använder systemet disken
+(nr 8). Om en hetsnumret är angivet till 1, använder systemet bandspelaren.
+Man kan endast hämta fram program, som sparats med LIST-kommandot (se LIST),
+på detta sätt. De rader, som läses in med ENTER, flätas samman med de rader,
+som redan finns i minnet på samma sätt som om raderna knappats in via
+tangentbordet (till skillnad från vid LOAD).
+
++ EOD
+
+EOD (End-Of-Data) är en logisk funktion, som antar värdet TRUE (sant), så
+snart det sista värdet i datalistan har lästs (eller listan är tom).
+
++ EOF
+
+EOF (End-Of-File) är en logisk funktion. EOF(X), där X är ordningsnumret på
+en sekventiell fil, antar värdet TRUE (sant), när sista posten i filen har
+hämtats.
+
+
++ ESC
+
+Ordet ESC används dels i TRAP-satsen (se denna), dels som en
+STANDARDFUNKTION (se dessa).
+
++ ETIKETTER (Labels)
+
+En etikett kan användas som en hoppadress för en GOTO-sats. Syntaxen för
+etikett är:
+
+	<namn>:
+
+Exempel:
+
+	WHILE TRUE DO // OÄNDLIG SLINGA
+	  INPUT NAMN$
+	  IF NAMN$="" THEN GOTO HALT
+	  ...
+	  ...
+	ENDWHILE
+	HALT:
+
+OBSERVERA! GOTO <radnummer> kan INTE användas i COMAL-80/VIC-64.
+
++ EXEC
+
+EXEC är ett ord, som kan sättas framför ett procedurnamn i ett anrop på
+proceduren. Om ordet används, får proceduranropet denna syntax:
+
+EXEC <procedurnamn> (<lista över aktuella parametrar>)
+
+Normalt används ordet EXEC icke i CBM COMAL-80, men med hänsyn till
+jämförbarheten med äldre versioner av COMAL, accepteras ordet av förtolken,
+och kan under listningen återges av systemet, när kommandot SETEXEC (se
+detta ord) används.
+
+En närmare beskrivning av procedurer och parametrar finns under PROC.
+
++ EXP
+
+Se under STANDARDFUNKTIONER
+
++ FALSE
+
+Två konstanter, TRUE (sant) och FALSE (falskt) är fördefinierade, för att
+förbättra programmens läsbarhet. TRUE svarar mot 1 och FALSE är lika med 0 I
+COMAL-80 betraktas ett numeriskt uttryck i relevant sammanhang som FALSKT,
+om det har värdet 0, i övrigt anses det vara SANT.
+
+Exempel: Efter tilldelningen:
+
+	SLUT := FALSE
+
+har det logiska uttrycket: TAL>MAX AND SLUT värdet FALSE. I verkligheten är
+SLUT inget annat än en numerisk variabel med värdet noll, och den kan också
+i övrigt användas som sådan, om man vill.
+
++ FILE
+
+FILE är ett nyckelord, som används i READ/WRITE och INPUT/PRINT-satser när
+de används i förbindelse med filhantering. Se READ FILE, WRITE FILE, INPUT
+FILE och PRINT FILE.
+
++ FOR
+
+FOR-satsen och FOR-slingor fungerar på samma sätt som i BASIC. Dock är
+COMAL-80 utvidgad med:
+
+	FOR <"som i BASIC"> DO <programsats>
+
+Nyckelordet DO används endast för att skilja FOR-delen från den följande
+programsatsen (ungefär som THEN i den "långa" IF-satsen).
+
+Den "långa" FOR-satsen kan också användas som kommando.
+
+OBSERVERA! En flerradig FOR-slinga avslutas med en ENDFOR-sats. Förtolken
+accepterar dock även ordet NEXT som i BASIC, men ändrar automatiskt detta
+till ENDFOR. Man behöver inte knappa in index-variabeln efter ENDFOR. Om den
+icke slås in, sätter förtolken in den automatiskt vid första körningen av
+programmet.
+
+Exempel: "småtext", raderna 2120-2330, "kartotek", raderna 2860, 2910, 2920,
+2960 etc.
+
++ FUNC
++ ENDFUNC
++ RETURN
+
+FUNC-satsen används för att inleda en användardefinierad funktion.
+
+ENDFUNC används för att avsluta en sådan funktion, och med
+
+RETURN-satsen sänder man tillbaka funktionens värde till programmet.
+
+FUNC-satsen har denna syntax:
+
+	FUNC <funktionsnamn> (<lista med formella parametrar>)
+
+ENDFUNC-satsen har denna syntax:
+
+	ENDFUNC <funktionsnamn>
+
+RETURN-satsens syntax är:
+
+	RETURN <aritmetiskt uttryck>
+
+En funktion är uppbyggd efter följande schema:
+
+	FUNC <funktionsnamn>(<parameterlista>)
+	...
+	...
+	RETURN <aritmetiskt uttryck>
+	...
+	ENDFUNC <funktionsnamn>
+
+Som visas ovan kan listan med formella parametrar vara tom. Man kan ha flera
+RETURN-satser i funktionens "kropp", men man måste ha minst en, som kan ange
+funktionsvärdet till huvudprogrammet. Funktioner i denna COMAL-version
+(00.12), kan endast ge tillbaka talvärden (hela eller decimala).
+
+Funktioner kan vara slutna, liksom procedurer (se under CLOSED).
+
+Exempel:
+
+	FUNC SFD(X,Y)
+	  IF X MOD Y=0 THEN // OM X KAN DELAS MED Y
+	    RETURN Y // Y ÄR STÖRSTA GEMENSAMMA DIVISOR
+	  ELSE
+	    RETURN SFD(Y,X MOD Y) // ANVÄND EUKLIDES ALGORITM
+	  ENDIF
+	ENDFUNC SFD
+
+Denna funktion kan t ex anropas med satsen:
+
+	IF SFD(A,B)=1 THEN PRINT "TALEN ÄR EJ DELBARA MED VARANDRA"
+
+Andra exempel: "småtext", raderna 2770-2830, 2850-2910.
+
++ GOTO
+
+GOTO-satsen åstadkommer att programutföringen fortsätter på ett bestämt
+ställe i programmet. Syntaxen är:
+
+	GOTO <etikett>
+
+Se under ETIKETT för närmare definition av <etikett> och exempel på hur en
+GOTO-sats används.
+
+MÄRK VÄL!! Resultatet av ett uthopp från en procedur är oförutsägbart!!
+
++ INT
+
+Se under STANDARDFUNKTIONER
+
++ IN
+
+IN är en operator, som används i förbindelse med textsträngar.
+
+Uttrycket:
+
+	<text-1> IN <text-2>
+
+har värdet 0 om <text-1> ej finns som en sammanhängande deltext i <text-2>.
+Om <text-1> däremot finns som en sammanhängande deltext i <text-2> så blir
+värdet av uttrycket positionen på (=läget av) första förekomsten av <text-1>
+i <text-2>, dvs numret på det tecken i <text-2> som bildar början på
+<text-1>. Om <text-1> är den "tomma textmängden", "", ger uttryckets värde
+längden på <text-2> plus ett, dvs detsamma som BASICs LEN(<text-2>)+1.
+
+Exempel: "småtext", rad 2010.
+
++ INPUT
+
+INPUT-satsen har följande syntax:
+
+	INPUT <variabellista>;
+
+eller:
+
+	INPUT <ledtext>: <variabellista>;
+
+där <ledtext> är ett textuttryck.
+
+Anmärkning: Om det finns mer än en textvariabel i variabellistan, skall
+varje text avslutas med ett tryck på RETURN-tangenten under inknappningen.
+Orsaken till detta är, att i COMAL-80 uppfångas ALLA tecken som knappas in
+av en textvariabel, alltså även citationstecken och kommatecken, som alltså
+inte kan användas som skiljetecken mellan texter. Ingår ett funktionsanrop i
+variabellistan (t ex som index till ett tabell-element) så får dessa icke
+innehålla INPUT-satser, då dessa i så fall kommer att radera innehållet i
+indata-bufferten.
+
+Avslutas INPUT-satsen med ett semikolon (;) fungerar det så, att markören
+stannar på raden efter inläsningen.
+
+Exempel: "kartotek", raderna 390, 910,1520.
+
++ INPUT FILE
+
+INPUT FILE-satsen används för att hämta data från sekventiella eller direkta
+filer, när dessa data lagrats undan med en PRINT FILE-sats. T ex gör satsen:
+
+	INPUT FILE 2: NAMN$, ADRESS$, STAD$
+
+att värden tilldelas variablerna i listan efter kolonet (:) genom att
+värdena hämtas sekventiellt i den fil, som öppnats med ordningsnumret 2 (se
+även OPEN).
+
+Satsen:
+
+	INPUT FILE 2,I: NAMN$, TELEFON
+
+hämtar värden till variablerna på listan i post nr I i den direkta fil, som
+öppnats med ordningsnumret 2.
+
+MÄRK VÄL! När man hämtar data från en diskett, använder man normalt READ
+FILE-satsen (se detta ord), eftersom den är snabbare än INPUT FILE-satsen.
+Om man hämtar data från kassettbandspelaren (Datasetten) är man hänvisad
+till enbart INPUT FILE-satsen. När man hanterar data på diskett använder man
+normalt satserna WRITE FILE/READ FILE. Då man hanterar data på kassett skall
+man använda PRINT FILE/INPUT FILE. Var också uppmärksam på att man inte kan
+använda direkta filer tillsammans med kassettbandspelaren.
+
+Se även OPEN FILE.
+
+Exempel: "kartotek", raderna 2530, 2560.
+
++ IF
++ ELSE
++ ELIF
++ ENDIF
+
+Syntaxen för en IF-sats är:
+
+	IF <uttryck> THEN
+
+eller:
+
+	IF <uttryck> THEN <programsatser>
+
+Den första formen kan endast användas tillsammans med en ENDIF-sats. I detta
+fall kan THEN uteslutas och i så fall lägger förtolken till det själv.
+
+ELIF-satsen har syntaxen:
+
+	ELIF <uttryck> THEN
+
+En ELSE-sats består endast av ordet ELSE, och en ENDIF-sats är också bara
+ett ord.
+
+De fyra satserna ingår i följande strukturer:
+
+a. IF .. ENDIF                               SANT
+                                            ------>
+IF <uttryck> THEN
+                                       +---------.
+Programavsnitt A                |      | uttryck  >  A
+                        FALSKT  |      +---------'   ·
+ENDIF                           |        |-----------'
+                                V        v
+
+Om <uttryck> har ett värde som motsvarar SANT (TRUE), utförs
+programavsnittet A. Ar värdet av <uttryck> FALSKT (FALSE), ignoreras blocket
+A och förtolken fortsätter utförandet med programavsnitten efter
+ENDIF-satsen.
+
+Programtexten mellan IF och ENDIF rycks in under utlistningen av programmet.
+
+b. IF .. ELSE .. ENDIF
+
+IF <uttryck> THEN
+                                       +---------.
+Programavsnitt A                       | uttryck  >  A
+                                       +---------'   ·
+ELSE                               .-----|-----------'
+                                   |     |
+Programavsnitt B                   |     `---------> B
+                                   |                 ·
+ENDIF                              |-----------------'
+                                   v
+
+Om värdet av uttrycket <uttryck> är TRUE, utförs programavsnitt A. Motsvarar
+värdet FALSE, utförs programavsnitt B.
+
+Programtexten mellan styrsatserna kommer att dras in under utlistningen.
+
+c. IF .. ELIF .. ELSE .. ENDIF
+
+IF <uttryck> THEN
+                                       +---------.
+Programavsnitt A                       | uttryck  >   A
+                                       +---------'    ·
+ELIF <uttryck-1> THEN              .-----|------------'
+                                   |   +-----------.
+Programavsnitt A-1                 |   | uttryck-1  > A-1
+                                   |   +-----------'   ·  
+ELIF <uttryck-2> THEN              |-----|-------------'
+                                   |   +-----------.
+Programavsnitt A-2                 |   | uttryck-2  > A-2 
+                                   |   +-----------'   ·
+...                                |-----|-------------'
+                                   |     :
+...                                |     :
+                                   |     :
+ELSE                               |     |
+                                   |     |
+Programavsnitt B                   |     `--------->  B
+                                   |                  ·
+ENDIF                              |------------------'
+                                   v
+
+Nyckelordet ELIF är en sammandragning av ELSE IF. Som visats i
+blockdiagrammet vid sidan av figuren kommer endast ett av programblocken i
+strukturen att bli utfört. Lägg märke till att om mer än ett av uttrycken är
+sant, så blir bara det programblock, som har det första sanna uttrycket
+utfört.
+
+Det sista alternativet har ELSE utelämnat och vi får:
+
+d. IF .. ELIF .. ELIF .... ENDIF
+
+Lägg märke till att då vi får alla programblock mellan styrsatserna indragna
+under utlistningen, är det mycket lätt att upptäcka om det avslutande ENDIF
+är bortglömt. Det är också lätt att överblicka hela det område som en
+IF-sats styr, och att se, om en given sats finns med i ett av blocken eller
+inte.
+
+IF <uttryck> THEN
+                                       +---------.
+Programavsnitt A                       | uttryck  >   A
+                                       +---------'    ·
+ELIF <uttryck-1> THEN              .-----|------------'
+                                   |   +-----------.
+Programavsnitt A-1                 |   | uttryck-1  > A-1
+                                   |   +-----------'   ·  
+ELIF <uttryck-2> THEN              |-----|-------------'
+                                   |   +-----------.
+Programavsnitt A-2                 |   | uttryck-2  > A-2 
+                                   |   +-----------'   ·
+...                                |-----|-------------'
+                                   |     :
+...                                |     :
+                                   |     :
+ELIF <uttryck-n> THEN              |     |
+                                   |   +-----------.
+Programavsnitt A-n                 |   | uttryck-n  > A-n
+                                   |   +-----------'   ·
+ENDIF                              |-----'-------------'
+                                   v
+
+Exempel: "småtext", raderna 1080-1120, 1600-1720, 1650, 1670, 1710;
+
+"kartotek", raderna 2160-2260. I båda programmen finns flera exempel.
+
++ KEY$
+
+Se under STANDARDFUNKTIONER. sid 36
+
++ LEN
+
+Se under STANDARDFUNKTIONER. sid 36
+
++ LET
+
+I COMAL uttrycks en tilldelning med hjälp av tecknet
+
+	:=
+
+För att underlätta programmeringen är det dock möjligt att använda ett
+vanligt likhetstecken under programinskrivningen. Detta ändras av förtolken
+automatiskt till ":=". Nyckelordet LET ignoreras av förtolken, om det slås
+in. Man kan ha så många tilldelningar på en rad som radlängden tillåter,
+tilldelningarna skall då skiljas med ett semikolon (;).
+
+Utom vanliga tilldelningar med hjälp av ":=" finns också möjlighet att
+direkt addera till eller subtrahera från en variabel. Detta anges med
+tecknen ":+" eller ":-".
+
++ LINEFEED +/-
+
+LINEFEED + genererar radskifte efter vagnretur vid utlistning och liknande.
+LINEFEED - genererar inget radskifte efter vagnretur (default-värde, dvs det
+värde, som sätts in om inget värde anges av användaren).
+
++ LIST
+
+LIST är ett kommando, som används när man vill skriva ut hela eller delar av
+det program, som för tillfället finns i arbetsminnet.
+
+Kommandot:
+
+	LIST
+
+får systemet att skriva en lista över hela programmet.
+
+Kommandot:
+
+	LIST 100
+
+får systemet att skriva ut rad 100.
+
+Kommandot:
+
+	LIST 100-200
+
+ger en utskrift av raderna från och med 100 till och med 200 och kommandot:
+
+	LIST -300
+
+gör, att alla rader till och med rad 300 skrivs ut.
+
+Kommandot:
+
+	LIST 300-
+
+ger en listning av alla rader från och med rad 300.
+
+Normalt kommer en programlista att löpa över skärmen tills programlistningen
+är utskriven till slut, eller man trycker på RUN/STOP-tangenten. Man kan
+även stoppa listningen genom att trycka på mellanslagstangenten. När man
+åter trycker på mellanslaget så fortsätter listningen. Om man har stoppat
+listningen med ett tryck på mellanslaget kan man inte använda de vanliga
+editeringsmöjligheterna. Dessa träder först i funktion när man stoppat
+listningen med RUN/STOP-tangenten.
+
+LIST-kommandot kan också användas för att spara program som ASCII-filer på
+diskett eller kassettband.
+
+Kommandot:
+
+	LIST "MITTPROGRAM"
+
+lagrar det program, som för tillfället ligger i arbetsminnet som en
+programfil med namnet "MITTPROGRAM". Programmet sparas som källkod, och kan
+därför flätas samman med ett annat i maskinens minne (se ENTER). Eftersom
+LIST-kommandot arbetar direkt på källkoden, är denna form också tillåten:
+
+	LIST 100-200 "MITTPROGRAM"
+
+I detta fall sparas raderna 100-200 i programfilen "MITTPROGRAM". Vill man
+använda kassettbandspelaren i stället för disk-stationen (enhet 8), måste
+man använda följande version av LIST-kommandot:
+
+	LIST "<filnamn>", 1
+
+Ett program, som sparats med hjälp av LIST"<namn>" kan läsas som en vanlig
+ASCII-fil genom att man Öppnar filen med:
+
+	OPEN FILE 2, "<namn>", READ
+
+De enskilda programraderna kan också läsas in i en textvariabel med:
+
+	INPUT FILE 2: A$
+
+OBS! Se även under EDIT-kommandot.
+
++ LOAD
+
+LOAD är ett kommando som läser in program från disketten till arbetsminnet.
+T ex:
+
+	LOAD "OLSONMONITOR"
+
+kommer att läsa in programmet "OLSONMONITOR" till arbetsminnet.
+
+LOAD-kommandot kan endast användas i förbindelse med program, som sparats på
+diskett med kommandot SAVE (se SAVE). Kommandot kan ej användas i
+förbindelse med program, som lagrats på kassettband.
+
++ LOG
+
+Se under STANDARDFUNKTIONER. sid 36
+
++ MOD
+
+MOD är en tvåställig operator och definieras med:
+
+A MOD B = A - INT(A/B) * B
+
+dvs resten efter division av A med B. Se även DIV och UTTRYCK
+
++ NAMN	
+
+Namn i COMAL-80 får bestå av upp till 78 tecken, som alla är signifikanta,
+dvs tas med vid jämförelser. Första tecknet måste vara en bokstav, resten
+kan vara bokstäver, siffror eller ett av tecknen "'" och "_". Var uppmärksam
+på, att det senaste tecknet, (understrykningstecken) kommer att på
+bildskärmen visas som vänsterpil "<-".
+		
+Exempel: ANTAL'ELEVER, MAXTAL, ADRESS$, FÖRNAMN$
+
++ NEW
+
+Detta kommando gör, att innehållet i maskinens arbetsminne raderas (både
+program och data).
+
++ NEXT
+
+Se under ENDFOR.
+
++ NOT
+
+Se under UTTRYCK.
+
++ NULL
+
+NULL-satsen utför den "tomma processen", dvs absolut ingenting. Liksom den
+tomma mängden i matematiken, kan den dock vara mycket nyttig av syntaktiska
+skäl.
+
+Exempel: "kartotek", rad 2960.
+
++ OF
+
+Nyckelordet OF används i COMAL-80 för att avsluta en CASE-sats och under en
+deklaration av en textvariabel eller en texttabell. Se även CASE och DIM.
+
++ OPEN
+
+OPEN-satsen används for att öppna datafiler på en yttre enhet. T ex:
+
+	OPEN FILE 2, "TECKEN", WRITE
+
+öppnar filen "TECKEN". Ordningsnumret 2 används i resten av programmet för
+att hänvisa till denna fil och nyckelordet WRITE betyder, att filen öppnas
+for att man vill spara data på den. Ordningsnumret kan vara ett heltal från
+1 till och med 254, och utom for WRITE kan en fil öppnas med READ, APPEND
+eller RANDOM. READ betyder att man vill hämta data sekventiellt, APPEND
+betyder att man vill spara på filen som en förlängning av filens nuvarande
+innehåll och RANDOM används for att öppna en direkt fil for hämtning eller
+lagring. Ordet RANDOM måste följas av ett uttryck, som anger postlängden. T
+ex:
+
+	OPEN FILE 34, "KUNDER", RANDOM 100
+
+Konstanten 100 efter ordet RANDOM anger, att varje post får vara på upp till
+100 bytes. Se även READ FILE och WRITE FILE.
+
+Önskar man öppna filer på kassettenheten, kan man göra det genom att foga
+till en UNIT-del i kommandot:
+
+	OPEN FILE 2, "DATAFIL", UNIT 1, READ
+
+öppnar filen "DATAFIL" på enhet nr 1 (kassetten):
+
+	OPEN FILE 3, "", UNIT 1, READ
+
+kommer att öppna den första filen som finns på kassettstationen för hämtning
+in till arbetsminnet.
+
+Exempel: se "kartotek" raderna 2560, 2640. "kartotek/d", raderna 2520, 2640.
+
++ OR
+
+Se under UTTRYCK.
+
++ ORD
+
+ORD(X$) är en standardfunktion som har effekt på textsträngar. Den sänder
+tillbaka ASCII-värdet av det första tecknet i X$.
+
++ OTHERWISE
+
+En OTHERWISE-sats används i förbindelse med ett alternativval i en
+CASE-konstruktion. Se under CASE.
+
++ OUTPUT
+
+Se under SELECT.
+
++ PASS
+
+PASS-satsen används för att sända kommandon vidare till diskettstationens
+inbyggda operativsystem. Satsen har följande syntax:
+
+	PASS "<diskettkommando>"
+
+Exempel:
+
+	PASS "n0:bokprogram,bc"
+
+formateras en ny diskett. Disketten får namnet "bokprogram" och
+identifikationen blir "bc".
+
+	PASS "c0:nytext=0:småtext"
+
+lagrar undan en kopia av "småtext" under namnet "nytext".
+
+	PASS "r0:småtext/d=0:småtext"
+
+döper om filen "småtext" till "småtext/d".
+
+	PASS "s0:gammaltext"
+
+raderar filen "gammaltext" (se även DELETE)
+
+	PASS "i"
+
+initialiserar en diskett som nyss satts in i diskettstationen.
+
+	PASS "v"
+
+"rensar upp" på disketten (stänger ev. öppna filer etc).
+
++ PEEK
+
+PEEK(I) är en standardfunktion, som hämtar värdet av byte nr I från
+arbetsminnet.
+
++ POKE
+
+POKE I, J är en sats, som sätter byte nr I i arbetsminnet till J.
+
+PRINT
+
+En PRINT-sats har generellt samma syntax som i BASIC. I COMAL-80 kan man
+dock bestämma skrivzonens bredd med hjälp av systemvariabeln ZONE.
+
+T ex:
+
+	ZONE 10
+	PRINT 1, 2, 3
+		
+ger följande utskrift:
+
+	1         2         3
+	123456789012345678901234567890 <--kolumn-nummer
+
+varemot dessa två rader:
+
+	ZONE 5
+	PRINT 1, 2, 3
+
+ger följande utskrift:
+
+	1    2    3
+	12345678901234567890 <--kolumnnummer
+
+Omedelbart efter strömtillslag är värdet på ZONE lika med noll, vilket
+betyder, att om inga andra värden på ZONE specificeras, så ger PRINT-satsen
+från de två ovanstående exemplen utskriften:
+
+	123
+
+dvs inga mellanrum alls mellan tecknen.
+
+Semikolon (;) ger alltid ett extra mellanrum. T ex:
+
+	PRINT 1;2;3
+
+skriver ut följande:
+
+	1 2 3
+
+TAB används for att tabulera in till en bestämd kolumn på raden. Således ger
+t ex satsen:
+
+	PRINT "Jens E. Jensen", TAB(20), 11
+
+följande utskrift:
+
+	Jens E. Jensen     11
+	123456789012345678901234567890 <--kolumn-nummer
+
+Om värdet av uttrycket i parentesen efter TAB är mindre än nuvarande
+kolumnläge, görs först ett radbyte. Om värdet är mindre än 1 får man ett
+felmeddelande.
+
+Exempel: I såväl "småtext" som "kartotek" finns talrika exempel på
+PRINT-satser.
+
++ PRINT FILE
+
+PRINT FILE-satsen används för att lagra data i sekventiella eller direkta
+filer. Så lagrar t ex satsen:
+
+	PRINT FILE 2: NAMN$, TELENR
+
+värdena av de två variablerna i listan (alltså NAMN$ och TELENR)
+sekventiellt i filen med ordningsnumret 2 (se även OPEN). Satsen:
+
+	PRINT FILE 4,I: NAMN$, TELENR
+
+lagrar värdena av variablerna i post nr I i den direkta fil som har öppnats
+med ordningsnumret 4.
+
+Data, som har lagrats med PRINT FILE måste hämtas med INPUT FILE. Se i
+övrigt närmare om lagring och hämtning av data genom användning av
+kommandona PRINT FILE/INPUT FILE under INPUT FILE.
+
++ PROC
++ ENDPROC
+
+Om ett block med satser inleds med satsen:
+
+	PROC <namn>
+
+där <namn> är ett giltigt namn, och avslutas med satsen:
+
+	ENDPROC <namn>
+
+kan detta block anropas som ett underprogram med hjälp av satsen:
+
+	<namn>.
+
+Namnet efter ENDPROC står inom spetsiga parenteser för att ange, att man
+inte behöver ange det under inslagningen. Förtolken fogar själv till det
+saknade namnet vid första körningen.
+
+När underprogrammet är utfört, fortsätter programkörningen med programraden
+som följer på den sats som anropade underprogrammet (proceduren).
+
+Programtexten mellan PROC och ENDPROC kommer att visas med indrag när
+programmet LISTas.
+
+Diagrammet nedan visar sammanhanget mellan verkningen av PROC och
+ENDPROC-satserna och den sats som anropar proceduren:
+
+     ...
+.--> PROC <namn>
+|    procedurkropp ---.
+|    ENDPROC <namn>   |
+|    ...              |
+`--- <namn>           |
+     ... <------------'
+
++ PROCEDURER MED PARAMETRAR
+
+I VIC-64-COMAL-80 kan PROC-satsen utvidgas till:
+
+	PROC <namn>(<lista på formella parametrar>)
+
+och nu talar vi om ett riktigt procedurhuvud. En procedur med parametrar
+skall anropas så här:
+
+	<namn>(<lista på aktuella parametrar>)
+
+Då procedurer med parameteröverföring är ett stort framsteg i förhållande
+till BASIC, och samtidigt också därför ganska okänt för många läsare, skall
+detta begrepp beskrivas mer i detalj i det följande avsnittet.
+
+** Exempel nr 1
+
+En procedur inleds med satsen:
+
+	PROC PROV (I, J)
+
+och anropas med satsen:
+
+	PROV (FÖRST, SIST)
+
+I detta fall är I och J i procedurhuvudet de formella parametrarna och de
+skall tilldelas ett värde, när proceduren anropas. Namnen FÖRST och SIST i
+anropet är de aktuella parametrarna och måste ha tilldelats värden innan
+denna sats kan utföras. Under proceduranropet får I sig tilldelat värdet av
+FÖRST och J värdet på SIST. Man kan säga att I övertar FÖRSTs värde och J
+övertar SISTs värde. Därför kallar man också I och J för värdeparametrar
+(called-by-value). Men det ligger ännu mer häri: I och J blir behandlade som
+lokala variabler av proceduren PROV och de kommer inte att vara kända för
+den programvärld, som ligger utanför proceduren. De kan därför inte heller
+förväxlas med eventuella andra variabler I och J någon annanstans i
+programmet. De aktuella parametrarna till en värdeparameter kan vara
+konstanter, variabler eller uttryck. Proceduren PROV kan t ex anropas på
+följande tillåtna sätt:
+
+	PROV (1,8)
+
+eller
+
+	PROV (I+1, J-1)
+
+Ett anrop till en procedur kan även företas inifrån proceduren själv, den
+kallar alltså sig själv "rekursivt". I detta fall sätter förtolken upp nya
+utrymmen för I och J, som om den aldrig hade sett dem tidigare, och den
+kommer icke att förväxla värdena från ett anrop med ett annat. Eftersom
+rekursion och lokala variabler i flera nivåer är en ganska komplicerad
+historia, är denna korta översikt inte rätt plats for att göra någon större
+utredning av detta ämne.
+
+** Exempel nr 2
+
+En procedur inleds med:
+
+	PROC SKRIVPOST (R, N$, REF M())
+
+och anropas med:
+
+	SKRIVPOST (ELEVNR, NAMN$, TECKEN)
+
+I detta fall är R och N$ formella värdeparametrar och under anropet blir de
+tilldelade värdet på respektive ELEVER och NAMN$. Teckensträngen REF M()
+betyder en formell parameter M, som är en referensparameter
+(called-by-reference). Tecknen () efter M betyder, att M hänvisar till en
+endimensionell tabell. Om anropet skall vara tillåtet, måste TECKEN vara en
+endimensionell tabell. För referensparametrar sker ingen tilldelning under
+anropet, den formella parametern blir endast använd som ett slags "öknamn"
+på den aktuella parametern. TECKEN kommer således att få utstå allt det, som
+SKRIVPOST utsätter M för. SKRIVPOST kunde också vara inlett med:
+
+	PROC SKRIVPOST(R, REF N$, REF M())
+
+Den enda skillnaden i förhållande till föregående procedurhuvud är, att N$
+nu är en referensparameter. N$ hänvisar endast till NAMN$, och det sker
+ingen tilldelning. Det ökar naturligtvis hastigheten och spar minnesutrymme.
+
+** Exempel nr 3
+
+En procedur inleds med:
+
+	PROC SKRIV'UT (REF TABELL(,))
+
+Tecknen (,) efter parameternamnet TABELL anger, att TABELL endast kan
+hänvisa till en tvådimensionell tabell. Tecknen (,,) visar, att man hänvisar
+till en tredimensionell tabell, osv.
+
+Ytterligare exempel kan återfinnas i programmen "småtext" och "kartotek".
+
+En procedur kan också vara sluten. Detta anges genom att man avslutar
+procedurhuvudet med ordet CLOSED. I detta fall kommer alla variabler, som
+förekommer i procedurens kropp, att behandlas som lokala variabler på samma
+sätt som värdeparametrarna tidigare. Arbetsminnet för de lokala variablerna
+frigörs, när proceduranropet är avslutat.
+
++ RANDOM
+
+Se under OPEN. sid 26
+
++ READ
+
+READ-satsen är definierad på samma sätt som i BASIC. Se även under EOD.
+
++ READ FILE
+
+READ FILE-satsen används för att läsa från sekventiella och direkta filer,
+som sparats på diskett. T ex kommer:
+
+	READ FILE 2: NAMN$, ADRESS$, STAD$
+
+att tilldela värden till variablerna på listan genom att läsa sekventiellt i
+den fil, som har ordningsnumret 2 (se även OPEN).
+
+Satsen:
+
+	READ FILE 4, I: NAMN$, ELEVER, KLASSNR
+
+tilldelar värden till variablerna på listan genom att läsa post nr I i den
+direkta fil, som har öppnats med ordningsnumret 4.
+
+Exempel finns i "kartotek", raderna 2530 och 2560.
+
++ REF
+
+Se under PROC.
+
++ REM
+
+REM-satser kan användas i VIC-64 COMAL-80, men förtolken ändrar nyckelordet
+REM till symbolen "//". I COMAL-80 kan en kommentar placeras på sin egen rad
+(som en REM-sats) eller användas för att avsluta en programrad vilken som
+helst. Bara kommentaren inleds med "//". Många exempel kan återfinnas i
+"småtext" och "kartotek".
+
++ RENUM
+
+RENUM ändrar följden av radnummer i ett program till följande sekvens:
+
+0010, 0020, 0030, ...
+
+Kommandot:
+
+	RENUM 1000
+
+ändrar radnumren till:
+
+1000, 1010, 1020, ...
+
+Kommandot:
+
+	RENUM 1000, 2
+
+ändrar radnumren till:
+
+1000, 1002, 1004, ...
+
+Kommandot:
+
+	RENUM, 2
+
+ändrar radnumren till:
+
+0010, 0012, 0014, ...
+
++ REPEAT
++ UNTIL
+
+REPEAT- och UNTIL-satserna ingår i följande slingstruktur:
+
+
+REPEAT               -----------------> A
+                           ^       .---------+
+Programavsnitt A      .----|------<  uttryck |
+                      |    |       `---------+
+UNTIL <uttryck>       |    +------------'
+                      v
+
+Blocket med satser A, blir upprepat tills uttrycket vid UNTIL antar värdet
+SANT (TRUE). När detta sker, fortsätter programkörningen med satsen som
+folier efter UNTIL-satsen.
+
+Programtexten mellan REPEAT och UNTIL kommer att dras in vid LISTning av
+programmet.
+
+Exempel finns i "småtext", raderna 480-710 samt "kartotek", raderna
+950-1010.
+
++ RESTORE
+
+Satsen:
+
+	RESTORE
+
+medför, att DATA-pekaren sätts till att peka på den första DATA-satsen i
+programmet, dvs det första elementet i datakön.
+
++ RETURN
+
+RETURN-satsen används, när man vill lämna en procedur, innan man har kommit
+fram till ENDPROC-satsen. Dessutom används satsen för att returnera värdet
+från en användardefinierad funktion (se FUNC).
+
+Exempel: "småtext", raderna 1380, 2790, 2810, 2870, 2890 och "kartotek", rad
+1740.
+
++ RND
+
+RND-funktionen använd för att ta fram följder av slumptal precis som i
+BASIC. I COMAL-80 finns följande utvidgning
+
+	RND (X,Y)
+
+där X och Y är två heltal och X är mindre än eller lika med Y. Denna
+funktion tar fram slumpade heltal i intervallet från och med X till och med
+Y.
+
++ RUN
+
+RUN-kommandot gör att alla variabler nollställs, ett s k "prepass" blir
+utfört, dvs alla strukturer undersöks om de har något fel. Maskinen börjar
+därefter köra programmet som finns i arbetsminnet med dess första
+programsats.
+
++ SAVE
+
+SAVE-kommandot används för att spara program från maskinens arbetsminne på
+diskett.
+
+	SAVE "RÄKNEBOK"
+
+Ett program, som sparats på diskett med hjälp av SAVE-kommandot, kan hämtas
+genom att man använder LOAD-kommandot (se LOAD).
+
+Kommandot kan ej användas för att spara program på kassettband.
+
++ SELECT OUTPUT
+
+SELECT OUTPUT kan användas både i program och som kommando. Kommandot:
+
+	SELECT OUTPUT "LP"
+
+dirigerar de följande utskrifterna från systemet till printern (LP står för
+LINE PRINTER). Kommandot:
+
+	SELECT OUTPUT "DS"
+
+återför systemet till att ge utskrifter på bildskärmen (DS står för
+DATASCREEN). Om satsen:
+
+	SELECT OUTPUT "LP"
+
+förekommer i ett program, kommer alla utskrifter etter denna sats på
+printern ända tills följande sats förekommer i programmet:
+
+	SELECT OUTPUT "DS"
+
+Då återkommer utskrifterna på bildskärmen.
+
+OBSERVERA! De texter, som skrivs ut som instruktionstext i en INPUT-sats,
+kommer alltid att skrivas ut på bildskärmen.
+
+Exempel, se "småtext", raderna 2110,2360 och i "kartotek" rad 1530.
+
++ SETEXEC
+
+Kommandot:
+
+	SETEXEC-
+
+gör, att nyckelordet EXEC inte blir utskrivet vid utlistning av programmet.
+
+Kommandot:
+
+	SETEXEC+
+
+gör, att nyckelordet EXEC skrivs ut. I förbindelse med systemstart utförs
+SETEXEC-, dvs nyckelordet EXEC blir alltså inte utskrivet med mindre än
+kommandot SETEXEC+ utförs (se också EXEC).
+
++ SETMSG
+
+Kommandot:
+
+	SETMSG-
+
+åstadkommer, att feltexterna som ligger på systemdisketten, inte mer hämtas
+in från denna. I stället ger systemet endast ett felnummer, men markerar
+fortförande felet på den nyss inslagna raden.
+
+Kommandot:
+
+	SETMSG+
+
+gör, att feltexterna hämtas in från systemdisketten. Vid uppstart av
+systemet utförs SETMSG+.
+
++ SGN
+
+Se under STANDARDFUNKTIONER.
+
++ SIN
+
+Se under STANDARDFUNKTIONER.
+
++ SQR
+
+Se under STANDARDFUNKTIONER.
+
++ STATUS
+
+Kommandot:
+
+	STATUS
+
+får systemet att visa ett eventuellt felmeddelande från diskettstationen
+1541 och släcker fellampan.
+
++ SIZE
+
+SIZE-kommandot får systemet att visa antalet lediga bytes i minnet.
+
++ STANDARDFUNKTIONER
+
+VIC-64 COMAL-80 innehåller följande standardfunktioner:
+
+++ ABS(X)
+
+ger absoluta beloppet på X
+
+++ ATN(X)
+
+ger i radianer arcustangens av X
+
+++ CHR$(X)
+
+ger det tecken som svarar mot talvärdet X (där X kan vara ett tal från 0
+till 255) i VIC-64ans teckenuppsättning (Se Appendix A bak i boken [not från
+e-textaren: Appendix A ingår inte i denna e-text]).
+
+++ COS(X)
+
+ger cosinus av X, X i radianer.
+
+++ EOD
+
+ger värdet TRUE (sant), om sista elementet i datakön är läst eller kön är
+tom (dvs om det inte finns några DATA-satser kvar att läsa i programmet). I
+motsatt fall ger det värdet FALSE (falskt).
+
+++ EOF(X)
+
+ger värdet TRUE, om filslut-markeringen i filen med ordningsnumret X har
+uppnåtts, annars värdet FALSE.
+
+++ ESC
+
+ger värdet TRUE, om RUN/STOP-tangenten har varit nedtryckt, annars värdet
+FALSE. Funktionen verkar endast om den vanliga effekten av
+RUN/STOP-tangenten är satt ur funktion med en TRAP ESC-sats eller ett
+kommando (se TRAP)
+
+++ EXP(X)
+
+ger grundexponentialfunktionens värde i punkten X (e upphöjt med X).
+
+++ INT(X)
+
+ger heltalsdelen av X, dvs det största heltal, som är mindre än eller lika
+med X.
+
+++ KEY$
+
+ger det första tecknet i inslagningsbufferten. Om ingen tangent varit
+nedtryckt, ger det CHR$(0) som värde.
+
+++ LEN(X$)	
+
+ger längden på texten X$.
+
+++ LOG(X)
+
+ger den naturliga logaritmen för X, X större än 0.
+
+++ ORD(X$)
+
+ger det talvärde, som internt i VIC-64 representerar det första tecknet i
+texten X$ (Se Appendix A bak i boken [not från e-textaren: Appendix A ingår
+inte i denna e-text]).
+
+++ RND (X)	
+
+ger en följd slumptal i intervallet från 0 till 1. Om X är positivt eller 0,
+startar följden slumpartat. Om X är negativt, startar följden med samma tal
+varje körning. Starttalet beror på det numeriska värdet på X.
+
+RND (X,Y) där X och Y är heltal, ger ett slumpmässigt heltal inom det slutna
+intervallet från X till Y. Om Y anges med en negativ talkonstant, skall det
+omges med parenteser (t ex: RND(5,(-1))). Om X är större än eller lika med
+Y, ger funktionen konstant talet X.
+
+++ SGN(X)
+
+ger tecknet för X: -1 om X är negativt, 0 om X är lika med noll och 1 om X
+är ett positivt tal.
+
+++ SQR(X)
+
+ger kvadratroten ur X, X får ej vara negativt.
+
+++ TAN(X)
+
+ger tangens för X, X i radianer.
+
+
++ STEP
+
+Se under FOR. sid 15
+
++ STOP
+
+STOP-satsen gör att programkörningen stoppas. Utförandet kan fortsätta igen
+med hjälp av CON-kommandot (se CON).
+
++ SYS
+
+Satsen:
+
+	SYS I
+
+gör att förtolken ger ett subrutinanrop till byte nr I i arbetsminnet.
+
++ TAB
+
+Se under PRINT.
+
++ TAN
+
+Se under STANDARDFUNKTIONER.
+
++ TEXTBEHANDLING, DELTEXTER
+
+En textvariabel skall alltid deklareras. T ex deklarerar:
+
+	DIM NAMN$ OF 30
+
+en textvariabel (strängvariabel) NAMN$, med plats för 30 tecken. När man
+deklarerar en strängtabell, skall det maximala antalet element också anges.
+T ex deklarerar:
+
+	DIM ADRESS$ (100,3) OF 20
+
+en tvådimensionell strängtabell, där varje element kan bestå av 20 tecken.
+Deltexter anges genom att man skriver positionen på första och sista tecknet
+i strängen. Om t ex NAMN$ innehåller följande text: "RICKARD PAWSON", kommer
+
+	NAMN$ (9:11)
+
+att vara detsamma som "PAW".
+
+OBSERVERA! Om variabeln TOMMA$ är deklarerad med längden 60 tecken, kommer
+tilldelningen:
+
+	TOMMA$(1:60):=""
+
+att fylla upp TOMMA$ med mellanrum. För variabeln NAMN$ är uttrycket NAMN$
+(5) ekvivalent (lika med) NAMN$ (5:5).
+
+Exempel: I programmet "småtext" finns talrika exempel på användningen av
+textvariabler och deltexter (strängvariabler och delsträngar).
+
++ THEN
+
+THEN är ett nyckelord, som används for att avsluta en IF-sats. Se IF.
+
++ TRUE
+
+TRUE är en fördefinierad konstant med värdet 1. Se FALSE för ytterligare
+detaljer.
+
++ TO
+
+Se under FOR.
+
++ TRAP
+
+TRAP-satsen/kommandot använd for att sätta den normala funktionen av
+RUN/STOP-tangenten ur spel. Normalt avbryter en nedtryckning av
+RUN/STOP-tangenten programutförandet. Om systemet möter följande
+sats/kommando:
+
+	TRAP ESC-
+
+kommer ett tryck på RUN/STOP-tangenten endast att registreras i
+systemvariabeln ESC medan programutförandet fortsätter utan hinder. Man kan
+återskapa den normala funktionen av RUN/STOP-tangenten genom att använda
+satsen/kommandot:
+
+	TRAP ESC+
+
+Vid systemstart sätts TRAP ESC+.
+
+Se även under ESC.
+
++ UTTRYCK
+
+I COMAL-80 finns det numeriska uttryck och stränguttryck.
+
+Ett numeriskt uttryck kan innehålla konstanter, variabler och numeriska
+funktioner, och man kan använda parenteser och nedanstående operaturer,
+enligt vanliga matematiska regler:
+
+	+       enställigt +          +A
+	-       enställigt -          -A
+	^       potenshöjning         A^B
+	*       multiplikation        A*B
+	/       division              A/B
+	DIV     heltalsdivision       A DIV B
+	MOD     rest efter division   A MOD B
+	+       addition              A+B
+	-       subtraktion           A-B
+
+Om A och B är heltal är A MOD B den så kallade principiella resten från
+divisionen av A med B. Dvs det minsta icke-negativa heltalet R, så att:
+
+	A = B*Q + R
+
+och A DIV B är kvoten Q.
+
+Numeriska värden kan jämföras med hjälp av följande jämförelse-operatorer:
+
+Mindre än                       <
+Mindre än eller lika med        <=
+Lika med                        =
+Större än                       >
+Större än eller lika med        >=
+Skild från eller Inte lika med  <>
+
+Numeriska uttryck kan användas som Booleska uttryck. Ett numeriskt värde av
+noll tolkas som FALSE dvs falskt medan däremot varje värde som är skilt från
+noll tolkas som TRUE dvs sant. En logisk operation ger en numerisk 1:a för
+TRUE och en 0:a för FALSE.
+
+Vi kan använda följande Booleska uttryck:
+
+NOT
+
+logisk negation. NOT A ger värdet FALSE, om A har värdet TRUE, eller TRUE,
+om A har värdet
+
+AND
+
+logisk förbindning. A AND B ger värdet TRUE om både A och B är TRUE. I alla
+andra fall ger uttrycket värdet FALSE.
+
+OR
+
+logisk förbindning. A OR B ger värdet FALSE om både A och B är FALSE, i alla
+andra fall ger uttrycket värdet TRUE.
+
+Ett stränguttryck kan bestå av strängkonstanter, textvariabler
+(strängvariabler) eller strängfunktioner som har kedjats samman med
++tecknet. Textuttryck kan jämföras med hjälp av operatorerna:
+
+<  <=  =  >=  >  <>
+
+som i detta fall betyder "kommer före", "kommer före eller är lika med", "är
+lika med", "kommer efter eller är lika med", "kommer efter" och "är icke
+lika med" i bokstavsordning. OBSERVERA att texter med villkorsoperatorer är
+uttryck som ger numeriska värden; 1 för TRUE och 0 för FALSE.
+
+IN
+
+används för jämförelser mellan strängar. Uttrycket A$ IN B$ ger värdet 0
+(dvs FALSE) om A$ icke finns som en delsträng i B$. Om A$ finns som
+delsträng av B$ så ger uttrycket läget för det första tecken som är lika.
+
+Exempel:
+
+Om NAMN$ har värdet "JOHN COLLINS" så kommer uttrycket:
+
+EFTERNAMN$ IN NAMN$ att ge värdet 6 (TRUE) om EFTERNAMN$ är "COLLINS", men
+värdet 0 (FALSE), om EFTERNAMN$ är "COLIN".
+
+Prioriteterna för de operatorer som nämns ovan är:
+
+^ (exponentiering)
+* DIV MOD
+< <= = >= > <> IN
+NOT
+AND
+OR
+
++ UNTIL	
+
+UNTIL-satsen används för att avsluta satsblocket i en REPEAT...UNTIL-slinga.
+Se REPEAT, UNTIL.
+
++ USING	
+
+Satsen:
+
+	PRINT USING <format>: <uttryck>, <uttryck> ... .
+
+används för att skriva ut värdena i listan över <uttryck>, styrt av
+textuttrycket <format>. Detta program:
+
+	0010 SELECT OUTPUT "LI"
+	0020 //
+	0030 REPEAT
+	0040   INPUT X
+	0050   PRINT "OFORMATERAT: ", X, TAB (30),
+	0060   PRINT USING "FORMATERAT: -#####.##": X
+	0070 UNTIL X = 0
+
+ger följande utskrift
+
+OFORMATERAT: 3               FORMATERAT:    3.00
+OFORMATERAT: - 3             FORMATERAT:   -3.00
+OFORMATERAT: - .3            FORMATERAT:   -0.30
+OFORMATERAT: .3              FORMATERAT:    0.30
+OFORMATERAT: 234.4567        FORMATERAT:  234.46
+OFORMATERAT: -234.5678       FORMATERAT: -234.57
+OFORMATERAT: 123444567       FORMATERAT: *******
+OFORMATERAT: -.123456        FORMATERAT:   -0.12
+OFORMATERAT: 3.4E-04         FORMATERAT:    0.00
+OFORMATERAT: 0               FORMATERAT:    0.00
+
+Följande program ger samma utskrift:
+
+	0010 DIM FORMAT$ OF 20
+	0020 FORMAT$:="#####.##"
+	0030 SELECT OUTPUT "LI"
+	0040 //
+	0050 REPEAT
+	0060   INPUT X
+	0070   PRINT "OFORMATERAT: ", X, TAB (30),
+	0080   PRINT USING "FORMATERAT: "+FORMAT$: X
+	0090 UNTIL X = 0
+
+
++ WHEN
+
+WHEN används för att inleda ett programblock i en CASE-konstruktion. Se
+under CASE.
+
++ WHILE
++ ENDWHILE
+
+WHILE och ENDWHILE-satserna används för att skapa följande struktur:
+
+WHILE <uttryck> DO         +---------.
+                           | uttryck  > -------> A
+Programsatser A            +---------'           ·
+                             |     ^-------------'
+ENDWHILE                     v
+
+Blocket med programsatser, A, utförs så länge som värdet på uttrycket efter
+WHILE är sant. När uttrycket blir falskt, fortsätter utförandet med satsen
+efter ENDWHILE.
+
+Programtexten mellan WHILE och ENDWHILE kommer att ryckas in under LISTning
+av programmet.
+
+Om bara en sats skall styras av uttrycket efter WHILE, kan hela slingan
+skrivas på en rad. T ex:
+
+	WHILE X<A(I) DO I:=I+1
+
+ENDWHILE skall inte skrivas ut i detta fall. (Jämför FORslingor).
+
+Exempel finns i "kartotek", raderna 300-540, 1830-1920 och i "småtext",
+raderna 1050-1130, 1590-1740.
+
++ WRITE FILE
+
+WRITE FILE-satsen används för att skriva i sekventiella eller direkta filer.
+Så kommer t ex:
+
+	WRITE FILE 2: NAMN$, ADRESS$, KOD
+
+att skriva värdena på variablerna i listan sekventiellt i filen med
+ordningsnumret 2 (se även OPEN). Satsen:
+
+	WRITE FILE 4, <postnr>: NAMN$, ADRESS$, AVDNR
+
+skriver värdet av listans variabler i den post som anges av <postnr>, i den
+direkta fil, som har öppnats med logiskt filnummer 4. En variabel på listan
+efter WRITE FILE kan vara namnet på en tabell. I så fall blir alla tabellens
+komponenter skrivna i den fil eller post man hänvisar till.
+
+Man kan adressera enskilda bytes i en post. När t ex följande utförs:
+
+	READ FILE 4, <postnr>, <bytenr>: X
+	WRITE FILE 4, <postur>, <bytena>: X
+
+läser och skriver X i byte nr <bytenr> i posten <postur>.
+
+OBS! SKRIVNING KAN ENDAST SKE FRAMIFRÅN I EN POST EFTERSOM RESTEN AV POSTEN
+NOLLSTÄLLS VID DENNA OPERATION!!!!!
+
+Exempel i "kartotek": rad 2650, 2680; "småtext": rad 2630.
+
++ ZONE
+
+ZONE används för att bestämma bredden av skrivzonerna. Se under PRINT
+
+* VIC-64 COMAL-80 GRAFIK
+
+Här används ett nytt begrepp, "musen". På amerikanska kallas den också för
+"The Turtle", (sköldpaddan). Vi behåller det rara danska namnet "musen" ända
+tills någon funnit på en bra svensk beteckning för denna fördefinierade
+figur eller form.
+
++ BACK
+
+Syntax: BACK <d>
+
+Flyttar "musen" <d> enheter bakåt. Om pennan är nere (se PENDOWN), ritas en
+linje i nuvarande färg.
+
+BACKGROUND
+
+Syntax: BACKGROUND <färg>
+
+där <färg> är ett heltal från 0 till 15 (se Appendix B, bak i boken).
+Satsen/kommandot sätter bakgrunden till den färg, som anges med <färg>. När
+man använder högupplösningsgrafiken, fungerar ej instruktionen, innan
+förtolken har stött på en CLEAR-sats/kommando (se CLEAR).
+
+Exempel: kommandot/satsen:
+
+	BACKGROUND 6
+
+sätter bakgrunden till färgen blå.
+
++ BORDER
+
+Syntax: BORDER <färg>
+
+Sätter kanten runt "arbetsytan" på bildskärmen till den färg som anges med
+<färg> (se även BACKGROUND).
+
++ CLEAR
+
+Syntax: CLEAR
+
+Rensar grafikbildskärmen.
+
++ DRAWTO
+
+Syntax: DRAWTO <x>,<y>
+
+Ritar en linje från pennans nuvarande läge till punkten (<x>,<y>).
+
++ FILL
+
+Syntax: FILL <x>,<y>
+
+Fyller ut det slutna område som innehåller punkten (<x>,<y>) med pennans
+nuvarande färg (se PENCOLOR). Kanten på ett slutet område definieras så här:
+En kantpunkt är en punkt, som har en annan färg än bakgrunden, eller en
+punkt på kanten av nuvarande ram (se FRAME).
+
++ FORWARD
+
+Syntax: FORWARD <d>
+
+Musen flyttas <d> enheter framåt. Om pennan är nere tecknas en linje i
+nuvarande färg.
+
++ FRAME
+
+Syntax: FRAME <xmin>,<xmax>,<ymin>,<ymax>
+
+Definierar den ram, innanför vilken man kan rita. Man ritar icke i punkter
+vars koordinater ligger utanför detta område, om nedre vänstra hörnet är
+angivet med (<xmin>,<ymin>), och om övre högra hörnet är (<xmax>,<ymax>).
+Musen (eller "The Turtle") visas dock även utanför ramen. Vid uppstartning
+av systemet täcker ramen hela skärmen, dvs man har
+
+	<xmin>::=0 <xmax>::=319 <ymin>::=0 <ymax>::=199
+
++ GETCOLOR
+
+Syntax: GETCOLOR (<x>,<y>)
+
+Denna funktion ger färgen på punkten (<x>,<y>). Om den angivna punkten
+ligger utanför den för tillfället gällande ramen, ger funktionen värdet -1.
+
++ HEADING
+
+HEADING är en funktion, som ger riktningen för musen. Riktningen anges i
+grader moturs med vågrätt till höger som utgångspunkt.
+
++ LEFT
+
+Syntax: LEFT <v>
+
+Musen vrider huvudet <v> grader åt vänster (motsols).
+
++ MOVETO
+
+Syntax: MOVETO <x>,<y>
+
+Flyttar pennan utan att rita från nuvarande läge till det läge som anges av
+(<x>,<y>).
+
+PENCOLOR
+
+Syntax: PENCOLOR <färg>
+
+Sätter den färg, som man ritar med, dvs pennans färg. Detta är samtidigt den
+färg som markören får och den färg i vilken texten skrivs på bildskärmen.
+Dessutom är det musens färg. Normalt skall man for <färg> använda ett
+talvärde mellan 0 och 15 (se BACKGROUND), men om man använder ett negativt
+tal. ritas det i samma färg som bakgrunden.
+
++ PENDOWN
+
+Syntax: PENDOWN
+
+Pennan sänks, dvs de rörelser pennan därefter gör lämnar ett skrivspår, ett
+streck, så länge som rörelsen pågår innanför ramen och pennans färg är olika
+bakgrundens.
+
++ PENUP
+
+Syntax: PENUP
+
+Pennan lyfts, dvs dess rörelser lämnar icke längre något streck på skärmen.
+
++ PLOT
+
+Syntax: PLOT <x>,<y>
+
+Märker ut punkten (<x>,<y>) i pennans nuvarande färg.
+
++ PLOTTEXT
+
+Syntax: PLOTTEXT <x>,<y>,<text>
+
+Den text, som anges av textuttrycket <text>, visas på grafikskärmen så, att
+nedre vänstra hörnet av första tecknet i <text> placeras i den punkt som
+anges av (<x>,<y>). Lägg märke till att de använda koordinaterna blir satta
+lika med de största hela multiplarna av 8, som är mindre än eller lika med
+de angivna värdena. Texter kan endast framställas i förbindelse med
+högupplösningsgrafik.
+
++ POSITION
+
+Syntax: POSITION <x>,<y>
+
+Pennan flyttas till positionen (<x>,<y>). En linje ritas endast om pennan är
+nere och har en färg, som är skild från bakgrundsfärgen.
+
++ RIGHT
+
+Syntax: RIGHT <v>
+
+Musen vrider huvudet <v> grader åt höger (medsols).
+
++ SCREENECCO
+
+Syntax: SCREENECCO <visa>
+
+Om <visa> har värdet TRUE, blir den linje som markören står på, visad överst
+på grafikskärmen. Detta fungerar dock endast i högupplösningsgrafik. Man kan
+flytta markören upp och ned som vanligt och på detta sätt få se en bild av
+var och en av de linjer som står på textskärmen. Texterna står alltid i
+ljusblå färg på mörkblå bakgrund. Kommandot:
+
+	SCREENECCO TRUE
+
+utförs alltid tillsammans med SETGRAPHIC 0 (initialisering av
+högupplösningsgrafiken).
+
++ SETGRAPHIC
+
+Syntax: SETGRAPHIC <typ>
+
+Kommando/sats, som initialiserar grafiksystemen och gör den grafiska skärmen
+synlig. På VIC-64 finns två olika grafikmoder:
+
+Högupplösningsgrafik: <typ> = 0
+Flerfärgsgrafik:      <typ> = 1
+
+I högupplösningsgrafik har man 320*200 punkter att förfoga över. Hela den
+grafiska skärmen delas upp i 40*25 block om vardera 8*8 punkter. Inom varje
+block kan man endast ha två färger, av vilka den ena är bakgrundsfärgen. Den
+andra färgen definieras, så snart en punkt inom blocket används. Om en punkt
+inom samma block åter används med en annan färg så skiftar hela blocket till
+denna sista färg.
+
+I Flerfärgsgrafik har man endast halva upplösningen mot högupplösningen i
+vågrätt riktning dvs man kan förfoga över 160*200 punkter. Skärmen blir även
+i detta fall uppdelad i 40*25 block, som nu är på 8*4 punkter vardera. Nu
+kan varje block innehålla fyra olika färger, av vilka en är bakgrundsfärg.
+
+SETGRAPHIC-kommandot/satsen med angiven typ initialiserar grafiksystemet,
+rensar bildskärmen, ställer musen i nedre vänstra hörnet pekande vågrätt åt
+höger och tar fram grafikskärmen. SETGRAPHIC utan typangivning gör endast
+att grafikskärmen tas fram. Resultatet av eventuella operationer, som kan ha
+utförts bakom textskärmen, blir synliga.
+
++ SETHEADING
+
+Syntax: SETHEADING <v>
+
+Musen vrider sitt huvud i riktning <v> grader motsols med utgångspunkt från
+riktningen vågrätt åt höger.
+
++ SETTEXT
+
+Syntax: SETTEXT
+
+Gömmer grafikskärmen och visar textskärmen. Grafikkommandon fungerar likväl
+fortförande på den gömda grafikskärmen.  Resultatet av sådana kommandon kan
+lätt avslöjas genom att man använder en SETGRAPHIC-sats/ kommando. En
+STOP-sats eller ett felmeddelande utfor automatiskt SETTEXT-kommandot.
+
++ TURTLESIZE
+
+Syntax: TURTLESIZE <s>
+
+Definierar storleken på musen. Storleken <s> skall vara ett heltal i det
+slutna intervallet mellan 1 och 10. Vid systemstart är <s> lika med 10.
+
++ TURTLESTATE
+
+Syntax: TURTLESTATE <tillstånd>
+
+Om <tillstånd> har värdet TRUE, visas musen, men om <tillstånd> har värdet
+FALSE visas ej musen.
+
+* VIC-64 COMAL-80 SPRITE-GRAFIK
+
+Ordet "sprite" betyder "alf", "fe" eller "nisse". På VIC-64 betecknar
+"sprite" en fördefinierad figur, som kan röra sig runt på skärmen oberoende
+av eller i samspel med övrig grafik. Man kan ha upp till 8 sådana figurer på
+skärmen samtidigt. I "Grafik och ljud på VIC-64", kan man läsa en utförlig
+redogörelse för sprite-figurer.. I det följande kommer vi att syssla med hur
+man ritar en sprite och hur man kan styra den. I den tidigare nämnda boken
+kan man se, hur en sprite byggs upp. Den beskrivna metoden är emellertid
+mycket tekniskt präglad och därför finns på COMAL-disketten ett program, som
+heter "SPRITEDESIGN". I det följande kommer vi att utgå från, att detta
+program används för uppritning och redigering av sprites.
+
+** SPRITEEDITOR
+
+När 64:an kör COMAL och systemdisketten sitter i 1541-stationen, startas
+spriteeditorn med följande kommando:
+
+	CHAIN "SPRITEDESIGN"
+
+Editorn startar med att märka ut en kvadrat på vänster sida av bildskärmen
+och ställer därefter en rad frågor i övre högra hörnet. Det första lyder så
+här:
+
+	MULTICOLOR?
+
+Man skall nu slå in 0 eller 1. Om man slår in 0, blir sprite-figuren ritad i
+högupplösningsgrafik; om man slår 1 får man en flerfärgs sprite-figur.
+
+Låt oss först se, vad som sker därefter, om man startar med att slå in 0,
+alltså anger högupplösningsgrafik. Programmet skriver då
+
+	COLOR:
+
+och väntar på, att ett färgnummer slås in (se Appendix B bak i boken). Vi
+kan t ex slå in <CTRL 8>, som betyder gul.  Därefter frågar programmet:
+
+	EXPANDX?
+
+Här kan man återigen välja att slå in 0 eller 1. Om man slår in 0 så tecknas
+sprite-figuren i normal (liten) storlek i vågrätt riktning. Om man slår in 1
+så ritas figuren i dubbel storlek utefter vågräta axeln (X-riktningen). Låt
+oss tänka oss att vi slår in 1. Det ger en mycket tydlig figur på skärmen.
+Nu skriver programmet:
+
+	BACKCOL:
+
+och ber därmed om uppgift på bakgrundsfärg. Som svar skall man använda ett
+av de tidigare nämnda CTRL eller C= tangenterna. Slår man t ex C= och 4 får
+man en grå bakgrund.
+
+Som tecken på att editorn nu fått de nödvändigaste frågorna besvarade, ritas
+en mindre kvadrat under "frågeschemat" och markören sätts i övre vänstra
+hörnet av den stora kvadraten. Man kan nu börja att rita sin sprite-figur.
+
+Det sker på följande sätt:
+
+Man kan föreställa sig att kvadraten består av 24*21 fält (ett
+fält=markören). Markören kan flyttas fritt runt i kvadraten med hjälp av de
+vanliga styrtangenterna. I samtliga 24*21 fälten skall man nu markera, om
+man vill att fältet skall visa bakgrundsfärgen eller förgrundsfärgen. Det
+gör man genom att slå in 0 eller 1. Om man slår 0, får det fält som markören
+står på, bakgrundsfärgen. Om man slår in 1, får fältet förgrundsfärgen.
+
+När man så markerat samtliga 24*21 fält, kan man ändra på sin ritning om man
+så vill genom att flytta markören till ett bestämt fält och ändra
+markeringen (0 eller 1) för just detta fält.
+
+Samtidigt med att man ritar sin sprite-figur så visas figuren i sin rätta
+storlek i den mindre kvadraten, som kom fram nederst till höger på skärmen.
+
+När man är klar med uppritningen av sin sprite-figur, skall den sparas på
+disketten, så att man senare kan hämta fram den för användning i ett
+program. Det gör man genom att trycka på tangenten med bokstaven "s" (for
+SAVE). Spriteeditorn svarar med att skriva:
+
+	FILENAME:
+
+under den stora kvadraten. Användaren skall nu bara slå in ett tillåtet
+filnamn och trycka på RETURN-tangenten. Så sparas de 64 tecken, som
+definierar sprite-figuren i en sekventiell fil med det av användaren angivna
+namnet. Den kan senare läsas med hjälp av OPEN FILE och READ FILE. Den sista
+bytens (byte nr 64) värde anger, om det är fråga om en högupplösnings- eller
+flerfärgs sprite. 0 = högupplösning, 1 =flerfärgs.
+
+Låt oss sedan se vad som sker om man slår in 1, när editorn skriver:
+
+	MULTICOLOR?
+
+Man får därefter samma frågor som tidigare men editorn ställer ytterligare
+två frågor:
+
+	MULTICOLOR-1:
+	MULTICOLOR-2:
+
+och för vart och ett av dessa skall en av färgkoderna slås in. Dessa två
+färger kommer vi att kalla sidofärger. Man har alltså angivit totalt fyra
+färger: en bakgrundsfärg (BACKCOL), en förgrundsfärg (COLOR) och två
+sidofärger (MULTICOL-1) och MULTICOL-2).
+
+Man fortsätter nu som ovan beskrivits, blott med den skillnaden att man nu
+kan använda tangenterna 0, 1, 2 och 3 för markering av resp bakgrundsfärg
+förgrundsfärg och de två sidofärgerna. Dessutom skall man lägga märke till
+att varje markering nu definierar färgen på två fält i vågrätt riktning och
+ej som i högupplösningsgrafik, där varje fält kan ha sin färg. Men så har
+man ju i stället fyra färger att arbeta med, och inte bara två, som vid
+högupplösningsgrafik.
+
+Om man senare önskar ändra sin sprite-figur, kan man även här använda
+spriteeditorn. Man skall då starta upp rutinen som beskrivits här ovan och
+när markören ställer sig i ritkvadratens övre vänstra hörn, skall man trycka
+på tangenten med bokstaven "l" (for LOAD). Nu skriver editorn:
+
+	FILENAME?
+
+och man skall slå in namnet på den sekventiella fil, som innehåller den
+sprite-figur, som man vill ändra. Därpå ritar editorn den önskade figuren
+och man kan ändra den genom att flytta runt med markören och ändra
+markeringarna for de fält, som man vill ändra. När redigeringen är avslutad,
+sparas den nya ritningen genom att man trycker på "s" och anger ett nytt
+filnamn.  Den gamla ritningen kan ev. raderas genom att man använder
+DELETE-kommandot (se DELETE eller PASS).
+
+Editorn stoppas genom att man trycker på tangenten med bokstaven "q" (för
+QUIT, lämna).
+
+Vi skall nu övergå till att titta litet på de olika sprite-ord, som kan
+användas i förbindelse med COMAL-80/64. Till de enskilda orden är inga
+exempel visade. Läsaren hänvisas till de två programmen "uppmottak" och
+"kollision", vilka i detalj genomgås i tillägget till detta avsnitt.
+
++ DATACOLLISION
+
+Syntax: DATACOLLISION(<sprite>,<läs>)
+
+Detta är en funktion, som används för att undersöka, om sprite-figur nr
+<sprite> har stött ihop med annan grafisk information på skärmen (dvs en
+icke-bakgrundspunkt på sprite-figuren sammanfaller med en
+icke-bakgrundspunkt för en annan grafisk figur). Om <läs> har värdet TRUE,
+registreras en sammanstötning, så snart den sker. Om <läs> har värdet FALSE,
+registreras det, om en sammanstötning har skett tidigare. Funktionen ger
+alltså värdet TRUE, om spritefigur nr <sprite> tidigare har stött samman med
+annan grafisk information.
+
++ DEFINE
+
+Syntax: DEFINE <teckning>, <definition>
+
+där <teckning> är ett heltal från 0-47 och <definition> är ett stränguttryck
+som innehåller de 64 tecken, som definierar en sprite-figur (se under
+SPRITEEDITOR). Man kan ha ett förråd på totalt 48 figurer, och med hjälp av
+var och en av dessa figurer, kan man definiera en av de 8 sprite-figurer,
+som kan finnas i skärmen samtidigt. Man kan ev använda samma teckning för
+definition av fler än en av de sprite-figurer som uppträder på skärmen.
+
++ HIDESPRITE
+
+Syntax: HIDESPRITE <sprite>
+
+Sprite-figur nr <sprite> visas icke längre på skärmen.
+
++ IDENTIFY
+
+Syntax: IDENTIFY <sprite>,<teckning>
+
+Sprite-figur nr <sprite> visar teckning nr <teckning>. Man kan föreställa
+sig, att man har ett skåp fullt med teckningar av olika sprites (0-47).
+Varje gång, man använder IDENTIFY-satsen, tar man en teckning från skåpet
+och låter en figur efter den nuvarande teckningen uppträda på skärmen med
+det nummer <sprite> anger. Numret <sprite> skall vara ett heltal mellan 0
+och 7. Om musen är framme, uppträder denna som sprite-figur nr 7.
+
++ PRIORITY
+
+Syntax: PRIORITY <sprite>,<p>
+
+Om <p> har värdet TRUE så blir sprite-figur nr <sprite> visad bakom ev
+existerande grafik. Om <p> har värdet FALSE, kommer figuren<sprite> att
+visas framfor ev. annan grafik. De enskilda sprite-figurernas inbördes
+prioritet är fastlagd på förhand. Av två sprite-figurer har den med lägst
+nummer högst prioritet.
+
++ SPRITEBACK
+
+Syntax: SPRITEBACK <färg-1>,<färg-2>
+
+där <färg-1> och <färg-2> är heltal från 0-15. Satsen används för att
+omdefiniera de två sidofärgerna i en flerfärgs-sprite (se under
+SPRITEEDITOR).
+
++ SPRITECOLLISION
+
+Syntax: SPRITECOLLISION(<sprite>,<läs>)
+
+En funktion som ger värdet TRUE, om och endast om sprite-figur nr <sprite>
+stöter ihop med eller tidigare har stött samman med en annan sprite-figur.
+Om <läs> se under DATACOLLISION.
+
++ SPRITECOLOR
+
+Syntax: SPRITECOLOR <sprite>,<färg>
+
+Sätter förgrundsfärgen för sprite-figur nr <sprite> till den färg som anges
+med <färg>, där <färg> är ett heltal från 0 till 15 (Se under
+SPRITEEDITOR).
+
++ SPRITEPOS
+
+Syntax: SPRITEPOS <sprite>,<x>,<y>
+
+Sätter sprite-figur nr <sprite> så, att figurens övre vänstra hörn befinner
+sig i punkten (<x>,<y>).
+
++ SPRITESIZE
+
+Syntax: SPRITESIZE <sprite>,<x>,<y>
+
+Om <x> har värdet TRUE (ett talvärde skilt från noll), blir sprite figur nr
+<sprite> expanderad till dubbla storleken i horisontell riktning. Om <y> har
+värdet TRUE (ett talvärde skilt från noll), blir sprite-figur nr <sprite>
+expanderad i dubbel storlek i vertikal riktning.
+
+** TVÅ EXEMPEL
+
+Exempel nr 1: programmet "UPPMOTTAK"
+
+I proceduren "hämtasprite" öppnas filen "ballong" med filnr 2 och variabeln
+"figur$" får sig tilldelad värdet på den sträng om 64 tecken, som har
+sparats i filen.
+
+I proceduren "ritasprite" sker följande:
+
+200: De 64 tecken, som är värdet av "figur$" används för att definiera
+teckning nr 45.
+210: Sprite-figur nr 2 får dubbel storlek i båda riktningarna.
+220: Bakgrundsfärgen sätts till färg nr 8 (orange). 
+230: Ramfärgen sätts till färg nr 2 (röd).
+240: Förgrundsfärgen till sprite nr 2 sätts till 11 (grå).
+250: Man byter om till grafik.
+260: För sprite-figur nr 2 används teckning nr 45 (som tidigare definierats
+på rad nr 170).
+
+I proceduren "användsprite" styrs "ballongen" snett upp över skärmen och när
+den stöter mot "taket" så rör den sig snett nedåt över skärmen:
+
+330: Läget på sprite-figur nr 2 sätts till (x,y) dvs övre vänstra hörnet av
+figuren.
+350: Om figur nr 2 stöter mot annan grafik ("taket"), får variabeln
+"uppmot'taket" värdet TRUE.
+360: Om "uppmot'taket" har värdet TRUE, sänds figuren i "ballongen" nedåt
+igen.
+
+I proceduren "rita'tak" ritas en vågrät linje ("taket") på en höjd av 180
+enheter.
+
+I proceduren "ned'igen" dirigeras figuren ned efter att ha stött ihop med
+"taket".
+
+590: Figuren styrs, så dess övre vänstra hörn är i punkten (x,y).
+610: Programmet stannar, om man tryckt på ESC-tangenten.
+
+Exempel nr 2: programmet "KOLLISION"
+
+Programmet har många gemensamma drag med föregående program. Följande rader
+bör observeras:
+
+230: sprite-figur nr 2 ritas efter teckning nr 45.
+240: sprite-figur nr 3 ritas efter teckning nr 45.
+
+De två sprite-figurerna alltså framställda efter samma teckning.
+
+360: Variabeln "möte" får värdet TRUE, så snart sprite-figur nr 2 stöter
+ihop med en annan sprite-figur, i detta fall nr 3.
+370: Om de två sprite-figurerna stöter ihop, rör de sig tillbaka igen.
+
+Läsaren uppmanas att göra experiment med dessa två program genom att ändra
+parametrarna for färger, storlekar mm. Filen "ballong" ligger på
+COMAL-programdisketten.
+
+Se även programlistningarna längst bak i boken.
+
+* APPENDIX A
+
+Teckenvärdena för PRINT, CHR$ och ASC
+
+[Etextarens not: Denna lista är borttagen, eftersom C64:ans
+teckenuppsättning är svår att efterlikna i ISO-text. Jag hänvisar till
+C64-manualen]
+
+* APPENDIX B
+
+De 16 färgerna du kan använda är
+
+ 0 SVART
+ 1 VIT
+ 2 RÖD
+ 3 CYAN
+ 4 PURPUR
+ 5 GRÖN
+ 6 BLÅ
+ 7 GUL
+ 8 ORANGE
+ 9 BRUN
+10 LJUSRÖD
+11 GRÅ 1
+12 GRÅ 2
+13 LJUSGRÖN
+14 LJUSBLÅ
+15 GRÅ 3
+
+** LITTERATURHÄNVISNING
+(Engelsk, dansk och svensk litteratur)
+
+[1. DANSKA BÖCKER]
+
+COMAL, Problemløsning og programmering
+I+II, Børge R. Christensen, förlag BOGIKA, Ikast, Danmark
+
+Diskett med böckernas program för VIC-64 kan köpas efter skriftlig
+beställning hos författaren. Priset för båda disketterna är kr 200:-. Skriv
+till Børge R. Christensen, Viben 34, 6270 Tønder, Danmark.
+
+Programmering i COMAL-80
+Poul Østergaard, Teknisk Forlag, Köpenhamn, Danmark
+
+Svensk översättning från Förlagshuset under våren 1984.
+
+4 * COMAL
+Leif Pehrsson m fl. Forlaget SYSTIME, Herning, Danmark.
+
+Svensk översättning från Förlagshuset under våren 1984.
+
+[ENGELSKA BÖCKER]
+
+COMAL HANDBOOK
+Len Lindsay, Reston Publishing Company, USA
+
+Beginning COMAL
+Børge Christensen, Ellis Horwood Ltd, England
+
+Structured Programming with COMAL
+Roy Atherton, Ellis Horwood Ltd, England
+
+Foundations in Computer Studies with COMAL
+John Kelly, Education Company of Ireland, Irland
+
+Starting with COMAL
+Erik Gratte, Prentice Hall International, England
+
+[SVENSKA BÖCKER]
+
+COMAL SNABBGUIDE
+Åke Fredriksson, COMAL-klubben i Sverige, Mölndal
+
+COMAL-80 på VIC-64
+Børge R. Christensen i övers. av Å Fredriksson,
+Förlagsgruppen, Norrköping
+
+
+Planerade svenska utgåvor:
+
+COMAL Handbok, Len Lindsay, t svenska av Å Fredriksson *)
+Strukturerad programmering i Comal, Roy Atherton, övers. Å F-n. *)
+Programmering i COMAL-80, Poul Østergaard, övers. Å F-n. *)
+4 * COMAL - 4 * VIC, Leif Pehrsson m fl. Förlagsgruppen, Norrköping.
+
+*) samtliga utkommer på svenska från Förlagsgruppen, Norrköping.
+
+Dessutom beräknar COMAL-Klubben i Sverige ge ut sitt nyhetsblad med början
+1984 som kvartalsblad. Distribueras endast till medlemmar i COMAL-Klubben i
+Sverige. Medlemsavgift 100:-/år. Kansli: c/o Åke Fredriksson,
+Gustavsbergsgatan 8, 431 37 MÖLNDAL. Telefon 031-87 70 84. Postgiro 42 17
+64-2.
+
+* Om programmen "KARTOTEK" "SMÅTEXT"
+
+1. Programmet "kartotek"
+
+Programmet hämtas in med kommandot:
+
+	CHAIN "KARTOTEK"
+
+och börjar med att skriva
+
+	1 = Inskrivning
+	2 = Utskrift
+	3 = Rättelser
+	4 = Tag bort
+	5 = Sluta
+
+Välj funktion:
+
+Genom att slå in ett av de fem angivna talvärdena, får man den funktion
+aktiverad som anges mitt för talvärdet. Under körningen ger programmet själv
+instruktioner om, vad man skall göra.
+
+Programmet är skrivet med hänsyn till att man använder diskdrive 1541 for
+Iagring av sina data. Versionen "kartotek/k" använder kassettbandspelare
+
+Programmet "småtext"
+
+Programmet startas genom att man skriver in:
+
+	CHAIN "SMÅTEXT"
+
+Överst i bildskärmen framkommer en kommando-rad:
+
+	Ange arbete: n j u s 1 a
+
+De olika bokstäverna står för följande n(y text), j(ustera), u(tskrift),
+s(para), l(adda) och alvbryt). Följande exempel går igenom användningen av
+kommandona:
+
+Tryck först på tangenten 'n'. Lägg märke till att n:et då skrivs i negativ
+(omvänt) utfirande och att ett smalt, blinkande streck blir synligt på rad
+4. Knappa in följande text:
+
+	Anton har en häst, som heter Sörenson.
+
+Och tryck därefter på tangenten med snabel-a (@). Programmet skriver då
+återigen kommandoraden:
+
+	Ange arbete: n j u s 1 a
+
+Tryck nu på 'j'. Bokstaven 'j' lyser upp negativt och programmet skriver:
+
+	Sök:
+
+med ett blinkande streck därunder. Knappa in ordet 'häst' och tryck på
+snabel-a igen. Bokstaven 'h' i 'häst' börjar att blinka med ett streck
+under. Knappa in orden 'mycket liten' och lägg märke till hur de sätts in i
+texten. Tryck till slut på snabel-a igen för att komma tillbaka till
+kommandoraden.
+
+Då systemet ligger i j(usterings)-tillstånd kan man alltid också använda
+alla vanliga redigeringstangenter, utom Markör-upp och Markör-ned, i det att
+"småtext" är radorienterat. Pröva t ex följande: tryck på 'j' och svara
+Liten' när programmet ber om ett sök-ord. Tryck på snabel-a. Textmarkören,
+det blinkande strecket ställer sig under 'l' i 'liten'. Tryck på knappen
+<DEL> sex gånger och lägg märke till att ordet 'mycket' stryks ut. Tryck på
+snabel-a för att komma tillbaka till kommando-raden.
+
+Ett tryck på 'u' ger möjlighet att få en utskrift med korrekt uppdelning av
+texten i hela ord. Genom att använda 's' och 'l' kan man respektive spara på
+och ladda in texter på/från disketten/kassetten. På COMAL-80-disketten
+ligger datafilen "text".  Denna kan t ex hämtas in genom att starta
+"småtext" och trycka på 'l'.
+
+Med "småtext" kan man spara och hämta texter på diskett. Med "småtext/k" kan
+man spara och hämta texter på kassett.
+
+* OM GRAFIKPROGRAMMEN
+
+Grafikprogrammen "graf.01" - "graf.09" demonstrerar samtliga satser som kan
+användas i förbindelse med x-y-grafik och s k turtle-grafik. Programmen
+"kollision" och "uppmottak", som omtalades mer i detalj i det föregående
+avsnittet demonstrerar en stor del av sprite-grafiken.. Författaren har
+ansträngt sig att använda sådana namn på variabler och procedurer, att pro-
+grammen skall vara självförklarande. Programmen startas med kommandon som t
+ex:
+
+	CHAIN "GRAF.03"
+
+och stoppas genom att man trycker på mellanslagstangenten (den långa längst
+ned).
+
+De flesta programmen använder en följd gemensamma standardprocedurer. Dessa
+procedurer visas ej i alla programlistningar. Läsaren hänvisas i varje givet
+fall till att titta på en listning på bildskärmen eller ev. själv framställa
+listor på sin egen printer med kommandona:
+
+	SELECT "LP"
+	LIST
+
+På följande sidor visas COMAL-80-programmen på disketten i listat format.
+
+[Programlistningar saknas i denna version]
+
+*********
+
+* OBS! Skillnader COMAL 80 vers. 0.12/0.14
+
+Efter version 0.12, som den här baken behandlar, har ytterligare en
+skivbaserad COMAL-version för VIC 64 kommit, med versionsnumret 0.14.
+Skillnader mellan versioner är relativt små, endast några instruktioner har
+tillkommit i version 0.14. Det går också att köra program skrivna i den ena
+versionen med den andra. För att föra över program från en version till en
+annan, gör på följande sätt. Lista först programmet till skiva med LIST
+eller EDIT. Du kan sedan läsa in programmet till den andra versionen med
+kommandot ENTER.
+
+De enda instruktioner som skiljer sig mellan versionerna är några grafik-instruktioner. Följande tabell visar några instruktioner som 
+har olika namn i de båda versionerna.
+
+0.12                         0.14
+
+POSITION                     SETXY
+
+SCREENECCO TRUE              SPLITSCREEN
+SCREENECCO FALSE             FULLSCREEN
+
+TURTLESTATE TRUE             SHOWTURTLE
+TURTLESTATE FALSE            HIDETURTLE
+
+I version 0.14 finns också en grafik-instruktion som inte finns i 0.12. HOME
+flyttar pennan till "hem-positionen", mitten av skärmen, och sätter vinkeln
+till 0. Detta är för övrigt också den position som 0.14 startar i varje gång
+SET-GRAPHIC 0 eller 1 används (i 0.12 placeras pennan då i nedre vänstra
+hörnet). En annan skillnad är att man inte får samma resultat när man
+använder instruktionen SETHEADING. Vinklarna är inte samma i de båda
+versionerna. Figuren nedan visar hur vinklarna pekar.
+
+
+0.12         90               0.14          0
+              |                     -90     |
+    +-180 ----+---- 0               270 ----+---- 90
+              |                             |
+             -90                           +-180
+             270
+
+
+Tre av funktionstangenterna har fått speciella funktioner i 0.14. Följande
+tabell visar vilka.
+
+F1  Ger samma resultat som SETTEXT, dvs återgår till text-mod.
+
+F3  Ger samma resultat som SETGRAPHIC + SPLITSCREEN, hoppar alltså in i
+    grafik-mod med två rader att skriva på överst på skärmen.
+
+F4  Ger samma resultat som SETGRAPHIC + FULLSCREEN, grafik-mod utan några
+    rader att skriva på.
+
+Observera att det grafik-mod som F3 och F4 ger är det senast använda
+grafik-modet (0 eller 1). Om inget sådant mod är aktivt (om du inte använt
+något, eller rensat minnet sedan det förra) händer ingenting när du trycker
+funktionstangenterna.
+
+Eftersom 0.14 har några fler instruktioner än 0.12 tar den också upp lite
+mer plats. Vid uppstart, och efter kommandot NEW, skall respektive version
+ha följande antal lediga bytes.
+
+0.12 10153
+0.14  9902
+
+*********
+
+End of the International Project 64 etext of the Swedish
+Comal-80 0.12/0.14 manual.
+
+*********

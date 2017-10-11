@@ -1,0 +1,125 @@
+*********
+
+Welcome to iDOC= - the international CBM documentation project!
+
+The goal of iDOC= is to preserve (non-English) Commodore related documents
+in electronic text format that might otherwise cease to exist with the rapid
+advancement of computer technology and declining interest in 8-bit computers
+on the part of the general population. If you would like to help by
+converting Commodore related hardcopy documents to electronic texts please
+contact the manager of iDOC=, Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names consists of a reasonably short unique title, followed by the
+document language. Two optional fields follow; first the document version (0
+for incomplete texts, version 1 is usually unnumbered), and then the
+document source, if there are more than one. Finally, the document is given
+a .txt extension.
+
+The author(s) of the original document and members of iDOC= make no
+representations about the accuracy or suitability of this material for any
+purpose. This etext is provided "as-is". Please refer to the warranty of the
+original document, if any, that may included in this etext. No other
+warranties, express or implied, are made to you as to the etext or any
+medium it may be on. Neither the author(s) nor the members of iDOC= will
+assume liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext. Therefore
+if you read this document or use the information herein you do so at your
+own risk.
+
+*********
+
+The iDOC= etext of the Phobia French manual, converted to text by Björn
+Graas <Graas@gmx.de>
+
+phobia_de.txt, July 1999, etext #54.
+
+*********
+
+LORD PHOBOS, Maître de la Terreur, a emprisonné la fille du Président de la
+Galaxie et la garde captive sur la surface du Soleil.
+
+Sachant qu'une mission de sauvetage va être lancée, Phobos a crée une série
+d'univers que les éventuels sauveteurs devront traverser avant de parvenir
+au soleil. Après une minutieuse étude de l'esprit humain et de son
+subconscient, Phobos a faconné chaque planète selon une phobie humaine. Il
+sait que c'est la plus puissante émotion humaine, et la phobie de la peur
+elle-même est suffisante pour dissuader n'importe quel soidisant héroes.
+
+Dans le coeur de chaque planète, un élément rare offre une parfaîte
+protection contre la chaleur du soleil - neuf d'entre eux sont nécessaires
+pour protéger l'ensemble du vaisseau et pour permettre une attaque contre le
+soleil lui-meme.
+
+Phobos a créé d'autres systèmes de défense pour dissuader la mission de
+secours - ses redoutables Troupes du Soleil se lanceront de l'extrémité
+opposée du système stellaire et tenteront de couper la route vers Phobos -
+ils poseront des barrières de lumière entre les planètes ce qui détruira
+tout les vaisseaux tentant de passer á la vitesse de la lumière. Le seul
+chemin pour passer à travers cela est soit de sacrifier un vaisseau, soit de
+pendre une nacelle de l'escape graviant autour de la lune et de la
+sacrifier. Les nacelles de l'escape produisent aussi une puissance de feu
+quand suffisamment de modules d'energie ont été colletés.
+
+Cependant pour progresser dans le jeu il faut détruire une planète phobique,
+aller jusqu'au noyau et pendre une part de l'écran protecteur, ensuite
+progresser vers le prochain système planétaire. Si la lune de la planète
+clignote cesi signifie qu'une passerelle de l'espace est présente, et que
+vous avez la possibilité de voler vers les défenses lunaires pour la
+prendre.
+
+Les composants de planète phobique laissent de l'énergie quand elle est
+détruite, ce qui peut être recueilli pour améliorer les possibilités de
+combat de votre vaisseau. Dans chaque planète phobique, il y a aussi des
+générateurs clés qui ont des boucliers insondables à la fin de chaque
+système - ceux-ci peuvent être identifiés et détruits avant que l'écran de
+protection ne soit atteint.
+
+Controlle: Un ou deux joueurs
+
+Si vous choisissez d'entreprendre la mission avec un camarade, alors un
+système d'échange d'armes énergétiques peut être employé - tirer sur le
+vaisseau d'un autre joueur donne de l'énergie - le vaisseau change de
+couleur quand l'énergie a été absorbée et quand le vaisseau chargé fait feau
+il peut déclencher une explosion de destruction dévastatrice, proportionelle
+au momant d'énergie absorbée. Si vous jouez à une seule personne, une boucle
+linéaire duplicatrice peut être utilisée, votre propre vaisseau peut se
+partager et ainsi augmenter sa puissance de feu (mais aussi augmenter sa
+vulnérabilité ...)
+
+Chargement (C64):
+
+Disquette: LOAD "*",8,1 et ensuite sur RETURN
+Cassette: Appuyer sur SHIFT et RUN/STOP simultanément
+
+Contrôle du jeu:
+
+Le contrôle se fait seulement par manette. Pour jouer à deux personnes,
+poussez la manette à droite jusqu'à ce que le deuxième tableau de score soit
+activé. Pour jouer à deux, il faut avoir deux menettes.
+
+Commodore-Clé=Pause (Feu pour recommencer)
+RUN/STOP=Fin du jeu
+
+La fonction de partage du bâtiment est contrôllée par la BARRE D'ESPACEMENT
+ou par le bouton de feu sur la deuxième manette (si elle est connectée).
+
+Note: La version en cassette de Phobia nécessite des échelons pour être
+jouée dans un ordre choisi.
+
+(c) 1989 Mirrorsoft Ltd.
+
+*********
+
+End of the iDOC= etext of the Phobia manual.
+
+*********

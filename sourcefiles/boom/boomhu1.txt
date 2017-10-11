@@ -1,0 +1,132 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore 64
+related documents in electronic text format that might otherwise cease to
+exist with the rapid advancement of computer technology and declining
+interest in 8-bit computers on the part of the general population. If you
+would like to help by converting C64 related hardcopy documents to
+electronic texts please contact the manager of International Project 64,
+Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The first
+characters of the file name are an abbreviation of the original document
+name and the language of the etext. The version number of the etext follows
+next. After that a letter may appear to indicate the particular source of
+the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International Project
+64 make no representations about the accuracy or suitability of this
+material for any purpose. This etext is provided "as-is". Please refer to
+the warranty of the original document, if any, that may included in this
+etext. No other warranties, express or implied, are made to you as to the
+etext or any medium it may be on. Neither the author(s) nor the members of
+International Project 64 will assume liability for damages either from the
+direct or indirect use of this etext or from the distribution of or
+modification to this etext. Therefore if you read this document or use the
+information herein you do so at your own risk.
+
+*********
+
+The International Project 64 etext of the Boom manual, converted to text by
+Adam Dohos <hosza@szabinet.hu>.
+
+BOOMHU1.TXT, June 1998, etext #34.
+
+*********
+
+
+BOOM
+
+KEZELÉSI ùTMUTATò
+
+
+Néhány szó a játékról:
+
+A játék célja, hogy kijussunk az idegenek által elfoglalt területrôl
+úgy, hogy közülük minél többet, lehetôleg az összeset megsemmisítsük.
+Háromféle fegyver áll ehhez rendelkezésünkre, amiket a pályák különbözô
+pontjain találunk. Utunk során felvehetünk kulcsokat, amikkel a kapukat
+nyithatjuk, egészségügyi ládákat, amik megcsappant életerôpontjainkat
+növelik, fegyvereket, illetve hozzávaló lôszereket, amelyek a harcban
+segítenek bennünket. A kulcsok kivételével mindezeket ellenfeleink
+megölésével is megszerezhetjük. Teljesítményünkrôl a pályán található
+EXIT elérése után rövid értékelést kapunk, az ötvenedik pálya után
+pedig teljesítettük küldetésünket.
+
+
+A játék irányítása:
+
+A Boom kizárólag billentyûzetrôl irányítható, ennek magyarázata a
+joystick korlátozott számú funkcióját meghaladó irányítási lehetôség.
+A játék alapbeállítását megtekinthetjük, illetve módosíthatjuk a
+játékképernyô megjelenése után bármikor a (font jel) gomb megnyomásával.
+Ha módosítani szeretnénk ezt, csak a választani kívánt billentyût kell
+leütni, majd az új gomb megnyomásával cserélhetjük az általunk
+választott billentyûre az adott irányítási funkciót.
+
+Figyelem! - Hiányos beállítás esetén nem lehet visszalépni a játékba.
+	  - Csak a betûbillentyûk használhatók.
+	  - Egy gomb csak egy funkciót láthat el.
+
+Beállítás után a játék a (font jel) gomb ismételt leütésével
+folytatható. Nem változtathatók a fegyverek választása (1, 2, 3), a
+futás (SHIFT + irány), valamint az állásmentés (F7), illetve állástöltés
+(F1) billentyûi. Egy lemezoldalon egyszerre csak egy állást lehet
+tárolni.
+
+
+KòDTÅBLÅZAT
+
+ 1 KM3C
+ 2 V5BD
+ 3 18O9
+ 4 E7WT
+ 5 ZX2Y
+ 6 1PAF
+ 7 L4H2
+ 8 JDOK
+ 9 D3G1
+10 SP4X
+11 7F8K
+12 O6C9
+13 Z7Y5
+14 2BES
+15 MN36
+16 J9OK
+17 Z1XY
+18 37P2
+19 1D56
+20 C3MF
+21 9TIO
+22 8BYX
+23 OR7T
+24 W1N9
+25 HL1X
+26 9NTO
+27 3P5K
+28 4OD6
+29 7CZY
+30 5JGZ
+31 8OK9
+32 X1N7
+
+A kódok nullát (0) nem tartalmaznak, ezeken a helyeken O betût üssünk.
+
+*********
+
+End of the International Project 64 etext of Boom.
+
+*********

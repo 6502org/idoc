@@ -1,0 +1,243 @@
+Allgemeine Beschreibung:
+========================
+
+Das Grafik-ROM II stellt eine Erweiterung zur MPS802 / 1526
+Betriebssystemversion REV 07c dar. Die neuen Befehle umfassen Grafik,
+Zeichensatz und eine Reihe von Zusatzfunktionen. Die Befehle werden
+über das Escape-Steuerzeichen chr$(27) und ein danach folgendes
+Befehlszeichen ausgewählt. Danach können zusätzliche Parameter folgen,
+die in den Beispielen mit "Lo" für Lowbyte, "Hi" für Highbyte und
+"n" als Parameter bezeichnet werden. Da ein Zeichen nur Zahlen
+zwischen 0 und 255 darzustellen vermag, müssen größere Zahlen in zwei
+Zeichen, also Low und Hi übertragen werden. Dieses Format berechnet
+sich für Hi = INT(Wert/256) und Low = Wert-Hi*256.
+Neben den Befehlen sind noch einige Festeinstellungen zu erläutern: In
+dem alten Zeichensatz sind die drei Zeichen "k", "g", "'" verändert
+worden. Um sofort mit grafikfähigen Programmen wie Print Shop arbeiten
+zu können, sind die Sekundäradressen nach dem Einschalten des Druckers
+abgeschaltet. Diese können mit den Basic Befehlen open4,4:print#4,
+chr$(27)chr$(0):close4 eingeschaltet werden (siehe Seite 2). Das
+Wiederabschalten der Sekundäradresse ist möglich über die Befehle:
+open4,4,11:print#4:close4. Die Funktionszeichen für Breitschrift
+chr$(14) & chr$(15) sind gleichwertig zu den Zeichen chr$(1) &
+chr$(129), die früher bei alten Versionen des 1526 existierten.
+Desweiteren ist die Voreinstellung der Zeilen pro Seite von 66 auf 72
+eingestellt. Das entspricht dem Papierformat 12" (Zoll) * 240mm. Der
+Druckerselbsttest ist geändert worden. Der komplette Zeichensatz (groß
+& klein) wird dadurch schon nach 5 Zeilen ersichtlich. Wenn Sie die
+Formatierung oder Grafik verwenden, dann wird ein eventuell vorher
+definierter Zeichensatz überschrieben. Das gleiche gilt für die
+Formatierungsdaten und das selbstdefinierbare Zeichen nach Grafik oder
+Zeichensatzbetrieb. Diese Einschränkungen resultieren aus dem sehr
+knapp bemessenen RAM des Druckers. Bitte lesen Sie das folgende
+Kapitel sorgfältig durch. Für eventuelle Schäden, die durch
+fehlerhaftes Einbauen entstehen, kann keine Haftung übernommen werden.
+Zur Orientierung ist auf Seite 3 eine Einbauskizze abgebildet.
+
+Einbauanleitung:
+================
+
+Für die Umrüstung ist zuerst der Drucker auszuschalten und von Netz-
+und IEC- Busstecker zu trennen. Das Farbband muß entfernt und das
+Handrad abgezogen werden. Auf dem Druckerboden sind vier Schrauben,
+die das Obergehäuse halten, zu lösen. Danach hebe man das
+Druckergehäuse ab und löse das Abschirmblech über der Platine (zwei
+Schrauben). Der Steckplatz des Austauschteiles liegt parallel neben
+dem Prozessor 6504 (U7D) und hat wie dieser ebensoviele Kontakte. Das
+alte ROM muss vorsichtig herausgehebelt werden. Vergleichen Sie nun die
+Länge des Grafik-ROMs mit dem alten ROM. Ist das Grafik-ROM um zwei
+Kontakte länger, dann müssen noch 4 kleine Draht-Brücken mit Hilfe
+eines Lötkolbens vor dem jetzt freien ROM-Sockel geändert werden. Die
+Draht-Brücken sind mit J1 bis J4 auf der Platine gekennzeichnet. Für
+das Grafik-ROM II müssen J1 und J2 geöffnet sowie J3 und J4 verbunden
+werden. Das Grafik-ROM II kann aber auch mit einem Adaptersockel
+angepaßt werden.
+Bei dem Einsetzen des Grafik-ROM II muß in jedem Fall die kleine
+Kerbe, wie bei den anderen Chips auf der Druckerplatine, zur
+Druckerrückwand zeigen.
+
+Befehle über Escape chr$(27)
+=============================
+
+Grafik:
+
+  "K";chr$(Lo);chr$(Hi);Grafikdaten...(max 640)
+  "L";chr$(Lo);chr$(Hi);Grafikdaten...(max 1280)
+  "*";chr$(n);chr$(Lo);chr$(Hi);Grafikdaten...(max 1280)
+
+  n bezeichnet die Punktdichte
+  n = 0        entspricht ESC "K"
+  n = 1 bis 3  entspricht ESC "L"
+  n = 4        entspricht ESC "K"
+
+  Die Zeichen Lo und Hi geben die Anzahl der Grafikzeichen an.
+  Ist die Punktdichte größer als 640, dann werden in Folge je zwei
+  Zeichen miteinander ODER verknüpft.
+
+Vertikaltabulatoren:
+
+  "0"                  Zeilenabstand für Grafik
+  "1"                  Zeilenabstand für Grafik
+  "2"                  Zeilenabstand für Text
+  "3";chr$(n/216 Zoll) Zeilenabstand
+  "A";chr$(n/72 Zoll)  Zeilenabstand
+
+Zeichensatz:
+
+  "Z";chr$(n)....  80 Zeichen Bitmusterdaten
+  n gibt ein Bitmuster des Zeichensatzes an. Es müssen 80 Zeichen
+  übertragen werden!
+
+  "R";chr$(n)
+  n ist die Nummer des Zeichensatzes, den man auswählen will.
+  n = 0  entspricht  Amerikanisch
+  n = 1  entspricht  Deutsch
+  n = 2  entspricht  Dänisch
+  n = 3  entspricht  Spanisch
+  n = 4  entspricht  Französisch
+  n = 5  wie 1
+  n = 6  entspricht  Deutsch Vizawrite
+  n = 7  entspricht  Selbstdefinierter Zeichensatz
+
+  Die selbstdefinierten Zeichen sind nach der Auswahl über ESC "R" durch
+  die ASCII Werte chr$(240 - 249) zu erreichen.
+
+Diverses:
+
+  "-";chr$(n)
+  n = 0 oder 1  entspricht Unterstreichung aus- oder anschalten.
+
+  "H"
+  Alle folgenden Daten werden hexadezimal ausgedruckt, die letzten 19
+  bleiben jedoch unberücksichtigt.
+
+  chr$(0);chr$(141) (oder chr$(13))
+  Sekundäradressen wieder erlauben.
+
+Grafik nach MPS801 Vorbild:
+===========================
+
+Einleitung der Grafikbetriebsart:
+chr$(8);
+
+Wiederholbares Bitmuster:
+chr$(26);chr$(n);chr$(n)
+
+Druckstart-Position:
+chr$(27)chr$(16)chr$(Hi)chr$(Lo)
+
+Verlassen der Grafikbetriebsart:
+chr$(15)
+
+Die MPS801 Grafik wird mit chr$(8); eingeleitet. Alle folgenden
+Zeichen werden als Bitmustergrafik erkannt, sobald ihr ASCII-Wert
+größer als 127 ist. Textdaten werden ignoriert. Erfolgt ein Carriage
+Return chr$(13), dann wird ohne Zeilenabstand gedruckt. Das
+wiederholbare Bitmuster wird über chr$(26) aufgerufen. Die
+nachfolgenden Daten sind die Anzahl der Wiederholungen (1 bis 255) und
+das Bitmuster, das wiederholt werden soll. Die Druckstartposition
+benötigt zwei Erkennungszeichen chr$(27);chr$(16) und zwei Parameter
+als Längenangabe in Einzelpunktschritten. Das wiederholbare Bitmuster
+und die Druckstartposition gelten nur für die Grafikbetriebsart. Das
+Zeichen chr$(15) schaltet wieder um auf Textbetrieb.
+
+Druckeranpassung:
+=================
+
+Für einige Textprogramme ist eine Neueinstellung der Druckeranpassung
+notwendig. Am Beispiel Textomat betrifft dies die Einstellung
+"Initialisierung" mit den hexadezimalen Daten 1b008d (Sekundäradressen
+einschalten). Der Druckertyp wird auf MPS802 und die Sekundäradresse
+auf 7 eingestellt. Die Wertezuweisung der Umlaute erfolgt dezimal
+unter dem Menüpunkt "Tabelle". Die Werte der Umlaute (Zeichensatz
+Nr.6) sind aus dem Programmdemo zu entnehmen.
+
+Einbauskizze:
+
++----------------------+ +-----------------------------+
+|                      | |              +------------+ |
+|    DRUCKER-          | |              |    U4D     | |
+|    MECHANIK          | |              |  (6532)    | |
+|                      | |              +------------+ |
+|                      | |              +------------+ |
+|                      | |              |    U5D     | |
+|                      | |              |  (6532)    | |
+|                      | |              +------------+ |
+|                      | |              +------------+ |
+|                      | |              |    U6D     | |
+|                      | |              |  (6522)    | |
+|                      | |              +------------+ |
+|                      | |                  +--------+ |
+|                      | |                  |  U7D   | |
+|                      | |                  | (6504) | |
+|                      | |                  +--------+ |
+|                      | |                  +--------+ |
+|                      | |                  |  U8D   | |
+|                      | |                  | (ROM)  | | <- AUSTAUSCHTEIL
+|                      | |                  +--------+ |    (GRAFIK-ROM II)
+|                      | |                             |
+|                      | +-----------------------------+ PLATINE
+|                      |
+|                      |          +------------+
+|                      |        +-+------------+-+
+|                      |        | |            | |
+|                      |        | |            | |
+|                      |        | |            | |
++----------------------+        +-+------------+-+
+                                  +------------+   TRAFO
+
+Parameter-Einstellung
+=====================
+
+TEXTOMAT PLUS       Anpassung Umlaute siehe StarTexter!
+-------------
+
+TEXTOMAT PLUS (C) 1985 DATA BECKER GmbH TEXTOMAT PLUS (C) 1985 DATA BECKER GmbH
+      **** STEUERZEICHEN ****                 **** STEUERZEICHEN ****
+                Teil1:                                 Teil2:
+        o : ......................
+        u : ......................
+    f ein : 0e....................               ab1 : 24......................
+    f aus : 0f....................               ab2 : 36......................
+    U ein : 1b2d0111..............               ab3 : 48......................
+    U aus : 1b2d0011..............              di10 : ........................
+        0 : ......................              di12 : ........................
+        1 : ......................              di15 : ........................
+        2 : ......................    Zeilenvorschub : ........................
+        3 : ......................     Wagenrücklauf : 0d......................
+        4 : ......................     Seitenwechsel : ........................
+        5 : ......................   Initialisierung : 1b008d..................
+        6 : ......................        Grafik ein : ........................
+        7 : ......................        Grafik aus : ........................
+        8 : ......................
+        9 : ......................
+  Teil2 mit F1    zurück mit F2        Teil1 mit F2    zurück mit F1
+
+STARTEXTER
+----------
+
+======================================  ======================================
+.Hintergrund:........1................  .Zeilenabstand:......0................
+.Schriftfarbe:.......0................  .Zeilen/Seite:......66................
+.Blockfarbe:.........0................  .Randvorschub:......10................
+.Rahmen+Schotten:...15................  .Einzelblätter:......1................
+.Cursorfarben:.....160................  .Schriftart:.........3................
+.Leistenfarben:....147................  .Abst. Kopfzeile:....1................
+.Orientierungen:...240................  .Abst. Fußzeile:.....1................
+.80-Zeichen:.......191................  .Druckeradresse:.....4................
+.* Zeichensatz:......1................  .Sekundäradresse:....7................
+.Druckertyp:.........1................  .Wandlung/ALF:.......2................
+===Parameter=====Zeile=====Spalte=====  ===Parameter=====Zeile=====Spalte=====
+
+                                        ======================================
+                                        .ä:................123................
+  Bitte benutzen Sie für eine           .ö:................124................
+  richtige Einstellung der              .ü:................125................
+  Drucker-Parameter                     .ß:................126................
+  das mitgelieferte Handbuch!           .Ä:.................91................
+                                        .Ö:.................92................
+                                        .Ü:.................93................
+                                        .<Paragraph>:......221................
+                                        .Breit ein:.........14................
+                                        .Breit aus:.........15................
+                                        ===Parameter=====Zeile=====Spalte=====

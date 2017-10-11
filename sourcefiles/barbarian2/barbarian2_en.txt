@@ -1,0 +1,167 @@
+*********
+
+Welcome to iDOC= - the international CBM documentation project!
+
+The goal of iDOC= is to preserve (non-English) Commodore related documents
+in electronic text format that might otherwise cease to exist with the rapid
+advancement of computer technology and declining interest in 8-bit computers
+on the part of the general population. If you would like to help by
+converting Commodore related hardcopy documents to electronic texts please
+contact the manager of iDOC=, Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names consists of a reasonably short unique title, followed by the
+document language. Two optional fields follow; first the document version (0
+for incomplete texts, version 1 is usually unnumbered), and then the
+document source, if there are more than one. Finally, the document is given
+a .txt extension.
+
+The author(s) of the original document and members of iDOC= make no
+representations about the accuracy or suitability of this material for any
+purpose. This etext is provided "as-is". Please refer to the warranty of the
+original document, if any, that may included in this etext. No other
+warranties, express or implied, are made to you as to the etext or any
+medium it may be on. Neither the author(s) nor the members of iDOC= will
+assume liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext. Therefore
+if you read this document or use the information herein you do so at your
+own risk.
+
+*********
+
+The iDOC= etext of the Barbarian 2 manual, converted to text by Peter Karlsson
+<pk@abc.se>
+
+barbarian2_en.txt, May 2001, etext #71.
+
+*********
+
+PROLOGUE
+
+At the finale of BARBARIAN - THE ULTIMATE WARRIOR, the barbarian defeated the
+warriors of Drax and thus freed Princess Mariana from his evil spell.
+
+Drax fled to the dungeons beneath his black castle, vowing to wreak disaster
+on the Jewelled Kingdom.
+
+It is decided that there is only one way to stop Drax. The barbarian and
+Mariana - herself an accomplished swordswoman - are the only two warriors
+skilled enough to survive the perilous journey to Drax's lair. They must stop
+him before it is too late.
+
+  BARBARIAN II - THE DUNGEON OF DRAX
+
+CHOICE OF CHARACTER
+
+You may choose to play either the barbarian or Princess Mariana. At the
+beginning of the game the two characters will appear. Chose your warrior by
+moving the joystick left or right and pressing FIRE.
+
+LEVELS
+
+You must fight your way through three levels - the Wastelands, the Caverns,
+and the Dungeons - before arriving at the fourth level, the Inner Sanctum of
+Drax. These sections must be played in the correct order.
+
+Each of the first three levels is a maze consisting of approximately 28
+screens. As you view each screen it is possible to walk left, right, or into
+doors or caves at the back of the screen.
+
+The direction you are walking, as viewed on the map, is continually changing
+and therefore a compass (in which the sword always points north) has been
+provided at the bottom of the screen.
+
+When you reach the exit to the next level the Level Display will pulse as a
+warning. It is not advisable to leave a level without first collecting all
+available magical objects (see below).
+
+MONSTERS
+
+On each of the first three levels you must fight six different types of
+monster, some of which can be killed with one well-placed blow.
+They are:
+
+[The Wastelands] Saurian beasts, Neanderthal men, Apes, Mutant Chickens,
+Stabbers, Floaters.
+
+[The Caverns] Carnivores, Orc Guards, Crabs, Slithering Things, Cave Trolls,
+Stingers.
+
+[The Dungeon] Pit Things, Dungeon Masters, Giant Grubs, Gobblers, Eyes,
+Orclets.
+
+If you survive to the sanctum of Drax you must face The Living Idol, a great
+Demon and, finally, the dreaded Drax!
+
+MAGICAL OBJECTS
+
+In each of the first three levels there are two magical objects that you will
+need to collect in order to survive throughout the quest.
+
+[The axe] increases your strength;
+[The globe] guards against death from Drax's magic;
+[The potion] increases your resistance;
+[The key] opens portcullis doors;
+[The shield] guards against instant death from the Demon's fire;
+[The jewel] disables the Living Idol when the idol is reached.
+
+ENERGY AND LIVES
+
+Your energy is displayed as a bar at the top right of the screen. When it
+runs your you lose a life.
+
+You start the game with five lives. More lives can be gained throughout the
+game by collecting any skulls you may find. These contain the life-force of
+warriors who have preceded you. When you lose all your lives you restart the
+current level.
+
+The energy of the current monster you are fighting is displayed as a bar at
+the top left of the screen. When it runs out the monster is destroyed.
+
+SCORING
+
+The more difficult fighting moves will score highly and do more damage.
+
+JOYSTICK MOVES
+
+These are your joystick moves when you are facing right (reverse these when
+facing left).
+
+ WITHOUT FIRE BUTTON PRESSED        WITH FIRE BUTTON PRESSED
+             RUN                   OVERHEAD    OR   RUNNING JUMP
+              ^                      CHOP      ^   (WHEN PRECEEDED
+              |                                |        BY RUN)
+   WALK  <---   --->  WALK         FLYING <---   ---> KICK
+BACKWARDS    / \    FORWARDS        NECK       |
+            / | \                   CHOP       V
+     THROUGH  |  THROUGH                      LOW
+       DOOR   V    DOOR                       CHOP
+            TURN
+           AROUND
+
+To jump across holes or pits you will need to make a running jump. If you do
+not jump far enough you will find yourself on the far edge of the hole. By
+swiftly waggling the joystick left and right you may save yourself.
+
+
+BARBARIAN II was conceived and designed by STEVE BROWN. Sound by RICHARD
+JOSEPH. Graphics by JO WALKER and STEVE BROWN. Commodore 64 programming by
+ROB STEVENS. Spectrum and Amstrad programming by PAUL ATKINSON and TOM
+LANIGAN for ICON DESIGN. Atari ST and Amiga programming by RICHARD
+LEINFELLNER of I.D.S. Additional graphics by LORNE CAMPBELL.
+Game and packagin © Palace Software 1988.
+
+*********
+
+End of the iDOC= etext of the Barbarian 2 manual.
+
+*********

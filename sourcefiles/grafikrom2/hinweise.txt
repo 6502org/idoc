@@ -1,0 +1,38 @@
+                  MPS802 & 1526 Grafik-ROM II
+
+
+Wir freuen uns über Ihr Interesse an unserem Grafik-ROM II
+und möchten Ihnen einige Hinweise zum Einbau des Grafik-ROMs
+geben.
+Bitte stellen Sie fest, welches Bauteil (ROM = 24 Pins oder
+EPROM = 28 Pins) sich in Ihrem Drucker befindet.
+Wenn Ihr Drucker mit einem EPROM (28 Pins) ausgestattet ist,
+kann der Baustein ausgetauscht werden, ohne Veränderungen an
+ihrem Drucker vorzunehmen.
+Sollte Ihr Drucker mit einem ROM (24 Pins) ausgerüstet sein,
+müssen Änderungen vorgenommen werden.
+
+Dazu bieten sich zwei Alternativen an:
+
+ 1.) Sie verwenden einen Adaptersockel, den Sie über unsere
+     Adresse beziehen können. Preis DM 15.-
+
+ 2.) Sie löten die beiden Jumper J3 + J4 um. Wir haben eine
+     Beschreibung mit Skizze für den Umbau beigefügt, die Sie
+     bitte sorgfältig lesen und genau befolgen sollten.
+
+Bei sachgemäßer Ausführung der Lötarbeiten wird Ihr Drucker
+auch ohne Adaptersockel mit unserem Grafik-ROM II problemlos
+funktionieren!
+
+Gleichzeitig weisen wir darauf hin, daß bei unsachgemäßem Einbau,
+Umbau oder Gewaltanwendung an Ihrem Drucker keine Haftung
+unsererseits besteht!
+Die Änderung sowie der Einbau geschieht auf eigene Gefahr!
+
+Wenn Sie die Lötarbeiten nicht selbst ausführen können, sollten
+Sie den Rat eines Fachmanns befolgen oder den Adaptersockel
+verwenden.
+Für evt. Rückfragen stehen wir Ihnen gerne zur Verfügung!
+
+Tel.: 0234/793212

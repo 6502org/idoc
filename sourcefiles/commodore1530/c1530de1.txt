@@ -1,0 +1,612 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore 64
+related documents in electronic text format that might otherwise cease to
+exist with the rapid advancement of computer technology and declining
+interest in 8-bit computers on the part of the general population. If you
+would like to help by converting C64 related hardcopy documents to
+electronic texts please contact the manager of International Project 64,
+Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The first
+characters of the file name are an abbreviation of the original document
+name and the language of the etext. The version number of the etext follows
+next. After that a letter may appear to indicate the particular source of
+the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International Project
+64 make no representations about the accuracy or suitability of this
+material for any purpose. This etext is provided "as-is". Please refer to
+the warranty of the original document, if any, that may included in this
+etext. No other warranties, express or implied, are made to you as to the
+etext or any medium it may be on. Neither the author(s) nor the members of
+International Project 64 will assume liability for damages either from the
+direct or indirect use of this etext or from the distribution of or
+modification to this etext. Therefore if you read this document or use the
+information herein you do so at your own risk.
+
+*********
+
+The International Project 64 etext of the VC-1530 Datasette
+Bedienungshandbuch, converted to text by Markus Brenner <markus@brenner.de>
+
+1530DE1.TXT, November 1998, etext #43
+
+Note from the etexter (in German):
+
+Das vorliegende Dokument basiert auf dem Original-Handbuch zur Commodore
+Datasette VC-1530. Ich habe die offensichtlichen Fehler des Originals
+behoben, stilistische 'Schmankerl' in der Übersetzung jedoch bewußt
+beibehalten :) Die Formatierung folgt weitgehend der Originalvorlage.
+[Note: I removed the pagination and page numbering /Peter Karlsson]
+
+Einige der ASCII Graphiken entnahm ich dem englischsprachigen etext des
+Originals, 'C2N Cassette Unit Operating Instructions'. Die Konvertierung
+dieses etexts übernahm 'the Basic Bombardier'. Dieses Dokument ist auf
+der 'Project64' Seite http://project64.ml.org erhältlich.
+
+Fehlerkorrekturen bitte per email an <markus@brenner.de>!
+
+*********
+
+             V     V  CCCCC         1  5555555  33333    000
+             V     V C     C       11  5       3     3  0   0
+             V     V C     =====  1 1  5             3 0     0
+             V     V C     ====     1  555555   33333  0     0
+              V   V  C     =====    1        5       3 0     0
+               V V   C     C        1  5     5 3     3  0   0
+                V     CCCCC         1   55555   33333    000
+
+                                Datasette
+
+                                BEDIENUNGS
+                                 HANDBUCH
+                       _____
+                      /  ___|___
+                     |  /   |__/  c o m m o d o r e
+                     |  \___|__\  C O M P U T E R
+                      \_____|
+
+Alle in diesem Handbuch gegebenen Informationen wurden überprüft und
+sind daher zuverlässig. Für eventuelle sachliche Fehler kann jedoch keinerlei
+Verantwortung übernommen werden. Die Bedienungsanleitung dient nur
+Ihrer Information. Technische Änderungen jederzeit vorbehalten.
+
+Commodore Büromaschinen GmbH 1983
+
+---------------------------------------------------------------------------
+BEDIENUNGSANLEITUNG FÜR DIE KASSETTENEINHEIT VC-1530
+---------------------------------------------------------------------------
+
+Die COMMODORE-Kassetteneinheit VC-1530 ist eine Vorrichtung zum Speichern
+und/oder Aufrufen von Computerprogrammen auf gewöhnlichen Kassetten. Sie
+wird also zur Sicherung von Programmen benutzt, die Sie geschrieben haben
+und zum späteren Gebrauch wieder aufrufen möchten. Darüber hinaus dient sie
+zum Lesen von käuflich erworbenen Programmen.
+
+[ Bild: Datasette ]
+
+---------------------------------------------------------------------------
+BEDIENUNG DER AN DEN COMPUTER ANGESCHLOSSENEN KASSETTENEINHEIT
+---------------------------------------------------------------------------
+
+Wichtiger Hinweis über Ihre Kassetteneinheit
+
+Die COMMODORE-Kassetteneinheit VC-1530 wird mit einem festangebrachten
+Anschlußkabel geliefert. Mit Hilfe dieses Kabels wird die Kassetteneinheit
+an den Computer angeschlossen. Die Einheit wird dann über dieses Kabel vom
+Computer mit Strom versorgt. Natürlich läuft auch die Kommunikation zwischen
+Computer und Kassetteneinheit über dieses Kabel.
+
+Vor dem Anschluß der Kassetteneinheit muß der Computer ausgeschaltet werden.
+
+Für COMMODORE-Anwender
+
+Die COMMODORE-Kassetteneinheit VC-1530 eignet sich für den Anschluß an alle
+COMMODORE-Computer.
+
+ _____________  __________________________________________________
+ | Datasette |  |                  VC-20 / C64                   |
+ |     +     |  |  _________________  __   __  _____ __________  |
+ |_____|_____|  |__|_______________|_(__)_(__)_|_+_|_|________|__|
+       |                                         |
+       |_________________________________________|
+
+Der Stecker des Computerkabels wird hinten in den Computer gesteckt. Nur
+eine Seite des Steckers paßt auf diesen Anschluß.
+Nicht mit Gewalt aufstecken.
+
+Anmerkung: Benutzen Sie die Kassetteneinheit zusammen mit einem COMMODORE
+64, so wird die Kassetteneinheit durch den Computer durch Drücken der
+COMMODORE-Taste aktiviert.
+
+Ebenfalls darauf achten, daß die Kassetteneinheit mindestens einen halben
+Meter von Fernsehgeräten entfernt ist, da es sonst zu Funkstörungen kommen
+kann.
+
+[ Bild: Commodore 8032 von hinten mit angestecktem Datasettekabel ]
+
+[ Bild: Commodore 8032 von vorne mit angeschlossener Datasette ]
+
+---------------------------------------------------------------------------
+ÜBERPRÜFUNGEN VOR DEM BETRIEB
+---------------------------------------------------------------------------
+
+Bevor Sie Ihre Kassetteneinheit zur Speicherung und zum Aufruf von
+Programmen benutzen, sind folgende Punkte durchzuführen.
+
+Schritt 1  Computer ausschalten und Stecker des Kassettenkabels einstekken.
+
+Schritt 2  Sicherstellen, daß der Motor des Kassettendecks ausgeschaltet
+           ist (in diesem Fall darf keine der Funktionstasten gedrückt sein.) 
+           Anderenfalls die Taste STOP drücken.
+
+Schritt 3  Den Computer einschalten.
+
+                                Abb. 1
+
+ |                                    |
+ |  |______________________________|  |
+ |  ||         _________          ||  |  a - Abwickelspule
+ |  ||   a __  |       |  __ b    ||  |  b - Aufwickelspule
+ |  ||    (__) |_______| (__)     ||  |  c - Löschkopf
+ |  ||                            ||  |  d - Lese-/Schreibkopf
+ |  ||     __________________     ||  |  e - Kapstan
+ |  ||    /             e    \    ||  |  f - Klemmrolle
+ |  ||   /   _  |   _ O o__   \   ||  |  
+ |  ||__/___[_]_|=_[_]__(__)___\__||  |  g - RECORD (Aufnahme)
+ |  ||       c      d    f        ||  |  h - PLAY   (Wiedergabe)
+ |  ||____________________________||  |  i - REWIND (Rückspulen)
+ |__|______________________________|__|  j - F.FWD  (Schneller Vorlauf)
+ |  |  | g | h | i | j | k | l |   |  |  k - STOP
+ |  |  |___|___|___|___|___|___|   |  |  l - EJECT  (Auswurf)
+  \_|______________________________|_/ 
+
+
+Schritt 4  Die Taste PLAY an der Kassetteneinheit drücken. Prüfen, ob sich
+           nach Drücken der Taste der Schreib-/Lesekopf in Richtung der
+           Spulen bewegt und der Kapstan die Klemmrolle berührt (siehe
+           Abb. 1). Die Aufwickelspule muß sich ruhig nach links drehen.
+
+Schritt 5  Nun die Taste STOP drücken. Der Kopf bewegt sich nun zurück,
+           und die Spule stoppt.
+
+Schritt 6  Die Taste REWIND drücken. Die Bandköpfe bewegen sich nicht,
+           und die Abwickelspule dreht sich schnell nach rechts.
+
+Schritt 7  Erneut die Taste STOP und danach F.FWD drücken. Die Bandköpfe
+           bewegen sich nicht, und die Aufnahmespule dreht sich schnell
+           nach links.
+
+Schritt 8  Noch einmal die Taste STOP und danach vorsichtig versuchen, die
+           Taste REC zu drücken. Es muß ein starker mechanischer
+           Widerstand spürbar sein.
+
+Schritt 9  Sind die Schritte 1 bis 8 problemlos verlaufen, können Sie die auf
+           der nächsten Seite beschriebenen Tests durchführen. Bei Störungen
+           schlagen Sie bitte die letzte Seite dieses Handbuchs auf.
+
+---------------------------------------------------------------------------
+TESTS
+---------------------------------------------------------------------------
+
+Um den Betrieb Ihrer neuen Kassetteneinheit zu testen, wird ein kleines
+Programm geschrieben, auf Kassette gespeichert und danach zurück in den
+Computer geladen.
+
+Nehmen Sie eine leere Kassette (eine ganz normale Musikkassette) und legen
+Sie sie in die Kassetteneinheit. Drücken Sie stets die Taste REW, damit Sie
+auch wirklich am Anfang des Kassettenbandes beginnen.
+
+Anmerkung: Benutzen Sie ein Band, das eine Spielzeit von 12 bis 30 Minuten
+hat. Bei Bändern mit längerer Spielzeit wird das Gerät überansprucht.
+
+Das nachfolgende Programm zeigt die Anzeigen auf den Geräten VC und CBM.
+Sollten Sie ein anderes COMMODORE-Gerät benutzen, kann die Anzeige leicht
+unterschiedlich sein.
+
+---------------------------------------------------------------------------
+Schritt 1  Geben Sie über die Tastatur
+           folgendes ein:                    10 PRINT "DIES IST EIN TEST"
+---------------------------------------------------------------------------
+Schritt 2  Taste RETURN drücken.
+---------------------------------------------------------------------------
+Schritt 3  Eintippen:                        SAVE"TEST"
+---------------------------------------------------------------------------
+Schritt 4  Taste RETURN drücken:
+           Auf der Anzeige erscheint:
+           Bei VC                            PRESS RECORD & PLAY ON 
+                                             TAPE
+           Bei CBM                           PRESS PLAY & RECORD ON 
+                                             TAPE #1
+           Drücken Sie entsprechend der
+           Anzeige die Taste REC und
+           gleichzeitig die Taste PLAY,
+           bis beide Tasten einrasten.
+
+           Auf der Anzeige erscheint:        OK
+           Bei VC                            SAVING TEST
+           Bei CBM                           WRITING TEST
+
+           Nach kurzer Zeit
+           erscheint:                        READY
+
+           Ihr Programm ist nun gespeichert.
+           Dies soll überprüft werden.
+---------------------------------------------------------------------------
+Schritt 5  Zum Löschen des Speichers
+           über die Tastatur eingeben:       NEW
+
+           Danach RETURN drücken.
+           Auf der Anzeige erscheint:        READY
+---------------------------------------------------------------------------
+Schritt 6  Über die Tastatur eingeben:       LIST
+
+           Danach RETURN drücken.
+           Auf der Anzeige erscheint:        READY
+           Dies zeigt an, daß der
+           Speicher gelöscht ist.
+---------------------------------------------------------------------------
+Schritt 7  Durch Drücken der Taste REW
+           die Kassette zurückspulen.
+           Ist das Band wieder am Anfang,
+           die Taste STOP drücken.
+---------------------------------------------------------------------------
+Schritt 8  Über die Tastatur eingeben:       LOAD "TEST"
+           Auf der Anzeige erscheint:
+           Für VC                            PRESS PLAY ON TAPE
+           Für CBM                           PRESS PLAY ON TAPE #1
+           Führen Sie diesen Befehl aus,
+           und auf der Anzeige erscheint:    OK
+                                             SEARCHING FOR TEST
+           und nach kurzer Zeit:             FOUND TEST
+	                                     LOADING
+                                             READY
+
+           Anmerkung :
+           Erscheint auf dem Bildschirm:     LOAD ERROR,
+           den Befehl LOAD wiederholen.
+           Erscheint erneut diese Meldung,
+           schlagen Sie bitte die letzte
+           Seite dieses Handbuchs auf.
+---------------------------------------------------------------------------
+Schritt 9  Über die Tastatur eingeben:      LIST
+
+           Taste RETURN drücken.
+           Auf dem Bildschirm erscheint:    10 PRINT "DIES IST EIN TEST"
+                                            READY
+           Der Speicher hat das
+           Testprogramm empfangen.
+
+Traten bei den Schritten 1 bis 9 keine Störungen auf, ist Ihre Kassette
+ausreichend überprüft und kann zum Arbeiten benutzt werden. Die
+entsprechenden Befehle werden später beschrieben.
+
+Anmerkung: Beim Auftreten von Störungen schlagen Sie bitte die letzte Seite
+dieses Handbuchs auf.
+
+---------------------------------------------------------------------------
+VORSICHTSMASSNAHMEN BEI DER HANDHABUNG VON KASSETTEN
+---------------------------------------------------------------------------
+
+Alle Kassettenbänder stets wieder an den Anfang zurückspulen, da dies die
+Kassetten vor Verschleiß und Verschmutzung bewahrt. Kassetten nie neben
+Magnetfeldern (z.B. Lautsprechern oder Motoren) legen oder aufbewahren.
+
+---------------------------------------------------------------------------
+WARTUNG DER KASSETTEN
+---------------------------------------------------------------------------
+
+Informationen werden mit Hilfe von Magnetköpfen auf die Kassetten
+geschrieben bzw. von ihnen gelesen. Diese Köpfe nehmen leicht Rückstände und
+Schmutz vom Band an. Nach einer gewissen Zeit wird das Band durch diese
+Schmutzansammlung leicht vom Kopf entfernt. Auf diese Weise wird das vom
+Kopf ausgegebene Signal erheblich verschlechtert.
+
+Aus diesem Grund sind nach 10 bis 20 Spielstunden folgende Punkte
+durchzuführen, damit Ihre Kassetten stets einwandfrei beschrieben und
+gelesen werden können.
+
+---------------------------------------------------------------------------
+REINIGUNG UND ENTMAGNETISIERUNG DER KASSETTENKÖPFE
+---------------------------------------------------------------------------
+
+Sie benötigen folgende Werkzeuge und Materialien:
+
+1. Reinigungsmittel für die Köpfe. Im Notfall kann Alkohol benutzt werden,
+   empfiehlt sich jedoch nicht auf die Dauer.
+
+   Anmerkung: Kein Trichloräthan, Plastik- oder Gummilösungsmittel benutzen.
+
+2. Wattebausch.
+
+3. Entmagnetisierer für die Köpfe. Das Teil, das mit den Köpfen in Berührung
+   kommt, muß eine Plastik- oder Gummischutzabdeckung haben, damit der
+   empfindliche Kopfspalt nicht beschädigt wird.
+
+---------------------------------------------------------------------------
+FOLGENDE PUNKTE AUSFÜHREN
+---------------------------------------------------------------------------
+
+Schritt 1  Computer ausschalten.
+
+Schritt 2  Taste EJECT und danach PLAY drücken. Nun ist der
+           Kassettenfachdeckel offen, und die Köpfe sind zugänglich.
+
+Schritt 3  Geben Sie etwas Reinigungsmittel auf den Wattebausch. Vorsichtig
+           die Oberfläche des Schreib-/Lese- und des Löschkopfes abwischen
+           (siehe Abb. 1).
+           Vorsichtig abreiben. (Durch Oxidteilchen am oder in der Nähe des
+           Lese-/Schreibkopfspaltes wird die Leistung erheblich beeinflußt.)
+           Auch die Klemmrolle und weitere Bandlaufflächen reinigen, wenn
+           das Reinigungsmittel hierzu geeignet ist (Hinweisschild
+           überprüfen).
+
+Schritt 4  Entmagnetisierer einstecken und aktivieren. Er muß mindestens
+           0,3 m von den Kassettenköpfen entfernt sein.
+
+Schritt 5  Den Entmagnetisierer langsam zum Lese-/Schreibkopf und um die
+           Kopffläche bewegen. Die Bewegungsgeschwindigkeit sollte
+           hierbei ca. 0,03 m/s liegen.
+
+Schritt 6  Den Entmagnetisierer langsam zum Löschkopf und danach zu den 
+           anderen Eisenmetallflächen bewegen, die mit dem Band in
+           Berührung kommen.
+
+Schritt 7  Den Entmagnetisierer nun langsam von den Köpfen wegbewegen.
+           Das Feld erst entaktivieren, wenn der Entmagnetisierer mindestens
+           0,6 m von den Köpfen entfernt ist.
+
+Nun ist die Kopfreinigung und -entmagnetisierung beendet. Überprüfen Sie die
+Schreib-/Lesefläche auf Verschleiß. Ist durch das Band auf der Kopffläche
+eine Abreibung entstanden, die tiefer als mehrere Banddicken ist,
+beeinträchtigt dies die Leseleistung. In diesem Fall muß der Kopf
+ausgewechselt werden. (Normalerweise ist ein solches Auswechseln erst nach
+einigen Tausend Betriebsstunden erforderlich.)
+
+---------------------------------------------------------------------------
+KASSETTENBETRIEB
+---------------------------------------------------------------------------
+
+Befehle
+
+Über nachfolgende Befehle wird die Datasette aktiviert. Es wird lediglich
+der gewünschte Befehl über die Tastatur eingegeben und danach RETURN
+gedrückt. In der nachfolgenden Befehlsliste gibt NAME die Bezeichnung an,
+die der Benutzer dem Programm zuordnet. Sie sollten hier also einen Namen
+wählen, der das Programm von allen anderen Programmen (oder Dateien) auf dem
+gleichen Band unterscheidet. Dieser Name sollte auch für Sie eine gewisse
+Bedeutung haben. PROG1, PROG2 usw. empfehlen sich nicht als Bezeichnung, da
+sie nicht charakteristisch genug sind. Eine Programmbezeichnung kann aus
+maximal 16 Zeichen bestehen.
+
+SAVE"NAME"
+Zur Sicherung eines Programms durch Speicherung auf Kassette.
+
+Beispiel: SAVE"TEST"
+Sichert das Programm TEST auf Kassette
+
+Anmerkung: Wird nur SAVE über die Tastatur eingegeben, so wird ein Programm
+ohne Namen auf Kassette gespeichert.
+
+LOAD"NAME"
+Zum Laden des Programms NAME vom Band. Alle anderen Programme auf dem
+gleichen Band werden überlesen.
+
+Beispiel: LOAD"TEST"
+Hierdurch wird das Programm TEST von der Kassette geladen.
+Wird nur LOAD über die Tastatur eingegeben, so wird das erste auf der
+Kassette gefundene Programm geladen.
+
+VERIFY"NAME"
+Über diesen Befehl wird überprüft, ob das gespeicherte Programm richtig 
+gespeichert wurde.
+
+Beispiel: VERIFY"TEST"
+Sucht und überprüft das Programm mit der Bezeichnung TEST auf der
+Kassette.
+
+           Erscheint als Antwort
+           auf dem Bildschirm                OK READY,
+           ist das Programm richtig
+           gespeichert. Erscheint jedoch     VERIFY ERROR
+                                             READY,
+
+ist das Programm nicht richtig gespeichert worden. Es ist daher erneut zu
+sichern und zu überprüfen. Ergibt sich hierbei wieder eine Störung, arbeitet
+die Kassetteneinheit nicht richtig, ist das Kassettenband schlecht oder die
+Köpfe müssen gereinigt werden.
+
+Anmerkung: Über den Befehl VERIFY können auch die bereits gespeicherten
+Programme übersprungen werden, um ein neues Programm hinter den bereits
+gespeicherten Programmen zu speichern. Die Vorgehensweise wird nachfolgend
+beschrieben.
+
+Soll das neue Programm gespeichert werden, geben Sie den Befehl
+VERIFY"NAME", wobei Sie die Bezeichnung des letzten auf diesem Band
+gespeicherten Programms benutzen. Der Computer sucht und überprüft dieses
+letzte Programm und übergeht dabei sämtliche anderen Programme. Da dieses
+Programm ja nicht dem neuen Programm entspricht, erscheint auf der Anzeige
+VERIFY ERROR. Das Band wurde jedoch bis zum Ende aller gespeicherten
+Programme transportiert. Sie können nun das neue Programm sichern. Über die
+Tastatur SAVE"NAME" eingeben, wobei NAME eine einzig- artige Bezeichnung für
+dieses neue Programm ist. Das neue Programm befindet sich nun unmittelbar
+hinter dem bereits gespeicherten auf der Kassette.
+
+---------------------------------------------------------------------------
+DATEIHANDHABUNG
+---------------------------------------------------------------------------
+
+Erfahrene Programmierer können auch ausgefeiltere Programme schreiben, die
+größere Datenmengen benutzen. Diese Daten können in einer Datei auf Kassette
+gespeichert werden. Die Befehle zur Handhabung von Dateien werden
+nachfolgend beschrieben.
+
+Datendateien können auf Kassetten geschrieben und auch von Kassetten gelesen
+werden. Dateien lassen sich nicht wie Programme laden, sie können jedoch
+über ein Programm gelesen werden. Zur Kommunikation mit der Kassetteneinheit
+wird der Befehl OPEN benutzt.
+
+OPEN A,B,C,"NAME"
+
+Hierdurch wird eine logische Datei geöffnet, die über NAME gekennzeichnet
+ist. Die Buchstaben A, B und C haben hierbei folgende Bedeutung:
+
+A          Eine Bezugsnummer zwischen 1 und 255 wählen. Benutzt Ihr
+           Programm mehr als eine Datei, muß jede Datei ihre eigene
+           Nummer haben.
+
+B          Muß "1" für die Kassette lauten. Dies ist der Gerätecode.
+
+C          Gibt an, ob das Programm von dieser Datei liest oder in die Datei
+           schreibt:
+
+C = 0      Lesen von der Kassette.
+
+C = 1      Schreiben auf die Kassette, wobei beim Schließen der Datei ein
+           Dateiendekennzeichen geschrieben wird.
+
+C = 2      Schreiben auf die Kassette, wobei beim Schließen der Datei ein 
+           Bandendekennzeichen geschrieben wird.
+
+Beispiel: OPEN5,1,1,"TEST"
+Hierdurch wird die Datei mit der Bezeichnung "TEST" und der Dateinummer "5"
+geöffnet. Das Programm schreibt in diese auf Kassette gespeicherte Datei.
+
+Wird für C "2" und für den Namen "TEST" gewählt, wird am Ende der Datei ein
+Bandendekennzeichen geschrieben. Wird dann die Anweisung gegeben, eine Datei
+nach der Datei "TEST" zu lesen, erscheint auf dem Bildschirm die Anzeige
+FILE NOT FOUND ERROR, und die Suche stoppt. Der Grund hierfür liegt darin,
+daß die Datei "TEST" dem Computer mitteilt, daß das Band zu Ende sei - daher
+könnten keine weiteren Programme gespeichert sein.
+
+C und NAME können gegebenenfalls auch ausgelassen werden. Wird NAME nicht
+benutzt, wird die Datei ohne Bezeichnung geöffnet. Wird über den Computer
+eine Leseanweisung gegeben, wird die erste gefundene Datei gelesen. Wird "C"
+ausgelassen, so wird die Datei zum Lesen geöffnet.
+
+INPUT# A,D
+Durch diesen Befehl werden Daten von der Kassette eingegeben und im Programm
+benutzt.
+
+A          ist die logische Filenummer, die in einer vorherigen
+           OPEN-Anweisung benutzt wurde, welche den Lesevorgang von der
+           Kassette angibt.
+
+D          ist die BASIC-Variable, zu der die Daten von der Kassette
+           übertragen werden. Werden Wörter gelesen, muß "D" "D$" sein, da
+           sonst die Fehlermeldung FILE DATA ERROR erscheint.
+
+           Beispiel: INPUT # 5,A$
+
+           Hierdurch wird eine Datenkette (Wörter) von der logischen Datei
+           "5" eingegeben. Daten werden von der Kassette gelesen und der
+           Variablen "A$" zugeordnet.
+
+GET# ist eine Alternative zu INPUT# . GET# erfaßt jeweils ein Zeichen (einen
+Buchstaben). Über GET# können Kommas, Doppelpunkte usw. gelesen werden, über
+INPUT# jedoch nicht.
+
+PRINT# A,D
+
+Über diesen Befehl werden Daten auf Kassette geschrieben. A und D haben
+folgende Bedeutung:
+
+A          ist die logische Dateinummer, die in der vorherigen
+           OPEN-Anweisung benutzt wird, welche den Schreibvorgang auf
+           Kassette angibt.
+
+D          ist die BASIC-Variable, von der die Daten geschrieben werden
+           sollen. Handelt es sich bei den Daten um Wörter, muß "D$" benutzt
+           werden.
+
+           Beispiel: PRINT# 5,A$
+
+           Dient zur Ausgabe der Kette "A$" zur logischen Datei "5" auf der
+           Kassette, wenn die Datei zuvor zum Schreiben geöffnet wurde. Ist
+           die Datei nicht richtig geöffnet, wird die Meldung NOT OUTPUT
+           FILE angezeigt.
+
+CLOSE A
+
+Über diesen Befehl wird die mit "A" gekennzeichnete Datei geschlossen. "A"
+bezieht sich hierbei auf die Dateinummer.
+
+Achtung: Wird dieser Befehl nicht nach dem Schreiben sämtlicher Zahlen auf
+Kassette benutzt, kann es sein, daß einige Daten nicht gespeichert werden.
+
+Nachfolgend werden einige Programmbeispiele gegeben, in denen die eben
+erwähnten Befehle benutzt werden:
+
+Programmbeispiel 1 - Datenschreiben
+
+10 OPEN1,1,1,"TEST FILE"
+20 FOR I = 1 T0 10
+30 PRINT# 1,I
+40 NEXT
+50 CLOSE 1
+
+Zeile 10  Öffnet Datei 1 zum Schreiben als Testdatei.
+Zeile 20  Alles zwischen "FOR" und "NEXT" wird zehnmal wiederholt.
+Zeile 30  Gibt die Variable "I" auf Kassette aus.
+Zeile 40  Geht zehnmal zu Zeile 20 zurück.
+Zeile 50  Schließt die Datei.
+
+Programmbeispiel 2 - Datenlesen über INPUT
+
+10 OPEN1,1,0,"TEST FILE"
+20 INPUT# 1,A$
+30 PRINT A$
+40 IF ST=0 GOTO 20
+50 CLOSE 1
+
+Zeile 10  Öffnet die Datei zum Lesen als Testdatei.
+Zeile 20  Liest eine Zeichenfolge von der Kassette in "A$".
+Zeile 30  Gibt den Wert von "A$" auf dem Bildschirm wieder.
+Zeile 40  Überprüft den Kassettenzustand. Ist die Kassette OK, gilt die
+          Anweisung für den Sprung zu Zeile 20.
+Zeile 50  Schließt die Datei.
+
+Programmbeispiel 3 - Datenlesen über GET
+
+10 OPEN1,1,0,"TEST FILE"
+20 GET# 1,A$
+30 PRINT A$
+40 IF ST=0 GOT0 20
+50 CLOSE1
+
+Zeile 10  Öffnet die Datei zum Lesen als Testdatei.
+Zeile 20  Liest ein Zeichen in "A$"
+Zeile 30  Gibt die Zeichen in derVariablen "A$" auf dem Bildschirm wieder.
+Zeile 40  Überprüft den Kassettenzustand. Ist das Band OK, gilt die
+          Anweisung für den Sprung zu Zeile 20.
+Zeile 50  Schließt die Datei.
+
+---------------------------------------------------------------------------
+STÖRUNGEN DES KASSETTENDECKS
+---------------------------------------------------------------------------
+
+Kommt es wiederholt zu mechanischen oder elektronischen Störungen, so
+bringen Sie das Kassettendeck bitte wieder zu Ihrem entsprechenden Händler.
+Liegt eine Störung des Kassettendecks vor, und ist die Garantiezeit noch
+nicht abgelaufen, so wird er das Gerät ersetzen.
+
+*********
+
+End of the International Project 64 etext of the Commodore VC-1530 Datasette
+German manual.
+
+*********

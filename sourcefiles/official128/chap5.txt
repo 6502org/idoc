@@ -1,0 +1,1604 @@
+[5.] The CP/M Mode
+
+    In this chapter you'll learn:
+    * What CP/M is and why you might want to use it
+    * What equipment you need to run CP/M on the Commodore 128
+    * What software exists in the CP/M universe
+    * Where to find CP/M software for your Commodore 128
+    * How CP/M is organized
+    * What CP/M commands there are and what they do
+    * Where to go for more information about CP/M
+
+If you have never heard or seen the word CP/M before then this chapter is
+for you. This chapter will also be useful if you're familiar with CP/M on
+another computer and want to know how Commodore's CP/M is different. CP/M
+stands for Control Program for Microcomputers. That doesn't tell you much
+but it does give a hint of what CP/M is: a way to control programs. CP/M is
+a special kind of disk operating system. A disk operating system is a sort
+of supervisory program that is used to do chores, such as run programs, make
+copies of programs, erase files, measure the capacity of a disk, and so on.
+In this chapter we will tell you what CP/M is, its value and features, what
+you need to use it, what important and powerful CP/M software exists and
+where to find it, and finally a bit about its commands and what they do. We
+will also tell you where to go for more detailed information on CP/M.
+
+[5.1] What Is CP/M and What Is the CP/M Mode?
+
+If you are familiar with the Commodore 64 and the 1541 disk drive you know
+that you can use commands in BASIC to access programs stored on a diskette
+plugged into that drive. And if you read the chapter in this book on the new
+C128 mode you know that Commodore has provided an even more powerful set of
+BASIC statements and commands for accessing the disk (borrowed from the
+Commodore CBM line of small business computers). From within BASIC you use
+these commands to find out what files and programs are on the diskette in
+the drive, to erase programs or to duplicate them on other diskettes, and
+even to run programs written in languages besides BASIC. Unfortunately,
+these disk management features exist inside the shell of another language,
+and have more complex syntax then we would desire. What they do is insulate
+us from having complete control over files and programs on the disk.
+
+  What is a Disk Operating System?
+
+CP/M is a full fledged operating system that gives complete control over the
+disk. One purpose of a disk operating system is to simplify the handling of
+programs and files. This is done in CP/M by providing a set of commands that
+are easy to use and remember. Since CP/M is not inside or part of another
+language, such as the disk commands of Commodore 64 or BASIC 7.0, its use is
+more straightforward. A disk operating system like CP/M is actually a kind
+of "mother" or supervisor program. It is the program you use to control
+other programs - a sort of master that conducts the operations of any
+"application" program on the disk.
+
+So why another DOS? Commodore chose CP/M not just because it offers more or
+better DOS commands, but because it offers a huge body of software that can
+now be run on the Commodore 128. CP/M has a unique position in the world of
+microcomputers. It was the first operating system developed for
+microcomputers (CP/M came out around 1975 - three years after the
+introduction of the first microcomputer: the Altair 8080). It was first
+developed so that many different computers could run the same program. A
+program that was written to run under the CP/M operating system on one
+computer would work on another computer if it also ran CP/M. Over the course
+of many years, many manufacturers produced machines that ran CP/M, a huge
+body of software was developed for these computers, and a new industry was
+born. Today there are dozens of companies that manufacture CP/M computers
+and a fantastic selection of software you can choose from.
+
+  The CP/M Mode: A Third Personality
+
+Unlike the Commodore 128 DOS, which resides in ROM and can run immediately
+after the computer is turned on, CP/M resides on a diskette as a program,
+and this program must first be loaded into the computer memory before it can
+do anything. Figure 5-1 shows how this is done. This distinction is
+important because you must learn to "boot" CP/M before you can start using
+it. In addition, the Commodore 128 and Commodore 64 modes use the new 8502
+microprocessor. CP/M, on the other hand, requires a special Z80A
+microprocessor to run. Commodore has built this microprocessor into the
+Commodore 128. Thus the Z80 and CP/M turn the C128 into a completely
+different personality, which Commodore calls the CP/M Mode. Figure 5-1 also
+shows the various chips that the CP/M mode can access.
+
+  Figure 5-1. How the CP/M Mode Stacks Up
+  ##======================================##
+  ||        Keyboard, Controllers,        ||
+  ||          User Input/Output           ||
+  ##======================================##
+  ||    SID 3 Voice Sound Synthesizer     ||
+  ##======================================##
+  ||   VIC-II 40 Column Text + Graphics   ||
+  ##=========================##===========##
+  ||     8563 80 Column      || C64 Kernal |
+  ||     Text + Graphics     || BASIC 2.0  |
+  ##==========##=============##            |
+  ||    CP/M   || C128 Kernal |            |
+  ||    3.0    ||  BASIC 7.0  |            |
+  ##===========##-------------+------------+
+  || 64 K RAM  ||  128 K RAM  |  64 K RAM  |
+  ##===========##-------------+------------+
+  ||   Z80 A   ||    8502     |    8502    |
+  ##===========##-------------+------------+
+  || CP/M Mode ||  C128 Mode  |  C64 Mode  |
+  ##===========##=============#===========##
+  ||   Intelligent Memory/Device Manager  ||
+  ##======================================##
+
+  A Little History of CP/M
+
+CP/M was developed by a (now very rich) man named Gary Kildall, who was
+working, at the time, for Intel, a large manufacturer of microprocessor
+chips. Gary developed a package of compactly written subroutines for the
+tiny (and now ancient) four-bit Intel 4004 microprocessor. These subprograms
+could be used by other programs, simplifying the work for other Intel
+programmers. As technology advanced, more powerful chips were developed,
+including the Intel 8008 and 8080 microprocessors, and the 8080-compatible
+Zilog Z80 microprocessor. Kildall went on to develop more routines for the
+8080 and the compatible Z80. His overall goal was to create an environment
+that would allow storing and running programs on a disk. Because no one
+believed that microcomputers would ever become very popular or that they
+would ever use an expensive contraption like a disk drive, Intel gave
+Kildall the okay to market CP/M on his own. He started up a company called
+Digital Research, which to this day is still going strong.
+
+    CP/M was the first disk operating system for microcomputers and now has
+    over 1.5 million users.
+
+Keep in mind that up to this point there was no operating system for
+microcomputers. So CP/M was quickly seized upon by most users and
+manufacturers of 8080 or Z80 computers. Since there were no other
+contenders, CP/M quickly became a standard in the industry. Since everyone's
+computer had an 8080 or compatible Z80 chip, CP/M made it possible for one
+program to run on many different computers.
+
+Most CP/M based systems had a minimum of a keyboard and monitor or terminal,
+one or two disk drives, and 48K or 64K of memory. These computers were not
+designed to be compatible with each other: they each had differently sized
+screens, different disk capacities, and different keyboard layouts. But
+CP/M, the great equalizer, made them all act alike.
+
+[5.2] What Does CP/M Offer?
+
+Today there are many microcomputers available that run CP/M. Most of these
+computers are moderately expensive (in the $1,000-$2,000 range), and
+generally, most have been purchased by small- and medium-sized businesses.
+However, because CP/M microcomputers offer such great value, a large number
+of CP/M computers have been sold, and a huge body of software has grown up
+to support these machines. Until the Commodore 128 appeared, there had never
+been a low-cost CP/M computer for the home.
+
+  CP/M's Incredible Base of Software Programs
+
+CP/M offers a huge world of software - a world where literally thousands of
+programs exist for your C128. Some of these programs are extremely good.
+Many are free if you know how to get them. To give you an idea of how much
+software exists, one software directory lists over 1,000 commercial programs
+that run under CP/M, and experts estimate that somewhere around 10,000
+relevant CP/M programs exist. These programs would consume over 3,000 C128
+CP/M diskettes.
+
+The software that exists for CP/M is oriented for professionals and
+businesses. You will find powerful word processing programs, spreadsheets,
+financial packages, database managers, languages of all kinds, utilities,
+and much more. In fact, the Commodore 128 running CP/M represents a bargain
+for small businesses. The price of the Commodore 128 with the 1571 disk
+drive is competitive in performance with an IBM PC and is much less
+expensive. The software is time-tested and bug-free. So much software is
+available that you will easily find special interest software - programs
+that would not have mass appeal but are just what you are looking for. For
+example, you might find an accounting program written especially for a law
+practice, a database program for a stamp collector, or an engineering
+spreadsheet for a metallurgist.
+
+There is also a huge amount of what is called free "public domain software"
+available for CP/M. We will detail both commercial and public domain
+software after we tell you what equipment you need to run CP/M.
+
+[5.3] What Equipment Do You Need to Run CP/M?
+
+In order to use CP/M on the Commodore 128, you will need either a 1571
+single disk drive or a 1572 dual disk drive, a 40- or 80-column monitor,
+and, of course, a set of CP/M "system" diskettes. You may also want to
+purchase an MPS-802 or DPS-1101 printer and a 1660 or 1670 modem. See Figure
+5-2.
+
+  Figure 5-2. Recommended CP/M System
+  [Commodore 128 Computer, 1670 Modem, 1902 80 Column Monitor, 1572 Dual
+   Disk Drive, MPS-802 Printer]
+
+  Disk Drives
+
+The Commodore 64 uses the Commodore 1541 disk drives. These drives were slow
+because they used a serial method to transfer data from the disk to the
+computer, and because of certain design elements in the way the disk drive
+communicated with the computer. The new 1571 and 1572 drives are much faster
+then the 1541 drive. The old drives transfer data at 320 characters per
+second. The new drives in the CP/M mode can transfer at a rate of 3500
+characters per second, which is more than ten times faster. These new drives
+contain an intelligent microprocessor, which gives the Commodore 128 an
+advantage over all other CP/M computers. In the early days of CP/M, all
+software was distributed on 8 inch diskettes and only one storage format was
+used. When 51/. inch disk drives became popular, manufacturers used
+different format techniques. Dozens of storage formats now abound, making
+compatibility a problem. It's not that a program cannot run under another
+machine's version of CP/M; rather, the program simply cannot be entered into
+the computer because the disk drive doesn't understand the way it is stored.
+The Commodore 1571 disk drive is smart enough to automatically adjust to the
+numerous storage formats found in the CP/M world. This means that,
+regardless of what computer your CP/M program runs on, the 1571 will be able
+to read it.
+
+The choice of single versus dual disk drive is strictly one of convenience
+and cost. A single drive will allow you to run CP/M programs right away.
+However, making backup copies of programs and files with a single drive is
+tedious if it must be done often. The dual drive 1572 allows you to easily
+copy files from one diskette to another.
+
+  Display
+
+There are two ways to display text for CP/M. The best and most expensive way
+is to purchase a new Commodore 1902 80-column color monitor. This new
+monitor produces beautiful color and will work with the Commodore 64,
+Commodore 16, Plus/4, and Commodore 128. The display has a resolution of 640
+by 200 pixels and can display an array of 16 colors. A new video chip in the
+Commodore 128, which is much like the one used in the IBM PC, drives this
+display in the 80-column mode. It is apparent that Commodore expects that
+programs now running on the IBM PC in the color mode will easily be reverse
+engineered to work in the Commodore 128 CP/M mode.
+
+A neat feature of the Commodore 128 80-column mode is that the characters
+that are displayed are stored in RAM and are "bit-mapped". When the computer
+is first turned on, a set of character fonts stored in the ROM is moved into
+RAM. When CP/M wants to display a character, it gets it from this memory
+area. Since the characters are stored in RAM, it is possible to modify them
+and to create custom characters for your programs. It also means you can mix
+graphics and text on the same screen with CP/M.
+
+You can also use a high resolution 80-column monochrome monitor. A
+monochrome monitor is one that displays in only one color. On the color
+monitor the text characters are stretched a bit too much in the vertical
+direction, but are still quite readable. The Commodore color monitor
+includes built-in speaker, volume, color, tint, brightness, and contrast
+controls.
+
+The second way to display text in CP/M is in the 40-column mode. This mode
+uses the standard VIC display chip found in the 64 and can be used with a
+standard 40-column Commodore 1702 color monitor. The 1702 monitor is less
+expensive than the new 1902, but it cannot display the entire 80-column line
+that CP/M programs expect. Instead, the first 40 columns are displayed
+normally. A special key on the Commodore 128 keyboard shifts the remaining
+rightmost 40-columns into view. Reading CP/M programs this way requires
+constant toggling between screen views, and therefore is only recommended if
+you will be creating CP/M programs that need 40 columns. Another
+justification might be writing CP/M games that use the Commodore 128 color
+and sound. A subtle advantage of using the 40-column mode is that the clock
+speed of the system is doubled from 1 to 2 Megahertz.
+
+  CP/M Diskettes
+
+You will need a set of Commodore 128 CP/M diskettes. Presently CP/M is
+distributed on two disks. One contains special CP/M startup programs and the
+other contains various utility programs. We will explain this in more detail
+later.
+
+[5.4] Important Programs on a CP/M Owner's List
+
+In 1976 there were 100 programs that ran under the CP/M operating system. In
+1983 there were over 10,000 programs. With so much CP/M software to choose
+from, users of the Commodore 128 running CP/M are faced with a real problem
+of overwhelm. In this section we will help you presift and select the best
+software from the wide and abundant variety of CP/M programs. Not all
+software is created equal. We will focus on the programs that we feel are
+the best on the market for the price. Since there are so many good programs,
+our list is by no means to be considered exhaustive. By reading this section
+you will become aware of some of the most popular programs, and at the same
+time learn just what is possible in CP/M software.
+
+The software that is popular for CP/M includes word processing programs for
+typing everything - from short letters to long chapters in a book. Most
+experts agree that really powerful word processing programs may have been
+responsible for starting the CP/M software marketplace. Eventually everyone
+needs to write something on the computer. Word processing tools exist that
+allow you to automatically check the spelling of your letters or documents,
+build a table of contents, create an index, or insert names at specific
+spots in letters.
+
+Spreadsheets are popular programs used in businesses. These general purpose
+programs allow you to manipulate numbers and figures in a large matrix of
+rows and columns. Some of the best spreadsheets ever created were developed
+first for CP/M. Database management programs are popular for CP/M and allow
+you to manipulate large amounts of information that can be specified as a
+collection of "data fields", such as names, addresses, part numbers, and the
+like. Databases are used for organizing a company's customers, identifying
+amounts due, setting up inventories, analyzing data, printing reports, and
+so on.
+
+Very good financial software has been created for CP/M. There are accounts
+payable and receivable programs, journals, checkbook balancing programs,
+balance sheet and income statement generators, and even income tax programs.
+Thousands of companies run their accounting systems under CP/M. You will
+also discover a fine assortment of communications software that runs under
+CP/M. These programs allow you to send files and programs over telephone
+lines, use remote database services like The Source and CompuServe, and even
+to get Dow Jones stock reports. In fact, CP/M includes a famous
+telecommunication program called Modem7 that is free. Languages for
+programming under CP/M exist in great numbers. Microsoft BASIC (called
+MBASIC) is the most popular CP/M language, but you will also find Pascal,
+the new C language, Forth, COBOL, Lisp, Prolog, and others.
+
+Don't look for much in games for CP/M. There are adventure games that are
+good, but Kildall designed CP/M to work with "generic" terminals and
+keyboards. Therefore, standard CP/M does not support video graphics, sound,
+or function keys and most CP/M programs you find will just use the 80-column
+text mode. However, as we shall see, it is possible for programs to be
+written in Commodore 128 CP/M that access the C128's graphics, windows, and
+sound effects, and we can expect to see these developed over the next few
+years.
+
+  A Caveat: Disk Format Compatibility
+
+As we mentioned previously, a plethora of time-proven software exists for
+CP/M that is directly usable on your Commodore 128. The only requirement is
+that the CP/M software be available on 5¼ inch floppies. One particularly
+thorny problem with distribution of CP/M software is the disk format. When
+CP/M was originally created it used 8-inch single density, single-sided
+diskettes and a single storage format called IBM System 34. There now exist
+several new floppy storage possibilities, including double-density, and
+double-sided. When the 5¼ inch disks arrived, several manufacturers of CP/M
+computers, including KayPro, Morrow, and Osborne - makers of CP/M portables
+- slightly altered the storage format to suit their particular hardware. As
+a consequence there is incompatibility between the drives of different CP/M
+machines.
+
+Commodore gets around this incompatibility problem by using an intelligent
+peripheral drive. The 1571 and 1572 drives are capable of reading any
+particular CP/M-formatted diskette. When you insert a diskette the 1571 disk
+drive tries to determine the type of storage format. Once the Commodore 128
+has figured out how the data is stored, it is an easy matter to read it.
+Commodore 128 CP/M is also capable of formatting a CP/M disk in any of
+several formats, so you can write a program that can be read by another
+popular CP/M computer.
+
+Now that you know a little about storage formats, let's see what particular
+software you might want to own.
+
+  Word Processing Programs
+
+Word processing programs are among the first software purchased by many
+users. A word processor is a text editing program that lets you do what a
+typewriter does and a lot more. Besides allowing you to instantly insert a
+letter, word, or sentence anywhere in the document you are typing, a word
+processing program can automatically reformat an entire document in a few
+seconds, straightening out margins, changing width of lines, and so on.
+
+   WordStar
+
+WordStar was the first "what-you-see-is-what-you-get" editing program for
+CP/M. What this means is that the formatting features, such as double
+spacing, justification, and margin settings are visible on the screen before
+the text is printed. The way the text looks on the screen is the way it will
+look when it is finally printed. Older text editors were broken into two
+parts: an editor for entering text and a formatter/printer for printing
+text. You could not see what the printed copy would look like until it was
+printed. The ED.COM program that comes with your copy of Commodore 128 CP/M
+is an ancient relative of WordStar.
+
+WordStar, like many CP/M programs we will describe, must be "installed" on
+the particular CP/M computer system it will be working with. This
+installation process is necessary because each CP/M system may have a
+different size screen or type of terminal, different printer, and even
+different kinds of keyboards. Different terminals have different protocols
+for how they put things on the screen. The manufacturers of CP/M application
+programs, such as WordStar, do not want to inventory dozens of different
+disks for each machine, so they create an installation procedure into their
+software. When you install a CP/M program, you are basically telling it the
+characteristics of your screen and printer. The program then uses a built-in
+table to produce a custom version of the product. WordStar has a powerful
+"install" program that provides a very comprehensive menu of printers and
+terminals it can work with.
+
+Although WordStar is one of the oldest, most mature word processing programs
+on the CP/M market, it has a complex set of commands that you must memorize
+to work with it effectively. A well-designed set of onscreen "help" menus
+makes this fairly easy. WordStar's documentation is massive, but many books
+are out that simplify learning about it. A "mail-merge" option available for
+WordStar allows you to print copies of the same letter to a list of people
+stored in a database file. You can have specific information entered into
+each letter, too.
+
+   Perfect Writer
+
+Perfect Writer is part of a family of Perfect Software, including Perfects
+Calc and Perfect File. Like WordStar, Perfect Writer uses on-screen
+formatting, but in addition it allows split-screen editing. This means you
+can split the screen into two horizontal windows, and view different parts
+of the same document, so you can read one section while modifying; another.
+In fact, Perfect Writer allows you to open seven files at the same' time and
+edit them simultaneously. Another reason that split windows areas important
+is that you can cut and paste between two documents while, both are on the
+screen. In WordStar, you have to save the text to be pasted in a file, quit
+the current document, reload the new document, and reader in the file of
+text.
+
+Embedded commands that set spacing and set up headers and footers are placed
+in the text enclosed by special symbols. These commands affect the
+formatting of the entire file and take some time to get used to. But they
+are more powerful than WordStar's formatting, where every paragraph must be
+individually reformatted. Perfect Writer is a bit more user friendly than
+WordStar because it focuses on two keys (Escape and Control) for most of its
+commands.
+
+Perfect Writer has an excellent install program and can even allow
+customization for hardware not on its menu. A version of Perfect Writer for
+the Commodore 128 is available.
+
+  Database Managers
+
+Database managers are programs used to manipulate data that exist in the
+form of "records". Records can be thought of as a single line of information
+that contain, for example, names, addresses, amounts invoiced, number of
+parts on hand, and so on. A database manager is a program that lets you
+enter the data, arrange how it will be stored, search for certain data, and
+print out summary reports. Businesses are frequent users of database
+managers, since they frequently deal with customer information that can
+easily be represented in a database.
+
+   dBASE II
+
+Probably the most popular database program for CP/M is dBASE II from
+Ashton-Tate. It is known as a relational database, meaning that any one
+piece of information can be linked to another. For example, a name can lead
+to an address and a phone number, and a phone number can lead to an address
+and a name. An actual dBASE II application program requires technical skill
+to program, but no technical skill is needed to use the final program. dBASE
+II has a programming language that you use to create a database. Although
+difficult to learn at first, once mastered you can create very complex data
+management applications. Many good books are available to teach you dBASE II
+programming.
+
+  Spreadsheets
+
+A spreadsheet is simply an electronic ledger for "what-if" analysis. It
+gives you a way to test different possibilities by manipulating numerical
+data entered in column and row format. Not only can you enter numbers, but
+also formulas that operate on the data in rows and columns. Typical
+"what-if" questions that a spreadsheet answers are: How should you invest if
+interest rates are 15 percent? What is the effect of producing more purple
+socks than green socks? Financial modeling and forecasting are one of the
+main uses of spreadsheets. The important characteristics of a spreadsheet
+are its worksheet size, report capability, speed of calculation, interaction
+with other programs, and ease of entering data.
+
+   MultiPlan
+
+MultiPlan was one of the first spreadsheets for CP/M. It is organized around
+the worksheet, which shows on your screen organized in rows and columns,
+much like an accountant's ledger. MultiPlan actually uses the screen as a
+window to a much larger worksheet - it shows the area of 7 rows and 19
+columns - out of a total area of 63 columns by 255 rows. You use commands to
+move around on the worksheet and enter values. You can also enter formulas
+that automatically perform calculations on the data in the columns and rows.
+Recalculation is almost instantaneous. In a way MultiPlan works a lot like a
+word processor, except it uses the cursor keys for moving through the rows
+and columns. You can delete large areas of the worksheet with a few
+keystrokes. You can enter text as well as numbers to nicely format the way
+the worksheet appears, giving headings to the figures, for example. There is
+an online help system that allows you to leap headlong into the program.
+However, the large manual is excellent for reference. Several good books
+exist for learning MultiPlan. MultiPlan's only lack is that there is no
+simple way to get graphics output from the program. With the Commodore 128
+and its excellent graphics screen we may find that a version of MultiPlan
+with graphics output becomes available.
+
+   SuperCalc2
+
+Another excellent spreadsheet program is SuperCalc2. This spreadsheet is
+much like MultiPlan, except its worksheet holds slightly more rows and
+columns. SuperCalc has an interesting batch execution system that lets you
+put a series of SuperCalc commands in a file and execute it. For example, if
+you want to print a report that uses different sections of the worksheet,
+the commands in the file can specify these ranges, one after another,
+unattended. This is especially useful to experts who wish to develop complex
+packages that can be used by novices. SuperCalc also uses a kind of storage
+for spreadsheets called SDI for Super Data Exchange. It can store in a
+comma-delimited format which is suitable for other CP/M languages like
+Microsoft BASIC, CBASIC, and Pascal (see the section on CP/M Programming
+Languages). SuperCalc2 is easy to use and has a help key feature.
+
+  Financial Software
+
+Financial software programs are CP/M packages that allow a business to do
+all its bookkeeping on the computer. Most financial packages offer a general
+ledger program and a payroll system. A complete system would contain
+programs for handling receivables, payables, inventory, and job costing.
+Financial software is a difficult product to define, and there are many
+packages that fall into this category that may be quite different. When
+purchasing such a system for your Commodore 128 in the CP/M mode, you will
+want to pay attention to how flexible the structure of the product is (what
+functions have been preallocated in the program) and how flexible the
+reporting is. You'll also want to check the integration of the package; that
+is, can the different parts of the system, like the checkbook and the income
+statement generator, talk to each other? You may also want to be concerned
+with security and make sure there is some kind of password protection, so
+that only certain employees can write checks.
+
+   Software Fitness Program
+
+Here is a solid, screen-oriented, seven-part accounting system. Software
+Fitness Program from Open Systems offers: general ledger, accounts
+receivable, accounts payable, sales order, inventory, payroll, and job cost
+programs. The entry screens are amazingly comprehensive. WordStar like
+editing commands let you move easily around Software Fitness screens and
+enter and modify data in them. The Software Fitness Program can adapt to
+your business' accounting practices, rather then forcing you to adapt to its
+system. Everything about the program is stored in tables that can be
+modified. There are many types of reporting functions, including audit
+trails, comparisons and analyses. Custom reports with custom formatting is
+possible. The system is full of features. The accounts receivable program
+handles finance charges on forward balances and sends statements and
+invoices. The payroll handles sick pay, vacation, FICA, state and local
+taxes, and even double time.
+
+The program runs under a special BASIC Interpreter from a company called
+Control C and that program must be purchased separately. The Software
+Fitness System earns its name: it is comprehensive, easy to learn, and the
+documentation is good. One possible special feature for Commodore 128 users
+is that the Software Fitness Program is capable of dealing with up to
+twenty-four concurrent users working on the same files. If a company creates
+a network scheme for C128s running under CP/M and installs the Software
+Fitness Program, it could be the most cost-effective corporate computer
+financial system ever sold.
+
+  Communications
+
+The latest craze is computer networking and system-to-system communications,
+and the Commodore 128 user will most likely want to try it out. Networking
+and communicating with computers involves being able to access remote
+computers, often over the telephone lines. This may be for sending
+electronic MCI mail or getting a file or program from someone's computer.
+Electronic mail is a method whereby you can write a letter and transmit it
+to a computer owned by the electronic mail company. The file is converted
+into a printout and delivered to the recipient overnight. Sending and
+receiving programs is another popular reason for allowing computers to
+communicate. You may also use computer communications to call up far away
+computers and then search and roam through the fantastic information
+databases they contain. Or maybe you want to access tons of free CP/M
+software (we're getting to that soon).
+
+To get started in communications you need a modem and a communications
+program. The modem encodes and decodes information from the computer into a
+standard format of tones. If the remote computer has a modem, the two
+computers can understand each other and trade information. A communications
+program allows you to easily send and receive files. For example, if you use
+electronic mail you will need to be able to send memos, letters, and
+information. Your software should be able to look on your disk for a file
+containing a letter, and then be able to send it to the mail network. When
+receiving information from another computer, it needs to be able to open a
+file on your disk and capture the information. Your communications software
+also needs to be able to emulate a popular terminal of some kind via your
+communications program. This is because most information services set up a
+communications link that expects a certain kind of terminal to be attached.
+
+Your program should also allow handling protocol file transfer. Protocol
+means that special error checking is set up between sender and receiver so
+that no errors occur in the transmission. The reason protocol is needed is
+that phone lines can have electrical static, or noise, on them which can
+alter the characters they are sending or receiving. The protocol mode
+guarantees that the character is sent properly. The most popular protocol is
+the XMODEM protocol, which was developed by Ward Christensen and placed in
+the public domain. XMODEM is part of another modem program, called Modem7,
+developed by Ward, and is described later in this chapter in the section
+called "Free Software". The mode for most communications between computers
+starts out with no protocol. The character that is sent is always echoed so
+you can see it appear on your screen (this is called full duplex mode), but
+no check is made to see if the right character is echoed. This is called the
+non-protocol mode. Which mode you use depends on the kind of file you are
+sending. A program file, like a COM file, is composed mostly of pure machine
+codes for the Z80A microprocessor. Sending this file demands protocol mode
+for it to work. On the other hand, you might not care about accuracy of a
+memo you are sending to a person via electronic mail.
+
+   Crosstalk
+
+Although Crosstalk, manufactured by MicroStuff, wasn't the first CP/M
+communications program on the market, it has risen to the ranks of the most
+popular. Crosstalk is designed mainly to work with the Hayes Smartmodem,
+because this particular modem has built-in intelligence that Crosstalk can
+exploit. It can perform autodialing, both in pulse and touchtone, and has
+numerous selectable protocol features. Crosstalk captures incoming data in
+memory, lets you go in and edit it, and then save it to disk when ready.
+Like all good communications programs, Crosstalk lets you adjust important
+parameters, like the phone number, baud rate, number of data bits, number of
+stop bits, parity, and full or half duplex. What is really nice is that you
+set all of these parameters on a screen control panel which is always in
+view, so that their state can always be known. Since each computer system
+you talk to may require different sets of parameters, Crosstalk lets you
+store the settings under a filename, like SOURCE.XTK. Then you simply type
+LO SOURCE.XTK and Crosstalk LOads in the parameters you stored.
+
+In addition to having a well-designed terminal-emulation mode, Crosstalk has
+a file-transfer mode. Even though the computers may be quite different
+hardware-wise - that is, you might have a Commodore 128 communicating with
+an Osborne - if they are both running Crosstalk, file transfer will be easy.
+People who use Crosstalk to trade public domain "squeezed" (compressed) COM
+files will appreciate the unattended transfer mode. This allows you to use
+Crosstalk to call up an unattended computer also running Crosstalk, examine
+the files on that computer's drives, and transfer just the ones you desire.
+The transfer can be either an XMODEM protocol transfer, where all the
+characters are checked as they are sent, or in the non-protocol mode, where
+there is no accuracy checking. Crosstalk is bulletproof and almost
+impossible to crash. An online help command gets you descriptions of each
+command without needing to turn to the manual. Crosstalk is available for
+many machines, including the IBM PC and the full line of CP/M portables,
+such as Osborne, Morrow, and Kaypro.
+
+  Languages
+
+If you are dissatisfied with a CP/M application, or want to create the next
+best-selling application program, you must know how to use a computer
+language. A programming language is what was used to create what ultimately
+became the final "instructions" to your Z80 chip, which make the program do
+what it does. For example, CP/M, WordStar, and MultiPlan were written in a
+very low-level language called assembly language. On the other hand, the
+Software Fitness Program was written in BASIC, a higher-level language.
+There are many different types of computer languages available for CP/M.
+Since the CP/M universe was made up in its first years primarily of hackers
+(computer hobbyists), it has spawned a great number of experimental computer
+languages, some of which went on to become great commercial products.
+
+There are dozens of differences between languages, and this book cannot
+really compare them with any justice. Generally speaking, BASIC is the most
+popular language today, primarily because it is easy to learn and use, is
+available in versions for almost all computers, and is interactive in its
+operation with the user. Pascal and the newer C language are the next most
+popular. Pascal is a more serious language, and requires more expertise on
+the part of the user, but also offers in return more flexibility (and
+sometimes more speed) than BASIC. Pascal has traditionally been used in the
+schools to teach upper division programming. C is slowly gaining ground on
+Pascal because it offers even faster and more compact code, and because the
+famous Unix operating system is based on it. Many professional application
+products are based on the C language.
+
+   Microsoft BASIC
+
+Microsoft BASIC has a fantastic history in the world of CP/M and the
+personal computer industry in general. Bill Gates, now C.E.O. of one of the
+largest software publishers in the industry, and John Allen, his partner,
+created Microsoft BASIC back in 1975 to run on the world's first real
+microcomputer, the Altair 8080. At that early date there were no floppy
+disks (CP/M was about to arrive), and so Gates and Allen got BASIC running
+using a paper tape reader and loader. When CP/M came out Gates and his
+partner quickly brought out a disk-based version of MBASIC. The program
+instantly caught on, and since that time Microsoft BASIC has become the de
+facto standard programming language for CP/M.
+
+Microsoft BASIC is available as an interpreter and a compiler. The
+interpreter, the most popular form, accepts BASIC commands as you type them
+and executes programs immediately. The compiler form reads BASIC
+instructions you have created in a text file using an editor, and usually
+takes a few minutes to tell you if there are any mistakes. The compiler,
+however, produces much faster code. Frequently programmers try to use the
+more friendly interpreter version to get the BASIC program working, and then
+use the compiler to speed it up. Using Microsoft BASIC under CP/M is very
+easy. In BASIC each instruction is on a "line" and the line is preceded by a
+line number. You can then control the program contents through a line
+editor; you can delete a line by typing its number with nothing after it, or
+insert a new instruction line by typing the number and the BASIC commands
+after it. You can get a listing of the entire program or just specific
+lines. Microsoft BASIC has its own built in line editor, but you can also
+create a program using any of the popular word processors, or even CP/M's
+crude ED.COM editor. In Microsoft BASIC you are given a complete set of
+built in functions, like SIN, LOG, and EXP, as well as the standard
+operators. The control structures of Microsoft BASIC are not as complete as
+Pascal and C, and you are provided with WHILE-WEND, IF-THEN-ELSE, and
+FOR-NEXT.
+
+With Microsoft BASIC you can chain programs too large to fit in memory, as
+well as use either random or sequential files. A fully formatted PRINT USING
+function is provided for output decimal numbers in precise columns. Error
+checking is good, and you can write your own custom routines to handle user
+mistakes. Microsoft BASIC provides an interface to memory with the POKE and
+PEEK commands. A CALL and USR statement allows you to run Z80 machine
+language programs from Microsoft BASIC. The reference manual for Microsoft
+BASIC is very good, and dozens of programming books are available that teach
+you how to use it.
+
+Microsoft BASIC for CP/M is not as powerful as BASIC 7.0 on the Commodore
+128, but it does offer compatibility with many other machines. For example,
+Microsoft BASIC and BASICA are distributed with every IBM PC and are almost
+identical to CP/M MBASIC. Since the 80-column color chip in the Commodore
+128 has the same capability as the color board in the IBM PC, it is likely
+that many programs written on the IBM PC under BASIC that work with color
+will be easy to rewrite to run on the C128.
+
+   Pascal/MT+
+
+Aficionados and devotees of the more sophisticated Pascal language will find
+Pascal/MT+ from Digital Research, the originators of CP/M, tough to beat.
+Pascal is a compiled language (although of late interpretive Pascals are
+occurring), and is best known for its "structuring". Pascal is really more
+in tune with what professional programmers need than a language like BASIC
+(although also of late BASIC is beginning to shed its toy-like reputation
+and more Pascal-like structured versions are appearing).
+
+Pascal/MT+ is one of the fastest and most efficient Pascal languages on the
+CP/M market. It is fully compatible with another popular Pascal called UCSD
+Pascal, but it is faster and produces more compact code (less bytes per
+program). The language allows you to create a large number of program
+overlays that can be pulled off the disk and affixed in specific memory
+locations. This allows the Pascal programmer to write much longer programs
+than would seem possible. Very powerful math processing is provided in this
+language. Numbers can be as large as 32 bits, and BCD arithmetic for up to
+18 digits is provided for computations involving money. (Rounding errors are
+a real problem with most languages used for business - BCD math avoids them
+at a slight decrease in speed.)
+
+There are a lot of additional support utilities provided with Pascal/MT+,
+including a complete debugging system, a disassembler, and a linker with
+Microsoft assembler compatibility for using Pascal/MT+ with machine language
+programs. One of the most beneficial utilities provided is the speed
+programming package. This is a stripped-down WordStar-like editor that has
+an automatic formatter and syntax checker built in. If you are pretty good
+at Pascal it will catch almost all your errors. Your file is then given to a
+special fast compiler that lacks the syntax checking stage. The final
+version of the Pascal program runs just as fast, but the development of the
+programming is speeded up by this utility.
+
+   BDS-C
+
+C is a programming language whose popularity is on the rise. C was created
+by Kernighan and Ritchie of Bell Labs to help them write an operating system
+called Unix. Pascal would not do because it did not produce compact enough
+code, was too slow, and didn't have a neat interface to the central
+processing unit (CPU). Although C has not been available on CP/M for very
+long, its use has blossomed because of its superiority over other languages
+for developing powerful programs. C is about halfway between Pascal and
+assembly language in complexity. It is more cryptic looking than Pascal (at
+least you can make it look that way if you want), and it is, in general,
+much faster. C was designed because an operating system is a very complex
+piece of software that must be fast when used. Writing it in machine
+language may appear the best approach at first, but when the size of the
+program becomes huge enough, assembly language becomes unwieldy and
+uncontrollable. C is well-structured like Pascal so it can look clear, while
+it also allows speed-sensitive parts to be easily interfaced in machine
+language.
+
+Some excellent applications programs for CP/M were written in BDS-C,
+including the Mince text editor (from Mark of the Unicorn) and the PeachText
+word processor (from PeachTree).
+
+BDS-C was the first version of C on the market for CP/M. It has evolved over
+the years into a very bug-free product preferred by many users. The language
+is not as complete as the one described by Kernighan and Ritchie's The C
+Programming Language (Prentice-Hall, 1978), but it does contain a large
+subset of the important features. One of BDS-C's best features is that it
+consumes very little memory for even the largest of programs. The language
+supports a feature called pointers, which is very important to C. The
+floating point math routines are incompatible with those of Unix C. The
+compilation speed of programs written in BDS-C is amazingly fast compared to
+languages like Pascal, sometimes taking mere seconds when in Pascal the same
+program might take several minutes. The BDS-C compiler is easy to use
+because it does not need a lot of complex linkages to run. You compile the
+program and then link it, and it is ready to run.
+
+BDS-C's only weak point is that the relocatable files created by the
+compiler are not compatible with the Microsoft assembler, so linking to
+machine language is more difficult.
+
+  Utilities
+
+A galaxy of programs falls into the utilities category. Utilities are aids
+that help you work within the CP/M environment. Utilities are also programs
+that integrate other applications, give you desk accessory programs that can
+be called up as needed, like calendars and notepads, or provide tools that
+make programming CP/M easier. Some of the most popular utility programs
+provide an interface and set of commands that make CP/M easier to harness.
+
+   Power!
+
+Power!, from Computing! in San Francisco, is a program that Digital Research
+should have provided. It is a set of utilities that take over where PIP,
+TYPE, ERASE, and RENAME fear to tread. To run Power!, you simply type its
+name and it installs itself inside your CP/M, then sits there like your
+slave. The most useful Power! command is COPY. When you do a DIR with Power!
+it displays a number before every file. If you then want to copy selected
+files, you can say COPY 1-3 7 13 and only files 1 through 3, 7, and 13 will
+be copied. ERASE works the same way. There are also utilities for checking
+if there are any bad sectors on your diskette and unerasing files you
+accidentally erased. Power! uses a friendly menu-like front end that is good
+for beginners to learn with. There is also a powerful debugging system for
+programmers that allows you to read sectors on the disk or memory contents.
+Several of the ideas for utilities in Power! can be found in various
+programs in the public domain (see next section).
+
+  Entertainment
+
+Entertainment programs in CP/M are somewhat lacking due to the nature of the
+user interface. This is because to keep a CP/M program truly generic it
+can't do anything beyond placing text characters in different places on a
+screen. There is no color or sound in standard CP/M. This has not stopped
+games from being developed, just held back the sophistication, compared to
+color graphics programs. You will find a host of text-based games like Zork
+and Adventure. There are millions of CP/M games written in MBASIC such as
+Tic-Tac-Toe, Animals, Guess the Number, and Blackjack, but don't expect
+much. Remember, many people cut their computer-programming teeth with CP/M,
+and the games reflect this to a certain extent. The best games are written
+in machine language or C.
+
+   Adventure
+
+Adventure, from Adventure International, is a game where you explore a cave
+full of strange, magical creatures. You communicate with the game in plain
+English, typing instructions about what you want to do. The purpose is to
+find one of several treasures without getting killed in the process. You
+type things to Adventure like "kill dragon" or "pick up magic lantern".
+Adventure tells you things that happen along the way, like "you are in a
+large cavern and the walls are coated with jelly - you can't climb them".
+(You may find later that the only way out is to eat through the walls!) In
+Adventure games, you can get an inventory of what things you are carrying,
+look at your surroundings, pick stuff up, and so on. People become so
+enraptured by games like Adventure that winning becomes an obsession.
+
+  Free Software for CP/M
+
+Earlier we mentioned that there existed free CP/M software - for example, we
+mentioned XMODEM. What we didn't tell you is that some of this free software
+is incredibly good, and that obtaining it is not hard. Public domain
+software is programs that have been written and made available for free to
+anyone who wants them. They are, in fact, owned by the public.
+
+Since CP/M was one of the first operating systems, a large number of
+hobbyists, hackers, and esoteric programmers purchased CP/M computers and
+began to write programs for themselves. Keep in mind that, prior to the
+microcomputer revolution, programmers and hobbyists were locked out of using
+computers because only large companies could afford them. With the advent of
+the low-cost microcomputer and CP/M, literally thousands of hackers said,
+"Now I can write that program I've dreamed about," and set to work. The
+result of this was an incredible barrage of homespun, public donated code,
+most of it poor and shoddy, but some of it real gems. It was offered on the
+free market in the form of floppy disks distributed at computer "user
+groups". It was also made available on on-line computer systems (we'll say
+more about these topics later).
+
+Free CP/M programs are the equivalent of a software gold mine. Buried behind
+the rubble of poor documentation and zero customer support exist hundreds of
+excellent programs, provided you can weed them out. How much free software
+exists? Public domain software is measured in volumes. A volume is a single
+diskette containing between 10 and 20 programs and holding 250,000
+characters. One catalog lists over 250 volumes of free CP/M software! This
+free software is available from user groups located across the country who
+will send numerous volumes just for the cost of copying. A second major
+source is electronic bulletin board systems, called Remote CP/M computer
+systems or RCPMs. These-on line CP/M computers have large hard disks
+containing hundreds of free CP/M programs. They are accessed by modem, and
+the programs are "downloaded" to your computer with special free
+communications software.
+
+In this section, we will examine the CP/M public domain phenomenon, explore
+some of the better free programs, and tell you how to find them, how to buy
+them, and how to download them.
+
+  What Good Free Software is Available
+
+The most popular programs in the public domain are programmer tools and
+system utilities. There are programs for fixing damaged disks and unerasing
+disk files, as well as for backup utilities and enhanced directory programs.
+There are also a dozen communication programs. Let's look at the most
+popular CP/M public domain programs that a Commodore 128 CP/M 3.0 user might
+want.
+
+   Modem7
+
+Modem7 (also associated with a companion program called XMODEM) is the most
+popular free program in the public domain, and, unlike most software, has
+literally hundreds of versions. Originally written by Ward Christensen,
+Modem7 has been revised and improved by dozens of programmers. Modem7, or a
+similar communications program with XMODEM protocol capability, is the key
+to getting free software from bulletin boards. A special accuracy-checking
+feature of Modem7 insures that not one single error occurs in the transfer.
+Without such checking, it is almost certain the program will not run
+properly. Since modems for CP/M are not standardized, Modem7 must be
+customized for each CP/M computer it runs on. Luckily, a version of Modem7
+has been adapted for most of the CP/M machines and modems on the market, and
+it will not be long before you can find a version of Modem7 for the
+Commodore 123. As a tribute to the importance and ubiquity of Modem7, today
+most commercial CP/M communications programs on the market support the
+Modem7 file transfer protocol.
+
+   Squeeze and Unsqueeze (SQ and USQ)
+
+The SQ program is used to squeeze files, that is, make them more compact in
+size, so that they can be transferred by modem in quicker time. Then the
+USQ, or unsqueeze program, is used to bring them back to normal. This can
+save telephone charges, as well as give more capacity than is obvious on a
+disk.
+
+   Disk Utility (DU)
+
+The disk utility (DU) lets you perform intelligent disk repair to recover
+erased files, isolate bad sectors from use, and make data transplants on a
+disk when the disk seems totally dead. DU is a fairly complex programmer
+tool, but is extremely popular because it allows a CP/M programmer to become
+a disk surgeon. DU is also popular for cracking disk protection schemes and
+analyzing CP/M storage formats.
+
+   FindBad and UNERA
+
+FindBad locates bad sectors on your disk and isolates them from future use
+so you can use a disk you might normally discard. UNERA helps you recover
+files you have accidentally erased from a disk. (Even though you erase a
+file with the ERASE command, the file still exists on the disk - only its
+name has been removed from action.)
+
+   Dan's Information Management System (DIMS)
+
+Here is a complete database management system that is said to rival dBASEII.
+The program is a system of Microsoft BASIC programs chained together and
+designed so it can be used by anyone. Written by Dan Dugan, it is suitable
+for medium-scale mailing-list operations, indexes, ledgers, and similar
+operations. Records can be up to 256 characters long with up to 30 data
+fields, and file size can be the limits of the disk itself.
+
+   Other Good Public Domain Software
+
+The Osborne/McGraw-Hill CBASIC2 Accounting System provides a complete small
+business accounting system with books to back it up, provided by the
+publisher Osborne/McGraw Hill. There are dozens of languages, including a
+BASIC E compiler from Lawrence Livermore Laboratory, BDS-C, several versions
+of Forth, a PILOT, and even a Pascal compiler.
+
+You'll also find game programs like the original StarTrek program, and other
+pre-video-game games. There are also assemblers, search-and-rescue programs,
+speedup utilities, music programs that play three-part harmony, disk
+cataloging systems, ham radio programs, fast copy programs, and lots more.
+
+  How to Get Free Software
+
+The two methods of exchanging free software are by disk via user groups and
+by computer-computer connection over the telephone lines via bulletin
+boards. Let's look at these in turn.
+
+   CP/M User Groups
+
+A CP/M user group is a group that is devoted to cataloging and exchanging
+information about CP/M for nonprofit. User groups usually meet twice a month
+and are located across the country. You can find out about user groups in
+your area by reading the magazines listed at the end of the chapter, by
+reading the local newspapers that advertise computer consulting, and by
+asking around at a local school or computer store. User groups usually offer
+free software to anyone, even nonmembers, and some of the larger ones will
+duplicate and mail disks of software for a nominal charge.
+
+One of the largest groups offering CP/M public domain software suitable for
+Commodore 128 users is called CP/MUG, which stands for CP/M User Group. This
+group is supported by Lifeboat Associates in New York. CP/MUG provides 5¼
+inch CP/M single density disks in the Kaypro formats for $18 per disk.
+
+Another large user group is the First Osborne Group (FOG) located in Daly
+City, California. FOG distributes CP/M public domain software in Osborne,
+Kaypro II, Morrow, CompuPro, PCM Micromate, and Zorba formats. FOG has over
+15,000 members worldwide and costs $24 to join.
+
+The New Jersey or New York SIG/M (Special Interest Group/Microcomputers)
+offer perhaps the largest catalog of CP/M public domain software.
+Unfortunately, this is not provided on 5-1/4 inch formats.
+
+   Bulletin Boards
+
+The second way to get free public domain CP/M software is by calling up a
+remote CP/M system bulletin board and downloading it. Thousands of these
+systems exist across the country, maintained by kind, diligent, benevolent
+individuals, who simply live to see people use their CP/M systems. Most of
+these systems contain the latest releases of volumes of SIG/M, FOG, and
+C/MUG software. You can preview these programs before downloading them by
+reading a special description file first. These RCP/Ms serve as distribution
+points for SIG/M and FOG software, and their telephone numbers are
+distributed by these user groups. There are over twentyfive FOG RCP/Ms
+across the United States. Contact FOG at the address in Appendix A for the
+exact phone numbers for your area.
+
+CompuServe and The Source are other sources of free CP/M software. Both
+these on-line services have CP/M special interest groups. Programs written
+in CP/M are available for downloading to your computer, and a way of leaving
+mail for other CP/M members is provided.
+
+[5.5] The Structure of CP/M: Layout, Commands, and Utilities
+
+Now that you are familiar with what kinds of software can be found for CP/M,
+you are ready to get an overview of how CP/M is structured, the numerous
+commands it offers, and the utility programs provided to make your work
+easier.
+
+  Welcome to CP/M 3.0
+
+CP/M has been around for some time. It first appeared in 1975 as CP/M
+version 1.3, and, shortly after, as version 1.4. In 1979, CP/M version 2.2
+was introduced. It took advantage of larger memories and cheaper disk drives
+made available by the microcomputer boom, and has remained the most popular
+version to date. It is estimated that there were over 1.5 million copies of
+CP/M in circulation in early 1983.
+
+In 1983, Digital Research developed a new version of CP/M called CP/M 3.0.
+Its name was switched to CP/M PLUS at the last minute, but the name CP/M 3.0
+caught on and has been used ever since. CP/M 3.0 was an improved version of
+2.2, with a couple of new commands and one major difference: it was capable
+of working with larger memories then 64K. Two versions of CP/M 3.0 were
+created: a banked version for larger memories and a nonbanked version for
+smaller 64K memories. The banked version of CP/M was intended to allow two
+programs to run at the same time, each in its own area of memory. For
+technical reasons, the Commodore 128 uses the nonbanked version of CP/M 3.0
+and does not directly use the extra memory in the computer. However, it is
+possible through rather subtle methods, to access portions of the extra
+memory area.
+
+Although programs are not written in CP/M 1.3/1.4, some still exist. You
+should know that from a compatibility standpoint, programs designed to run
+under CP/M version 1.3/1.4 will not always run under version 2.2 and 3.0.
+Further, programs that run under 2.2 and 3.0 won't always work under version
+1.3/1.4. However, most programs written for version 2.2 will run under
+version 3.0 without alteration.
+
+  Getting Started in CP/M
+
+Unlike BASIC 7.0, which is installed in a ROM inside the Commodore 128, the
+program for CP/M is stored on the disk and must be read into memory before
+it can be used. This process is called booting CP/M because it is like
+kicking it to get it running (see Figure 5-3). There are two programs on the
+disk that are loaded when the CP/M disk is started: CPM.SYS and CCP.COM (we
+will explain these names later - for now they are just programs on the
+disk). When this booting process is completed, CP/M has fully "installed"
+itself in memory and will keep running until you turn the computer off. When
+you start a program under CP/M, it will run until you tell it to stop, and
+then you will end up back with the CP/M program running. Assuming you have
+an 80-column monitor, after you boot your CP/M disk, your screen should show
+something like this:
+
+        CP/M 3.0   On the Commodore 128   13 March 85
+        80 column display
+
+        A>_
+
+The A> will be at the bottom of the screen. It represents the CP/M prompt. A
+prompt is a symbol or character sequence the operating system displays when
+it's awaiting your input. It means, "I'm waiting for you to type something."
+The letter A refers to the drive that we are using; the booting drive is
+called the A drive. By booting drive, we mean the drive that CP/M was
+started from. If you have a dual drive connected to your Commodore 128, the
+second drive is referred to as the B drive. This lettering allows you to
+switch between drives and to specify programs as being on either drive. The
+"greater than" symbol (>) is CP/M's way of saying "type your input right
+here". Following it is the Commodore 128 CP/M blinking underline cursor. The
+cursor represents where the next character you type will actually appear.
+
+  Figure 5-3. The CP/M Mode Uses the Z80A Chip
+  [Omitted]
+
+  So Where Is CP/M?
+
+Keeping track of where CP/M is located in memory is not important to its
+everyday use. However, it is important when it comes to purchasing
+application software that was not designed specifically for the Commodore
+128 CP/M. The reason is that different CP/M programs expect and need
+different amounts of memory space to operate. You want to make sure you
+understand how much memory the C128 version of CP/M provides, so you can be
+sure these programs will run.
+
+Inside the Commodore 128 memory, the part of CP/M that was loaded off the
+disk is now situated starting at about the 59,000th memory location and
+extending up to approximately the 64,000th location. Below this is a larger
+memory area where CP/M programs are loaded and run from. This area below the
+location CP/M is called the TPA (which means transient program area: it is
+where transient programs are loaded and run). As long as the CP/M program
+you wish to run does not need more than 59K, it will work fine in CP/M 3.0.
+Very few CP/M programs on the market will require a TPA larger than 48K.
+Thus the Commodore 59K TPA provides more than enough room.
+
+    As long as the CP/M program you wish to run does not need more than 59K,
+    it will work fine in CP/M 3.0.
+
+  Files in CP/M
+
+CP/M accesses and manipulates information stored on disks in files. A file
+is any information that is stored as a single entity and given a unique
+name. A file can be a single program, a chapter of this book, an entire
+mailing list, the data for a program, a single letter, or a complete novel.
+A file can be as short as a single character or as long as all the capacity
+of the disk. There are no basic rules for what goes in a file - you define
+its contents when you create the file.
+
+There are rules for telling one file from another; these rules are to give
+each file a distinctive and unique name. In CP/M, all files are referred to
+by a name consisting of one to eight characters called the filename. In
+CP/M, no two files can have the exact same name and only uppercase letters
+are allowed in filenames. There are also limitations in CP/M as to what
+letters and symbols may be used in filenames. Characters you can't use
+include: < > ; : = ? * [ ] ( ) / or tab. Some valid filenames are:
+
+CHAP-12
+PIP
+BASKET
+PROGRAMS
+A347689
+ME@
+BIG-FILE
+RT+XT
+
+CP/M contains numerous commands that allow you to manipulate these files.
+Usually you must specify the name of the file you wish to manipulate. To
+make this a little easier, CP/M provides special characters, called
+wildcards, that let you operate on more than one file at a time, and let you
+perform operations on groups.
+
+  Filetypes
+
+When you use CP/M it is useful to be able to identify files in a way that
+lets you know what they are going to be used for. For example, a text file
+and a program file are really different, but you might not know it by their
+filenames. CP/M allows you to tell what kind of file you are using by way of
+a three-character extension added to the right of the filename and chosen
+from the list in Table 5-1. The filetype is separated from the filename by a
+period; that is why a period can't be used in the filename.
+
+If you can identify the filetype, you can pretty easily figure out what kind
+of file you are dealing with. First, it is important to distinguish between
+two kinds of files: data files and program files. A data file is usually one
+that contains text, numbers, and collections of characters. A typical data
+file is a document created on your word processor that is made up of text.
+In CP/M, this would normally have the extension TXT to stand for text or DOC
+to stand for document. Data files can usually be examined from CP/M using
+the TYPE command (as we shall soon see).
+
+A program file, on the other hand, contains instructions and codes in a
+particular computer language. For example, a file with the extension COM is
+called a command file and contains codes that run the Z80A in your C128. A
+program you wrote in Microsoft BASIC might have the extension BAS. Table 5-1
+lists the most common filetypes for CP/M. The books listed at the end of
+this chapter, as well as the Commodore 128 manual, explain these in more
+detail.
+
+Note that you do not have to stick to the list of filetypes given in Table
+5-1. You can be creative and use names that make the type of file apparent.
+Here are some typical examples of complete filenames with filetype
+extensions:
+
+MYPROG.BAS (a BASIC program)
+JOE-3-14.LET (a letter to Joe written on 3-14)
+PIP.COM (a CP/M program for copying files)
+CHAP2.BAK (a backup of the text file CHAP2.TXT)
+PERFECT.OVL (an overlay file for Perfect Writer)
+A347689.PBS (a poor choice for a name)
+
+  Table 5-1. CP/M 3.0 Filetypes
+  --------------------------------------------------------------------------
+           Extension                    Type
+  --------------------------------------------------------------------------
+             .ASM    Assembly language source file
+             .BAK    Backup file
+             .BAS    BASIC source program
+             .COM    Z80 or 8080 program
+             .DAT    A data file
+             .DOC    A document file
+             .FOR    FORTRAN program
+             .HEX    Hexadecimal file created by ASM and MAC
+             .INT    Intermediate work file
+             .LIB    Library file used by ASM, MAC, and RMAC
+             .PAL    Pascal source program
+             .OVL    Overlay file used by another program
+             .OVR    Overlay file used by another program
+             .PL1    PL/1 source program
+             .PRN    Print file created by ASM, MAC, and RMAC
+             .REL    Relocatable file created by RMAC
+             .SUB    Source file used by SUBMIT
+             .SYM    Symbol table created by ASM, MAC, and RMAC
+             .SYS    A CP/M system file (used by CP/M)
+             .TXT    A text file
+             .XRF    A cross reference file
+             .$$$    A temporary file
+  --------------------------------------------------------------------------
+
+
+  CP/M's Built in Commands
+
+Commands are instructions that tell CP/M what to do. We give commands to
+CP/M by typing the command's name after the A> prompt and pressing the
+<Return> key. There are two kinds of commands in CP/M and the distinction
+between them is a subtle one. There are "built-in commands" and "transient
+commands". The short programs that carry out built in commands are always in
+memory when CP/M is started up and are a part of CP/M itself The programs
+that carry out transient commands are not part of CP/M and are not
+automatically loaded when CP/M is first started. Instead, when you issue a
+transient command, CP/M goes out to the disk and searches for the program
+containing the command, loads it into memory, and then executes it.
+
+The CP/M built-in commands execute quickly because they are already sitting
+in memory. The transients, on the other hand, are slower because they are
+programs that must first be located on the disk and then loaded into memory.
+However, transients can be much larger in size than the resident
+memory-based commands and, consequently, can do more. Transients are
+frequently referred to as "utility" commands because they normally help you
+manage and perform utility operation on files and disks.
+
+In the case of CP/M 3.0, the distinction between built-in and transient
+commands is even more vague. Four of the built-in commands have transient
+"extensions" that are executed if you need additional features. The six
+built in commands are listed in Table 5-2. As a user of CP/M, the only
+reason you need to care about whether a command is transient or built-in is
+that, if it is transient, it must be on the disk. If you type the name of a
+transient command and it is not on the disk, you will get a message: File
+not found, meaning CP/M could not find a file with the name you gave. Thus,
+built-in commands are more convenient to use than transients.
+
+Of these six built in commands, two do not have transient extensions (that
+is, counterparts), namely DIRSYS and USER. When you look on your CP/M system
+disks, you will find, in addition to numerous utilities, the programs
+DIR.COM, ERASE.COM, RENAME.COM, and TYPE.COM. These are the transient
+extensions that are executed if we request additional parameters that the
+in-memory built-in commands can't offer. Additional parameters are called
+"options" or option parameters in CP/M 3.0 and are indicated by placing
+additional information in brackets after the command itself.
+
+For example, to get a simple listing of the files on a disk, you can use the
+built-in DIR command, but to get the listing along with the size of the
+files, you use DIR[SIZE] which will automatically invoke the transient
+version of DIR. All options in CP/M 3.0 are typed between brackets.
+
+  Table 5-2. Built In CP/M 3.0 Commands
+  --------------------------------------------------------------------------
+      Command                Function Provided
+  --------------------------------------------------------------------------
+      DIR          Displays the disk directory
+      DIRSYS       Displays the directory of system files
+      ERASE        Erases a disk file
+      RENAME       Renames a disk file
+      TYPE         Displays a text file on the screen
+      USER         Changes the user area
+  --------------------------------------------------------------------------
+
+The new rules for CP/M 3.0 are as follows: If RENAME, ERASE, or TYPE are
+given without a filename, then the transient version is executed and you are
+prompted for more information. For example, if you enter the command TYPE
+without any filename after it, the transient version is invoked (read off
+the disk and executed), and you'll be prompted with the message "Enter
+filename:". If the commands DIR, ERASE, or TYPE are given with a filename
+and with an option parameter, the extended transient version will operate.
+If this seems overly complicated, you're right, it is. Before CP/M 3.0,
+transients and built-in commands did not overlap. Basically, the reason for
+the overlap is to allow the built-in commands to have additional and more
+powerful actions without changing their names.
+
+Another CP/M built in command changes the default disk drive (default means
+the one showing the prompt). If the current drive is A and you enter the new
+drive followed by a colon (that is, you type B:), CP/M will change the
+default drive to B.
+
+Now that you understand the differences between the built-in and transient
+commands, let's examine the built in commands in more detail.
+
+   DIR and DIRSYS
+
+The DIR command (pronounced dee-eye-are) is used to display the names of the
+files on a diskette on the screen. The files can be on either the A or the B
+drive. The built-in version of DIR simply displays the names of any or all
+files. On the other hand, the transient version of DIR allows eighteen
+different options, including the ability to get the size of each file in
+bytes, the total number of bytes consumed by all the files, and a sorted
+listing of the filenames. You can also have DIR.COM tell you the attributes
+of the files - that is, if they are read-only, system files, read/write, or
+directory files.
+
+   ERASE, RENAME, AND TYPE
+
+The ERASE command is used when you want to remove a file from the CP/M
+diskette. Once the file is removed, you cannot get it back (unless you have
+a special utility that unerases - see the previous section on CP/M software
+utilities), so you must be very careful when using this command.
+
+The RENAME command is used to change the names of any files. For example,
+you might want to rename a file CHAPONE.TXT to CHAPTWO.TXT. RENAME will do
+this without affecting the contents of the file. When you use DIR to list
+the files, you will see CHAPTWO where you used to see CHAPONE.
+
+TYPE is the CP/M built-in command for viewing the contents of a text file or
+data file. TYPE is one of the first commands to become familiar with, as it
+provides an easy method for examining the contents of a file on the screen.
+You do not want to use TYPE to try to view the contents of a nontext file,
+such as a COM file. This may send improper characters to the video screen
+that could make it lock up and require a rebooting of CP/M.
+
+  USER
+
+Each CP/M disk can be partitioned or divided into 16 regions or areas,
+called user areas, which are numbered 0 to 15. Each area can be assigned to
+hold files for different users of the disk or different subject areas.
+User's areas are best used on a hard disk where several people may share it.
+Since you probably won't have multiple users on the Commodore 128, the USER
+command will most likely be used occasionally for storing different
+categories of files.
+
+When you first start CP/M, the system automatically selects area 0. You can
+change to another area by giving the USER command followed by the user
+number. The files in one user area are not accessible by a different user
+area unless they are first copied to that area. All the built-in commands
+are available when you are in a user area. When you switch to a new user
+area, the CP/M prompt reflects the new area. For example, typing USER 9 will
+change to user area 9 and produce the prompt 9A>. Use the user areas with
+caution, as it is easy to misplace files in the areas, and finding them is
+time consuming.
+
+  CP/M Transients and Utilities
+
+There are six important CP/M 3.0 transients that are used fairly often, and
+these are listed in Table 5-3. Let's go over each, one at a time.
+
+  Table 5-3. Often Used CP/M Transient Commands
+  --------------------------------------------------------------------------
+      Command                 Function Provided
+  --------------------------------------------------------------------------
+      HELP         Provides help on CP/M subjects on screen
+      FORMAT       Used to format a blank diskette
+      COPYSYS      Creates a new bootable CP/M disk
+      PIP          Used to copy files and backup files
+      SHOW         Gives statistics on files
+      ED           Standard CP/M editing program
+  --------------------------------------------------------------------------
+
+    CP/M Video Aid: HELP
+
+One new feature of CP/M 3.0 that is lacking from earlier versions is the
+HELP transient. HELP.COM is used to display on the screen information about
+the different commands and transients in CP/M. It uses a very large work
+file called HELP.HLP, that contains most of the text it uses. To use it, you
+type HELP followed by a topic, such as HELP PIP. It in turn displays a terse
+listing of what the command (PIP) does. HELP can't be used when the computer
+is running a program. If you have a good book on CP/M, you may not want to
+use the HELP command and its large file to save room on the disk.
+
+   Setting Up CP/M Disks: FORMAT, COPYSYS
+
+Information is stored on the surface of the CP/M diskette as a series of
+blocks (called sectors). There are many different arrangements possible for
+locating these sectors on a disk, and because of this each disk must first
+be prepared to receive information in the desired format. We call this
+preparation "formatting", and it must be done before a blank, out-of-the-box
+diskette can be used to store CP/M files. The transient command for
+formatting a CP/M disk is called FORMAT. Once you have run FORMAT on a blank
+disk, it is in a state that can be read, but it contains no information. A
+DIR performed on a formatted blank disk will give the message: no files.
+Because of its intelligent disk drives, the Commodore 128 version of FORMAT
+requests you to tell it the type of CP/M computer you wish the diskettes to
+be compatible with.
+
+Once a CP/M disk is formatted, it is ready to receive files. But such a disk
+cannot be used to "boot" or start CP/M because it still does not have the
+CP/M program itself on it. In CP/M 3.0, the CP/M program or "system", as it
+is called, is stored partially in some invisible sectors of the disk and
+partially as two visible files: CPM.SYS and CCP.COM. When the C128 is first
+started, it checks if a CP/M disk is in the drive. If one is found, the
+first thing that happens is the CP/M system is loaded off the invisible
+sectors and into memory. Control is passed to the system program in memory,
+and it in turn reads the larger files, CPM.SYS and CCP.COM, into memory.
+These files contain the bulk of the code to complete the CP/M system. The
+COPYSYS program is used to both format a disk and to copy the CP/M system in
+the invisible sectors from one disk to another.
+
+   Copying Files: PIP
+
+Once you have formatted a diskette and installed the CP/M system with
+COPYSYS, you are ready to copy files to the disk with the PIP utility. PIP
+stands for Peripheral Interchange Program (PIP), and allows CP/M to move
+files not only between disks, but also from disk files to printers or from
+disk files to the screen. In CP/M, the disk drive, printer, and screen are
+all "peripherals" that can be accessed directly from CP/M.
+
+PIP's most important function is copying files from disk to disk. There are
+a large number of options you can use with PIP. For example, you can ask PIP
+to "archive" files, meaning you only copy a file if it was modified since it
+was last copied. This feature saves time when you are "backing-up" the files
+on a disk. Other PIP options request permission to continue, echo the
+copying on the screen, filter out special characters, or convert uppercase
+letters to lowercase. PIP can copy single files or groups of files, change
+names as it copies, print a group of files, extract a portion of a file,
+join several files into a single file, and much more.
+
+   Determining File Size: SHOW
+
+Before you can copy files from disk to disk, you need to make sure there is
+enough room or space on the destination disk to hold the file. The SHOW
+transient is used to find the remaining disk space. When it is executed,
+SHOW returns the amount of Read/Write space on the disk. SHOW is also used
+to tell the number of directory entries. CP/M limits the maximum number of
+files that can be on the disk to 64. A third feature of SHOW, invoked with
+the option [USER], will reveal the number of active user areas and the
+number of files contained in each area. Another option of SHOW, called
+[DRIVE], will produce a listing of the disk characteristics, such as total
+capacity, directory space, and block size.
+
+   The System Editor: ED
+
+ED is a very primitive text editing program called a "line editor" that is
+provided on every CP/M diskette. ED is not useful for serious word
+processing, but is rather for entering very short text files, such as batch
+files or short messages. Anyone considering serious text editing should
+purchase a professional word processing program, such as Perfect Writer or
+WordStar.
+
+  The Less Used CP/M Transients
+
+There are many more transient commands in CP/M 3.0 which are less often used
+than the previous ones we have learned about. Table 5-4 lists these. Let's
+examine these further.
+
+  Table 5-4. Less Used CP/M Transient Commands
+  --------------------------------------------------------------------------
+      Command                         Function Provided
+  --------------------------------------------------------------------------
+      DATE         Displays and alters the time and date
+      DEVICE       Displays and alters peripheral assignments
+      FKEYS        Assigns commands to C128 function keys
+      GET          Inputs information from a file instead of keyboard
+      INITDIR      Prepares a disk for time  and date stamping of files
+      PUT          Sends output to a disk file instead of screen or printer
+      SET          Changes file attributes, assigns a label, sets up a
+                   password
+      SETDEF       Sets up the disk search path for finding files
+      SUBMIT       Executes commands from a disk file
+  --------------------------------------------------------------------------
+
+   DATE and FKEYS
+
+The DATE transient command is used to set or to display the internal time
+and date. The Commodore 128 keeps this information in a real time clock.
+When you use DATE without options, it displays the date and time. With
+options, it sets the date and time.
+
+FKEYS is used to customize the Commodore 128 function keys so they can
+elicit complete CP/M commands. For example, you could set up the F1 function
+key so that when pressed it reproduces DIR *.COM [FULL,EXCLUDE], and
+RETURN. This will cause a full listing of all the non-COM files on the disk
+and save typing 26 keystrokes.
+
+   DEVICE and Logical/Physical Devices
+
+CP/M was designed from the start to work with different kinds of peripheral
+units or "devices". In Commodore 128 CP/M, the keyboard, printer, screen,
+and phone modem are all considered peripheral devices. CP/M also has what
+are called "logical devices". A logical device represents a particular
+function of your computer, while a physical device is the specific piece of
+equipment you choose to perform that function. We convey our choices to the
+Commodore 128 by using the DEVICE transient command.
+
+This selection of choices makes it possible to assign different physical
+devices to different logical entities that CP/M communicates through. This
+may come in handy when you are trying to control several different devices
+connected to your Commodore 128. The DEVICE transient is used both to set
+the assignments and to display their current settings.
+
+   GET, PUT, and INITDIR
+
+The GET command allows what is known as true I/O redirection, that is it
+lets you take input from a source other than the keyboard - in this case a
+disk file. GET is handy for automatically running programs, or portions of
+programs, that require the same input each time they are run, such as the
+repetitive and annoying requests that programs sometimes make. To use GET,
+you would produce a file with your text editor or word processor that
+contains the information you want to feed to the next program. Then you type
+GET FILE filename.typ. Next you run the program that you want the GET
+information sent to. Your program will run, but it will automatically be
+filled in by the contents of the GET file you created. You might use GET to
+start a word processing program and give it the commands to log in the B
+drive and open a certain file.
+
+PUT is the opposite of GET, and, instead of receiving input from a file, PUT
+writes a program's output to a file for later use. For example, you might
+want to capture several program outputs as text files and then enter them in
+a word processing program for editing.
+
+CP/M 3.0 includes the feature of time- and date-stamping of files. What this
+means is that when you create or alter a file in CP/M 3.0 and time- and
+date-stamping is enabled, the file will be saved with the time and date
+attached to it. This same time and date will be displayed in the directory
+with DIR and SHOW. To enable time and date stamping, the INITDIR command
+must be issued after the disk has been formatted and before any files are
+copied to it.
+
+   Passwords, SET, SETDEF, and SUBMIT
+
+SET is used for several purposes. The most common use of SET is in
+controlling the read/write attributes of the disk files. File attributes are
+the way we indicate what kind of file we are dealing with. A file can be
+R/O, or read only, R/W or read/write, SYS, meaning a system file, or DIR,
+meaning a directory file (this is the normal attribute given to all files).
+With SET, you can prevent anyone from modifying a file or a group of files.
+You can also prevent anyone from even reading or copying a file by
+specifying that a password first be typed before the file can be accessed.
+Passwords are names that are assigned to individual files. When a password
+has been assigned, a user cannot copy, delete, or read that file without
+typing in the correct password. SET also allows you to turn the time- and
+date-stamping feature of CP/M 3.0 on and off.
+
+First time users of CP/M often have problems when they are logged onto
+another drive (say B) and type in a command that is stored on drive A.
+SETDEF, among other things, allows you to set up a "search path" for CP/M to
+try when responding to a typed command. Thus you could tell CP/M to first
+look on the A drive, then on the B for a particular program.
+
+A sequence of commands that is normally given to CP/M from the keyboard can
+be placed in a disk file and processed by the SUBMIT transient. Input to a
+program can be included. CP/M will execute the file just as if these
+commands were coming from the keyboard. When the list of commands is
+exhausted, control returns to the keyboard. This operation is known as batch
+processing. You would normally use SUBMIT when you wanted to give CP/M a
+frequently used list of commands - for example, if you wanted to copy ten
+different files to ten different disks. A submit file could contain the ten
+filenames and the PIP operations, and you would only have to submit the file
+to SUBMIT ten times instead of 1,000. You could even make the submit file
+automatically request that you enter the next diskette.
+
+  Programmer's CP/M Utilities
+
+There are several utilities used primarily by assembly language programmers
+provided in CP/M 3.0. If you are not going to be writing assembly language
+programs, you won't need to worry about them. Table 5-5 lists these
+utilities.
+
+  Table 5-5. Programmer's CP/M Transient Commands
+  --------------------------------------------------------------------------
+      Command                         Function Provided
+  --------------------------------------------------------------------------
+      DUMP         Displays hexadecimal contents of COM files on screen
+      HEXCOM       Generates an executable COM file from an Intel HEX file
+      LINK         Creates executable COM file from relocatable modules
+      MAC          The CP/M Macroassembler
+      RMAC         The CP/M relocatable macroassembler
+      SAVE         Saves a portion of memory as a disk file
+      XREF         Creates a cross reference listing from MAC/RMAC tables
+  --------------------------------------------------------------------------
+
+The MAC and RMAC transients are very powerful programs called assemblers. An
+assembler converts a program typed in by a programmer into a group of
+special codes that are instructions to the Z80 chip in your Commodore 128.
+The original source file is written with a word processor. The language used
+is called assembly language. The code produced by the assembler is called
+object code. MAC is an enhancement of an older CP/M assembler called ASM and
+has the addition of "macros". A macro is a compact single line instruction
+that actually represents a much more elaborate collection of instructions.
+RMAC is a relocatable assembler, which means it allows the programmer to
+write code that can be relocated anywhere in memory and still run. MAC
+creates absolute nonrelocating code.
+
+HEXCOM, LINK, and XREF are tools that MAC and RMAC programmers use. SAVE is
+a transient that is used to take the contents of the TPA and save it to a
+file. Only assembly language programmers will normally use SAVE.
+
+[5.6] Where Can You Learn More About CP/M?
+
+There are numerous ways to find out more about CP/M. Many good books are
+available which explain in great detail how to use the CP/M operating
+system. There are books that show you how to write programs that run under
+CP/M and that expose the internal structure of CP/M. There are even books
+which describe the best CP/M software. Here are some useful books:
+
+CP/M Primer, Second Edition, by Stephen Murtha and Mitchell Waite
+(Indianapolis: Howard W. Sams & Co., Inc., 1983). A simple, low-pressure
+introduction to CP/M and its utilities. Unique in its accessibility to
+beginners.
+
+Osborne/McGraw-Hill CP/M User Guide, Third Edition, by Thom Hogan (Berkeley:
+Osborne McGraw-Hill, 1984). This book is more detailed and comprehensive
+than CP/M Primer but also more complex to learn from. Includes all versions
+of CP/M, including CP/M 3.0 as used in the Commodore 128.
+
+The CP/M Plus Handbook, by Alan R. Miller (Berkeley: Sybex Computer Books,
+1984). This book is completely devoted to CP/M 3.0 and, except for a few
+details, is compatible with the CP/M used in the Commodore 128. Not as
+comprehensive as the Osborne/McGraw-Hill CP/M User Guide.
+
+Soul of CP/M, by Mitchell Waite and Robert Lafore (Indianapolis: Howard W.
+Sams & Co., Inc., 1983). This is a very easy introduction into the internal
+structure and programming of CP/M. Shows how to write assembly language
+programs that use the built-in CP/M system calls.
+
+CP/M Bible, by Mitchell Waite and John Angermeyer (Indianapolis: Howard W.
+Sams & Co., Inc., 1984). This book catalogs all the CP/M commands and
+transients in a unique, accessible format.
+
+Another source of CP/M information is magazines. In these, you will find
+names and addresses of companies that sell hardware for your CP/M computers,
+as well as commercial software and articles on using CP/M programs. Here are
+a few of the better magazines:
+
+Byte, Peterborough, NH. Byte often discusses CP/M and provides reviews of
+hardware and software. Jerry Pournelle is a spokesperson for CP/M and gives
+his sometimes caustic opinions each month.
+
+InfoWorld, Menlo Park, CA. This magazine has a long history of breaking the
+latest news in the micro and personal computer industry. It has several
+reviews each month and rates all products. Its coverage of CP/M has waned
+over the years as the IBM PC has grown.
+
+Newsletters are a good source of CP/M news.
+
+Digital Research News is produced by the creators of CP/M and presents the
+newest product releases, program developments, and bugs and fixes.
+
+Lifelines is a newsletter/magazine produced by Lifeboat Associates that
+provides many helpful hints about CP/M, including the latest public domain
+software offerings.
+

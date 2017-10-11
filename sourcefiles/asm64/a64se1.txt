@@ -1,0 +1,331 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore
+64 related documents in electronic text format that might otherwise
+cease to exist with the rapid advancement of computer technology and
+declining interest in 8-bit computers on the part of the general
+population. If you would like to help by converting C64 related
+hardcopy documents to electronic texts please contact the manager of
+International Project 64, Peter Karlsson, at m9944@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document.  However, certain portions, such as diagrams, program
+listings, and indexes may have been either altered or sacrificed due
+to the limitations of plain vanilla text.  Diagrams may have been
+eliminated where ASCII-art was not feasible.  Program listings may be
+missing display codes where substitutions were not possible.  Tables
+of contents and indexes may have been changed from page number
+references to section number references. Please accept our apologies
+for these limitations, alterations, and possible omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The
+first characters of the file name are an abbreviation of the original
+document name and the language of the etext. The version number of the
+etext follows next. After that a letter may appear to indicate the
+particular source of the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International
+Project 64 make no representations about the accuracy or suitability
+of this material for any purpose.  This etext is provided "as-is".
+Please refer to the warantee of the original document, if any, that
+may included in this etext.  No other warantees, express or implied,
+are made to you as to the etext or any medium it may be on.  Neither
+the author(s) nor the members of International Project 64 will assume
+liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext.
+Therefore if you read this document or use the information herein you
+do so at your own risk.
+
+*********
+
+The International Project 64 etext of the ASM 64 manual, converted to
+text by Peter Karlsson <m9944@abc.se>
+
+A64SE1.TXT, May 1997, etext #5.
+
+*********
+ASSEMBLATORN ASM 64
+
+Kortfattad användarmanual
+
+Introduktion:
+
+De stora fördelarna med att göra sina maskinkodsprogram med hjälp av en
+assemblator är dels att man kan ge adresser och tal meningsfulla namn, dels
+att man kan göra kommentarer i programmen. Det är dessutom lättare att lägga
+till och ta bort instruktioner.
+
+
+Att skriva in program:
+
+Du skriver i princip in ett assemblerprogram på samma sätt som Du skriver in
+ett BASIC-program.
+I stället för BASIC-text skriver Du mnemonics (LDA etc), adresser o s v.
+En typisk rad kan se ut så här :
+
+  100 LDX 251 ; Ladda X-registret med innehållet i adress 251
+
+100 är radnumret (precis som i BASIC).
+LDX 251 är det som blir Ditt maskinkodsprogram.
+; betyder kommentar. Assemblatorn bryr sig inte om det som står efter
+semikolonet. Även utropstecken (!) kan användas.
+
+
+Assembleringen:
+
+När Du har skrivit in Ditt program och startar assembleringen (se kommandot
+Assemble) kommer assemblatorn att kontrollera Din programtext rad för rad
+och, om allting är OK, översätta texten till maskinkodsdata och placera ut
+koden i datorns minne.
+Du kan sedan köra programmet med SYS startadress.
+
+Schema för assemblering:
+
+    Programtext --->  Översättning   --->   Körbart program
+     (Källkod)       (Assemblering)      (Objektkod,maskinkod)
+
+Om assemblatorn skulle upptäcka något formellt fel i Din källkod (t ex en
+felstavad instruktion) avbryts assembleringen och ett felmeddelande skrivs
+ut.
+Du får då rätta felet och assemblera progarmmet igen. De felmeddelanden som
+kan förekomma fins längre fram i texten.
+
+
+Talsystem:
+
+I Din programtext kan Du använda både decimala och hexadecimala tal. Ett
+hexadecimalt tal skall börja med ett dolalrtecken ($). Talområdet sträcker
+sig från 0 till 65535 ($0 - $FFFF).
+
+
+Symboler, labels:
+
+ASM 64 ger Dig möjlighet att sätta meningsfulla namn på adresser och
+talkonstanter. Det gör att programmen blir lättare att läsa och förstå.
+Man kan tilldela en symbol (en 'label') ett värde på två sätt:
+
+1. Direkt tilldelning
+Ex: 10 ANTAL = 100
+I detta exempel kommer ANTAL att tilldelas värdet 100. I programmet kan Du
+sedan skriva t ex LDA #ANTAL, vilket alltså motsvarar LDA #100.
+LDA ANTAL betyder förstås 'ladda ackumulatorn med innehållet på adress 100'.
+
+2. Lägesanvisningar
+Labels används även i samband med hoppinstruktioner och markerar då adresser
+till rader i maskinkodsprogrammet.
+Ex: Definiering av labeln LOOP
+  10 LOOP ; En label får inte stå ensam på raden
+
+LOOP kommer att motsvara adressen till rad 10. Om man vill göra ett hopp til
+den raden skriver man helt enkelt JMP LOOP
+Labels kan givetvis också användas vid relativ adressering (BNE LOOP, BCC
+LOOP etc).
+I exemplet vid BYT används en label (TEXT) för att nå data på ett bekvämt
+sätt. (Se Assemblatorinstruktioner)
+Du behöver för det mesta inte bry Dig om vilken adress en label egentligen
+motsvarar. (Se dock Number-kommandot)
+
+En särskild betydelse har tecknet '*'. Det har alltid samma värde som
+adressen till den aktuella raden i programtexten. För att bestämma var i
+minnet maskinkodsprogrammet ska hamna skriver man '* = adress'. Alla
+instruktioner efter denna rad kommer att placeras ut från 'adress' och
+framåt.
+Exempel: 10  * = 49152
+Om Du inte anger någon startadress kommer maskinkoden att läggas på adress
+$033C (828) och framåt (d v s  i kassetbufferten).
+
+
+Operatorer:
+
+För att underlätta för programmeraren tillåter ASM 64 att man använder fyra
+olika operatorer vid programskrivningen :
+Operatorerna  + och -  används på vanligt sätt, t ex
+  INC PEKARE+1  ; Öka högbyte av PEKARE
+  LDX #ANTAL-10 ; Ladda X-registret med ANTAL-10
+
+Observera att uttryck med operatorer beräknas vid assembleringen, inte då
+man kör programmet. Man kan t ex inte skriva LDA ANTAL+PEKARE  i stället för
+LDX PEKARE
+LDA ANTAL,X
+
+Det finns ytterligare två operatorer, < och >, som används för att plocka ut
+låg- eller högbyte av ett tal.
+< TAL  betyder lågbyte av TAL
+> TAL  betyder högbyte av TAL
+<$2233 är t ex lika med $33 och >$2233 är samma sak som $22. Tänk på att
+>$2233+1 inte är samma sak som >$2234, utan blir $22+1 = $23.
+
+Detta fungerar förstås likadant på såväl decimala talvärden som labels.
+Exempel: Du vill lägga in en pekare (vektor) på adresserna $0350 och $0351
+till rutinen JOYSTICK :
+
+  10 LDA # <JOYSTICK ; A = lågbyte av adressen till JOYSTICK
+  20 STA $0350       ; Spara lågbyte
+  30 LDA # >JOYSTICK ; Ladda A med högbyte
+  40 STA $0351       ; Spara högbyte
+
+
+Assemblatorinstruktioner:
+
+BYT
+Instruktionen BYT används för att lägga in data i datorns minne vid
+assembleringen.
+BYT påminner om BASICs DATA-satser. Du kan skriva in både 8-bitars och
+16-bitars tal samt textsträngar med BYT. Textsträngar skall markeras med
+citationstecken. Data separeras med kommatecken.
+Exempel: 10 BYT 1,2,4,8,6,$20,$A0A0
+         20 BYT "LEKSANDS IF",0
+Det som skrivs i en BYT-sats kommer alltså att ligga i minnet redan när man
+startar sitt program.
+
+För att komma åt tabellerna, strängarna etc kan man t ex använda sig av en
+label och indexerad adressering.
+
+Exempel: Utskrift av texten 'HEJ RULLE'
+         10 * = 49152         ; Startadress
+         20 LDY #0            ; Förbered läsning av data
+         30 LOOP LDA TEXT,Y   ; Läs ett tecken
+         40      JSR $FFD2    ; Skriv ut tecknet i ackumulatorn
+         50      INY          ; Peka på nästa tecken
+         60      CPY #9       ; Har 9 tecken skrivits ut?
+         70      BNE LOOP     ; Om inte, skriv ut nästa
+         80 RTS               ; Tillbaka
+         90 TEXT BYT "HEJ RULLE"  ; Data som skrivs ut
+
+END
+När assemblatorn kommer till instruktionen END kommer assembleringen att
+avslutas på den raden. END är användbart om Du vill blanda BASIC och
+assemblerprogram.
+
+PMX
+Om Du gör ett långt assemblerprogram kan maskinkoden komma att skriva över
+viktiga data i minnet. För att gardera Dig mot det kan Du sätta en gräns för
+maskinkodsprogrammets storlek. Det görs med instruktionen PMX = högsta
+tillåtna adressen. Om assemblatorn upptäcker att koden tar upp för mycket
+plats fås felmeddelandet 'Out of codespace'. PMX (Program MaX) bör stå i
+början av Dina progarm. Observera mellanslaget mellan PMX och = ! Om PMX
+inte används sätts högsta adressen till $CFF0.
+
+Exempel:  10 * = $C000
+          20 PMX = $C0FF    ; Sätt högsta adress till $C0FF
+
+
+Extra BASIC-kommandon:
+
+ASM 64 innehåller fyra extra kommandon som kan användas i direkt läge,
+ungefär som LIST, RUN etc.
+Dessa är:
+
+Assemble   : Syntax : @A radnummer
+Startar assemblering fr o m radnummer. Om radnumret utelämnas startar
+assembleringen på den första raden. Assembleringen kan avbrytas med
+STOP-tangenten.
+Exempel: Starta assembleringen på rad 1000
+         Skriv: @A 1000
+
+Save       : Syntax : @S "filnamn",enhetsnr : startadress,slutadress
+Sparar minnet mellan 'startadress' och 'slutadress'. 'enhetsnr' = 8 för
+diskdrive och 1 för bandspelare. Observera kolonet mellan enhetsnr och
+startadress.
+Exempel: Spara minnet från 49152 till 49300 på disk
+         @S "MASKINKOD" , 8 : 49152 , 49300
+
+Number     : Syntax : @N uttryck
+Visar värdet av 'uttryck' i både decimal och hexadecimal form. 'uttryck' kan
+bestå av både tal och symboler (labels).
+Även innehållet på adressen som motsvarar 'uttryck' visas, dels som
+8-bitars tal (byte) dels som 16-bitars tal (word), där adressen 'uttryck'
+innehåller den låga byten och adressen 'uttryck'+1 den innehåller den höga
+byten av talet.
+Exempel:
+         POKE 251,32 : POKE 252,240 : @N 251
+(ger utskriften)
+         251 $00FB  BYTE=$20  WORD=$F020
+där $00FB är 251 hexadecimalt, $20 är innehållet i adress 251 och $F020 är
+innehållet i 251 plus 256 * innehållet i 252 (= 32+256*240 = 61472 = $F020)
+ @N kan användas vid omvandling mellan hexadecimala och decimala tal. Du kan
+dessutom ta reda på vilken adress en label har, samt enkelt kontrollera
+innehållet på den adressen.
+ Number-kommandot använder adresserna 176 t o m 183 samt adress 2. Om Du
+vill kolla innehållet på dessa adresser får Du använda PEEK istället.
+
+Renumber   : Syntax : @R gammal start, ny start, nytt steg
+Omnumrerar programmet från och med 'gammal start'. Radnumren börjar på 'ny
+start' och steglängden blir 'nytt steg'.
+Exempel:  @R 2300,4000,10
+
+
+Minnesuppdelning, omstart:
+
+ASM 64 reserverar en del av RAM för eget bruk. Själva assemblatorn upptar
+området mellan $9300 (37632) och $9FFF (40959). (I vanliga fall en del av
+BASIC-textens utrymme).
+Tillgängligt minne för programtexten blir från $0800 till $92F0, totalt ca
+35 kilobyte.
+Labels lagras under assembleringen på adress $A000 och uppåt.
+
+För att starta om ASM 64 (OBS : endast efter en reset) srkiver Du  'SYS
+39646'.
+
+
+Felmeddelanden:
+
+Meddelande:              Möjlig förklaring:
+
+Branch too long error    Ett hopp med relativ adressering är längre än
+                         +127 eller -128 adresser
+
+Illegal mode error       Felaktigt adresseringssätt
+                         (t ex STA #100)
+
+Label exists error       En label (symbol) är definierat till två olika
+                         värden (finns på två ställen i texten)
+
+Number value error       Ett talvärde är större än 65535 ($FFFF) eller
+                         mindre än 0. Värden kan ev. vara ett delresultat
+                         i ett uttryck. Ex 1-4+5 = -3+5
+
+Out of codespace error   Maskinkoden tar mera minne än vad som är tillåtet
+                         enligt PMX-direktivet.
+
+Syntax error             Kan vara ett otillåtet tecken eller en felstavad
+                         instruktion. Tänk också på att en label som står
+                         ensam på en rad måste ha ett semikolon eller ett
+                         utropstecken sist.
+
+Too many labels error    Dina labels tar upp för mycket minne (max 8
+                         kilobyte). Försök förkorta labelnamnen.
+
+Unknown label error      Du har använt en label som assemblatorn inte
+                         känner igen. Kan t ex bero på felstavning av
+                         labelnamnet eller att labels ligger i 'fel'
+                         ordning, typ: 10  A = B
+                                       20  B = C
+                                       30  C = D
+                                       40  D = 1
+
+Meddelandet 'Aborted' betyder att assembleringen avbröts med STOP-tangenten.
+
+Efter varje felmeddelande skrivs ut på vilken rad felet påträffades.
+
+---------------------------------------------
+*  Lycka till med användningen av ASM 64 !  *
+---------------------------------------------
+
+Copyright, ansvar:
+
+ASM 64 : Copyright  1989  Erik Pettersson, Datormagazin.
+Alla rättigheter förbehållna.
+
+Programvaran (assemblatorn) är noggrannt testad. Säljaren påtager sig dock
+inget ansvar för skador eller andra förluster som skulle kunna inträffa i
+samband med användningen av programvaran.
+Försäljningen sker endast under dessa förutsättningar.
+*********
+
+End of the International Project 64 etext of the ASM 64 manual.
+
+*********

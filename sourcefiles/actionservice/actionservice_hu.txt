@@ -1,0 +1,340 @@
+*********
+
+Welcome to iDOC= - the international CBM documentation project!
+
+The goal of iDOC= is to preserve (non-English) Commodore related documents
+in electronic text format that might otherwise cease to exist with the rapid
+advancement of computer technology and declining interest in 8-bit computers
+on the part of the general population. If you would like to help by
+converting Commodore related hardcopy documents to electronic texts please
+contact the manager of iDOC=, Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names consists of a reasonably short unique title, followed by the
+document language. Two optional fields follow; first the document version (0
+for incomplete texts, version 1 is usually unnumbered), and then the
+document source, if there are more than one. Finally, the document is given
+a .txt extension.
+
+The author(s) of the original document and members of iDOC= make no
+representations about the accuracy or suitability of this material for any
+purpose. This etext is provided "as-is". Please refer to the warranty of the
+original document, if any, that may included in this etext. No other
+warranties, express or implied, are made to you as to the etext or any
+medium it may be on. Neither the author(s) nor the members of iDOC= will
+assume liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext. Therefore
+if you read this document or use the information herein you do so at your
+own risk.
+
+*********
+
+The iDOC= etext of the Action Service manual, converted to text by Adam
+Dohos <dohi@matavnet.hu>
+
+actionservice_hu.txt, August 2001, etext #72.
+
+*********
+
+Action Service (Titkos küldetés)
+
+A helyszín egy szigorúan titkos kiképzõközpont valahol Európában...Az
+Akciócsoport legkiválóbb újoncainak egy napot kell itt eltölteniük, hogy
+felkészüljenek szuper titkos küldetésükre. A kiképzést a híres Cobra parancsnok
+vezeti.
+
+Számodra is itt a nagy lehetõség, ha önként jelentkezel a veszélyes küldetésre.
+Részvételed és szereped attól függ, milyen sikerrel haladsz végig a gyakorlópályán.
+
+A kemény válogatás után meglátod, hogy maga a küldetés sem sétagalopp, hanem veszélyes
+feladat, ahol még az életedet is kockáztatnod kell.
+
+Gondold meg jól! Ez az utolsó pillanat, hogy összeszedd a cókmókodat, és hazamenj!
+
+
+----- ACTION SERVICE 1: GYAKORLÓPÁLYA -----
+
+A játék két üzemmódban játszható: a képernyõn látható irányító panel
+megfelelõ nyomógombjának lenyomásával választhatsz közülük.
+
+
+JÁTÉKMÓD:
+
+A feladat három különbözõ tesztbõl áll.
+
+ERÕNLÉTI teszt, ahol akadályokat kell leküzdened (falak, vizesárkok, létrák...),
+amilyen gyorsan csak lehet. A másodperc töredéke alatt kell végrehajtanod parancsbokaid
+utasításait, úgy, hogy közben Rex, a harci kutya, akit arra képeztek ki, hogy téged
+mindenben akadályozzon, el ne kapjon.
+
+KOCKÁZAT gyakorlat: itt azt kell megmutatnod, hogyan bánsz a kézigránáttal és a bombával,
+hogyan tudod kikerülni az aknákat és a földet pásztázó kóbor lövedékeket. Ha mindez
+sikerült, már csak az a kérdés, hogyan lógj meg Rex elõl, aki még mindig a sarkadban van.
+
+HARCI gyakorlat: szemtõl szemben az ellenséggel! Ezek semmit sem hagynak ki, mindent
+bevetnek, hogy leterítsenek! Készülj fel a legrosszabbakra: gumilövedékkel, gránátokkal,
+kézzel-lábbal jönnek ellened. Az õrök semlegesítésére és leterítésére minden módszer
+megengedett - még a csalás is! Egy plusz szolgáltatás:
+
+
+TERVEZÉSI ÜZEMMÓD:
+
+Programunk tartalmaz egy olyan tervezõeszközt, amelynek segítségével mindenki
+megtervezheti a saját elképzelése szerinti pályát, beleértve a rejtett csapdákat is.
+Ezek után talán már számodra is nyilvánvaló, hogy az ACTION SERVICE több mint egy
+hagyományos akciójáték: olyan fantasztikus különlegesség, amely egy játékban ötvözi
+az akció és a kaland minden izgalmát.
+
+
+HASZNÁLATI UTASÍTÁS
+
+Betöltés: LOAD/RETURN
+Vezérlés: billentyûzetrõl vagy joystickrõl
+
+Billentyûzet/joystick megfeleltetés:
+
+   font jel
+   A  +  D
+      2
+
+A képernyõn lévõ vezérlõpanel:
+
+  1   2   3   4
+  5   6   7   8
+
+   B    I    J
+
+
+JÁTÉKMÓD
+
+Minden betöltés után játék üzemmódban indul a program. A játék során a vezérlõpanelrõl
+adhatunk utasításokat. Ez 8 billentyût tartalmaz: egy indítógombot (I), valamint a
+jobbra-balra nyilat (J-B).
+
+Az egyes funkciók kiválasztása a vezérlõpanel segítségével a következõképpen történik:
+
+- Állítsd a villogó kurzort az egyik vezérlõbillentyûre
+- Nyomd meg a tûzgombot, ekkor a vezérlõbillentyû színe megváltozik.
+
+
+A vezérlõpanel funkciói:
+
+1. Az eddig elért 12 legjobb eredmény.
+2. Kiszállás a játékból, visszatérés a BASIC-be.
+3. Névváltoztatás: a J vagy B segítségével kiválasztott nevet megváltoztathatjuk.
+   Ehhez az I kiválasztásával törölni kell az eredeti nevet, majd a billentyûzetrõl
+   be kell írni saját nevünket. A névválaztást a RETURN leütésével fejezhetjük be.
+4. Gyakorlat kiválasztása és indítása: a B vagy R segítségével kiválasztott gyakorlat
+   az I lenyomására indul. Csak az elsõ három gyakorlat számít küldetésnek. A negyedik
+   gyakorlat színhelye a tervezõ módban általunk kialakított pálya.
+5. Az eredménytábla betöltése, illetve kimentése. Azt, hogy betölteni vagy kimenteni
+   akarjuk az eredményeket (LOAD vagy SAVE), a J vagy a B segítségével választhatjuk ki.
+   A file neve az éppen látható játékosnévvel lesz azonos.
+6. Használaton kívüli billentyû.
+7. Pontszám I: kiírja a soros játékos addigi eredményeit.
+8. Pontszám II: kiírja a soros játék öt legjobb játékosának nevét.
+
+
+PONTOZÁS
+
+A pontszámok kimentéséhez használjunk üres eredménykazettát. Ezt csak a pontszámok
+betöltése vagy kimentése esetén tegyük be a magnóba.
+
+
+A JÁTÉK VEZÉRLÉSE:
+
+A billentyûzet bal felsõ sarkában található <- gomb megnyomásával bármely játék
+megszakítható.
+
+RUN/STOP-pal a játék megállítható.
+
+Induló helyzet: ÁLL
+
+			gránátdobás
+			 font jel
+merülés, feküdj!: A 			D: futás
+			    *
+			 térdelés
+
+Tûz vagy jobb SHIFT: TÛZ (csak a 3-5 pályákon)
+
+
+D: Futás
+
+Ha álló helyzetben megnyomod a D billentyût (vagy a joysticket jobbra húzod),
+a játékos futni kezd. Ha ilyenkor megnyomod a tüzet (jobboldali SHIFT vagy joystick
+TÛZ) a következõ történhet, ttól függõen, hogy a pálya melyik részén vagy:
+
+- alacsony objektum átugrása
+- függeszkedés létrán
+- függeszkedés kötélen
+- átmászás falon
+
+
+SHIFT + TÛZ
+
+fordulás jobbra: A   TÛZ/SHIFT   D: Fordulás balra
+
+			 *
+		    fegyvert le!
+
+
+Font jel: GRÁNÁTDOBÁS (ha korábban felvettél egyet) vagy KÖZELHARC
+
+       hátrahajlás
+	font jel
+
+rúgás: A	D: ütés
+	
+	   *
+	térdelés
+
+TÛZ: vissza alapállásba
+
+
+A: MERÜLÉS, FEKÜDJ
+
+	fekvõtámasz fel
+	    font jel
+
+kúszás: A		D: kúszás
+	       *
+	fekvõtámasz le
+
+Amikor megjelenik a fekvõtámasz ikon, 10 fekvõtámaszt kell végezned,
+a fel-le irány váltogatásával.
+
+TÛZ: vissza alapállásba
+
+
+*: TÉRDELÕ HELYZET
+
+D: kézigránát felvétele
+   robbanóanyag felvétele és eldobása
+   robbanószerkezet állítása
+
+*: feküdj
+
+TÛZ: vissza az elõzõ helyzetbe
+
+
+TERVEZÕMÓD
+
+Fordítsuk meg a kazettát és csévéljük vissza. Válasszuk ki a vezérlõpanelen az EDIT
+funkciót. Ezután a tervezõprogram betöltõdik. A pálya összesen 256 egyforma
+pályaszeletbõl áll. Minden pályaszeleten 4 különbözõ típusú elem állítható fel:
+
+- díszlet (feltétlenül szükséges)
+- a figura elõtt vagy mögött elhelyezett akadály (elhagyható)
+- a pálya szintmagassága
+- csapda (elhagyható)
+
+
+Egy pályaszelet összeállítása:
+
+
+I. A díszlet elhelyezése: válasszuk ki a nyíl segítségével a LANDSCAPE (tájkép)
+funkciót, majd válasszuk ki azt az elemet, amely a legjobban tetszik. Ha a sötét
+részre lövünk, másik elemkészlet jelenik meg.
+
+
+II. Akadály kiválasztása: válasszuk ki az ITEM (elem) funkciót.
+
+A - Jelöljük ki, hogy az akadály a háttérben - BACK ITEM -, vagy az elõtérben
+    - FRONT ITEM - legyen.
+
+B - Válasszunk ki egy tárgyat a készletbõl. (Ha a képernyõ jobb alsór részében
+    látható vízszintes nyilakra lövünk, másik készlet jelenik meg.)
+
+C - Helyezzük el az akadályt vízszintesen az X-szel jelzett skálán.
+
+D - Állítsuk be az akadály függõleges helyzetét az Y-nal jelzett skálán.
+
+A, B, C, D funkciók tetszõleges sorrendben cserélgethetõk.
+
+
+III. A MAN funkciót kiválasztva az Y skálán beállíthatjuk a játékos függõleges
+helyzetét a padlóhoz képest, az Y skálán. Lehetõségünk van arra is, hogy a figurát
+az adott pozicióban eltüntessük (OFF) vagy újra megjelenítsük (ON).
+
+
+IV. Csapdaállítás - ez a funkció azért fontos, mert a játék izgalmát nagyban
+befolyásolja a csapda ügyes felllítása.
+
+Válasszuk ki a TRAP (csapda) funkciót. A kiválasztott csapda száma megjelenik
+az aktuális pályaszelet fölött. Ha a csapdalista fehér mezõjére tévedünk, a
+csapda törlõdik.
+
+A csapdák két csoportra oszthatók aszerint, hogy a szükséges-e hozzájuk akadályt
+állítani vagy sem. Például a 2. csapda JUMP/FALL (HOPP/KOPP) csak valamilyen
+akadállyal együtt használható (alacsony fal, homokzsák...).
+
+A csapdák másik csoportja DO 10 PUSHUPS (Csinálj 10 fekvõtámaszt) vagy CLOSE COMBAT
+(közelharc) független mind a díszlettõl, mind az akadályoktól. Így bárhol feltûnhetnek,
+de érthetõ okoknál fogva, nem célszerû pl. egy tó közepén csapdát állítani...
+
+A csapdák elnevezése:
+
+1. JUMP OVER WALL (Ugorj át a falon) - magas falnál
+2. JUMP/FALL (Hopp/Kopp) - alacsony akadályoknál (pl. alacsony fal, homokzsák, marmon kanna)
+3. JUMP/SLIP (Hopp/Csussz) - felborult vagy horpadt hordónál
+4. DOG START (Kapd el) - amint túljutsz a csapdán, a kutya a nyomodba ered.
+5. MINE (Akna) - csak a háttérben elhelyezett akna akadállyal együtt.
+6. GRENADE (Kézigránát) - csak az elõtérben elhelyezett gránát akadállyal együtt.
+7. DROWN (Vízbefuli) - csak olyan tavon, ahol nincs híd
+8. GET CHARGE (Kapd föl) - csak az elõtérben elhelyezett kis doboz akadállyal együtt,
+   ésszerû távolságban a páncélajtótól.
+9. SET CHARGE (Rakd le) - csak páncélajtó díszlettel együtt.
+10. REAR ATTACK (Orvtámadás) - majdnem mindenhol. Az ellenség akkor támad, amint túljutsz a csapdán.
+11. LOW BURST (Repesztámadás alacsonyan) - majdnem mindenhol
+12. HIGH BURST (Repesztámadás magasan) - majdnem mindenhol
+13. CLOSE COMBAT (Közelharc) - majdnem mindenhol. Az ellenség akkor támad, amint túljutsz a csapdán.
+14. SHOOTER (Lövész) - majdnem mindenhol. Az ellenség akkor támad, amint túljutsz a csapdán.
+15. Használaton kívüli csapda.
+16. DO 10 PUSHUPS (Csinálj 10 fekvõtámaszt) - majdnem mindenhol.
+17. GRENADE COMBAT (Gránátcsata) - ezt a csapdát tedd a kézigránátcsapda elé. Az ellenség akkor támad, amint túljutsz a csapdán.
+18. AIR-RAID (Légitámadás) - majdnem mindenhol.
+19. SWIM (Úszás) - csak tónál
+20. CRAWL (Kúszás) - csak az elõtérben elhelyezett vízcsõvel együtt.
+
+
+V. OPTION REPEAT (Megismételt kísérlet)
+
+E nyomógomb segítségével az utolsó kiválasztott funkció ismételhetõ meg.
+
+
+VI. DISK
+
+E funkció segítségével vagy a már összeállított saját pálya-forgatókönyv menthetõ
+ki (Save), vagy egy korábbi változat tölthetõ be (Load) és módosítható.
+
+
+VII. END (Vége)
+
+Kiszállás a tervezõmódból és visszatérés a játékmódba. A tervezett pálya a 4. számú
+küldetésben kipróbálható.
+
+
+VIII: RESET (Törlés)
+
+Az eddig elkészült pálya törlése.
+
+Egy jó tanács: minél többet gyakorolsz játékmódban, s minél több idõt fordítasz
+a visszajátszások tanulmányozására, annál jobban megérted az Action Service
+gondolatmenetét, s annál jobb saját pályát tudsz szerkeszteni. Ha már igazán
+profi vagy, tanulmányozhatod és módosíthatod a tervezõmód DISK funkcióból betölthetõ
+DEMOját.
+*********
+
+End of the iDOC= etext of the Action Service manual.
+
+*********

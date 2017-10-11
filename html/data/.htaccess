@@ -1,0 +1,4 @@
+# Förbjud åtkomst till denna katalog via webbservern
+
+RewriteEngine off
+Deny from all

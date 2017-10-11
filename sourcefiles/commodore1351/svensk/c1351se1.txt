@@ -1,0 +1,608 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore 64
+related documents in electronic text format that might otherwise cease to
+exist with the rapid advancement of computer technology and declining
+interest in 8-bit computers on the part of the general population. If you
+would like to help by converting C64 related hardcopy documents to
+electronic texts please contact the manager of International Project 64,
+Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The first
+characters of the file name are an abbreviation of the original document
+name and the language of the etext. The version number of the etext follows
+next. After that a letter may appear to indicate the particular source of
+the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International Project
+64 make no representations about the accuracy or suitability of this
+material for any purpose. This etext is provided "as-is". Please refer to
+the warranty of the original document, if any, that may included in this
+etext. No other warranties, express or implied, are made to you as to the
+etext or any medium it may be on. Neither the author(s) nor the members of
+International Project 64 will assume liability for damages either from the
+direct or indirect use of this etext or from the distribution of or
+modification to this etext. Therefore if you read this document or use the
+information herein you do so at your own risk.
+
+*********
+
+The International Project 64 etext of the Commodore 1351 Mouse Swedish
+manual, converted to text by Peter Karlsson <pk@abc.se>.
+
+C1351SE1.TXT, June 1998, etext #37.
+
+*********
+
+     Anvåndar- <sic!>
+      Manual
+     Mus 1351
+
+C 64, C 64 C, C 128
+
+
+[1.] Kort om denna manual
+
+I huvudsak består denna manual av två delar. Den första delen består av en
+introduktion och allmänna råd för handhavande av 1351 Mus. Denna del är för
+användare som har programvara avsedd för musstyrning. Den andra delen
+innehåller information för dem som är intresserade av att skriva egna
+applikationer.
+
+
+[2.] Introduktion
+
+Commodore 1351 Mus är framtagen för att användas tillsammans med Commodore
+64 och Commodore 128. Den har två sk arbetslägen, dels som Joystick och dels
+som mus.
+
+I joystickläge imiterar musen en Joystick och kan användas tillsammans med
+program som är gjorda för att styras av en Joystick. I detta läge används
+den vänstra knappen på samma sätt som knappen på en Joystick och den högra
+knappen har ingen funktion. För att initiera joystickläge, anslut musen i
+joystickport 1 eller joystickport 2 i enlighet med de instruktioner som
+anges i det program som skall användas, innan strömmen slås på datorn. Håll
+sedan höger knapp på musen nedtryckt och slå på strömmen till datorn. Nu
+befinner man sig i joystickläge.
+
+I sitt andra läge använder musen en ny teknik för proportionell rörelse, som
+medger snabba och smidiga förflyttningar över skärmen. Detta kräver att det
+program man avser att använda har en drivrutin för mus. Äldre program saknar
+denna drivrutin och man får då använda musen i joystickläge enligt ovan.
+
+
+[3.] Rengöring
+
+För att musen skall svara snabbt på de rörelser man gör, krävs det att kulan
+snurrar fritt och obehindrat. Därför är det viktigt att hålla den ren från
+smuts och skräp. Tag för vana att med jämna mellanrum plocka ut kulan och
+torka den ren med en mjuk trasa. Se fig.
+
+[Bild på hur man tar ut kulan]
+
+[Bild på en öppen mus]
+
+Gör rent utrymmet där kulan ligger genom att blåsa bort ev skräp. I detta
+utrymme finns tre metallrullar som kan rengöras med en bomullstopp fuktad
+med ren alkohol. Lägg därefter tillbaka kulan och tryck fast bottenplattan.
+
+[Bild på hur man kan rengöra kulan]
+
+
+[4.] Introduktion
+
+Detta är en kortfattad handledning som avser att ge grundläggande
+information för dem som önskar använda musen i egna applikationer. Som
+tidigare nämnts finns det två grundläggande tekniker som kan användas vid
+styrning med hjälp av musen, nämligen:
+
+1) Joystickläge
+2) Proportionell förflyttning
+
+Proportionell förflyttning kan användas både till Commodore 64 och Commodore
+128, och använder en speciell drivrutin i maskinkod för optimal funktion.
+Vilket läge som används bestäms vid uppstart. Om höger knapp på musen hålls
+nedtryckt vid uppstart kommer man att hamna i joytstickläge, i annat fall
+hamnar man automatiskt i det proportionella läget. Avsikten med att
+tillhandahålla Joystickläget är att megde användning av musen även i program
+som inte innehåller en speciell drivrutin för proportionell styrning.
+
+
+[5.] Joystickläge
+
+1) Om en förflyttning av musen sker aktiveras en joysticksignal under 20 ms
+   i motsvarande riktning.
+2) Den vänstra musknappen är definierad att motsvara aktiveringsknappen på
+   en joystick.
+3) Den högra knappen är definierad i SID POTX-registret. Om höger knapp är
+   nedtryckt kommer SID POTX-registret att innehålla ett värde < $80. Om
+   knappen inte är nedtryckt kommer registret att innehålla ett värde >=
+   $80.
+
+Se också anmärkning under rubriken SID REGISTER. För de flesta applikationer
+använder man en standarddrivrutin för joystick och lämnar höger knapp
+odefinierad.
+
+
+[6.] Proportionell förflyttning
+
+Funktionerna i proportionellt läge är följande:
+
+1) Rörelser registreras internt. Musens position MOD 64 överförs till SID
+   POTX- och POTY-registren med intervall 512 µs., automatiskt.
+
+   POTX-registret läser av x-koordinaten för musens position och POTY läser
+   av y-koordinaten.
+
+   Registrets innehåll ser ut på följande sätt:
+
+                 +-------------------------------+
+   Figur:        | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
+                 +-------------------------------+
+                 | X | P5| P4| P3| P2| P1| P0| N |
+                 +-------------------------------+
+   där:
+        X ............. ej signifikant bit.
+	P5-P0 ......... är musens position MOD 64.
+	N ............. är en speciell (noise) bit (fortsätt läs)
+
+2) Vänster knapp är definierad på samma sätt som aktiveringsknappen på en
+   joystick.
+
+3) Höger knapp är definierad som position UPP på en joystick.
+
+
+[7.] Mjukvaruanpassning
+
+1) Då vänster och höger knapp motsvaras av joystickvärden, använder man en
+   motsvarande avkänningsrutin för att läsa av respektive värde.
+
+   Notera att det är lämpligt att försöka få programmet att särskilja en
+   tangenttryckning resp då en rad eler kolumn aktiveras (dvs en
+   joystickliknande signal).
+
+2) Positionsangivelserna hanteras lämpligen av en 50 Hz interruptrutin
+   (förslagsvis placeras denna rutin i början, se också under rubriken
+   SIDREGISTER).
+
+Förslag:
+
+1) Läs av muspositionen MOD 64.
+
+2) Bestäm om musen har flyttats genom att jämföra nuvarande position med
+   en sparad angivelse av föregående position.
+
+3) Om musen har flyttats, modifiera markörens position.
+
+   Musen försöker att sända sitt läge till SID-registret. Tyvärr finns det
+   en viss störning i överföringen. Detta betyder bland annat att även om
+   musen ligger still kan det vara så att POT-registret svänger mellan $80
+   och $70. Dett aksulle resultera i att musläget hoppar mellan två punkter.
+
+   Därför är det nödvändigt att ta hänsyn till den låga biten i
+   POT-registret innan man bestämmer om musens läge har ändrats.
+
+
+[8.] Var uppmärksam på detta i SID-registret
+
+I C 64 och C 128 är SID-pot-linjerna anslutna till båda joystickportarna. En
+4066 analog omkopplare används för att koppla om mellan de två portarna
+baserat på en av tangentbordets scanlinjer. Detta betyder att de normala
+tangentscanavbrotten (interrupt) tillfälligt påverkar de värden som skickas
+till POT-registren. För att få tillförlitliga värden måste POT-linjerna
+därför vara anslutna till musen minst 1,6 ms innan värdena i POT-registret
+är korrekt.
+
+Det bästa sättet att försäkra sig om att detta sker är att föra in
+mushanteringsmjukvaran före tangentscanningen i IRQ-hanteraren. Gör man
+detta kan man vara mer eller mindre säker på att tangentscanlinjerna är
+tillräckligt stabila innan POT-registret avläses av musdrivrutinen.
+
+
+[9.] Appendix
+
+  BASIC AND MACHINE
+  LANGUAGE PROGRAMS
+   FOR 1351 MOUSE
+       AND C64
+
+
+start tok64 64mouse
+100 GOSUB140:GOSUB330
+110 v=13*4096:POKEv+21,1:POKEv+39,1:POKEv+0,100:POKEv+1,100:POKEv+16,0
+120 POKE2040,56:SYS12*4096+256
+130 END
+140 FORx=0TO129:READa$:GOSUB430:POKE49408+x,y:NEXTx:RETURN
+150 DATAad,15,03,c9,c1,f0,19,08
+160 DATA78,ad,14,03,8d,00,c0,ad
+170 DATA15,03,8d,01,c0,a9,21,8d
+180 DATA14,03,a9,c1,8d,15,03,28
+190 DATA60,d8,ad,19,d4,ac,02,c0
+200 DATA20,58,c1,8c,02,c0,18,6d
+210 DATA00,d0,8d,00,d0,8a,69,00
+220 DATA29,01,4d,10,d0,8d,10,d0
+230 DATAad,1a,d4,ac,03,c0,20,58
+240 DATAc1,8c,03,c0,38,49,ff,6d
+250 DATA01,d0,8d,01,d0,6c,00,c0
+260 DATA8c,05,c0,8d.04,c0,a2,00
+270 DATA38,ed,05,c0,29,7f,c9,40
+280 DATAb0,07,4a,f0,12,ac,04,c0
+290 DATA60,09,c0,c9,ff,f0,08,38
+300 DATA6a,a2,ff,ac,04,c0,60,a9
+310 DATA00,60
+320 REM .......................
+330 FORx=0TO63:READa$:GOSUB430:POKE3584+x,y:NEXTx:RETURN
+340 DATAf8,00,00,90,00,00,b8,00
+350 DATA00,dc,00,00,8e,00,00,07
+360 DATA00,00,02,00,00,00,00,00
+370 DATA00,00,00,00,00,00,00,00
+380 DATA00,00,00,00,00,00,00,00
+390 DATA00,00,00,00,00,00,00,00
+400 DATA00,00,00,00,00,00,00,00
+410 DATA00,00,00,00,00,00,00,00
+420 REM .......................
+430 y=1:y1=0
+440 IFLEFT$(a$,1)<>MID$("0123456789abcdef",y,1)THENy=y+1:GOTO440
+450 y1=(y-1)*16:y=1
+460 IFRIGHT$(a$,1)<>MID$("0123456789abcdef",y,1)THENy=y+1:GOTO460
+470 y=y1+y-1:RETURN
+stop tok64
+
+
+;
+;	C64 mouse driver for BASIC 2.0 applications
+;
+
+firq	= $0314
+vic	= $d000
+sid	= $d400
+potx	= sid+$19
+poty	= sid+$1a
+
+vicdata	$d000		;vic registers
+xpos	= vicdata+$00	;low order x position
+ypos	= vicdata+$01	;y position
+xposmsb	= vicdata+$10	;bit 0 is high order x position
+
+	* = $c000
+	
+firq2	* = *+2
+opotx	* = *+1
+opoty	* = *+1
+newvalue	* = *+1
+oldvalue	* = *+1
+
+	* = $c100
+	
+install	lda firq+1
+	cmp #>mirq
+	beq 90$
+	php
+	sei
+	lda firq
+	sta firq2
+	lda firq+1
+	sta firq2+1
+	
+	lda #<mirq
+	sta firq+1
+		
+	plp
+90$	rts	
+
+mirq	cld		;just in case...
+	lda potx	;get delta values for x
+	ldy opotx
+	jsr movchk
+	sty opotx
+	
+	clc		;modify low order x position
+	adc xpos
+	sta xpos
+	txa
+	adc #$00
+	and #%00000001
+	eor xposmsb
+	sta xposmsb
+	
+	lda poty	;get delta value for y
+	ldy opoty
+	jsr movchk
+	sty opoty
+	
+			;modify y position (decrease y
+			;for increase in pot)
+	eor #$ff
+	adc ypos
+	sta ypos
+	
+90$	jmp (iirq2)	;continue w/ irq operation
+
+;movchk
+;	entry	y = old value of pot register
+;		a = current value of pot register
+;	exit	y = value to use for old value
+;		x,a = delta value for position
+
+movchk	sty oldvalue	;save old & new values
+	sta newvalue
+	ldx #0		;preload x w/ 0
+	
+	sec		;a <= a/2
+	sbc oldvalue
+	and #%01111111
+	cmp #%01000000	;if >0
+	bcs 50$
+	lsr a		;<= a/2
+	beq 80$			;	if <> 0
+	ldy newvalue	;		y <= newvalue
+	rts		;		return
+	
+50$	ora #%11000000	;else	or in high order bits
+	cmp #$ff		if <> -1
+	beq 80$
+	sec		;		a <= a/2
+	ror a
+	ldx #$ff	;		x <= -1
+	ldy newvalue	;		y <= newvalue
+	rts		;		return
+	
+80$	lda #0		;a <= 0
+	rts		;return w/ y = old value
+	
+	
+	         * * Cross Reference * *
+		 
+Reference flags (# = Definition, $ = Write, <BLANK> = Read)
+
+Symbol
+
+IIRQ	=0314	5#	26	31	33	27$	39$
+IIRQ2	 C000	18#	32$	345	34$	69
+INSTALL	 C100	26#
+MIRQ	 C121	27	36	38	44#
+MOVCHK	 C158	47	61	77#
+NEWVALUE C004	21#	78$	88	97
+OLDVALUE C005	22#	77$	82
+OPOTX	 C002	19#	46	48$
+OPOTY	 C003	20#	60	62$
+POTX	=D419	8#	45
+POTY	=D41A	9#	59
+SID	=D400	7#	8	9
+VIC	=D000	6#
+VICDATA	=D000	11#	12	13	14
+XPOS	=D000	12#	51	52$
+XPOSMSB	=D010	14#	56	57$
+YPOS	=D001	13#	66	67$
+
+
+  BASIC AND MACHINE
+  LANGUAGE PROGRAMS
+    FOR 1351 MOUSE
+       AND C128
+
+
+start tok128 128mouse
+100 GOSUB230:GOSUB420:SYS6144
+120 ba=DEC("0a04"):POKE va,1ORPEEK(ba)
+130 SPRITE1,1,2:MOVSPR1,100,100
+140 GRAPHIC1,1:CHAR 1,8,1,"1351 mouse paint"
+150 DO:IF(JOY(1)AND128)THEN GOSUB 180
+160 IF (JOY(1) AND 1) THEN GRAPHIC1,1:CHAR1,8,1,"1351 mouse paint"
+170 LOOP
+180 x=RSPOS(1,0)-25:y=RSPOS(1,1)-51:x=-x*(x>0):y=-y*(y>0)
+190 LOCATE x,y:c=1-RDOT(2):DRAW c,x,y
+200 DO:x=RSPOS(1,0)-25:y=RSPOS(1,1)-51:x=-x*(x>0):y=-y*(y>0)
+210 DRAW c TO x, y:LOOP WHILE JOY(1) AND 128:RETURN
+220 REM .....................
+230 FORx=0TO135:READa$:POKE6144+x,DEC(a$):NEXTx:RETURN
+240 DATAad,15,03,c9,18,f0,19,08
+250 DATA78,ad,14,03,8d,f0,18,ad
+260 DATA15,03,8d,f1,18,a9,21,8d
+270 DATA14,03,a9,18,8d,15,03,28
+280 DATA60,d8,ad,7e,11,d0,33,ad
+290 DATA19,d4,ac,f2,18,20,5d,18
+300 DATA8c,f2,18,18,6d,d6,11,8d
+310 DATAd6,11,8a,69,00,29,01,4d
+320 DATAe6,11,8d,e6,11,ad,1a,d4
+330 DATAac,f3,18,20,5d,18,8c,f3
+340 DATA18,38,49,ff,6d,d7,11,8d
+360 DATAd7,11,6c,f0,18,8c,f5,18
+360 DATA8d,f4,18,a2,00,38,ed,f5
+370 DATA18,29,7f,c9,40,b0,07,4a
+380 DATAf0,12,ac,f4,18,60,09,c0
+390 DATAc9,ff,f0,08,38,6a,a2,ff
+400 DATAac,f4,18,60,a9,00,60,00
+410 REM ......................
+420 FORx=0TO63:READa$:POKEDEC("0e00")+x,DEC(a$):NEXTx:RETURN
+430 DATAf8,00,00,90,00,00,b8,00
+440 DATA00,dc,00,00,8e,00,00,07
+450 DATA00,00,02,00,00,00,00,00
+460 DATA00,00,00,00,00,00,00,00
+470 DATA00,00,00,00,00,00,00,00
+480 DATA00,00,00,00,00,00,00,00
+490 DATA00,00,00,00,00,00,00,00
+500 DATA00,00,00,00,00,00,00,00
+stop tok128
+
+
+;
+;	C128 mouse driver for BASIC 7.0 applications
+;
+
+firq	= $0314
+vic	= $d000
+sid	= $d400
+potx	= sid+$19
+poty	= sid+$1a
+
+active	= $117e		;if zero, then move sprite
+
+vicdata	$11d6		;basic's copy of vic register image
+xpos	= vicdata+$00	;basic's copy of vic register image
+ypos	= vicdata+$01	;y position
+xposmsb	= vicdata+$10	;bit 0 is high order x position
+
+	* = $18f0
+	
+firq2	* = *+2
+opotx	* = *+1
+opoty	* = *+1
+newvalue	* = *+1
+oldvalue	* = *+1
+
+	* = $1800
+	
+install	lda firq+1
+	cmp #>mirq
+	beq 90$
+	php
+	sei
+	lda firq
+	sta firq2+1
+	
+	lda #>mirq
+	sta firq
+	lda #>mirq
+	sta firq+1
+	
+	plp
+90$	rts	
+
+mirq	cld		;just in case...
+	lda active	;if basic is moving sprite
+	bne 90$		;   let basic have it (why not?)
+	lda potx	;get delta values for x
+	ldy opotx
+	jsr movchk
+	sty opotx
+	
+	clc		;modify low order x position
+	adc xpos
+	sta xpos
+	txa
+	adc #$00
+	and #%00000001
+	eor xposmsb
+	sta xposmsb
+	
+	lda poty	;get delta value for y
+	ldy opoty
+	jsr movchk
+	sty opoty
+
+	sec		;modify y position (decrease y
+			;for increase in pot)
+	eor #$ff
+	adc ypos
+	sta ypos
+	
+90$	jmp (iirq2)	;continue w/ irq operation
+
+;movchk
+;	entry	y = old value of pot register
+;		a = current value of pot register
+;	exit	y = value to use for old value
+;		x,a = delta value for position
+
+movchk	sty oldvalue	;save old & new values
+	sta newvalue
+	ldx #0		;preload x w/ 0
+	
+	sec		;a <= mod64(new-old)
+	sbc oldvalue
+	and #%01111111
+	cmp #%01000000	;if >0
+	bcs 50$
+	lsr a		;<= a%2
+	beq 80$		;	if <> 0
+	ldy newvalue	;		y <= newvalue
+	rts		;		return
+	
+50$	ora #%11000000	;else	or in high order bits
+	cmp #$ff		if <> -1
+	beq 80$
+	sec		;		a <= a/2
+	ror a
+	ldx #$ff	;		x <= -1
+	ldy newvalue	;		y <= newvalue
+	rts		;		return
+	
+80$	lda #0		;a <= 0
+	rts		;return w/ y = old value
+
+
+	         * * Cross Reference * *
+		 
+Reference flags (# = Definition, $ = Write, <BLANK> = Read)
+
+Symbol
+
+ACTIVE	=117E	11#	47
+IIRQ	=0314	5#	28	33	35	39$	41$
+IIRQ2	 18F0	20#	34$	36$	73
+INSTALL	 1800	28#
+MIRQ	 1821	29	38	40	46#
+MOVCHK	 185D	51	65	81#
+NEWVALUE 18F4	23#	82$	92	101
+OLDVALUE 18F5	24#	81$	86
+OPOTX	 18F2	21#	50	52$
+OPOTY	 18F3	22#	64	66$
+POTX	=D419	8#	49
+POTY	=D41A	9#	63
+SID	=D400	7#	8	9
+VIC	=D000	6#
+VICDATA	=11D6	13#	14	15	16
+XPOS	=11D6	14#	55	56$
+XPOSMSB	=11E6	16#	60	61$
+YPOS	=11D7	15#	70	71$
+
+
+                        1351 MOUSE PIN-OUT
+			
+                  +------------------------------+
+		   \    5    4    3    2    1   /
+		    \  *    *    *    *    *   /
+                     \                        /
+                      \   *    *    *    *   /
+		       \   9    8    7    6 /
+		        +------------------+
+			
+			
+          +---------------------------------------------+
+          |              CONNECTION TABLE               |
+          +---------------------------------------------+
+          |                  FUNCTION                   |
+          +---------+---------------+-------------------+
+          | PIN NO. | JOYSTICK MODE | PROPORTIONAL MODE |
+          +---------+---------------+-------------------+
+          |    1    | UP            | RIGHT BUTTON      |
+          |    2    | DOWN          | UNUSED            |
+          |    3    | LEFT          | UNUSED            |
+          |    4    | RIGHT         | UNUSED            |
+          |    5    | UNUSED        | Y-POSITION        |
+          |    6    | LEFT BUTTON   | LEFT BUTTON       |
+          |    7    | +5V           | +5V               |
+          |    8    | GND           | GND               |
+          |    9    | RIGHT BUTTON  | X-POSITION        |
+          +---------+---------------+-------------------+
+
+*********
+
+End of the International Project 64 etext of the Commodore 1351 Mouse
+Swedish manual.
+
+*********

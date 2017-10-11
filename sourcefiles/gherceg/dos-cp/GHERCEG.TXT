@@ -1,0 +1,694 @@
+
+
+[kls“ bor¡t¢:]
+
+A GONOSZ HERCEG
+
+Teljesen magyar nyelv– sz”veges kalandj t‚k
+
+C-64 LEMEZ
+
+KZIK™NYV
+
+
+[bels“ bor¡t¢: rekl m]
+
+
+A GONOSZ HERCEG
+
+A program bet”lt‚se: LOAD"*",8,1 /RETURN/
+                     RUN /RETURN/
+
+FIGYELEM! A program CARTRIDGE n‚lkl t”ltend“!
+          A j t‚k joystick-kal nem ir ny¡that¢!
+
+
+A program kezel‚se:
+
+A Gonosz Herceg teljesen magyar nyelv–, sz”veges kalandj t‚k, melyet
+sz¡nvonalas k‚pek illusztr lnak.
+
+A j t‚k st¡lusa ”tv”zi mag ban a kaland- ‚s szerepj t‚k elemeit. A
+programban nem kell sz”veget beg‚pelni, amely csak lass¡tan  ‚s
+bonyolultabb  tenn‚ a kezel‚st.
+
+
+A k‚perny“ fel‚p¡t‚se:
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³        Sz”vegmez“        ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³ A helysz¡nt  br zol¢ k‚p ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+A program bet”lt‚se ‚s az intr¢ lefut sa ut n kiv laszthatjuk a neknk
+legszimpatikusabbak szerepl“t, akivel azut n nekiv gunk a vesz‚lyes
+kalandoknak. A szerepl“ kiv laszt sa ut n r”gt”n a j t‚k k”zep‚be
+cs”ppennk. A sz”vegmez“ben az adott helysz¡n le¡r sa, illetve egy‚b
+inform ci¢k tal lhat¢k, illetve innen ir ny¡thatjuk a j t‚k cselekm‚ny‚t
+is. A sz”vegmez“ alatt az adott helysz¡nt bemutat¢ k‚p tal lhat¢. A
+megfelel“ cselekedet kiv laszt sa a sz”vegmez“ben l that¢ lehet“s‚gek
+mellett megjelen¡tett sz moknak megegyez“ billenty–k megnyom s val
+lehets‚ges. A j t‚k sor n a j t‚kosok tal lhatnak kl”nf‚le fegyvereket,
+p nc‚lokat valamint egy‚b t rgyakat, de nem mindegyik szerepl“
+haszn lhatja fel mindegyiket. Egy‚b t rgyak /pl. ruh k, italok/
+jav¡thatnak a kalandoz¢k tulajdons gain, de ronthatnak is rajta. Megint
+m s t rgyak szks‚gesek a j t‚k v‚gigj tsz s hoz, ezeket egy almen
+mutatja, hogy a birtokunkban vannak-e.
+
+Ebben az almenben tal lhat¢ az aktu lis p nc‚l ‚s fegyver megnevez‚se
+is. Ezen k¡v–l az leter“, a Sebz‚s, a T mad s, a M gia, az Arany ‚s a
+Gy¢gyital mennyis‚ge is. Ez az almen a "" billenty– megnyom s val
+h¡vhat¢ le.
+
+
+Az almenben tal lhat¢ pontok jelent‚se:
+
+leter“: A kalandor eg‚szs‚g‚nek  llapot t jel”li.
+         Ha s rga sz¡n–, akkor a maximumon van, a kalandornak nincsen
+         semmi baja.
+         Ha z”ld, akkor a maximum f”l”tt van, kalandorunk duzzad az
+         er“t“l.
+         Ha piros, akkor valamilyen sebesl‚st szerzett be h“snk.
+         Ha ez az ‚rt‚k 0 al  sllyed, akkor h“snk meghal.
+
+Sebz‚s: Az az ‚rt‚k, amelyt“l ellenfelnk tart¢san sebesl ha csap sunk
+        eltal lja.
+
+T mad s: Azt mutatja, mekkora a kalandoz¢ harci tud sa. Ez d”nti el, hogy
+         harcban ki tal lja el a m sikat.
+
+M gia: Megmutatja, hogy var zslatunk milyen hat s£ lesz. /01 - nem j”n
+       l‚tre, 02 - egyszeres hat s, 03 - k‚tszeres... stb./
+
+Az Arany a birtokunkban l‚v“ aranyp‚nzek ”sszeg‚t, m¡g a Gy¢gyital a
+gy¢gyitalok sz m t mutatja. Arany‚rt lehet fegyvereket, p nc‚lokat,
+var zslatokat ‚s egy‚b t rgyakat v s rolni, illetve egy-k‚t helyen
+fizetni. A gy¢gyitallal megcsappant leter“nket lehet regener lni.
+Haszn lata az almenben lenyomott "SPACE" billenty–vel lehets‚ges. Egy
+gy¢gyital ”t ‚leter“-pontot gy¢gy¡t. J t‚k k”zben ha nincs v laszt si
+lehet“s‚g megadva, az "1"-es billenty–vel lehet tov bb haladni.
+
+
+Az "F" billenty–k:
+
+"F1" - "HELP" Egy sz”veget t”lt a k‚perny“re, ami seg¡thet az adott
+       helysz¡nen. Ennek elolvas sa ut n b rmelyik el“z“leg megadott
+       billenty–vel tov bb lehet l‚pni.
+
+"F3" - —jraind¡tja a j t‚kot.
+
+"F5" - "SAVE" A j t‚k aktu lis ‚rt‚keit menti lemezre.
+
+"F7" - "LOAD" A kimentett  ll st t”lti be.
+
+
+A harc:
+
+Ha ellens‚ges idegenekkel tal lkozunk, harcra kerl sor. Ezt a j t‚k
+zen‚j‚nek megv ltoz sa is jelzi. Ha harc k”vetkezik, a "SPACE"
+billenty–vel tudunk tov bbl‚pni. Ekkor m r nem lehet bel‚pni a
+tulajdons gokat mutat¢ almenbe, viszont az "F" billenty–k ekkor is
+haszn lhat¢k. A csat k elej‚n lehet“s‚gnk van var zsolni egyet, mellyel
+ellenfelnket gyeng¡thetjk.  /A var zslatokat l sd k‚s“bb./ Ha a
+var zslat elhaszn l sa ut n ellenfelnk m‚g ‚l, sor kerl a k”zelharcra.
+Ha sok tal lat ‚r ‚s kev‚s er“nk marad, lehet“s‚gnk van menekl‚sre is.
+Azonban vigy zzunk, mert ellenfelnk ekkor is tud rajtunk sebes¡teni.
+Harc ut n megkapjuk a tulajdons gokat jelz“ alment, ahol lehet“s‚gnk
+van a gy¢gyitalok haszn lat ra. /Ezt az alment harc k”zben is
+haszn lhatjuk az ”sszecsap sok ut n, de ilyenkor ellenfelnk is gy¢gyul
+egy kicsit./
+
+
+A Var zslatok:
+
+1: Ellenf‚l gyeng¡t‚se. Ez lerontja az ellenf‚l t mad s t, ez ltal
+   k”nnyebb sebezhet“v‚ tenni.
+
+2: Vill msz¢r s. Er“sen lecs”kkenti az ellenf‚l ‚leterej‚t, k”nnyebben
+   lehet v‚gezni vele.
+
+3: D‚monh¡v s. Egy kisebbfajta d‚mon jelenik meg, ami megt madja az
+   ellenfelet.
+
+4: T–zlabda l”v‚se. Ezt akkor ‚rdemes haszn lni, ha egyszerre t”bb
+   ellenf‚llel  llunk szemben. Ez ugyanis a t”bbi var zslatt¢l elt‚r“en
+   nem csak egy adott ellenf‚lre hat, hanem egy eg‚sz csapatra. Hat sa
+   megegyezik a Vill msz¢r ssal.
+
+Nem minden ellenf‚lre lehet var zsolni!
+
+Azt, hogy hatott-e a var zslat, a k‚perny“keret felvillan s b¢l tudhatjuk
+meg. Ha felvillant, sikerlt a var zslatunk, ha nem villant fel, akkor
+nem sikerlt.
+
+
+K•DOK:
+
+A program sorrendben k‚ri a k¢dokat!
+
+H rom lehet“s‚g van a be¡r sra, ut na a program automatikusan t”rli az
+adott programr‚szt:
+
+A k¢dok sorrendben: EBABTAS - indul skor
+                    TMMKAKA - a kik”t“n‚l
+                    PTBNAEA - hegyekben
+                    ANAAA A - a var zsl¢ torny n l
+                    AMAUFAE - a tengern‚l a hadihaj¢ legy“z‚sekor
+                    AMAHEOA - a mocs r ut n
+
+ll st”lt‚s ut n, mindig az adott p ly hoz tartoz¢ k¢dot k‚ri a program!
+
+"M" zene be/ki
+
+
+KSZTETTK:
+
+K•D:     S ndor Istv n
+ZENE:    Fodor S ndor
+GRAFIKA: Stef n P‚ter
+™TLET:   T bori P‚ter, S ndor Istv n
+RTA:    T bori P‚ter, S ndor Istv n
+
+Magyarorsz gon kiadja ‚s forgalmazza: OTHIS SOFTWARE BT.
+
+(c) 1993 OTHIS SOFTWARE. Minden jog lev‚dve!
+A Program szerz“i jogv‚delem alatt  ll! M sol s t a t”rv‚ny tiltja!
+
+
+A programmal kapcsolatos v‚lem‚nyeket, illetve k‚rd‚seket az al bbi
+c¡mre k‚rjk:
+
+OTHIS SOFTWARE
+2601 VC
+Pf.: 342
+
+
+Hib s programot, illetve lemezt ingyenesen, postafordult val kicser‚lnk!
+
+
+A programhoz nagyon j¢ sz¢rakoz st k¡v nunk.
+
+OTHIS SOFTWARE
+‚s a SZERZ§K
+
+
+A GONOSZ HERCEG
+
+I.
+
+M r egy h¢napja, hogy az Istenek pokoli meleggel  rasztott k el a f”ldet
+nem adv n egy cseppnyi k”ny”rletet s ez ltal egy kis es“t sem a rajta
+dolgoz¢knak. Annak ellen‚re, hogy BAUGUR v ros nal nagy forgalm£ kik”t“je
+‚s tengerpartja volt, a v rosfalon bell lak¢k sokmindent megadtak volna
+egy kiad¢s es“‚rt.
+
+Nem ¡gy a keresked“k, akik csak most ‚rezt‚k magukat elemkben, hogy az
+es“ ‚s a s r nem nehez¡ti munk jukat, lass£ utaz saikon. Hiszen sem s r,
+sem sz‚l nem h tr ltatta “ket, s v¡gan v gtak neki olyan hossz£, de
+jobban j”vedelmez“ utaknak is, melyeket rosszabb id“ben nem tudtak volna
+megtenni. ldott k h t ezt a meleg, poros sz raz id“t, s sz‚les mosoly
+jelent meg arcukon ha a bus s bev‚telre gondoltak.
+
+gy volt ezzel az a nagydarab, hord¢has£, feketeb“r– keresked“ is, akinek
+karav nja kibocs t sra v rt a v roskapun l. Miut n az “r”k  tvizsg lt k a
+karav nt ‚s felh£zt k a v ros bej rat t “rz“ vasrost‚lyt a mintegy
+tizen”t  ig s llatb¢l, hajt¢b¢l ‚s lovasokb¢l  ll¢ menet elindult t voli
+c‚lja fel‚.
+
+A karav nokat mindig k¡s‚rt‚k fegyveres zsoldosok, akik a keresked“k
+szolg lat ban  lltak. Most is mintegy t¡z l ndzs s, b“rv‚rtes lovas fogta
+k”zre a m lh kat cipel“ket.
+
+
+II.
+
+- Ez az! Nagyszer–! Gyertek csak! - ”rvendezett hangosan egy k”z‚pkor£,
+cifra ruh t visel“ f‚rfi. Ruh zata ink bb hatalmat ‚s gonoszs got
+sug rzott, mint cifras got. Fekete inget, fekete nadr got ‚s fekete
+csizm t viselt. Mell‚nye s”t‚tv”r”s, v ll r¢l csillog¢ ezstsz¡n– k”nt”s
+l¢gott al , melybe fekete ‚s v”r”s mint kat, valamint  br kat sz“ttek
+ismeretlen mesterek. Arc n s–r–, s”t‚t bajuszt ‚s szak llt viselt, haja
+gondosan simult fejb“r‚hez.
+
+Sz ja szarkasztikus mosolyra h£z¢dott, ahogy az el“tte l‚v“ asztal
+veg‚ben egy keresked“karav n t–nt fel. El“l egy nagydarab hord¢has£
+feketeb“r– ember lovagolt.
+
+- Ezek lesznek azok, - sz¢lt a mellette  ll¢ botj ra t maszkod¢, szint‚n
+k”z‚pkor£ f‚rfihoz. Amaz csak b¢lintott egyet, de nem sz¢lt semmit.
+- Rem‚lem, ezt is meg tudod csin lni, £gy mint a t”bbit. Igaz?
+- Igen, uram - v laszolt m‚ly basszushangj n a k‚rdezett.
+- Akkor induljunk - csapta ”ssze tenyer‚t, s a m‚g mindig botj ra
+t maszkod¢ f‚rfi fel‚ fordult. Az meglebbentette k”nt”s‚t, s hangos
+pukkan s k”zepette a k‚t f‚rfi semmiv‚ foszlott a leveg“ben, mintha soha
+nem j rt volna senki abban a szob ban.
+
+
+
+III.
+
+- K‚t ¢ra m£lva pihen“t tartunk. Sz¢lj h tul, hogy ne maradjanak le, -
+vetette oda a mellette lovagol¢ fi£nak a karav n elej‚n halad¢ feketeb“r–
+keresked“. Az minden sz¢ n‚lkl megford¡totta lov t, majd elv gtatott a
+karav n porba vesz“ v‚ge fel‚.
+
+- Ha ¡gy haladunk, h rom nap m£lva c‚ln l lesznk. Rem‚lem, d£sgazdagon
+t‚rek haza, morfond¡rozott mag ban a feketeb“r–, s szeme el“tt felr‚mlett
+otthon hagyott szeretteinek arca, s n‚h ny ‚jszaka ifj£ feles‚g‚vel.
+ppen ezeken gondolkozott, mikor egy k‚z l”kte h tba, hogy a kant rsz rba
+kellett kapaszkodnia, nehogy leessen lov r¢l.
+
+- Uram! Oda n‚zzen!, - mutatott a t volba egy borost s b“rv‚rtes katona.
+- Valakik erre tartanak!
+
+Mintegy k‚t m‚rf”ldnyire az £ton valami ezst”sen megcsillant az £t
+por ban, s egyenesen a karav n fel‚ tartott. ™t perc m£lva m r kivehet“
+volt, hogy egy kis csapat - mintegy t¡z-tizen”t f“ - k”zeledik fel‚jk.
+
+- Nem tudom, kik lehetnek, az‚rt legyetek k‚szenl‚tben. - Sz¢lt oda a
+katon knak a keresked“.
+
+Mintegy h romsz z m‚ter volt m r csak a karav n ‚s a kis csoport k”z”tt,
+mikor a csoportb¢l k‚t alak v lt ki ‚s leh£z¢dtak az £t sz‚l‚re. A
+t”bbiek folytatt k £tjukat a karav n fel‚.
+
+- Valami itt nem tetszik nekem, - morgott a keresked“, azt n hirtelen
+h trafordult, s teli torokb¢l elkezdett ord¡tani.
+
+- Katon k ide! Hajcs rok,  ll¡ts tok meg az  llatokat ‚s terelj‚tek egy
+csoportba “ket. Siessetek! Mindenki tudta, hogy mit kell csin lni, hiszen
+nem ez volt az els“ fegyveres ”sszecsap s, amiben r‚szt vettek. Csakhogy
+ez£ttal elk‚stek. A fel‚jk v gtat¢ kis csapatot ugyanis egy k”zepes
+nagys g£  v”r”sen lktet“ goly¢ alak£ valami el“zte meg, s csap¢dott az
+”sszet”m”rl“ zsoldosok k”z‚. Amikor a leveg“ben sv¡t“ goly¢ a f”ldbe
+csap¢dott, hatalmas d”rren‚s hallatszott, s a k”zelben l‚v“ katon k
+szanasz‚t repltek.
+
+A robban s ut n n‚gy katona nem kelt fel t”bb‚. A t”bbiek sz‚dltek ugyan
+egy kiss‚, de megr¢b ltak csatarendbe fejl“dni. Ekkor ‚rtek oda az
+ellens‚ges lovasok. Egyszer– b“rmell‚nyt viseltek, kezkben g”rbe
+szably t tartottak. Egy ltal n nem £gy n‚ztek ki, mint a komoly
+fegyveresek. M‚gis mikor ”sszecsaptak a karav nt v‚d“ zsoldosokkal, azok
+egyet sem tudtak megsebes¡teni. Olyan f‚lelmetesen er“sek voltak, hogy a
+nyolc emberb“l  ll¢ kis csapat gond n‚lkl m‚sz rolta le a karav n
+mintegy harminc ember‚t. Nem volt l tv nyos csata, ink bb gyors ”ld”kl‚s.
+A karav n vezet“je m‚g a t–zgoly¢ robban sakor meghalt, ¡gy nem l thatta,
+hogy h–s‚ges embereit lem‚sz rolj k. A csata nem tartott ”t percn‚l
+tov bb, s ut na minden elcsendesedett. Ekkor az £t oldal ra h£z¢dott k‚t
+ember is elindult a csata sz¡nhelye fel‚. Mikor oda‚rtek, a harcosok m r
+a lovakra felk”t”tt m lh kat n‚zt‚k  t.
+
+- Uram, parancsodhoz h¡ven ezt az egy kurafit ‚letben hagytuk. - Ezzel
+egy az ijedts‚gt“l remeg“ fiatal fi£t l”k”tt az ezstsz¡n– k”penyt visel“
+k”z‚pkor£ f‚rfi lova el‚. A fi£ a f‚lelemt“l m‚g besz‚lni is elfelejtett,
+s csak szomor£an n‚zett maga el‚.
+
+- Nem az‚rt hagytalak ‚letben, mert k”ny”rletes vagyok, - mennyd”r”gte
+a f‚rfi. - Hanem mert szks‚gem van egy szemtan£ra, aki majd elmondja a
+v ros el”lj r¢inak, mi is t”rt‚nt itt! Mondd el a v rosban, hogy Kusbar
+Herceg nem kegyelmez senkinek, s f“leg nem a gazdag keresked“knek!
+rtetted!? - k‚rdezte a holtrav lt fi£t¢l, aki csak b¢logatni tudott.
+- Indul s! - adta ki a parancsot katon inak, majd megsarkanty£zta lov t
+‚s mag ra hagyta a m‚g mindig porban t‚rdepl“ ifj£t.
+
+T¡z perc m£lva a nemr‚g lezajlott csat ra csak a porban hever“ hull k ‚s
+a felettk kering“ d”gev“k eml‚keztettek.
+
+
+IV.
+
+- H t ¡gy t”rt‚nt, nagyuraim, - fejezte be mond¢k j t az  t‚ltekt“l m‚g
+mindig remeg“ fi£. Egy nagy d¡szes terem k”zep‚n t‚rdepelt, egy hossz£,
+fekete b rsonnyal letakart asztal el“tt. Az asztal m”g”tt d¡szesen
+faragott sz‚keken ”reg el“kel“s‚gek ltek. §k voltak Baugur v ros
+el”lj r¢i. §k ir ny¡tott k a v ros kereskedelmi, polg ri ‚s katonai
+‚let‚t. Most egy kiv‚tel‚vel mind a tizenketten a helyk”n ltek, s
+bossz£s arccal hallgatt k az el“ttk t‚rdepl“ el“ad s t. Miut n az
+elhallgatott, m‚ly csend lte meg a termet.
+
+- Teh t Kusbar Herceg t”tt rajta a karav non? - t”rte meg a csendet a
+legid“sebb f‚rfi. Hossz£, feh‚r szak ll ‚s bajusz keretezte arc t. Ez
+ebben a h¢napban m r a negyedik ilyen eset. A negyedik karav nunkat
+vesz¡tjk el, s  ltala szorgos keresked“nket! Uraim! Ez ¡gy nem mehet
+tov bb! D”ntennk kell, mit v“k legynk? K‚rem, ha valamelyik“jknek
+javaslata van, az most tegye meg. A fi£ elmehet! - Az ajt¢n l  ll¢ “r”k
+a t‚rdepl“ fi£hoz l‚ptek, felseg¡tett‚k ‚s kivezett‚k a teremb“l. Az
+asztal egyik v‚g‚n‚l l“ id“sebb f‚rfi most fel llt, s h tratett k‚zzel
+elkezdett s‚t lgatni a teremben.
+
+- Nem adhatunk minden keresked“ mell‚ t”bb katon t, mert akkor nem
+maradna senki, aki t mad s eset‚n megv‚den‚ a v rost. De az sem lehet,
+hogy ez az ”rd”gi Kusbar az ”sszes karav nunkat kirabolja, embereinket
+pedig lem‚sz rolja. Valamint az ‚letben hagyottak elmond s alapj n
+harcosai j¢form n legy“zhetetlenek. Egyszer–en tan cstalan vagyok.
+- gondolkodott hangosan.
+- Ind¡tsunk hadj ratot ellene. Egy j¢l szervezett hirtelen t mad ssal
+meglephetjk, - javasolta az asztaln l l“ m sik el”lj r¢.
+- Ugyan, ez nem lenne megold s. A v rosnak egyszer–en nincs annyi
+katon ja, amivel egy ilyen magyszab s£ hadm–veletet meg tudn nk
+val¢s¡tani.
+- K‚rjnk seg¡ts‚get a k”rnyez“ v rosokb¢l.
+- Ez sem a legjobb megold s lenne. A t”bbi v ros ”rl, hogy most legal bb
+megt”rheti kereskedelmi hegem¢ni nkat. Ha adn nak is seg¡ts‚get, hatalmas
+ rat k‚rn‚nek ‚rte. 
+- Nekem lenne egy javaslatom. - Sz¢lalt meg egy p paszemet visel“, fekete
+haj£, mark ns arc£ f‚rfi. - Mivel mind emberileg, mind anyagilag el‚g
+v‚ges a megengedhet“ keretnk, b‚reljnk fel idegen kalandoz¢kat, s
+v‚gezzenek azok a Herceggel helyettnk. gy aranyat, embereket ‚s id“t is
+megsp¢rolunk.
+- M r csak v llalkoz¢kat kellene tal lnunk, - sz¢lt k”zbe ep‚sen a m‚g
+mindig s‚t l¢ f‚rfi.
+- A meghirdetett jutalom nagys ga vonzani fogja a kl”nf‚le v llalkoz¢
+idegeneket.
+- Ez nagyszer– ”tletnek hangzik, - lelkendezett a leg”regebb b”lcs.
+- Kapit ny! - h¡vta mag hoz a terem ajtaj n l  ll¢ katon t. - Kldj”n
+sz‚t k”veteket mind a n‚gy ‚gt j fel‚. Terjessz‚k el, hogy v llalkoz¢kat
+keresnk egy nem mindennapi kalandra. A jutalom egy l d nyi arany.
+- Igen, Uram! - csapta ”ssze bok it a katona, majd megfordult ‚s elhagyta
+a termet.
+- Most m r csak v rnunk kell...
+
+
+V.
+
+- Mindig tudtam, hogy a var zsl¢k furcsa szerzetek. Hogy a bele forduljon
+ki! - morgott mag ban egy k”z‚pkor£,  polatlan f‚rfi. Egyszer– ruh zatot
+hordott, l b n vastag b“rcsizm t, hozz  b“ b“rnadr got. Fels“test‚t csak
+egy szakadt b“szab s£ ing takarta. Az ing szakad saib¢l el“villantak
+hatalmas izmai. H t n res b“rtok csng”tt, a beleval¢ pallos hi nyzott.
+™v‚b“l k‚t v‚konypeng‚j– t“r markolata meredt el“. Ett“l eltekintve
+teljesen fegyvertelen volt. ppen egy kisebb patakon k‚szlt  tkelni,
+amiben kiss‚ akad lyozta ”sszek”t”z”tt keze. Valamint az a t‚ny, hogy a
+patak m sik oldal n egy hat f“b“l  ll¢ csoport v rt r . De, hogy am£gy is
+szorult helyzete m‚g rosszabb legyen, a h ta m”g”tt a t volban most
+t–ntek fel az “t ld”z“ lovasok.
+
+- Az eg‚sz vil g ”sszefogott ellenem! - bosszankodott mag ban, mik”zben
+fogaival a kez‚t b‚kly¢ban tart¢ k”teleket marcangolta. K”zben a m sik
+parton  ll¢ kis csapat elkezdett  tg zolni a patakon, hogy min‚l hamarabb
+lesz molhassanak az idegen barb rral. M r csak p r m‚ter v lasztotta el
+egym st¢l “ket, mikor sikerlt fogaival sz‚tmarcangolni kez‚n a k”teleit.
+gy, hogy kezei szabadon voltak, m‚lt¢ ellenfele lett az id“k”zben
+r t mad¢, kezkben egyenes karddal hadon sz¢ harcosoknak. Az els“
+r t mad¢ ellens‚get hatalmas p”r”lyszer– ”kl‚vel kldte a m svil gra,
+£gy, hogy egy t‚ssel elt”rte ellenfele orrcsontj t. Azt n vill mgyorsan
+kih£zta ”v‚b“l k‚t v‚konypeng‚j– t”r‚t, s most m r azokkal osztotta
+pontos, hal lt ‚r“ sz£r sait ‚s v g sait.
+
+Mire a r  ront¢ idegenek ‚szbekaptak, m r h rom k”zlk holtan terlt
+el a f”ld”n. A megmaradt h rom harcos most m s taktik t alkalmazott.
+Megpr¢b lt k k”rlvenni “t, ‚s ha szemt“l-szembe nem sikerlt, h t
+h tulr¢l pr¢b lt k leter¡teni. Azonban emberkre akadtak, s mikor az
+egyik fick¢ el”lr“l, a m sik egyid“ben h tulr¢l t madott r , a barb r
+egy gyes mozdulattal az el”lr“l t mad¢ fel‚ l‚pett, ‚s vill mgyorsan
+megragadta annak fegyverfog¢ karj t, majd maga el‚ r ntotta. A h tulr¢l
+t mad¢ m r nem tudta lef‚kezni mag t, s leengedett karddal egyenesen a
+t rsa kardj ba futott. H”r”gve roskadt le, s a kard, melybe belfutott,
+v‚resen  llt ki has b¢l... Ek”zben az eddig maga el“tt tartott harcossal
+a barb r t“re v‚gzett. Az esem‚nyeket eddig bamb n n‚z“ utols¢ idegen
+hangos ord¡t ssal rontott r  a barb r harcosra. Az f‚lrel‚pett a roham
+el“l, majd eleg nsan h tbasz£rta a m‚g mindig ordib l¢ fick¢t. Az m‚g egy
+utols¢t sik¡tva adta ki lelk‚t. Ek”zben a lovasok is egyre k”zeledtek, s
+a barb r harcosnak, akit egy‚bk‚nt Solmarnak h¡vtak, nem maradt m s
+es‚lye, mint a patak m sik partj t¢l mintegy sz z m‚terre l‚v“ erd“be
+vesse mag t. Felt‚ve, ha el‚ri. Mindenesetre “rlt rohan sba kezdett, s
+magasba csapott k”rl”tte a v¡z, mik”zben  tfutott a patakon. M‚g ”tven
+m‚ter. A m sik partr¢l m r hallani lehetett a lovak dobog s t. M‚g h£sz.
+A lovasok most ‚rt‚k el a patakot. A lovak k”nnyed‚n vett‚k az akad lyt,
+nem jelentett nekik gondot  tkelni a patakon. M r a m sik parton j rtak,
+mikor Solmar el‚rte az erd“t, s elt–nt a szemk el“l. Mivel m r
+k”zeledett a szrklet, nem sok es‚lyk lett volna megtal lni az
+ld”z”ttet.
+
+- L‚gy  tkozott, te nyomorult barb r! J¢l jegyezd meg, amit most mondok!
+Soha t”bb‚ ne merj a szemem el‚ kerlni, mert akkor nem kegyelmezek! T–nj
+el Kyrandi b¢l ”r”kre, s jegyezd meg, ¡gy j r az, aki titkon beleolvas
+egy m gus var zsk”nyv‚be! - ord¡totta az el“l lovagol¢ f‚rfi, mik”zben
+meg ll¡totta h tas t. A m”g”tte halad¢k is meg ll¡tott k lovaikat, s
+bossz£san meredtek az erd“re, melyben sz”k”tt foglyuk p r pillanattal
+ezel“tt elt–nt.
+
+
+VI.
+
+- A fene, aki megeszi! - m‚rgel“d”tt Solmar. - Mi‚rt kell nekem ilyen
+k¡v ncsinak lennem?!
+
+Ahogy egyre beljebb j rt az erd“ben, £gy gondolt vissza az elm£lt napok
+esem‚nyeire. Egy nagytud s£, kedves, enged‚keny var zsl¢ szolg lat ban
+ llt, eg‚szen addig, am¡g nem lett t£l kiv ncsi ‚s vakmer“. V rosr¢l
+v rosra utaztak, s “ egyfajta test“ri szerepet t”lt”tt be a m gus oldal n.
+A var zsl¢ m‚g azt is megengedte, hogy n‚ha ut navigye a var zsk”nyv‚t,
+ami tudvalev“leg a var zsl¢ legnagyobb ‚s legf‚ltettebb kincse. Amikor
+azonban ki akarta nyitni a k”nyvet, gazd ja er‚lyesen r parancsolt - ha
+sok ig akar ‚lnim, ilyet ne tegyen. A k¡v ncsis ga azonban nagyobb £r
+volt, mint ¢vatoss ga, s amikor egyik este egy p r percre egyedl maradt
+a var zsk”nyvvel, ¢vatosan belepillantott. Abban a pillanatban, amikor a
+k”nyv kiny¡lt, p r azon az oldalon l‚v“ var zslat beler”ppent egyenesen a
+fej‚be. Ijedten csukta be a kl”nleges k”nyvet. Amikor gazd ja
+visszat‚rt, azonnal meg‚rezte a m gia k”zels‚g‚t. R”vid medit l s ut n
+gyilkos szemekkel meredt Solmarra.
+- Mondtam, hogy ne nyisd ki, Te ostoba barb r! - mennyd”r”gte, s kez‚b“l
+p¢kh l¢ v‚konys g£, de szak¡thatatlan anyag tekeredett a megr‚mlt barb r
+test‚re, s £gy ”sszek”t”zte, hogy mozdulni sem tudott. Majd sz¢lt
+katon inak, akik miut n a var zsfonal hat sa elm£lt, megk”t”zt‚k kez‚t
+‚s elvezett‚k. M snap este a m gus megpr¢b lta agy b¢l kisz¡vni azokat a
+szavakat, melyek a k”nyvb“l az agy ba sz”ktek. Minden k¡s‚rlete kudarcot
+vallott. V‚gl, amikor a var zsl¢ elt vozott a szob b¢l, ‚s § egyedl
+maradt, sikerlt megsz”knie ‚s eg‚rutat nyernie. Eg‚szen id ig nem
+ld”zte senki, de azt n r tal ltak. S most egyedl bolyong ebben az
+erd“ben. A var zsig‚ket m‚g mindig az agy ban ‚rezte, de haszn lni nem
+tudta “ket. Ahogy ¡gy gondolkozott, egy sz‚les szek‚rj rta £tra t‚vedt,
+mely az erd“n vezetett  t. Mivel vesztenival¢ja nem volt, elindult az
+£ton ‚szak fel‚.
+
+
+VII.
+
+M r vagy ”t napja haladt ismeretlen c‚lja fel‚, mik”zben az £t
+kisz‚lesedett, el gazott, s § tal lomra v lasztotta ki az ir nyt, merre
+haladjon. Az ”t”dik napon, mikor a nap ‚ppen lenyugodni k‚szlt, a
+t volban s”t‚t t”meget vett ‚szre. Kis id“ m£lva j¢l kivehet“ volt a
+v rost v‚d“ falak alakja, s egy nagy kapu, melyhez az £t egyenesen
+odavezetett.
+
+- Tal n itt szerencs‚m lesz! - gondolta mag ban, s megszapor zta l‚pteit.
+A kapun l k‚t “r tart¢ztatta fel: - Isten hozott, idegen! Rem‚ljk, nem
+rossz sz nd‚k vez‚relt ide Baugur v ros ba! Ha be akarsz l‚pni kapunkon,
+h rom aranyat kell fizetned! - tartotta mark t az egyik “r.
+
+Solmar morogva sz molta le a h rom aranyat, majd sz¢ n‚lkl indult meg a
+v ros f“kapuj n az els“ fogad¢ fel‚.
+
+
+VIII.
+
+A f‚rfi tal n ”tven‚ves lehetett, arc t f‚nyesre festette a kandall¢ban
+‚g“ t–z. Nem volt m‚g ”reg, arc t m‚gis m‚ly r ncok bar zd lt k, s barna
+szak lla gondozatlanul csng”tt le  ll r¢l. šres tekintettel figyelte,
+amint a l ngok belekapnak az £jonnan t–zre vetett fahas bba. Ruh zata
+nem volt eleg ns, m‚gis nagy tud sr¢l ‚s ‚lettapasztalatr¢l  rulkodott.
+L b n finom b“rb“l k‚szlt l bbelit viselt, hossz£, sz–k, s”t‚tbarna
+poszt¢nadr ggal, fels“test‚n barna inget ‚s fekete r”vid mell‚nyt
+hordott. V ll r¢l egy v”r”s sz¡n– k”nt”s l¢gott le eg‚szen a f”ldig.
+Kez‚t ”l‚ben nyugtatta. P r percig m‚g n‚zte a lobog¢ tzet, majd
+kom¢tosan felkelt, hatalmas tr¢nszer– sz‚k‚b“l. A szoba egyetlen
+ajtaj hoz l‚pett, kinyitotta, majd visszan‚zve a par zsl¢ t–zre, elhagyta
+a szob t. Felnyergelt lova m r v rta “t, s boldog nyihog ssal adta tudtul
+gazd j nak ”r”m‚t. T¡z perc m£lva m r csak a messzes‚gben gomolyg¢
+porfelh“ adta h¡rl, hol is j r most l¢ ‚s lovasa.
+
+
+IX.
+
+- gessk meg m gly n!
+- Akasszuk fel!
+- Folytsuk v¡zbe!
+- N‚gyeljk fel!
+
+Mintegy sz z”tven ember gy–lt ”ssze a falu f“ter‚n, s adtak jobbn l-jobb
+”tleteket a falu f“b¡r j nak arra a k‚rd‚s‚re, hogy mit csin ljanak avval
+a fiatal n“vel, aki egy vastag kar¢hoz volt kik”tve. Az m‚rgesen n‚zett a
+bekiab l¢kra. Nem tudta, mit‚v“ legyen. Var zstudom ny val k”nnyed‚n el
+tudta volna szak¡tani k”teleit, azonban arra, hogy a t”megen is
+keresztlverekedje mag t, minden ereje kev‚s volt. Nem tehetett m st,
+v rt. V rt a megfelel“ alkalomra, amikor m r csak kevesen lesznek
+k”rl”tte ‚s j¢ lehet“s‚ge lesz a sz”k‚sre.
+
+- Talis, te  tkozott boszork ny! -  tkozta “t a mellette  ll¢ f‚rfi,
+aki egyben a falu f“b¡r ja is volt. - Mi‚rt pont itt kellett ”rd”gi
+var zslataid m–velned? H t nem szenvedtnk m r eleget? Te hoztad r nk
+a ront st, h t vidd is el t“lnk! L sd, hogy nem vagyunk barb rok, mint
+Te, ez‚rt szabadon engednk, de a falut azonnal el kell hagynod! Ha
+visszaj”ssz, vagy itt maradsz, ak rki bntetlenl meg”lhet! Ha azonban
+£gy d”ntesz, hogy elm‚sz, a falu hat r ig senki sem fog b ntani! Mondd
+h t d”nt‚sed!
+- Elmegyek! - v laszolta csod lkozva Talis. Nem ‚rtette, mi‚rt nem ”lik
+meg, vagy legal bb pr¢b lj k meg”lni.
+- J¢l van, v gj tok el k”teleit - rendelkezett a f“b¡r¢.
+
+Miut n kiszabadult, a t”meg csendesen morgol¢dva a t‚r sz‚l‚re h£z¢dott
+‚s Talis kicsit f‚lve elindult a falub¢l kivezet“ £ton, arra gondolva,
+hogy min‚l hamarabb maga m”g”tt tudja ezt az  tkozott helyet.
+
+
+X.
+
+- Ez lesz az az £t - morfond¡rozott mag ban l¢h ton lve egy szak llas,
+v”r”s k”penyes f‚rfi. § volt Magnus, a var zsl¢.
+
+A megfelel“ ir nyba ford¡totta lov t, majd lass£ get‚ssel elindult
+kiv lasztott c‚lja fel‚.
+
+
+XI.
+
+Talis m r vagy k‚t hete bolyongott a sz m ra ismeretlen vid‚ken, mikor
+egy v ros t–nt fel szemei el“tt a t volban. Siet“sebbre vette l‚pteit, s
+egy kis id“ m£lva m r a v ros, - melyr“l mint k‚s“bb megtudta, Baugurnak
+h¡vnak - f“utc j t r¢tta.
+
+
+XII.
+
+- Fogad¢s, hozz m‚g egy s”rt! - kiab lta a kiss‚ m r r‚szeg barb r
+harcos. Jelent“s mennyis‚g– s”r lehetett m‚r bend“j‚ben, legal bbis az
+el“tte l‚v“ res kors¢k err“l tan£skodtak. A fogad¢s £jabb teli kors¢t
+tett az asztalra. Solmar egy aranyat vetett fel‚, amit a fogad¢s frg‚n
+elkapott ‚s zseb‚be rejtette. De nem ment el az asztalt¢l.
+
+- Uram - sz¢lalt meg. - Lenne egy aj nlatom sz modra. Solmar k”d”s
+tekintettel meredt a fogad¢sra, aki ek”zben lelt az asztal m sik
+oldal hoz.
+- Mit akarsz? - morogta durv n.
+A fogad¢s azonban mintha meg sem hallotta volna a k‚rd‚st, zavartalanul
+folytatta mond¢k j t.
+- Olyan h¡rek keringenek a v rosban, miszerint ”nk‚nteseket keresnek egy
+nem mindennapi kalandra. A felaj nlott jutalom  ll¡t¢lag minden
+k‚pzeletet fellm£l. Egy hatalmas l da tele arannyal ‚s dr gak”vekkel. A
+v rosh z n kell jelentkezni, s ott d“l el, hogy kit v lasztanak e
+vesz‚lyes kldet‚sre.
+- Hol van az a h¡res v rosh za? - k‚rdezte flegm n Solmar.
+- Jer velem, odavezetlek. Ezzel mindketten fel lltak ‚s elindultak a
+kij rat fel‚. Mikor elhagyt k a fogad¢t, az egyik k”zeli asztaln l l“
+fiatal n“ is ut nuk indult, s biztos t volb¢l k”vette “ket. Talis volt a
+fiatal n“.
+
+
+XIII.
+
+- Uram! Bocs ss meg, hogy zavarlak, de fontos zenetem van sz modra, -
+hadarta egy fiatal fi£, mik”zben bocs natk‚r“en n‚zett a teremben l“
+f‚rfiakra. Egy hossz£ asztaln l tizenk‚t id“sebb f‚rfi lt, fekete
+ruh ban. A fiatal fi£ a k”z‚pen l“ legid“sebb el“kel“s‚g el“tt t‚rdelt.
+- Mondjad - sz¢lalt meg az ”reg.
+- Egy m gus besz‚lni akar veled. Arra v r, hogy bel‚phessen a terembe.
+- J¢l van fiam. Kldd be “t, ne v rakoztassuk meg.
+
+P r pillanat m£lva egy szak llas, magas f‚rfi l‚pett be.
+- J¢napot nagyuraim, s k‚rem bocs ss k meg, hogy csak ¡gy hivatlanul
+magukra t”r”k. - Kezdte m‚ly basszus hangon.
+- Nevem Magnus ‚s var zsl¢k‚nt szolg lom a J¢ Oldalt. rtesl‚st
+szereztem egy bizonyos Kusbar Herceg fosztogat sair¢l. Az‚rt j”ttem, hogy
+lesz molj k vele, no meg a f‚nyes jutalom is inspir lt utamon. Ezzel
+elhallgatott ‚s amilyen hirtelen j”tt £gy el is hagyta a termet.
+- Nos, uraim, - sz¢lalt meg r”vid csend ut n a legid“sebb f‚rfi, - m r
+van h rom ”nk‚nt jelentkez“ a kalandra. Most m r csak v lasztanunk kell,
+kit b¡zzunk meg a feladat v‚grehajt s val...
+
+
+OTHIS SOFTWARE KLUB
+
+Mivel szeretn‚nk a programok  r t a lehet“ legolcs¢bb  tenni, ez‚rt
+l‚trehoztuk az Othis Software Klubot, mely jelent“s kedvezm‚nyeket
+biztos¡t tagjai sz m ra.
+
+
+A Klubtags g felt‚tele:
+
+1500 Ft tags gi d¡j befizet‚se, valamint a p‚nz felad s t igazol¢
+szelv‚ny, illetve a Bel‚p‚si Nyilatkozat megkld‚se c¡mnkre.
+
+
+Szolg ltat saink:
+
+- Az £jonnan megjelen“ j t‚kainkr¢l folyamatos ‚s ingyenes t j‚koztat s.
+
+- A postai £ton megrendelt programok FA k”lts‚g‚t a Klub  tv llalja.
+  gy az FA n‚lkli  rat kell azok‚rt fizetni.
+
+- A Klubtags got igazol¢ k rty t n‚gy napon bell megkldjk.
+
+- Klubunk tagjai, ‚vente egy programot ingyenesen kapnak aj nd‚kba
+  /V laszt suk szerint/.
+
+- A Klubtags g ‚rv‚nyess‚gi ideje egy ‚v. Az Othis Software Klub /ha most
+  l‚psz be/ - egy h¢nappal ingyen meghosszabb¡tja tags godat.
+
+Aki 1993. December 31-ig bel‚p a Klubba, annak Tags gi igazolv nya nem
+1994. December 31-ig, hanem 1995. Janu r 31-ig ‚rv‚nyes!
+
+
+Jelentezni az al bbi c¡men lehet:
+
+OTHIS SOFTWARE BT.
+2601 VC
+Pf.: 342
+
+
+A tags gi d¡jat is k‚rjk erre a c¡mre kldeni.
+
+----- >< ----- >< ----- >< ----- >< ----- >< ----- >< ----- >< -----><-
+
+
+Bel‚p‚si nyilatkozat
+
+N‚v:....................     D tum:....................
+
+C¡m:....................
+
+V ros:..................     Al ¡r s:..................
+
+Ezennel bel‚pek az OTHIS SOFTWARE KLUBBA. A tags gi d¡jat befizettem, s
+a tags gi felt‚telekkel egyet‚rtek.
+
+/A befizet‚st igazol¢ csekkel ezt a nyilatkozatot is k‚rjk visszakldeni/
+
+
+P r j¢tan cs a programhoz
+
+- Solmar, a barb r harcos nem tud var zsolni. A var zsl s minden
+  energi j t elsz¡vja, de nem j”n l‚tre.
+
+- Magnusnak, a var zsl¢nak gyeng‚je a fegyveres harc, a var zsl s jobban
+  fekszik neki.
+
+- Talis, a boszork ny kis m‚rt‚kben ‚rt a var zsl shoz, ‚s a fegyveres
+  harchoz is. Igazi er“ss‚ge m‚gis ink bb a var zsl s.
+
+- Haszn ljuk sokszor a "HELP" funkci¢t, mert igen sokat seg¡t a j t‚kban.
+
+- Mentsk el sokszor a j t‚k  ll s t, ne kelljen mindig el“lr“l kezdeni
+  a j t‚kot.
+
+- A j t‚k csak egy  ll st t rol lemezen. Teh t egy kimentett  ll s
+  t”lt‚sekor mindig az utols¢nak elmentett ‚rt‚ket t”lti be.
+
+- Gondolkozzunk mindig logikusan.
+
+- V‚gl, ha nem megy, akkor se adjuk fel a j t‚kot.
+
+
+---------------------------------------------------------------------
+
+Nyerem‚ny akci¢
+
+Ha ezt a szelv‚nyt kit”ltve visszakld”d, Super CD-lemezt nyerhetsz!
+Sorsol s 1993. December 31.
+A CD a legjobb AMIGA ‚s C-64 j t‚kok zen‚j‚t tartalmazza!!!!
+
+/A nyertes nev‚t a Febru ri COV-ban ‚s az 576KByte-ban k”z”ljk./
+
+N‚v:....................
+Pontos c¡m, ir ny¡t¢sz m: ...........................

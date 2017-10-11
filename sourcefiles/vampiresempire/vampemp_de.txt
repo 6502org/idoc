@@ -1,0 +1,129 @@
+*********
+
+Welcome to iDOC= - the international CBM documentation project!
+
+The goal of iDOC= is to preserve (non-English) Commodore related documents
+in electronic text format that might otherwise cease to exist with the rapid
+advancement of computer technology and declining interest in 8-bit computers
+on the part of the general population. If you would like to help by
+converting Commodore related hardcopy documents to electronic texts please
+contact the manager of iDOC=, Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names consists of a reasonably short unique title, followed by the
+document language. Two optional fields follow; first the document version (0
+for incomplete texts, version 1 is usually unnumbered), and then the
+document source, if there are more than one. Finally, the document is given
+a .txt extension.
+
+The author(s) of the original document and members of iDOC= make no
+representations about the accuracy or suitability of this material for any
+purpose. This etext is provided "as-is". Please refer to the warranty of the
+original document, if any, that may included in this etext. No other
+warranties, express or implied, are made to you as to the etext or any
+medium it may be on. Neither the author(s) nor the members of iDOC= will
+assume liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext. Therefore
+if you read this document or use the information herein you do so at your
+own risk.
+
+*********
+
+The iDOC= etext of the Vampire's Empire manual, converted to text by
+Björn Graas <Graas@gmx.de>
+
+vampemp_de.txt, June 1999, etext #48.
+
+*********
+
+Name des Spiel: Vampire's Empire
+Das Spiel gibt es in Versionen für Amiga, Atari ST und C64
+
+Einführung
+----------
+
+Du bist Doktor van Helsig! Ausgerüstet mit Knoblauch, Spiegeln und einer
+magischen Kugel machst Du Dich daran, einen tödlichen Lichtstrahl durch die
+finsteren Gewölbe zu lenken, in denen ein uralter Schreck haust: Graf
+Dracula persönlich!
+
+- mehr als 160 Bildschirme
+- kniffliges Strategiespiel mit dem Lichtstrahl
+- schnelles Aktionsspiel mit der Hauptfigur
+- vier großartig angelegte Spielabschnitte
+- spannende Atmosphäre mit vielen Überraschungen
+
+Ladeanweisungen
+---------------
+
+C64 Disk: Geben Sie LOAD "*",8,1 ein und drücken dann die RETURN-Taste
+C64 Kassette: Spulen Sie das Band an den Anfang zurück. Drücken Sie nun die
+Tasten SHIFT und RUN/STOP gleichzeitig, danach betätigen Sie die PLAY-Taste
+des Datenrecorders.
+
+Ziel des Spiels
+---------------
+
+Es gilt den Lichtstrahl, der sich am Beginn eines Levels befindet, in die
+tiefsten Kammern des unterirdischen Labyrinths zu lenken. Als Hilfsmittel
+stehen Spiegel und eine magische Kugel zur Verfügung, mit der sich der Weg
+des Lichtstrahls beeinflussen läßt. Dämonen und andere Gegner versuchen
+dies zu verhindern; Knoblauch ist allerdings eine wirksame Waffe gegen sie.
+
+Joystick-Steuerung
+------------------
+
+Joystick in eine Richtung (nicht oben oder unten) bewegen: Die Spielfigur
+läuft in die entsprechende Richtung.
+Joystick nach links oder rechts bewegen und gleichzeitig den Feuerknopf
+drücken: Spielfigur wirft Knoblauch.
+Joystick nach unten bewegen und gleichzeitig den Feuerknopf drücken:
+Spielfigur tritt zu.
+Joystick nach unten bewegen: Spielfigur wählt "Magie" aus, im unteren
+Spielfeld erscheinen nacheinander Knoblauch, vier Spiegel in verschiedenen
+Stellungen und eine magische Kugel.
+Joystick nach oben bewegen: Die ausgewählte Magie anwenden.
+
+Die Magie der Spiegel und Knoblauchstauden
+------------------------------------------
+
+Alle Joystickeinstellungen außer "oben" bei gedrücktem Feuerknopf: Richtung
+in der der Gegenstand angebracht werden soll.
+Joystick nach oben und gleichzeitig den Feuerknopf drücken: Der Gegenstand
+wird an der Decke angebracht.
+Feuerknopf loslassen: Die Magie wird aktiviert.
+
+Nur 8-Bit-Versionen (C64)
+-------------------------
+
+Um in das jeweilige, tiefere Labyrinth zu gelangen, muß der Lichtstrahl den
+"EXIT"-Block treffen, nachdem sich die Spielfigur auf diesen gestellt hat.
+
+Die Magie der Kugel
+-------------------
+
+Möchte man die Richtung des Lichtstrahls ändern, so kann man dieses auch,
+indem man den Strahl in der magischen Kugel einfängt und ihn von dort aus
+gezielt weiterleitet.
+Joystick nach oben oder unten bewegen: Die Kugel nach oben oder unten
+bewegen, sofern der Lichtstrahl noch nicht eingefangen wurde.
+Joystick in eine andere Richtung bewegen: Sofern der Lichtstrahl
+eingefangen wurde, wählt man die neue Richtung des Lichtstrahls
+Joystick loslassen: Magie aktivieren
+
+(C)opyright 1990 Softgold / Euro Gold Starline
+
+*********
+
+End of the iDOC= etext of the Vampire's Empire manual.
+
+*********

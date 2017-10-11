@@ -1,0 +1,235 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore 64
+related documents in electronic text format that might otherwise cease to
+exist with the rapid advancement of computer technology and declining
+interest in 8-bit computers on the part of the general population. If you
+would like to help by converting C64 related hardcopy documents to
+electronic texts please contact the manager of International Project 64,
+Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The first
+characters of the file name are an abbreviation of the original document
+name and the language of the etext. The version number of the etext follows
+next. After that a letter may appear to indicate the particular source of
+the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International Project
+64 make no representations about the accuracy or suitability of this
+material for any purpose. This etext is provided "as-is". Please refer to
+the warranty of the original document, if any, that may included in this
+etext. No other warranties, express or implied, are made to you as to the
+etext or any medium it may be on. Neither the author(s) nor the members of
+International Project 64 will assume liability for damages either from the
+direct or indirect use of this etext or from the distribution of or
+modification to this etext. Therefore if you read this document or use the
+information herein you do so at your own risk.
+
+*********
+
+The International Project 64 etext of the Turrican II German manual,
+converted to text by Patrick Heck <drummer@online.de>
+
+TUR2DE1.TXT, January 1998, etext #25.
+
+*********
+
+Turrican II / Rainbow Arts
+
+C 64 Diskette:  Legen Sie bitte die Spieldiskette in das Diskettenlaufwerk,
+tippen Sie LOAD"*",8,1 über die Tastatur ein, und bestätigen Sie die
+Anweisung mit einem Druck auf die RETURN-Taste. Das Programm startet dann
+automatisch. Folgen Sie bitte den Bildschirm-Anweisungen. Seite 1 der Disk
+darf nicht schreibgeschützt sein, da der High-Score sonst nicht
+abgespeichert werden kann.
+
+C 64 Kassette:   Legen Sie die zurückgespulte Spielkassette in die
+Datasette. Drücken Sie nun gleichzeitig die Tasten SHIFT und RUN/STOP.
+Anschließend betätigen Sie die PLAY-Taste der Datasette. Das Programm
+startet automatisch. Folgen Sie bitte den Bildschirm-Anweisungen
+
+DIE STEUERUNG DES SPIELES
+
+Allgemeine Hinweise: Das Spiel wird mit joystick und Tastatur gespielt.
+Besitzen Sie einen Amiga, so können Sie auch einen joystick mit zwei
+voneinander unabhängigen Feuerknöpfen benutzen (Zu empfehlen sind hier die
+Joysticks für das Sega Master System und das Sega Mega Drive). Der zweite
+Feuerknopf ersetzt alle Funktionen der Space-Taste, man muß also während des
+Spiels NIE zur Tastatur greifen. Die Bedienung wird in den folgenden
+Erläutemngen extra erwähnt.
+
+Joystick nach ohen: Spieler springt. Ist er in der Kreisel-Gestalt, so wird
+er in seine normale Form zurückverwandelt.
+
+Joystick nach unten: Spieler duckt sich, um z.B. Gegnern auszuweichen.
+
+Joystick nach unten und Leertaste drücken: (Bei Amiga auch: joystick unten
+und zweiten Feuerknopf drücken) Der Spieler kann so in einen Kreisel
+verwandelt werden. In diesem Zustand ist der Spieler unverwundbar und kann
+seine Gegner durch bloße Berührung vernichten. Der Kreisel rollt automatisch
+und kann mit dem joystick nur nach links oder rechts gelenkt werden. In
+dieser Gestalt ist es möglich, auch enge Gänge zu passieren. Turrican hat
+inzwischen die Fähigkeit erlangt, sich jederzeit und beliebig oft in den
+Kreisel zu verwandeln - allerdings kann er in dieser Gestalt nur noch Minen
+legen.
+
+Joysflck nach links/rechts: Spieler läuft nach links/rechts.
+
+Feuerknopf halten: So kann der Spieler einen Rundumschuß (Surround)
+aktivieren und auch lenken (solange der Knopf gedrückt bleibt), indem er den
+Joystick nach links (Schüsse drehen sich gegen Uhrzeigersinn) oder nach
+rechts (Schüsse drehen sich im Uhrzeigersinn) bewegt. Der Rundumschuß kann
+verschiedene Reichweiten haben. Zu Beginn des Spieles reicht er über die
+halbe Bildschirmbreite. Durch Einsammeln von Extrasymbolen kann er bis auf
+die gesamte Bildschirmbreite verlängert werden,
+
+Feuerknopf kurz drücken: Spieler schießt.
+
+DIE WAFFEN
+
+Der Streuschuß hat keine besonders durchschlagende Wirkung gegen einzelne
+große Gegner, ist aber sehr wirkungsvoll im Kampf gegen kleinere Objekte.
+Man kann ihn zweimal aufrüsten, d.h., daß maximal 5 Schüsse mit einer Salve
+abgefeuert werden. Es kann sich immer nur ein Laser auf dem Bildschirm
+befinden. Dieser Nachteil wird aber durch eine extrem hohe Durchschlagskraft
+völlig ausgeglichen. Der Laser ist in 5 Stufen aufzu rüsten. Im Gegensatz zu
+Turrican 1 wird er nicht länger, sondern höher und ist somit bedeutend
+effektiver.
+
+Der Abprall-Schuß Wenn Sie sich in Höhlen oder allgemein in unwegsamen
+Passagen aufhalten, wird Ihnen der Abprall-Schuß helfen. Ab der zweiten
+Aufrüststufe zerplatzt die große Kugel (die übrigens auch recht wirksam ist)
+in mehrere kleine, die dann von den Wänden abprallen. Dieser Schuß hat drei
+Stufen, in der Dritten ist der Abprall-Effekt am stärksten.
+
+Die Energielinle (Leertaste drücken: Bei Amiga auch Feuerknopf 2 Bei Amstrad
+RETURN) So kann der Spieler zwei Energielinien aktivieren, die sich in
+voller Bildschirmhöhe nach links und rechts ausbreiten. Alle erreichbaren
+Gegner werden vernichtet. Sollte aber ein Hindernis im Weg stehen, wird die
+Linie aufgehalten.
+
+Die Superwaffe (Feuerknopf und Leertaste (oder Feuerknopf 2) gleichzeitig
+drücken): Die Super-Waffe wird aktiviert. Einmal pro Leben hat Turrican die
+Möglichkeit1 alle Waffensysteme auf einmal zu aktivieren. Meist hat dies die
+totale Zerstörung aller Gegner im Bild zur Folge. Das leuchtende
+Diodenfenster ganz links in der Anzeige bedeutet, daß die Superwaffe noch
+zur Verfügung steht.
+
+Der Pausenmodus (CTRL 1 P (Am iga1 ST): Hiermit wird der Pausenmodus
+eingeschaltet.
+
+Das Spiel kann unbegrenzt angehalten werden. Nach Druck auf den Feuerknopf
+kann weiter gespIelt werden.
+
+Das Ende (ESC (Amiga/ST)): Mit dieser Taste brechen Sie das Spiel ab und
+gelangen in den Vorspann zurück.
+
+DIE SYMBOLE
+
+Während seiner Mission trifft der Spieler immer wieder auf unterschiedliche
+$ymbole, die nützliche Funktionen haben. Alle Symbole sammeln Sie durch
+Berühren ein und aktivieren sie damit auch automatisch. Hier eine Auflistung
+der Symbole:
+
+DIE KAPSEL Diese Kapsel sollten Sie abschießen; in ihr ist ein Extrasymbol
+versteckt Rot ~ULTIPLE) schaltet den Streuschuß ein; falls schon aktiviert,
+wird er erweitert. Grün (LASER) schaltet den Laser ein; falls schon
+aktiviert, wird er erweitert. Lila (BOUNCE) schaltet den Abprallschuß ein;
+falls schon aktiviert, v~~ird er erweitert. Blau (SURROUND) verlängert den
+Rundumschuß.
+
+Hellblau (SHIELD) aktiviert den Schutzschild. Dieser verleiht dem Spieler
+für kurze Zeit Unverwundbarkeit. Gegner können während dieser Zeit durch
+Berührung vernichtet werden
+
+Gelbes ,P' (POWER-UP) Energie wird auf Maximum geladen. Weißes ,L'
+(POWER-LINIE) derSpieler erhält eine Energielinie. Graues ,1 UP' (ONE-UP)
+der Spieler erhält ein Extraleben.
+
+Gelb (SMARTBOMB) Bei Berührung des Symbols werden alle kleineren Gegner auf
+dem Bildschirm vernichtet.
+
+Diamanten hat der Spieler 100 davon eingesammelt, bekommt er ein'CONTINUE',
+d.h. die Möglichkeit noch einen Versuch am Anfang des Levels, in dem er
+gestorben ist, zu starten. Die maximale Zahl an Cöntinues ist 5 (Im Spiel
+sind also nicht mehr als 599 Diamanten versteckt). Die kleinen Dioden neben
+der Superwaffen-Anzeige zeigen die Zahl der Continues, die schon gesammlt
+wurden (Amiga / ST).
+
+Wichtig: Im Gegensatz zu Turrican I hat man nicht von vornherein 3
+Continues. Dem Spieler stehen zu Beginn des Spieles 3 Leben zur Verfügung.
+
+Verlieren kann er diese auf drei Arten:
+
+1.	Die Zeit, die in der Anzeigeleiste eingeblendet ist, läuft aus. Auf
+dem Bildschirm erscheint die Meldung TIME OUT.
+
+2.	Der Spieler hat seine gesamte Energie verloren. Ein Energieverlust
+trill immer dann auf, wenn der Spieler Gegner berührt oder von Schüssen
+getroffen wird.
+
+3.	Der Spieler stürzt in einen Abgrund. Grundsätzlich wird bei Verlust
+eines Lebens die Anzahl der Energielinien wieder auf drei eingestellt.
+Rundumschuß, Streuschuß, Abprall-Schuß und Laser werden, sofern sie sich
+nicht auf Minimalleistung befinden, zurückgestuft.
+
+DAS ANZEIGENFELD
+
+Auf dem Anzeigefeld kann der Spieler folgende Informationen ablesen
+(von links nach rechts):
+
+- Anzahl der Leben (Bei Amiga in der linken oberen Bildschirmecke) 
+- Anzahl der CONTINUES (Bei Amiga/ST Diodenanzeige)
+- Diodenanzeige Superwaffe noch verfügbar (über Anzahl der Leben)
+- verbleibende Zeit Anzahl der Diamanten Anzahl der Energielinien
+
+Punktzahl (Bei Amiga in der rechten oberen Bildschirmecke)
+
+Lebensenergie des Spielers (über der Punktzahl) Wurde eine besonders hohe
+Punktzahl erreicht, so ist ein Eintrag in die High-Score-Liste möglich. Nach
+Eingabe des Namens muß die RETURN-Taste betätigt werden. (NUR C64: Es
+erscheint nun ein Menü. Wird hier der Knopf am joystick betätigt, so
+erscheint wieder das Hauptmenü. Bei Drücken der Taste 5 erscheint die
+Aufforderung, Seite 1 der Disk einzulegen. Mit der Taste RUN/STOP kommt man
+wieder ins Menü zurück. Durch Drücken des Knopfes am joystick dagegen wird
+die neue Bestenliste abgespeichert.)
+
+TIPS & TRICKS
+
+- Setzen Sie die drei unterschiedlichen Waffensysteme gezielt ein. Überlegen
+Sie sich, ob scheinbar schwere Stellen nicht mit einem anderen Waffensystem
+leichter zu meistern sind.
+
+- Benutzen Sie den Kreisel: Turrican hat nicht umsonst die Fähigkeit, sich
+beliebig oft in den Kreisel zu verwandeln. Denken Sie daran: Als Kreisel
+sind Sie unverwundbar und können mit Ihren Minen auch feste Hindernisse
+sprengen.
+
+- Sammeln Sie soviele Leben und Continues wie möglich, denn wenn Sie das
+Spiel schaffen, bekommen Sie für alles noch einmal Punkte.
+
+- Verzweifeln Sie nicht, wenn Sie nicht weiter wissen - mit kleinen Tncks
+kommt man an jeder Stelle weiter.
+
+- Wer suchet, der findet. Laufen Sie einen Level nicht nur auf dem direkten
+Weg ab, sondern suchen Sie überall nach versteckten Extras, es lohnt sich
+bestimmt.
+
+*********
+
+End of the International Project 64 etext of the Turrican II German manual.
+
+*********

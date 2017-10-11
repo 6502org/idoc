@@ -1,0 +1,458 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore 64
+related documents in electronic text format that might otherwise cease to
+exist with the rapid advancement of computer technology and declining
+interest in 8-bit computers on the part of the general population. If you
+would like to help by converting C64 related hardcopy documents to
+electronic texts please contact the manager of International Project 64,
+Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The first
+characters of the file name are an abbreviation of the original document
+name and the language of the etext. The version number of the etext follows
+next. After that a letter may appear to indicate the particular source of
+the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International Project
+64 make no representations about the accuracy or suitability of this
+material for any purpose. This etext is provided "as-is". Please refer to
+the warranty of the original document, if any, that may included in this
+etext. No other warranties, express or implied, are made to you as to the
+etext or any medium it may be on. Neither the author(s) nor the members of
+International Project 64 will assume liability for damages either from the
+direct or indirect use of this etext or from the distribution of or
+modification to this etext. Therefore if you read this document or use the
+information herein you do so at your own risk.
+
+*********
+
+The International Project 64 etext of the article "Der singende Draht",
+written and donated for IP64 distribution by Nikolaus Heusler
+<nikolaus.heusler@lrz.tu-muenchen.de>.
+
+RS232DE1.TXT, June 1997, etext #12.
+
+Note from the etexter: 
+
+This is german text.
+
+It's a copy of an article I puslished in a german magazine some years ago.
+It deals with data transfer via RS 232 from Userport to a MS-DOS PC, for
+example, and how to program this in assembler (machine language).
+
+No part of this text may be copied, stored or published in any way without
+prior written permission by the author. It is not allowed to store copies of
+this text or of parts of it on computer-discettes or on computers which can
+be accessed in the public, for example on the internet.
+
+Das Werk einschliesslich aller seiner Teile ist urheberrechtlich geschuetzt.
+Jede Verwertung ausserhalb der engen Grenzen des Urheberrechtsgesetzes ist
+ohne vorherige schriftliche Zustimmung des Verfassers unzulaessig und
+strafbar. Dies gilt insbesondere fuer Vervielfaeltigungen, Uebersetzungen
+und die Verarbeitung in elektronischen Systemen.
+
+Einwilligungen zur Weiterverarbeitung wird der Verfasser im Einzelfall auf
+schriftliche Anfrage gern geben, falls keine kommerziellen Interessen mit
+der Verarbeitung verfolgt werden.
+
+Produkt- und Herstellerangaben in dem Text werden ohne Ruecksicht auf
+eventuellen Patentschutz veroeffentlicht. Warennamen werden ohne Gewaehr-
+leistung der freien Verwendbarkeit benutzt. Die Texte wurden mit groesster
+Sorgfalt zusammengestellt. Trotzdem sind Fehler nicht vollstaendig
+auszuschliessen. Fuer fehlerhafte Angaben und deren Folgen kann der Autor
+weder juristische Verantwortung noch irgendeine Haftung uebernehmen.
+
+Verfasser / Author: Nikolaus Heusler
+                    Zwengauerweg 18
+                    D-81479 Muenchen
+                    Germany
+
+Bei schriftlichen Anfragen bitte Rueckporto beilegen, ich antworte gern.
+
+This version was published in the internet on the project "IP 64" in June
+1997.
+
+*********
+
+Assembler-Corner
+
+Der singende Draht
+
+Im Handbuch des C 64 steht gar nichts, im Programmierhandbuch nichts
+Genaues. Wie nutzt man die eingebaute RS 232-Schnittstelle? Wir stellen
+komplette Lösungen in Maschinensprache vor. Ein kurzes Zusatzprogramm
+erlaubt die Übertragung bis zu 4800 Bit/s.
+
+Nikolaus M. Heusler
+
+Die genormte RS 232-Schnittstelle arbeitet mit einer bitseriellen
+asynchronen Übertragung. Das bedeutet, ein Byte wird in Bits zerlegt, die
+nacheinander über die Leitung geschickt werden. Die asynchrone Übertragung
+verwendet Kennzeichen für Byteanfang und -ende. Bei manchen Computern ist
+auch eine synchrone Übertragung möglich, über eine eigene Leitung wird dann
+der Bittakt vorgegeben.
+
+An dieser Stelle wollen wir einen kurzen Abriß über die Anwendung der RS
+232-Schnittstelle geben. RS 232 eignet sich beispielsweise zur Übertragung
+von Daten zum PC. Dieser wird dazu an den Userport angeschlossesn. Problem:
+PCs erwartet die Daten mit einem anderen Spannungspegel als ihn der C 64
+liefert. Adapter wie beispielsweise in 64'er 9/93 Seite 78 abgebildet setzen
+die physikalischen Pegel in die geforderten Werte um.
+
+Die Schnittstelle kann die eine normale Daten mit OPEN geöffnet werden. Die
+Geräteadresse lautet 2, die Sekundäradresse ist ohne Relevanz. Wichtig ist
+der Dateiname. Er besteht aus zwei, in besonderen Fällen aus vier Zeichen.
+Das erste Byte des Dateinamens wird »Steuerregister« genannt. Seine acht Bit
+bestimmen das Format der Datenübertragung:
+
+Bit 7:        0: ein Stopbit, 1: zwei Stopbits
+Bit 5,6:      00: acht Datenbits
+              01: sieben Datenbits
+              10: sechs Datenbits
+              11: fünf Datenbits
+Bit 4:        ohne Bedeutung
+Bits 0 bis 3: Bitrate (Baud = Bit pro Sekunde)
+              0000: selbstdefiniert
+              0001: 50 Baud
+              0010: 75 Baud
+              0011: 110 Baud
+              0100: 134,5 Baud
+              0101: 150 Baud
+              0110: 300 Baud
+              0111: 600 Baud
+              1000: 1200 Baud
+              1001: 1800 Baud
+              1010: 2400 Baud
+
+Da das Steuerregister als Zeichen des Dateinamens verstanden wird, erfolgt
+die Angabe üblicherweise in Basic mit CHR$. Der Wert 138 beispielsweise
+lautet in binärer Darstellung 10001010 und bewirkt laut obiger Tabelle zwei
+Stopbits, acht Datenbits, eine Rate (Übertragungsgeschwindigkeit) von 2400
+Bit pro Sekunde. Wird für die Rate der Wert 0000 gesetzt, hat der Dateiname
+vier Zeichen, wobei das dritte und vierte Zeichen die Baudrate festlegen.
+Wie das genau funktioniert, werden wir noch lernen.
+
+Das zweite Zeichen des Filenamens enthält das sogenannte Befehlsregister«
+mit folgender Bitbelegung:
+
+Bit 7,6,5: Parität
+           000: keine Parität
+           001: gerade Parität
+           011: ungerade Parität
+           101: achtes Datenbit 1
+           111: achtes Datenbit 0
+Bit 4:     0 = Vollduplex, 1 = Halbduplex
+Bit 1,2,3: nicht benutzt
+Bit 0:     0 = 3-Line Software-Handshake, 1 = X-Line Hardware-Handshake
+
+Auch hier ein Beispiel: Der Wert 97 (binär 01100001) schaltet bei ungerader
+Parität und Vollduplex auf X-Line Hardware-Handshake.
+
+Eine Datei öffnet in Basic beispielsweise folgender Befehl:
+
+OPEN 2,2,2,CHR$(138)+CHR$(97)
+
+Das Steuerregister hat den Wert 138, das Befehlsregister lautet 97.
+
+Die Daten können wie bei jeder anderen Datei mit den gewohnten Befehlen
+gesendet und empfangen werden.
+
+Schauen wir uns ein Beispiel an, bei dem in Maschinensprache eine solche
+Schnittstelle geöffnet wird:
+
+LDA #2     ; logische Filenummer
+LDX #2     ; RS 232 Gerätenummer
+LDY #3     ; irgendeine Sekundäradresse
+JSR $FFBA  ; SETPAR
+LDA #2     ; Länge des Dateinamens
+LDX #<FADR ; Lowbyte der Adresse des Filenamens
+LDY #>FADR
+JSR $FFBD  ; SETNAM
+LDX #<EBUF ; Lowbyte Empfangspuffer
+LDY #>EBUF ; Highbyte
+STX $f7    ; setzen
+STY $f8
+LDX #<ABUF ; Lowbyte Ausgabepuffer
+LDY #>ABUF ; Highbyte
+STX $f9    ; setzen
+STY $fa
+JSR $FFC0  ; OPEN
+LDX #2     ; Ausgabekanal öffnen
+JSR $FFC9  ; CHKOUT
+...        ; Datenausgabe mit JSR $FFD2
+JSR $FFCC  ; CLRCHN
+LDA #2
+JSR $FFC3  ; CLOSE
+RTS
+; Dateiname: zwei Bytes
+FADR .BYTE %00000110    ; Wert für Steuerregister
+     .BYTE %00000000    ; Wert für Befehlsregister
+
+Im C 64 erfolgt rein softwaremäßig die Steuerung über die CIA 2. Dieser
+Baustein besitzt zwei 16 Bit-Intervalltimer, die von einem bestimmten Wert
+auf Null abwärts zählen und dann ein Signal (NMI) auslösen. Die im C 64
+bereits eingebaute Software nutzt dies aus. Sie holt den Wert für den Timer
+B, der als Interruptquelle dient, aus einer im ROM gespeicherten Tabelle.
+Danach startet der Timer.
+
+Da beim C 64 das Senden und Empfangen via RS 232 interruptsgesteuert
+abläuft, werden zwei Puffer benötigt. Einer der beiden Zwischenspeicher
+steht für die zu sendenden Daten bereit. Die Daten werden nur in den Puffer
+geschrieben. Das Senden erfolgt mit Hilfe des NMI-Interrupts, weil man den
+(im Gegensatz zum IRQ) nicht sperren kann. Dadurch ist gewährleistet, daß
+die Daten in jedem Fall gesendet werden. Da das Beschreiben des Pufferns
+normalerweise schneller geht als das Senden der Zeichen, sollte man nachdem
+ein Zeichen abgeschickt wurde das nächste Zeichen vorbereiten und dann
+warten, bis die Sendung erfolgt ist. Beachtet man das nicht, könnte
+versehentlich ein noch nicht gesendetes Zeichen überschrieben werden, die
+Folge wären Übermittlingsfehler.
+
+Das Empfangen geschieht auf ähnliche Weise, denn die Leitung RXD, über die
+Daten ankommen, ist nicht nur mit dem Port der CIA 2 verbunden, sondern auch
+mit der Leitung FLAG2, wodurch bei jedem eingehenden Datum ein NMI ausgelöst
+wird. Das Empfangen der Daten erfolgt programmunabhängig, die Daten werden
+in den Empfangspuffer geschrieben, der genauso groß ist wie der Sendepuffer:
+256 Byte. Man sollte sich also rechtzeitig darum kümmern, daß die Daten aus
+diesem Zwischenspeicher abgeholt werden. Im obigen Beispiel haben wir
+gesehen, daß man dem C 64 in den Speicherzellen $f7 bis $fa vor der
+Verwendung der RS 232 die Adressen der beiden Puffer mitteilen muß. Übrigens
+werden die Pufferzeiger auch vom Betriebssystem gesetzt. Dieses legt die
+Puffer jedoch an das obere Ende des Basicspeichers. Aus diesem Grund wird
+beim Öffnen der Schnittstelle ein CLR-Befehl ausgeführt, denn im gleichen
+Speicherbereich liegen ja auch die String-Variablen. Um das zu vermeiden,
+legen wir die Puffer in den sonst unbenutzten Speicherbereich von $CE00 bis
+$CFFF. Das sollte normalerweise vor dem OPEN-Befehl geschehen, weil das
+Betriebssystem die Pufferadressen erst festlegt, nachdem es in den
+Speicherzellen $F8 und $FA nachgeschaut hat, ob das vom Programm schon
+erledigt wurde. Ist das Highbyte der Pufferzeiger ungleich Null, geht das
+System davon aus, daß die Zeiger bereits auf die Puffer deuten. Dann wird
+auch nichts verändert.
+
+Durch die Kernalroutine READST ($FFB7) oder beim C 64 durch Auslesen der
+Speicherzelle 144 ($90) läßt sich der Status abfragen. Die einzelnen Bits
+haben folgende Bedeutung:
+
+Bit 0: Paritätsfehler (Prüfsumme falsch)
+Bit 1: Rahmenfehler
+Bit 2: Empfangspuffer voll
+Bit 3: Empfangspuffer leer (testen nach GET#)
+Bit 4: CTS-Signal fehlt
+Bit 5: nicht benutzt
+Bit 6: DSR-Signal fehlt
+Bit 7: Abbruch
+
+Ein gesetztes Bit signalisiert, daß die jeweilige Störung aufgetreten ist.
+Bei gesetztem Bit 2 zum Beispiel lief der Empfangspuffer über.
+
+Um nun andere als die vorgesehenen Übertragungsraten zu benutzen, könnten
+natürlich die Werte in den Timer und die entsprechenden Werte in die beiden
+Speicherzellen geschrieben werden. Nachteil: Dieses Programm würde nur auf
+dem C 64 arbeiten, auf keinem anderem Commodore-Computer. Aber es geht auch
+eleganter: Über die selbst definierte Bitrate!
+
+Dazu müssen die unteren vier Bits des ersten Bytes im Filenamen (das
+Steuerregister) den Wert Null haben, die Bitrate steht dann im dritten und
+vierten Byte des Dateinamens. Die Werte berechnet man nach folgender Formel:
+
+RATE = TAKT/WERT/2-100
+RATE_HIGH = INT (RATE / 256)
+RATE_LOW = RATE - RATE_HIGH * 256
+
+Mit WERT ist die gewünschte Übertragungsrate in Bit/s (zum Beispiel 1200)
+gemeint, TAKT gibt den Prozessortakt in Hz an. Ein deutscher C 64 hat TAKT =
+985250, in Amerika gilt TAKT = 1022730. Für 1200 Baud würde das
+Zwischenergebnis RATE = 311 (gerundet) betragen. Diese Zahl wird nach den
+bekannten Formeln in High- und Lowbyte umgerechnet, das Ergebnis ist:
+Highbyte = 1, Lowbyte = 55. Als drittes und viertes Byte im Filenamen würden
+Sie also CHR$(55)+CHR$(1) schreiben.
+
+Beachten Sie zweierlei: Erstens wird der Datei-»Name« hier nicht wie
+beispielsweise bei der Floppy zum Peripheriegerät geschickt, sondern in
+einzelne Zeichen zerlegt, die den weiteren Ablauf steuern. Zweitens gelten
+wie gesehen in USA und Europa (bedingt durch unterschiedliche Normen in der
+Video-Bilderzeugung) unterschiedliche Taktfrequenzen. Wenn Sie eine der
+vorgegebenen Baudraten auswählen möchten, brauchen Sie die Berechnung mit
+der RATE nach obiger Formel ja nicht selbst auszuführen. Im ROM befinden
+sich zwei Tabellen, in der die Werte für High- und Lowbyte für alle
+voreingestellten Übertragungsraten stehen. Welche Tabelle der C 64 benutzt,
+hängt von der benutzten Version ab. Auch Sie als Anwender können ganz
+einfach durch Auslesen der Speicherzelle $2A6 (678) feststellen, welche
+Version Sie vor sich haben: Bei einem amerikanischen C 64 (Video-Norm NTSC)
+steht hier eine Null, in Europa (PAL) eine Eins.
+
+Als Übung wollen wir ein File mit 4800 Bit/s (also mit selbst definierter
+Baudrate) übertragen (7 Datenbits, 1 Stopbit, Vollduplex, 3-Line-Handshake,
+keine Parität). Nach obiger Tabelle ergeben sich für das Steuerregister der
+Wert %00100000 = 32 = $20, das Befehlsregister lautet %00000000 = $00. Nach
+obiger Formel gilt RATE_HIGH = 0, RATE_LOW = 2. Auf die Unterscheidung
+zwischen PAL und NTSC verzichten wir. Das Programm unterscheidet sich kaum
+von dem altbekannten:
+
+LDA #2     ; logische Filenummer
+LDX #2     ; RS 232 Gerätenummer
+LDY #3     ; irgendeine Sekundäradresse
+JSR $FFBA  ; SETPAR
+LDA #4     ; Länge des Dateinamens
+LDX #<FADR ; Lowbyte der Adresse des Filenamens
+LDY #>FADR
+JSR $FFBD  ; SETNAM
+LDX #<EBUF ; Lowbyte Empfangspuffer
+LDY #>EBUF ; Highbyte
+STX $f7    ; setzen
+STY $f8
+LDX #<ABUF ; Lowbyte Ausgabepuffer
+LDY #>ABUF ; Highbyte
+STX $f9    ; setzen
+STY $fa
+JSR $FFC0  ; OPEN
+LDX #2     ; Ausgabekanal öffnen
+JSR $FFC9  ; CHKOUT
+...        ; Adresse »PT« auf Dateianfang setzen
+SENDE LDY #0
+LDA (PT),Y ; ein Zeichen aus Datei lesen
+...        ; Zeichen bearbeiten (z.B. Codewandlung)
+TAX        ; Zeichen merken
+WART LDA $2A1 ; Status lesen
+AND #1     ; Bit 1 testen
+BNE WART   ; nicht bereit, dann warten
+TXA
+JSR $FFD2  ; CHROUT Zeichen senden weiter bei (SENDE), bis Dateiende erreicht
+JSR $FFCC  ; CLRCHN
+LDA #2
+JSR $FFC3  ; CLOSE
+RTS
+; Dateiname: vier Bytes
+FADR .BYTE $20 ; Wert für Steuerregister
+     .BYTE $00 ; Wert für Befehlsregister
+     .BYTE $02 ; RATE_LOW
+     .BYTE $00 ; RATE_HIGH
+
+Als kleines Demoprogramm geben Sie Listing 1 bitte mit dem MSE ein. Das
+Programm sendet sequentielle Dateien mit 4800 Bit/s, 8 Datenbits,
+Vollduplex, keine Parität, 1 Stoppbit, 3-Line Handshake. Die Syntax lautet:
+
+SYS 52480, KONV_FLAG, "NAME"
+
+Wenn KONV_FLAG = 0, werden die Zeichen der Datei erst noch in den ASCII-Code
+gewandelt, bei KONV_FLAG = 128 erfolgt die Übertragung unverändert.
+
+Mit "NAME" ist der Titel der sequentiellen Datei gemeint. Beispiel:
+
+SYS 52480, 128, "TEST,S,R"
+
+"TEST" wird unkonvertiert gesendet.
+(pk)
+
+; dokumentierter Quelltext zu SEQ-TRANS.OBJ
+; Kommentar von Nikolaus Heusler
+; alle Zahlenwerte hexadezimal
+
+; Konv-Flag lesen und speichern
+cd00 jsr aefd   ; CHKCOM Komma holen
+cd03 jsr b79e   ; GETBYT Konv-Flag holen nach X
+cd06 stx   02   ; und zwischenspeichern
+
+; Dateinamen festsetzen
+cd08 jsr aefd   ; CHKCOM Komma holen
+cd0b jsr ad9e   ; FRMEVL Ausdruck auswerten
+cd0e jsr b6a6   ; FRESTR String (Dateinamen) lesen
+cd11 cmp  #05   ; Länge > 5 ?
+cd13 bcs cd18   ; ja, dann OK
+cd15 jmp af08   ; sonst ?SYNTAX ERROR
+cd18 ldx  $22   ; Adresse des Dateinamens low
+cd1a ldy  $23   ; und high
+cd1c jsr ffbd   ; SETNAM Namen festlegen
+
+; SEQ-Datei von Diskette lesen
+cd1f lda  #01   ; Filenummer 1
+cd21 ldx  #08   ; Geräteadresse 8 = Floppy
+cd23 ldy  #02   ; Sekundäradresse 2
+cd25 jsr ffba   ; SETPAR
+
+cd28 jsr ffc0   ; OPEN Datei zum Lesen öffnen
+cd2b jsr ffb7   ; Status holen
+cd2e beq cd38   ; Fehler? Nein, dann OK
+
+; Fehlerbehandlung
+cd30 jsr ffcc   ; CLRCHN Kanal schließen
+cd33 lda  #01
+cd35 jmp ffc3   ; CLOSE 1, Abbruch
+
+cd38 ldx  #01   ; Filenummer
+cd3a jsr ffc6   ; Eingabekanal schalten
+cd3d jsr ffb7   ; Status holen
+cd40 bne cd30   ; Fehler, dann Abbruch
+cd42 ldx  #01   ; Datei nach $801 laden
+cd44 ldy  #08
+cd46 stx  $22   ; Pointer in Speicher
+cd48 sty  $23
+
+cd4a jsr ffcf   ; BASIN ein Zeichen aus Datei lesen
+cd4d ldy  #00   ; und speichern
+cd4f sta  (22),y
+cd51 inc  $22   ; Zeiger auf nächste
+cd53 bne cd57   ; Speicherzelle
+cd55 inc  $23
+cd57 jsr ffb7   ; Status holen
+cd5a beq cd4a   ; OK, dann weiter
+cd5c and  #40   ; Bit 6 testen: End of File?
+cd5e beq cd30   ; nein, dann Fehler
+
+; Datei komplett gelesen
+cd60 jsr cd30   ; Datei schließen
+cd63 lda  #01   ; Dateinummer
+cd65 ldx  #02   ; Geräteadresse 2 = RS 232
+cd67 ldy  #03   ; Sekundäradresse 3 (keine Bedeutung)
+cd69 jsr ffba   ; SETPAR
+cd6c lda  #04   ; Dateiname: 4 Zeichen
+cd6e ldx  #e5   ; Zeiger auf Adresse $CDE5
+cd70 ldy  #cd   ; (dort steht Dateiname)
+cd72 jsr ffbd   ; SETNAM
+cd75 jsr ffc0   ; OPEN
+
+cd78 ldx  #03   ; vier Bytes ab $cde9 kopieren
+cd7a lda cde9,x
+cd7d sta   f7,x ; Zeiger auf Puffer
+cd7f dex
+cd80 bpl cd7a   ; alle vier Bytes kopieren
+
+cd82 ldx  #01   ; Datei 1 als Ausgabekanal schalten
+cd84 jsr ffc9   ; CHKOUT entspricht CMD 1
+cd87 ldx  #01   ; Zeiger auf Dateispeicher $801
+cd89 ldy  #08   ; Highbyte
+cd8b stx  $14   ; nach $14, $15 schreiben
+cd8d sty  $15
+cd8f lda dc0e   ; CIA Nr. 1 Kontrollregister A
+cd92 and #$fe   ; Bit 0 löschen
+cd94 sta dc0e   ; Timer A abschalten
+
+; Datei übertragen
+cd97 ldy  #00
+cd99 lda  (14),y; ein Byte aus Speicher lesen
+cd9b bit   02   ; konvertieren?
+cd9d bmi cdb4   ; nein, dann weiter
+
+; Konverter CBM ASCII 
+
+Hier endet meine Kopie des Artikels leider.
+
+*********
+
+End of the International Project 64 etext of the article "Der singende
+Draht".
+
+*********

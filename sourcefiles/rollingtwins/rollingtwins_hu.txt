@@ -1,0 +1,73 @@
+*********
+
+Welcome to iDOC= - the international CBM documentation project!
+
+The goal of iDOC= is to preserve (non-English) Commodore related documents
+in electronic text format that might otherwise cease to exist with the rapid
+advancement of computer technology and declining interest in 8-bit computers
+on the part of the general population. If you would like to help by
+converting Commodore related hardcopy documents to electronic texts please
+contact the manager of iDOC=, Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names consists of a reasonably short unique title, followed by the
+document language. Two optional fields follow; first the document version (0
+for incomplete texts, version 1 is usually unnumbered), and then the
+document source, if there are more than one. Finally, the document is given
+a .txt extension.
+
+The author(s) of the original document and members of iDOC= make no
+representations about the accuracy or suitability of this material for any
+purpose. This etext is provided "as-is". Please refer to the warranty of the
+original document, if any, that may included in this etext. No other
+warranties, express or implied, are made to you as to the etext or any
+medium it may be on. Neither the author(s) nor the members of iDOC= will
+assume liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext. Therefore
+if you read this document or use the information herein you do so at your
+own risk.
+
+*********
+
+The iDOC= etext of the Rolling Twins manual, converted to text by Adam
+Dohos <dohi@matavnet.hu>
+
+rollingtwins_hu.txt, August 2001, etext #73.
+
+
+*********
+
+Rolling Twins (Gördülõ Ikrek)
+
+Az aljas Bicikli Pumpa fogságba ejtette a kis Bogyó testvéreket,
+Twibort és Twihamért. Szegény Pumpa már hetek óta nem fújt fel
+egyetlen bicikli kereket sem, s most csak arra vár, hogy a Bogyókból
+kifogyjon a szusz. A varázsfalakkal körülzárt kertben ragtapaszok
+rejtõznek, ha a foglyok megszerzik ezeket, késleltethetik a kifulladást.
+A feladat ép bõrrel kivezetni az ikreket az útveszõbõl.
+
+BETÖLTÉS:
+
+Kazetta: SHIFT+RUN STOP
+
+IRÁNYÍTÁS: JOYSTICK PORT 2
+
+Egy jótanács:
+
+A pályákon található kérdõjelek olyan csomagokat rejtenek, amelyeket
+felvéve könnyebbé vagy éppen nehezebbé válik a feladat. Próbáld ki!
+
+*********
+
+End of the iDOC= etext of the Rolling Twins manual.
+
+*********

@@ -1,0 +1,560 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore
+64 related documents in electronic text format that might otherwise
+cease to exist with the rapid advancement of computer technology and
+declining interest in 8-bit computers on the part of the general
+population. If you would like to help by converting C64 related
+hardcopy documents to electronic texts please contact the manager of
+International Project 64, Peter Karlsson, at m9944@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document.  However, certain portions, such as diagrams, program
+listings, and indexes may have been either altered or sacrificed due
+to the limitations of plain vanilla text.  Diagrams may have been
+eliminated where ASCII-art was not feasible.  Program listings may be
+missing display codes where substitutions were not possible.  Tables
+of contents and indexes may have been changed from page number
+references to section number references. Please accept our apologies
+for these limitations, alterations, and possible omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The
+first characters of the file name are an abbreviation of the original
+document name and the language of the etext. The version number of
+the etext follows next. After that a letter may appear to indicate the
+particular source of the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International
+Project 64 make no representations about the accuracy or suitability
+of this material for any purpose.  This etext is provided "as-is".
+Please refer to the warantee of the original document, if any, that
+may included in this etext.  No other warantees, express or implied,
+are made to you as to the etext or any medium it may be on.  Neither
+the author(s) nor the members of International Project 64 will assume
+liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext.
+Therefore if you read this document or use the information herein you
+do so at your own risk.
+
+*********
+
+The International Project 64 etext of the North & South Manual (German),
+converted to text by Martin Brunner <martinb@finwds01.tu-graz.ac.at>
+
+NOSODE10.TXT, April 1997, etext #3.
+
+*********
+
+************
+*Einleitung*
+************
+
+Mit den famosen Comic-Helden, den "blauen Boys" (von LAMBIL erfunden und von
+CAUVIN gezeichnet, erschienen nei Editions DUPLIS), erleben Sie den 
+Sezessionskrieg mit einer Prise historischen Realismus und einem Haufen Humor!
+
+In diesem Spiel begegnen Sie allen wichtigen Figuren des Comics und unter
+anderen Störenfrieden wie Indianern und Mexikanern. Also dann, wählen Sie 
+Ihr Lager! Nichts hindert Sie, für die Südstaaten zu kämpfen; werden Sie etwa
+den Lauf der Geschichte ändern?
+
+
+*******************
+*Laden und Starten*
+*******************
+
+Commodore C64, C128
+===================
+
+Joystick empfohlen. Vor Starten des Spiels den Anschluß im Joystick-Port
+überprüfen.
+
+Diskettenversion:
+- Computer ausschalten. Programmdiskette einlegen.
+- Computer wieder einschalten.
+- Auf C128 GO 64 eingeben und mit Y bestätigen.
+- Dann - auch auf C64 - LOAD"*",8,1 eintippen und RETURN-Taste drücken.
+- Das Spiel wird von Zeit zu Zeit gewisse Spielsequenzen nachladen.
+- Befolgen Sie bitte die entsprechenden Anweisungen am Bildschirm.
+
+Kassettenversion:
+- Kassette in den Recorder einlegen.
+- Auf C128 GO 64 eingeben und mit Y bestätigen.
+- Dann - auch auf C64 - die Tasten SHIFT und RUN/STOP gleichzeitig drücken.
+- PLAY-Taste auf dem Recorder drücken.
+
+
+GLOSSAR
+=======
+
+- LAGER oder STAAT:.....SÜDEN oder NORDEN.
+- TERRITORIUM:..........geographische Darstellung der USA-Staaten auf der
+                        strategischen Karte.
+- KLICKEN:..............Leertaste oder Feuerknopf drücken, um gewisse
+                        Funktionen (je nach Standpunkt des Cursors) anzuwählen.
+- CURSOR:...............Kleines Zeichen, das zum Zeigen dient und das der
+                        Spieler mit Hilfe des Joysticks oder der Tasten
+                        P, L, Z, X auf der Karte verschieben kann.
+- FEUER:................Feuerknopf oder Leertaste drücken.
+- ARMEE:................ein aus mehreren Einheiten bestehendes Element, das
+                        durch einen Soldaten auf der Karte dargestellt wird.
+- EINHEIT:..............es gibt 3 verschiedene Einheiten: Kavallerie,
+                        Infanterie und Artillerie
+
+
+ZIEL DES SPIELS
+===============
+
+Sie müssen für die Nord- bzw. Südstaaten siegen, indem Sie alle gegnerischen
+Armeen vernichten. Sie befehligen die Armeen auf den Kampfschauplätzen des
+Sezessionskriegs. Sie können nach belieben den Lauf der Geschichte
+berücksichtigen oder ändern.
+
+
+JOYSTICK ODER TASTATUR
+======================
+
+Wenn Sie zu zweit spielen wollen, müssen beide Spieler einen Joystick
+verwenden. Wenn Sie allein gegen den Computer spielen, können Sie entweder
+Tastatur oder Joystick wählen, indem Sie auf das Joystick-Zeichen klicken.
+JOYSTICK/TASTATUR
+                              AUF/P
+
+                        LINKS/Z   RECHTS/X
+                               
+                              AB/L
+
+Andere Tasten: Pause = Taste H drücken. Zum Verlassen des Modus "Computer gegen
+Computer" Commodore Taste drücken.
+
+
+**********
+*Das Menü*
+**********
+
+Wenn Sie gleich mit der gegebenen Konfiguration spielen möchten, klicken Sie
+auf den Koffer (GO). Dann spielen Sie als Kapitän STARK gegen einen
+Südstaaten-Korporal. Das Ausgangsjahr ist 1861, und es steht keine Katastrophe
+bevor, Nord beginnt.
+
+Wenn Sie hingegen die Konfiguration ändern wollen, können Sie folgende Parameter
+einstellen:
+
+- 1 oder 2 Spieler
+- Schwierigkeitsgrad
+- Einstiegsjahr
+- Katastrophen oder Ereignisse
+- Strategie- oder Arcademodus
+
+Der Spieler kann die Parameter in beliebiger Reihenfolge festlegen.
+
+
+(1) 1 ODER 2 SPIELER
+====================
+
+Klicken Sie die Fahne hinter einem Soldaten an, erscheint ein Computer, was
+bedeutet, daß der betreffende Staat durch den Computer vertreten wird. Ein
+weiterer Klick bewirkt den Übergang auf einen menschlichen Spieler.
+
+
+(2) SCHWIERIGKEITSGRAD
+======================
+
+Klicken Sie auf den Kopf der Figur im Fenster.
+
+KORPORALE: BLUTCH für den Norden und MATHIAS für den Süden;
+SERGERANTEN: CHESTERFIELD für den Norden und CANCRELAT für den Süden,
+KAPITÄNE: STARK für den Norden und PHILIPP für den Süden.
+
+Der KORPORAL-Level ist der schwierigste, der CAPTAIN-Level der leichteste.
+
+
+(3) EINSTIEGSJAHR
+=================
+
+Klicken Sie auf den Kalender, um die Jahre von 1861 bis 1864 durchlaufen zu
+lassen. 1865 steht nicht auf dem Programm in Anbetracht der ausweglosen
+Situation des Südens. Jedes Jahr werden Armeen und besetzte Gebiete anders
+verteilt, je nach historischer Gegebenheit.
+
+
+(4) DIE KATASTROPHEN
+====================
+
+Mit den zur Verfügung stehenden Optionen können Sie gewisse Faktoren ins Spiel
+einbauen, die den Liebhabern des Comics "Die Blauen Boys" wohlbekannt sein
+dürften. Auf diese Weise ändern Sie die strategischen Bedingungen:
+Um Katastrophen zu aktivieren, klicken Sie die entsprechenden Icons an.
+Wenn das Spiel einmal gestartet ist, können Sie sie nicht mehr aufhalten.
+
+a) - DIE INDIANER
+     Sie überfallen von Zeit zu Zeit Armeen auf den Nachbarterritorien. Wenn
+     die Indianer ein Opfer entdeckt haben, schicken sie Rauchsignale und
+     gehen dann zum Angriff über. Die überfallene Armee verliert Einheiten
+     oder wird vollkommen vernichtet.
+
+   - DIE MEXIKANER
+     Wenn Sie die Indianer eingeschaltet haben, ist auch der Mexikaner nicht
+     untätig. Nach einer erholsamen Siesta wirft der Mexikaner auf den Staat
+     Texas eine Bombe, um die dort stationierte Armee zu "beruhigen", die
+     gleichfalls geschwächt wird oder ganz verschwindet.
+
+b) GEWITTER
+   Eine Gewitterwolke wandert über die Karte. Eine Armee ist lahmgelegt,
+   solange die Wolke über ihrem Territorium hängt.
+
+c) VERSTÄRKUNG AUS EUROPA
+   Die diplomatischen Verhandlungen des Nordens und des Südens mit Europa sind
+   fruchtbringend. Ein Schiff bringt Verstärkung für das Lager, das Südvirginia
+   besetzt. Sobald die Truppen an Land gehen, bilden sie eine Armee (1 Kanone,
+   3 Reiter und 6 Infanteristen) oder verstärken eine bereits vorhandene Armee
+   bis zum erlaubten Maximum (3 Kanonen, 18 Infanteristen, 9 Reiter). Die
+   überzähligen Einheiten gehen verloren.
+
+
+(5) STRATEGIE- ODER ARCADEMODUS
+===============================
+
+Wenn Sie das Arcade-Icon (Konsole) anwählen, wird die Strategie-Option
+ausgeschaltet und umgekehrt. Im Arcade-Modus müssen Sie 3 Prüfungen bestehen:
+Schlacht, Zugüberfall und Fort. Im Strategie-Modus wird der Sieger auf den
+3 Prüfungen durch den Computer errechnet anhand der Kräfteverhältnisse und
+eines Zufallsfaktors. Auf diese Weise können sich die Liebhaber reiner
+Strategie voll und ganz auf den Überlegungspart konzentrieren.
+
+
+Wenn Sie mit der Auswahl der Parameter (in beliebiger Reihenfolge) fertig sind,
+klicken Sie auf GO, um die Partie zu beginnen.
+
+
+***********************
+*Das eigentliche Spiel*
+***********************
+
+
+KARTE UND STRATEGISCHER TEIL
+============================
+
+Je nach gewähltem Jahr ändern sich die Anzahl der Armeen und ihre
+Stationierungen. Hier die Karte,auf der Sie Ihre Truppen verlagern können:
+
+- Eine Armee besteht aus mehreren Infanterie-, Artillerie und
+  Kavallerieeinheiten. Dem Soldaten, der die Armee darstellt, liegen mehr oder
+  weniger Kanonenkugeln zu Füßen je, je nach Anzahl der unterstehenden Einheiten
+
+
+TRUPPENBEWEGUNGEN
+=================
+
+Die Spieler kommen abwechselnd an die Reihe. Bei jedem Spielzug kann jeder
+Spieler einen Teil oder all seine Armeen versetzten. Jede Armee kann von ihrem
+Standort auf ein benachbartes Territorium (d.h. mit gemeinsamer Grenze)
+verlagert werden. Winige Beispiele:
+
+1) Armee in ein anderes Territorium verlagern:
+   - Klicken Sie die betreffende Armee an.
+   - Die möglichen Bestimmungsgebiete fangen zu blinken an.
+   - Die Armee bezieht die neue Stellung und kann vor dem nächsten Spielzug
+     nicht mehr bewegt werden
+
+2) Verlagerung annullieren:
+   - Klicken Sie auf ein Territorium, das nicht blinkt, oder auf das
+     Ausgangsterritorium.
+   - Die Armee bleibt auf dem alten Standplatz und kann während des
+     Spielzuges noch verlagert werden.
+
+3) Den Spielzug vorzeitig beenden:
+   Wenn eine oder mehrere Armeen auf ihrem Standort bleiben sollen und Sie
+   Ihren Zu beenden wollen, klicken Sia auf den Streifen mit dem Datum unten
+   am Bildschirm. Dann kommt Ihr Gegner dran.
+
+4) Sind alle Armeen verlagert worden, kommt Ihr Gegner automatisch an die Reihe.
+
+
+EIN TERRITORIUM EINNEHMEN
+=========================
+
+Es gibt 6 verschiedene Fälle:
+
+1) Das Territorium ist unbesetzt.
+   - Der Spieler, dessen Armee als erster ein Gebiet besetzt, gelangt in den
+     Besitz des betreffenden Gebietes
+   - Verläßt diese Armee ihre Stellung, wird sie durch ihr Banner vertreten.
+
+2) Das Territorium gehört dem Feind, es sind aber keine Einheiten darauf
+   stationiert.
+   - Die einfallende Armee nimmt das Gebiet ein, die feindliche Fahne
+     verschwindet.
+   - Wenn die neue Armee ihre Stellung wechselt, erschient ihre Fahne
+
+3) Das Territorium wird von einer gegnerischen Einheit besetzt.
+   - In diesem Fall kommt es zur Schlacht. Wenn der Angreifer siegt, wechselt
+     das Territorium den Besitzer.
+
+4) Das Territorium gehört bereits dem Spieler an Zug:
+   In diesem Fall ändert sich nichts.
+
+5) Das Territorium besitzt eine Stadt und ist vom Gegner besetzt:
+   - Sie müssen zuerst die Schlacht gewinnen bzw. die feindliche Armee zum
+     Rückzug zwingen.
+   - Dann gilt es, im Fort-Spiel zu siegen.
+   - Sind Sie erfolgreich, darf Ihre Armee auf dem Territorium bleiben,
+     ansonsten geht sie ins Ausgangsterritorium zurück.
+
+6) Es befindet sich eine Stadt im feindlichen Territorium, es ist jedoch keine
+   Armee stationiert:
+   - Um das Gebiet einzunehmen, müssen Sie unbedingt im Fortspiel siegen,
+     ansonsten bleibt Ihre, d. h. die angreifende Armee in ihrem
+     Ausgangsterritorium.
+
+
+ZUSAMMENSCHLIESSEN VON ARMEEN
+=============================
+
+Um gewisse Armeen zu verstärken zwecks numerischer Überlegenheit oder schwere,
+durch Kämpfe erlittene Verluste wettzumachen, kann der Spieler während der
+Truppenbewegungen zwei oder mehrere Armeen vereinen.
+- Klicken Sie eine Armee an.
+- Verlagern Sie sie auf ein Territorium mit einer benachbarten, verbündeten
+  Armee.
+- Die Armee ist nun verstärkt, kann aber erst beim nächsten Zug bewegt werden.
+
+Hinweis: Auch hier kann die Höchstanzahl der Einheiten nicht überschritten
+werden: 18 Infanteristen, 3 Kanonen oder 9 Reiter.
+
+
+ANGRIFF AUF 1 FEINDLICHE ARMEE
+==============================
+
+- Klicken Sie auf die Armee, die Sie einsetzten wollen.
+- Klicken Sie auf ein vom Feind besetztes Territorium.
+- Die zwei Armeen begegnen einander in einer Schlacht im Arcade-Modus, außer
+  die Spieler haben eingangs den Strategiemodus gewählt.
+
+
+VERBÜNDETE ARMEEN GREIFEN GEMEINSAM EINE FEINDLICHE ARMEE AN
+============================================================
+
+Überprüfen Sie, ob mehrere Ihrer Armeen, die untereinander benachbart sind,
+im selben Spielzug dieselbe feindliche Armee angreifen können.
+- Wenn ja, klicken Sie eine Ihrer Armeen an.
+- Klicken Sie auf das feindliche Territorium.
+- Die Armeen, dia an das betreffende Gebiet angrenzen, begeben sich
+  automatisch dorthin.
+
+HINWEIS: Die gemeinsam angreifenden Armeen können das bereits erwähnte Limit
+(18 Infanteristen, 3 Kanonen oder 9 Reiter) nicht übersteigen. Die überzähligen
+Einheiten bleiben in einer Armee auf einem der Ausgangsterritorien.
+
+
+RÜCKZUG
+=======
+
+Erscheint die Situation während einer Schlacht ausweglos, kann der Spieler
+sich zum Rückzug entschließen. Im Arcade-Modus drückt Spieler 1 dazu die
+Taste E, Spieler 2 die Taste  [Pfeil nach oben].
+
+Für die strategischen Folgen eines Rückzuges bieten sich 2 Möglichkeiten:
+- Wenn Sie der Angreifer sind, kehren Sie zum Ausgangspunkt zurück.
+- Wenn Sie der Verteidiger sind, ziehen Sie sich bezüglich der Front, um ein
+  Feld zurück, das Ihnen gehören oder leer sein muß.
+- Wenn dies nicht möglich ist, so kann sich Ihre Armee nicht zurückziehen
+  (Tasten E und  wirkungslos).
+
+In beiden Fällen verliert die sich zurückziehende Armee eine Artillerie-Einheit.
+
+
+VERSORGUNG UND AUFSTELLEN NEUER ARMEEN
+======================================
+
+Nach jedem Spielzug wird jedem Spieler je nach Anzahl der Territorien, die ihm
+gehören, eine gewisse Anzahl von Goldsäcken zugesprochen. Damit der Spieler sie
+auch wirklich erhält, müssen zwei seiner Städte durch eine Eisenbahnlinie
+verbunden sein, die ausschließlich durch demselben Spieler gehörende Gebiete
+führt.
+
+
+Goldsäcke erhalten:
+-------------------
+Wenn 2 Städte richtig miteinander verbunden sind, fährt nach den
+Truppenbewegungen ein Zug von der einen zur anderen. Die Goldsäcke kommen
+sodann in die Zentralbank des Spielers.
+
+
+Eine neue Armee aufstellen:
+---------------------------
+Wenn der Spieler über 5 Goldsäcke in seiner Bank verfügt, wird um diesen Preis
+eine neue Arme aufgestellt, die auf der Karte, links unten blinkt.
+
+Um diese ins Spiel zu bringen, klicken Sie ein blinkendes Territorium an. Die
+neue Armee (6 Infanteristen, 3 Reiter, 1 Kanone) kann sich nur auf ein
+Territorium ohne Armee stellen und dann nur, wenn es sich an einer
+Eisenbahnlinie befindet, die voll und ganz Ihnen gehört. Die geeigneten
+Territorien blinken.
+
+Wenn das Aufstellen einer neuen Armee nicht möglich ist, bleibt das Gold in der
+Bank, bis sich dem Spieler eine Gelegenheit bietet.
+
+
+Wie ergattert man die Steuergelder des Feindes?
+-----------------------------------------------
+- Es darf keine Verbindung zwischen zwei Städten möglich sein. (Der Zug fährt
+  prinzipiell immer die sicherste Strecke, ohne feindliches Gebiet zu
+  durchqueren.) Sie können eube Verbindung unterbrechen, indem Sie ein
+  Territorium zwischen 2 feindlichen Städten erobern.
+- Ein einziges Mal wird der Zug trotzdem versuchen, das Gebiet zu
+  durchqueren, wenn kein anderer Weg möglich ist, dann kommt es im Arcade-Modus
+  zum Zugüberfall. Wenn Sie siegen, erhält Ihre Bank die feindlichen
+  Steuergelder.
+
+
+ZUGÜBERFALL: ARCADE-MODUS
+=========================
+
+Die Figur, die Sie steuern, steht zu ebener Erde und soll an einem Waggonende
+auf das Dach klettern. Wenn Ihnen das Aufsteigen nicht gelingt und die Waggons
+vorbeifahren, ist der Überfall gescheitert.
+
+                                         Tastatur         Joystick
+Auf einen Waggon aufsteigen                 P               AUF
+Auf dem Dach laufen                      Z     X       LINKS   RECHTS
+Von einem Waggon zum anderen Springen       P               AUF
+
+Ihr Ziel ist es, bis zur Lok vorzudringen und den Lokführer zu überwältigen.
+
+
+Kämpfen:
+--------
+- Leertaste oder Feuerknopf: beim Nahkampf geben Sie dem Gegner eins vor die
+  Nase, ansonsten versuchen Sie sich als Messerwerfer.
+ACHTUNG: Die Anzahl der Messer ist je nach Schwierigkeitsgrad begrenzt.
+
+
+Wettlauf gegen die Uhr
+----------------------
+Je nach Schwierigkeitsgrad bleibt Ihnen mehr oder weniger Zeit, bis zur
+Lokomotive vorzudringen. Die Zeit wird durch einen Wecker dargestellt und Ihr
+Weiterkommen durch einen Schuh.
+Ihr Schuh muß den rechten Bildschirmrand vor dem Wecker erreichen.
+Wenn Sie ein Gegner zu fall bringt, müssen Sie schnell wieder aufsteigen,
+bevor Ihnen der Zug davonfährt.
+
+
+Zwei-Spieler-Version:
+---------------------
+Der Spieler, der seinen Zug verteidigt, kann seine Männer aufs Dach schicken,
+um dem Angreifer die "Levithen zu lesen".
+- Um einen Mann aufs Dach zu schicken: AUF oder AB
+- Um ein Messer zu werfen oder einen Fausthieb beim Nahkampf zu geben, drücken
+  Sie den Feuerknopf.
+HINWEIS: Der Soldat bewegt sich allein von rechts nach links, der Verteidiger
+kontrolliert nur sein Erscheinen und den Kampf.
+
+
+DAS FORT
+========
+
+Der Besitz von mindestens zwei, durch Eisenbahn verbundenen Städte ist für
+jeden Spieler "lebensnotwendig". Diese Städte werden von Forts beschützt.
+Will man ein solches Gebiet erobern, muß man zunächst eine eventuell
+anwesende Einheit in einer Schlacht besiegen und im Fortspiel gewinnen.
+
+Wenn keine Armee auf dem Territorium anwesend ist, gibt es keine Schlacht.
+Das Fort muß aber trotzdem erobert werden.
+
+Scheitert der Angreifer, bleibt seine Armee am alten Standort, ansonsten
+zieht der Fehlschlag keine weiteren Konsequenzen mit sich.
+
+
+Das Arcade-Spiel:
+-----------------
+Die Zeit ist je nach Schwierigkeitsgrad begrenzt. Wie beim Zugüberfall wird
+Ihr Weiterkommen durch einen Schuh dargestellt. Ihr Ziel ist es, bis zum
+feindlichen Banner (rechts) vorzudringen. Wenn Sie gewinnen, wird Ihre
+Fahne gehißt.
+
+
+Das Arcade
+----------
+Die Steuerung ist dieselbe wie beim Zugüberfall. Es gibt jedoch Hindernisse,
+die Sie nur umgehen können, indem Sie an den Leitern hochklettern. Auch
+werden Wolfshunde auf den Angreifer losgelassen, und wenn dieser mit
+Munitionskisten in Berührung kommt, wird er kurzfristig betäubt.
+
+Zwei-Spieler-Version: Die Steuerung ist diesselbe wie beim Zugüberfall.
+
+ACHTUNG: Wenn der Verteidiger AB angibt, erscheint sein Soldat zu ebener Erde;
+bei AUF erscheint er auf der Schutzwehr.
+
+
+FORMATIONSSCHLACHT
+==================
+
+Sie wird ausgelöst, wenn sich 2 verfeindete Armeen auf demselben Territorium
+befinden. Zweck dieser Auseinandersetzung ist es, die feindliche Armee zu
+vernichten oder zum Rückzug zu zwingen.
+
+
+Steuerung:
+----------
+1) Wählen Sie die Einheit, die Sie steuern wollen:
+Spieler 1:........auf RUN/STOP drücken.
+Spieler 2:........auf F5 drücken.
+Die gewählte Einheit wird durch ein Symbol dargestellt. Für den Norden befindet
+es sich links oben am Bildschirm, für den Süden rechts.
+
+2) Truppenbewegungen
+Verwenden Sie die Richtungstasten oder den Joystick.
+Die ARTILLERIE kann sich nur auf- oder abwärts bewegen.
+Die KAVALLERIE stürmt auf den Feind zu (links oder rechts). Sie kann nicht
+wenden. Die Pferde können sich höchstens aufbäumen.
+Die INFANTERISTEN können sich in alle Richtungen bewegen.
+
+3) Schießen oder zum Angriff übergehen:
+
+- Artillerie: 1 Spieler: Feuerknopf oder Leertaste.
+              2 Spieler: Feuerknopf
+  Drücken Sie anhaltend auf FEUER; eine Leiste erscheint am oberen Bildrand.
+  Je voller die Leiste, desto größer die Schußweite. Erreicht die Leiste das
+  Maximum, erreicht die Kanonenkugel den gegenüberliegenden Bildschirmrand.
+  Um den Schuß zu lösen, lassen Sie die Leertaste bzw. den Feuerknopf los.
+
+  ACHTUNG: Die Kanonen verfügen über je 9 Kugeln. Wenn der Artillerie die
+  Munition ausgeht, zieht sie sich vom Kampf zurück.
+
+- Kavallerie: gleiches Steuerungsprinzip. Der erste Druck auf FEUER läßt die
+  Reiter gegen den Feind anstürmen. Bei jedem weiteren Druck auf FEUER setzen
+  die Reiter ihre Säbel ein. Erreicht die Kavallerie die Seite gegenüber, dreht
+  sie eine Runde um das Schlachtfelt, um wieder auf ihrer Startposition
+  aufzutauchen.
+  Formationsänderung: damit die Reiter die Ausgangsformation wieder einnehmen
+  oder hintereinander anstürmen, geben Sie kurz die Rückwärts-Richtung an
+  (links bzw. rechts).
+
+  ACHTUNG: Dieses Steuerungsprinzip sollten Sie tadellos beherrschen, um
+  Brücken und Canyons zu bewältigen, sonst kommen ihre Reiter zu Fall!
+
+- Infanterie: gleiches Steuerungsprinzip. Durch den ersen Druck auf FEUER
+  treten die Infanteristen an; nachher schießen sie.
+  Formationsänderung: um die ursprüngliche Formation einzunehmen, müssen
+  Sie RÜCKWÄRTS angeben, aber nur kurz, außer Sie wollen tatsächlich
+  rückwärts gehen.
+
+
+EINKREISUNGSMANNÖVER
+====================
+
+Um schneller Territorien zu erobern, ohne gegen feindliche Armeen zu kämpfen,
+kann ein Spieler seinen Gegner einkreisen: Wenn feindliche Territorien ohne
+Truppen von Ihren Armeen eingekreist sind, gelangen sie in Ihren Besitz.
+Ein Territorium mit Stadt kann jedoch nicht eingekreist werden.
+
+*********
+
+End of the International Project 64 etext of the North & South Manual
+(German).
+
+*********

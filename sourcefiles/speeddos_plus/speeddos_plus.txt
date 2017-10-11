@@ -1,0 +1,261 @@
+SPEEDDOS PLUS Einbau- und Bedienungs-Anleitung
+
+         1. Einbau
+         2. Einführung
+         3. LOAD und SAVE
+         4. DOS
+         5. Funktionstasten
+         6. Monitor
+         7. BASIC & Editor
+         8. RESET
+         9. CENTRONICS
+        10. 2. SpeedDos-Laufwerk
+        11. SpeedDos Funktionsweise
+        12. Tips & Tricks
+
+Wichtig: Bevor Sie mit dem Einbau beginnen, lesen Sie sich bitte die
+Einbauanleitung durch. Für Schäden, die durch unsachgemäßen Einbau
+verursacht werden, wird keine Haftung übernommen. Die Garantie von SpeedDos
+erlischt, wenn an den SpeedDosauteilen Veränderungen in irgendeiner Form
+vorgenommen werden.
+
+1. Einbau
+
+Der Einbau von SpeedDos gestaltet sich sehr einfach und benötigt ca. 20
+Minuten Zeit. Benötigt werden lediglich ein Kreuzschlitz-, sowie ein
+normaler Schraubenreher. Zuerst sollten der C-64 und die Floppy von der
+Stromversorgung und am besten allen anderen Anschlußkabeln getrennt werden.
+Danach müssen auf der Unterseite des C-64 die drei Kreuzschlitzschrauben
+bzw. bei der 1541 die vier Schrauben gelöst, und dann die Gehäuse der Geräte
+abgenommen werden. In Bild 1 ist die Platine des C-64 dargestellt. Dort muß
+jetzt vorsichtig das gekennzeichnete Betriebssystem mit dem Schraubendreher
+aus der Fassung gelöst werden. Dort muß jetzt der Sockel, wo auf dem Eprom
+64 ++ steht, mit der kleinen Kerbe nach hinten, vorsichtig hineingesteckt
+werden. Das waren die Änderungen am Computer und er kann nach nochmaliger
+Kontrolle, ob die Kerbe des Eproms nach hinten zeigt (ganz wichtig!!) wieder
+zugeschraubt werden. ACHTUNG: Wenn das KernalRom "U4" nicht gesockeit ist,
+kann man dieses in jedem Computerladen gegen geringe Kosten auslöten und
+sockeln lassen!
+
+In der 1541 müssen die IC's 1 und 2 vorsichtig aus den Fassungen mit dem
+Schraubendreher gelöst werden. Dann muß die Platine, auf der sich das Eprom
+mit der Nummer 41 befindet, mit der Eprom-Kerbe nach hinten an Position 1
+gesteckt werden. An Position 2 muß der schmale lange Sockel mit dem Stecker/
+Kabel nach hinten und der Sockel-Kerbe nach hinten gesteckt werden, und das
+IC, das vorher an dieser Stelle steckte (auf dem Baustein steht 6522 drauf)
+wird jetzt einfach mit der Kerbe nach hinten auf den Zwischenstecker
+gesteckt. Nach einer weiteren Kontrolle, ob kein Beinchen des IC's oder der
+Platine verbogen ist und die beiden Bauteile richtig eingesetzt sind, kann
+die Floppy wieder geschlossen werden. Das Zuleitungskabel wird am besten
+oberhalb des Netzsteckers aus dem Gehäuse herausgeführt. Als letzte
+Umbaumaßnahme muß jetzt nur noch die andere Seite des Zuleitungskabels mit
+dem Userportstecker richtig auf den Userport gesteckt werden. Das normale
+Floppykabel muß weiterhin zwischen C-64 und 1541 stecken bleiben.
+
+
+
+Speed-Dos Plus - Einbauhilfe
+
+Bild 1:        C=64 Platinenaufsicht                             Kerbe 1
+                                                                   \    
+    +-------+---------+                                             \
++---+-------!---------+----------------------------------           \
+!           !                                             .     +----==--+
+!  +------+ ! +------+   +--==--+   +--==--+   +--==--+   .     !=!  U4  !
+!  !  U1  ! ! !  U2  !   !  U3  !   !  U4  !   !  U5  !   .     !=!+----+!
+!  ! 6526 ! ! ! 2526 !   !      !   !      !   !      !   .     !=!! 64 !!
+!  !      ! ! !      !   !      !   !      !   !      !   .     !=!+----+!
+!  !      ! ! !      !   !      !   !      !   !      !   .     !=!      !
+!  !      ! ! !      !   +------+   +---\--+   +------+   .     +-O-O-O-O+ 
+!  +------+ ! +------+                   \                        \   \ /
+!           !                             \             +----+ /
+!           !                              \<------>  ==!    !=-  ...
+!           !                               \           +----+ \
+.... .....  \/ ..... ...................... .\/ ...........
+      Userport                            Kernalrom
+
+Durch die Umschaltplatine       ausbauen und neue Umschalt
+bleibt nach Schalter- und       platine aufstecken!
+Reset oder An/Aus zusätz-       ACHTUNG: Die Kerbe muß nach
+lich das Original-Betriebs-     hinten zeigen! Der Umschalter kann
+system, welches mit auf         durch bohren eines 6mm-Loches
+dem Eprom untergebracht         in das Gehäuse an gewünschter
+ist, erhalten.                  Stelle angebracht werden.
+
+
+Bild 2: Floppy 1541 normal in Teilansicht
+
+             Anschlüsse
+            /         \     
+   +---------------------------------. . .        Kerbe nach hinten!
+  /   !-----!          !-----!                        \      
+ !                                                 +---==---+  IC 1 ausbauen 
+/         +-==-+  +-==-+  +-==-+                   !=!      !  und Adapter-
+!         !    !  !    !  ! UB4!    ----           !=!+----!!  sockel mit Eprom 
+!         !    !  !    !  !  o...................> !=!! 41 !!  einsetzen.
+!         !    !  !    !  ! IC1!  ! /---           !=!!    !!
+!         +----+  +----+  +----+  ! ! ==           !=!+----!!  
+!                                 ! \---           !=!     !!  
+! +-==-+  +-==-+  +-==-+  +-==-+  ! /---           !=+o-o-o+!
+! !    !  !    !  ! UC3!  !    !  ! ! ==           +--------+ 
+! !    !  !    !  !    !  !    !  ! \---           Kabel nach hinten
+! !    !  !    !  !    !  !    !   \               aus dem Laufwerk führen.
+! !    !  !    !  ! IC2!  !    !     ----
+! +----+  +----+  +----+  +----+                   IC2 ausbauen und Sockel                          !                                                  an gleicher Stelle aufsetzen.
+!                                                  Nun darauf wieder 1C2 aufstecken. 
+!
+                                                   Das Flachbandkabel muß nach hinten zeigen
+                                                   und darf nicht zu stramm eingeklemmt werden! 
+                                                   Daher ist eine kleine Materialabnahme
+                                                   am Floppygehauseoberteil angebracht!
+
+
+
+2. Einführung
+
+Wenn die Umbauarbeiten erfolgreich abgeschlossen sind, meldet sich der C-64 jetzt mit der neuen Einschaltmeldung. Daß die Floppy mit SpeedDos arbeitet, erkennt man daran, daß sie beim Einschalten nur noch ganz kurz anläuft, und die LED ziemlich schnell ausgeht. Zum Austesten sollte man jetzt eine bespielte Diskette in das Laufwerk legen und die Taste <F7> drücken. Es müßte das Inhaltsverzeichnis mit einiger Geschwindigkeit auf dem Bildschirm erscheinen. Ist das nicht der Fall, sollte man sicherheitshalber noch einmal kontrollieren, ob die Stecker und die Karten in der Floppy und im Computer richtig eingesetzt wurden, und ob auch das alte Floppykabel richtig zwischen C-64 und Floppy steckt. Wenn bis jetzt alles nach Plan verlaufen ist, kann man sich daran machen und zum erstenmal alte Programme mit 6 bis 10 - facher Geschwindigkeit laden. Wenn man besonderen Wert darauf legt, daß ein Programm ca. 10-mal schneller geladen wird, muß man es einfach nur ganz normal mit SpeedDos abspeichern. Daß der Parallelbus einwandfrei arbeitet, erkennt man daran, daß beim schnellen Laden die Start-/Endadresse des Programmes hexadezimal mit ausgegeben wird (z.B. LOADING FROM $0801 TO $XXXX bei Basic Programmen).
+
+3a. LOAD
+
+Beim LOAD-Befehl wurden einige Erleichterungen eingeführt. So braucht man zum Beispiel nicht mehr die Primäradresse beim Laden mit anzugeben, sondern es reicht LOAD"Name" <RETURN> einzutippen. Um das erste Programm von der Diskette zu laden, braucht nur LOAD <RETURN> eingegeben zu werden. Wenn das Programm auch noch gleich gestartet werden soll, reicht es aus, die Tasten <SHIFT><RUN> zu drücken. Es ist auch möglich, jedes beliebige Programm mit nur wenigen Tastendrücken zu laden. Zuerst läßt man sich mit <F7> das Inhaltsverzeichnis auf dem Bildschirm ausgeben, fährt dann mit dem Cursor in die Zeile mit dem Namen des Programmes, das man laden will, und betätigt dann die Funktionstaste <F5>. Soll das Programm gleich noch gestartet werden, drückt man anstatt von <F5> einfach die Tasten <SHIFT><RUN>. Außerdem gibt es noch einen neuen LOAD-Modus. Wenn man mit LOAD "NAME",8,0 ein Programm lädt, werden alle nachfolgenden Programme so geladen, daß keine Puffer mehr zerstört werden (z.B. wichtig bei Petspeed). Um diesen Modus wieder abzuschalten, muß POKE 664,8 eingegeben werden.
+
+3b. SAVE
+
+Beim SAVE wurden die gleichen Erleichterungen wie bei LOAD eingeführt. Ferner wurde der Befehl insoweit geändert, daß bei Auftreten eines Fehlers während des Schreibens eines Programmes die Fehlermeldung "NOT OUTPUT FILE" erscheint. Die Eingabe des Wortes SAVE kann durch Benutzung der Funktionstaste <F6> erfolgen.
+
+4.DOS
+
+In SpeedDos wurde ein DOS implementiert, weiches die Befehlsübermittlung zur Floppy extrem vereinfacht. Die Syntax ist an bestehende DOS-Programme angelehnt, wodurch eine Umstellung sehr erleichtert wird. Um dem Rechner mitzuteilen, daß man einen Befehl an die Diskettenstation senden will, muß man die Taste <@> (oder ">") betätigen und anschließend den entsprechenden Befehl angeben. Wenn die Fehlermeldung von der Floppy abgefragt werden soll, reicht es aus, die Tasten <@> und <RETURN> zu tippen. An Befehlen stehen zur Verfügung:
+
+@R NEUNAME=ALTNAME gibt einem Programm einen neuen Namen
+@S NAME	        löscht das Programm von der Diskette
+@               initialisiert die neu eingelegte Diskette
+@V              kennzeichnet die richtigen Blöcke als belegt
+@N NAME,ID      formatiert die Diskette in 23 Sekunden
+                natürlich mit der gleichen Sicherheit und
+@* oder @$      gibt Inhaltsverzeichnis auf dem Bildschirm aus
+                mit <F7> gehen Programmnamen noch schneller
+                geladene Programme werden dabei nicht zerstört
+@T NAME         schaltet Schreibschutz für das Programm ein/aus
+                geschützte Programme sind mit einem "<" hinter
+                dem Dateityp gekennzeichnet.
+@8 bzw. @9      schaltet DOS, LOAD und SAVE - Parameter
+                auf die Floppyadresse 8 bzw 9 um.
+@               gibt die Fehlermeldung der Diskettenstation aus
+
+5. Funktionstasten
+
+Die Funktionstasten wurden zur Bedienungsvereinfachung mit folgenden Befehlen belegt:
+
+<Fl> LIST       dient zum Listen eines Programms
+<F2> MONITOR    startet den eingebauten Mini-Monitor
+<F3> RUN	startet Basic-Programm im Rechner
+<F4> OFF	schaltet die Funktionstasten,
+		die DOS-Erweiterung sowie die verbesserte
+		List-Funktion aus.
+		Sollte angewendet werden, wenn ein anderes
+		Programm auch die Funktionstasten oder ein
+		anderes DOS verwendet.
+		Wiedereinschalten mit <C=><Pfeil links>.
+<F5> LOAD	zum bequemen Laden von Programmen
+		beim Drücken von <F5> wird normalerweise
+		das erste Programm geladen, wenn man aber mit
+		den Cursortasten im Inhaltsvezeichnis vor das
+		Programm fährt und danach <F5> drückt,
+		wird dieses geladen.
+<F6> SAVE	zum Abspeichern eines Programms
+<F7> CATALOG	zeigt alle Dateien einer Diskette
+<F8> SWITCH	schaltet zwischen Gerät 8 und 9 um,
+		sehr praktisch, wenn man zwei Laufwerke benutzt
+
+6. Mini-Monitor (MiMo)
+
+Da SpeedDos auch für professionelle Benutzer entwickelt wurde, haben wir noch einen Monitor implementiert, der einige Möglichkeiten bietet, die bei anderen Monitoren nicht verfügbar sind. So wird bei MiMo immer gleich eine ganze Page (256 Byte) angezeigt. Links am Bildschirm wird zuerst die Adresse des entsprechenden Bereichs dargestellt, und darauf folgen pro Bildschirmzeile 16 Byte, die zur besseren Unterscheidbarkeit zur Hälfte revers dargestellt sind. Beim Start des Monitors wird der Bereich von $0000 bis $00FF hexadezimal angezeigt. Wer sich jetzt wundert, daß zum Beispiel die Adresse $00A2 hinaufgezählt wird, hat gerade ein interessantes Feature des Monitors entdeckt. Wenn keine Taste gedrückt ist, werden die Speicherstellen des entsprechenden Bereichs permanent ausgelesen und wieder neu angezeigt. Bei der Adresse $00A2 befindet sich nun gerade die interne Uhr (TI) des C=64, die auch während des Monitor-Betriebes weitergezählt wird. Die letzten 8 Bildschirmzeilen enthalten ein Gemisch aus Text- und Grafikzeichen, wobei die jeweilige ASCII-Darstellung der Bytes angegeben wird. Da bei $0000 bis $00FF normalerweise kein vernünftiger Text steht, kann man in diesem Bereich meist nicht so viel mit der ASCII-Darstellung anfangen. Anders wird dies aber, wenn man irgendwo Text stehen hat und sich diesen anschauen möchte. So sollte man zum Beispiel mal M A09E <RETURN> eingeben. Man erkennt dann die Basicbefehle des Rechners. Wenn man mal schnell in einem größeren Bereich sich die Bytes oder Texte ansehen möchte, ist es recht müßig, immer wieder M XXXX eingeben zu müssen, um zu einer neuen Adresse zu gelangen. Deswegen wurde ein "SCROLLING" eingebaut, mit dem es möglich ist, die Bytes auf dem Bildschirm hin- und herfahren zu lassen. Will man z.B. nur ein Byte jeweils mehr (oder weniger) sehen, so kann man mit den CURSOR-Tasten den Bereich um eine Stelle nach rechts oder links bewegen. Soll hingegen Text kontinuierlich bewegt werden, steuert man die ASCII-Zeichen besser mit den Tasten <F1> und <F3> auf und ab. Mit den Tasten <F5> und <F7> ist es möglich, in 16-er Schritten zu scrollen, um optimal einen Speicherbereich nach Bytes kontrollieren zu können und seitenweise blättern kann man mit <+> und <->. Der Befehl <H> schließlich erlaubt das umrechnen von hexadezimal nach dezimal.
+
+Befehle des MiMo:
+
+M			danach kann man mit dem Cursor auf ein Byte fahren,
+			um es zu ändern und mit <RETURN> in den Speicher zu übernehmen
+M xxxx			zeigt 256 Bytes ab Adresse xxxx hexadezimal und als Text
+M xxxx aa bb cc ...	schreibt die Bytes aa, bb, cc, 	ab Adresse xxxx
+G xxxx			führt einen Sprung zu Adresse xxxx aus
+L "NAME"		lädt das Programm "NAME" in den C=64
+S "NAME" xxxx wwww	speichert den Bereich von xxxx bis wwww auf Diskette
+@			erlaubt es, Befehle an die Diskettenstation zu senden (siehe Abschnitt 4)
+H xxxx			rechnet die Hex-Zahl xxxx nach dezimal um
+x			verläßt den Monitor und kehrt ins Basic zurück
+
+Die Scrolleigenschaften von MiMo werden wie folgt bedient
+
+<Fl> 		40 Zeichen nach unten scrollen
+<F3>		40 Zeichen nach oben scrollen
+<F5>		16 Zeichen nach unten scrollen
+<F7>		16 Zeichen nach oben scrollen
+<Cursor down>	 1 Zeichen nach links scrollen
+<Cursor up>	 1 Zeichen nach rechts scrollen
+<+>		 1 Seite nach unten scrollen
+<-> 		 1 Seite nach oben scrollen
+
+7a. BASIC-Funktionen
+
+Im SpeedDos wurde die LIST-Funktion so modifiziert, daß jetzt immer die Zeichen gelistet werden, die auch wirklich im Programmtext stehen. So steigt die LIST-Funktion z.B. nicht mehr mit SYNTAX-ERROR aus, wenn ein <SHIFT> L auftritt, sondern listet dieses jetzt so aus, wie es sein mußte. Mit <F4> wird wieder die normale LIST-Funktion reaktiviert.
+
+Der UnNew-Befehl macht es möglich, gelöschte Basicprogramme per Tastendruck wieder zu restaurieren, nachdem ein NEW eingeben oder ein RESET ausgeführt wurde. Die Taste für UnNew ist <!> (also SHIFT + 1) <RETURN>. Danach läßt sich das Programm wieder listen.
+
+Man kann jetzt in Basic mit DUAL-, OKTAL- oder HEXADEZIMALzahlen arbeiten, um nicht immer kompliziert umrechnen zu müssen. Zum Beispiel ist es möglich, einen Monitor bei $COOO mit "SYS $COOO" zu starten, oder mit POKE$DD01,%l1001100 den Port direkt bitweise zu setzen. Zahlen mit dualen Format werden von einem % angeführt (z.B. A=%001), Oktalzahlen werden mit einem vorangestellten & eingegeben (z.B. PRINT &12345). Die Hexadezimalzahlen haben am Anfang ein $ (z.B. OJ = 18 + $FCE2).
+
+Wenn man auf einem Drucker mit Sekundäradresse 7 druckt, (also zum Beispiel mit OPEN 4,4,7: CMD1 : LIST), werden für Centronics-Drucker die Klein- und Großbuchstaben richtig ausgegeben und nicht mehr vertauscht (im Commodore-Format). Für alle Drucker (Commodor und Centronics) kann der Text-Bildschirminhalt auf den Drucker per Tastendruck ausgegeben werden (Grafik ist leider nicht möglich, da die Drucker sie zu verschieden handhaben). Die Hardcopy wird aktiviert mit der Tastenkombination <CTRL>< £ >.
+
+7b. EDITOR
+
+Wenn man sich mit SpeedDos Programme auslisten läßt, verfügt man über die Möglichkeit, das Listing permanent aufzuhalten, Dies geschieht mit der C= (Commodore-) Taste unten links am Computer. Beim Drücken dieser Taste während des Listens bleibt der auf dem Bildschirm ausgegebene Text solange stehen, bis die Taste wieder losgelassen wird. Ferner hat man die Möglichkeit, das Listing einzufrieren, ohne die C= Taste ständig gedrückt zu halten, wenn man gleichzeitig kurz die <CTRL> Taste betätigt. Danach kann man die C= Taste loslassen, und der Text bleibt fest auf dem Bildschirm stehen, bis man ein weiteres mal kurz auf die <CTRL> Taste drückt. <CTRL><HOME> bewegt den Cursor direkt in die letzte Zeile, <CTRL><DEL> löscht die momentane Zeile ab der Cursorposition, <RUN/STOP> bewirkt ein ESCAPE des QUOTE-Modus (nachdem Anführungszeichen oben oder INST benutzt worden sind, und man sich wieder mit dem Cursor bewegen will).
+<CTRL><=> schaltet den Modus Gross-Schrift/Grafikzeichen ein (wie PRINT CHR$(142))).
+
+8. RESET-Erweiterung
+
+Wer an seinem C= 64 einen RESET-Taster befestigt hat, kann sich mit SpeedDos das Computerleben sehr vereinfachen. Wenn der Rechner mal abgestürzt ist oder sonstwie hängt, kann man durch Drücken der <RUN/STOP> Taste mit gleichzeitiger Betätigung eines RESET-Schalters einfach wieder ins Basic kommen, ohne daß das Programm oder die Variablen zerstört werden. Um aus Programmen zu gelangen, aus denen man sonst nur durch Ausschalten des Rechner herauskommt, muß die <SPACE> Taste gleichzeitig mit RESET gedrückt werden. Als letzte Möglichkeit ergibt sich mit C= Taste und gleichzeitig RESET ein Sprung in den eingebauten Monitor, ohne daß man erst über Basic mit <F2> gehen muß.
+
+<RUNISTOP> mit RESET	springt ins Basic, erhält Programm + Variablen
+<SPACE>	mit RESET	erzwingt Verlassen von Programmen
+<C=>	mit RESET 	springt direkt in den eingebauten Monitor
+
+9. CENTRONICS Schnittstelle
+
+Zusätzlich zur normalen Druckeransteuerung wurde in SpeedDos eine für Centronics-Drucker implementiert, die automatisch aktiv wird, sobald am Userport der SpeedDosStecker abgezogen und ein Centronics-Userportstecker aufgesteckt wird. Ein Adapter, mit dem gleichzeitiger Betrieb von SpeedDos mit der schnellen Geschwindigkeit und Centronics ermöglicht wird, kann auf Anfrage geliefert werden.
+
+10. Anschluß für ein zweites SpeedDos Laufwerk
+
+Um eine zweite Floppy mit der normalen Geschwindigkeit zu betreiben, genügt es, sie mit dem normalen Floppy-Kabel zusätzlich an die erste Floppy anzuschließen. Wenn die zweite Floppy auch mit der hohen Geschwindigkeit betrieben werden soll, ist es notwendig, sich eine SpeedDos Floppy-Erweiterung zuzulegen. Diese ist auf Anfrage lieferbar.
+
+A. SPEEDDOS Funktionsweise
+
+Die Geschwindigkeitserhöhung, die mit SpeedDos erreicht wird, erfolgt durch die Benutzung einer 8-Bit Parallelschnittstelle, d.h. gegenüber der eingebauten seriellen Datenübertragung wird ein Byte (8 Bit) anstelle von nur einem Bit übertragen. Da außerdem bei einer Parallelübertragung nicht nach jedem Bit abgefragt wird, ob es auch richtig übertragen wurden, sondern dies nur nach jedem Byte notwendig ist, ergibt sich eine Geschwindigkeitserhöhung des reinen Datentransfers um den Faktor 22-25. Dieser Geschwindigkeitsvorteil wird bei SpeedDos dadurch verkleinert, daß zu jedem Zeitpunkt abgefragt wird, ob der Parallelstecker aufgesteckt und damit eine schnelle Datenübertragung möglich ist. Diese Abfrage bietet den enormen Vorteil, daß gleichzeitig eine normale Floppy und eine mit SpeedDos ausgestattete betrieben werden können. Außerdem wird dadurch gewährleistet, daß Programme, die eigene Routinen zum Datentransfer benutzen, mit SpeedDos funktionieren (z.B. Flugsimulator II). Insgesamt wird durch SpeedDos der reine Datentransfer um den Faktor 20 erhöht. Da aber leider Laden und Speichern auf Diskette nicht alleine von der Datenübertragung abhängen, sondern natürlich auch die Daten erst einmal von der Diskette gelesen bzw. auf sie geschrieben werden müssen, ergeben sich geringere Geschwindigkeitserhöhungen. Um auf eine ca. Verzehnfachung der Ladegeschwindigkeit zu kommen, mußten deshalb ganz neue Laderoutinen geschrieben werden, die die neue Parallelübertragung optimal ausnutzen. Beim Abspeichern von Programmen (was bei jedem Programm eigentlich nur einmal vorkommt) ergibt sich mit SpeedDos eine Geschwindigkeitserhöhung um den aktor 2-3 ohne an Sicherheit zu verlieren.
+In der Floppy wurden außerdem noch drei große Änderungen vorgenommen:
+
+1. Die Formatierrungsroutine zum Vorbereiten von Disketten wurde erheblich verbessert, so daß sie jetzt nur 23 Sekunden benötigt. Von anderen Schnell-Formatierungsroutinen unterscheidet sie sich grundsätzlich dadurch, daß sie die Daten genau im 1541-Format auf die Diskette schreibt und überprüft. Mit "genau" ist gemeint, daß nicht aus Zeitgründen wichtige Berechnungen unterbleiben und sich so auch keine Unterschiede im Format der Diskette ergeben.
+
+2. Die Bewegungsgeschwindigkeit des Schreib/Lesekopfes ist erhöht worden, allerdings nicht auf ein theoretisches Maximum, sondern nur soweit, daß auch ältere Laufwerke noch sehr gut mit der neuen Geschwindigkeit mitkommen können.
+
+3. Als neuer Befehl wurde "T'(TOGGLE) implementiert, der es jetzt mit Hilfe des DOS stark vereinfacht, Programme vor dem Löschen zu schützen. In der Syntax unterscheidet er sich nicht vom "S" (SCRATCH) - Befehl, so daß z.B. mit "T *" alle Dateien (SEQ, PRG, ... ) auf der Diskette vor dem Überschreiben geschützt werden können. Um die mit Toggle geschützten Programme wieder löschen zu können, muß eine geschützte Datei nur noch einmal "geTOGGLEt" werden. Dieser Befehl eignet sich auch ausgezeichnet dazu, eine letzte Programmversion zu kennzeichnen oder andere wichtige Programme hervorzuheben.
+
+B. Tips und Tricks
+
+Obwohl die zahlreichen Erweiterungen von SpeedDos sehr kompakt programmiert worden sind, wird doch ein bestimmter Platz für die Routinen benötigt, so daß auf die Kassettenroutine und die RS-232 Schnittstelle verzichtet werden muß. Die Kassettenroutine dürfte im Prinzip keinen SpeedDos-Benutzer interessieren, da er ja auf jeden Fall eine Diskettenstation besitzt und für ihn die Tage der Benutzung einer Kassettenstation zum Glück zur Vergangenheit zählen. Wenn man nun die RS-232 Schnittstelle für irgendetwas benötigt, braucht man nur das SpeedDos im Computer gegen das Original auszutauschen (bei eingebautem Betriebssystem-Umschalter: Schalter umlegen und RESET drücken), um dann wieder ihr arbeiten zu können.
+
+Alle anderen Programme (vielleicht 96 Prozent) sollten auf jeden Fall mit SpeedDos laufen. Ist das nicht der Fall, sollte man ausprobieren, ob es mit einem der folgenden Vorschläge möglich ist, das Programm zu laden:
+
+1. Zuerst kann versucht werden, das Programm mit LOAD"NAME",8 <RETURN> zu laden, d.h. der Parameter ",8" muß bei PET, CBM oder VC-20 Programmen eventuell mit eingetippt werden.
+2. Wenn das Programm automatisch bei einem LOAD startet, kann es unter Umständen vorkommen, daß man es mit LOAD "NAME",8,2 laden muß, damit es richtig losläuft. Dann wird das Programm mit 3-4 facher Geschwindigkeit geladen und benutzt nur die normalen Vektoren, so daß auch sehr sensible Vertreter laufen müßten.
+
+3. Bei Befehlserweiterungen kann es dazu kommen, daß sich die Funktionstastenbelegung von SpeedDos und der Erweiterung überlappt. Dann ist es notwendig, mit der Funktionstaste <F4> die SpeedDos Funktionstasten abzuschalten.
+
+Wenn ein Programm nach Anwendung dieser drei Möglichkeiten immer noch nicht mit SpeedDos läuft, kann es nur noch daran liegen, daß es überprüft, ob ein fremdes Betriebssystem integriert ist. Dagegen konnte natürlich bei der Programmierung von SpeedDos nichts unternommen werden, so daß eventuell eine Modifikation des entsprechenden Programmes nötig ist, oder oder auf das normale Betriebssystem umgeschaltet werden muß.
+
+Einige SpeedDos+ - Routinen kann man auch von Basic aus nutzen-
+
+Fehlerstatus der Floppy auslesen:	POKE 781,0: POKE 512, 0: POKE 513, 0: SYS 61468
+
+lnhaltsverzeicbnis einer Diskette:	POKE 781,255: POKE 512, 36: POKE 513, 0 : SYS 61468
+
+Hex-Ausgabe eines Bytes xx:		POKE 780, xx: SYS 62790
+Mini-Monitor einschalten:		SYS64441

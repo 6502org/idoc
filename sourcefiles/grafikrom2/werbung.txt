@@ -1,0 +1,45 @@
+MPS802 & 1526 GRAFIK-ROM II
+
+Das Grafik-ROM II ist ein erweitertes Druckerbetriebssystem, für die Drucker
+1526 und MPS802, das zu dem alten Betriebssystem REV 07c kompatibel ist.
+Die Erweiterung umfaßt 19 neue Befehle, die unter anderem den kompletten
+Grafikmodus des MPS801 beinhalten. Desweiteren existieren drei Grafik-Befehle,
+die zu EPSON und vergleichbaren Druckern kompatibel sind. Diese Befehle
+ermöglichen einen Grafikausdruck mit den meisten Programmen (Print Shop, Hi-
+Eddi, Printfox, News Room, Garfield, Simons Basic, Koala Printer und viele
+andere), die derzeit für den C64/128 erhältlich sind. Darüberhinaus enthält
+das Grafik-ROM II sechs internationale Zeichensätze (Amerikanisch, Deutsch,
+Französisch, Dänisch, Spanisch, VIZAWRITE Deutsch).
+Ein ladbarer Zeichensatz ermöglicht es, zusätzlich bis zu 10 selbstdefinierte
+Zeichen zu verwenden. Aus dem alten Zeichensatz wurden drei Zeichen (k,g,')
+neu gestaltet, um eine bessere Lesbarkeit zu erreichen. Das Grafik-ROM II
+enthält eine zeitsparende Druckwegoptimierung während des Grafikdrucks
+im Epson-Modus (bei Leerzeilen erfolgt kein Kopftransport). Weitere
+Fähigkeiten sind eine Unterstreichungsfunktion und eine Hexdumpbetriebsart
+(alle Druckdaten werden hexadezimal dargestellt). Nach dem Einschalten
+des Druckers sind die Sekundäradressen abgeschaltet, um ein unmittelbares
+Grafikdrucken zu gewährleisten. Dieser Zustand kann aber per Befehl
+umgeschaltet werden. Die Zeilenzahl pro Seite ist auf 72 voreingestellt für
+das in Deutschland übliche 12" (Zoll) * 240mm Druckpapierformat.
+Die Funktionszeichen für Breitschrift chr$(1) & chr$(129) sind nun identisch
+mit chr$(14) & chr$(15). Dies ermöglicht zusätzlich Kompatibilität zur alten
+Betriebssystemversion des 1526. Der MPS802 ist in der Lage, 640 Bildpunkte
+in einer Zeile zu drucken. Der MPS801 schafft jedoch nur 480 Punkte.
+Dementsprechend sind Grafikausdrucke im MPS801 Grafikbetrieb um ein Viertel
+kleiner. Ein Grafikausdruck vollzieht sich mit dem neuen Grafik-ROM II
+ca. 5 bis 6 mal schneller als mit der bedingt grafikfähigen Version REV07c.
+Sogar der grafikfähige Drucker MPS801 druckt Grafik um die Hälfte langsamer
+als der MPS802/1526 mit dem Grafik-ROM II.
+Die Umrüstung des Druckers erfolgt einfach durch den Austausch des alten
+Druckerbetriebssystems (EPROM) durch das neue Grafik-ROM II. Sollte Ihr
+Drucker ein ROM enthalten (24 Kontakte), dann besteht die Möglichkeit einer
+Anpassung durch ein Umlöten der Jumper (zwei Drahtbrücken) oder durch eine
+Adapterfassung DM 20.- (mit bis zu vier verschiedenen Druckerbetriebssystemen
+in einem 27256 EPROM). Im Lieferumfang zusätzlich enthalten sind eine
+ausführliche Anleitung (Einbau; Programmierung) sowie mehrere
+Programmbeispiele.
+Der Kaufpreis des Grafik-ROM II beträgt DM 78.- (incl. Porto und Verpackung).
+6 Monate Garantie ab Verkaufsdatum! Der Versand erfolgt ausschließlich
+per Nachnahme. Bestellungen sind zu richten an:
+
+Heinz Haarmann, Kosterstr. 92, 4630 Bochum 1, Tel. 0234/793212

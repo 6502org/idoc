@@ -1,0 +1,407 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore 64
+related documents in electronic text format that might otherwise cease to
+exist with the rapid advancement of computer technology and declining
+interest in 8-bit computers on the part of the general population. If you
+would like to help by converting C64 related hardcopy documents to
+electronic texts please contact the manager of International Project 64,
+Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The first
+characters of the file name are an abbreviation of the original document
+name and the language of the etext. The version number of the etext follows
+next. After that a letter may appear to indicate the particular source of
+the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International Project
+64 make no representations about the accuracy or suitability of this
+material for any purpose. This etext is provided "as-is". Please refer to
+the warranty of the original document, if any, that may included in this
+etext. No other warranties, express or implied, are made to you as to the
+etext or any medium it may be on. Neither the author(s) nor the members of
+International Project 64 will assume liability for damages either from the
+direct or indirect use of this etext or from the distribution of or
+modification to this etext. Therefore if you read this document or use the
+information herein you do so at your own risk.
+
+*********
+
+The International Project 64 etext of the A Gálya manual, converted to text
+by Adam Dohos <hosza@szabinet.hu>.
+
+GALYAHU1.TXT, June 1998, etext #38.
+
+*********
+
+[borító:]
+
+A GÅLYA
+
+[rajz egy hajóról és két fickóról]
+
+KEZELÉSI ùTMUTATò
+
+
+[belül:]
+
+
+A Gálya
+
+Ez a kitûnô adventure - hogy mndjárt egy ilyen elcsépelt frázissal
+kezdjük - egy különös világba varázsolja a vakmerô és kevésbé vakmerô
+játékosokat egyaránt; ez pedig nem volna más, mint a Kard és Mágia
+misztikus világa, mely, lévén az utóbbi esztendôk eléggé divatos témája,
+alighanem már minden kalandjátékkedvelô számítógéptulajdonos elôtt
+ismeretes varázslóival, sárkányaival és egyéb képzôdményeivel egyetemben,
+így nem szorul különösebb bemutatásra. Nem csekély azon kalandjátékoknak
+a száma, melyek hasonló témákat variálnak különbözô színvonalon, mi mégis
+reméljük, hogy sikerül valamilyen egyéni élményt nyújtanunk azzal, hogy
+ebben a - kissé szatírikus hangvételû -  programban, elôdeitôl eltérôen,
+nem csupán egy, hanem egyszerre két szereplôvel is azonosulhat a tisztelt
+játékos: egy modernizált barbárral valamint egy kétbalkezes varázslóval -
+akiket természetesen eltéphetetlen rokoni szálak fûznek egymáshoz...
+Talán kerüljünk is beljebb...
+
+A kiváló grafikákkal illusztrált események ezúttal Athar földjén
+zajlanak, mely ország több évszázados elszigeteltségben pergeti egyhangú
+napjait egy távoli szigeten, mit sem tudván a környezô világban végbement
+és végbemenô változásokról és eseményekrôl, sôt, voltaképpen még magáról
+a környezô világról sem sejtve túlságosan sokat. Vérengzô trollok,
+ambiciózus mágusok, boszorkányégetô, bölcs uralkodók, kastélyaikban
+rejtôzködô titokzatos özvegyasszonyok, boldogtalan gnómok, harci tehenek,
+önjelölt zsarnokok, kalandra éhesen kajtató kalandjátékosok és idióta
+programozók hazája ez, ahol békésen háborúznak egymással az orkok és az
+emberek, meg a hozzájuk hasonló egyéb torzszülöttek - ahogyan tették azt
+az idôk kezdetétôl fogva mindenkor - egészen addig, mígnem egy szép napon
+váratlanul megnyílik a kapu a külvilág felé... Aki pedig a folytatásra is
+kíváncsi volna, az legyen szíves, és a saját jólfelfogott érdekében
+játssza végig a játékot!
+
+Miután a lemezt (a játék két lemezoldal, szóval kazettás verzió nincs!)
+kényelembe helyeztük a meghajtóban, a betöltés a szokásos LOAD"*",8,1
+paranccsal történhet, ami után a program természetesen magától el is
+indul. A képernyô, mint általában, itt is két fô részbôl áll: a fölsô
+grafikus és az alsó szöveges ablakból. A szöveg a grafika mögött is
+folytatódik, de a legfelsô sor fenn van tartva a státuszsor (lásd késôbb)
+számára. A grafikus képernyô is tovább osztható három részre: baloldalt
+az aktuális szereplô arcképében gyönyörködhetünk, középen a pillanatnyi
+helységrajz található, jobbra pedig egy csodálatos iránytû terpeszkedik,
+melyrôl rendes körülmények közt mindig kiderül, hogy merre haladhatunk
+tovább. (Sárgával jelöltek a járható irányok.) A státuszsorban
+folyamatosan kijelzésre kerül az eddig elért pontszám, a szereplô neve,
+továbbá középen egy szerényen  csak "Spp"-vel (Spell Power) jelölt fontos
+tulajdonság. Ez utóbbinak csupán Raernonnál (az ifjabbik fivér - ô a
+varázsló) van értelme, és a varázserejét jelzi, amely minden egyes
+varázslás után csökken. (De néha azért növelhetô is.) Ugyanebben a sorban
+jelennek meg a lemezcserére és hasonló bûncselekményekre felszólító
+üzenetek is.
+
+A játék a hagyományos módon: begépelt parancsokkal irányítható. Gépelés
+közben kis- és nagybetûket egyaránt használhatunk; az ékezetes karakterek
+a C= (commodore) billentyû egyidejû lenyomásával érhetôek el, illetve:
+£ = ö,  = ô, @ = ü, * = û. Van ezenkívûl néhány speciális billentyû is:
+a "CLR/HOME" törli az input-sort, a "" megismétli az elôzô parancsot, az
+"F1" pedig átkapcsol a szöveges és grafikus ablakok között. Ez utóbbi
+funkcióról késôbb még szó esik.
+
+A program értelmezôje felszólító módban megfogalmazott, a magyar
+nyelvtannak megfelelô, értelmes parancsokat vár el tôlünk, mint például
+LºDD FºBE MAGAD vagy DARÅLD LE A SZERZETEST A HùSDARÅLòBAN stb. A
+gyorsabb és kényelmesebb beírás kedvéért a névelôk - illetve legtöbbször
+az igekötôk is - elhagyhatók. Emellett a játéknak kellemes vonása az is,
+hogy a parancsok szórendje gyakorlatilag teljesen szabad, tehát pl. a
+NYISD AJTòT KULCCSAL, KULCCSAL AJTòT NYISD vagy teszemazt AZ AJTòT NYISD
+KI A KULCCSAL stb. parancsok egymást tökéletes mértékben helyettesítik.
+Ennek fejében viszont ügyelnünk kell a ragozásra, mivel itt ez
+különbözteti meg egymástól a szófajokat! Ha egy fônevet ragozatlanul
+írunk le, azt a gép úgy értelmezi, mintha tárgyesetben lenne. A program
+szókincse egyébként meglehetôsen bôséges: mintegy 1400 (ezernégyszáz!)
+különbözô szót ért meg, s ez a szótár több, mint 10 kilobyte helyet
+foglal el a memóriából. Ugyanakkor ezek még csak a szótövek - a hozzájuk
+illeszthetô ragokat külön táblázatban tárolja a gép. (A ragozást a
+szóértelmezô rutin végzi el.) Több hasonló tárgy esetén a fônevek
+megkülönböztetéséhez melléknevek használatára is szükség lehet, így pl.
+VEDD FEL A KÉK KRISTÅLYT vagy VEDD FEL A ZÖLD KRISTÅLYT stb. - ezelnek
+minden esetben az adott fônév elôtt kell állniuk. Egy mondaton belül
+tetszôleges számú parancs szerepelhet: ilyenkor valamilyen írásjellel
+(pont, vesszô) vagy az ÉS szócskával kell ôket elválasztanunk. Névmások
+is használhatóak a legutóbbi fônév helyettesítésére - így leírhatóvá
+válik akár olyan összetett mondat is, mint pl. VEDD FEL A ZÖLD KULCSOT ÉS
+NYISD KI VELE AZ AJTòT. Ha valamilyen fontos és nélkülözhetetlen szó
+(rendszerint fônév vagy ige) kimaradt a mondatunkból, akkor a gép
+rákérdez - ilyenkor elegendô már csak a hiányzó szavakat begépelni.
+Természetesen, ha nem ért meg egy szót, azt is jelzi a program.
+
+[két fickó rajza]
+
+A mozgás az égtájak megnevezésével vagy azok rövídítésével történik: É,
+D, K, NY, ÉK, ÉNY, DK, DNY, F(EL), L(E), KI, BE irányok lehetségesek; s
+hogy mindezek közül éppen melyik használható, azt megtudhatjuk az
+iránytûre való futó rápillantás mûveletét alkalmazva, vagy pedig az irány
+(rövidítve IR) parancs begépelésével. Közledés lebonyolítására igen
+kényelmes lehetôséget biztosítanak a MENJ, KERESD és KÖVESD parancsok -
+ez utóbbi segítségével egy, a helyszínrôl frissen eltávozott szereplô
+nyomába eredhetünk, az elôbbiekkel pedig távolabbi helyekre juthatunk le
+egyszerûbben. Pl.: KÖVESD A VÅNDORT vagy MENJ A KASTÉLYHOZ stb.
+Megjegyzendô, hogy a program nem feltétlenül a legrövidebb útvonalat
+választja erre a célra... (Amennyiben megunnánk a dolgot, a "RUN/STOP"
+billentyûvel bármikor félbeszakíthatjuk a hosszadalmas gyaloglást.)
+
+Több ige is rövidíthetô a következôképpen: N = NÉZZ KÖRÜL; V = NÉZD v.
+VIZSGÅLD; LI v. I = LISTA; VF = VEDD FEL; R = RAKD LE; S = SEGìTSÉG;
+E = EREDMÉNY; P = PÉNZ. A program különleges funkciói közé tartoznak még
+az alábbi parancsok: LOAD/SAVE - állás töltése/mentése lemezre (save-disk
+gyanánt nyugodtan használható a játéklemez A. oldala); DIR v. $ - az
+adott lemezen tárolt kimentett állások listázása; ISM(ÉT) - a legutóbbi
+parancs megismétlése; FELADOM v. ADD FEL - a játék feladása és
+újrakezdése; SEGìTSÉG (S) - némi segítségnyújtás a továbbjutáshoz egyes
+helyszíneken; PÉNZ (P) - na ez vajon mi lehet? Ha egy helyszínen már
+jártunk, utána már csak rövid - pár szavas - leírást kapunk róla; ezt
+megváltoztathatjuk a LEìRÅS (LR) parancs begépelése után.
+
+Ha egyszerre akarjuk felvenni az adott helyszínen található összes
+tárgyat vagy eldobni a birtokunkban lévô összes tárgyat, használhatjuk
+a VF MINDENT/R MINDENT (VEGYÉL FEL MINDENT/DOBJ EL MINDENT) formulákat
+is. Amennyiben a felveendô tárgyak valamilyen kitüntetett helyen vannak,
+úgy azt is meg kell adni, pl. VF MINDENT AZ ASZTALRòL.
+
+Az "F1/F3" gombok buzgó nyomogatásával a grafikát kapcsolgathatjuk ki/be.
+Míg az "F1" csak ideiglenesen eltünteti (ill. megjeleníti) a képet, addig
+az "F3" - azaz a RAJZ KI/RAJZ BE utasítások - véglegesen ki (ill. be) is
+kapcsolják azt, tehát ezután már be sem töltôdnek a helyiségek rajzai a
+lemezrôl, ameddig vissza nem kapcsolunk grafikus üzemmódba. A
+visszaállítás a funkcióbillentyû ismételt megnyomásával lehetséges.
+
+A két fôszereplô közti választás a nevük - Tongrak ill. Raernon -
+szorgalmas bepötyögésével vagy az ezzel egyenértékû "F5/F7" billentyûk
+lenyomásával lehetséges.
+
+A játékban szereplô különbözô élôlényekkel három ige segítségével
+kommunikálhatunk; ezek: BESZÉLJ, KÖSZÖNJ és MONDD. Ez utóbbinál azt sem
+árt megadnunk, hogy mit akarunk mondani - illetve, amennyiben többen is
+tartózkodnak a közelünkben, azt is, hogy kinek. (Pl.: MONDD ºRNEK
+"HELLO"). Némelyik szereplôvel ajánlatos több ízben is elcsevegni, hátha
+mondanak még valami érdekeset azonkívül, amit már hallottunk. A MONDD ige
+legnagyobb jelentôsége pedig abban áll, hogy ezzel mondhatunk ki
+különbözô varázsigéket, bizonyos varázslatok használatához; erre azonban
+csak Raernon esetében van lehetôség, hiszen ô a varázsló. Például a XRUIH
+szó (vannak még ilyen szép kifejezések a játékban...) a lidércfény
+varázsszava. MONDD XRUIH - és máris fény gyúlt a körülöttünk terjengô
+sötétségben. Mindig csak a játék folyamán már megtanult varázsigéket
+alkalmazhatjuk (automatikusan beíródnak a mágusunk által mániákusan
+mindenhová magával hurcolt varázskönyvbe), amellett nem árt még
+megemlíteni, hogy a komolyabb varázsláshoz természetesen a varázsbotunkra
+is szükségünk lesz... A MONDD ige egyébként helyettesíthetô egy egyszerû
+idézôjellel. Egyéb varázsszavak nevére és jelentésére majd a játék során
+fokozatosan fény derül.
+
+
+Végül pedig néhány hasznos tipp a játék teljesítéséhez:
+
+- Minden elérhetô dolgot érdemes megvizsgálni, mivel sok hasznos
+  információt (vagy poént) tudhatunk meg így.
+
+- Sötét helyeken világítsunk lámpával vagy gyertyával (ki hitte volna?),
+  de ha már nem kell, oltsuk el, mert hamar leég.
+
+- A boltban nemcsak venni lehet, hanem eladni is! De vigyázzunk, mert
+  amit eladunk, azt késôbb csak kétszeres áron vásárolhatjuk vissza.
+
+- Rengeteg (több, mint 250) helyiség van, rajzoljunk térképet.
+
+- Elsô feladatunk Raernon kiszabadítása lesz; ehhez a kolostor
+  könyvtárában hasznos infót szerezhetünk. Vigyünk magunkkal kötelet is!
+  (Persze, ha úgy jobban tetszik, a váltságdíjat is összegyûjthetjük
+  érte.)
+
+- Vizsgálódás mellett a gyanúsabb dolgokat át is kutathatjuk. Megéri!
+
+- Pénzszerzési lehetôség: fedezzük fel az alagútrendszert!
+
+- A thrangok szeretik az emberhúst...
+
+- ...az ôrök pedig az alkoholt...
+
+- ...a vámpírok meg nem szeretik a fokhagymát...
+
+- Raernonnal menjünk el a fômágushoz, ô majd eligazít, hogyan tovább?
+
+- Az arany- és ezüsttárgyakat jó pénzért el lehet adni! (Sôt: a
+  kristályokat is...)
+
+- A rejtélyes üzeneteket nem kell ám mindig szó szerint értelmezni!
+
+- Aki álruhát visel, nem biztos, hogy felismerik.
+
+- Egy páncél nem véd meg a biológiai fegyverek ellen...
+
+- Varangyból nem lesz királylány, ám egy királyné attól még kedvelheti a
+  varangyokat... vagy tán mégsem...
+
+- Miféle módon lesz a szôlôcukorból pálinka?
+
+- És a leghasznosabb jótanács: használd az eszed és a fantáziád,
+  gondolkodj, s a többit találd ki magadtól! Kezdô adventurereknek még
+  annyit, hogy semmiképpen se álljanak neki mindjárt a játék módszeres
+  és alapos végigjátszásának. Ehelyett induljanak el valamerre, amerre
+  éppen kedvük tartja, és próbáljanak ki mindenfélét, ami épp az eszükbe
+  jut, céltalanul és felelôtlenül, és ne törôdjenek a végeredménnyel -
+  hiszen pontosan ez az, ami a játékot JÅTÉKká teszi, és csakis ezen a
+  módon lehet élvezni egy igazi kalandjátékot.
+
+[a halál rajza]
+
+Tekintve, hogy a játék rendkívûl bonyolult és többféle módon is
+végigjátszható, amellett elég sok olyan dolog is szerepel benne, ami nem
+okvetlenül szükséges a teljesítéséhez, alighanem sokáig nem fog
+unatkozni, aki arra vetemedik, hogy elkezdjen vele játszani. Kellemes
+kalandozást és jó szórakozást kíván a szerzô:
+
+Olessák Róbert
+
+Valamint a kiadó:
+
+a COM-WARE Kft.
+
+Figyelem! A kalandjátékosok szervezetében a program nem rendeltetésszerû
+használata következtében beálló bárminemû testi vagy lelki sérülésekért
+sem a szerzô, sem a forgalmazó felelôsséget nem vállal! Szíves
+megértésüket elôre is köszönjük...
+
+[egy újabb rajz]
+
+
+A GÅLYA - kerettörténet
+
+Nolk egy eldugott kis hegyi falucska valahol a távoli
+Északi-hegyvidékben. Ezen a helyen született, pontosabban itt látta meg
+a napvilágot Tongrak, a hatalmas termetû (1 méter 43 centi), legendás
+hírû barbár harcos valamint öccse, Raernon, a nem annyira híres, mint
+inkább hírhedt fiatal varázsló. Történetünk idején mindketten a
+huszonvalahanyadik életévüket tapossák, noha nem túlságosan sokat látták
+még egymást addigi életük során; míg ugyanis Tongrak egy déli nomád törzs
+tagjaként tengette életét, addig Raernon a messzi északon, a Szent
+Húsdarálót imádó - mindamellett közutálatnak örvendô - szerzetesek által
+lakott kolostorban a varázstudományt tanulta. Azaz csak tanulta volna,
+hisz miután egyre nagyobb baklövéseket követett el, végül alkalmatlannak
+ítélték a varázslásra, és páros lábbal kirúgták a kolostorból. Minthogy
+semmihez sem értett, így csavargóként céltalanul lézengett mindenfelé,
+s közben régi könyvekbôl és rosszhírû boszorkányoktól szerzett
+információkkal autodidakta módon fejlesztette tudását. Csavargása során,
+hogy némi romantika is keveredjék a dologba, összeismerkedett Zeldával,
+a gyönyörû, ám tehetség dolgában kb. vele egy szinten álló fiatal
+boszorkánnyal - ezután együttes erôvel próbáltak az emberiség hasznára
+lenni. Mivel azonban - amint az eddigiekbôl az már sejthetô - mindketten
+meglehetôsen amatôrnek bizonyultak dicsô mesterségükben, ezért
+jószándékuk ellenére is mindenhol hatalmas zûrt és felfordulást okoztak,
+továbbá fergeteges kudarcot arattak, amerre csak megfordultak. A derék és
+becsületes állampolgárok ezt természetesen nem nézték valami jó szemmel,
+aminek következtében a két jómadár már jópárszor a máglyán fejezte volna
+be a pályafutását, ha a szerencse - és Tongrak, a szeretô báty - nem
+sietett volna mindig az utolsó pillanatban a segítségükre...
+
+Kalandjaink elôtt azonban hadd szóljunk pár szót arról az országról, ahol
+ez a játék játszódik. Athar a neve, és az egész állam egy nagy sziget
+nyugati részén helyezkedik el, amely - néhány környezô apró
+szigetecskétôl eltekintve - magányosan áll a hatalmas óceán kellôs
+közepén, messze délre a szárazföldtôl. Valaha, még a régi szép idôkben,
+kiterjedt kereskedelem és szoros kapcsolat állt fenn a sziget és a
+külvilág között, amióta azonban a kisebb északi szigeteken veszélyesen
+elszaporodtak a sárkányok, a trollok és a vécés nénik, azóta egyetlen
+hajó sem volt képes áthatolni ezen a területen: Athar így lassanként
+teljesen elszigetelôdött. Rövidesen már hírek sem érkeztek a szárazföld
+felôl, s az azóta eltelt mintegy háromszáz esztendô alatt az itt élô
+emberek tökéletesen elfeledkeztek a külvilágról. Az egymást követô
+uralkodókat lefoglalta az állandó háborúskodás a - különösen az
+északkeleti területeken - mind nagyobb számban jelentkezô orkokkal, az
+emberek pedig lassan-lassan hozzászoktak, hogy a tengert tekintsék a
+világ határának. Néha egy-egy vakmerô hajós megpróbált eljutni távolabbi
+vizekre, de ezek a hajók többé nem tértek vissza. A hajózás így
+többnyire a partközelre korlátozódott.
+
+Egy napon azonban különös dolog történt. Keron király emberei egy furcsa,
+láthatóan idegen földrôl származó hajó roncsát fogták ki a tengerbôl.
+Alaposan átkutatták, de embert nem találtak rajta - valószínûleg az egész
+legénység az északi szörnyetegek martalékául esett - , találtak viszont
+egy különösen érdekes tárgyat, mellyel eleinte ugyan nemigen tudtak mit
+kezdeni, de aztán, amikor sikerült végre mûködésre bírniuk, mind nagyobb
+érdeklôdéssel figyelték, miféle dolgok történnek benne. Még Queldrin,
+Athar fômágusa is eljött, hogy saját szemével lássa a különös jelenséget.
+Egyikük sem tudta persze, de egy hordozható televízióval álltak
+szemközt...
+
+[a király rajza]
+
+A király ekkor a kincstárába vitette az ördögi masinát, megkétszerezte
+elôtte az ôrséget, és attól kezdve nem volt hajlandó kimozdulni errôl a
+helyrôl. Egész álló nap csak a tévét bámulta sósperecet rágcsálva, s a
+fotel mellett gyülekeztek a kiürített sörösüvegek, miközben egyre
+gyengülô birodalma lassan, de biztosan a teljes széthullás felé haladt.
+
+Csakhogy az idegen hajóroncson sok más érdekes dolog volt még
+megtalálható a televíziókészüléken kívül - köztük az athariak számára
+ismeretlen fegyverek is, amiket a Csöpögô Genny és a Zuhanó Guanó
+fedônevet viselô terrorista ork-szervezetek sikeresen megkaparintottak
+maguknak, és nyomban merényleteket kezdtek tervezni az egyre
+tehetetlenebbé váló király és annak hitvese ellen. Mindeközben egyre
+több, orkokból és egyéb mocskos teremtményekbôl álló banda tört be kelet
+felôl az országba, s gátlástalanul raboltak és fosztogattak mindenfelé
+Csattogó Protézis, a fogatlan vámpír vezetésével. Üvöltô trollok és
+önuralmukat vesztett kishivatalnokok dúlták szét az eladdig békésnek
+mutatkozó  falvakat. Emberi mivoltukból kivetkôzött köztisztasági
+alkalmazottak és örjöngô gyors- és gépírók randalíroztak az aranyló
+búzamezôkön szerteszét; acsargó orkok és szörnyû démonok szedtek
+életbenmaradási adót az emberektôl, ki-ki a maga szakállára
+természetesen. Az egész birodalmat a közelgô ork uralom réme fenyegette,
+mely gyakorlatilag a káosszal és anarchiával lett volna egyenlô.
+
+Queldrin, a fômágus ekkor úgy gondolta, most már tényleg tenni kéne
+valamit. Felkereste hát a fentebb már említett díszes testvérpárt: a
+dilettáns mágust és nagydarab bátyját, és beszélt nekik egy elfeledett
+ôsi kikötôrôl, amely talán már csak a mesékben létezik, és ahol
+mindazonáltal megtalálható egy olyan hajó - egy gálya -, amivel a
+legendák szerint bármilyen helyre el lehet jutni a világon. Ezt a hajót
+kell megtalálniuk, és segítséget hozniuk vele az ismeretlen kontinensrôl,
+ahonnan a veszedelem jött - ez az utolsó esély az ország megmentésére.
+"És ne feledd: használd a funkcióbillentyûket és a SAVE/RAMSAVE
+funkciókat játék közben!" - e szavakkal búcsúzott a mágus.
+
+Az ôsi krónikák itt még megemlítik, hogy a kalandjátékos ekkor egy
+lelkesedéstôl fûtött mozdulattal behelyezte az eredeti gyári lemezt a
+meghajtóba, és betöltötte róla a játékot, hogy végére járhasson ennek az
+ôrült legendának - a történet folytatása azonban ettôl a ponttól kezdve
+sûrû homályba burkolódzik...
+
+
+A küldetés teljesítéséhez sok sikert kíván a The Molotow Cocktails
+valamint a Commodore Világ Szerkesztôsége.
+
+A visszaküldött hibás játékokat díjmentesen kicseréljük.
+
+Figyelem! A játék jogvédett, így másolása és terjesztése a szerzô
+engedélye nélkül tilos és törvényellenes!
+
+COM-WARE Kft., Budapest, XI. Vásárhelyi Pál u. 8. 1114.
+Postacím: 1519 Budapest, Pf. 363.
+
+[az utolsó rajz]
+
+*********
+
+End of the International Project 64 etext of A Gálya.
+
+*********

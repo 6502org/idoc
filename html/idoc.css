@@ -1,0 +1,147 @@
+/* Stilmall för iDOC=
+ * © 2001,2003 Peter Karlsson
+ * $Id: idoc.css,v 1.5 2003/09/27 20:11:32 peter Exp $
+ */
+
+/* Standardfärger */
+body {
+	color: black;
+	background-color: white;
+}
+
+body.front {
+	background-image: url(../pics/wback2.gif);
+}
+
+/* Link colours */
+a:link {
+	color: #00c;
+}
+
+a:active {
+	color: #800;
+}
+
+a:visited {
+	color: #008;
+}
+
+a:hover {
+	color: black;
+}
+
+/* Rubriker */
+
+h1 {
+	text-align: center;
+}
+
+h2.main {
+	font-variant: small-caps;
+	color: #440;
+	text-decoration: underline;
+}
+
+h3.main {
+	color: #440;
+}
+
+/* Textblock */
+
+div.blob {
+	background: #ffc;
+	color: black;
+	border: thin solid black;
+	margin: 2em;
+	padding: 1em;
+}
+
+div.blob h2 {
+	border: 0;
+	margin: 0 0 1em 0;
+	padding: 0 1em;
+	background: #9ad284;
+	color: black;
+	text-align: center;
+	font-family: "Times New Roman", "Times", serif;
+	font-size: 2em;
+}
+
+div.blob P {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+/* Logotypdelen */
+div.left {
+	float: left;
+	margin-right: 1em;
+	width: 33%;
+	min-width: 220px;
+	text-align: center;
+	background: #eee;
+	color: #044;
+	border: thin solid #003;
+}
+
+.clear {
+	clear: both;
+}
+
+div.right {
+	border-bottom: 1px solid black;
+}
+
+hr.decorative {
+	display: none;
+}
+
+/* Besökarpanelen */
+div.visitors {
+	width: 30em;
+	min-width: 30em;
+	background: #ffc;
+	color: #022;
+	border: 2px solid #004;
+	text-align: center;
+	margin-top: 2px;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+}
+
+/* Täta listor */
+ul li {
+	margin-top: 0.1em;
+	margin-bottom: 0.1em;
+}
+
+/* Tabeller */
+table {
+	clear: both;
+}
+
+table[border] {
+	border-collapse: collapse;
+	border: 0;
+}
+
+table[border] tr th {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+table[border] tr td {
+	border-bottom: 1px solid #eee;
+}
+
+table[border] tr td, table[border] tr th {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+/* Sökfält */
+form.panel {
+	border-bottom: 2px solid black;
+	color: black;
+	padding: 0.5em;
+}

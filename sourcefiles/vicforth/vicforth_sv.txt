@@ -1,0 +1,1708 @@
+*********
+
+Welcome to iDOC= - the international CBM documentation project!
+
+The goal of iDOC= is to preserve (non-English) Commodore related documents
+in electronic text format that might otherwise cease to exist with the rapid
+advancement of computer technology and declining interest in 8-bit computers
+on the part of the general population. If you would like to help by
+converting Commodore related hardcopy documents to electronic texts please
+contact the manager of iDOC=, Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names consists of a reasonably short unique title, followed by the
+document language. Two optional fields follow; first the document version (0
+for incomplete texts, version 1 is usually unnumbered), and then the
+document source, if there are more than one. Finally, the document is given
+a .txt extension.
+
+The author(s) of the original document and members of iDOC= make no
+representations about the accuracy or suitability of this material for any
+purpose. This etext is provided "as-is". Please refer to the warranty of the
+original document, if any, that may included in this etext. No other
+warranties, express or implied, are made to you as to the etext or any
+medium it may be on. Neither the author(s) nor the members of iDOC= will
+assume liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext. Therefore
+if you read this document or use the information herein you do so at your
+own risk.
+
+*********
+
+*********
+
+The iDOC= etext of the user manual for "VIC FORTH", VIC-202, Swedish version.
+Converted to text by Anders Carlsson <dal95acn@mds.mdh.se>.
+
+vicforth_sv.txt, February 2000, etext #61
+
+Notes and corrections from the etexter:
+
+A number of spelling errors and typos are fixed. For example, a few parameters
+to some FORTH words apparently were forgotten or erronous in a few places.
+
+To use VIC-FORTH at its best, the Systems Extensions Diskette is required.
+The e-texter is missing this, and would be a lot happier if someone who reads
+this knows where to find an image of this and send me. I'm sure Datatronic
+no longer are selling it anyway (if the company exists at all) :-)
+
+*********
+
+VIC-FORTH [VIC-202]
+
+Handbok och referensmanual
+
+VIC-FORTH är ett fjärde generationens programmeringsspråk som i många avseenden
+är mycket olikt andra språk. I förhållande till dess storlek är det
+kraftfullare än något annat. Inom 8K tillhandahåller en typisk minidator-FORTH
+strukturerad, kompakt och extremt snabb kod, virtuellt minne, en resistent
+strukturerad makroassembler och en resident editor, samt fleranvändarmöjlighet.
+FORTH kan till och med bygga ut sig självt och sina kompilatorer. FORTH är ett
+metaspråk.
+
+Denna manual är inte en lärobok i konsten att programmera i FORTH. Vi har i
+stället sammanställt en lista över FORTH-litteratur.
+
+Den första delen av denna manual hjälper dig att komma igång. VIC-FORTH:s
+speciella personlighetsdrag beskrivs i detalj. Naturligtvis är VIC-FORTH mycket
+standardiserat, och följer fig-FORTH utom för några smärre förbättringar.
+
+Den andra delen utgörs av en ordlista. Alla ord i VIC-FORTH beskrivs, och
+parametrar och resultat visas. Denna del upptar huvuddelen av handboken,
+eftersom det finns flera hundra kommandon i VIC-FORTH.
+
+DEL 1 - ALLMÄN INFORMATION
+
+VIC-FORTH är ett mycket kapabelt språk, som arbetar från ROM och är baserat på
+fig-FORTH. VIC-FORTH är nästan identiskt med PET-FORTH, en professionell FORTH
+för Commodore CBM-datorprodukterna. VIC-FORTH innehåller allt i PET-FORTH:s
+kernel plus dess Systems Extensions. Detta garanterar dig 100% kompabilitet.
+
+Det är brukligt att ett FORTH-system innehåller en Editor och en Assembler. I
+VIC-FORTH är dessa inte placerade i ROM, utan bifogas i stället i källkodsform.
+Detta har gjorts förr att uppnå maximal flexibilitet i minnesutnyttjandet. Du
+kan om det behövs kompilera dem från tangentbordet, och spara dem på kassett
+eller något annat massminne.
+
+FORTH är under programutvecklingsskedet diskbaserat; det är normalt inte
+konstruerat att arbeta mot kassettenheter. VIC-FORTH har däremot ord som
+tillåter dig att spara och läsa in arbetsareor från kassett. Om du planerar att
+göra mycket utvecklingsarbete, rekommenderar vi dig starkt att anskaffa en
+diskettenhet. Först då framträder FORTH:s fulla kraft och flexibilitet.
+
+Din återförsäljare kan tillhandahålla en speciell System Extensions Diskette.
+Den innehåller Assembler och Editorvokabulär, flyttalsrutiner med
+trigonometriska funktioner, komplexa tal, avancerad stränghantering, ett mycket
+komplett grafikpaket, och mycket annat. Några demonstrationsprogram och spel
+finns också på disketten.
+
+VIC-FORTH kan arbeta med alla minnesstorlekar av VIC. Observera att
+VIC-FORTH-modulen innehåller 3K RAM, så denna modul skall alltså inte vara
+inpluggad.
+
+På en VIC utan minnesexpansion har du en arbetsarea på cirka 3400 bytes.
+Eftersom FORTH-kod är extremt kompakt, är detta tillräckligt för de flesta
+applikationer, speciellt inom processkontroll. 8K expansionsminne är vanligtvis
+tillräckligt för större tillämpningar, och 16K eller mer är nästan lyx.
+
+VIC-FORTH har elva diskbuffrar om 256 bytes var, vilket gör en bufferarea om
+totalt 2860 bytes. Denna area är placerad i de 3K expansionsRAM som finns i
+VIC-FORTH-modulen. Videominnet startar i $1000.
+
+VIC-FORTH skiljer sig på några smärre punkter från fig-FORTH:
+
+* För att kunna arbeta mot alla minnesstorlekar är User-variablerna och
+  diskbuffrarna inte placerade högst upp i minnet, utan i den andra änden.
+  Följaktligen föregår de ordlistan. Den vanlige användaren behöver aldrig
+  tänka på detta.
+
+* Av samma anledning kommer inte VIC-FORTH att tala om när minnet är fullt.
+  Detta måste du hålla reda på själv. Det händer ytterst sällan att minnet
+  verkligen blir fullt, men det kan enkelt kollas genom att subtrahera HERE
+  från den högsta RAM-adressen i systemet. Detta ger dig antalet lediga bytes
+  i ordlistan.
+
+* Ett stort antal extensions finns i ROM-modulen, bland andra DUMP, 1+!, 1-!,
+  1-, 2-, PICK, LINE, TEXT, M*/ osv. Dessutom finns kraftfulla ord för
+  periferienhetshantering och kassett.
+
+Nästa tre punkter är synnerligen tekniska till sin natur:
+
+* DOES>-ord är mer kompakta; varje DOES>-kompilerat ord behöver två bytes
+  mindre plats än i fig-FORTH. DOES> fungerar alltså som i FORTH-79.
+
+* USE och PREV är konstanter som pekar till RAM. Den vanlige användaren märker
+  aldrig någon skillnad.
+
+* FORTH:s vokabulärhuvud flyttas till RAM vid kallstart (COLD). Detta är
+  nödvändigt, eftersom systemet är ROM-baserat. Den vanlige användaren märker
+  ingen skillnad.
+
+Totalt sett är dessa avvikelser mycket små, och kompatibiliteten på
+källkodsnivå påverkas inte på något sätt. Vi har sammanställt denna lista för
+dem som har mycket djupgående kunskaper om FORTH, för att dokumentera systemet.
+
+I kassettbaserade system kommer felmeddelanden att ges i formen "ERROR #99".
+När en diskettenhet används tillsammans med System Extension Disketten, får man
+i stället felmeddelanden i klartext. Nedan är en lista över felmeddelanden och
+deras respektive nummer. Observera att filhanteringsorden också använder dessa
+koder, som felkoder.
+
+ 1 - Empty stack
+ 2 - Dictionary full (används ej)
+ 3 - Has incorrect addressing mode
+ 4 - Isn't unique
+ 5 -
+ 6 - Disc Range?
+ 7 - Full stack
+ 8 - Disc erfor!
+ 9 - Not 8-bit value or address
+10 -
+11 -
+12 - Illegal value - reenter
+13 - Too large - reenter
+14 -
+15 - Datatronic AB (c) 1982 etc.
+16 -
+17 - Compilation only, use in definition
+18 - Execution only
+19 - Conditionals not paired
+20 - Definition not finished
+21 - In protected dictionary
+22 - Use only when loading
+23 - Off current editing screen
+24 - Transfer aborted
+25 - Too many files
+26 - File already open
+27 - File not open
+28 - File not found
+29 - Device not present
+30 - Not input file
+31 - Not output file
+32 - Missing file name
+33 - Illegal device number
+
+På systemdisketten finns det plats för expansion upp till 63 felmeddelanden.
+Om disk inte används, kan man naturligtvis använda vilka felkoder man behagar.
+
+DEL 2 - ORDLISTA
+
+Denna ordlista innehåller alla ord i VIC-FORTH:s huvudvokabulär. Dessutom
+innehåller den definitioner på alla ord i VIC-FORTH:s EDITOR-vokabulär.
+ASSEMBLER-ord har utelämnats ur denna lista. Definitionerna presenteras här i
+ASCII-följd.
+
+För varje ord visas en enkel lista över vad ordet tar från stacken och vad det
+lämnar kvar. Symbolerna listas i den ordning de lagts på stacken; stacktoppen
+är alltså till höger. Tre bindestreck ("---") visar var ordet utförs; efter
+denna symbol följer alltså eventuella kvarlämnade parametrar.
+
+Vi använder dessa symboler i ordlistan
+
+  adr    minnesadress
+  b    byte, 8 bitar
+  c    7-bitars ASCII-tecken
+  d    dubbelprecisionstal
+  f    sant/falskt-flagga
+  ff    falsk flagga
+  n    16-bitarstal med tecken
+  u    16-bitarstal utan tecken
+  sf    sann flagga
+
+Om inte något annat anges avser referenser till tal 16-bitarstal med tecken. 
+Då 32-bitarsaritmetik används ligger den mest signifikanta cellen överst på
+stacken.
+
+All aritmetik underförstås vara 16-bitarsmatematik med tecken, utan
+felrapportering, om inget annat sägs.
+
+!          n adr ---
+  Lagrar sextonbitarstalet n i adress adr. Uttalas "store".
+
+!CSP
+  Lagrar stackpekaren i CSP. Används för kompileringskontroll.
+
+#          d1 --- d2
+  Framställer ett ASCII-tecken ur dubbeltalet d1 och fogar det till utsträngen.
+  Resultatet d2 är kvoten efter division med BASE, och kan användas för
+  framställning av ytterligare siffror. Används mellan <# och #>. Se vidare #S.
+  Uttalas "sharp".
+
+#>         d --- adr ant
+  Avslutar talomvandlingen genom att DROPpa d, och lämna adress plus antal
+  tecken i det omvandlade talet åt TYPE. Uttalas "sharp-greater".
+
+#S         d1 --- d2
+  Anropar # till endast noll återstår, och omvandlar sålunda talet d1 till
+  ASCII-form. Används mellan <# och #>.  Uttalas "sharp-s".
+
+'          --- adr
+  Används i formen ' nnnn
+  Lämnar parameterfältsadressen till ordet nnnn i ordlistan. Om ordet används
+  inuti en kolondefinition kompileras adressen in som en literal. Uttalas
+  "tick".
+
+(
+  Används i formen (kkkk)
+  Inleder en kommentar som avslutas på samma rad med en högerparentes. Kan
+  användas både inom och utanför en kolondefinition. Observera att ett
+  blanksteg måste följa efter efter (.
+
+(.")
+  Run-time-proceduren som kompileras av .", vilken överför de följande
+  ASCII-tecknen i ordlistan till den valda utenheten. Se .".
+
+(;CODE)
+  Run-time-proceduren, som kompileras av ;CODE vilken förändrar kodfältet
+  (CFA) i det mest nyligen definierade ordet till att peka på den
+  efterföljande maskinkoden. Se ;CODE.
+
+(+LOOP)    n---
+  En run-time-procedur som kompileras in av +LOOP, som ökar loopindex med
+  talet n och testar om loopen är avslutad. Se +LOOP.
+
+(ABORT)
+  Utförs efter ett fel, om WARNING har satts till -1. Detta ord utför
+  normalt ABORT, men detta kan ändras att anropa användarens alternativa
+  felprocedur. I ROM-system som VIC-FORTH är detta dock ej möjligt.
+
+(DERROR)
+  Utförs efter ett diskfel. Anropar normalt DERROR, kan ändras att anropa
+  användarens egen felprocedur. I ROM-system som VIC-FORTH är detta dock
+  ej möjligt.
+
+(DO)
+  Run-time-proceduren som kompileras av DO, och flyttar loopparametrarna
+  till returnstacken. Se DO.
+
+(DOES>)    --- pfa (exekvering)
+  Startar interpreteringen av ett definitionsords DOES>-del genom att
+  lägga värdet av IP på returnstacken, lagra innehållet i adressen som W
+  pekar på plus tre i IP, lägga värdet av W plus två på stacken (som är
+  adressen till familjemedlemmens PFA), och därefter hoppa till NEXT.
+
+(FIND)     adr1 adr2 --- pfa b f  (hittades)
+           adr1 adr2 --- ff       (hittades inte)
+  Söker igenom ordlistan från namnfältsadressen adr2 och jämför med
+  texten i adr1. Returnerar parameterfältsadressen, namnlängdsbyte, och
+  en sann flagga om texten hittades. Hittades den inte lämnas endast en
+  falsk flagga på stacken.
+
+(LINE)     n1 n2 --- adr ant
+  Omvandlar radnumret n1 och skärmnumret n2 till en diskbufferadress som
+  innehåller raden. Om ant har värdet 64 har raden sin maximala längd.
+
+(LOOP)
+  Run-time-proceduren som kompileras av LOOP, och som ökar loopindex med
+  ett samt testar om loopen är fullbordad. Se LOOP.
+
+(NUMBER)   d1 adr1 --- d2 adr2
+  Omvandlar ASCII-texten i adress adr1+1 till binär form i förhållande
+  till BASE. Det nya talet adderas till dubbelprecisionstalet d1, som
+  lämnas kvar som d2. Adr2 är adressen till det första tecknet som inte
+  går att omvandla. Används av NUMBER.
+
+*          n1 n2 --- n3
+  Lämnar produkten n3 av talen n1 och n2. Uttalas "times".
+
+*/         n1 n2 n3 --- n4
+  Lämnar talet n4 som ett resultat av operationen n4=(n1*n2)/n3. Genom
+  att mellanresultatet är 32 bitar fås en större noggrannhet än vad som
+  skulle ha varit möjligt med frasen n1 n2 * n3 / . Uttalas "times-divide".
+
+*/MOD      n1 n2 n3 --- n4 n5
+  Som */ men lämnar kvoten n5 och resten n4. Uttalas "times-divide-mod".
+
++          n1 n2 --- n3
+  Lämnar summan n3 av talen n1 och n2.
+
++!         n adr ---
+  Adderar n till innehållet i adress adr. Uttalas "plus-store".
+
++-         n1 n2 --- n3
+  Ger n2:s tecken till n1, som lämnas som n3. Uttalas "plus-minus".
+
++BUF       adr1 --- adr2 f
+  Ökar buffaradressen adr till adressen till nästa diskbuffer, adr2.
+  Flaggan f är falsk om adr2 pekar på samma buffer som variabeln PREV.
+  Uttalas "plus-buff".
+
++LOOP          n1 --- (körning)
+           adr n2 --- (kompilering)
+
+  Används inuti en kolondefinition i formen DO ... n1 +LOOP
+
+  Då den kompilerade strukturen körs, kommer +LOOP att styra återhoppet
+  till DO beroende på n1, loopindex, samt gränsvärdet. Talet n1 med tecken
+  adderas till indexvärdet och resultatet jämförs med gränsvärdet. Ett hopp
+  tillbaks till DO utförs ända till det nya indexvärdet är lika med eller
+  mindre än indexvärdet (n1>0), eller till det nya indexvärdet är lika med
+  eller mindre än indexvärdet (n1<0). Då loopen lämnas, tas index- och
+  gränsvärdena bort från returnstacken och exekveringen fortsätter. Uttalas
+  "plus-loop" .
+
++ORIGIN    n --- adr
+  Lämnar adressen till den n:te byten efter FORTH-kernelns start. Används
+  huvudsakligen för att hämta eller modifiera uppstartparametrarna, som
+  ligger i kernelns början. Uttalas "plus-origin".
+
+,          n ---
+  Lagrar n i nästa lediga minnescell i ordlistan och ökar ordlistepekaren
+  DP med två. Uttalas "comma".
+
+-          n1 n2 --- n3
+  Lämnar differensen n3 mellan talen nl och n2. Uttalas "minus".
+
+-->
+  Fortsätt interpreteringen på nästa skärm i nummerföljd. Uttalas
+  "next-screen".
+
+-BCD       n1 --- n2
+  Omvandla det binära talet n1 till ett packat BCD-tal n2. n1 måste ha
+  ett värde från 0 till 99. Uttalas "dash-b-c-d".
+
+-DISC      adr s t d f1 --- f2
+  En rutin som används för att läsa eller skriva ett diskblock till eller
+  från en viss minnesarea med start i adr. Överföringen sker till eller
+  från track t, sektor s, drive d. Om f1 är 0, sker skrivning till disk,
+  är f1 läses data. -DISC lämnar en flagga f2 som är sann om ett diskfel
+  inträffat. Uttalas "dash-disc".
+
+-DUP       n1 --- n1       (om noll)
+           n1 --- n1 n1    (icke-noll)
+  Duplicerar talet n1 endast om det är skilt från noll. Används vanligen
+  framför IF, för att eliminera en eventuell ELSE-del, som inleds med
+  DROP. Uttalas "dash-dup".
+
+-FIND      --- pfa b sf  (hittat)
+           --- ff        (ej hittat)
+  Hämtar nästa ord ur inströmmen (avgränsat av blanka) till adressen som
+  anges av HERE, och söker igenom CONTEXT och därefter CURRENT-vokabulären
+  efter ett motsvarande ord. Om det hittas lämnas ordets paramterfältsadress,
+  dess längdbyte och en sann flagga på stacken. Annars lämnas endast en falsk
+  flagga. Uttalas "dash-find".
+
+-MOVE      adr n ---                                                   (EDITOR)
+
+  Flyttar texten i adress adr till rad n i den nuvarande redigeringsskärmen.
+  Antal tecken som flyttas avgörs av konstanten C/L. Uttalas "dash-move".
+
+-TRAILING  adr n1 --- adr n2
+
+  Justerar längden n1 på texten som börjar i adress adr, så att alla
+  avslutande blanka elimineras. Det betyder att tecknen i adr+n2 alla är
+  blanka. Uttalas "dash-trailing".
+
+.          n ---
+  Skriver ut talet n till den valda utenheten, konverterad i bas
+  BASE. Talet följs av ett blanksteg. Uttalas "dot".
+
+."
+  Används i formen ." tttttttt"
+  Kompilerar in strängen tttttttt i ordlistan, inledd av ett anrop till
+  runtimeproceduren (.") och en längdbyte. När definitionen utförs kommer
+  (.") att skrivas ut till den nuvarande utenheten. Om ." används utanför
+  en kolondefinition kommer texten omedelbart att skrivas ut. En textsträng
+  kan maximalt vara 256 tecken lång. Se (."). Uttalas "dot-quote".
+
+.LINE      rad skärm ---
+  Skriver angiven rad i den angivna skärmen på den nuvarande utenheten.
+  Avslutande blanksteg skrivs inte ut. Uttalas "dot-line".
+
+.R         n1 n2 ---
+  Skriver talet n1 högerjusterat i en n2 tecken bred kolumn. Inget
+  efterföljande blanksteg skrivs ut. Uttalas "dot-r".
+
+/          n1 n2 --- n3
+  Dividerar n1 med n2 och lämnar kvoten n3. Uttalas "divide".
+
+/MOD       n1 n2 --- rest kvot
+  Dividerar n1 med n2 och lämnar kvot och rest. Resten har dividendens
+  tecken. Uttalas "divide-mod".
+
+0 1 2 3    --- n
+  Dessa fyra tal är definierade som konstanter, vilka ger sitt eget värde
+  på stacken då de anropas. Att definiera tal på detta sätt sparar två
+  bytes varje gång de används inom en definition.
+
+0<         n --- f
+  Lämnar en sann flagga om talet n är mindre än noll (negativt), annars
+  en falsk flagga. Uttalas "zero-less".
+
+0=         n --- f
+  Lämnar en sann flagga om talet på stacken är lika med noll, annars en
+  falsk flagga. Kan användas som en NOT-funktion. Uttalas "zero-equal".
+
+0BRANCH    f ---
+  Runtimeproceduren för ett villkorligt hopp. Om f är falskt (noll)
+  adderas den följande cellen i ordlistan till den interpretiva pekaren
+  IP, vilket ger ett hopp framåt eller bakåt. Kompileras av IF, UNTIL,
+  och WHILE.  Uttalas "zerobranch".
+
+1+         n1 --- n2
+  Adderar 1 till det översta talet på stacken. Uttalas "one-plus".
+
+1+!        adr ---
+  Adderar 1 till innehållet i den angivna adressen. Uttalas
+  "one-plus-store".
+
+1-         n1 --- n2
+  Minskar det översta talet på stacken med ett. Uttalas "one-minus".
+
+1-!        adr ---
+  Minskar innehållet i den angivna adressen med ett. Uttalas
+  "one-minus-store".
+
+2!         d adr ---
+  Lagrar dubbeltalet d i adress 4 bytes med start i adr. Uttalas
+  "two-store".
+
+2@         adr --- d
+  Hämtar dubbeltalet som finns i 4 bytes med start i adr. Uttalas
+  "two-fetch".
+
+2+         n1 --- n2
+  Ökar det översta stackelementet med två. Uttalas "two-plus".
+
+
+2-         n1 --- n2
+  Minskar det översta stackelementet med två. Uttalas "two-minus".
+
+2DROP, 2DUP, 2OVER, 2ROT, 2SWAP, 2VARIABLE, 2CONSTANT
+  Motsvarar enkelprecisionsorden, men arbetar med dubbeltal. Uttalas
+  "two-drop", "two-dup", "two-over", "two-rote", "two-swap",
+  "two-variable" och "two-constant".
+
+:
+  Används i en form som kallas kolondefinition:
+
+  : cccc . . . ;
+
+  Skapar ett ord i ordlistan ekvivalent med den sekvens av ord som
+  representeras av '. . .' fram till det avslutande ; eller ;CODE. Denna
+  kompilering utförs av textinterpretatorn så länge som USER-variabeln
+  STATE har ett värde skilt från noll. I övrigt sätts innehållet i
+  CONTEXT till innehållet i CURRENT, vilket innebär att man hamnar i det
+  vokabulär som definitionen läggs i. Ord som har sin precedencebit satt
+  (med IMMEDIATE) kommer att exekveras direkt under kompileringen, och
+  alltså inte kompileras in i ordlistan. Uttalas "colon".
+
+;CODE
+  Används i formen:
+  cccc . . . ;CODE assemblerkod END-CODE
+
+  Sluta kompileringen av kolondefinitionen och avsluta det nya
+  definitionsordet cccc genom att kompilera in ;CODE.  Välj
+  ASSEMBLER-vokabuläret och fortsätt med assemblering av runtimebeteendet
+  för ord av klassen cccc.
+
+  När cccc sedan utförs i formen
+      cccc nnnn
+
+  kommer ett ord nnnn att skapas i ordlistan med runtimebeteendet som
+  anges av assemblerkoden mellan ;CODE och END-CODE. Det vill säga att
+  ordet nnnn:s CFA pekar på koden efter ;CODE. Ett redan existerande
+  definitionsord måste finnas i cccc före ;CODE. Ordet kan alltså
+  användas som en lågnivåmotsvarighet till DOES>. Uttalas "semi-colon-code".
+
+;S
+  Avsluta interpreteringen av en diskskärm. ;S är också runtimeordet som
+  kompileras in av ; i slutet av en kolondefinition, och som vid körning
+  återgår till det anropande ordet. Uttalas "semi-s".
+
+<          n1 n2 --- f
+  Lämnar en sann flagga om n1 är mindre än n2; i annat fall lämnas en
+  falsk flagga. Uttalas "less-than".
+
+<#
+  Starta konversion av ett tal för utmatning. Konversionen görs med ett
+  dubbelprecisionstal, och resultatet läggs i PAD och nedåt. Uttalas
+  "less-sharp".
+
+<BUILDS
+  Används inom en kolondefinition
+  : cccc <BUILDS ... DOES> . . . ;
+
+  Varje gång cccc utförs, skapar <BUILDS ett nytt ord i ordlistan, med
+  ett runtimebeteende i högnivåform. cccc används i följande form
+      cccc nnnn
+
+  och använder sig då av <BUILDS för att skapa ordet nnnn i ordlistan.
+  När nnnn sedan utförs kommer adressen till nnnn s parameterfält att
+  läggas på stacken, och orden efter DOES> i cccc att utföras. <BUILDS
+  och DOES> låter användaren definiera runtimeprocedurer i högnivåform.
+  Jämför med ;CODE. Uttalas "builds".
+
+=          n1 n2 --- f
+  Lämnar en sann flagga på stacken om n1 är lika med n2, annars en falsk
+  flagga. Uttalas "equals".
+
+>          n1 n2 --- f
+  Lämnar en sann flagga på stacken om n1 är större än n2, annars en falsk
+  flagga. Uttalas "greater-than ".
+
+>R         n ---
+  Flyttar ett tal från parameterstacken till returnstacken. Ett
+  motsvarande antal R> måste finnas i samma definition. Uttalas "to-r".
+
+?          adr ---
+  Skriver ut innehållet i den angivna adressen i fritt format enlighet
+  med den rådande basen. Uttalas "question".
+
+?COMP
+  Ger ett felmeddelande om kompilering inte pågår. Uttalas
+  "question-compiling".
+
+?CSP
+  Ger ett felmeddelande om stackens position är olika den som lagrats i
+  CSP. Uttalas "question-c-s-p".
+
+
+?DISC
+  Läser in diskstationens felkod och lägger den i adress $0354 och framåt.
+  Meddelandets längd läggs i $0353. Se COUNT och TYPE. Uttalas
+  "question-disc".
+
+?ERROR     f n ---
+  Ger felmeddelande nummer n om flaggan är sann. Uttalas "question-error".
+
+?EXEC
+  Ger ett felmeddelande om exekvering inte pågår. Uttalas
+  "question-executing".
+
+?LOADING
+  Ger ett felmeddelande om laddning inte pågår. Uttalas "question-loading".
+
+?PAIRS     n1 n2 ---
+  Ger ett felmeddelande om n1 inte är lika med n2. Meddelandet indikerar
+  att kompilerade villkorssatser inte stämmer. Uttalas "question-pairs".
+
+?STACK
+  Ger ett felmeddelande om stacken är för stor eller för liten. Uttalas
+  "question-stack".
+
+?TERMINAL  --- f
+  Ger en sann flagga om STOP-knappen på tangentbordet är nedtryckt, en
+  falsk flagga annars. Uttalas "question-terminal".
+
+@          adr --- n
+  Lämnar innehållet i cellen vars adress är adr. Uttalas "fetch"
+
+ABORT
+  Töm båda stackarna och återgå till exekveringstillstånd. Återlämna
+  kontrollen till användaren, och ge ett meddelande.
+
+ABS        n --- u
+  Lämnar absolutbeloppet av talet n.
+
+AGAIN      adr n --- (vid kompilering)
+
+  Används inom en kolondefinition i formen:
+      BEGIN ... AGAIN
+
+  Vid exekvering kommer AGAIN att tvinga fram ett återhopp till BEGIN.
+  Stacken påverkas inte. Det går inte att lämna denna loop annat än genom
+  att utföra ordet EXIT, som finns definierat på VIC-FORTH-skivan. Vid
+  kompileringen kompilerar AGAIN in ett ovillkorligt hopp från adress
+  HERE till adr. n används för felkontroll under kompileringen.
+
+ALLOT      n ---
+  Lägg talet n till ordlistpekaren DP. Detta används för att reservera
+  plats i ordlistan, eller för att återkräva minne. n är ett
+  enkelprecisionstal med tecken.
+
+AND        n1 n2 --- n3
+  Utför logiskt bitvis AND med n1 och n2, och lämna n3 som resultat.
+
+ASSEMBLER
+  Används för att sätta CONTEXT-vokabuläret till ASSEMBLER, så att
+  ordlistsökningar börjar här. Definierat IMMEDIATE, så att det utförs
+  även under kompilering.
+
+B                                                                      (EDITOR)
+  Används för att sätta den närmast föregående skärmen till nuvarande
+  redigeringsskärm. Se N och L. Uttalas "back".
+
+B.         n ---
+  Skriver ut talet n i binär form, oavsett den nuvarande basen. Den
+  nuvarande basen påverkas inte av operationen. Uttalas "b-dot".
+
+B/BUF      --- n
+  Denna konstant ger antalet bytes i varje diskbuffar, nämligen 256.
+  Uttalas "bytes-per buffer".
+
+B/SCR      --- n
+  Denna konstant ger antalet block per redigeringsskärm, nämligen 4. En
+  skärm är av hävd organiserad som 16 rader med 64 tecken på varje rad.
+  Uttalas "blocks-per screen".
+
+BACK       adr ---
+  Beräknar bakåthoppet till från HERE till den angivna adressen och
+  kompilerar in detta värde i nästa cell i ordlistan.
+
+BACKUP                                                                 (EDITOR)
+  Kopierar disken i driven 0 till drive 1, efter att först ha gjort
+  FLUSH. Kopiering avslutas med en signal från PETS:s klocka.
+
+BASE       --- adr
+  En USER-variabel som innehåller den nuvarande basen som används för
+  in- och utkonversion av tal.
+
+BEGIN      --- adr n
+
+  Används i en kolondefinition i någon av formerna:
+      BEGIN ... UNTIL
+      BEGIN ... AGAIN
+      BEGIN ... WHILE ... REPEAT
+
+  Vid körning utgör BEGIN starten på en sekvens som kan upprepas flera
+  gånger. Den tjänar som återhoppspunkt från det motsvarande UNTIL,
+  AGAIN, eller REPEAT-ordet. Vid kompilering lämnar BEGIN adressen till
+  det följande ordet samt talet nr för kompileringskontroll.
+
+BL         ---  c
+  En konstant som lämnar ASCII-koden för ett blanktecken på stacken.
+  Uttalas "blank".
+
+BLANKS     adr ant ---
+  Fyller en minnesarea som börjar i adr med ant blanka.
+
+BLK        --- adr
+  En USER-variabel som pekar på det block som just nu interpreteras. Om
+  innehållet är noll, tas texten från PET:s tangentbord.
+
+BLOCK      n --- adr
+  Lämnar adressen till det block vars nummer anges av n. Om blocket
+  redan finns i minnet sker ingen överföring från diskenheten. Om
+  blocket inte finns i minnet, överförs det från diskenheten till en
+  lämplig diskbuffert. Om denna diskbuffer innehåller ett annat block,
+  vars innehåll uppdaterats (med UPDATE), skrivs detta block först
+  tillbaks till disken innan block nummer n läses in. Se BUFFER, R/W,
+  UPDATE och FLUSH.
+
+BOOT-UP
+  Systemuppstart som automatiskt utförs när VIC-FORTH startas upp.
+  Funktionen tömmer buffrarna, startar disken och laddar skärm 1.
+  Detta kommer i systemdiskettens fall att innebära att EDITOR och
+  ASSEMBLER-vokabulären laddas.
+
+BRANCH
+  Runtimeproceduren som gör ett ovillkorligt hopp. Cellen efter BRANCH i
+  ordlistan innehåller ett offset som läggs till den interpretiva pekaren
+  IP, så att ett hopp framåt eller bakåt sker. BRANCH kompileras av ELSE,
+  AGAIN och REPEAT.
+
+BUFFER     n --- adr
+  Reservera nästa blockbuffer i tur åt block nummer n. Om innehållet i
+  denna buffert är ändrat skrivs innehållet tillbaka till disk. Block n
+  läses inte från disken. Adressen som lämnas är till den första
+  databyten i blocket.
+
+C!         b adr ---
+  Lagrar 8-bitarstalet b i adress adr. Uttalas "c-store", där C står
+  för "character".
+
+C,         b ---
+  Lagrar 8-bitarstalet b i nästa cell i ordlistan, samt ökar DP med 1.
+  Uttalas"c-comma".
+
+C@         adr --- b
+  Hämtar en byte från adressen som anges. Uttalas "c-fetch".
+
+CFA        pfa --- cfa
+  Omvandlar en definitions parameterfältsadress till dess
+  kodfältsadress. Uttalas "c-f-a".
+
+CLEAR      n ---                                                       (EDITOR)
+  Fyller skärm n med blanksteg, och förbereder den på detta vis för
+  inredigering av källkod. Se ZERO.
+
+CLIT       --- b (exekvering)
+  Lägger vid exekvering den efterföljnde byten i ordlistan på
+  stacken. Se LIT.
+
+CLOAD      --- f
+  Hämta in en sparad ordlista från kassett. En flagga lämnas som är noll
+  om laddningen lyckades, annars en felkod.
+
+CLOSE      n ---
+  Stänger fil n, och disassocierar alltså filnumret med den yttre enheten
+  som specificerats i OPEN.
+
+CMOVE      fr ti ant ---
+  Flyttar ant antal bytes från adress till adress ti. Byten i adress fr
+  flyttas först, med alltmer ökande adresser. Uttalas "c-move".
+
+COLD
+  Proceduren som används för uppstarting. COLD justerar ordlistpekaren
+  till minimumvärdet som anges av uppstartparametrarna och återstartar
+  via ABORT. Kan anropas från tangentbordet för att eliminera alla ord
+  och starta på nytt.
+
+COMPILE
+  När kolondefinitionen som innehåller COMPILE utförs, kommer adressen
+  till det ord som följer COMPILE att kompileras in i ordlistan. Detta
+  tillåter programmeraren att ta hand om vissa speciella
+  kompileringssituationer.
+
+CONSTANT   n
+  Ett definitionsord som används i denna form:
+      n CONSTANT cccc
+  för att skapa en konstant med namnet cccc, som då den exekveras lägger
+  värdet n på stacken.
+
+CONTEXT    --- adr
+  En USER-variabel som innehåller en pekare till det vokabulär i vilken
+  sökningar i ordlistan kommer att börja.
+
+COPY       n1 n2 ---                                                   (EDITOR)
+  Kopierar skärm n1 till skärm n2.
+
+COUNT      adr1 --- adr2 n
+  Lämnar adressen adr2 och längden n till en sträng som börjar i adr1. Det
+  antas att strängen är lagrad på det sätt som är vanligt i FORTH, nämligen
+  med längden i den första byten, och texten efterföljande. COUNT följs ofta
+  av TYPE.
+
+CR
+  Skriver ett carriage-return till den valda utenheten. Uttalas "c-r".
+
+CREATE
+  Ett definitionsord som används i formen
+      CREATE cccc
+  av sådana ord som CODE och VARIABLE för att skapa en header i ordlistan
+  åt en FORTH-definition. Kodfältet innehåller adressen till ordets
+  parameterfält, vilket sedan modifieras av orden som använder CREATE.
+  Det nya ordet skapas i CURRENT-vokabuläret.
+
+CSAVE      --- f
+  Sparar ordlistan och USER-variablerna på kassett. Ordlistan, som kan ha
+  givits ett namn (med NAME), kan senare laddas in igen med CLOAD. CSAVE
+  lämnar en flagga som är noll om operationen utförts utan fel, och en
+  felkod annars.
+
+CSP        --- adr
+  En USER-variabel som innehåller en tillfällig kopia av stackpekarens
+  värde. Används för kontroll av kompileringen. Uttalas "c-s-p".
+
+D          n ---                                                       (EDITOR)
+  Tar bort rad n ur den nuvarande skärmen. Alla rader under flyttas upp,
+  och rad 15 fylls med blanka. Uttalas "delete".
+
+D+         d1 d2 --- d3
+  Adderar dubbelprecisionstalen d1 och d2 och lämnar kvar
+  dubbelprecisionssumman d3. Uttalas "d-plus".
+
+D+-        d1 n --- d2
+  Tilldela dubbeltalet d1 enkelprecisionstalet n:s tecken, lämnande d2.
+  Uttalas "d-plus-minus".
+
+D.         d ---
+  Skriv ut dubbelprecisionstalet d på den nuvarande utenheten i fritt
+  format, följt av ett blanktecken. Uttalas "d-dot".
+
+D.R        d n ---
+  Skriv ut dubbelprecisionstalet d på den nuvarande utenheten, högerjusterat
+  i ett fält som är n tecken brett. Inget blanksteg följer talet. Uttalas
+  "ddotr".
+
+DABS       d --- ud
+  Tar absolutbeloppet på dubbelprecisionstalet d. Uttalas "d-abs".
+
+DECIMAL
+  Sätter talbasen till decimal in- och utmatning genom att tilldela
+  variabeln BASE det decimala värdet 10.
+
+DEFINITIONS
+  Används i formen
+      cccc DEFINITIONS
+
+  Sätter CURRENT-vokabuläret till CONTEXT. Den ovanstående frasen får
+  till följd att alla nya definitioner kommer att läggas i vokabuläret
+  cccc.
+
+DERROR
+  Anropas normalt av (DERROR) när ett diskfel inträffat. Sätter WARNING
+  till 10. Uttalas "d-error".
+
+DIGIT      c n1 --- n2 s  (ok)
+           c n1 --- ff    (ej ok)
+  Konverterar ASCII-tecknet c (i base n1) till sin binära motsvarighet
+  n2, tillsammans med en sann flagga. Om c inte går att konvertera i bas
+  n1 lämnas endast en falsk flagga.
+
+DLITERAL   d --- d   (vid exekvering)
+           d ---     (vid kompilering)
+  Om kompilering pågår, läggs dubbeltalet d in i ordlistan som en literal.
+  Senare exekvering av ordet kommer att lägga dubbeltalet på stacken. Uttalas
+  "d-literal".
+
+DMINUS     d1 --- d2
+  Omvandlar talet d1 till tvåkomplementform, d.v.s. vänder tecknet på
+  det. Uttalas "d-minus".
+
+DISC
+  Startar diskkommunikationen genom att initiera disken och öppna fil 15
+  för felmeddelanden och fil 13 för dataöverföring.
+
+DO         n1 n2 ---   (exekvering)
+           --- adr n   (kompilering)
+
+  Används i en kolondefinition i formen:
+      DO ... LOOP
+      DO ... +LOOP
+
+  Då strukturen exekveras, inleder DO en repetitiv sekvens som kontrolleras av
+  ett gränsvärde n1 och ett indexvärde med startvärde n2. DO flyttar dessa till
+  returnstacken och inleder loopen. Då LOOP eller +LOOP nås ändra indexvärdet.
+  Då det nya indexvärdet är lika med eller överskrider gränsvärdet avslutas
+  loopen, i annat fall sker ett hopp tillbaks till DO. När loopen avslutas tas
+  de både loopparametrarna bort från returnstacken och exekveringen fortsätter.
+  Både n1 och n2 bestäms vid exekveringen och kan därför vara resultatet av
+  andra operationer. Ordet I kan användas inuti en loop för att kopiera det
+  nuvarande loopindexet till stacken. Se vidare I, I', J, LOOP, +LOOP och
+  LEAVE.
+
+  När kompileringen av en DO-konstruktion sker, kompilerar DO in (DO) och
+  lämnar den följande adressen adr och n för felkontroll.
+
+DOES>
+  Ett ord som definierar runtimebeteendet inom ett definitionsord för en
+  ordklass. Vid kompileringen av det nya högnivådefinitionsordet
+  komplierar DOES> in ordet (;CODE) och ett maskinkodshopp till rutinen
+  (DOES>). När sedan definitionsordet exekveras kommer (;CODE) att låta
+  det definierade ordets CFA peka på maskinkodshoppet till (DOES>)
+  startar sedan exekveringen av orden efter DOES> i definitionsordet.
+
+  Används tillsammans med <BUILDS. När orden efter DOES> exekveras av
+  familjens "barn" läggs först adreser till "barnets" PFA på stacken.
+  Detta tillåter manipulation med denna area. Typiska användningsområden
+  är FORTH:s assembler, flerdimensionella matriser, och
+  kompilatorgenerering. Uttalas "does".
+
+DP         --- adr
+  En USER-variabel, ordlistpekaren, som innehåller adresser till nästa
+  lediga byte i ordlistan. Detta värde kan läsas med funktionen HERE och
+  ändras med hjälp av ALLOT. Uttalas "d-p"
+
+DPL        --- adr
+  En USER-variabel som innehåller antalet siffror till höger om den sista
+  decimalpunkten i det sista konverterade talet vid inmatning. Om ingen
+  decimalpunkt fanns i talet har DPL värdet -1. DPL kan också användas
+  för att styra decimalpunktens plats i ett användardefinierat
+  utmatningsord. Uttalas "d-p-l".
+
+DR0, DR1
+  Väljer diskenhet genom att sätt eller återställa OFFSET. OFFSET läggs
+  till blocknumret i BLOCK för att möjliggöra detta. OFFSET läggs inte
+  till blocknumret då ett felmeddelande skrivs ut, så att de alltid tas
+  från drive 0. Uttalas "drive-zero" och "drive-one"
+
+DROP       n ---
+  Tar bort talet från stacken.
+
+DUMP       adr1 adr2 ---
+  Skriver ut innehållet i adr1 till och med adr2 i hexadecimal och
+  ASCII-form. Dumpen kan stoppas med STOP-tangenten.
+
+DUP        n --- n n
+  Duplicerar det översta värdet på stacken.
+
+E          n ---                                                       (EDITOR)
+  Fyller rad n i den nuvarande redigeringsskärmen med blanksteg. Uttalas
+  "erase".
+
+EDITOR
+  Väljer EDITOR till CURRENT-vokabulär, vilket gör att ordlistesökningar
+  kommer att börja i EDITOR-vokabuläret och fortsätta ned i FORTH.
+  IMMEDIATE-definition.
+
+ELSE       adr1 n2 --- adr2 n2 (kompilering)
+
+  Används inom en kolodefinition i formen:
+      IF ... ELSE ... THEN
+
+  Vid körning kommer ELSE att utföras efter orden mellan IF och ELSE och
+  kommer då att göra ett hopp till ordet som följer efter THEN. Det har
+  vid exekvering ingen effekt på stacken. Vid kompilering kompilerar ELSE
+  in BRANCH och lämnar adressen adr2 och n2 för kontroll. ELSE löser
+  också framåtreferensen från IF genom att räkna ut avståndet mellan adr1
+  och HERE och lagra detta i adr1.
+
+EMIT       c ---
+  Överför ASCII-koden c till den valda utenheten. OUT ökas med 1 för
+  varje tecken som matas ut, liksom för alla andra utmatningsord i FORTH.
+
+EMPTY-BUFFERS
+  Markerar alla blockbuffertar som tomma, vilket inte nödvändigtvis
+  påverkar innehållet i dem. Eventuella uppdaterade block kommer inte att
+  skrivas tillbaks till disk. Detta måste göras efter uppstart av
+  systemet, för att förhindra att skräp skrivs till disken. Detta utföres
+  av BOOT-UP, som automatiskt anropas när VIC-FORTH startas upp.
+
+ENCLOSE    adr1 c --- adr1 n1 n2 n3
+  Ett maskinkodsord som anropas av WORD. Med hjälp av textadressen adr1
+  och tecknet c fastställs avståndet n1 i bytes till det första tecknet
+  efter adr1 som inte är ett c, avståndet till det första tecknet efter
+  texten som är ett c (n2) och avståndet till det första tecknet som inte
+  inkluderas. Denna procedur kommer inte att passera förbi en ASCII
+  'null' (00), utan behandlar den som ett ovillkorligt stopptecken.
+
+END
+  Detta är en tidigare benämning på UNTIL, och bör inte användas.
+
+ENDIF
+  Detta är en tidigare benämning på THEN, och bör inte användas.
+
+ERASE      adr n --
+  Fyller en minnesarea med nollor, med start i adr och n bytes framåt.
+
+ERROR      radnr --- in bik
+  Utför felutskrift och återstart av systemet. Variabeln WARNING
+  undersöks först. Om dess värde är 1 skrivs radnr ut relativt till skärm
+  4, drive 0. Detta radnr kan vara negativt eller positivt, och även
+  bortom just skärm 4. Om WARNING är noll, ges felmeddelandet endast som
+  ett nummer, eftersom detta antas betyda att ingen disk finns
+  tillgänglig. Om WARNING har värdet -1 utförs definitionen (ABORT), som
+  i sin tur exekverar ABORT. Detta kan ändras så att en användar-
+  definition i stället utförs. VIC-FORTH lägger innehållet i IN och BLK
+  på stacken, så att WHERE kan användas för att skriva ut den felaktiga
+  raden. Slutligen utförs QUIT.
+
+EXECUTE    adr ---
+  Utför definitionen vars kodfältsadress ligger på stacken.
+
+EXCEPT     dr ant ---
+  Överför tecken från inenheten till den angivna adressen, till RETURN
+  (hex 0D) eller ant antal tecken har mottagits. En eller två nollbytes
+  läggs sist i den mottagna texten.
+
+FENCE      --- adr
+  En USER-variabel innehållande en adress under vilken FORGET inte är
+  tillåtet. För att glömma definitioner under denna punkt måste FENCE
+  ändras.
+
+FILL       adr ant b ---
+  Fyller minnesarean med start i adr och ant bytes framåt med byten b.
+
+FIRST      --- n
+  En konstant som lämnar adressen till den första blockbufferten (den
+  lägsta).
+
+FLD        --- adr
+  En USER-variabel för kontroll av fältbredd vid utmatning av numeriska
+  värden. Används för närvarande inte i VIC-FORTH.
+
+FORGET
+  Utföres i formen FORGET cccc
+  Tar bort definitionen cccc från ordlistan, liksom alla ord som
+  definierats efter det. Ett felmeddelande kommer att ges om CURRENT- och
+  CONTEXT-vokabulären inte är samma.
+
+FORTH
+  Namnet på det centrala vokabuläret.
+
+  Exekvering av funktionen gör FORTH till CONTEXT-vokabulär. FORTH är
+  definierat IMMEDIATE, vilket innebär att det kommer att exekveras till
+  och med inom en kolondefinition så att detta vokabulär kan väljas under
+  kompilering.
+
+FREE       s1 s2                                                       (EDITOR)
+  Skriver ut numren på alla lediga skärmar i området s1 till s2. En skärm
+  anses som tom om dess första cell innehåller binärt 0. Se CLEAR och ZERO.
+
+H          n ---                                                       (EDITOR)
+  Används i formen
+  n H xxxxxx . . . . . . . . . . xxxx
+
+  och flyttar texten xxxx till PAD-arean. Högst 64 tecken flyttas, och
+  eventuella överskjutande tecken kapas bort. Blanktecken fyller ut
+  texten till exakt 64 tecken.
+
+H.         n ---
+  Skriver talet n i hexadecimal form. Den nuvarande basen påverkas
+  inte. Uttalas "h-dat".
+
+HERE       --- adr
+  Lämnar adressen till nästa lediga byte i ordlistan. Se DP och ALLOT.
+
+HEX
+  Sätter talomvandlingsbasen till decimalt 16, alltså till hexadecimal
+  bas.
+
+HLD        --- adr
+  En USER-variabel som innehåller adressen till den senast omvandlade
+  siffran under talomvandling för utmatning. Uttalas "h-l-d".
+
+HOLD       c ---
+  Används mellan <# och #> för att foga tecknet c till talet under
+  omvandling. Ex: HEX 2E HOLD infogar en decimalpunkt.
+
+HPIN       b --- f
+  Sätter den nuvarande inenheten till logisk fil nummer b. Lämnar en
+  felkod som är noll om möjligt, annars ett felnummer. Se OPEN. Uttalas
+  "h-p-in".
+
+HPOFF
+  Återställer de nuvarande in- och utenheterna till tangentbordet
+  respektive skärmen. Uttalas "h-p-off".
+
+HPOUT      b --- f
+  Sätter den nuvarande utenheten till logisk fil nummer b. Lämnar en
+  felkod som är noll om möjligt, annars ett felnummer. Se OPEN. Uttalas
+  "h-p-out".
+
+I          n ---                                                       (EDITOR)
+  Används för att skjuta in PAD:s innehåll på rad n i den nuvarande
+  redigeringsskärmen. Den gamla rad n och alla rader under den flyttas
+  ned ett steg, och rad 15 går förlorad. Innehållet i PAD påverkas inte.
+  Uttalas "insert".
+
+I          --- n                                                       (FORTH)
+  Används inuti en DO - LOOP-konstruktion för att hämta det nuvarande
+  loopindexet till stacken. Se R, I', J och K.
+
+I'         --- n
+  Används inuti en DO - LOOP-konstruktion för att hämta gränsvärdet till
+  stacken. Se I, J och K.
+
+ID.        nfa ---
+  Skriver en definitions namn med hjälp av dess namnfältsadress. Uttalas
+  "i-d-dot".
+
+IF         f ---      (vid körning)
+           --- adr n  (vid kompilering)
+
+  Används i en kolondefinition i formen:
+      IF (sant) . . . THEN
+      IF (sant) . . . ELSE (falskt) . . . THEN
+
+  Vid körning väljer IF vilken del av konstruktionen som skall utföras på
+  grundval av flaggan f. Om f är sann utförs delen efter IF. Om f är falsk
+  utförs delen efter ELSE. I båda fallen fortsätter exekveringen efter THEN.
+  ELSE och den falska delen är valfri; om den saknas utförs ingenting då f är
+  falskt, utan exekveringen fortsätter endast efter THEN. Vid kompilering
+  kompilerar IF in 0BRANCH och reserverar plats för ett offset i adr. Adr och n
+  används senare för att fylla i detta offset, samt för kompileringskontroll.
+
+IMMEDIATE
+  Märker den sist gjorda definitionen så att den när den hittas under
+  kompilering i stället för att kompileras in kommer att exekveras direkt
+  (precedencebiten sätts). Detta gör att ovanliga kompileringssituationer kan
+  tas om hand, istället för att bygga in dem i den grundläggande kompilatorn.
+  Användaren kan framtvinga kompilering av en IMMEDIAJE-definition genom att
+  skriva [COMPILE] framför den. Exempel på IMMEDIATE-definitioner är IF, DO,
+  DOES> och ;.
+
+IN         --- adr
+  En USER-variabel som innehåller ett byteoffset inom den nuvarande
+  inputtextbufferten (terminal eller diskblock) och från vilken nästa text
+  kommer att hämtas. WORD använder och ändrar värdet på IN.
+
+INDEX  s1 s2 ---
+  Skriver den första raden i varje skärm från s1 till s2. Detta används för att
+  se på kommentarraderna i dessa skärmar.
+
+INTERPRET
+  Den yttre interpretatorn som kompilerar eller exekverar text ur inströmmen
+  (terminal eller disk) beroende på STATE. Om ordet inte kan hittas i ordlistan
+  omvandlas det till ett tal i enlighet med BASE. Om det också misslyckas ges
+  ett felmeddelande bestående av ordet följt av ett frågetecken. Textinmatning
+  sker med hjälp av WORD. Om en decimalpunkt hittas i ett tal, lämnas ett
+  dubbelprecisionstal. Decimalpunktens position lämnas i DPL. Punkten har inget
+  annat syfte än att framkalla detta resultat. Se NUMBER.
+
+J          --- n
+  Används inom en nestad DO - LOOP-struktur för att hämta den näst innersta
+  loopens indexvärde till stacken. Se I, I' och K.
+
+K          --- n
+  Används inom en nestad DO - LOOP -struktur för att hämta den näst näst
+  innersta loopens indexvärde till stacken. Se I, I' och J.
+
+L                                                                      (EDITOR)
+  Används för att lista den nuvarande redigeringsskärmen. Varje rad i skärmen
+  föregås av ett radnummer och ordet P, så att direktredigering kan ske.
+
+LATEST     --- nfa
+  Lämnar namnfältsadressen till det senast definierade ordet i ordlistan.
+
+LEAVE
+  Framtvingar avslutning av en DO - LOOP genom an sätta gränsvärdet till
+  indexvärdet. Index självt förblir oförändrat, och exekveringen fortgår som
+  vanligt ända till ett LOOP eller ett +LOOP hittas.
+
+LFA        pfa --- lfa
+  Omvandlar ett ords parameterfältsadress till dess länkfältsadress. Uttalas
+  "l-f-a".
+
+LIMIT      --- n
+  Lämnar adressen till den första byten efter den sista blockbufferten. Denna
+  adress och högre används inte av FORTH.
+
+LINE       n --- adr                                                   (EDITOR)
+  Lämnar adressen till rad n inom den nuvarande redigeringsskärmen. Ett
+  felmeddelande ges om n har ett otillåtet värde.
+
+LIST       n ---
+  Visar skärm n på den valda utenheten, samt väljer den till nuvarande
+  redigeringsskärm. N sparas i SCR.
+
+LIT        --- n
+  Kompileras in i ordlistan av LITERAL och DLITERAL. Vid exekvering läggs
+  den följande cellens innehåll i ordlistan på stacken.
+
+LITERAL    n --- (kompilering)
+  Om ordet hittas under kompilering kompileras runtimeordet LIT in i ordlistan
+  följt av det översta talet på stacken. Avsett att användas på följande sätt:
+
+  : xxxx [ beräkning ] LITERAL . . . ;
+
+  Kompileringen stannas tillfälligt av [, en beräkning utförs, kompileringen
+  återfås och LITERAL kompilerar in LIT och det beräknade värdet. När sedan
+  xxxx utförs, kommer resultatet av beräkningen att läggas på stacken.
+
+LOAD       n ---
+  Börja interpretera skärm n. Laddningen avslutas vid skärmens slut eller då ;S
+  hittas. Se ;S och -->.
+
+LOOP       adr n --- (kompilering)
+
+  Används inuti en kolondefinition i formen:
+    DO . . . LOOP
+
+  Vid exekvering kommer LOOP att styra ett återhopp till LOOP, beroende på
+  loopindex och gränsvärdet. Loopindex ökas med ett och jämförs med
+  gränsvärdet. Ett återhopp till DO sker ända tills index är lika med eller
+  större än gränsvärdet; när detta inträffar tas loopparametrarna bort från
+  returnstacken, och exekveringen fortsätter.
+
+M*         n1 n2 --- d
+  En blandadprecisionsoperator som lämnar en dubbelprecisionsprodukt med
+  tecken av två enkelprecisionstal. Uttalas "m-times".
+
+M*/        d1 n u --- d2
+  En blandadprecisionsoperator som multiplicerar d1 med n. 48-bitarsresultatet
+  divideras med u, vilket ger ett fullt precist 32-bitarstal som resultat. Se
+  även */ och UM*/.
+
+M/         d n1 --- n2 n3
+  En blandadprecisionsoperator som lämnar kvoten n3 och resten n2 av
+  dubbeltalet d och enkelprecisionstalet n1. Resten n2 har samma tecken som
+  dividenden. Uttalas "m-divide".
+
+M/MOD      ud1 u2 --- u3 ud4
+  En blandadprecisionsoperator som lämnar dubbelprecisionskvoten ud4 och
+  enkelprecisionsresten u3 av dubbelprecisionsdividenden ud1 och divisorn
+  u2. Alla tal betraktas som utan tecken. Uttalas "m-divide-mod".
+
+MAX        n 1 n2 --- n3
+  Lämnar det största av två tal.
+
+MESSAGE    n ---
+  Skriver rad n relativt till skärm 4 på drive 0. n kan vara positivt eller
+  negativt. MESSAGE används huvudsakligen för diverse texter som rubriker,
+  tabellhuvuden, felmeddelanden, och andra kortare texter. Om WARNING är noll,
+  skrivs endast meddelandets nummer ut (ingen disk tillgänglig).
+
+MIN        n1 n2 --- n3
+  Lämnar det mindre av två tal.
+
+MINUS      n1 --- n2
+  Vänder tecken på ett tal.
+
+MOD        n1 n2 --- n3
+  Lämnar resten av divisionen n1 n2 /, med samma tecken som n1.
+
+N                                                                      (EDITOR)
+  Ökar SCR med 1, och gör alltså nästa skärm i nummerordning till den nuvarande
+  redigeringsskärmen.
+
+NAME       addr len ---
+  Sätter aktuellt filnamn till det angivna. Båda parametrar kan vara noll.
+  Måste utföras före OPEN och CSAVE.
+
+NEXT
+  Detta är den inre interpretatorn som använder den interpretiva pekaren IP för
+  att utföra kompilerade FORTH-definitioner. Den är inte tillgänglig direkt i
+  ordlistan men utgör den punkt till vilken alla CODE-definitioner måste
+  återvända. Den arbetar genom att hämta innehållet i adressen som utpekas av
+  IP, och lagra detta i registret W. Därefter hoppar den till adressen som
+  utpekas av adressen som utpekas av W. W pekar alltid på ett kodfält i en
+  definition som innehåller adressen till den maskinkod som skall utföras för
+  denna typ av definition.
+
+  Detta användande av indirekt trådad kod är en av de bidragande faktorerna
+  till FORTH:s kraftfullhet, portabilitet, och utbyggbarhet. Närvaron av NEXT
+  är nödvändig för att ett system skall få kallas för ett FORTH-system.
+
+NFA        pfa --- nfa
+  Omvandlar ett ords parameterfältsadress till dess namnfältsadress. Uttalas
+  "n-f-a".
+
+NUMBER     adr --- d
+  Omvandlar en textsträng som börjar i adr+1 och vars längd anges av adr till
+  ett dubbelprecisionstal i den nuvarande basen. Om en decimalpunkt hittas i
+  texten, kommer dess position att lämnas i DPL, men ingen annan effekt
+  uppstår. Om numerisk omvandling agsträngen inte är möjlig, ges ett
+  felmeddelande.
+
+OFFSET     --- adr
+  En USER-variabel kan innehålla ett tilläggstal för blocknummer. Innehållet i
+  OFFSET läggs till blocknumret av BLOCK. Texter som skrivs av MESSAGE påverkas
+  däremot inte av OFFSET. Se BLOCK, DR0, DR1 och MESSAGE.
+
+OPEN       fnr dv sa --- f
+  Öppnar den logiska filen med nummer fnr på enhet dv med secondary address sa.
+  Filnamnet måste dessförinnan ha satts av NAME. Ger en felkod på stacken som
+  är noll om filen kunde öppnas, och annars är en felkod.
+
+OR         n1 n2 --- n3
+  Lämnar resultatet av ett bitvis OR av de två 16-bitarstalen n1 och n2.
+
+OUT        --- adr
+  En USER-variabel som innehåller antal tecken som matats ut av EMIT.
+  Användaren kan läsa av och ändra OUT för att styra utmatningsformat m.m.
+  Eftersom alla rutiner för utmatning använder sig av EMIT, är den ett mått på
+  hur många tecken som utmatats totalt.
+
+OVER       n1 n2 --- n1 n2 n1
+  Kopiera det näst översta stackelementet, och lägg det överst.
+
+P          n ---
+
+  Används i formen
+  n P xxxx . . . . . xxxxx
+
+  för att flytta texten xxxx till rad n i den nuvarande redigeringsskärmen.
+  Texten hamnar också i PAD-arean. Se L. Uttalas "put".
+
+PAD        --- adr
+  Lämnar adressen till textbufferten, vilken alltid ligger ett fast antal bytes
+  ovanför HERE.
+
+PAPER                                                                  (EDITOR)
+  Väljer skrivaren till den nuvarande utenheten. All utmatning går i
+  fortsättningen dit. Se VIDEO.
+
+PFA        nfa --- pfa
+  Omvandlar ett ords namnfältsadress till dess parameterfältsadress. Uttalas
+  "p-f-a".
+
+PREV       --- adr
+  En USER-variabel som innehåller adressen till den mest nyligen använda
+  diskbufferten. UPDATE märker denna buffer.
+
+PROGRAM                                                                (EDITOR)
+  Kopierar skärm 0 - 60 från drive 0 till drive 1. Denna area på skivan brukar
+  avsättas åt programtext.
+
+QUERY
+  Matar in 80 tecken från den nuvarande inenheten. Texten läggs i adressen som
+  TIB anger och IN sätts till 0.
+
+QUIT
+  Nollställer returnstacken, avbryter kompilering samt ger kontrollen till
+  tangentbordet. Inget meddelande ges.
+
+R          n ---                                                       (EDITOR)
+  Ersätter rad n i den nuvarande redigeringsskärmen med innehållet i PAD.
+  Uttalas "replace".
+
+R          --- n                                                       (FORTH)
+  Kopierar det översta elementet på returnstacken till parameterstacken.
+
+R#
+  En USER-variabel som kan innehålla positionen av en editeringscursor, eller
+  någon annan filrelaterad pekare. Används inte för närvarande. Uttalas
+  "r-sharp".
+
+R/W        adr n f ---
+  Standardrutinen i VIC-FORTH för länkning till disken. adr specificerar
+  adressen till den aktuella blockbufferten, n är numret på det aktuella
+  blocket; och f är en flagga som indikerar läsning eller skrivning. Om f=0
+  sker skrivning, är f=1 sker läsning. R/W räknar fram positionen på disken
+  som track och sektor och utför därefter operationen. Felkoden från disk
+  kontrolleras slutligen. Uttalas "read-slash-write".
+
+R>         --- n
+  Flyttar det översta värdet från returnstacken till parameterstacken. Se >R
+  och R. Uttalas "r-from".
+
+R0         --- n
+  En USER-variabel som innehåller returnstackens adress då den är tom. Se RP!.
+  Uttalas "r-zero".
+
+REPEAT     adr n --- (kompilering)
+  Används inom en kolondefinition i formen:
+     BEGIN ... WHILE ... REPEAT
+
+  Vid körning framtvingar REPEAT ett återhopp till det första ordet efter
+  BEGIN. Vid kompilering kompilerar REPEAT in BRANCH och avståndet mellan HERE
+  och adr. n används för felkontroll.
+
+ROT        n1 n2 n3 --- n2 n3 n1
+  Roterar de tre översta stackelementen så att det tredje hamnar överst.
+  Uttalas "rote".
+
+RP!
+  Återställer returnstacken till sitt tomma utgångsläge, genom att lagra R0 i
+  stackpekaren. Se R0. Uttalas "r-p-store".
+
+S          n ---                                                       (EDITOR)
+  Skjuter in en blank rad på rad n i den nuvarande redigeringsskärmen. Den
+  gamla rad n och alla understående rader flyttas ned ett steg. Uttalas
+  "spread".
+
+S->D       n --- d
+  Omvandlar ett enkelprecisionstal med tecken till ett dubbelprecisionstal.
+  Uttalas"s-to-d".
+
+S0         --- adr
+  En USER-variabel som innehåller stackpekarens utgångsvärde, dvs för tom
+  stack. Se SP!. Uttalas "s-zero".
+
+SCR        --- adr
+  En user-variabel sam innehåller numret på den nuvarande redigeringsskärmen.
+  Uttalas"s-c-r".
+
+SCREENS    fr ti ant ---                                               (EDITOR)
+  Kopierar ant antal skärmar med början i skärm fr till skärm ti.
+
+SHOW       s1 s2 ---
+  Visar alla TRIAD;s i intervallet s1 till s2 där någon skärm är använd. En
+  triad där alla skärmar är tomma listas alltså inte.
+
+
+SIGN       n d --- d
+  Infogar ett ASCII-minustecken i strängen som just nu konverteras för
+  utmatning om n är negativt. n tas bort, men d ligger oförändrat kvar på
+  stacken. Måste användas mellan <# och #>.
+
+SMUDGE
+  Används under definitionen av ett ord för att växla läget på den s.k.
+  "smudgebiten" i ordets namnfält. Detta förhindrar ej komplett funktion
+  att hittas vid ordlistesökningar. Ett nytt SMUDGE kan användas för att
+  göra ordet tillgängligt, så att FORGET kan ta bort det.
+
+SP!
+  Tömmer parameterstacken genom att ladda parameterstackpekaren med S0. Uttalas
+  "s-p-store".
+
+SP@        --- adr
+  Lämnar adressen till stackens översta element, som den var innan SP@
+  utfördes. Det vill säga, frasen 1 2 SP@ @ . . . skriver 2 2 1. Uttalas
+  "s-p-fetch".
+
+SPACE
+  Överför en ASCII blank till utenheten.
+
+SPACES     n ---
+  Överför n stycken blanksteg till utenheten.
+
+STATE      --- adr
+  En USER-variabel som innehåller FORTH:s tillstånd vad gäller
+  interpretering/kompilering. Ett värde som skiljer sig från noll
+  indikerar att kompilering pågår.
+
+STATUS     --- n
+  Ger IEEE-bussens felkod. Här är en tabell över de olika bitarnas betydelse:
+
+    0    Time out on write
+    1    Time out on read
+    2    (Short block)
+    3    (Long block)
+    4    (Unrecoverable read error)
+    5    (Checksum error)
+    6    EOI (End of file)
+    7    Device not present
+
+  Betydelserna inom parentes används inte av IEEE-rutinerna.
+
+SWAP       n1 n2 --- n2 n1
+  Byter de två översta stackelementens läge.
+
+TASK
+  Ett tom-ord som tjänar som markering mellan olika applikationer. Om alla
+  applikationer börjar med frasen FORGET TASK TASK, kan en hel applikation
+  glömmas bort, oovsett vilka ord den innehåller.
+
+T*         ud u --- u-triple
+  Multiplicerar 32-bitarstalet ud utan tecken med 16-bitarstalet u utan
+  tecken. Lämnar ett 48-bitarstal utan tecken som resultat.
+
+T/         u-triple u --- ud
+
+  Dividerar ett 48-bitarstal utan tecken med ett 16-bitarstal utan
+  tecken. Lämnar ett 32-bitarsresultat utan tecken. 
+
+TEXT       c ---
+
+  Flyttar text ur inströmmen till PAD, efter att PAD först fyllts med
+  blanksteg. TEXT flyttar maximalt C/L antal tecken eller tills ett tecken med
+  ASCII-värde c påträffas, eller ett RETURN hittas. Inledande förekomster av c
+  ignoreras.
+
+THEN       adr n --- (kompilering)
+
+  Används inom en kolondefinition i formen:
+      IF ... THEN
+      IF ... ELSE ... THEN
+
+  Vid exekvering fungerar THEN som en destination för ett hopp från IF eller
+  ELSE. Det markerar slutet på en villkorsstruktur. Vid kompilering beräknar
+  THEN framåthoppet från adr till HERE, och lagrar detta i adr. n används för
+  felkontroll. Se IF och ELSE.
+
+TIB        --- adr
+  En USER-variabel som innehåller adressen till terminalbufferten. Uttalas
+  "t-i-b" 
+
+TOGGLE     adr b
+  Komplementera innehållet i adr med bitmasken b.
+
+TRAVERSE   adr1 n --- adr2
+  Svep från ena änden av ett namnfält till den andra. adr1 är adressen till
+  antingen längdbyten eller till det sista tecknet i namnet. Om n=1 går svepet
+  mot högre adresser i minnet, och om n=-1 går svepet åt andra hållet. adr2 är
+  adressen till den andra änden av namnet.
+
+TRIAD      sk ---
+  Skriv ut tre skärmar till utenheten, av vilken en är skärm sk. Skärmarna är i
+  nummerföljd, den överstas nummer är jämnt delbart med tre. Detta format är
+  lämpligt för dokumentation och inkluderar en referensrad tagen från rad 15 i
+  skärm 4, drive 0.
+
+TYPE       adr ant
+  Överför ant antal tecken från adress till utenheten.
+
+U*         u1 u2 --- ud
+  Lämnar dubbelprecisionsprodukten av de två enkelprecisionstalen u1 och u2. 
+  Alla tal betraktas som utan tecken. Uttalas "u-star".
+
+U.         u  ---
+  Skriver ut talet u i fritt format som ett tal utan tecken. Uttalas "u-dot".
+
+U/         ud u1 --- u2 u3
+  Lämnar resten u2 och kvoten u3 från divisionen av dubbelprecisionstalet ud
+  med enkelprecisionstalet u1. Alla tal betraktas som utan tecken. Uttalas
+  "u-divide". 
+
+UM*        ud1 u1 u2 --- ud2
+  Som M*/, men alla tal är utan tecken.
+
+UNTIL          f --- (exekvering)
+           adr n --- (kompilering)
+
+  Används inom en kolondefinition i formen
+      BEGIN ... UNTIL
+
+  Vid exekvering kontrollerar UNTIL återhoppet till BEGIN. Om f är falsk,
+  återgår exekveringen till ordet efter UNTIL; om är sant fortsätter
+  exekveringen framåt. Vid kompilering kompilerar UNTIL in 0BRANCH och
+  skillnaden mellan HERE och adr. n används för felkontroll. 
+
+UPDATE
+  Märker den sist utnyttjade blockbufferten som uppdaterad (pekas ut av PREV)
+  vilket orsakar att den kommar att skrivas tillbaks till disk om bufferten
+  behövs till ett annat block.
+
+USE        --- adr
+  En USER-variabel som innehåller adressen till nästa blockbuffert som står i
+  tur att använda, nämligen den som använts minst nyligen.
+
+USER       n ---
+  Ett definitionsord som används i formen
+      n USER cccc
+
+  och som skapar en USER-variabel kallad cccc. Parameterfältet i cccc
+  innehåller n, som är ett fast offset relativt till userpointerregistret UP. 
+  När cccc senare utförs, kommer summan av UP och n att placeras på stacken 
+  och är alltså adressen till denna USER-variabel.
+
+VARIABLE
+  Ett definitionsord som används i formen
+      n VARIABLE cccc
+
+  När VARIABLE utförs skapas ordet cccc i ordlistan med parameterfältet satt
+  till n. När cccc senare utförs, kommer adressen till cccc:s parameterfält att
+  läggas på stacken, så att ett E eller ett ! kan operera med variabelns värde.
+
+VIDEO                                                                  (EDITOR)
+  Återställer in och utenheterna till bildskärm och tangentbord. Stänger
+  skrivarfilen. 
+
+VOC-LINK   --- adr
+  En USER-variabel som innehåller adressen till ett fält i definitionen av det
+  mest nyligen definierade vokabuläret. Denna utpekade adress pekar vidare till
+  nästa vokabulär osv. Alla vokabulärer är länkade på detta vis för att tillåta
+  FORGET genom fler vokabulärer.
+
+VOCABULARY
+  Ett definitionsord som används i formen
+    VOCABULARY vvvv
+
+  för att skapa ett vokabulär kallat vvvv. När vvvv i fortsättningen används,
+  kommer CONTEXT att sättas att peka på vvvv, vilket gör att ordlistsökningar
+  kommer att böria i vvvv. Om man utför sekvensen vvvv DEFINITIONS kommer vvvv
+  även att bli CURRENT, vilket gör att alla nya definitioner kommer att länkas
+  till vvvv-vokabuläret. 
+
+  I VIC-FORTH är vvvv länkat till det vokabulär i vilket vvvv skapades, och
+  innehåller alltså alla definitioner i detta. Alla vokabulär länkar alltså
+  till slut ner till FORTH. Alla vokabulär skall definieras IMMEDIATE.
+
+VLIST
+  Listar alla ord i CONTEXT-vokabuläret, och fortsätter nedåt till ordlistans
+  början. STOP avbryter listningen. 
+
+WARNING    --- adr
+  En USER-variabel vars innehåll styr utskriften av meddelanden. Om innehållet
+  är 1 finns disk tiligängligt, och alla meddelanden har skärm 4 på drive 0 som
+  bas. Om innehållet är noll, så finns ingen disk och meddelanden presenteras i
+  form av siffror. Om innehållet är -1 anropas (ABORT) som exekverar antingen
+  ABORT, eller en användarspecificerad felprocedur. Se ERROR.
+
+WHERE      in blk
+  Skriver ut den rad där ett fel inträffade vid laddning, med hjälp av in och
+  blk. En pil indikerar positionen på raden. Om blk är noll inträffade felet
+  vid interpretering från tangentbordet.
+
+WHILE           f ---                 (exekvering)
+           adr1 n --- adr1 n1 adr2 n2 (kompilering)
+
+  Används inom en kolondefinition i formen
+    BEGIN ... WHILE ... REPEAT
+
+ Vid exekvering styr WHILE ett eventuellt uthopp ur strukturen. Om f är falsk,
+ hoppar exekveringen till ordet efter REPEAT; om f däremot är sann utförs 
+ delen mellan WHILE och REPEAT, som sedan hoppar tillbaks till strax efter
+ BEGIN. 
+
+  Vid kompilering kompilerar WHILE in 0BRANCH och lämnar adr2 till det
+  reserverade avståndet. De kvarvarande stackvärdena upplöses av REPEAT. 
+
+WIDTH      --- adr
+  En USER-variabel som kontrollerar maximalt antal tecken som sparas av ett
+  kompilerat ords namnfält. Dess värde måste vara mellan 1 och 31, och har vid
+  uppstart värdet 31.
+
+WORD       c ---
+  Läser tecken från inströmmen tills tecknet c hittas, och lagrar tecknen med
+  början i adressen som anges av HERE. WORD lämnar antal tecken i den första
+  byten, sedan texten och avslutar med ett eller flera blanksteg. Inledande
+  förekomster av c ignoreras. Om BLK är noll tas tecknen från terminal-
+  bufferten, annars från det diskblock vars nummer anges av BLK. Se BLK och IN.
+
+x
+  Detta är en 'pseudonym' för ett ord i ordlistan vars namn består av ett enda
+  "null"-tecken. Det är proceduren som avslutar interpretering av en textrad
+  från terminalen eller från diskbufferten; båda buffrar slutar nämligen med
+  ett "null"-tecken.
+
+XOR        n1 n2 --- n3
+  Lämnar resultatet av Exclusive Or-funktionen av n1 och n2.
+
+ZERO       n ---
+  Fyller hela skärm n med "null"-tecken, och gör den alltså ledig igen.
+  Se CLEAR och FREE. 
+
+[
+  Används i en kolondefinition i formen
+      : xxxx . . . [ . . . ]
+
+  Avbryt kompileringen och börja interpretera. Orden efter [ kommer alltså 
+  inte att kompileras, utan interpreteras direkt. Detta tillåter beräkningar 
+  att utföras innan man fortsätter kompileringen med ]. Se LITERAL.
+
+
+[COMPILE]
+  Används inom en kolondefinition i formen
+    : xxxx . . . [COMPILE] FORTH . . . ;
+
+  [COMPILE] kommer att framtvinga kompilering av det efterföljande 
+  IMMEDIATE-definierade ordet, sam annars skulle ha exekverats under
+  kompileringen. Ovanstående exempel kommer att välja FORTH-vokabuläret 
+  när xxxx utförs, och inte under kompileringen av xxxx.
+
+]
+  Börja kompilera, till kolondefinitionen är slut. Se [.
+
+--------------------------------------------------------------------------
+
+LITTERATUR
+
+Detta är en lista över en del litteratur om FORTH. Några av texterna är
+introduktioner, andra är mer uttömmande läroböcker. Vi rekommenderar att du
+läser någon eller några av dem.
+
+PET-FORT-MANUALEN, Datatronic AB, Box 42094, S-126 12 STOCKHOLM, SWEDEN. 
+  Detta är en lärobok i FORTH och handbok för PET-FORTH, som är en fig-FORTH,
+  och dessutom storebror till VIC-FORTH. Handboken beskriver också IEEE-
+  hantering, assemblern, och många extensions som VIC-FORTH också har. All
+  källkod ingår, skriven i FORTH. 326 sidor. Täcker de flesta aspekterna av
+  FORTH-programmering. Skriven på svenska.  
+
+STARTING FORTH, Leo Brodie, FORTH, Inc., Prentice-Hall. 
+  ISBN 0-13-842930-8 inbunden, ISBN 0-13-842922-7 häftad. 350 sidor.
+  En mycket bra lärobok i FORTH som behandlar det mesta i FORTH-programmering.
+
+SYSTEMS GUIDE TO FIG-FORTH
+  Forth Interest Group, PO Box 1105, San Carlos, CA 94070, USA. 
+  Teknisk dissekering av hela FORTH-systemet. De flesta ord behandlas, och
+  deras inre gås i detalj igenom. Två assemblers beskrivs med källkoden given. 
+  201 sidor.
+
+KITT PEAK FORTH PRIMER, Forth Interest Group. 
+  Denna lärobok beskriver FORTH-systemet vid Kitt Peak-observatoriet, vilket
+  ligger nära både polyFORTH och figFORTH, och därigenom VIC-FORTH. Kapitel om
+  flyttal och interrupt finns. 200 sidor.
+
+BYTE MAGAZINE, augusti 1980. 
+  Detta utmärkta BYTE-nummer är helt ägnat åt FORTH-språket och
+  FORTH-programmeringsmetoden. Det finns artiklar på de flesta nivåer, från
+  introduktioner till mer tekniska. Ett demonstrationsprogram (BreakForth,
+  liknande Breakout) beskrivs med källkod för en TRS-80, vilket lätt kan
+  konverteras.
+
+FORTH-79 STANDARD, Forth Interest Group. 
+  Denna publikation beskriver FORTH-79-standarden, vilken är avsedd att
+  underlätta transport av standard-FORTH-program mellan standard-FORTH-system. 
+  45 sidor. 
+
+PROCEEDINGS 1980 FORAL (FORTH Modification Lab) CONFERENCE, 
+  Forth Interest Group. En stor mängd tekniska uppslag och idéer beskrivs 
+  och diskuteras i denna bok. Kan ge många intressanta projekt att utveckla.
+
+VIC-FORTH är ett uttestat, Sverigeutvecklat system, och fel är ytterst
+osannolika. Om något fel skulle upptäckas vore vi dock mycket tacksamma
+att höra av dig. Vi är naturligtvis också intresserade av förslag till
+förbättringar.
+
+All korrespondens sändes till:
+
+DATATRONIC AB
+Systemavdelningen VIC-FORTH
+Box 42094
+126 12 STOCKHOLM
+
+Brevet måste innehålla numret på den aktuella versionen av VIC-FORTH (det syns
+på skärmen omedelbart efter uppstartningen), vilka enheter ditt system består
+av, ditt namn, din adress och ditt telefonnummer. Vi beklagar att vi inte kan
+behandla ditt ärende om det inte är skriftligt och alla ovanstående uppgifter
+finns med.
+
+*********
+
+End of the iDOC= etext of the Vic Forth manual.
+
+*********

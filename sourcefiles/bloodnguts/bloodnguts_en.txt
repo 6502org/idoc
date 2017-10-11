@@ -1,0 +1,172 @@
+*********
+
+Welcome to iDOC= - the international CBM documentation project!
+
+The goal of iDOC= is to preserve (non-English) Commodore related documents
+in electronic text format that might otherwise cease to exist with the rapid
+advancement of computer technology and declining interest in 8-bit computers
+on the part of the general population. If you would like to help by
+converting Commodore related hardcopy documents to electronic texts please
+contact the manager of iDOC=, Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names consists of a reasonably short unique title, followed by the
+document language. Two optional fields follow; first the document version (0
+for incomplete texts, version 1 is usually unnumbered), and then the
+document source, if there are more than one. Finally, the document is given
+a .txt extension.
+
+The author(s) of the original document and members of iDOC= make no
+representations about the accuracy or suitability of this material for any
+purpose. This etext is provided "as-is". Please refer to the warranty of the
+original document, if any, that may included in this etext. No other
+warranties, express or implied, are made to you as to the etext or any
+medium it may be on. Neither the author(s) nor the members of iDOC= will
+assume liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext. Therefore
+if you read this document or use the information herein you do so at your
+own risk.
+
+*********
+
+The iDOC= etext of the Blood'n'Guts manual, converted to text by peter
+karlsson <pk@abc.se>
+
+bloodnguts_en.txt, April 2000, etext #65.
+
+*********
+
+Blood'n Guts
+Commodore 64/128
+
+
+Loading
+
+Disk: Insert the diskette with side one upwards. Type LOAD "*",8,1 and press
+RETURN. The disk will load and run automatically.
+
+Cassette: Insert the cassette. Press SHIFT and RUN/STOP simultaneously. Then
+press PLAY and the game will load and run automatically.
+
+
+Controlling Blood'n Guts
+
+You select all functions with the joystick in port two. Player one uses the
+joystick in port two and player two uses port one.
+
+
+Selecting fighters
+
+When the main game has loaded you will be able to select your fighter with
+the joystick connected to port two. Press fire when you have selected the
+first fighter. If there is two fighters competing against each other, move
+the joystick to another fighter and press fire. Else, press fire without
+moving the joystick.
+
+
+Comprete or Practise
+On the following screens you can select if you want to compete or practise.
+If you choose compete, the different events will load one by one. If you
+choose practise, you will be able to play one event as many times as you
+wish. After every trial you will be asked if you want to fight again or not.
+
+Disk: You can practise in any of the ten events by selecting it on the
+screen. When you answer NO on the 'Play Again' question you will return to
+the main menu.
+
+Cassette: You will load one event and then practise the event until you feel
+that you are good at it. After that the next event will appear.
+
+
+Tug of War
+You can compete against another fighter or against a droid.
+  Joystick down - A small dose of energy
+  Press fire - A little more energy
+  Joystick down and fire pressed - A high dose of energy
+You must use your energy with caution. When the energy is drained out you
+can't pull anymore. The loser will drown.
+
+
+Towerjump
+You must jump as far as possible from the tower. Pull the joystick down and
+release it to jump. To make an approved jump you must land on your head.
+Press the button when the head is facing downwards. On the far right of the
+screen you can see how far the droid or competitor jumped. You have three
+attempts to make a longer jump.
+
+
+Rockroller
+You have to roll a huge rock up a steep mountain. Two players are competing
+at the same time. You create your energy by moving the joystick up and down.
+When the meter is blue you have enough energy to take a step. Press the
+button to take a step. The competition is won by the fighter that wins at
+least two of the rolls.
+
+
+Beer drinking
+Dring a barrel of beer faster than you opponent. Pull the joystick up to
+start drinking and then swallow by moving the joystick as fast as possible
+to the right and left. If you spill any beer you are disqualified.
+
+
+Human Hit
+Throw stones at a barbarian. Aim the joystick and press fire to throw the
+stone. You have to hit the four different targets three times each and you
+have to do it as fast as possible.
+
+
+Pole Fight
+In this event you either compete against you opponent or against a droid.
+Sitting on a log you have to knock down your opponent with a tree club. Use
+the joystick to control the club.
+
+
+Cat Thröwing
+You have three attempts to throw the cat as far as possible. Start to rotate
+by pressing the fire button. When you think that your speed is enough, press
+the fire button to throw the cat. If you wait to<sic!> long the barbarian
+will get tired.
+
+
+Mountain Walk
+You have to reach the middle of the rope as fast as possible. The barbarian
+that reaches the centre will start to shake the rope until the other
+barbarian falls down.
+
+
+Axe Thröwing
+Throw axes at your opponent. You throw one axe and the opponent tries to
+avoid the axe and then you change. AIm the axe by pulling the joystick in
+the right direction. You can avoid the axe by jumping over it or duck.
+
+
+Arm Wreck
+Pull the joystick to the left and right to gain strength in your arm. The
+barbarian that loses will be marked by a bird.
+
+
+The End
+The barbarian that loses will get what he deserves!
+
+
+Credits
+(c) 1986 American Action AB. All rights reserved worldwide. Created by Greve
+Graphics for American Action AB, Box 10090, 200 43 Malmö, Sweden. Package
+design by Charles McNewson. Front cover illustration by Chris Valentine.
+Unauthorised copying, lending, broadcasting or resale without written
+premission from American Action AB is strictly prohibited.
+
+*********
+
+End of the iDOC= etext of the Blod'n'guts manual.
+
+*********

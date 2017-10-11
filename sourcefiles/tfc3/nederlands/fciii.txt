@@ -1,0 +1,1938 @@
+COPYRIGHT
+
+De Final Cartridge III is een produkt van Riska B.V. Home & Personal Computers te Rotterdam. Copyright: E. Th. v.d. Enden.
+
+Geen deel van dit produkt of van de handleiding mag worden verveelvuldigd en/of openbaar gemaakt door middel van druk, fotokopie, microfilm, magnetische informatiedragers, elektronische informatiedragers of op welke andere wijze dan ook zonder voorafgaande schriftelijke toestemming van Riska B.V. Home & Personal Computers en/of E. Th. v.d. Enden.
+
+Riska B.V. Home & Personal Computers kan geen enkele verantwoording nemen voor het verkeerd gebruik van de Final Cartridge III.
+
+Het materiaal in deze handleiding is alleen bedoeld voor informatiedoeleinden en is onderhevig aan veranderingen zonder bekendmakingen.
+
+Riska B.V. Home & Personal Computers behoudt het recht om veranderingen aan te brengen in de specificaties van de Final Cartridge III en de handleiding.
+Produkt-idee en realisatie:								Wil Sparreboom
+Desktop en menu's:									Gerard van Assem
+												Marc Derksen
+Tools, freezer, fastloader en printerinterface:					Uwe Stahl
+Supporting software:									Wil Sparreboom
+Hardware ontwerp:										Ton Peters
+										 		Jacques van Schajik
+Handleiding:										Patrick Mast
+
+Exclusieve verkooprechten voor Nederland en België 				Dunnet Int. Trading
+												Company B.V.
+												Rotterdam
+
+VOORWOORD
+
+De Final Cartridge III is een eigen ontwikkeling van Riska B.V. Home & Personal Computers.
+
+De Final Cartridge III die uit 64 K machinecode bestaat biedt u naast de DESKTOP waarin alles met WINDOWS werkt o.a.
+
+I.	Verschillende handige hulpmiddelen bij het programmeren (de zogenaamde BASIC TOOLKIT).
+II.	Zeer eenvoudige diskcommnando's.
+III.	24K extra geheugen in BASIC.
+IV.	Een tape snellader/snelsaver die de tape functies 10 maal versnelt
+V.	Een disk snellader/snelsaver die de disk-drive functies 15 maal versnelt.
+VI.	Een zeer uitgebreide machinetaal monitor die u in staat stelt het gehele geheugen van de 	computer te bekijken.
+VII.	Een diskmonitor.
+VIII.	Een zeer uitgebreide printer interface, die u zelfs in staat stelt op Centronics 	parallelle printers de Commodore graphics uit te printen, maar ook high-resolution screen 	dumps te maken.
+IX.	Een ingebouwde game trainer.
+X.	Een RESET mogelijkheid. Dit, gecombineerd met het commando OLD, zorgt ervoor dat u nooit 	meer een programma hoeft kwijt te raken na een RESET of NEW.
+XI.	De mogelijkheid om elk willekeurig programma dat in het geheugen staat te onderbreken 	(FREEZER) om er daarna:
+      - Weer mee verder te gaan (een soort pauze mogelijkheid)
+      - Een backup van te maken, die zelfs zonder de Final Cartridge III weer ingeladen kan 	worden.
+      -	Een low- of high-resolution screendump van te maken die zelfs de sprites, die op het 	scherm aanwezig zijn, afdrukt.
+XII.	Een ingebouwde tekstverwerker, de Notepad.
+
+De user interface, windows en pull-down menu's zijn gebaseerd op ideeën toegepast in o.a. de Apple Macintosh en de Commodore Amiga.
+
+
+INSTALLATIE
+
+LET OP
+
+COMMODORE 64
+Stop de Final Cartridge III in de cartridgepoort van uw computer met de sticker naar boven. U kunt hierna de computer en de andere randapparaten aanzetten zoals u gewend bent.
+
+COMMODORE 128
+Stop de Final Cartridge III in de cartridgepoort van uw computer met de sticker naar boven. U kunt hierna de computer en de andere randapparaten aanzetten zoals u gewend bent. Uw Commodore 128 zal nu in de Commodore 64 stand opstarten.
+Door nu op de Final Cartridge III de resetknop in te drukken, komt u in de Commodore 64 stand terecht. Als u op de resetknop van de Comlnodore 128 zelf drukt, dan komt u in de Commnodore 128 stand terecht. Het is dus niet nodig de Final Cartridge III uit de computer te halen als u in de CP/M of de Comnmodore 128 stand wilt gaan werken.
+
+Als u de computer gewoon aanzet met de Final Cartridge III, start hij automatisch op in de desktop. Deze stand wordt beschreven in het hoofdstuk DESKTOP.
+
+Wilt u direkt in BASIC gaan werken, houdt dan terwijl u de computer aanzet de <RUN/STOP> toets ingedrukt.
+
+Als u geen melding krijgt en er, nadat u de resetknop ingedrukt heeft, niets op het scherm komt, zit de Final Cartridge III waarschijnlijk niet goed in de computer.
+
+Bij oudere types computer kan het noodzakelijk zijn dat u, nadat de computer aangezet is, toch op de resetknop (eventueel in combinatie met <RUN/STOP> of <C=>) moet drukken om de Final Cartridge III op te starten.
+
+!!! ZIE OOK HET HOOFDSTUK OPMERKINGEN !!!
+
+
+INLEIDING
+
+We hebben geprobeerd de handleiding zo compleet en duidelijk mogelijk voor u te houden, daarom hebben we een zeer uitgebreide inhoudsopgave die het zoeken in deze handleiding erg makkelijk maakt.
+
+We beginnen met het hoofdstuk WINDOWS & MENU'S; hierin wordt een uitleg gegeven over - de naam zegt het al - Windows & Menu's. Dit hoofdstuk is bedoeld voor mensen die nog nooit met deze dingen hebben gewerkt. We proberen in dit hoofdstuk u alle nodige informatie te verschaffen, waarna u zonder problemen de rest van de handleiding makkelijk kunt volgen.
+
+Dan volgt het hoofdstuk DESKTOP; hierin wordt de desktop besproken. Vanuit de desktop zijn alle mogelijkheden van de Final Cartridge III aan te roepen en alles zou dus in dit hoofdstuk besproken kunnen worden, maar om het overzichtelijk te houden zijn er nog vier aparte hoofdstukken gemaakt.
+
+Die aparte hoofdstukken zijn:
+
+TOOLS		hierin worden de Notepad, Desktop Utilities en Printer Selections besproken.
+
+FREEZER	hierin worden alle mogelijkheden die de freezer u biedt besproken.
+
+BASIC 	hierin worden alle mogelijkheden die het door de Final Cartridge III uitgebreide BASIC u 	biedt besproken.
+
+MONITOR	hierin worden alle mogelijkheden die de monitor u biedt besproken.
+
+
+WINDOWS & MENU'S
+
+INLEIDING
+De meeste funkties van de Final Cartridge III zijn te besturen door Windows & Menu's. In dit hoofdstuk wordt algemene uitleg over het werken met de Windows & Menu's gegeven. De mensen die al bekend zijn in de omgang met Windows & Menu's kunnen dit hoofdstuk overslaan en direct naar het hoofdstuk desktop gaan, later kunnen ze dan altijd nog even een paar belangrijke gedeelten van dit hoofdstuk doorlezen.
+
+ALGEMENE TERMEN EN TECHNIEKEN
+
+HET GEBRUIK VAN DE POINTER
+Nadat de Final Cartridge III is opgestart, verschijnt er een pijl op het scherm. Deze pijl noemen we de pointer. De pointer volgt op het scherm de bewegingen die u met de joystick of met de muis maakt. Indien u geen van beide tot uw bezit heeft, dan kunt u een joystick met behulp van het toetsembord nabootsen (<F1>: naar boven; <F3>: naar beneden; <F5>: naar links; <F7>: naar rechts; <0=>: de vuurknop ). Hoewel we het mogelijk hebben gemaakt de pointer door beide joystickpoorten aan te laten sturen, raden wij u ten sterkste aan poort 2 te gebruiken. Ook kunnen we helaas niets aan het feit doen dat sommige muizen het toetsenbord blokkeren (dit is een fout in de hardware van de muis), waardoor het soms noodzakelijk is dat u de muis uit de computer moet verwijderen als u het toetsenbord wilt gebruiken.
+Als de pointer te snel, respectievelijk te langzaam beweegt of de kleur ervan bevalt u niet, dan kunt u deze instellingen veranderen vanuit Preferences. Dit wordt verderop bij Preferences uitgelegd.
+
+KLIKKEN EN SELECTEREN
+De meeste commando's van de Final Cartridge III worden gekozen door het betreffende commando op het scherm aan te wijzen en dan op de vuurknop van de joystick of de muis te drukken, het zogenaamde klikken.
+Als een commando gekozen wordt door het aan te wijzen en te klikken, noemen we dit selecteren.
+
+MENU'S
+
+INLEIDING MENU'S
+Een menu is een lijst van verschillende functies die door middel van de pointer en de vuurknop wordt opgeroepen.
+
+Boven in het scherm vindt u:
+INFO SYSTEM PROJECT UTILITIES CLOCK 			DESKTOP V1.0
+In deze menu bar staat de opsomming van de verschillende menu titels, waaruit u op dat moment keuze kunt maken.
+
+Om de menu's door te bladeren beweegt u, terwijl u de vuurknop ingedrukt houdt, de pointer door de menu bar. Elke keer dat u een titel aanwijst, zal het desbetreffende menu verschijnen.
+
+De mogelijkheden noemen we items. In sommige menu's zijn niet alle items altijd te kiezen. Die Items die u niet kunt kiezen, verschijnen in ghost mode, een gevolg hiervan Is dat die items vervaagd worden weergegeven.
+
+Om nu een van de items te kiezen, gaat u met de pointer terwijl u de vuurknop nog ingedrukt houdt op het door u te kiezen item staan. Door nu de vuurknop los te laten, selecteert u het item.
+
+COMMANDO'S EN OPTIES
+In menu's komen twee verschillende soorten items voor. Commando's zijn items die je kiest om een actie uit te voeren. Zo is bijvoor-beeld calculator een commando (dus ook een item) in het utiljties menu. Opties zijn keuzes die blijven werken totdat ze weer worden uitgezet. Zo is bijvoorbeeld time een optie in het clock menu (zolang time gekozen is verschijnt de tijd in de menu bar). Als u een optie ingeschakeld heeft, kunt u dat zien doordat in het menu achter het item een vlag gezet wordt. Om de optie weer uit te schakelen, selecteert u nog eens de optie, waarna de vlag verdwijnt.
+
+WINDOWS
+
+INLEIDING WINDOWS
+U kunt zich windows voorstellen als stukjes papier die over het scherm zijn verspreid. Een papiertje bevat bijvoorbeeld de direc-tory van een diskette. Daar legt u een ander papiertje overheen dat de directory van een tweede diskette bevat. Als het tweede papiertje nu wordt verwijderd, is het eerste weer te zien en zo werkt het bij de Final Cartridge III ook. Later in dit gedeelte worden enige technieken besproken om vindows te manipuleren, maar voor het moment is het voldoende om te weten dat ieder window - en er passen er meer op het scherm dan u verwacht - net zoveel informatie van de computer kan bevatten als één enkel scherm van de standaard Commodore.
+
+De mogelijkheid om verschillende windows tegelijk op het scherm te tonen, is bijvoorbeeld erg handig als u, terwijl de directory op het scherm getoond wordt in het ene vindow, even een paar bereke-ningen wilt uitvoeren met de calculator in het andere window.
+
+Ii moet er wel op letten dat, hoewel er meerdere wlndows op het scherm kunnen staan, u maar met een window tegelijk kunt werken. Dat window noemen we het geselecteerde window en is te herkennen omdat een window dat we selecteren altijd vooraan komt te staan. De andere windows die op dat moment op het scherm staan, zijn niet actief en staan dus achter het geselecteerde window. U heeft nu de mogelijkheid om een ander window actief te maken door gewoon met de pointer ergens binnen dit window te gaan staan en te klikken.
+
+Om even terug te komen op ons voorbeeld. Als het directory window actief is en u wilt gebruik gaan maken van de calculator, moet u eerst de laatste window selecteren (het verschijnt dan direct als voorste window), waarna u met de calculator kan werken.
+
+GADGETS
+Om nu met het window te communiceren, maakt u gebruik van gadgets. Dit zijn grafische afbeeldingen die opdrachten voorstellen. Met behulp van zo'n gadget kunt u bijvoorbeeld een window verplaatsen of het window sluiten. De meest voorkomende gadgets zijn:
+Close gadget	Om een window te sluiten
+Toback gadget	Om windows achteraan te zetten
+String gadget	Om teksten in te voeren
+Toggle gadget	Om opties te selecteren.
+
+Veel van deze gadgets kunt u in onderstaande tekening van een window terugvinden.
+
+Windows kunnen een of meerdere van deze gadgets bevatten. Bovendien kunnen windows andere gadgets bevatten die nodig zijn voor de speciale taak van dit window. Zo bevat de calculator gadgets die de in te drukken toetsen voorstellen.
+
+GADGETS SELECTEREN
+U kunt een gadget selecteren door met de pointer op de gadget te gaan staan en dan te klikken. U ziet dan dat de gadget even in. inverse video wordt weergegeven. Toggle gadgets blijven in inverse video staan. Selecteert u per ongeluk een verkeerde gadget dan moet u, terwijl u de vuurknop ingedrukt houdt, de pointer van de gadget verwijderen, waarna u de vuurknop weer los kunt laten.
+
+
+HET VERPLAATSEN VAN WINDOWS
+Zo kunt u een window verplaatsen: ga ergens in de dragbar van de window staan. Als u nu de vuurknop indrukt, ziet u de hoekpunten verschijnen. Deze hoekpunten stellen de hoeken van uw window voor. Als u nu de pointer verplaatst, ziet u die hoeken mee verplaatsen. Door nu naar de plek te gaan waar u het window wilt neerzetten, en de vuurknop los te laten, heeft u het windov verplaatst.
+
+HET VERPLAATSEN VAN WINDOWS VOOR EN ACHTER ANDERE WINDOWS
+Als windows elkaar overlappen, verschijnt het ene window voor het andere.
+
+Om een window voor een ander window te zetten, selecteert u het window, dit window verschijnt dan vooraan op het scherm en is tevens actief.
+
+Om een window achter een ander window te zetten, selecteert u het toback gadget van het window dat u achteraan wilt zetten, dit window verschijnt dan als achterste op het scherm en het window dat nu vooraan staat is tevens actief geworden.
+
+HET SLUITEN VAN WINDOWS
+Om een windov te sluiten, selecteert u het close gadget. Dit gadget kunt u in vrijwel elk window in de linker bovenhoek terugvinden.
+
+COMMUNICEREN MET EEN WINDOW
+Als een programma een naam van u nodig heeft, dit om bijvoorbeeld de naam en id van een nieuw te formatteren diskette te vragen, moet u gebruik maken van een string gadget. Als u zo'n string gadget selecteert, komt een cursor tevoorschijn, waarna u de naam die u wenst in kunt typen. Als u buiten de gadget klikt of op <RETURN> drukt, gaat de cursor weg en is de gadget niet langer geselecteerd. Om de gadget opnieuw te selecteren, wijst u met de pointer ergens binnen de gadget en klikt u.
+
+REQUESTERS
+Soms is het verplicht om een programma te sturen of om een bepaalde actie te bevestigen. Dit gaat door middel van een requester. Als u bijvoorbeeld een schijf wilt formatteren, verschijnt er een requester dat u de mogelijkheid biedt om de opdracht te vervolgen of af te breken. Dit reguester ziet u hierbij afgebeeld.
+
+
+Pas nadat u op de requester reageert, gaat de computer verder. U kunt op een requester antwoorden door gebruik te maken van de gadgets die het heeft. Die gadgets bestaan meestal uit een gadget waarmee u de taak voortzet (het CONTINUE gadget e.a.) en een gadget waarmee u de taak afbreekt (het CANCEL gadget e.a.). Als u op een requester gereageerd heeft, verdwijnt het en gaat de computer verder met z'n taak.
+WARNING:
+You are now leaving
+the DESKTOP
+BASIC CANCEL
+
+DESKTOP
+
+INLEIDING
+Desktop is het belangrijkste element van de Final Cartridge III, het is de spil waarom alles draait. Vanuit desktop kunt u naar BASIC, naar de freezer, etc.
+
+HET OPENEN EN SWITEN VAN DESKTOP
+U kunt op 4 verschillende manieren in de desktop terecht komen:
+1 U start de desktop op door gewoon de computer aan te zetten als de Final Cartridge III
+  erin zit (altijd dus).
+2 U selecteert vanuit BASIC het commando desktop in het system menu.
+3 U typt in BASIC het commando DESKTOP in.
+4 U selecteert vanuit de freezer in het exit menu desktop.
+
+Om vanuit desktop zelf opnieuw te beginnen drukt u de toetsen <CTRL> & <SHIFT> & <SHIFT> tegelijk in, waarna desktop reset en opnieuw opstart.
+
+U verlaat de desktop door naar BASIC of de freezer te gaan.
+
+HET GEBRUIK VAN DESKTOP
+De commando's in desktop worden vanuit pull-down menu's gekozen. Als u niet bekend bent met pull-down menu's, raden wij u aan het vorige hoofdstuk Windows & Menu's zeer goed door te lezen.
+
+Bovenin de desktop vindt u deze menu bar:
+INFO SYSTEM PROJECT CLOCK   DESKTOP V1.0
+D
+We behandelen de desktop commando's in de volgorde waarin ze in de menu's zijn terug te vinden.
+
+INFO
+In het info menu staan enkele commando's waarmee u informatie over de Final Cartridge III kunt opvragen.
+
+DESKTOP
+Met het desktop commando wordt een requester geopend waarin de namen van de ontwerpers van de Final Cartridge III zijn te vinden.
+
+VERSION
+Met het version commando wordt een requester geopend waarin de
+versienummers van de verschillende onderdelen van de Final
+Cartridge III zijn terug te vinden.
+
+SYSTEM
+In het system menu staan enkele systeem commando's.
+
+BASIC
+Met het basic commando kunt u vanuit de desktop naar BASIC gaan. Nadat u op de dan geopende requester gereageerd heeft, belandt u in BASIC. Daar de Final Cartridge III het BASIC zo uitbreidt, worden alle mogelijkheden van het vernieuwde BASIC in een apart hoofdstuk met de naam BASIC besproken.
+
+FINAL KILL
+Met het final kill commando kunt u de Final Cartridge III
+uitschakelen. U kunt dit zien aan de LED op de Final Cartridge
+III.
+
+FREEZER
+Met het freezer commando kunt u vanuit de desktop naar de freezer gaan. Hieruit kunt u bijvoorbeeld verschillende windows uitprinten. Vanuit de freezer kunt u via Exit Run of Exit .Desktop weer terugkeren. Daar de freezer van de Final Cartridge III zo uitgebreid is, worden alle mogelijkheden van de freezer in een apart hoofdstuk met de naam FREEZER besproken.
+
+REDRAW
+Met het redraw commando wordt het scherm opnieuw getekend. Dit is bijvoorbeeld erg handig om na te gaan waar alle windows staan.
+
+PROJECT
+In het project menu staan enkele taken die vanuit de desktop kunnen worden opgestart.
+
+NOTEPAO
+Met het notepad commando komt u in de notepad, een zeer uitgebreide beschrijving van de notepad vindt u in het hoofdstuk
+TOOLS.
+
+DLINK
+Met het DLINK commando kunt u toekomstige uitbreidingen van de
+Final Cartridge III opstarten vanaf diskette.
+
+TLINK
+Met het TLINK commando kunt u toekomstige uitbreidingen van de
+Fina] Cartridge III opstarten vanaf cassette.
+
+UTILITIES
+In het utilities menu staan verschillende commando's om utility- windows te openen. De beschrijving van deze utilities vindt u in het hoofdstuk TOOLS.
+
+CLOCK
+In het clock menu staan enkele commando's die betrekking hebben op de in de Final Cartridge III ingebouwde klok.
+
+TIME
+Met de time optie kunt u bepalen of de systeemtijd in de menu bar moet worden weergegeven. Als time geselecteerd is, wordt de tijd in de menu bar weergegeven. Als u nog een keer de time optie selecteert, verdwijnt de tijd weer.
+
+ALARM
+Met de alarm optie kunt u het alarm aan- en uitzetten. Als het alarm aanstaat, gaat het alarm - op de door u ingestelde tijd-af. Als u nog een keer de alarm optie selecteert, zet u het alarm weer af.
+
+SETTINGS
+Met het settings commando opent u het clock settings window. Dit window, dat hieronder getoond wordt, bestaat uit twee gedeelten:
+
+
+de linkerkant is voor het instellen van de tijd voor de klok, de rechterkant is voor het instellen van de tijd voor het alarm.
+
+VERANDEREN TIJD
+U kunt de tijd van de klok en het alarm op precies dezelfde manier veranderen. Hiervoor selecteert u eerst de cijfers die u wilt veranderen, de eerste twee cijfers voor de uren en de laatste twee cijfers voor de minuten, waarna u door het selecteren van de up of down gadget de tijd verandert. Door hierna het use gadget te selecteren wordt de ingestelde tijd door de computer overgenomen.
+
+VERANDEREN TIJD MODE
+U kunt zelfs de wijze waarop de klok getoond wordt nog verande-ren. U kunt hierbij omschakelen tussen de 12 of 24 uurs mode, door het time mode gadget te selecteren.
+
+
+TOOLS
+In dit hoofdstuk worden tools besproken. Tools zijn gereedschappen die
+de Final Cartridge III u biedt.
+De tools die in dit hoofdstuk worden besproken zijn
+CALCULATOR
+PREFERENCES
+DISK OPERATIONS
+TAPE OPERATIONS
+BASIC PREFERENCES
+PRINTER SETTINGS
+NOTEPAD
+
+
+CALCULATOR
+
+INLEIDING
+Calculator is een rekenmachine, die behalve optellen, aftrekken, delen en vermenigvuldigen, ook over een geheugen beschikt. De werking ervan is hetzelfde als een normale calculator en we menen hierdoor niet uitgebreid in te hoeven gaan op alle instrukties.
+
+HET OPENEN EN SLUITEN VAN DE CALCULATOR
+U kunt de calculator openen door in het utilities menu calculator te selecteren.
+
+U sluit de calculator door de close gadget in de linker bovenhoek te selecteren.
+
+HET GEBRUIK VAN DE CALCULATOR
+In het calculator window kan elke "toets" door de pointer geselecteerd worden.
+
+De volgende toetsen komen met de funkties overeen:
+
+Toets			Gadget			Functie
++			+			Optellen
+-			-			Aftrekken
+/			/			Delen
+*			*			Vermenigvuldigen
+=	of <RETURN>	=			Resultaat berekenen
+E			ME			Memory Enter
+C			MC			Memory Clear
+R			MR			Memory Recall
+<CLR/HOME> 		C			Clear
+<SHIFT> & <CLR/HOME> 	
+<INSERT/DEL>		AC			Al clear
+. of ,			.			Decimale punt
+
+
+DE STANDAARD FUNCTIES
+Om u bekend te maken met de standaard functies volgen hier een aantal voorbeelden:
+Intoetsen:  			Scherm:
+
+AC				0
+4				4
++				4
+96				96
+=				100
+
+AC				0
+999				999
+:				999
+3				3
+=				333
+
+AC				0
+1000				1000
++				1000
+-				1000
+750				750
+=				250
+
+
+
+HET GEHEUGEN
+Om u bekend te maken met het gebruik van het geheugen volgen hier een aantal voorbeelden:
+
+Intoetsen:			Scherm:
+
+AC				0
+MC				0
+7.25				7.25
++				7.25
+6.25				6.25
++				13.5
+8.5				8.5
+=				22
+ME				M 22
+:				M 22
+4				M 4
+=				M 5.5
+MR				M 22
+:				M 22
+3				M 3
+=				M 7.33333334
+
+
+PREFERENCES
+
+INLEIDING
+Met Preferences ("voorkeur" in het Nederlands) kunt u een aantal instellingen van de Final Cartridge III veranderen, denkt u maar aan de kleuren van het scherm, e.d.
+
+HET OPENEN EN SLUITEN VAN PREFERENCES
+U kunt preferences openen door in het utilities menu preferences te selecteren.
+
+U sluit preferences door de ok, cancel of reset gadget te selecteren.
+
+OVERZICHT FUNCTIES
+Met preferences kunt u de volgende instellingen veranderen:
+
+Schermkleuren
+Pointer kleuren
+Pointer snelheid
+Pointer acceleratie
+Joystick ports
+Randapparatuur zoals disk-drives, recorders etc.
+
+POINTER
+De kleuren van de pointer kunt u veranderen door met de pointer de up of down gadget hij COLOR 1 (voor de binnenste kleur van de pointer) of COLOR 2 (voor de buitenste kleur van de pointer) te selecteren. U kunt dus kiezen of u in oplopende of aflopende volgorde de verschillende kleuren wilt zien.
+
+SCREEN
+Op dezelfde wijze als hierboven, kunt u de kleur van het scherm veranderen. COLOR 1 staat voor de voorgrondkleur en COLOR 2 staat voor de achtergrond kleur.
+
+DRIVER
+U heeft tevens de mogelijkheid om te bepalen door welke joystick-poort de pointer aangedreven moet worden. U kunt hiervoor Port 1 of Port 2 kiezen, door de desbetreffende gadgets te selecteren. Tevens kunt u op dezelfde wijze kiezen of u gebruik wilt maken van een joystick of van een muis om de pointer te besturen.
+
+VELOCITY
+De drie gadgets bij VELOCITY stellen u in staat de snelheid van de pointer te veranderen.
+
+ACCELERATION
+De drie gadgets bij ACCELERATION stellen u in staat de acceleratie van de pointer te veranderen.
+
+DEFAULT
+Als u de standaard (default) instellingen wilt zien, dan selecteert u DEFAULT.
+
+VIEW
+Als u wilt kijken hoe u alles ingesteld heeft, dan selecteert u
+VIEW (bekijken). De instellingen blijven dan actief totdat u de
+vuurknop weer loslaat.
+
+OK
+Als u tevreden bent met de instellingen, dan selecteert u OK, waarna automatisch het window gesloten wordt.
+
+CANCEL
+Als u niet tevreden bent met de veranderingen, dan kunt u door het selecteren van CANCEL naar de reeds bestaande instellingen terugkeren, waarna automatisch het window gesloten wordt.
+
+DISK OPERATIONS
+
+INLEIDING
+In het disk operations window heeft u de mogelijkheid verschillende commando's op uw schijf uit te voeren, zoals bijvoorbeeld het wijzigen van uw diskettenaam of het verwijderen van een programma.
+
+HET OPENEN EN SLUITEN VAN DISK OPERATIONS
+U kunt disk operations openen door in het utiljties menu disk te selecteren.
+
+U sluit disk-operations door de close gadget in de linker bovenhoek te selecteren.
+
+OVERZICHT FUNCTIES
+De mogelijkheden die het disk operations window u biedt, worden hieronder even kort opgenoemd. Verderop worden al deze opdrachten in detail met u doorgenomen.
+Een programma veranderen
+Een programma runnen
+Een diskettenaam veranderen
+Een diskette snel formateren
+Een diskette leeg maken
+Een diskette initialiseren
+Een diskette valideren
+Een programma van de schijf verwijderen
+Het bekijken van directories (tot drie tegelijk !)
+
+HET OPENEN VAN EEN DIRECTORY WINDOW
+U kunt een directory op het scherm bekijken door een van de drie DIR gadgets te kiezen. (Als u twee disk-drives in uw bezit heeft, kunt u door eerst de 9 gadget te selecteren ook de directory van de disk-drive met devicenummer 9 op het beeld tonen.)
+Als u de DIR gadget selecteert, verschijnt er een window dat tijdelijk de naam LOADING DIRECTORY heeft, maar als de directory geladen is, verschijnt de naam van de directory als window naam (dit om later de verschillende directories uit elkaar te houden). Om in een al geopend directory window een nieuwe directory te lezen, selecteert u het read gadget dat u rechtsonder in elk directory window kunt vinden.
+
+HET DOORBLADEREN VAN DE DIRECTORY
+Het kan natuurlijk voorkomen dat de directory langer is dan in het window getoond kan worden. Om nu de rest van de inhoud van de schijf te bekijken, kunt u door middel van de up of down gadgets, de directory doorbladeren.
+
+HET SELECTEREN VAN EEN PROGRAMMA
+U kunt een programma selecteren door op het door u gewenste programma te gaan staan en te klikken. Om het geselecteerde programma herkenbaar te maken wordt het in inverse video weergegeven.
+
+HET SORTEREN VAN EEN DIRECTORY
+Het is met de Final Cartridge III mogelijk de directory van uw disk te sorteren. Dit doet u als volgt: eerst opent u een directory window, waarin u het sort gadget selecteert. Als u nu een programma selecteert kunt u dat In.b.v. de up of down gadgets verplaatsen. Als het op de gewenste plaats staat selecteert u gewoon een ander programma dat u wilt verplaatsen, net zolang totdat ze allemaal goed staan. U kunt dan zelfs nog lege regels in de directory plaatsen om alles overzichtelijk te houden. Dit doet u door eerst het programma te selecteren waarboven u de lege regel wilt hebben, daarna de line gadget te selecteren en op de requester te antwoorden. Pas als de hele directory naar uw zin is selecteert u nogmaals de sort gadget, waarna een requester geopend wordt om te vragen of u zeker bent van uw zaak. Zo ja, dan wordt de directory op uw diskette vernieuwd.
+
+HET ERROR-KANAAL BEKIJKEN
+Met behulp van het toggle gadget READ STATUS kunt u de status van uw disk-drive opvragen. Als READ STATUS geselecteerd is, wordt na elke diskopdracht het error-kanaal weergegeven. Het nadeel van het selecteren van dit gadget is dat u, terwijl de computer op het error-kanaal wacht, geen controle over de pointer heeft.
+
+EEN PROGRAMMA RUNNEN
+Eerst selecteert u het programma dat u wilt runnen. Hierna selecteert u het RUN gadget en daarna het DO gadget om de uiteindelijke opdracht te geven. Nadat u op de dan geopende requester gereageerd heeft, wordt het programma met behulp van de ingebouwde snellader geladen en automatisch gerund.
+
+EEN DISKETTE VALIDEREN
+Selecteer hij de actieve DIR gadget de juiste disk-drive. Hierna selecteert u het VALIDATE gadget en daarna het DO gadget om de uiteindelijke opdracht te geven.
+Als er geen DIR gadget actief is, dan wordt automatisch de disk met devicenummer 8 gekozen.
+
+EEN PROGRAMMA VERWIJDEREN
+Eerst selecteert u het programma dat u wilt verwijderen. Hierna selecteert u het SCRATCH gadget en daarna het DO gadget om de uiteindelijke opdracht te geven.
+
+EEN DISKETTE INITIALISEREN
+Selecteer bij de actieve DIR gadget de juiste disk-drive. Hierna selecteert u het RUN gadget en daarna het DO gadget om de uiteindelijke opdracht te geven.
+Als er geen DIR gadget actief is, dan wordt automatisch de disk met deviceriummer 8 gekozen.
+
+EEN DISKETTE SNEL FORNATTEREN
+Plaats de diskette die u wilt formatteren in uw disk-drive.
+Hierna selecteert u het gadget met de naam FAST FORMAT. Nu
+selecteert u de FROM string gadget om de naam en de id van de diskette in te voeren. De uiteindelijke opdracht geeft u door het DO gadget te selecteren en op de geopende requester te reageren.
+
+EEN DISKETTE LEEG MAKEN
+Plaats de diskette die u wilt leeg maken in uw disk-drive. Hierna selecteert u het gadget met de naam EMPTY. Nu selecteert u de FROM string gadget om de naam van de diskette in te voeren. De uiteindelijke opdracht geeft u door het DO gadget te selecteren en op de geopende requester te reageren.
+
+EEN PROGRAMMANAAM VERANDEREN
+Eerst selecteert u het programma waarvan u de naam wilt veranderen. Hierna selecteert u het gadget met de naam RENAME, waarna de naam van het geselecteerde programma in het string gadget FROM verschijnt.
+In het FROM gadget staat de naam zoals het programma nu heet. In het TO gadget kunt u, door het te selecteren, de naam van het programma aanpassen of vernieuwen. De uiteindelijke opdracht om de naam te veranderen, geeft u door het DO gadget te selecteren.
+
+EEN DISKETTENAAM VERANDEREN
+Eerst selecteert u het programma waarvan u de naam wilt veranderen. Hierna selecteert u het gadget met de naam RENAME, waarna de naam van de diskette in de string gadget FROM verschijnt.
+In het FROM gadget staat de naam zoals de schijf nu heet. In het TO gadget kunt u, door het te selecteren, de naam van de diskette aanpassen of vernieuwen. De uiteindelijke opdracht om de naam te veranderen, geeft u door het DO gadget te selecteren.
+
+VERSCHILLENDE DIRECTORY WINDOWS TEGELIJK
+De mogelijkheid om verschillende directory WINDOWS te openen, is gemaakt voor de volgende toepassingen: hoe vaak gebeurt het niet dat u even twee of drie schijven wilt nakijken om te zien of ze dezelfde programma's bevatten? Dit is nu op de volgende manier te realiseren. U neemt de eerste schijf en stopt die in uw disk-drive. U selecteert DIR 1, haalt de schijf uit de disk-drive en stopt uw tweede erin. U selecteert nu DIR 2. U ziet nu twee directories tegelijk op het scherm en kunt ze dus vergelijken. Dit proces is tevens te herhalen voor een derde diskette.
+
+LET OP
+Als u met verschillende directories werkt, zijn de commando's alleen toepasbaar op de directory die door het actieve DIR gadget wordt aangewezen.
+Om een nieuwe directory in een al geopend window in te lezen, selecteert u het dir gadget dat u onderin elk directory window kunt vinden.
+
+TAPE
+
+INLEIDING
+
+Vanuit dit window kunt u een programma van cassette laden.
+
+HET OPENEN EN SLUITEN VAN TAPE
+U kunt het tape window openen door in het utilities menu tape te selecteren.
+
+
+TAPE
+
+SLOW    LOAD   FAST
+
+
+U sluit het tape window door de close gadget in de linker bovenhoek te selecteren.
+
+HET GEBRUIK VAN TAPE
+Het tape window biedt u twee gadgets voor het laden van een
+programma:
+SLOW voor het langzaam laden van een programma
+FAST voor het snel laden van een programma
+
+BASIC PREEERENCES
+
+INLEIDING
+Vanuit dit wjndow kunt u instellingen, die vanuit BASIC handig zijn, veranderen zoals, het knipperen van de cursor, de randkleur etc. Deze instellingen zijn alleen in BASIC actief.
+
+HET OPENEN EN SLUITEN VAN BASIC PREFERENCES
+U kunt het basic preferences window openen door in het utilities menu basic preferences te selecteren.
+
+U sluit het basic preferences window door de close gadget in de linker bovenhoek te selecteren.
+
+HET GEBRUIK VAN BASIC PREFERENCES
+Het basic preferences window biedt u verschillende gadgets voor het veranderen van de instellingen:
+
+KEYBOARD CLICK
+Door deze optie aan te zetten hoort u bij elke toetsaansiag een kijk.
+
+KEY REPEAT
+Door deze optie aan te zetten worden de alle toetsen repeterend.
+
+CURSOR BLINK
+Door deze optie uit te zetten, knippert de cursor niet neer.
+
+DEFAULT DEVICE
+Hier kunt u instellen welk device (randapparaat) u standaard gebruikt.
+
+BORDER COLOR
+Hier kunt u de randkleur instellen die u wilt hebben.
+
+NUMERIC KEYPAD
+Door deze optie uit te zetten, kunt u het numeriek toetsenbord van de Commodore 128 niet neer gebruiken.
+
+PRINTER
+
+INLEIDING
+Vanuit het printer window heeft u de mogelijkheid schermen af te drukken, dit noemen we screendumps maken. Voordat u een screendump maakt, heeft u eerst nog de mogelijkheid om de juiste printer, interface, grootte e.d. in te stellen waarna u pas de echte printopdracht selecteert.
+
+HET OPENEN EN SLUITEN VAN HET PRINTER WINDOW
+U kunt het printer window vanuit de freezer openen.
+U sluit het printer window door de EXIT gadget te selecteren.
+
+OVERZICHT FUNCTIES
+Vanuit het printer window kunt u de volgende zettingen veranderen:
+INTERFACE	
+TYPE	
+PICTURE	
+COLORS	
+PRINTING	
+HORIZONTAL / VERTICAL SIZE	
+GRAPHICS MODES 8/24 PINS	
+EXIT	
+PRINT	
+!! ABORT PRINTING !!	
+SPECIALE PRINTFUNCTIES	
+
+Met behulp van deze instellingen kunt u de Final Cartridge III aanpassen aan uw printer. Voor een paar printers hebben wij al instellingen uitgezocht.
+
+INTERFACE
+Met behulp van de gadgets kunt u een keuze maken tussen:
+Commnodore	De screendump wordt via de seriële poort naar een printer gestuurd.
+Centronics	De screendump wordt via de user poort naar een centronics printer gestuurd.
+RS-232	De screendump wordt via de user poort naar een RS-232 printer gestuurd. Zie ook opmerkingen
+
+TYPE
+Met behulp van de gadgets kunt u een keuze maken tussen:
+CBM Compatible De screendunmp wordt nu met COMMODORE aansturingstekens naar de printer gestuurd.
+EPSON Compatible	De screendump wordt nu met EPSON aansturingstekens naar de printer gestuurd.
+NEC P Series	De screendump wordt nu met speciale NEC aanstu-ringstekens naar de printer gestuurd.
+
+PICTURE
+Met behulp van het invert gadget kunt u bepalen of u een screendump geïnverteerd of normaal wilt uitprinten. Als u het invert gadget selecteert, wordt het scherm geïnverteerd afgedrukt, als het niet geselecteerd is, wordt het normaal afgedrukt
+
+COLORS
+Met behulp van dit gadget kunt u kiezen of u de screendump in zwart-wit dan wel kleuren op de printer wilt hebben. Deze optie heeft natuurlijk alleen maar zin als u met een kleurenprinter werkt.
+
+PRINTING
+Met behulp van dit gadget kunt u kiezen of u de screendunp normaal of een kwartsiag gedraaid op het papier afgedrukt wilt hebben. Als u het sideways gadget selecteert, wordt het scherm een kvartslag gedraaid op het papier afgedrukt, als het niet geselecteerd is, wordt het normaal afgedrukt.
+Sideways printen is erg handig als de tekening niet normaal op het papier past.
+
+HORIZONTAL / VERTICAL SIZE
+Het behulp van deze gadgets kunt u de horizontale en verticale grootte van de screendump instellen. Op deze manier kunt u kiezen tussen een kleine screendump en een grote screendump.
+De getallen stellen verhoudingen voor, hiermee bedoelen we dat door het kiezen van 2 in plaats van 1 de screendump twee keer zo groot wordt. Let dus op In de grafische mode Single Density levert een screendump ingesteld met Horizontal 2 en Vertical 2 niet hetzelfde op als in bijvoorbeeld Quadruple Density node.
+Wordt de screendump te groot voor het papier, dan moet u SIDEWAYS selecteren.
+
+GRAPHICS MODES 8/24 PINS
+Met behulp van deze gadgets kunt u de grafische mode van de printer in stellen. De linkerkolonm is voor 8 naaldsprinters en de rechterkolom is voor 24 naaldsprinters. Niet elke printer bezit alle grafische modes; welke verschillende modes uw printer bezit kunt u nagaan in de handleiding die bij uw printer hoort. Ook kunt u in die handleiding een meer uitgebreide beschrijving van de verschillende grafische modes vinden.
+Met behulp van die grafische modes kunt u de dichtheid (Eng:density) van de printer instellen. Deze dichtheid wordt meestal in dots per inch (dpi) uitgedrukt. Hoe scherper u het plaatje wilt hebben, hoe groter u de dichtheid moet kiezen en des te langer u moet wachten.
+Kort samengevat zijn de modes:
+Single Oensity	Dit levert u een plaatje met	60	dpi.	8 of 24
+Double Density	Dit levert u een plaatje met	120	dpi.	8 of 24
+Triple Density	Dit levert u een plaatje met	180	dpi.	24
+Quadruple Density Dit levert u een plaatje met		240	dpi.	8
+High Speed, DO 	Dit levert u een plaatje met 120 dpi, maar op
+			normale snelheid (dit kont omdat de helft maar
+			wordt afgedrukt). 8
+CRT Graphics	Dit levert u een plaatje met	80 dpi. 8
+CRT Graphics II	Dit levert u een plaatje met	90 dpi. 8 of 24
+
+EXIT
+Hiermee verlaat u het printer window en kont u altijd terug in desktop.
+
+PRINT
+Hiermee geeft u de opdracht te gaan printen met behulp van de door u ingestelde zettingen. Pas als de tekening geprint is, kunt u weer verder gaan.
+
+!! ABORT PRINTING !!
+U kunt het printen onderbreken door op de <RUN/STOP> toets te drukken. De computer stopt dan met het naar de printer sturen van data. Bij printers met een buff er kan de printer nog verder gaan, terwijl de computer al gestopt is.
+
+SPECIALE PRINTERFUNCTIES
+Normaal gesproken kunt u de printer vanuit het printer window besturen, maar door het POKEn van enkele waarden in geheugenlocatie $DC0C (hexadecimaal) zijn enkele speciale functies aan te roepen. Deze waarden typt U (natuurlijk) in voordat u het programma laadt, waarvan u een screendump wilt maken. Indien u geen gebruik wilt maken van deze speciale functies, hoeft u natuurlijk ook niets te POKEn. Deze waarden die speciale functies opleveren worden nu stuk voor stuk met u doorgenomen.
+POKE SDCOC,$FF	Geen Centronics check.
+Normaal gesproken wordt er altijd gekeken of er een Centronics printer aan de computer hangt waarop geprint moet worden, maar door het POKEn van $FF in SDCOC schakelt u deze controle uit.
+
+POKE $DCOC,$FE RS-232 Printen.
+Door het poken van de waarde $FE in $DCOC wordt de tekening via de user port naar een RS-232 printer gestuurd.
+
+Voordat we de laatste functies met u doornemen, moeten we eerst iets uitgebreider ingaan op EPSON aansturingstekens om tekeningen af te drukken. Er zijn twee soorten commando's om tekeningen af te drukken. Er zijn de commando's in de vorm van <ESC>"*" CHR$(x) nl n2 ml m2 ..., waarin de waarde van x verschilt voor de verschillende grafische modes. Maar ook commando's in de vorm van <ESC> "X" nl n2 ml m2 ..., waarin de hoofdletter X een van de volgende hoofdletters kan zijn: K, L, Y, Z om verschillende grafische modes aan te geven. Nu maken we met de Final Cartridge III gebruik van de vorm <ESC> "X" fl1 n2 ml m2 ..., daar deze vorm door vrijwel alle printers ondersteund wordt (het merendeel van de printers onder-steunt zelfs beide vormen). Helaas zijn er ook enkele printers die alleen de commando's van de andere vorm ondersteunen en daarom hebben we het mogelijk gemaakt door het POKEn van een van de waarden $30 tot en met $36 in geheugenlocatie $DCOC commando's van de andere vorm te geven. De betekenis van de waarde die u nodig heeft en verdere informatie omtrent EPSON aansturingstekens kunt u terugvonden in de handleiding die bij uw printer hoort.
+
+POKE $DC0C,$30 Printen in Single Density.
+
+POKE $DC0C,$3l Printen in Double Density.
+
+POKE $DC0C,$32 Printen in High Speed, Double Density.
+
+POKE $DC0C,$33 Printen in Quadruple Density.
+
+POKE $DC0C,$34 Printen in CRT graphics.
+
+
+	POKE $DC0C,$35	Printen in Plotter graphics.
+	POKE $DC0C,$36	Printen is CRT graphics II.
+
+GETESTE PRINTERS
+De hieronder vermelde printers zijn getest met de behulp van de volgende zettingen.
+III en werken met
+Printer				Interface 			Type
+Star NL-lO (CBM)			Commodore			Epson Compatible
+Star NL-1O (IBM)			Centronics			Epson Compatible
+Star NL-lO (Cent)			Centronics			Epson Compatible
+Epson EX-800			Centronics			Epson Compatible
+Brother M 1509			Centronics			Epson Compatible
+Brother M 1709			Centronics			Epson Compatible
+NEC P6				Centronics			Nec P Series
+OLIVETTI DM 105			Centronics			Epson Compatible
+PANASONIC X-Pl081			Centronics			Epson Compatible
+Commodore MCS 801			Commodore			CBM Compatible (COLORS YES)
+
+PRINTER KABELS
+Als u een Centronics of RS-232 printer op uw Commodore aan wilt sluiten, dan heeft u hier een speciale kabel voor nodig. Deze kabel kunt u bij uw dealer verkrijgen.
+
+NOTE PAD
+
+INLEIDING
+Notepad is een kleine tekstverwerker, die in de Final Cartridge III ingebouwd is. De teksten die u in notepad maakt, kunt u opslaan (op cassette of diskette) en afdrukken. De tekstverwerker maakt gebruik van een proportioneel karakterset (dat houdt in dat een i minder ruimte inneemt dan een m).
+
+HET OPENEN EN SLUITEN VAN NOTEPAD
+U kunt notepad vanuit de desktop openen door notepad in het project menu te selecteren.
+kunt de notepad sluiten door quit in het project menu te selecteren.
+
+HET GEBRUIK VAN DE NOTEPAD COMMANDO'S
+De commando's in notepad worden net zoals in de desktop vanuit pull-down menu's gekozen. Bovenaan de notepad vindt u dan ook een menu bar.
+
+We behandelen de commando's van de notepad in de volgorde van de menu's.
+
+PROJECT
+In het project menu staan commando's om uw tekst te bewaren, af te drukken etc.
+
+NEW
+Met het new commando naakt u de notepad leeg. De cursor komt aan het begin te staan en wacht op de tekst die u wilt gaan intypen.
+
+LOAD
+Met het load commando kunt u een eerder gemaakte tekst van diskette laden. Nadat u load geselecteerd heeft, wordt een requester geopend waarin u de naam van de tekst moet typen die u wilt laden, waarna u de load gadget moet selecteren. Mocht u per ongeluk het load commando geselecteerd hebben, dan kiest u het cancel gadget waarna u weer in de notepad terecht komt.
+
+TLOAD
+Met het tload commando kunt u op dezelfde wijze als hierboven beschreven staat een tekst van tape laden. Nadat u de naam van de tekst hebt ingetypt, moet u nog wel op PLAY drukken.
+
+SAVE
+Met het save commando kunt u uw tekst op diskette opslaan. Nadat u save geselecteerd heeft, wordt een requester geopend waarin u de naam van de tekst die u wilt bewaren in moet voeren, waarna u de save gadget moet selecteren. Mocht u per ongeluk het save commando geselecteerd hebben, dan kiest u het cancel gadget waarna u weer in de notepad terecht komt.
+
+TSAVE
+Met het tsave commando kunt u op dezelfde wij ze als hierboven beschreven staat een tekst van tape bewaren. Nadat u de naam van de tekst hebt ingetypt, moet u nog wel op PLAY & RECORD drukken.
+
+PRINT
+Met het print commando kunt u uw tekst op uw printer afdrukken.
+
+RECOVER
+Normaal gesproken bent U Uw tekst kwijt als u QUIT, NEW, of LOAD kiest. Maar door in het project menu het commando RECOVER te selecteren kunt U de tekst die verloren ging terug krijgen.
+
+QUIT
+Met het quit commando sluit u de notepad en komt u weer in de desktop terecht.
+
+FILE
+
+TOP OF FILE
+Met het top of file commando kunt u in één keer met de cursor naar het begin van uw tekst gaan. Dit is ook mogelijk door de toets <CLR/HOME> in te drukken.
+
+REDRAW
+Met het redraw commando wordt heel het scherm opnieuw getekend.
+
+FREEZER
+Met het freezer commando activeert u de freezer; door in de freezer Exit Run te selecteren, komt u weer in de notepad terug.
+
+SCREEN
+In het screem menu staan enkele commando's die de weergave van uw tekst kunnen veranderen.
+
+WORD WRAP
+Met deze optie kunt u uw tekst aan het eind van de regel op verschillende manieren laten afbreken. Als wordwrap geselecteerd is, wordt een woord dat niet meer helemaal op de regel past automatisch op de volgende regel gezet. Als wordwrap niet geselecteerd is, worden de letters die nog wel op de regel passen daar neergezet en de andere op de volgende regel.
+
+BOLD
+Met deze optie kunt u uw tekst vet op het scherm zetten.
+
+PROPORTIONAL
+Het deze optie kunt u kiezen of u de tekst proportioneel of normaal op het scherm wilt hebben. Als u met kolommen wilt werken is het verstandig proportional uit te zetten.
+
+LINE
+In het line menu staan verschillende commando's om de afstand tussen de regels te veranderen.
+
+SPACEX
+Door het selecteren van de verschillende space commando's verandert u de regelafstand. SPACE0 is de kleinste afstand, SPACE2 is de grootste afstand.
+
+CHARACTER
+In het character menu staan verschillende commando's om de afstand tussen de letters te veranderen.
+
+SPACEx
+Door het selecteren van de verschillende space commando's verandert u de betterafstand. SPACE0 is de kleinste afstand, SPACE4 is de grootste afstand.
+
+HET INTYPEN VAN DE TEKST
+De tekst kunt u op normale wijze intypen.
+
+EDIT FUNCTIES
+Met de cursor-besturings-toetsen kunt u de cursor op gebruikelijke wijze verplaatsen:
+Eén letter naar links of één naar rechts.
+Eén regel naar boven of ééh naar beneden. De cursor komt dan tevens aan het begin van de regel te staan.
+De <INST/DEL> toets verwijdert de letter links van de cursor.
+
+Ook is het met de pointer mogelijk de cursor te verplaatsen. U wijst dan gewoon de plek aan waar u de cursor wilt hebben en daar klikt u dan.
+
+SPECIALE FUNCTIES
+Het is mogelijk in uw tekst een speciale funktie op te nemen. Voorlopig is alleen de printer funktie Form Feed geimplementeerd. U kunt deze funktie gewoon in uw tekst zetten door het intypen van de < > (pijltje naar links) toets. Op het scherm verschijnt dan ook dit teken, maar tijdens het printen wordt er op de plaats van dit teken een Form Feed gegeven, waardoor de printer, met de tekst die na dit teken volgt, op een nieuwe bladzijde begint.
+
+BASIC
+
+INLEIDING
+Vanuit de BASIC stand kunt u gewoon in BASIC gaan programmeren. U kunt deze stand opvatten als de computer zonder cartridge.
+
+De Final Cartridge III levert u in deze stand toch veel extra's
+zoals:
+
+1 Het scrollen van BASIC programma's.
+2 Een printer-interface.
+3 Het afdrukken van een scherm op de printer.
+4 De tape/disk snellader.
+5 Het gebruik van Pull-Down menu's.
+6 Het gebruik van ongeveer 30 extra BASIC commando's.
+
+HET STARTEN EN STOPPEN VAN DE BASIC STAND
+U kunt in de BASIC stand op de volgende 3 manieren komen:
+
+1	U houdt, terwijl u de computer aanzet, de <RUN/STOP> toets inge-drukt,
+2	U selecteert vanuit de DESKTOP het item BASIC in het menu SYSTEM.
+3	U selecteert vanuit het FREEZE menu het item BASIC.
+
+Om te stoppen met de BASIC stand en over te gaan naar een andere
+stand van de Final Cartridge III zijn er de volgende mogelijkheden:
+
+1	U selecteert het item DESKTOP in het SYSTEM menu, waarna u (na een
+	bevestiging gegeven te hebben) in de DESKTOP komt.
+2	U typt DESKTOP in, waarna u (na een bevestiging gegeven te hebben)
+	in de DESKTOP komt.
+3	U drukt op de FREEZE knop, waarna u in het FREEZER menu komt.
+4	U selecteert het item FINAL KILL, waarna de Final Cartridge III
+	wordt uitgeschakeld en u in de standaard Cominodore 64/128 komt.
+5	U typt KILL in, waarna de Final Cartridge III wordt uitgeschakeld
+	en u in de standaard Commodore 64/128 komt.
+
+EXTRA MOGELIJKHEDEN IN BASIC
+
+SCROLLEN
+Net als in de machinetaal monitor heeft u in BASIC de mogelijkheid om uw BASIC programma's door te scrollen. Hiervoor gebruikt u de normale cursortoetsen. U kunt het scrollen zelf proberen door, nadat een klein gedeelte van uw BASIC programma op het scherm getoond wordt, met de cursor naar boven of naar beneden te gaan.
+
+EDITING FUNCTIES
+De Final Cartridge III biedt u een aantal extra edit functies die u tijdens het programmeren vaak van pas zullen komen. Het verbeteren van programmatuur op het scherm wordt er een stuk eenvoudiger door gemaakt.
+Om het naar beneden scrollen iets makkelijker te maken, hebben we het mogelijk gemaakt om door één toetsaanslag de cursor in de linker benedenhoek te plaatsen, waarna u zelf verder kunt scrollen. U plaatst de cursor in de linker benedenhoek door gelijktijdig de toetsen <CTRL> en <CLR/HOME> in te drukken.
+Door het gelijktijdig indrukken van de toetsen <CTRL> en <DEL> verwijdert u alles wat er achter de cursor op de regel staat.
+
+Door het indrukken van de Commodore toets <C=> wordt de uitvoer naar het scherm bevroren. De computer wacht met verder gaan totdat u de toets losllaat. Dit is handig bij het bekijken van listings, daar deze normaal met <CTRL> alleen de snelheid vertraagd wordt.
+
+PRINTER-INTERFACE
+Met behulp van de Final Cartridge III is het ook mogelijk om niet- Commodore printers te gebruiken. In de Final Cartridge III zit namelijk een Centronics interface ingebouwd waarmee u met behulp van een speciale kabel ook met Centronics printers kuntwerken. De Centronics interface kunt u ook vanuit BASIC gebruiken met behulp van het uitgebreide OPEN commando.
+
+LOW-RESOLUTION SCREENDUMP
+Het is ook mogelijk om direct vanuit BASIC een low-resolution screendump te maken. Hiermee bedoelen we dat u direct een scherm met tekst op de printer kunt afdrukken. U maakt een low-resolution screendump door gelijktijdig de toetsen <CTRL> en <RETURN> in te drukken.
+
+TAPE SNELLADER/SNELSAVER
+De Final Cartridge III is voorzien van een tape snellader/snelsaver die het mogelijk maakt programma's 10 maal sneller met cassette te laden en te saven. De snellader/snelsaver is volledig uitwisselbaar met de meest gangbare snelladers, terwijl u ook nog met de standaard lader/saver kunt werken.
+De TAPE commando's zijn:
+LOAD "naam" laden met de standaard snelheid 
+SAVE "naam" saven met de standaard snelheid
+LOAD "naam",7 laden met de ingebouwde snellader (10 maal sneller) 
+SAVE "naam",7 saven met de ingebouwde snelsaver (10 maal sneller)
+
+DISK SNELLADER/SNELSAVER
+De Final Cartridge III is bovendien voorzien van een disk snellader/snelsaver die het mogelijk maakt programma's 15 maal sneller van diskette te laden en 7 maal sneller op diskette te saven. De standaard commando's LOAD en SAVE maken automatisch gebruik van de snellader/snelsaVer.
+De DISK commando's zijn:
+DLOAD
+DSAVE	deze commando's worden beide duidelijk bij de extra commando's beschreven.
+
+PULL-DOWN MENU' S
+Vanuit BASIC is het mogelijk gebruik te maken van pull-down menu's. Met behulp van deze menu's kunt u alle extra BASIC commando's selecteren (Voor algemene informatie over pull-down menu's verwijzen we u naar het Windows & Menu's gedeelte).
+In tegenstelling tot de desktop, is in BASIC de menu bar niet altijd in beeld. Om de pull-down menu's op te roepen, moet u op de vuurknop drukken, waarna de menu bar op het scherm verschijnt.
+
+De betekenis van de commando's kunt u hij de bespreking van de
+extra BASIC commando's terugvinden.
+Let Op FINAL KILL = KILL
+
+EXTRA BASIC COMMANDO'S
+Als u de Final Cartridge III in uw computer heeft zitten,
+ongeveer 30 extra BASIC commando's tot uw beschikking. Deze
+do's kunt u op twee manieren gebruiken:
+-	u kunt ze direct intypen
+-	u kunt ze vanuit een programma gebruiken
+
+Van elk commando geven we het volgende:
+-	de naam van het commando;
+-	de syntax van het commando De eerste regel toont het volledige commando. De tweede regel 	toont het commando afgekort. De kleine letters geven aan dat u deze gewoon intypt, de 	grote	letters moeten worden ingetypt als u <SHIFT> ingedrukt houdt.
+	[ ] rechte haken geven aan dat dit deel van het commando is. Typ de haken niet in. 
+	< > gebogen haken geven aan dat u op deze plaats zelf
+	    moet intypen. Typ de haken niet in.
+	/   een schuine streep betekent dat u tussen verschillende:
+	    logelijkheden kunt kiezen. Typ de schuine streep niet in.
+-	de betekenis van het commando
+-	een voorbeeld van het commando
+-	opmerkingen over het commando
+
+APPEND                                
+ARRAY
+AUTO                                  
+BAR
+DAPPEND
+DEL
+DESKTOP
+DLOAD
+DOS
+DOS"$
+DSAVE
+DUMP                                  
+DVERIFY
+FIND                                  
+KILL                                  
+LIST                                  
+HEM
+NON
+MREAD
+MWRITE                                
+0FF
+OLD
+OPEN                                  
+ORDER
+PACK                                  
+PDIR                                  
+PLIST
+RENIJM
+REPLACE
+TRACE
+UNPACK
+$
+
+APPEND
+
+Syntax:	APPEND ["<file-naam>") [,<device> 
+		aP ["<file-naam>") [,<device>)
+
+Dit commando stelt u in staat kant en klare subroutines die u op cassette of diskette heeft 		staan, aan een programma dat in het geheugen staat, toe te voegen.
+Voorbeeld:	APPEND "file-naam"	voor tape
+		APPEND "file-naam",8	voor disk
+Opmerkingen:Daar de originele regelnummers blijven bestaan, kan het handig zijn als eerste het commando RENUM toe te passen.
+
+ARRAY
+Syntax:	ARRAY
+		aR
+Dit commando toont alle array's en de inhoud van die array's die door u op dat moment in gebruik zijn.
+Voorbeeld:	ARRAY
+
+Scherm:	ARRAY 
+		a$(1) ="HALLO" 
+		a$(2) ="TEST"
+
+
+AUTO
+
+Syntax: AUTO [<regelnummer> [,<stapgrootte>]]
+	  aU [<regelnummer> [,<stapgrootte>]]
+Dit commando geeft automatische regelnumers. Hierdoor hoeft u tijdens het programmeren niet meer zelf de regelnummers in te voeren, hetgeen het intypen van programma's sneller en gemakkelijker maakt.
+Voorbeeld:	AUTO 10,5	De computer begint nu met regel 10 en zodra u
+		<RETURN> indrukt, geeft de computer het volgende
+		regelnuinmer: 10 + 5 = 15.
+	AUTO	Dit is hetzelfde als AUTO 100,10
+	AUTO 200	Dit is hetzelfde als AUTO 200,10
+Opmerkingen:
+Om de automatische regelnummering te stoppen, drukt u direct na het regelnummer <RETURN> in.
+Indien u een programma heeft dat op regel 1000 eindigt, kunt u dus AUTO 1010,10 gebruiken, om de regels aan het programma toe te voegen.
+Ook kunt u dit commando gebruiken om regels tussen te voegen.
+
+BAR
+Syntax BAR [0FF)
+	 bA (OF)
+Dit commando stelt u in staat de mogelijkheid om de pull-down menu's op te roepen en aan/uit te schakelen.
+Voorbeeld:	BAR 0FF	zet de menu's uit
+		BAR	zet de menu's aan
+
+Opmerkingen:Deze optie is ingebouwd om de Final Cartridge III vanuit BASIC ook goed compatible te houden met de meeste programma's. Mocht een programma vanuit BASIC niet werken, probeer het dan nog een keer door het commando BAR 0FF te gebruiken.
+
+DAPPEND
+
+Syntax: DAPPEND ("<file-naam>")
+	  dA ["<file-naam>")
+
+Dit commando is het zelfde als APPEND "file-naam", 8.
+
+Voorbeeld:	DAPPEND "deel2" voegt "deel2" toe aan het geheugen 
+DAPPEND voegt het eerste op de schijf staande programma aan het geheugen toe
+Opmerkingen:
+Bij dit commando hoeft u niet het achtervoegsel ",8" te gebruiken.
+
+DEL
+Syntax:DEL (<eerste-regel>] -[<laatste-regel>]
+	 dE [<eerste-regel>]-[<laatste-regel>]
+
+Dit commando stelt u in staat snel en gemakkelijk een gedeelte van uw programma te verwijderen.
+
+Voorbeeld:	DEL	100-200 verwijdert de regels vanaf 100 tot en met 200
+	DEL	250-  verwijdert de regels vanaf 250
+	DEL	-100  verwijdert de regels tot en met 100
+	DEL	-     verwijdert heel het programma
+Opmerkingen: DEL is een afkorting voor DELETE (verwijderen).
+DESKTOP
+Syntax:   Desktop
+	    deS
+Dit commando stelt u in staat BASIC te verlaten en naar de DESKTOP te gaan.
+Voorbeeld: DESKTOP  hiermee komt u in de desktop
+Scherm:  DESKTOP
+ARE YOU SURE (Y/N)?
+
+Opmerkingen: Voordat u naar de DESKTOP gaat moet u er wel voor zorgen dat het BASIC programma waar u mee bezig was, bewaard blijft, daar door het overschakelen naar de DESKTOP het BASIC geheugen beschadigd wordt. Daarom verschijnt er op het scherm eerst de tekst "ARE YOU SURE (Y/N)?". Uw keus maakt u door de letter y of n in te typen of op de vuurknop te drukken.
+
+DLOAD
+Syntax:	DLOAD ["<file-naam>"]
+		dL ["<file-naam>"]
+
+Dit commando laadt een programma van disk met gebruik van de ingebouwde snellader. Hierdoor worden de programma's van disk, 15 maal sneller ingeladen dan normaal.
+
+Voorbeeld:	DLOAD "test" laadt het programma "test" van diskette 
+DLOAD laadt het eerste programma van diskette
+
+Opmerkingen:Bij dit commando hoeft u niet het achtervoegsel ",8" te gebruiken.
+DLOAD "naam" komt overeen met LOAD "naam" ,8, 1
+
+DOS
+Syntax:	DOS" [<diskcommando>]/ [<devicenummer>]
+		dO" [<diskcommando>]/[<devicenununer>]
+
+Dit commando stelt u in staat gemakkelijk de status van de disk-drive op te vragen. Ook kunt u met dit commando diskcommando'S geven, of overgaan naar een tweede disk-drive.
+Voorbeeld:	DOS"	leest het ERROR-kanaal uit
+	DOS"$			toont de inhoud van de diskette
+	DOS"NO:naam,id"	formatteert een schijf
+	DOS"V			valideert een schijf
+	DOS"9			alle diskcommando's hebben nu betrekking
+				op de disk met nummer 9
+
+Opmerkingen: DOS"test	komt overeen met de volgende rij commando's:
+OPEN 15,8,15 <RETURN>
+PRINT#"l5,"test <RETURN>
+De diskcommando's staan in de handleiding van uw disk-drive beschreven.
+
+DOS"$
+Syntax:	DOS"$
+do"$
+
+Dit commando toont de directory op het scherm, ZONDER het programma dat in het geheugen staat te verwijderen.
+
+Voorbeeld:	DOS"$ dit toont de directory van de schijf
+
+Opmerkingen: Door gebruik te maken van de funktietoets met dit commando, wordt eerst het scherm schoongemaakt, waarna de directory getoond wordt.
+
+DSAVE
+
+Syntax:	DSAVE "<file-naam>" 
+		dS "<file-naam>"
+
+
+Dit commando schrijft een programma naar disk met gebruik van de ingebouwde snelsaver. Hierdoor worden programma's van disk, 7 maal sneller weggeschreven dan normaal.
+
+Voorbeeld:DSAVE "test"schrijft het programma "test" naar diskette
+
+Opmerkingen:Bij dit commando hoeft u niet het achtervoegsel ",S" te gebruiken.
+
+DUMP
+
+Syntax:	DUMP
+		dU
+
+Dit commando toont alle variabelen en tevens de waarden van die variabelen die op dat moment in gebruik zijn.
+
+Voorbeeld:DUMP
+
+Opmerkingen:Om array's te bekijken, moet u gebruik maken van het commando ARRAY.
+
+DVERIFY
+Syntax:	DVERIFY ["<file-naam>"]
+		dV ["<file-naam>"]
+
+Dit commando controleert of een programma op de diskette met de naam "file-naam" identiek is aan het programma in het geheugen van de computer. Als de twee programma's hetzelfde zijn, komt de computer met de normale "0K" en "READY" melding., maar als ze verschillen dan wordt er een "VERIFY ERROR" gegeven.
+
+Voorbeeld: DVERIFY "test" controleert het programma test op disk
+	     DVERIFY controleert het eerste programma op disk
+
+Opmerkingen:DVERIFY is het zelfde is VERIFY "file-naam",S. Maar bij dit commando hoeft u niet het achtervoegsel ",8" te gebruiken.
+
+FIND
+
+Syntax:	FIND ["<tekst>"/<BASIC commando>/<variabele>] 
+		fI ["<tekst>"/<BASIC commando>/<variabele>]
+
+Dit commando zoekt in het gehele programma naar een tekst, variabele, getal of commando.
+
+Voorbeeld:FIND "test"	toont de regels waar het woord test in voorkomt.
+FIND POKE 53280		toont de regels waarin dit POKE commando voorkomt.
+FIND Z 			toont de regels waar de variabelen Z, Z%, Z$ al dan niet geindexeerd in 				voorkomen
+FIND Z%			toont de regels waar de variabele z% al dan niet geïndexeerd in 					voorkomt 
+FIND 9 			toont de regels waar een 9 in voorkomt zoals: POKE l9,0;POKE 					l2,l9l;z¨=O.l92 enz. 
+FIND				toont alle regels
+
+KILL
+
+Syntax:	 KILL
+		 kI
+
+Dit commando schakelt alle functies van de Final Cartridge III uit. De freezer werkt nog wel, maar zal terugkeren naar de standaard Commodore 64/128 tenzij u de freezer via de monitor verlaat.
+
+LIST
+
+Syntax:	LIST [[<eerste-regel>-[laatste-regel]]
+		Li [[<eerste-regel]-[laatste-regel]]
+
+Dit commando "list" uw BASIC programma op het scherm, maar is zodanig verbeterd dat het de in de BASIC programma's aanwezige 'LIST" beveiligingen verwijderd.
+
+MEM
+
+Syntax:	MEN
+		mE
+
+Dit commando toont de verdeling van het BASIC geheugen.
+BASIC	geeft het totaal aantal Vrije bytes in BASIC aan.
+PROGRAM	geeft het aantal door het programma gebruikte bytes aan.
+VARIABLES	geeft het aantal door variabelen gebruikte bytes aan.
+STRINGS	geeft het aantal door strings gebruikte bytes aan.
+FREE		geeft het aantal vrije bytes aan die over zijn.
+
+Voorbeeld:MEM
+
+Scherm:MEM
+BASIC	39911	BYTES
+PROGRAM	2	BYTES
+VARIABLES	0	BYTES
+ARRAYS	0	BYTES
+STRINGS	0	BYTES
+FREE	38909	BYTES
+
+MON
+Syntax:MON
+mO
+
+Dit commando activeert de in de Final Cartridge III aanwezige machinetaal monitor. Een uitgebreide beschrijving van deze uitstekende monitor wordt verderop in deze handleiding gegeven.
+MREAD
+Syntax:
+	NREAD <geheugenlocatie> mR <geheugenlocatie>
+
+Dit commando leest een geheugenblok van 192 bytes vanaf een door u aan te geven startpositie. U kunt dan dit blok met het MWRITE commando in de 24K extra geheugenruimte zetten.
+
+Voorbeeld:FOR I= 0 TO 4
+MREAD $A000 + I * 192
+WRITE $0400 + I * 192
+NEXT I  Op deze manier kunt u een scherm met tekst in het extra geheugen zetten.
+
+Opmerkingen: Met dit commando is het in principe mogelijk om uit elk adres van de 64K te lezen, maar uiteindelijk is het bedoeld om die adressen in het "schaduw" RAM te bereiken, die met de commando's PEEK en POKE niet zijn te adresseren. De 24K waar het om gaat liggen op de adressen:
+SA000-$BFFF = 8K BASIC Interpreter SC000-$CFFF 4K vrij RAM $0000-$DFFF = 4K VIC, SID en 1/0
+$E000-$FFFF = 8K Kernal
+Let erop dat KREAD en MWRITE van de cassetterecorderbuffer gebruik maken, die 192 bytes lang is; vandaar dat een blok niet groter dan 192 bytes kan zijn.
+Net als alle andere commando's zijn ook MREAD en MWRITE volledig in BASIC geintegreerd en kunnen dus gebruikt worden met variabelen zowel in hexadecimaal als decimaal.
+
+MWRITE
+Syntax:
+MWRITE <geheugenlocatie> mW <geheugenlocatie>
+
+Dit commando
+schrijft een geheugenblok van 192 bytes, dat door MREAD gelezen is, op een door u aan te geven locatie.
+
+Voorbeeld:	FOR I = 0 TO 4
+	MREAD $A000 +	I * 192
+	MWRITE $0400 +	I * 192
+	NEXT 1	 Op deze manier kunt u het scherm uit het
+		 extra geheugen halen.
+
+Opmerkingen:	Zie MREAD.
+
+0FF
+Syntax:	0FF
+		oF
+
+
+Dit commando maakt het mogelijk de extra BASIC commando's uit te schakelen, zonder de Final Cartridge III zelf uit te schakelen. De snellader en printer-interface blijven dus gewoon aan.
+
+Opmerkingen: Dit commando dient u in ieder geval te gebruiken bij TOOLKIT programma's en programma's die een eigen karakterset definieren.
+
+OLD
+Syntax:OLD
+oL
+
+Dit commando zorgt ervoor, dat een BASIC programma, dat door NEW of door een reset per ongeluk uit het geheugen is "verwijderd", veer bruikbaar wordt.
+
+Opmerkingen:Dit commando kunt u gebruiken totdat u een nieuw programma intypt of laadt.
+Indien ii een programma heeft geschreven dat "vast loopt", dan hoeft u slechts te resetten en OLD te gebruiken, waarna u het programma opnieuw kunt starten.
+
+OPEN
+Syntax:OPEN <file-nummer>, [<devicenummer>) [,<adres>]
+OP <file-nummer>, [<devicenummer>] [,<adres>]
+
+Dit commando opent een kanaal voor in- en uitvoer en is door de Final Cartridge III uitgebreid voor Centronics printers.
+
+Voorbeeld:	OPEN 1,4,2 	Normale print-mode; nu kunt u alle ASCII karakters van de printer gebruiken, behalve de "control-characters"
+	OPEN 1,4,3 Transparant mode; nu werkt de printer zoals in de handleiding van de printer beschreven staat. Alle ASCII en controlcodes werken conform de printerhandleiding.
+OPEN 1,4,9 De volledige Commmodore karakterset wordt nu uitgeprint.
+OPEN 1,4,10 De volledige Commodore karakterset wordt nu reversed uitgeprint.
+
+Opmerkingen:Om dus nu een listing, inclusief alle grafische tekens op een willekeurige centronics parallel-printer af te drukken, gebruikt u:
+OPEN 1,4,9: CMD 1: LIST
+Of het nieuwe PLIST commando.
+
+Syntax:ORDER
+oR
+
+Dit commando ordert heel het BASIC programma dat in het geheugen staat. Het kan namelijk voorkomen dat na een (D)APPEND instructie de regelnumlnering niet meer klopt. Door nu het commando ORDER te gebruiken worden alle regels op de juiste plaats ingevoegd.
+
+Opmerkingen:Dit commando is bedoeld voor gebruik in samenhang met de commando's APPEND, DAPPEND en RENUM.
+
+PACK
+Syntax:PACK
+pA
+
+Dit commando "packt" ("cruncht") het in het geheugen aanwezige programma. Hierdoor wordt (veel) geheugen bespaard. Nadat u het programma gepackt heeft, kunt u het gewoon wegschrijven naar cassette of diskette. Het gepackte programma is normaal te runnen.
+
+Opmerkingen:
+Een programma dat u wilt packen, moet wel op 0801 (hexadecimaal) beginnen. Ook zijn veel programma's tegenwoordig al "gepackt", waardoor een programma bij het opnieuw "packen" alleen naar groter wordt. Zie ook UNPACK
+
+PDIR
+
+Syntax:PDIR 
+pD
+Dit commando print de inhoud van de diskette op papier.
+
+Voorbeeld: PDIR
+Opmerkingen:
+print de directory uit
+Dit commando levert hetzelfde op als de volgende serie
+commando's:
+LOAD "$",s
+OPEN 1,4: CND 1: LIST
+PRINT# 1
+CLOSE 1
+
+PLIST
+Syntax:PLIST
+pL
+
+Dit commando drukt de listing op de printer af.
+Voorbeeld:
+PLIST
+
+Opmerkingen: Dit commando levert hetzelfde op als de volgende serie commando's:
+OPEN 1,4: CMD 1: LIST
+PRINT#1
+CLOSE 1
+
+RENUM
+Syntax:RENUM [<regelnummer>[ ,<stapgrootte>]]
+rE [<regelnummer>[ ,<stapgrootte>]]
+
+Dit commando hernummert de regels van een BASIC programma. Door middel van dit commando kunt u dus ruimte scheppen om regels tussen te voegen, of om een programma te hernummeren na een APPEND instruktie.
+
+Voorbeeld:	RENUM 10,5	hernummert het programma, startend met regel
+		10 en oplopend in stappen van 5.
+	RENUM	is hetzelfde als RENUM 100,10
+	RENUM 300	is hetzelfde als RENUM 300,10
+Opmerkingen: Dit commando houdt rekening met GOTO's en GOSUB's en is handig te gebruiken als de regelnummers elkaar direkt opvolgen en u er iets tussen wilt zetten.
+
+REPLACE
+Syntax:REPLACE <commando1> , <commando2> / "tekst1", "tekst2" reP <commando1>,<commando2> / "tekstl","tekst2"
+
+Dit commando maakt het mogelijk in heel uw BASIC programma een stuk tekst door een ander stuk tekst, of een BASIC commando door een ander commando te laten vervangen.
+
+Voorbeeld: REPLACE PRINT#1,PRINT
+Dit vervangt in heel het programma de PPINT#l
+statements door normale PRINT statements.
+REPLACE "F03","Final Cartridge III"
+Dit vervangt in heel het programma F03 door
+Final Cartridge III.
+
+TRACE
+Syntax:TRACE [0FF]
+tR [OF)
+
+Dit commando maakt het mogelijk dat u een BASIC programma stap voor stap uit kunt voeren. Nadat ii dan uw programma "runt" druk het de regel die op dat moment uitgevoerd wordt boven in het scherm af. TPACE 0FF schakelt weer terug naar de normale stand.
+
+Voorbeeld:	TRACE     als u nu uw programma runt, wordt elke uit te voeren regel getoond
+
+UNPACK
+
+Syntax:	UNPACK
+uN
+
+Dit commando	maakt van een door de Final Cartridge III gepackt programma weer een normaal programma, waarna het weer gewoon te listen is.
+Opmerkingen:	Zie ook PACK.
+
+$
+Syntax:	$<getal in hexadecimaal>
+
+Dit commando	maakt het mogelijk getallen in het hexadecimale stelsel te gebruiken.
+Voorbeeld:	A=$0F	De variabele A krijgt de waarde 15
+	POKE $D020,A	De rand wordt grijs
+	SYS $FCE2	Dit reset de computer
+
+FREEZER
+
+INLEIDING
+De linker knop achterop de Final Cartridge III is de freeze knop.
+Door het indrukken van deze knop kunt u al uw programma's freezen.
+
+Nadat u de freeze button ingedrukt heeft, kunt u met behulp van de Final Cartridge III een aantal interessante commando's gaan uitvoeren, zoals het maken van een back up. Zie ook het hoofdstuk opmerkingen
+
+HET STARTEN EN STOPPEN VAN DE FREEZER
+U kunt de freezer op de volgende 4 manieren opstarten:
+1 U kiest vanuit de desktop in het system menu het item freezer.
+2 U kiest vanuit BASIC in het system menu het item freezer.
+3 U drukt terwijl u in BASIC bent op de freeze knop.
+4 U drukt terwijl de Final Cartridge III uit staat op de freeze knop.
+
+U kunt de freezer op de volgende 2 wijze verlaten:
+1 U kiest één van de exit commando's
+2 U kiest één van de reset commando's
+
+HET GEBRUIK VAN DE FREEZER
+Nadat u de freezer heeft opgestart verschijnt de menu bar. In tegenstelling tot alle andere pull-down menu's gebruiken we bij het kiezen in deze menu's geen pointer.
+Deze pull-down menu's kunt u op twee manieren doorbladeren:
+1	Door gebruik te maken van een joystick bladert u links en rechts door de verschillende menu's. Door naar voor of achter te gaan bladert u door één bepaald menu. Het door u gewenste commando selecteert u door op de vuurknop te drukken.
+2	Door gebruik te maken van de cursor. Met cursor rechts en cursor links (dit alleen m.b.v. de rechter shift knop !!) bladert u door de verschillende menu's. M.b.v. cursor down en cursor up (dit alleen m.b.v. de rechter shift knop !!), bladert u door één bepaald menu. Het door u gewenste commando selecteert u door op <F7> te drukken.
+
+FREEZER COMMANDO'S
+We bespreken de commando's op volgorde van de menu's. De volgende commando's kunt u allemaal in de freezer tegenkomen.
+
+Backup Disk	
+Backup Tape	
+Backup FDisk
+Backup FTape
+Game Sprite I               
+Game Sprite II
+Game Joyswap
+Game Autofire	
+Colors BackGnd 
+Colors ForeGnd 
+Colors Border	
+Print Settings
+Print View 
+Print View Border 
+Print View ForeGround
+Print View BColor0 
+Print View BColor1
+Print View BColor2
+Print View BColor3
+Print View Exit
+Print Set                          
+Reset Kill	
+Reset Zero Fill
+Reset CBM64	
+Exit RUN	
+Exit Monitor	
+Exit Desktop	
+
+Back Up
+De Final Cartridge III heeft de mogelijkneid om backup's (veiligheids kopieen) te maken van al uw disk- en tapeprogramma's. Let er wel op dat deze mogelijkneid bedoeld is voor eigen gebruik en dat dit niet ontworpen is om illegale kopieën te maken.
+De backup's die u maakt kunnen door iedereen worden geladen, zelf als ze geen Final Cartridge III hebben. Maar let er wel op, dat als u een backup maakt die u later zonder Final Cartridge III weer wilt laden, u dit niet doet nadat u een van de volgende mogelijkheden heeft ingeschakeld (dit omdat voor deze bijzondere mogelijkneden een Final Cartridge III vereist is): de sprite killer, de joystick poort changer of de autofire.
+We raden u aan dat u voordat u een backup wilt maken, eerst het commando Zero Kill vanuit de freezer te gebruiken, dan uw programma te laden en dan pas een backup te maken. Hierdoor bespaart u meestal en groot deel geheugenruimte.
+
+Backup Disk
+Dit commando maakt een backup op uw diskette met normale snelheid.
+
+Backup Tape
+Dit commando maakt een backup op uw cassette met normale snelheid.
+
+BackUp FDisk
+Dit commando maakt een backup op uw diskette met gebruik van de snelsaver.
+
+Backup FTape
+Dit commando maakt een backup op uw cassette met gebruik van de snelsaver.
+
+Game
+Dit menu bevat items, die het Spelen van Spelletjes nog gemakkelijker maken. Het biedt u een sprite killer, joystick poort changer en een autofire. Na het selecteren van een van de menu opties, gaat het programma na ongeveer 20 sekonden weer verder. De commando's blijven aktief, totdat u uw programma reset en opnieuw begint.
+Helaas kan het mogelijk zijn dat een programma één van de Game opties uitschakelt, waardoor u zo'n optie later weer moet activeren.
+
+Game Sprite I
+Dit commando schakelt de "sprite to sprite detection" uit, waardoor het effect van botsingen van sprites onderling niet meer worden opgemerkt door de computer, zodat u totaan het einde uw spel kunt vervolgen. Let er wel op dat niet alle spelen sprites gebruiken, dus als u toch nog dood gaat, gebruikt het programma geen sprites,of het maakt geen gebruik van het sprite to sprite detectie register.
+
+Game Sprite II
+Dit commando schakelt de "sprite to background detection" uit, waardoor het effect van botsingen van sprites met achtergrond-voorwerpen niet meer wordt opgemerkt door de computer, zodat u totaan het einde uw spel kunt vervolgen.
+
+
+Game Joyswap
+Dit commando verwisselt van joystick poort. Door van dit commando gebruik te maken, hoeft u zelf niet van joystick poort te wisselen als het spel de andere poort gebruikt, waardoor u het opblazen van uw computer voorkomt.
+
+Game Autofire
+Dit commando maakt van een normale joystick een dure autofire joystick. Dit is erg handig bij Invader Spelen. Als u nu de vuurknop indrukt, vuurt de joystick automatisch achter elkaar.
+
+Colors
+Dit menu biedt u de mogelijkheid de kleuren van het scherm te veranderen. Dit kunt u bijvoorbeeld gebruiken als de kleuren van het programma u niet bevallen, of als u de kleuren van het scherm wilt veranderen voordat u gaat printen om bijvoorbeeld een betere grijs- waarde te verkrijgen. Om de nieuwe kleuren te bekijken kunt u gebruik maken van het Print View commando.
+
+Colors BackGnd
+Dit commando verandert de achtergrond kleur.
+
+Colors ForeGnd
+Dit commando verandert de voorgrond kleur.
+
+Colors Border
+Dit commando verandert de randkleur.
+
+Print
+Dit menu biedt u de mogelijkheid screendumps te maken, het "bevroren" scherm te bekijken en de print-vector te herstellen.
+
+Print Settings
+Dit commando opent het printer window. De beschrijving hiervan kunt u bij Windows & Menu's terugvinden.
+
+Print View
+Dit commando maakt het mogelijk het te printen scherm te bekijken. Nadat u dit commando heeft geselecteerd kunt u met behulp van de joystick, of de cursortoetsen het scherm naar beneden trekken om het te bekijken, tevens verschijnt er een nieuwe menu bar. Ook verschijnen, als u het scherm helemaal naar beneden getrokken heeft, de sprites op het scherm.
+De nieuwe menu bar biedt u de mogelijkheid vanuit Print View de ingestelde kleuren te veranderen. De commando's zijn:
+
+Print View Border
+Dit commando verandert de randkleur (Het verhoogt de inhoud van register 53280 (D020 Hex) met één).
+
+
+
+Print View ForeGround
+Dit commando verandert de voorgrond kleur (Het verhoogt de linker nibble van het color memory; bij hires verhoogt het de rechter nibble van het screen memory).
+
+Print View BColorO
+Dit commando verandert de achtergrondkleur 0 (Het verhoogt de inhoud van register 53281 (D02l Hex) met één).
+
+print View BColorl
+Dit commando verandert de achtergrondkleur 1 (Het verhoogt de inhoud van register 53282 (DO22 Hex) met één).
+
+Print View BColor2
+Dit commando verandert de achtergrofldkleur 2 (Het verhoogt de inhoud van register 53283 (D023 Hex) met één).
+
+Print View BColor3
+Dit commando verandert de achtergrofldkleUr 3 (Het verhoogt de inhoud van register 53284 (D024 Hex) met één).
+
+Print View Exit
+Dit commando verlaat de View; u komt weer terug in de freezer pull-down menu's.
+
+Print Set
+Dit commando herstelt de print-vector, zodat de centronics interface weer geaktiveerd is. Het kan namelijk voorkomen dat sommige programma's de print-vector overschrijven, waarna u geen gebruik kunt maken van een centronics printer. Na het selecteren van dit commando continueert de computer het lopende programma.
+
+Reset
+Dit menu biedt u de mogelijkheid de computer te resetten en op een speciale manier op te starten.
+
+Reset Kill
+Dit commando reset de computer en start op in de normale Commodore stand (het laat de Final Cartridge III uit).
+
+Reset Zero Fill
+Dit commando reset de computer en start op, nadat het geheugen is schoon gemaakt, in de normale Comxnodore stand (het laat de Final Cartridge III aan). Door gebruik te maken van dit commando voordat u een programma laadt om een backup te maken, bespaart u geheugenruimte in de backup.
+
+Reset CBM64
+Dit commando reset de computer en start op in de normale Commodore stand. (Het laat de Final Cartridge III aan)
+
+Exit
+Dit menu biedt u mogelijkheden om vanuit de freezer weer ergens anders heen te gaan.
+
+Exit RUN
+Dit commando verlaat de freezer, waarna de computer het programma vervolgd vanaf het punt waar u het bevroren hebt.
+
+Exit Monitor
+Dit commando verlaat de freezer en start de monitor. Een gedetailleerde beschrijving van de monitor kunt u ook in deze handleiding vinden.
+
+Exit Desktop
+Dit commando verlaat de freezer en start de desktop op.
+
+DE MONITOR
+
+INLEIDING
+De monitor die in de Final Cartridge III zit, is uniek in zijn soort.
+Hij heeft namelijk vier functies, te weten: machinetaal monitor, disk
+monitor, character monitor en sprite monitor.
+
+Met de machinetaal monitor kunt u direct in machinetaal met de computer communiceren. Het grote voordeel van machinetaal is dat dit vele malen sneller is dan BASIC.
+De machinetaal monitor levert u een aantal extra commando's die het programmeren in machinetaal sterk vereenvoudigen. Ook hebben een aantal functietoetsen een functie terwijl u met de monitor werkt.
+
+Met de drive monitor kunt u de disk-drive bestuderen. U kunt het geheugen bekijken en veranderen, of programma's schrijven die in de disk-drive werken, etc.
+
+Met de character monitor kunt u characters bekijken en veranderen. Op
+deze manier kunt u zelf uw eigen characters maken en die gebruiken.
+
+Met de sprite monitor kunt u sprites bekijken en veranderen. U kunt dus zelf gemakkelijk sprites ontwerpen voor gebruik in uw eigen programma's, of de sprites uit een bestaand programma halen en die gebruiken.
+
+HET STARTEN EN STOPPEN VAN DE MONITOR
+13 kunt de monitor van de Final Cartridge III op 4 verschillende manieren starten, namelijk:
+
+1 In de BASIC stand typt u het commando MON in.
+2 In de BASIC stand drukt u op funktietoets F2 (<SHIFT> + <F1>)
+3 In de BASIC stand kiest u in het system Pull Down menu MONITOR
+4 In de FREEZER stand kiest u MONITOR
+
+De monitor meldt zich dan door het weergeven van de registers, waarbij de getoonde waarden kunnen afwijken. (De betekenis van de symbolen kunt u terugvinden bij het R(egister) commando)
+
+
+PC IRQ BK AC XR VR SP NV#BDIZC
+.;AB2O EA31 07 85 FF 06 F9 *.**...*
+
+Om te stoppen met de monitor kunt u altijd na de prompt het commando X van Exit intypen. Hierna gaat de computer verder vanaf het moment u de monitor inschakelde.
+
+ALCEMENE TERMEN EN TECHNIEKEN
+Als eerste willen we een paar algemene termen met u doornemen.
+
+PROMPT
+De monitor maakt gebruik van een prompt. Dit komt erop neer dat u aan het begin van elke regel een punt ziet staan (de prompt). Achter de prompt heeft u de mogelijkheid om zelf commando's in te typen.
+
+GEHEUGEN REPRESENTATIE
+U kunt u in het geheugen verschillende gegevens zetten. Dit kunnen o.a. getallen, teksten, programma's, characters en sprites zijn. De Final Cartridge III biedt u nu de mogelijkheid het geheugen In al deze vormen te laten zien. Om het u duidelijker te maken, laten wij u hetzelfde geheugengedeelte in de verschillende representatie mogelijkheden zien:
+
+.:2000 48 41 4C 4C 4F 20 44 49 HALLO DI Getal Representatie
+	.'2000	HALLO DIT	IS EEN TEST V/D FC III		Tekst Representatie
+	.]2000	.*..*....*.....*.*..**..	Sprite Representatie
+	.[2000	.*..*...			Character Representatie
+	.,2000	48	PHA		Programma representatie
+
+SCROLLEN
+Als het geheugen in één van de representatiemogelijkheden wordt weergegeven, heeft u de mogelijkheid om te scrollen. Hiermee bedoelen we dat u - als het ware - het scherm kan verschuiven om de geheugenlocaties voor, of na, het op het scherm getoonde gedeelte te bekijken. Dit kunt u bewerkstelligen door de cursor - als het ware - aan de bovenkant, of de onderkant, van het scherm af te bewegen. Hierdoor wordt het voorgaande, of het volgende, gedeelte automatisch op het scherm getoond.
+De scroll mogelijkheid is in de Final Cartridge III ingebouwd om het bekijken van grote delen van het geheugen te vergemakkelijken.
+
+VERBETEREN
+Een gemakkelijke mogelijkheid die bij veel van de weergave opties aanwezig is, is het verbeteren van de inhoud. Hiervoor hoeft u alleen maar de door u gewenste gegevens over de bestaande gegevens heen te typen. Na een druk op de <RETURN> toets, worden de nieuwe gegevens geaccepteerd. De gegevens die u in de verschillende representatiemogelijkheden kunt veranderen zijn in de volgende opsomming onderstreept.
+    De volgende tekst was onderstreept.
+	:2000	48 41 4C	4C 4F 20 44 49 HALLO DI	Getal Representatie
+	.'2000	HALLO DIT IS EEN TEST V/D FC III		Tekst Representatie
+	.]2000 .*..*....*.....*.*..**..	Sprite Representatie
+	.[2000	.*..*...		Character Representatie
+	.,2000	48	PHA	Programma representatie
+    Hier stopt de onderstreping.
+BANK SWITCHING
+In uw Commodore zijn verschillende ROM's ondergebracht. Deze kunnen vanuit de monitor aan en uit worden gezet. U schakelt dan tussen de verschillende geheugenbanken en dit heet bank switching. In het register display wordt weergegeven welke banken u ingeschakeld heeft. Welke waarden met welke banken overeenkomen wordt uitvoerig bij het 0 commando besproken.
+
+MODES
+Als u in het bezit bent van een disk-drive, dan kunt u met twee geheugens werken, namelijk het geheugen van de computer en dat van de disk. We hebben daarom twee verschillende modes in de monitor aangebracht; de computer-mode (mode 1) en de disk-mode (mode 2).
+
+HET SCHAKELEN TUSSEN DE MODES
+De monitor start automatisch in mode 1 op. Alle commando's die
+dan betrekking op het geheugen hebben, werken met het geheugen van de computer.
+U kunt de computer-mode herkennen doordat in het register display bij de bankkeuze de door u gekozen bank wordt weergeven.
+
+Om nu over te kunnen schakelen van het computer- naar het diskgeheugen bestaat het commando OD. Alle commando's die nu met het geheugen werken, werken dan met het geheugen van de disk. U kunt de disk-mode herkennen doordat in het register display bij de bank keuze DS wordt weergeven.
+
+Om vanuit de disk-mode weer in de computer-mode te komen, gebruikt u het bank commando 0 (desnoods gevolgd door de bank waarin u wilt werken).
+
+COMMANDO SOORT
+Om aan te geven of de commando's betrekking op het geheugen van de computer of de disk-drive hebben, spreken we over twee soorten commando's, ten eerste de Computer commando's en ten tweede de Disk-drive commando's.
+Bij de opsomming van de commando's wordt dit aangegeven door bij "Soort commando:" een 0 van computer of een 0 van disk-drive te zetten. Indien de commando's op allebei betrekking kunnen hebben, worden beide vermeld.
+
+FUNCTIETOETSEN
+Bij het gebruik van de monitor zijn de volgende functietoetsen als
+volgt gedefinieerd:
+F3 upwards scrollen
+F5 downwards scrollen
+F7 directory
+
+OVERZICHT MONITOR INSTRUCTIES
+Hieronder ziet u een overzicht van alle commando's die u tot uw beschikking heeft na het opstarten van de monitor. Elke instructie wordt behandeld.
+
+A  Assemble           
+C  Compare Memory         
+D  Disassemble
+EC Edit Character
+ES Edit sprites
+F  Fill memory
+G  Go               
+H  Hunt memory
+I  Interrogate
+L  Load             
+M  Memory display
+O  Bank switching
+OD Disk Monitor
+P  Print memory
+R  Registers display
+S  Save memory
+T  Transfer memory
+X  Exit               
+#
+$
+@ Disk commands
+*8 Read Block 
+*W Write Block
+Dit commando
+
+A Assemble  Assembleren van machinetaal programma's
+
+Syntax:  
+Voorbeeld:Axxxx mnemo [operand]
+xxxx	= het begin adres
+	mnemo	= de machinetaal opdracht
+operand = de operand waarop de opdracht betrekking heeft
+
+Dit commando stelt u in staat zelf in machinetaal te programmeren.
+
+Voorbeeld:AC000 LDA *$00	Hiermee zet u de opdracht LDA *$00 op geheugenplaats C000
+
+Opmerkingen:Als u achter elkaar door wilt programmeren, hoeft u dit commando maar één maal in te typen. De computer berekent namelijk zelf de opvolgende geheugenplaats voor de volgende instruktie, het enige dat u doet is het intypen van de opdracht (gevolgd door de operand).
+Als u wilt stoppen met het invoeren van het programma drukt u na de laatste programmaregel nog éen keer <RETURN> in, waarna de monitor alle andere commando's weer accep-teert.
+
+Soort:  C,D
+
+C  Compare Memory  Blokken geheugen vergelijken
+
+Syntax:C	xxxx yyyy zzzz
+xxxx = het begin adres van het eerste blok 
+yyyy = het eind adres van het eerste blok 
+zzzz = het begin adres van het tweede blok
+
+Dit commando stelt u in staat een blok geheugen met een ander te vergelijken en houdt u op de hoogte van mogelijke verschillen. De nummers die op het scherm worden afgebeeld, zijn de geheugen locaties die niet gelijk zijn. Dus als u twee dezelfde blokken met elkaar vergelijkt, wordt er niets op het scherm afgebeeld.
+Voorbeeld:	C 1000 1FFF 4000 Hiermee vergelijkt u het blok van 1000 t/m 1FFF met het geheugenblok 4000 t/m 4FFF.
+
+Opmerkingen:U hoeft niet het eind adres van het tweede blok te geven; de computer berekent dit voor u.
+
+Soort: C,D
+
+D Disassemble Disassembleren programma's   van	machinetaal
+
+Syntax: D	xxxx yyyy
+xxxx = het begin adres 
+yyyy het eind adres
+
+Dit commando toont de inhoud van het geheugen als machinetaal. U bent nu in staat een machinetaal programma te disassembleren U kunt de inhoud van het geheugen veranderen, door de getallen gewoon te verbeteren.
+Voorbeeld: D 3000 300A
+Scherm:
+.D3000 300A
+.,A9	00	LDA #$00
+.,8D 20 DO STA $D020
+.,A9	00	LDA #$00
+.,8D 21 DO STA $D021 
+.,00     BRX
+
+Opmerkingen:Om een groot programma te disassembleren, kunt u gebruik maken van het scrollen. Daarvoor hoeft u alleen maar 0 gevolgd door het begin adres in te typen. Dit zal dan één instruktie disassembleren. Om nu verder te gaan, scrollt u het scherm gewoon.
+
+Soort:C,D
+
+EC Edit Character Karakters veranderen
+Syntax:EC xxxx yyyy 
+xxxx = het begin adres 
+yyyy = het eind adres
+
+Dit commando stelt u in staat karakters te tonen en hierna te veranderen. Na het intypen van dit commando, wordt de inhoud van het geheugen in character representatie weergegeven. U heeft nu de mogelijkheid om de character te veranderen door in de juiste regel een sterretje "*" te typen als een bit 1 wilt maken, of een punt "." te typen als u een bit 0 wilt maken.
+
+Scherm:.EO 2000 2008 .EC 2000 2008
+	 .[2000	..****..
+	 .[200l	.**..**.
+	 .[2002	.**.***
+	 .[2003	.**.***.
+	 .[2004	.**....
+	 .[2005	.**    
+	 .[2006	..****..
+	 .[2007        
+
+ES Edit sprites Sprites veranderen
+Syntax ES xxxx
+xxxx	= het begin adres
+
+Dit commando stelt u in staat sprites te tonen en hierna te veranderen. Na het intypen van dit commando, wordt de inhoud van het geheugen in sprite representatie weergegeven. U heeft nu de mogelijkheid om de sprite te veranderen door in de juiste regel een sterretje "*" te typen als een bit 1 wilt maken, of een punt "." te typen als u een bit 0 wilt maken.
+
+Voorbeeld: ES 2000 2008  Dit toont het geheugen van 2000 t/s 2008 in character representatie.
+
+Scherm:
+.ES 2000 2018
+.[2000 ************..**..**..**
+.[2003 ************..**..**..**
+.[2006 ****..........**..**..**
+.[2009 ********......**..**..**
+.[200C ********......**..**..**
+.[200F ****..........**..**..**
+.[2012 ****..........**..**..**
+.[2015 ****..........**..**..**
+.[2018 ****..........**..**..**
+
+
+Soort: C,D
+
+F Fill memory Een deel van het geheugen vullen
+Syntax:  F xxxx YYYY zz
+xxxx= het begin adres
+yyyy= het eind adres
+zz=het getal waarmee het geheugen gevuld moet worden
+
+Dit commando stelt u in staat snel een bepaald gedeelte van het geheugen met een getal te vullen.
+
+voorbeeld:	F 3000 4000 00 Hiermee vult u het geheugen van 3000 t/m
+		              4000 met het getal 00.
+
+Opmerkingen :Dit commando is makkelijk om een gedeelte van het geheugen te wissen waarin u gaat programmeren, zodat u uw programma gemakkelijk kunt terugvinden.
+Soort: C,D
+
+G go Het runnen van machinetaal programma' s
+
+Syntax
+
+G xxxx
+xxxx=	het begin adres
+
+Dit commando start een machinetaal programma op het door u gegeven begin adres.
+
+Voorbeeld:	G 3000 Hiermee start u het programma dat op 3000 begint.
+Soort:
+C,D
+
+H	Hunt memory	Zoeken naar getallen of strings
+Syntax:	H xxxx yyyy zl z2 z3/"<tekst>"
+xxxx =	het begin adres
+yyyy =	het eind adres
+zn=	het gezochte getal
+tekst = de gezochte tekst
+
+Dit commandob stelt u in staat een bepaalde combinatie van getallen of een tekstgedeelte in het geheugen op te zoeken. Als de gezochte combinatie of het gezochte tekstgedeelte wordt gevonden, dan worden de geheugenlocaties waar het gezochte staat, op het scherm weergegeven.
+	Voorbeeld:	H 1000 8000 A9 00	Hiermee zoekt u in het gedeelte van
+			1000 t/is 8000 naar A9 00
+H 2000 F000 "FINAL" Hiermee zoekt u in het gedeelte van
+2000 t/is F000 naar de tekst FINAL
+
+Opmerkingen:Met dit commando kunt u bijvoorbeeld een bepaald gedeelte van een programma opzoeken, omdat het programma intern wordt opgeslagen als getallen. Zoekt u bijvoorbeeld naar de instruktie LDA #$00, dan geeft u als getallen A9 00.
+	Soort:	C,D
+
+I	Interrogate	Karakters tonen of invoeren
+
+Syntax:	I xxxx yyyy
+xxxx	= het begin adres 
+yyyy = het eind adres
+
+Dit commando stelt u in staat teksten te tonen of te veranderen. Na het intypen van dit commando, owordt de inhoud van het geheugen in tekst representatie weergegeven. U heeft nu de mogelijkheid de teksten te veranderen door ze te verbeteren.
+	Voorbeeld:	I 2000 203F
+
+Scherm:	. 1 2000 203F
+.'2000 HALLO DIT IS EEN TEST V/O FC III
+
+Opmerkingen:Door gebruik te maken van dit commando, hoeft u niet steeds de waarden van de teksten op te zoeken en deze dan
+in te typen. U kunt nu de tekst zelf intypen.
+L	Load	Laadt een machine taal programma
+Syntax:	L "<file-naam>",xx[,yyyy]
+x = het device nummer 01 voor cassette
+08 voor diskette
+yyyy = het begin adres
+
+Dit commando stelt u in staat een programma te laden.
+	Voorbeeld:	L "test",Ol	Hiermee laadt u het programma test van
+			cassette
+		L "test",08	Idem voor diskette
+Soort:
+L "test",08,2000	Idem voor diskette, maar op een door u gewenst begin adres
+
+Opmerkingen: Het opgeven van een begin adres is bedoeld om een programma te "reloceren", d.w.z. op een andere plaats zetten. Dit is uiteraard geschikt om allerlei kleine machinetaal routines aan elkaar vast te koppelen; tevens bezit u hiermee de mogelijkheid om zelfstartende programma's te bekijken door ze op een andere geheugen locatie te laden. Het reloceren van programma's is alleen mogelijk als u met disk werkt.
+
+Soort C.
+
+M Memory display Kijken naar het geheugen
+
+Syntax:M xxxx yyyy 
+xxxx = het begin adres 
+yyyy = het eind adres
+
+Dit commando toont u de inhoud van een geheugendeel, zowel in hexadeci maal als, waar mogelijk, een character (een letter, nummer, of grafisch symbool). De inhoud van deze locaties worden op het scherm getoond. Het eerste nummer op de regel (een vier-cijferig nummer) is het geheugenadres. De acht twee-cijferige nummers zijn de inhoud van die geheugenlocatie en de zeven opvolgende. Aan het einde van elke regel staan 8 characters. De 8 twee-cijferige nummers zijn de ASCII codes van deze characters.
+U kunt de inhoud van het geheugen veranderen,door de getallen gewoon te verbeteren.
+
+Voorbeeld:	M 2000 2010
+Scherm:
+	.M 2000  201F
+	.:2000	48	41	4C	4C	4F	20	44	49	HALLO DI
+	.:2008	54	20	49	53	20	45	45	4E	T IS EEN
+	.:2010	20	54	45	53	54	20	56	2F	 TEST V/
+	.:2018	44	20	46	43	20	49	49	49	0 F0 III
+
+Opmerkignen:Om een groot geheugendeel te bekijken, hoeft u alleen maar M gevolgd door het begin adres in te typen. Dit zal dan de eerste 8 geheugenlocaties tonen. Om verder te gaan kunt u gebruik maken van het scrollen.
+
+Om een bepaalde geheugen locatie aan te passen, typt u de door u gewenste waarde er gewoon overheen. Als u daarna <RETURN> indrukt is het geheugen veranderd.
+
+Soort:C,D
+
+O Bank switching Omschakelen geheugen banken.
+Syntax:Ox (De letter 0 gevolg door een getal)
+ x = is een getal van 0 t/in 7
+
+Dit commando stelt u in staat ROM's in en uit te schakelen, zodat u voor een machinetaal programma de volledige 64 K kunt benutten. Door het kiezen van verschillende waarden, kunt u verschillende banken In en uit schakelen.
+Ook kunt u met dit commando vanuit de diskmonitor in te computer monitor terugkomen.
+
+De betekenis van de waarden kunt u in onderstaande tabel
+terugvinden.
+
+Op $0000-S7FFF $8000-$9FFF $A000-$BFFF $0000-$CFFF $0000-$DFFF $E000-$FFFF
+dr 0-32767 32768-40959 40960-49151 49152-53247 53248-57343 57344-65535
+	00	RAM	RAM	RAM	RAM	RAM	RAM
+	01	RAM	RAM	RAM	RAM	RAM	RAM
+	02	RAM	RAM	BASIC	RAM	CHAR-ROM	KERNAL
+	03	RAM	RAM	BASIC	RAM	CHAR-ROM	KERNAL
+	04	RAM	RAM	RAM	RAM	RAM	RAM
+	05	RAM	RAM	RAM	RAM	I/0-REG	RAM
+	06	RAM	RAM	BASIC	RAM	I/O-REG	KERNAL
+	07	RAM	RAM	BASIC	RAM	I/O-REG	KERNAL
+
+Verklaringen:
+RAM
+CHAR-ROM Het karakter ROM
+I/0-REG Input/Output-Register en Timer (CIA#1 en CIA#2)
+KERNAL Het Operating System (kernal)
+
+OD Disk Monitor
+
+Syntax:OD
+
+Dit commando schakelt van de computer monitor naar de diskmonitor. Na deze opdracht werken de geheugen commando's met het geheugen van de computer.
+
+opmerkingen: u komt weer terug in de computer monitor door enkel een 0
+In te typen.
+
+P Print memory Afdrukken op de printer
+
+Syntax: P
+
+Dit commando stuurt de uitvoer van het volgende commando naar de printer. Als u nu commando's als D 1000 10AO of M 1000 10A0 gebruikt, verschijnt de uitvoer op de printer. Door nog een keer P In te drukken komt de uitvoer weer op het beeldscherm.
+
+Soort: C
+
+R Registers display Kijken naar registers
+
+Syntax:R
+
+Dit commando stelt u In staat alle registers te bekijken. Van het status register wordt zelfs nog bit voor bit weergegeven. Een sterretje "*" geeft aan dat het bit 1 is, een punt "." geeft aan dat het bit 0 is.
+Tevens heeft u de mogelijkheid de waarden te verbeteren.
+
+Voorbeeld:R
+
+Scherm: .R
+.PC IRQ BK AC XR YR SP NV#BDIZC 
+.C000 EA31 07 06 56 EA FC *o**o*o*
+
+Opmerkingen:De registers die worden weergegeven zijn:
+PC = Program Counter
+IRQ = Interrupt ReQuest
+BK = De banken die u ingeschakeld heeft
+AC = Accumulator
+XR = X Register
+YR = Y Register
+SP = Stack Pointer
+N = De Negative Flag van het Status Register
+V = De Overfow Flag van het Status Register
+# = (Wordt niet gebruikt)
+B = De Break Commando Flag van het Status Register
+D= De Decimal Mode Flag van het Status Register
+I = De Interrupt Disable Flag van het Status Register
+Z = De Zero Flag van het Status Register
+C= De Carry Flag van het Status Register
+
+Het verbeteren van de getoonde waarden is bijvoorbeeld erg handig als u een interrtapt routine schrijft. Normaal gesproken moet u dan een klein programmaatje schrijven dat de interrupt vector omzet, maar nu hoeft u alleen de juiste waarde over de IRQ waarde heen te typen.
+
+S Save memory Bewaren van machinetaal programma's
+
+Syntax:S "<file-naam>",xx,yyyy,zzzz
+xx	= device nummer 01 voor cassette 08 voor diskette
+yyyy = het begin adres
+zzzz = het eind adres + 1
+
+Dit commando stelt u in staat een programma te bewaren op zowel cassette als diskette.
+
+S "test",Ol,1000,2000	Hiermee bewaart to het programma uit het geheugen 1000 t/in 1FFF onder de naam test op cassette.
+S "test",08,1000,2000 Idem voor diskette
+
+Let erop dat het eind adres dat u opgeeft bij het saven, één groter is dan de plaats waar to programma eindigt.
+Soort C.
+
+T Transfer memory Het verplaatsen van geheugendelen
+
+Syntax T xxxx yyyy zzzz
+xxxx = het begin adres van het blok 
+yyyy het eind adres van het blok
+zzzz = het begin adres waar het moet komen
+
+kopieert een geheugendeel van een plaats naar een andere.
+
+T 2000 3000 9000	Hiermee verplaatst to het blok van 2000 t/is 3000 naar 9000
+
+De computer berekent zelf het eind adres.
+Let op dat u de delen elkaar niet laat overlappen.
+
+Soort C,D
+
+X Exit het verlaten van de monitor
+Dit commando stelt u in staat de monitor te verlaten. 
+
+# Decimaal naar hexadecimaal omzetten
+
+Syntax: #<getal>
+getal = het gewenste getal (in het decimale getalstelsel)
+
+Dit commando stelt u in staat getallen van het decimale getalstelsel, naar het hexadecimale getalstelsel om te rekenen.
+
+Voorbeeld #53281	Hiermee laat to het getal 53281 omnrekenen. Het antwoord zal $0021 zijn.
+
+$ Hexadecimaal naar decimaal omzetten
+Syntax:$ xxxx
+xxxx	= het gewenste getal
+
+Dit commando stelt u in staat getallen van het hexadecimale getalstelsel, naar het decimale getalstelsel om te rekenen.
+
+Voorveel $D021	Hiermee laat to het getal D021 onirekenen. Het antwoord zal 53281 (decimaal) zijn.
+
+@ Disk cominands	Disk commando's
+
+Syntax: @ [<diskcommando>]
+
+Dit commando stelt u in staat gemakkelijk de status van de disk-drive op te vragen. Ook kunt to met dit commando diskcommando's geven, of overgaan naar een tweede disk-drive.
+
+Voorbeeld:@ leest het ERROR-kanaal uit
+@$ toont de directory
+@N:naam,id formatteert een diskette
+
+Opmerkingen:Dit commando Dit commando is vrijwel hetzelfde als het BASIC DOS" commando.
+
+*R Read Block	Het lezen van een blok van de disk in het geheugen van de computer
+
+Syntax:*R xx yy zz
+xx	= het track nummer van het blok
+yy	=het sector nummer van het blok
+zz = de plaats waar to het blok in het geheugen van de computer wilt hebben (zz komt overeen met zzOO)
+
+Dit commando stelt u in staat een blok van de diskette te lezen en deze te veranderen. Nadat het blok gelezen is, staat het in het geheugen van de computer. Nu heeft to de mogelijkheid om dat blok op alle door de Final Cartridge III geboden manieren te bekijken en te veranderen.
+
+Voorbeeld *R 12 00 CE Dit leest het eerste blok van de directory
+
+Opmerkingen:Indien geen geheugenadres wordt opgegeven, wordt het blok altijd weggeschreven op adres $CFOO
+
+Soort:C
+
+*W Write Block Het schrijven van een blok
+
+Syntax:*W xx yy zz
+xx	= het track nummer van het blok
+yy = het sector nummer van het blok
+zz = de plaats van het blok in het geheugen van de computer dat to op schijf wilt zetten (zz komt overeen met zzOO)
+
+Dit commando stelt u in staat een blok geheugen (terug) op de diskette te zetten.
+
+Voorbeeld *W 12 00 CE	Dit schrijft het geheugen van CEOO t/m CEFF op de diskette als het eerste blok van de directory
+
+Indien geen geheugenadres wordt opgegeven, wordt het blok altijd verondersteld op adres $CFOO te staan.
+
+Soort:C.
+
+
+OPMERKINGEN
+
+INLEIDING
+In dit hoofdstuk vindt u verschillende opmerkingen over de Final
+Cartridge III. Bij deze opmerkingen kunt to verschillende redenen
+vinden waarom iets niet doet wat to ervan verwacht.
+
+OPMERKINGEN OVER DE FREEZER
+Bij sommige programma's kan het vrij lang duren voordat het freezer menu verschijnt.
+
+Bevries nooit een programma tijdens het laden.
+
+Hoewel bijna alle programma's gefreezed kunnen worden, kan het mogelijk zijn dat u van sommige programma's geen backup kunt maken, of deze programma's niet kunt vervolgen. Dit komt door nieuwe ingewikkelde beveiligingen.
+
+BACKUPS
+Bij het maken van backups raden wij u aan eerst vanuit de freeze het commando zero kill te gebruiken voordat u uw programma laadt Op die manier bespaart to meestal een hoop geheugen en wordt de backup dus zo klein mogelijk.
+
+Als to een backup met de Final Cartridge III maakt, bestaat hij uit twee delen. Dit is speciaal gedaan om de backups uitwisselbaar met de Final Cartridge II te houden.
+
+Een backup krijgt de naam F0 en -F0. Als to wilt kunt to deze naam veranderen, maar beide backup delen moeten wel de zelfde naam krijgen, met dien verstande dat de naam van het grote deel vooraf wordt gegaan door een min-teken.
+
+Backups die u van de Final Cartridge III zelf maakt, werken niet!
+
+Backups van tape moeten geladen worden met de ingebouwde snellader
+of met een normale snellader.
+
+Om er zeker van te zijn dat de backups ook zonder Final Cartridge III werken, kunt to die programma's het beste freezen vanuit de standaard Commodore stand.
+
+Het kan soms nodig zijn dat u uw disk-drive moet resetten voordat
+een backup kunt maken.
+
+PRINT
+Helaas zijn we er niet helemaal in geslaagd alle rasterinterrupts te ondervangen, hierdoor kan het voorkomen dat u enkele tekeningen niet correct kunt uitprinten.
+
+Split screens werken met rasterinterrupts, d.w.z. een deel van beeld wordt opgebouwd als de video-scan voorbij de betreffende "line" van het scherm is. Ons oog neemt dit niet waar; wij zien slechts een volledig beeld. Deze screens kunnen niet volledig worden geprint.
+
+Vanuit het print menu komt to altijd in de desktop.
+
+GAME
+Na het activeren van de autofire kunt to alleen weer via autofire het programma te vervolgen als to het nog een keer freezed.
+
+OPMERKINGEN OVER DE DESKTOP
+Hoewel de Final Cartridge III geen geheugen gebruikt, maakt de desktop wel gebruik van het geheugen. Dit is de reden waarom to eerst gewaarschuwd wordt als to BASIC verlaat.
+
+OPMERKIGNEN OVER DE RESET
+Met de resetknop achter op de Final Cartridge III kunt to alle programma's resetten.
+Door de Commodore <C=> toets ingedrukt te houden terwijl to reset,
+	komt u altijd in de desktop terecht.
+			Door de toets <RUN/STOP> ingedrukt te houden terwijl to reset, komt u
+			altijd in BASIC terecht.
+			Door enkel de resetknop in te drukken komt u in de huidige stand
+	terecht.
+OPMERKINGEN OVER BASIC
+PACKER
+Tegenwoordig zijn zeer veel programma's als gepackt. Zo'n programma met wordt dan alleen maar groter als to het een tweede keer packt.
+
+OPMERKINGEN OVER MUIZEN
+Hoewel het mogelijk is om met een muis in de muisstand te werken, raden wij u aan een muis in joystickstand te gebruiken. Sommige muizen blokkeren namelijk het keyboard. Mede hierdoor kunt to de freezer alleen vanuit joystickstand besturen.
+
+OPMERKINGEN OVER DE DISK SNELLADER
+Teneinde problemen te voorkomen hij oude disk-drives en slechte diskettes, hebben wij de snellader teruggebracht tot 15 maal sneller. Het tijdsverschil is minimaal en het voorkomt veel ergernis.
+
+
+Veel commerciële programmatuur is beveiligd door middel van speciale laad-routines. Het is onmogelijk deze routines te "passeren" en de
+Final Cartridge III zal dat ook niet proberen. Dit houdt in, dat de
+Final Cartridge III zoveel mogelijk met de disk-snellader zal proberen in te laden en de rest aan de speciale laad-routines zal overlaten.
+Het is gebleken dat de eerste versie van de Final Cartridge III niet
+helemaal goed werkte bij computers waar SPEED0S ingebouwd was. Dit euvel is bij latere versies verholpen.

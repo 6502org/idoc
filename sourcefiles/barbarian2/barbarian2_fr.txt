@@ -1,0 +1,177 @@
+*********
+
+Welcome to iDOC= - the international CBM documentation project!
+
+The goal of iDOC= is to preserve (non-English) Commodore related documents
+in electronic text format that might otherwise cease to exist with the rapid
+advancement of computer technology and declining interest in 8-bit computers
+on the part of the general population. If you would like to help by
+converting Commodore related hardcopy documents to electronic texts please
+contact the manager of iDOC=, Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names consists of a reasonably short unique title, followed by the
+document language. Two optional fields follow; first the document version (0
+for incomplete texts, version 1 is usually unnumbered), and then the
+document source, if there are more than one. Finally, the document is given
+a .txt extension.
+
+The author(s) of the original document and members of iDOC= make no
+representations about the accuracy or suitability of this material for any
+purpose. This etext is provided "as-is". Please refer to the warranty of the
+original document, if any, that may included in this etext. No other
+warranties, express or implied, are made to you as to the etext or any
+medium it may be on. Neither the author(s) nor the members of iDOC= will
+assume liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext. Therefore
+if you read this document or use the information herein you do so at your
+own risk.
+
+*********
+
+The iDOC= etext of the Barbarian 2 manual, converted to text by Peter Karlsson
+<pk@abc.se>
+
+barbarian2_fr.txt, May 2001, etext #71.
+
+Note from the etexter: 
+
+I do not speak French. Expect typos.
+
+*********
+
+PROLOGUE
+
+A la finale de BARBARIAN - LE GUERRIER ABSOLU, le barbare a vaincu les
+guerriers de Drax et libéré la Princesse Mariana de son mauvais sort.
+
+Drax s'est enfui dans les donjons au-dessous de son château noir, jurant de
+créér des ravages dans la Cite Précieuse.
+
+Il fut decidé qu'il n'y avait qu'un seul moyen d'arrêter Drax. Le barbare et
+Mariana - elle-même une épéiste accomplie - sont les seuls deux guerriers
+assez habiles pour survive le voyage périleux jusqu'à la taniere de Drax.
+Ils doivent l'arrêter avant qu'il ne soit trop tard.
+
+  BARBARIAN II - LE DONJON DE DRAX
+
+CHOIX DE PERSONNAGE
+
+Vous pouvez choisir d'être le barbare ou la Princesse Mariana. Au debut du
+jeu les deux personnages apparaissent. Choisissez vore guerrier en bougeant
+le joystick à gauche ou à droite et en pressant FIRE.
+
+NICEAUX
+
+Vous devez vous battre pour avances à travers trois niveaux - les Terres
+Désolees, les Cavernes, et les Donjon - avant d'arriver au quatrieme niveau,
+le Sanctuaire Secret de Drax. Ces différentes parties doivent être jouées
+dans le bon ordre.
+
+Chacun de ces trois premiers niveaux est un labyrinthe fait de 28 écrans.
+Chaque fois que vous voyez un nouvel écran, vous avez la possibilité de
+marcher à gauche, à droite, ou à travers les portes ou cavernes au fond de
+l'écran.
+
+La direction dans laquelle vous marchez, que vous pouvez suivre sur une
+carte, change continuellement et c'est pourquoi un compas (sur lequel l'épée
+pointe toujours vers le Nord) a été placé au bas de l'écran.
+
+Lorsque vous arrivez à la sortie du niveau suivant, le Visuel de Niveau va
+clignoter pour vous avertir. Il vaut mieux ne pas quitter un niveau sans
+receuillir d'abord tous les objets magiques utilisables (voir ci-dessous).
+
+MONSTRES
+
+Sur chacun des trois premiers niveaux vous devez combattre six types
+différents de monstres, certains peuvent être tués avec un coup placé au bon
+endroit.
+Ils sont:
+
+[Les Terres Désolées] Bêtes Sauriennes, Hommes de Neanderthal, Singes,
+Poulent Mutants, Stabbers, Floaters.
+
+[Les Caverns] Carnivores, Gardes d'Orc, Crabes, Choses Glissantes, Gnomes de
+Cave, Stingers.
+
+[Le Donjon] Choses de Fosses, Maîtres de Donjon, Larves Géantes, Gobblers,
+Yeux, Orclets.
+
+Si vous survivez jusqu'au Sanctuaire de Drax, vous devez faire face à
+l'Idole Vivante, un grand Demon et, finalement, le redoutable Drax!
+
+OBJECTS MAGIQUES
+
+A chacun des trois premiers niveaux, il y aura deux objets magiques que vous
+devez absolument receuillir afin de survivre au cours de votre quête.
+
+[L'axe] augmente vos forces;
+[Le globe] vous empêche d'être tué instantanément par les pouvoirs magiques
+de Drax;
+[La potion] augmente votre résistance;
+[La clé] ouvre les portes à herses;
+[La bouclier] vous protège contre une mort instantanée par le feu du Demon;
+[La bijou] mets l'Idole Vivante hors de combat lorsque l'Idole est atteinte.
+
+ENERGIE AND VIES
+
+Votre energie est visualisée sous forme de barre au coin supérieur droit de
+l'écran.
+
+Vous commencez le jeu avec cinq vies. Vous pouvez gagner des vies
+supplémentaires à travers le jeu en ramassant tous les crânes que vous
+pourrez trouver. Ceux-ci contiennent la force-vie des guerriers qui vous ont
+précédé. Lorsque vous perdez toutes vos vies, vous recommencez au niveau
+auquel vous vous trouvez.
+
+L'énergie du monstre que vous êtes en train de combattre est visualisée sous
+forme de barre au coin supérieur gauche de l'écran. Lorsqu'il n'y a plus
+d'énergie, la monstre est tué.
+
+POINTS
+
+Les mouvements de combat les plus difficiles marqueront beaucoup de points
+et freont plus de degâts.
+
+MOUVEMENTS DU JOYSTICK
+
+Ceci sont vous directives pour le joystick lorsque vous êtes tournés vers la
+droite (inversez les mouvements lorsque vous êtes tournés vers la gauche).
+
+ SANS APPUYER LE BOUTON FEU          EN APPUYANT SUR LE BOUTON FEU
+            COURSE                COUP AU-DESSUS  OU  SAUT EN COURANT
+              ^                     DE LA TÊTE    ^   (QUAND PRÉCÉDÉ
+              |                                   |   PAR UNE COURSE)
+  MARCHE <---   --->  MARCHE     COUP VOLANT <---   ---> COUP DE
+ EN AVANT    / \    EN ARRIÈRE    À LA TÊTE       |       PIED
+            / | \                                 V
+    À TRAVERS | À TRAVERS                     COUP BAS
+    LA PORTE  V  LA PORTE
+          TOUR SUR
+          SOI-MÊME
+
+Pour sauter au-dessus de trous ou fosses, vous aurez besoin de sauter en
+courant. Si vous ne sautez pas assez loin, vous vous trouverez vacillant sur
+le rebors du trou. En agitant rapidement le joystick à droite et à gauche,
+vous pouves être sauvé.
+
+BARBARIAN II a été conçu et créé par STEVE BROWN. Son: RICHARD JOSEPH.
+Graphiques: JO WALKER et STEVE BROWN. Amstrad programmation: PAUL ATKINSON
+et TOM LANIGAN our ICON DESIGN. Atari ST et Amiga programmation: I.D.S.
+Commodore 64 programmation: ROB STEVENS. Graphiques supplémentaires: LORNE
+CAMPBELL. Jeu et emballage © Palace Software 1988.
+
+*********
+
+End of the iDOC= etext of the Barbarian 2 manual.
+
+*********

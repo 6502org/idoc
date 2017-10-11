@@ -1,0 +1,301 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore
+64 related documents in electronic text format that might otherwise cease
+to exist with the rapid advancement of computer technology and declining
+interest in 8-bit computers on the part of the general population. If you
+would like to help by converting C64 related hardcopy documents to
+electronic texts please contact the manager of International Project 64,
+Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings,
+and indexes may have been either altered or sacrificed due to the
+limitations of plain vanilla text. Diagrams may have been eliminated
+where ASCII-art was not feasible. Program listings may be missing
+display codes where substitutions were not possible. Tables of contents
+and indexes may have been changed from page number references to section
+number references. Please accept our apologies for these limitations,
+alterations, and possible omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The first
+characters of the file name are an abbreviation of the original document
+name and the language of the etext. The version number of the etext
+follows next. After that a letter may appear to indicate the particular
+source of the document. Finally, the document is given a .TXT extension.
+
+The author(s) of the original document and members of International
+Project 64 make no representations about the accuracy or suitability of
+this material for any purpose. This etext is provided "as-is". Please
+refer to the warranty of the original document, if any, that may included
+in this etext. No other warranties, express or implied, are made to you
+as to the etext or any medium it may be on. Neither the author(s) nor the
+members of International Project 64 will assume liability for damages
+either from the direct or indirect use of this etext or from the
+distribution of or modification to this etext. Therefore if you read this
+document or use the information herein you do so at your own risk.
+
+*********
+
+The International Project 64 etext of the Commodore 1084 Monitor manual,
+converted to text by Josef Angstenberger <flood@starmail.com>
+
+C1084DE1.TXT, November 1997, etext #20.
+
+Note from the etexter:
+
+Please visit the FLOOD Homepage
+  http://www.geocities.com/SiliconValley/Lakes/5732
+and check out our first demo -In Your Memory-
+
+Vultan / Flood
+
+*********
+
+COMMODORE MODELL 1084 BEDIENUNGSANLEITUNG
+=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+
+
+Einleitung
+----------
+Dieser Monitor ist ein sehr moderner Farbmonitor und für den Anschluß an
+Heim- und Personal-Computer hervorragend geeignet. Da er außerdem an
+Videorecorder, Bildplattenspieler und Fernsehtuner angeschlossen werden
+kann, ist sein praktischer Nutzen besonders groß.
+
+Aufstellung / Belüftung
+-----------------------
+Damit das Gerät nicht zu warm wird, dürfen die Lüftungsöffnungen nicht
+abgedeckt werden.
+Der Monitor sollte nicht in der Nähe einer Wärmequelle aufgestellt
+werden, aber auch nicht auf eine weiche Unterlage, da hierdurch die
+Lüftungsschlitze an der Unterseite des Geräts unwirksam werden.
+
+Stützbügel
+----------
+Mit Hilfe des Stützbügels können Sie den Monitor nach hinten klappen,
+so daß er in einem günstigen Betrachtungswinkel steht.
+
+Netzanschluß
+------------
+Der Monitor ist für Netzspannungen von 220 bis 240 V geeignet. Falls Sie
+den Monitor an eine andere Netzspannung anschließen wollen, wenden Sie
+sich bitte an Ihren Händler.
+
+
+Anschlüsse (an der Rückseite)
+=============================
+
+Anschlüsse an den Computer
+--------------------------
+Ihr Monitor besitzt Anschlüsse für den Eingang des Video- und Audio-
+Signals. Die Buchsen sind entsprechend gekennzeichnet.
+
+CVBS/L (Luminance) IN (CINCH-Typ)
+---------------------------------
+FBAS (zusammengesetztes Signal) oder Luminance Eingang für CINCH-Stecker.
+Für den Anschluß eines Computers oder anderer FBAS-Quellen.
+
+CHROMA IN (CINCH-Typ)
+---------------------
+Chroma (Farbsignal) Eingang für CINCH-Stecker.
+Für den Anschluß eines Computers.
+
+AUDIO IN (CINCH-Typ)
+--------------------
+Für den Anschluß einer Signalquelle mit einem Ton-(Audio-) Signalausgang.
+
+LCA/CVBS-Schalter
+-----------------
+Mit dem LCA/CVBS-Schalter können Sie das LCA-Signal oder das FBAS-Signal
+(euroconnector oder CINCH-Stecker) wählen.
+
+TTL-RGB-Eingang (8polig, DIN-Typ 270°)
+--------------------------------------
+Für den Anschluß eines Computers mit TTL-RGB-Ausgang und getrennter
+Synchronisation (TTL-Niveau).
+
+FBAS + RGB linear + Audio-Eingang (Euro-Anschluß)
+-------------------------------------------------
+Für den Anschluß von Videorecorder, Computer, Bildplattenspieler,
+Fernsehtuner usw., die mit Euro-Anschluß ausgerüstet sind.
+
+Anmerkung:
+----------
+Wenn Sie beide RGB-Eingänge gleichzeitig anschließen, hat der TTL-RGB-
+Eingang automatisch Vorrang vor dem linearen RGB-Eingang. Nach dem
+Ausschalten oder Abnehmen des Verbindungskabels der TTL-Quelle wird RGB
+linear eingeschaltet. Sie können gleichzeitig eine FBAS-Quelle (Computer,
+Videorecorder, Fernsehtuner usw.) an einen der FBAS-Eingänge anschließen,
+aber nicht an beide Eingänge zugleich, da dies Bildstörungen verursachen
+kann.
+
+
+Anschluß (linke Seite)
+======================
+
+Kopfhörer
+---------
+Auf der linken Seite Ihres Monitors finden Sie eine Klinkenstecker-Buchse
+(3,5 mm) für den Kopfhöreranschluß.
+
+
+Bedienung
+=========
+
+Einschalten
+-----------
+Taste (I) drücken (LED leuchtet).
+
+Ausschalten
+-----------
+Taste (I) erneut drücken.
+
+Bild- und Toneinsteller
+-----------------------
+Klappe öffnen.
+Mit folgenden Bedienungsreglern (von links nach rechts) können die Bild-
+und Tonsignale optimal eingestellt werden:
+- Bei Bedarf kann das Bild mit Knopf "H. CENTERING" von links nach rechts
+  horizontal verschoben werden.
+- Helligkeit mit Knopf "BRIGHTNESS" einstellen.
+- Kontrast mit Knopf "CONTRAST" einstellen.
+- Farbsättigung mit Knopf "COLOR" einstellen (nicht, wenn RGB-Quellen
+  angeschlossen sind).
+- Bildschärfe mit Knopf "SHARPNESS" einstellen (nicht, wenn RGB-Quellen
+  angeschlossen sind).
+- Lautstärke mit Knopf "VOLUME" einstellen.
+
+CVBS/RGB-Schalter
+-----------------
+Mit dem CVBS/RGB-Schalter können Sie das FBAS- (oder LCA-) Signal (des
+Videorecorders, Computer oder Fernsehtuners) oder das RGB-Signal (des
+Computers wählen.)
+
+
+Bedienungsorgane (an der Rückseite)
+===================================
+
+VCR-Taste
+---------
+Wenn Sie Ihren Monitor an einen Videorecorder oder einen Bildplatten-
+spieler anschließen wollen, muß zur Einstellung des Bildes Taste "VCR"
+gedrückt werden. Beim Anschluß an einen Fernsehtuner sollte diese Taste
+nicht gedrückt sein.
+
+V. Höhe
+-------
+Die Bildhöhe können Sie mit Knopf "V.HEIGHT" einstellen.
+
+V. Zentrierung
+--------------
+Bei Bedarf können Sie das Bild mit Knopf "V.CENTERING" vertikal
+verschieben.
+
+H. Breite
+---------
+Die Bildbreite läßt sich mit Knopf "V.WIDTH" einstellen.
+
+
+Technische Daten*
+=================
+
+Bildröhre                           : 14 Zoll, in-line-Schlitzmaskenröhre
+                                      Schlitzabstand 0,42 mm,
+                                      dunkler Bildschirm
+Ablenkung                           : 90°
+-------------------------------------------------------------------------
+Monitor-Eingangssignale bei CINCH-Buchse
+1) Zusammengesetztes Videosignal    : (1 V ± 0,5 Vss). Impedanz: 75 Ohm
+   mit negativer Synchronisation
+2) Audiosignal                      : (150 mVeff - 2 Veff). Imp.: 10 kOhm
+3) Luminance Signal                 : (1 V ± 0.1 Vpp). Impedanz: 75 Ohm
+4) Chroma Signal                    : (1 V ± 0.1 Vpp). Impedanz: 75 Ohm
+-------------------------------------------------------------------------
+Monitoreingänge für RGB-Signale
+1) Euro-Anschluß                    : RGB linear (siehe technische Daten)
+2) DIN-Anschluß Buchse              : RGB TTL (siehe technische Daten)
+-------------------------------------------------------------------------
+Auflösung                        : 600 Zeilen in Bildmitte, Stellung RGB
+Zeichen                          : > 2000 Zeichen (80 x 25), Stellung RGB
+Bildfrequenz                     : 50/60 Hz
+Zeilenfrequenz                   : 15625 Hz
+Ton-Ausgangsleistung             : 1 W - Klirrfaktor 5%
+Netzspannung                     : 230 V ± 15%
+Leistungsaufnahme                : 75 W
+Abmessungen (H x B x T)          : 320 x 350 x 387 mm
+Gewicht                          : 11 kg
+-------------------------------------------------------------------------
+* Änderungen vorbehalten
+
+Der Euro-Anschluß hat folgende Spezifikationen:
+
+Stift                                                         +------+
+ 1                                                            |    | |  1
+ 2 Audio-Eingang                  0,5 Vrms/ > 10 kOhm       2 | |    |
+ 3                                                            |    | |  3
+ 4 Erde für Audio                                           4 | |    |
+ 5 Erde für B-Eingang                                         |    | |  5
+ 6 Audio-Eingang                  0,5 Vrms/ > 10 kOhm       6 | |    |
+ 7 B-Eingang                                                  |    | |  7
+ 8                                                          8 | |    |
+ 9 Erde für G-Eingang                                         |    | |  9
+10                                                         10 | |    |
+11 G-Eingang                      0,7 Vpp/75 Ohm              |    | | 11
+12                                                         12 | |    |
+13 Erde für R-Eingang                                         |    | | 13
+14                                                         14 | |    |
+15 R-Eingang                      0,7 Vpp/75 Ohm              |    | | 15
+16 Schnelle Austastung                                     16 | |    |
+17 Erde für FBAS                                              |    | | 17
+18 Erde für schnelle Austastung                            18 | |    |
+19                                                            |    | | 19
+20 FBAS-Eingang (Video)           1 Vpp/75 Ohm             20 | |    |
+21 Steckergehäuse Abschirmung                                 |    |-+ 21
+                                                              +----+
+
+Technische Daten TTL RGB DIN
+----------------------------
+           ___ ___
+         /   +-+   \
+       /             \
+    7 |   *   8   *   | 6
+    3 |   *   *   *   | 1
+    5 |    *     *    | 4
+       \      *      /
+         \____2____/
+
+Stift 1       Status Computer
+Stift 2       rot
+Stift 3       grün
+Stift 4       blau
+Stift 5       Intensität
+Stift 6       Erde
+Stift 7       Horizontalsynchronisation oder zusammgesetzte Sync.
+Stift 8       Vertikalsynchronisation
+
+
+Allgemeine Hinweise
+===================
+- Falls das Bild nicht wie gewünscht aussieht, prüfen Sie bitte, ob alle
+  Bedienungsorgane gut eingestellt sind.
+- Die Rückwand sollte nur von einem Kundendiensttechniker abgenommen
+  werden.
+- Falls erforderlich, das Gerät mit einem feuchten Schwamm reinigen;
+  hierbei keinen Alkohol, Spiritus oder Ammoniak benutzen.
+
+Hiermit wird bescheinigt, daß der Monitor Type 1084 in Übereinstimmung
+mit den Bestimmungen der Amtsblattverfügung 1046/1984 funktentstört ist.
+Der Deutschen Bundespost wurde das Inverkehrbringen dieses Gerätes
+angezeigt und die Berechtigung zur Überprüfung der Serie auf Einhaltung
+der Bestimmungen eingeräumt.
+
+*********
+
+End of the International Project 64 etext of the Commodore 1084 Monitor
+manual.
+
+*********
+

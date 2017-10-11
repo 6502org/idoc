@@ -1,0 +1,153 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore 64
+related documents in electronic text format that might otherwise cease to
+exist with the rapid advancement of computer technology and declining
+interest in 8-bit computers on the part of the general population. If you
+would like to help by converting C64 related hardcopy documents to
+electronic texts please contact the manager of International Project 64,
+Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The first
+characters of the file name are an abbreviation of the original document
+name and the language of the etext. The version number of the etext follows
+next. After that a letter may appear to indicate the particular source of
+the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International Project
+64 make no representations about the accuracy or suitability of this
+material for any purpose. This etext is provided "as-is". Please refer to
+the warranty of the original document, if any, that may included in this
+etext. No other warranties, express or implied, are made to you as to the
+etext or any medium it may be on. Neither the author(s) nor the members of
+International Project 64 will assume liability for damages either from the
+direct or indirect use of this etext or from the distribution of or
+modification to this etext. Therefore if you read this document or use the
+information herein you do so at your own risk.
+
+*********
+
+The International Project 64 etext of the Super Box 64 manual, converted to
+text by Peter Karlsson <pk@abc.se>
+
+SBOXSE1.TXT, February 1998, etext #27.
+
+*********
+
+  SUPER BOX 64
+      för
+Commodore VIC 64
+
+* Anslut 3 cartridges samtidigt
+* IEEE 488 interface
+* Fleranvändarsystem med IEEE
+* Reset-funktion
+
+handic software ab
+
+*********
+
+Super Box 64
+
+Super Box 64 är en expansionsenhet till Commodore VIC 64 som gör det möjligt
+att ansluta upp till tre stycken cartridges samtidigt. En möjlighet som är
+mycket praktiskt i många olika avseenden.
+
+Man kan enkelt skifta mellan t ex ordbehandling och kalkylering,
+maskinkodsmonitor och Tool 64, olika spel etc. Super Box 64 har ett inbyggt
+IEEE 488 interface. Detta gör det möjligt att använda alla de olika
+periferienheter som använder IEEE 488 standard.
+
+Utöver ovanstående finns även en resetfunktion inbyggd som möjliggör
+kallstart av datorn.
+
+
+Lätt att koppla in
+
+Super Box 64 anslutes till cartridgeuttaget bak på VIC 64:an på samma sätt
+som man ansluter en enkel cartridge. Utöver detta ska den medföljande tunna
+sladden anslutas enligt anvisningarna på nedanstående skiss. Genom att
+ansluta denna sladd direkt till datorn kommer IEEE-funktionen inte att ta
+något minnesutrymme i anspråk.
+
+[ bild på anslutning utesluten ]
+
+Anslut kabeln till motståndet märkt R44 exakt som visas på bilden. (Vissa
+versioner av VIC 64 kan se annorlunda ut inuti, det rätta motståndet är dock
+alltid märkt med R44.)
+
+Den inbyggda resetfunktionen i Super Boc 64 gör det möjligt att starta upp
+datorn [... en textrad som är utanför pappret i min kopia ...]
+
+
+Lätt att handskas med
+
+Super Box 64 har en knappsats med vilken man styr de olika funktionerna. Det
+finns fem knappar, en för varje cartridge, en för IEEE och en för reset
+(röd). Genom att trycka in knappen för respektive cartridge aktiveras denna.
+Vill man skifta till en annan cartridge trycker man bara på Önskad knapp
+(samtidigt trycker man in resetknappen), då kopplas automatiskt den förra
+cartridgen ur och den nya aktiveras.
+
+
+Använd PET-skrivare, -skivminne etc med VIC 64:an
+
+IEEE-funktionen gör det möjligt att ansluta alla periferienheter som
+använder IEEE 488 standard. Dessa är t ex alla Commodore PETs enheter, dvs
+skrivare, dubbla skivminnen etc. Man kan exempelvis ansluta skönskrivare
+till sin ordbehandling, göra avancerade utskrifter av Calc Result rapporter
+och använda dubbla skivminnen till Calc Result för snabbare skivhantering.
+IEEE 488 standard används även på de flesta mät- och testinstrument för
+vetenskapligt bruk. vilket gör att VIC 64:an med hjälp av Super Box 64 blir
+en, i prisklassen, oslagbar laboratoriedator.
+
+Speciellt intressanta IEEE-enheter för VIC 64-ägaren är Commodore 2031
+enkelfloppy och 4040 dubbelfloppy. Dessa två använder samma diskformat som
+CBM 1541 enkelfloppy, men är betydligt snabbare.
+
+Knappsatsen innehåller en knapp med vilken man väljer mellan den vanliga
+seriella bussen och IEEE-bussen. Genom att trycka in IEEE-knappen samtidigt
+med knappen för en cartridge kan man använda IEEE-bussen tillsammans med
+cartridgen.
+
+Man kan ansluta högst två IEEE-enheter samtidigt, och dessa måste vara
+påslagna när man aktiverar IEEE-bussen.
+
+Fleranvändarsystem med IEEE
+
+Med hjälp av Super Box 64 kan man ansluta upp till fyra VIC 64 till en eller
+två gemensamma IEEE-enheter, (se ovan). Då krävs en Super Box 64 för varje
+VIC 64. Man ansluter Super Boxens IEEE bus på respektive VIC 64 till IEEE
+bussen på respektive periferienhet. Antalet VIC 64 är dock maximerat till
+fyra.
+
+OBS! Om man kör Commodore single disk 2031 med IEEE-funktionen kommer datorn
+att ge "DEVICE NOT PRESENT" som svar på det första kommandot man ger. Då
+skall man ge kommandot en gång till. Detta gäller endast första gången man
+skickar ett kommando, och systemet måste vara nystartat.
+
+RESET - utan att tömma minnet
+
+Genom att trycka på den röda Reset-knappen aktiveras en kallstart av datorn
+som lämnar innehållet i RAM-cellerna orört. Denna funktion är mycket
+praktisk om systemet skulle låsa sig, man kan alltså starta upp på nytt utan
+att bli av med data lagrade i RAM.
+
+*********
+
+End of the International Project 64 etext of the Super Box 64 manual.
+
+*********

@@ -1,0 +1,1789 @@
+*********
+
+Welcome to iDOC= - the international CBM documentation project!
+
+The goal of iDOC= is to preserve (non-English) Commodore related documents
+in electronic text format that might otherwise cease to exist with the rapid
+advancement of computer technology and declining interest in 8-bit computers
+on the part of the general population. If you would like to help by
+converting Commodore related hardcopy documents to electronic texts please
+contact the manager of iDOC=, Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names consists of a reasonably short unique title, followed by the
+document language. Two optional fields follow; first the document version (0
+for incomplete texts, version 1 is usually unnumbered), and then the
+document source, if there are more than one. Finally, the document is given
+a .txt extension.
+
+The author(s) of the original document and members of iDOC= make no
+representations about the accuracy or suitability of this material for any
+purpose. This etext is provided "as-is". Please refer to the warranty of the
+original document, if any, that may included in this etext. No other
+warranties, express or implied, are made to you as to the etext or any
+medium it may be on. Neither the author(s) nor the members of iDOC= will
+assume liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext. Therefore
+if you read this document or use the information herein you do so at your
+own risk.
+
+*********
+
+The iDOC= etext of the user manual for "Super Expander", Swedish version.
+Converted to text by Anders Carlsson <dal95acn@mds.mdh.se>. This release of 
+the manual was part of a Swedish VIC magazine called VIC=news, nr 2/3, 1982.
+
+superex_sv.txt, August 1999, etext #56
+
+Notes and corrections from the etexter (in Swedish):
+
+Omslagsbilden nämner "Colour", men kommandot heter "COLOR", och i texten
+uppmärksammas att "COLOUR" inte är ett korrekt nyckelord. Notera även att
+det inte är punkterna, utan _färgerna_ som är högupplösande när man använder
+GRAPHIC 2.
+
+I stycke 1.3 står att SUPER EXPANDER "ska" användas med 8K eller 16K
+expansion, vilket uppenbarligen är en felaktig översättning från engelska
+"must". Liknande fel återkommer i stycke 4.3.1, där det också stod att
+parametrarna "s1 och s3", ska förstås vara "s1 till s3". En nödvändig
+NEXT-programrad i exemplet som hör till detta stycke är också adderad.
+I stycke 4.3.12 saknades SYFTE, och musiksymbolen T i exemplet.
+
+I exemplet för avsnitt 5.5 står att ljudet först blir svagare, och sedan
+starkare igen. Enligt definitionen för SOUND borde programmet göra exakt
+det motsatta.
+
+På programrad 1005 i det långa exemplet saknades CTRL <- i strängen AA$ då
+tanken är att det ska låta samtidigt som noternas namn skrivs på skärmen.
+I sammanfattningen av kommandon är syntaxen för att spela not(er) ändrad
+från "P el. PPPPP" till C,D,E,F,G,A,B, vilket ju är så man gör.
+
+Ett par andra smärre stavfel är också rättade, t.ex. "origon" -> "origo".
+Slutligen följer ett antal tryckta programexempel som fanns i den utgåva
+som scannades.
+
+*********
+
+SUPER EXPANDER
+
+Högupplösande grafiskt paket. Inkluderade kommandon: Paint, Draw, Circle,
+Colour, Point och många fler. Innehåller ett utökande 3K RAM.
+
+(omslag : fem stjärnor, och texten SUPER EXPANDER sveper fram genom rymden)
+
+------------------------------------------------------------------------
+
+SUPER EXPANDER ANVÄNDARHANDBOK
+
+INNEHÅLLSREGISTER
+
+Del Ett - Introduktion till Super Expander kassett
+1.1	Introduktion ....................................  1
+1.2	SUPER EXPANDER handbok ..........................  1
+1.3	Laddning av kassetten ...........................  1
+1.4	Super Expander-kommandon ........................  2
+1.5	Komma åt kommandon ..............................  2
+1.6	Konventioner ....................................  2
+1.7	Förenlighet med reglerna för VIC BASIC ..........  3
+1.8	Lagring och körning av SUPER EXPANDER-program ...  3
+1.9	Avslutning av SUPER EXPANDER-program ............  3
+1.10	Felindikation ...................................  3
+
+Del Två - Användning av Funktionstangenterna
+2.1	Introduktion ....................................  4
+2.2	Förbestämda funktioner ..........................  4
+2.3	Ändring av tangentstilldelning ..................  4
+2.4	Tillägg av vagnretur ............................  5
+
+Del Tre - Rita Grafiskt med Super Expander
+3.1	Introduktion ....................................  6
+3.2	Skärmkoordination ...............................  6
+3.3	Färgregister ....................................  6
+3.4	Grafiska kommandon ..............................  6
+3.4.1	GRAPHIC .........................................  7
+3.4.2	COLOR ...........................................  7
+3.4.3	POINT ...........................................  8
+3.4.4	REGION ..........................................  8
+3.4.5	DRAW ............................................  8
+3.4.6	CIRCLE ..........................................  9
+3.4.7	PAINT ...........................................  9
+3.4.8	CHAR ............................................  9
+3.4.9	SCNCLR .......................................... 10
+3.5	Körning av exempel .............................. 10
+	
+Del Fyra - Göra Musik med Super Expander
+4.1	Introduktion .................................... 11
+4.2	Ljudregister .................................... 11
+4.3	Musikkommandon .................................. 11
+4.3.1	SOUND - spela ackord ............................ 11
+4.3.2	CTRL/vänster-pil - för musiktillstånd ........... 12
+4.3.3	P - tar fram musiktecken ........................ 12
+4.3.4	Q - avslutning av musiktecken-utskrift .......... 13
+4.3.5	V - bestämma volymen ............................ 13
+4.3.6	S - val av musikgenerator ....................... 13
+4.3.7	O - val av oktav ................................ 13
+4.3.8	T - val av tempo ................................ 13
+4.3.9	C,D,E,F,G,A,B- musiknoter ....................... 14
+4.3.10	R - musikpaus ................................... 14
+4.3.11  # - spela med förtecknet # ...................... 14
+4.3.12  $ - spela med förtecknet b ...................... 14
+4.4	Sammanfattning .................................. 14
+
+Del Fem - Kommandon för att Läsa Värden
+5.1	Introduktion .................................... 15
+5.2 	RGR ............................................. 15
+5.3	RCOLR ........................................... 15
+5.4	RDOT ............................................ 16
+5.5	RSND ............................................ 16
+5.6	RPOT ............................................ 16
+5.7	RPEN ............................................ 16
+5.8	RJOY ............................................ 17
+5.9	Användningen av läsfunktionerna ................. 17
+
+Del Sex - Sammanfattning
+6.1	Introduktion .................................... 18
+6.2	Programbeskrivning .............................. 18
+6.3	Programlistning ................................. 18
+
+FIGURREGISTER
+
+Figur	Titel
+3-1	Textutskrift .................................... 10
+5-1	Joystick-värden ................................. 17
+
+[ tecknad bild på man som får en "rak höger" från en arm som sticker ut
+  ur en bildskärm, samtidigt som en annan arm tar tag om hans kavaj.
+  Bakom datorn som skärmen är kopplad till står två män, den leende och
+  den andra frågar honom:
+
+  "Har ni någon folkvänligare dator?" (jmf VIC20 - Folkdatorn) ]
+
+------------------------------------------------------------------------
+
+DEL ETT : INTRODUKTION TILL SUPER EXPANDER KASSETT
+
+1.1	Introduktion
+
+VIC 1211A SUPER EXPANDER KASSETT är en intressant och mångsidig
+programmeringshjälp. Den utvidgar operativsystemet på din VIC 20-dator med 
+nya färger, nya grafiska delar och en utökad musikskrivarmöjlighet. Den 
+innehåller också ett extra minne på 3K (RAM) för att göra det möjligt för 
+dig att skriva och köra större program, programmerbara funktioner för att 
+öka hastigheten på programskrivningen och extra kommandon för att göra 
+grafiska former och rita färger på skärmen. De extra kommandona från 
+SUPER EXPANDER kommer att ge en större programmeringskraft på din VIC.
+
+Den här handboken är inte gjord för att lära ut BASIC-programmering på VIC. 
+Om du endast har begränsade kunskaper i BASIC-programmering rekommenderas 
+någon av följande böcker:
+
+* VIC 20 Användarhandbok (som du fick tillsammans med din dator)
+
+* En introduktion till BASIC Del 1 och Del 2 av Andrew Colin
+  (del av VIC läroserie).
+
+1.2	SUPER EXPANDER-handbok
+
+Den här handboken är indelad i sex delar vilka beskrivs översiktligt nedan:
+
+DEL ETT - INTRODUKTION TILL SUPER EXPANDER KASSETT
+
+Den här delen behandlar SUPER EXPANDER i allmänna termer samt förklarar hur
+man laddar kassetten, hur dessa nås och vilka felmeddelanden som kommer i
+händelse av ett felaktigt anrop på ett kommando. Förenligheten mellan SUPER
+EXPANDER-kommandon och VIC BASIC är definierad.
+
+DEL TVÅ - ANVÄNDNINGEN AV FUNKTIONSTANGENTERNA
+
+Den här sektionen beskriver kommandona som automatiskt kopplas till de fyra
+funktionstangenterna på VIC tangentbord och hur programmeraren kan koppla sina
+egna kommandon till dessa tangenter om han så önskar.
+
+DEL TRE - RITA GRAFISKT MED SUPER EXPANDER
+
+Den här delen förklarar hur skärmen delas för syftena med grafiskt ritande och
+hur värdena, som indikerar färgerna som används för att rita grafiska former,
+är dokumenterade. Formatet på varje kommando är givet, dess användningssyfte
+är förklarat och ett exempel ges i form av ett programavsnitt. Kommandona är
+listade i den ordningen de kan tänkas bli skrivna i ett BASIC-program på VIC,
+som det i Del Sex i den här handboken.
+
+DEL FYRA - GÖRA MUSIK MED SUPER EXPANDER
+
+Den här delen beskriver SUPER EXPANDER-kommandon som används för att göra
+musik på VIC. Formatet på varje kommando är beskrivet, dess syfte förklarat
+och ett exempel är givet i form av ett programavsnitt. Kommandona är i den
+ordningen som är nödvändig för att kreera och spela en SUPER EXPANDER-
+musikstycke på VIC.
+
+DEL FEM - KOMMANDON FÖR ATT LÄSA VÄRDEN
+
+SUPER EXPANDER tillåter dig att läsa värdena i de register som används av
+kassetten och de värden som returneras från omgivande utrustning, såsom
+ljuspennor, paddles, joystick m.m. Kommandona för att göra detta är förklarade
+i denna del.
+
+DEL SEX - SAMMANFATTNING
+
+Den här delen beskriver ett program som använder de utökande SUPER EXPANDER-
+kommandona. En hel programlistning finns också med.
+
+1.3	Laddning av kassetten
+
+Försäkra dig alltid om att din dator är avstängd innan du sätter in eller tar
+ut SUPER EXPANDER KASSETT. Kassetten sätts in i expansionsporten på din VIC
+med etiketten uppåt. (Titta i din VIC 20 Användarhandledning.) Om en VIC 1010
+Expansionsenhet är inkopplad måste även den stängas av. SUPER EXPANDER kassett
+ska användas tillsammans med en 8K eller 16K RAM packning. Den får inte
+användas med en 3K RAM packning eftersom det redan är en del av SUPER EXPANDER
+kassetten.
+
+För att starta upp SUPER EXPANDER är det helt enkelt bara att sätta på datorn
+när kassetten är på plats. Din VIC kommer att skriva:
+
+	**** CBM BASIC V2 ****
+	6519 BYTES FREE
+	READY.
+
+Alla SUPER EXPANDER-kommandon, de nya färgerna och de nya grafiska delarna,
+finns nu med i operativsystemet på din VIC. Du kan använda dessa kommandon när
+som helst, precis som vilka andra BASIC-kommandon som helst. Du kan också
+skriva längre program med det extra 3K-minnet (RAM) som är en del av
+kassetten.
+
+Initialiseringen av kassetten inkluderar automatiskt åtta SUPER EXPANDER-
+kommandon till de fyra tangenterna på höger sida på VIC tangentbord, t.ex.
+DRAW, CIRCLE, PAINT. Dessa kommandon kommer fram på skärmen när antingen
+funktionstangenten ensam trycks ned, eller när SHIFT eller C=-tangenten är
+nedtryckta och en funktionstangent trycks ned. (Se Del 2.2) Programmeraren ges
+också möjlighet att tilldela egna värden till dessa tangenter, d.v.s. olika
+från de som genereras från kassetten. (Se del 2.3)
+
+1.4	SUPER EXPANDER-kommandon
+
+Nedan följer en lista på SUPER EXPANDER-kommandon vilka utökar
+operativsystemet på din VIC när kassetten används:
+
+Kommandon för grafiska former:
+GRAPHIC, COLOR, REGION, POINT, DRAW, CIRCLE, PAINT, CHAR, SCNCLR
+
+Kommandon för att skriva musik
+CTRL (vänstra pilen), SOUND, P,Q,V,S,O,T,R,C,D,E,F,G,A,B,#,$
+
+Läsfunktioner:
+RGR,RCOLR,RDOT,RSND,RPOT,RPEN,RJOY
+
+Att tilläggas till ovanstående är kommandot KEY vilket tillåter programmeraren
+att skapa sig egna värden på funktionstangenterna. (Se Del 2.3)
+
+1.5	Komma åt kommandon
+
+Alla SUPER EXPANDER-kommandon för att rita grafiskt kan användas både i direkt
+tillstånd och som en del av ett program, med undantag for kommandona REGION
+och DRAW. Dessa kan inte kommas åt direkt, d.v.s. de måste vara en del av ett
+program. I direkt tillstånd kan man komma åt kommandot utan radnummer och få
+det exekverat när RETURN-tangenten trycks ned.
+
+Notera att tecken skrivna i direkt tillstånd efter GRAPHIC1, GRAPHIC2, och
+GRAPHIC3 kommer inte att skrivas ut på skärmen. Extra noggrannhet måste därför
+iakttas för att försäkra dig om att tecken som skrivs efter dessa kommandon
+verkligen skrivs in korrekt. Om det skulle bli fel kan sådant som redan
+skrivits på skärmen försvinna. Meddelandet "SYNTAX ERROR" kommer då fram på
+VIC normala skärm. SUPER EXPANDER-kommandon som används för att skriva musik
+kan användas i både direkt och indirekt tillstånd. I direkt tillstånd skrivs
+kommandot SOUND in och exekveras genom att RETURN-tangenten trycks ned. De
+återstående musik-kommandona exekveras i direkt tillstånd genom att bara
+trycka på den tangent som tillhör kommandot.
+
+Alla SUPER EXPANDER-funktioner förutom KEY kan användas i ditt program precis
+som om du skulle använda vilken annan BASIC-funktion som helst. Kommandot KEY
+kan endast användas i direkt tillstånd. Det skrivs in och exekveras sedan med
+RETURN-tangenten.
+
+1.6	Konventioner
+
+Formatet på varje SUPER EXPANDER-kommando i handboken är beskrivet med
+följande förutsättningar:
+
+1. Tecken skrivna i stora bokstäver ska skrivas precis som de står. Det finns
+   ingen anledning att använda SHIFT-tangenten för att få stora bokstäver.
+
+2. De tecken som är skrivna med små bokstäver indikerar en användar-
+   specificerad åtkomst, såsom ett par av skärmkoordinater eller ett
+   oktavt tal.
+
+3. De runda parenteserna i varje SUPER EXPANDER-läsfunktion måste skrivas där
+   de står.
+
+4. Andra symboler, som komman och citationstecken måste skrivas exakt där de
+   står.
+
+5. Return-tangenten indikeras genom [RETURN].
+
+6. VIC känner inte till ordet "COLOUR".
+
+Parametrarna som används i Super Expander-kommandon finns i listan nedan:
+
+Parameter	Värde
+
+n		Ett heltal
+sc		Skärmfärg
+bo		Ramfärg
+cha		Teckenfärg
+au		Hjälpfärg
+c		Färg
+cr		Färgregister
+x,y		Skärmkoordinater
+rx		Halva vidden på en cirkel eller en ellips
+ry		Halva höjden på en cirkel eller en ellips
+as		Startpunkt på en arc
+af		Slutpunkt på en arc
+v		Ljudvolym
+
+1.7	Förenlighet med reglerna för VIC BASIC
+
+SUPER EXPANDER-kommandona följer samma regler som VIC BASIC med ett undantag,
+nämligen BASIC-ordet THEN. Om det här ordet föregår ett SUPER EXPANDER-
+kommando så måste ett kolon sättas in efter ordet, d.v.s. THEN: SCNCLR.
+I alla andra avseenden används SUPER EXPANDER-kommandon på samma sätt som
+VIC BASIC-kommandon.
+
+1.8	Lagring och körning av SUPER EXPANDER program
+
+Ett program som använder SUPER EXPANDER kommer inte att fungera om inte SUPER
+EXPANDER kassetten är på plats i din VIC. Programmet kan sparas på eller
+laddas från en diskett eller en kassett på vanligt sätt.
+
+1.9	Avslutning av SUPER EXPANDER program
+
+För att stoppa ett program som använder SUPER EXPANDER-kommandon under tiden
+som programmet körs måste du trycka ned RUN/STOP-tangenten och trycka på
+RESTORE-tangenten. På så vis återkommer du till VIC:s normala skärm.
+
+1.10	Felindikation
+
+Meddelandet "SYNTAX ERROR" kommer att skrivas på skärmen om något SUPER
+EXPANDER-kommando är felstavat. Du måste då skriva den korrekta stavningen.
+Det här felmeddelandet kommer också fram om någon parameter saknas i ett
+kommando, t.ex. CIRCLE utan höjdspecificering.
+
+------------------------------------------------------------------------
+
+DEL TVÅ - ANVÄNDNING AV FUNKTIONSTANGENTERNA
+
+2.1	Introduktion
+
+SUPER EXPANDER KASSETT använder de fyra funktionstangenterna på VIC:s
+tangentbord för att möjliggöra snabb och effektiv programskrivning. Det finns
+bara fyra tangenter men de kan ge en åtkomst till totalt åtta kommandon.
+
+Om du, som normalt, trycker på tangenterna så kommer de funktioner tillhörande
+funktionstangenterna F1,F3,F5,F7 att komma fram på skärmen. Håller du ned
+antingen SHIFT eller C=-tangenten och trycker ned samma tangenter som tidigare
+kommer de funktioner tillhörande funktionstangenterna F2,F4,F6,F8 att skrivas
+på skärmen.
+
+2.2	Förbestämda funktioner
+
+Om du skriver KEY och trycker på RETURN kommer VIC att skriva ut en lista på
+åtta funktioner som automatiskt kopplas till funktionstangenterna när SUPER
+EXPANDER KASSETT initialiseras. Dessa funktioner finns i listan nedan:
+
+KEY 1, "GRAPHIC"
+KEY 2, "COLOR"
+KEY 3, "DRAW"
+KEY 4, "SOUND"
+KEY 5, "CIRCLE"
+KEY 6, "POINT"
+KEY 7, "PAINT"
+KEY 8, "LIST" + CHR$(13)
+
+2.3	Ändring av tangenttilldelning
+
+FORMAT: KEY	
+eller   KEY n,"värde"
+SYFTE : Att koppla ett nytt kommando till en funktionstangent
+
+KEY tillåter dig att skriva ut de värden som tillhör funktionstangenten eller
+att koppla dina egna värden till någon funktionstangent, d.v.s. något värde
+som skiljer sig från det som genereras av SUPER EXPANDER kassett.
+
+Värdet på funktionstangenten kan ändras på två sätt. Den första metoden
+används när funktionstangenten har skrivits ut som ovan. För att ändra en
+tilldelning får du flytta markören till den första positionen efter den
+vänstra handens citationstecken av KEY-talet du vill ändra. Skriv över det
+existerande kommandot, ta bort eventuellt återstående tecken som tillhör
+tangenten och tryck på RETURN. SUPER EXPANDER kommer att automatiskt sätta dit
+högra handens citationstecken och lagra den nya tilldelningen.
+
+SUPER EXPANDER inkluderar också en mer direkt metod för ändring av värdet på
+en tangent. Skriv bara KEY, numret på den tangent du vill ändra, ett komma,
+ett citationstecken och värdet du vill tilldela tangenten. När du trycker på
+RETURN kommer det andra citationstecknet att läggas till och den nya
+tilldelningen lagras.
+
+Etthundra-tjugoåtta (128) är det maximala antalet tecken som kan tilldelas
+till en funktionstangent. Du kan ge det här antalet tecken till en eller alla
+tangenterna.
+
+EXEMPEL : För att ge BASIC-koden RESTORE till F5-funktionstangenten
+KOMMANDO: KEY [RETURN]
+UTSKRIFT: KEY 1, "GRAPHIC"
+	  KEY 2, "COLOR"
+	  KEY 3, "DRAW"
+	  KEY 4, "SOUND"
+	  KEY 5, "CIRCLE"
+	  KEY 6, "POINT"
+	  KEY 7, "PAINT"
+	  KEY 8, "LIST" + CHR$(13)
+AKTION  : Flytta markören till den första positionen efter vänstra
+          citationstecknet på raden där det står KEY 5.
+SKRIV   : RESTORE [RETURN]
+RESULTAT: BASIC-koden RESTORE finns nu på F5-tangenten och kommer att skrivas
+          ut på skärmen varje gång F5-tangenten trycks ned.
+
+2.4	Tillägg av vagnretur
+
+För att inte behöva trycka på RETURN efter ett funktionstangentskommando kan
+du lägga till en vagnretur till kommandot på följande sätt:
+
+(a) Ändra tilldelningen (se Del 2.3) på tangenten när du vill lägga till en
+    vagnretur och skriv de avslutande citationstecknen, men tryck inte på
+    RETURN.
+
+(b) Skriv + CHR$(13) och tryck på RETURN.
+
+Nu, när du trycker på den här tangenten, kommer ett RETURN att automatiskt
+följa kommandot.
+
+EXEMPEL : För att tilldela BASIC-koden RUN och en inbyggd vagnretur till
+	  F7-tangenten
+KOMMANDO: KEY 7, "RUN" + CHR$(13) [RETURN]
+RESULTAT: Du kan nu köra ett program genom att bara trycka på F7-tangenten.
+
+------------------------------------------------------------------------
+
+DEL TRE : RITA GRAFISKT MED SUPER EXPANDER
+
+3.1	Introduktion
+
+I Del Tre beskrivs de nya kommandon som finns på SUPER EXPANDER kassett som
+är till för att rita grafiskt. Kommandona ger dig möjlighet att rita punkter,
+former, få fram text och målningar på skärmen i vilken av de femton möjliga
+färgerna du önskar utan att behöva tilldela accessutrymme i minnet. De här
+kommandona nås precis som vilka BASIC-kommandon som helst och kan användas i
+både direkt och indirekt tillstånd. Det sätt på vilket VIC håller färgerna du
+valt i färgregister är också beskrivet. Kommandona listas i den ordning de kan
+tänkas bli använda i ett program som det i Del Sex i den här handboken.
+
+3.2	Skärmkoordination
+
+För att möjliggöra grafiskt ritande är skärmen indelad i en 1024x1024-matris.
+En matris är helt enkelt ett rutnät i vilket en speciell ruta nås genom att
+dess koordinater anges. En koordinat är ett tal som används för att bestämma
+avståndet till en punkt från origo eller punkten Ø. Två tal är nödvändiga; en
+för att avgöra hur långt punkten är från origo i vertikal riktning och den
+andra för att bestämma avståndet i horisontell riktning. Den horisontella
+kallas för x-axeln och den vertikala för y-axeln. Den första koordinaten som
+måste anges är x-koordinaten. I SUPER EXPANDER är det här positionen på en
+punkt relaterad till den vänstra kanten på skärmen. Den andra koordinaten är
+y-koordinaten. Den indikerar hur långt ned från övre kanten på skärmen som
+punkten är placerad. Origo, eller nollpunkten på skärmens rutnät, är i det
+övre vänstra hörnet på skärmen. Koordinaterna till en punkt på skärmen är i
+skalan 0 till 1023.
+
+3.3	Färgregister
+
+När VIC sätts på med SUPER EXPANDER-kassetten på plats finns fyra färgregister
+tilldelade. (Ett register är helt enkelt ett speciellt minnesutrymme som är
+avsatt för att hålla ett värde.) Ett tal i skalan 0 till 15 är lagrat i varje
+register och används för att indikera en färg.
+
+Färgerna och deras associerade värden finns i listan nedan:
+
+ 0 Svart
+ 1 Vit
+ 2 Röd
+ 3 Cyan
+ 4 Violett
+ 5 Grön
+ 6 Blå
+ 7 Gul
+ 8 Orange
+ 9 Ljus orange
+10 Rosa
+11 Ljus cyan
+12 Ljusviolett
+13 Ljusgrön
+14 Ljusblå
+15 Ljusgul
+
+I register 0 finns de färgvärden som används för skärmens bakgrund i grafiska
+utskrifter.
+
+Register 1 består av de färgvärden som används till den ram som omger den
+grafiska skärmen.
+
+Register 2 har värdena till teckenfärgerna d.v.s. färgerna för att rita
+punkter, grafiska former eller skriva ut text på en grafisk skärm.
+
+Register 3 har värdena till hjälpfärgerna, vilka också kan användas till att
+göra grafiska former. Det här registret kan endast användas i flerfärgs-
+tillstånd eller i kombinerat tillstånd. (Se Del 3.4.1)
+
+Du kan placera in färgvärdena i de här registren genom att exekvera kommandot
+COLOR. (Se Del 3.4.2) När systemet är påslaget finns värdena 1,3,6 och 0 i
+registren.
+
+3.4	Grafiska kommandon
+
+Alla exempel på grafiska kommandon ges i de följande avsnitten i form av
+programdelar. Du kan bygga upp programmet och köra det efter det att varje
+ny rad har tillkommit. Om du gör det, så måste du hålla ned RUN/STOP-tangenten
+och trycka på RESTORE-tangenten innan du skriver in nästa rad.
+
+3.4.1	GRAPHIC
+
+FORMAT: GRAPHIC n
+SYFTE : Att välja en grafisk del från VIC:s operativsystem.
+
+Kommandot GRAPHIC kan användas i direkt och indirekt tillstånd. Det finns
+fyra olika GRAPHIC-tillstånd, där varje väljer en grafisk del från VIC:s
+operativsystem.
+
+GRAPHIC 1 väljer ett grafiskt flerfärgsset från operativsystemet. I det här
+tillståndet minskar VIC det grafiska prickandet så att varje position på
+skärmen upptar en area, som är 16 prickar bred och 8 prickar djup i en
+1024x1024-prickars skärmmatris. (Se Del 3.2) Punkter kan prickas in på skärmen
+genom användning av något av de fyra tillgängliga registren. (Se Del 3.3) Alla
+de 15 SUPER EXPANDER-färgerna kan användas i detta tillstånd.
+
+GRAPHIC 2 aktiverar den grafiska delen som innehåller högupplösande färger i
+VIC:s operativsystem. I det här tillståndet är varje position på skärmmatrisen
+en area som är 8 punkter bred och 8 punkter djup. Det här tillståndet skriver
+således ut punkter på skärmen som är dubbelt så fina som dem i GRAPHIC 1-
+kommandot. Tillståndet har dock endast tillgång till färgerna som finns i
+register 0 och 2, d.v.s. skärm- eller tecken-färgerna. Endast färgerna mellan
+0 och 7 kan användas. (Se Del 3.3) Om du specificerar ett färgvärde som är
+större än 7 i COLOR-kommandot kommer SUPER EXPANDER att dra bort 8 från det
+värdet och ta den färg som korresponderar till det kalkylerade värdet
+istället. Teckenfärgen kan ändras, om du vill använda mer än en färg för att
+göra punkter på skärmen, genom att använda kommandot REGION. (Se del 3.4.4)
+
+GRAPHIC 3 aktiverar antingen flerfärgigt eller högupplösande grafikset,
+beroende på värdet som finns i teckenfärgsregistret efter det att kommandot
+COLOR exekverats. (Se Del 3.4.2) Om värdet på färgen är mellan 0 och 7 kommer
+all inritning att ske i det högupplösande tillståndet. Om färgnumren är större
+än sju kommer alla punkter som ritas på skärmen vara i mångfärgstillstånd.
+Det här kommandot är användbart om du vill använda den högupplösande och
+mångfärgade grafiken på samma skärm.
+
+EXEMPEL    : För att välja den högupplösande färggrafikdelen
+PROGRAMRAD : 100 GRAPHIC 2
+RESULTAT   : Den högupplösande grafikdelen i VIC:s operativsystem
+             är aktiverad.
+
+3.4.2	COLOR
+
+FORMAT: COLOR sc, bo, cha, au
+SYFTE : Att lägga till färger till alla de fyra färgregistren.
+
+COLOR används för att välja färger till skärmen, ramen och till hjälpfärgen.
+Skärmfärgen, tillsammans med sättandet av bakgrundsfärgen, kan också användas
+till att radera bort prickar från skärmen som har en annan färg. Hjälpfärgen
+används mestadels med kommandot PAINT. (Se Del 3.4.7) Värdet på varje färg
+finns lagrat i ett utav de fyra färgregistren i VIC:s minne. När registren en
+gång har fyllts med COLOR-kommandot utgör numret på färgregistret den första
+parametern i alla SUPER EXPANDER-kommandon som används för att pricka grafik
+på skärmen. (Se Del 3.3)
+
+När systemet är påslaget innehåller de fyra registren värdena 1,3,6 respektive
+0. Färgregistrens tillgänglighet för användande i flerfärgat och högupplösande
+tillstånd kan ses nedan:
+
+flerfärg		högupplösande
+0 skärmfärg		0 skärmfärg
+1 ramfärg		1 ej tillgängligt
+2 teckenfärg		2 teckenfärg
+3 hjälpfärg		3 ej tillgängligt
+
+Som du kan se i listan ovan är de enda register som är tillgängliga för
+användning i högupplösande tillstånd de som innehåller skärm- och teckenfärg.
+Denna begränsning kan minskas genom att ändra teckenfärgen med kommandot
+REGION om du behöver en annan teckenfärg på skärmen. (Se Del 3.4.4)
+
+EXEMPEL   : Att välja en vit skärm, en blå ram, svarta tecken och en rosa
+	    hjälpfärg
+PROGRAMRAD: 110 COLOR 1,6,0,10
+RESULTAT  : När den här raden exekveras kommer en vit skärm, omgiven av en
+	    blå ram fram. Allt grafiskt prickande kommer att vara svart. Om
+            hjälpfärgen används kommer de punkterna att vara rosa.
+
+3.4.3	POINT
+
+FORMAT: POINT cr,x,y	
+eller   POINT cr,x,y,x1,y1, ... ,xn,yn
+SYFTE : Att pricka in en eller flera punkter på skärmen i en speciell färg.
+
+I flerfärgat tillstånd kan en punkt prickas in på skärmen i vilken som helst
+av de färger som är tillgängliga i de fyra färgregistren. (Se Del 3.3) I
+högupplösande tillstånd kan punkterna endast prickas in i någon av de färger
+som finns i skärm- eller teckenregistren. (Se Del 3.4.2) Kommandot kan
+användas för att pricka in en eller ett flertal punkter på skärmen. Om bara
+ett par skärmkoordinater är angivet kommer endast den punkten att prickas in.
+Alternativet kan du ange ett flertal skärmkoordinater vilket resulterar i att
+det antalet punkter kommer att prickas in på skärmen. Du kan dock enbart
+pricka in med en färg i ett kommando.
+
+EXEMPEL   : Att pricka in en punkt på skärmen i svart
+PROGRAMRAD: 120 POINT2,900,900
+RESULTAT  : När raden exekveras kommer en ensam svart punkt att skrivas ut i
+	    nedre högra hörnet på skärmen.
+
+EXEMPEL   : Att få fyra punkter i samma färg på skärmen
+PROGRAMRAD: 130 POINT2,9.00,1 00,900,300,1 000,1 00,1 000,300
+RESULTAT  : När raden exekveras kommer fyra svarta punkter att prickas in i
+	    övre högra hörnet på VIC:s skärm.
+
+3.4.4	REGION
+
+FORMAT: REGION c
+SYFTE : Att ändra teckenfärgen
+
+REGION ändrar teckenfärgen som du tidigare specificerade i kommandot COLOR,
+d.v.s. det ändrar värdet som är lagrat i register två. (Se Del 3.4.2) Vilken
+som helst av de 15 SUPER EXPANDER-färgerna kan användas som parameter i det
+här kommandot i mångfärgstillstånd. I högupplösande tillstånd kan endast
+färgerna mellan 0 och 7 användas. Det här kommandot är speciellt värdefullt om
+du är i högupplösande tillstånd och vill få fram andra utskrifter än de i
+skärm- och teckenfärgerna. (Se Del 3.4.2)
+
+EXEMPEL   : Att ändra teckenfärgen till röd
+PROGRAMRAD: 140 REGION 2
+RESULTAT  : När den här programraden exekveras blir färgvärdet för röd sparat
+            i register två. I följande kommando kommer alla punkter som
+            använder teckenfärgen skrivas ut i rött, Detta kommer att pågå
+            tills teckenfärgen ändras med ett annat REGION-kommando
+
+3.4.5	DRAW
+
+FORMAT: DRAW cr,x,y TO x1,y1
+eller   DRAW cr,x,y TO x1,y1 TO x2,y2 ...
+eller   DRAW cr TO x,y
+SYFTE : Att pricka in en rak linje mellan två punkter på skärmen.
+
+DRAW kommer att pricka in en rak linje i den indikerade färgen från det
+specificerade färgregistret. (Se Del 3.4.2) DRAW-kommandot kan användas
+på tre sätt:
+
+1. Du kan dra en linje mellan två punkter på skärmen genom att endast
+   specificera ett par koordinater. Du kan sedan, om du vill, använda
+   kommandot igen for att dra en annan linje mellan olika punkter på skärmen.
+
+2. Du kan dra flera linjer med ett DRAW-kommando genom att specificera flera
+   par av koordinater åtskilda med koden TO. Det första paret av koordinater
+   indikerar startpunkten på den första linjen som ska dras på skärmen. Den
+   avslutande punkten på varje linje kommer att vara startpunkten för nästa
+   linje.
+
+3. Du kan också specificera DRAW på den avslutande punkten på linjen. I ett
+   sådant fall tas startpunkten på linjen från den avslutande punkten i den
+   sista grafiska formen, cirkeln eller punkten.
+
+NOTERA: Om det, i det sista fallet, inte har varit några tidigare figurer på
+skärmen kommer startpunkten på linjen att vara lokaliserad till 0,0, d.v.s.
+det övre vänstra hörnet.
+
+EXEMPEL   : Att rita en rektangel
+PROGRAMRAD: 150 DRAW 2, 100,100 TO 200,100 TO 200,200 TO 100,200 TO 100,100
+RESULTAT  : En liten röd rektangel kommer att ritas i övre vänstra hörnet på
+	    skärmen när den här programraden är exekverad.
+
+EXEMPEL   : Att rita en diagonal linje till mitten på skärmen
+PROGRAMRAD: 160 DRAW 2 TO 512,512
+RESULTAT  : En linje kommer att dras från den punkt där VIC avslutade
+	    rektangeln till mitten på skärmen.
+
+3.4.6	CIRCLE
+
+FORMAT: CIRCLE cr,x,y,rx,ry
+eller   CIRCLE cr,x,y,rx,ry,as,af
+SYFTE : Att rita en cirkelform på skärmen.
+
+De definierade koordinaterna i kommandot CIRCLE specificerar lokaliseringen av
+mittpunkten på en cirkel eller en cirkulär form. Nästa set av parametrar ger
+höjden och vidden på formen, från mittpunkten sett. Det sista paret
+koordinater tillåter dig att göra en tillplattad cirkel, en så kallad ellips.
+På grund av sättet punkterna prickas in på, när en cirkel formas, är inte rx
+likadan som ry, vilket man skulle kunna tro. Du myste multiplicera
+rx-parametern med 0.7 då skärmen faktiskt är rektangulär även om x-axeln och
+y-axeln har samma fördelning.
+
+För att rita en cirkelbåge måste du lägga till ytterligare parametrar till
+kommandot CIRCLE. Den första parametern är startpunkten på cirkelbågen på
+omkretsen av cirkeln och den andra parametern är den avslutande punkten på
+cirkelbågen. Enheten som används i de här parametrarna är "gradian". Det
+finns 100 gradianer i en komplett cirkel. Positionen för gradian 0 är vid
+tre-positionen på en klocka. Gradianökningen, som ett varv på klockan, runt
+omkretsen på cirkeln slutar på 100, vid klockan 3 igen.
+
+EXEMPEL   : Att rita en cirkel
+PROGRAMDEL: 170 CIRCLE 2,800,300,140,100,40,60
+	    180 CIRCLE 2,800,300,140,100,90,10
+RESULTAT  : När de här linjerna exekveras kommer ett set av runda parenteser
+	    att ritas i rött på VIC:s skärm.
+
+3.4.7	PAINT
+
+FORMAT: PAINT cr,x,y
+SYFTE : Att fylla en stängd area med färg.
+
+PAINT fyller en hel area med färgen som indikeras från det definierade
+färgregistret. Arean måste vara helt stängd, annars kommer målningen att täcka
+hela skärmen. Den area som ska målas är specificerad genom koordinaterna i
+någon punkt inom den uppsatta gränslinjen.
+
+En area kan bara målas en gång. Om du använder GRAPHIC 3-instruktionerna
+(se Del 3.4.1) måste en area, som är satt att måla i flerfärgstillstånd,
+målas i samma tillstånd, d.v.s. du kan inte ändra tillstånd mellan det du
+formar din figur och målar den.
+
+EXEMPEL   : Att rita en röd cirkel och måla den gul
+PROGRAMDEL: 190 CIRCLE 2,300,800,70,100
+	    195 REGION 7
+	    200 PAINT 2,300,800
+RESULTAT  : När den här delen av programmet exekveras kommer en liten cirkel
+	    ritas i rött i nedre vänstra hörnet på skärmen och arean inuti
+	    cirkeln kommer målas i gult.
+
+3.4.8	CHAR - TEXTUTSKRIFT
+
+FORMAT: CHAR rad, kolumn, "text"
+SYFTE : Att skriva normal text på en grafisk skärm
+
+CHAR kommer att skriva ut normal text på en grafisk skärm med början vid den
+rad och kolumn som angetts. Det här kommandot kan användas i det högupplösande
+tillståndet i GRAPHIC 2 och i GRAPHIC 3, det kombinerade tillståndet, när
+värdet på färgen från teckenfärgsregistret är mindre än 8. (Se Del 3.4.1)
+Detta kommando är inte tillgängligt för flerfärgstillståndet i GRAPHIC 1.
+
+EXEMPEL   : Att skriva ut ordet "KONST" i svart på den grafiska skärmen
+PROGRAMDEL: 210 REGION 0
+	    220 CHAR 5,14,"KONST"
+RESULTAT  : När den här sektionen av programmet exekveras kommer ordet "KONST"
+            att framträda i svart mellan de tidigare utskrivna parenteserna.
+	    (Se Figur 3-1)
+
+ _______________________
+|  __			|
+| |\ |			|
+| |_\|			|
+|    \	    (KONST)	|
+|     \ __		|
+|      X  \		|
+|     ( \  )		|
+|      \__/		|
+|_______________________|
+  Figur 3-1 Textutskrift
+
+
+3.4.9	SCNCLR
+
+FORMAT: SCNCLR
+SYFTE : Att rensa en grafisk skärm
+
+SCNCLR används i grafiskt tillstånd för att rensa skärmen på samma sätt som
+det i BASIC använda PRINT"[SHIFT/CLR/HOME]". Det här kommandot kan användas
+både i direkt och indirekt tillstånd.
+
+EXEMPEL   : Att rensa den grafiska skärmen i det ovan listade programmet
+PROGRAMRAD: 240 SCNCLR
+RESULTAT  : När den här raden exekverats, så kommer skärmen att vara blank,
+	    d.v.s. en vit skärm med en blå ram.
+
+3.5	Körning av exemplet
+
+Om du kör ovanstående program kan du lägga till en försenande loop innan
+skärmen rensas och ett slut på programmet som detta:
+
+PROGRAMDEL: 230 FOR X=1 TO 2500:NEXT X
+	    250 GRAPHIC 0:END
+
+När du kör det här programmet kommer du få se ett exempel på en del av det
+enkla grafiska kapaciteterna som finns hos SUPER EXPANDER.
+
+------------------------------------------------------------------------
+
+DEL FYRA : GÖRA MUSIK MED SUPER EXPANDER
+
+4.1	Introduktion
+
+Den här delen innehåller alla de steg som behövs för att göra musik eller
+oväsen på VIC med SUPER EXPANDER. Både musik och oljud kan spelas i direkt
+eller indirekt tillstånd. Du kan spela flera toner på en gång, d.v.s ett
+musikackord, eller spela en rad singelnoter eller -ljud. I ett program
+komponeras en musikdel, som använder enkla noter, genom att man når SUPER
+EXPANDER:s musiktecken inuti en PRINT-sats genom att helt enkelt trycka på
+VIC:s tangenter efter att ha gått in i musiktillståndet. För att komponera ett
+ackord används kommandot SOUND i antingen direkt eller indirekt tillstånd.
+SOUND används också för att generera oljud.
+
+NOTERA: Tonarten för toner och oljud kan skilja sig en del mellan olika VIC.
+
+4.2	Ljudregister
+
+När VIC är påsatt med SUPER EXPANDER kassetten i, finns det fem stycken
+ljudregister. Ett register är en speciell plats i minnet som håller ett
+värde. Värdena i de fem ljudregistren placeras där efter en exekvering av
+kommandot SOUND. (Se Del 4.3.1) Registren är numrerade från 1 till 5.
+Registren 1 till 4 hör till VIC:s fyra tongeneratorer, medan det femte
+ljudregistret har att göra med styrkan på ljudet. Ett värde mellan 128 och 255
+som placeras i det första av de fyra registren kommer att göra att ett ljud
+spelas med den associerade generatorn. Om värdet är mindre än 128 kommer
+inget ljud att höras i generatorn.
+
+Registren 1 till 3 kommer att generera musiktoner. (Titta i bilaga F i din
+VIC 20 Datoranvändarbok så finner du en komplett lista på musiktoner och deras
+musikljudsregister) d.v.s. en, två och tre har tre kompletta oktaver i sitt
+urval. Du kan se de tre första musikregistren som "röster" som påminner om
+stämmorna i en kör, d.v.s. bas, sopran och alt. Varje register är en oktav
+högre än sin företrädare d.v.s. en not som spelats i oktav 3 på tongenerator 1
+har samma tonart som samma not, spelad i oktav 2 på tongenerator 2 och oktav 1
+på tongenerator 3.
+
+Register 4 används till att göra "brus" för speciella ljudeffekter.
+
+Register 5 innehåller värdet på ljudnivån på musiken och/eller oljudet.
+Det här värdet kan vara mellan 0 (av) och 15 (max). (Notera att i singel-
+musiktillstånd, d.v.s. med kommandot V är du bunden till värdet 9.)
+
+4.3	Musikkommandon
+
+I den här delen visas formatet på varje SUPER EXPANDER musikkommando, dess
+syfte förklaras, användningen beskrivs och ett exempel ges. Alla kommandon kan
+nås i både direkt och indirekt tillstånd. Kommandot SOUND, som kan åstadkomma
+ett musik "ackord", är beskrivet med direkttillståndsinträde. Ett exempel på
+alla andra musikkommandon ges i form av ett programtillträde (benämnd
+programdel eller programrad). Var och ett av dessa kommandon kan nås genom en
+programrad. På det här sättet byggs en musikdel upp, steg för steg, tills
+melodin är komplett och klar att spelas. Den nya åtkomsten på linjen visas med
+fet stil.
+
+4.3.1	SOUND - SPELA ACKORD
+
+FORMAT: SOUND s1, s2, s3, s4, s5
+SYFTE : Att få flertonseffekt.
+
+Kommandot SOUND gör så musikackord kan spelas på VIC. Parametrarna s1 till s3
+definierar värdena på musiktonerna där var och en är i intervallet 128 till
+255 vilka måste spelas i någon av de tre VIC musikgeneratorerna. Ett värde som
+är mindre än 128 på någon av parametrarna kommer inte att låta något alls. (Se
+bilaga F i din VIC Användarhandbok) Parametern s4 definierar värdet på ett
+"brus" som används för att göra speciella ljudeffekter. Det kan innehålla ett
+oljudsvärde inom samma intervall, d.v.s. mellan 128 och 255, och kan slås av
+på samma sätt som generatorerna 1 till 3. Parametern s5 definierar värdet på
+volymstyrkan i skalan 0 (av) till 15 (max).
+
+SOUND-kommandot är borttaget genom att tilldela värdet 0 till alla
+generatorerna eller genom att tilldela värdet 0 till parametern s5.
+
+EXEMPEL   : Att spela en serie sammanhängande ackord
+PROGRAMDEL: 300 FOR X=1 TO 50:SOUND 225,225,225,0,9
+	    310 NEXT X
+	    320 FOR X=1 TO 50:SOUND 230,230,230,0,9
+	    330 NEXT X
+	    340 FOR X=1 TO 50:SOUND 235,235,235,0,9
+	    350 NEXT X
+	    360 SOUND 0,0,0,0,0
+RESULTAT  : En tre-ackords strof kommer att spelas när den här delen av
+	    programmet exekveras.
+
+4.3.2	[ CTRL <- ] - KOMMA ÅT MUSIKTILLSTÅND
+
+FORMAT: CTRL vänster pil
+SYFTE : Att komma åt SUPER EXPANDER musiktillstånd
+
+CTRL vänsterpil kan användas i både direkt och indirekt tillstånd för att göra
+det möjligt för dig att göra SUPER EXPANDER musik på VIC. Kommandot exekveras
+genom att du håller ned CTRL-tangenten och trycker på vänsterpil-tangenten. Du
+måste använda kommandot inom citationstecken för att kunna "skriva" en serie
+av musiknoter och spela den melodi som har komponerats.
+
+När du gör in i det här kommandot i en PRINT-sats kommer ett fältomvänt F att
+komma fram. I direkt tillstånd kan du använda det här kommandot utanför
+citations-tecken. Ingen symbol kommer fram på skärmen. Du kan nu använda
+tangenterna på VIC för att spela enkla noter precis som på vilket tangent-
+bordsinstrument som helst. För att lämna musiktillståndet trycker du på
+RETURN-tangenten. När CTRL vänsterpil-kommandot har exekverats tolkar SUPER
+EXPANDER bara de tecken som formar musiktecken-setet. De är:
+
+P,Q,V,S,O,T,R,C,D,E,F,G,A,B,#,$
+
+Alla andra symboler på VIC:s tangentbord ignoreras av SUPER EXPANDER
+kassetten.
+
+Inuti ditt program kan du behöva upp till 72 stycken av dessa tecken i någon
+PRINT-sats mellan CTRL vänsterpil-symbol och det sista citationstecknet.
+Genom att minska den här figuren till 71 och lägga till ett semikolon efter
+sista citationstecknet, kommer nästa följd av musiknoter att spelas omedelbart
+efter den tidigare strängen av noter. För att stoppa en melodi som just pågår
+räcker det att hålla ned RUN/STOP-tangenten och trycka på RESTORE-tangenten.
+
+EXEMPEL   : Att skriva musik i programtillstånd
+PROGRAMRAD: 370 PRINT"(CTRL/vänsterpil)"
+RESULTAT  : Ett fältomvänt F kommer att skrivas ut. Alla tangenter som du
+	    trycker på mellan citationstecknen, tills du trycker på RETURN,
+	    kommer att tolkas av SUPER EXPANDER musikförpackning när
+	    programmet körs.
+
+EXEMPEL   : Att börja göra musik i direkt tillstånd
+AKTION    : Håll ned CTRL-tangenten och tryck på vänsterpil-tangenten.
+RESULTAT  : Inget tecken kommer fram på skärmen men alla musiktecken kommer
+	    att tolkas av SUPER EXPANDER. Alla tangenter som representerar en
+	    musiknot, t.ex. C,D eller F kommer att resultera i att den noten
+	    blir spelad.
+
+4.3.3	P - UTSKRIFT AV MUSIKTECKEN
+
+FORMAT: P
+SYFTE : Att skriva ut alla musiktecken på skärmen.
+
+Kommandot P kan användas i både direkt och indirekt tillstånd. Det används för
+att skriva ut tecken som du har använt för att skapa en bit musik samtidigt
+som musiken spelas. Det här kommandot är speciellt användbart som en
+komponeringshjälp. Det hjälper dig att se var någon felaktig not i din
+komposition finns. Du kan då rätta till noten (eller noterna) med VIC:s
+normala redigeringsmöjligheter. Kommandot Q används för att stoppa upp
+musikteckensutskriften. (Se Del 4.3.4)
+
+EXEMPEL   : Att skriva ut musiktecken i programtillstånd
+PROGRAMRAD: PRINT"(CTRL/vänsterpil)P"
+RESULTAT  : När den här raden exekveras kommer alla musiktecken efter P att
+	    komma upp på skärmen.
+
+4.3.4	Q - AVSLUTNING AV MUSIKTECKEN-UTSKRIFT
+
+FORMAT: Q
+SYFTE : Att avbryta utskrift av musiktecken
+
+Kommandot Q kan användas i både direkt och indirekt tillstånd. Kommandot
+kommer att avbryta utskriften av tecken under musiktillståndet.
+
+EXEMPEL : Att spela musiktecken i direkt tillstånd utan någon skärmutskrift
+AKTION  : Håll ned CTRL-tangenten och tryck på vänsterpils-tangenten för att
+	  komma in i musiktillståndet. Skriv P och tryck på tangenterna C och
+ 	  D.
+RESULTAT: Två noter spelas och tecknen C och D kommer upp på skärmen.
+AKTION  : Skriv Q och tryck på C och D-tangenterna igen.
+RESULTAT: Samma noter spelas igen men inga tecken kommer upp på skärmen.
+
+4.3.5	V - BESTÄMMA VOLYM
+
+FORMAT: V n
+SYFTE : Att bestämma musikvolymen.
+
+Kommandot V sätter volymen som ska användas när du spelar enkla noter med
+SUPER EXPANDER, d.v.s. det används inte tillsammans med kommandot SOUND.
+Volymvärdet kan vara i skalan 0 (av) till 9 (max).
+
+EXEMPEL   : Att sätta volymen till 9 innan musikskrivningen i programtillstånd
+PROGRAMRAD: 370 PRINT"(CTRL/vänsterpil)PV9"
+RESULTAT  : När raden exekveras kommer all musik mellan kommandot och andra
+	    citationstecknet att spelas med högsta volym. Den här styrkan på
+	    volymen kommer att vara kvar tills kommandot används igen för att
+	    sätta en lägre volym.
+
+4.3.6	S - VAL AV MUSIKGENERATORER
+
+FORMAT: S n
+SYFTE : Att välja musikgenerator
+
+Kommandot S används för att välja en av de fyra möjliga generatorerna som
+finns i VIC musiktillstånd. Den valda generatorn avgör "tonarten" på noten
+eller hur högt noten ska spelas. Varje generator har tre oktaver. (Se Del
+4.3.7) En oktav är en grupp om åtta noter. Generatorerna är numrerade från 1
+till 4. Generatorerna 1 till 3 används till att komponera musik med SUPER
+EXPANDER. De här generatorerna är analoga med stämmorna bas, sopran respektive
+alt. Generator 4 används för att skapa "brus"-effekter.
+
+EXEMPEL   : Att välja generator 2
+PROGRAMRAD: 370 PRINT"(CTRL/vänsterpil)PV9S2"
+RESULTAT  : All efterföljande musik kommer att använda den andra tongeneratorn
+	    tills kommandot är ändrat.
+
+4.3.7	O - VAL AV OKTAV
+
+FORMAT: O n
+SYFTE : Att välja en musikoktav.
+
+Kommandot O (bokstaven O som i Oskar, inte siffran 0) används för att välja en
+grupp om åtta noter från vilka du vill spela en not. Varje musikljudsregister,
+d.v.s. ett, två och tre, har tre kompletta oktaver i sina urval. Varje
+tongenerator börjar en oktav högre än sin föregångare, d.v.s. en not som
+spelas i oktav 3 i tongenerator 1 har samma tonart som den identiska noten i
+oktav 2, tongenerator 2 och oktav 1 i tongenerator 3. När du spelar i olika
+tongeneratorer måste du försäkra dig om att oktaverna är riktigt valda,
+d.v.s. så de låter samstämda, i solo eller i kör.
+
+EXEMPEL   : Att välja oktav 3 i föregående programrad
+PROGRAMRAD: 370 PRINT " (CTRL/vänsterpil)PV9S2O3"
+RESULTAT  : När den här raden exekveras kommer alla noterna mellan 3 och det
+	    andra citationstecknet att spelas i tredje oktaven i den andra
+	    tongeneratorn.
+
+4.3.8	T - VAL AV TEMPO
+
+FORMAT: T n
+SYFTE : Att välja varaktigheten på en not.
+
+Kommandot T väljer varaktigheten, eller tempot, på en not på grundval av
+värdena i följande schema:
+
+TEMPO	TAKT/	VARAKTIGHET
+ NR	MINUT	(* 1/60 sek)
+
+0	900	    4
+1	600	    6
+2	450	    8
+3	300	   12
+4	225	   16
+5	150	   24
+6	112.5	   32
+7	 56.25	   64
+8	 28	  128
+9	 14	  255
+
+EXEMPEL   : Att välja ett tempo på 112.5 takter/minut i föregående programrad
+PROGRAMRAD: 370 PRINT"(CTRL/vänsterpil)PV9S2O3T6"
+RESULTAT  : Noten/noterna mellan T6 och det andra citationstecknet kommer att
+	    spelas i 32/60-delar av en sekund.
+
+4.3.9	C,D,E,F,G,A,B - MUSIKNOTER
+
+FORMAT: bokstav
+	där en bokstav är ett tecken eller en kombination av tecknen CDEFGAB.
+SYFTE : Att spela musiknoter.
+
+Tangenterna C,D,E,F,G,A och B används för att spela noter i antingen direkt
+eller indirekt tillstånd. I direkt tillstånd spelas den not vars tangent
+trycks ned. I indirekt tillstånd omges noterna av citationstecken som en del
+av en PRINT-sats. Det finns ingen anledning att placera separeringstecken
+mellan musiknoter i något av de bada tillstånden. SUPER EXPANDER kommer att
+ignorera alla tecken som inte finns i musikförpackningen, d.v.s. alla
+icke-musikaliska tecken.
+
+EXEMPEL   : Att spela en melodi i föregående programrad
+PROGRAMRAD: 370 PRINT"(CTRL/vänsterpil)PV9S2O3T6CDE"
+RESULTAT  : När den här raden exekveras kommer tre noter att spelas och
+	    musiktecknen kommer fram på skärmen.
+
+4.3.10	R - MUSIKPAUS
+
+FORMAT: R
+SYFTE : Att göra en paus i musiken.
+
+R används för att skapa en tyst period i en musikkomposition. Längden på
+perioden, eller pausen, bestäms av kommandot T. (Se Del 4.3.8)
+
+EXEMPEL   : Att sätta in en paus i föregående programrad
+PROGRAMRAD: 370 PRINT"(CTRL/vänsterpil)PV9S2O3T6CRDRE"
+RESULTAT  : När den här raden nu exekveras kommer noterna att vara åtskilda
+	    med paustakter.
+
+4.3.11	# - SPELA MED FÖRTECKNET #
+
+FORMAT: #
+SYFTE : Att indikera att följande not är upphöjt ett halvsteg.
+
+Kommandot # används i musiktillstånd för att instruera SUPER EXPANDER att
+spela nästa not ett halvsteg högre. Bara noten som följer omedelbart efter
+#-tecknet kommer att ändras.
+
+EXEMPEL : Att spela noterna C och C# i direkt tillstånd
+AKTION  : Skriv PRINT"(CTRL/vänsterpil)PV9S2O3T6CR#C" [RETURN]
+RESULTAT: Två noter kommer att spelas, den andra en halvton högre än den
+	  första.
+
+4.3.12	$ - SPELA MED FÖRTECKNET b
+
+FORMAT: $
+SYFTE : Att spela nästa not en halvton lägre.
+
+Kommandot $ används i musiktillstånd för att instruera musikförpackningen att
+spela den följande noten en halvton lägre. Bara noten direkt efter kommandot
+kommer att ändras.
+
+EXEMPEL : Att spela noterna B och B$ i direkt tillstånd
+AKTION  : Skriv PRINT"(CTRL/vänsterpil)PV9S2O3T6BR$B" [RETURN]
+RESULTAT: Två noter kommer att spelas, den andra en halvton lägre än den
+	  första.
+
+4.4	Sammanfattning
+
+Om du sätter ihop alla musikkommandon som finns i listan ovan så kan du spela
+en enkel melodi, som den nedan:
+
+PROGRAMRAD:
+	370 PRINT"(CTRL/vänsterpil)PV9S2O3T6CDET4CRT6CDET4CRT6EFT7GT4RT6EFT7G"
+
+------------------------------------------------------------------------
+
+DEL FEM : KOMMANDON FÖR ATT LÄSA VÄRDEN
+
+5.1	Introduktion
+
+Den här delen illustrerar de sju läsfunktionerna som är en del av kommando-
+setet hos SUPER EXPANDER. De här funktionerna kan användas i direkt och
+indirekt tillstånd. I direkt tillstånd måste funktionen föregås av BASIC-koden
+PRINT, och RETURN-tangenten måste hållas ned efter funktionen för att skriva
+ut det lästa värdet. Funktionerna ger dig möjlighet att bestämma värden genom
+speciella SUPER EXPANDER-kommandon eller med spelkontrollsanordningar. Till
+exempel, om du använder något av de här funktionerna kan du läsa värdena i de
+färgregistren som du sätter upp med kommandot COLOR, eller i de ljudregistren
+som du sätter upp med SOUND-kommandot. Om du lägger till användningen av
+spelpaddles, ett joystick eller en ljuspenna i ditt program så kan du använda
+en funktion till att bestämma värdet som indikeras av spelutrustningen på en
+gång. Formatet på varje funktion är visat, dess syfte förklarat, användningen
+beskriven och ett exempel är givet.
+
+NOTERA: Formaten i listan nedan måste innehålla de parenteser som är
+	inkluderade i kommandosatserna.
+
+5.2	RGR
+
+FORMAT: RGR (n)
+SYFTE : Att läsa de grafiska tillstånden som sattes med kommandot GRAPHIC.
+
+Den här funktionen läser numret på det grafiska tillståndet som sattes med
+kommandot GRAPHIC. (Se Del 3.4.1) Vilket nummer som helst mellan 0 och 255
+kan användas som parameter i den här funktionen. Eftersom en parameter måste
+sättas kommer inte dess värde att påverka det värde som returneras av
+funktionen. Den här funktionen är användbar i programtillstånd när du vill
+ändra ett grafiskt tillstånd till ett annat och sedan återvända till det
+ursprungliga grafiska tillståndet. Den här funktionen är inte åtkomlig i
+direkt tillstånd då det alltid returnerar ett 0-värde.
+
+EXEMPEL   : Att rita tre cirklar, ändra färg och grafiskt tillstånd innan
+	    varje cirkel
+PROGRAMDEL: 10 GRAPHIC 2
+	    20 COLOR 1,6,0,10
+	    30 CIRCLE 2,512,512,70,100
+	    40 X=RGR (0)
+	    50 GRAPHIC 3
+	    60 REGION 10
+	    70 CIRCLE 3,850,750,70,100
+	    80 GRAPHIC X
+	    90 REGION 0
+	   100 CIRCLE 2,300,800,70,100
+	   110 FOR Z=1 TO 1000:NEXT:GRAPHIC 0
+RESULTAT : När ovanstående program körs är numret på det första grafiska
+	   tillståndet kopplat till variabeln X och den variabeln används till
+	   att sätta upp det tredje grafiska tillståndet.
+
+5.3	RCOLR
+
+FORMAT: RCOLR (cr)
+SYFTE : Att läsa de färger som finns i ett färgregister.
+
+Den här funktionen kommer att läsa värdet på färgen som finns i det register
+som du kopplat till kommandot COLOR eller ändrat med kommandot REGION.
+Funktionen är speciellt användbar i högupplösande tillstånd när du vill pricka
+in en punkt på skärmen med en annan färg än skärm- och teckenfärgen och inte
+vill använda kommandot REGION.
+
+EXEMPEL   : Att rita en cirkel i högupplösning med teckenfärgen och måla den
+	    i hjälpfärgen
+PROGRAMDEL: 10 GRAPHIC 2
+	    20 COLOR 1,6,0,2
+	    30 CIRCLE 2,512,512,70,100
+	    40 Q=RCOLR(3)
+	    50 REGION Q
+	    60 PAINT 2,512,512
+RESULTAT  : När ovanstående program är kört kommer färgen i register 3 att
+	    vara läst och färgen kommer att användas till att måla cirkeln.
+
+5.4	RDOT
+
+FORMAT: RDOT (x,y)
+SYFTE : Att bestämma färgvärdet på en punkt på skärmen.
+
+RDOT-funktionen kommer att läsa färgvärdet på en punkt, som är placerad vid
+den positionen på skärmen som anges av funktionsparametrarna. (Se Del 1.4)
+Den här funktionen är mest användbar i flerfärgstillstånd när du vill pricka
+punkter eller rita grafiska formler på skärmen med målarfärg.
+
+EXEMPEL   : Att rita och måla en cirkel i flerfärgstillstånd och rita en andra
+	    cirkel med den färgen som användes för målningen
+PROGRAMDEL: 10 GRAPHIC 1
+	    20 COLOR 1,6,0,10
+	    30 CIRCLE 2,512,512,70,100
+	    40 PAINT 3,512,512
+	    50 X=RDOT(512,512)
+	    60 REGION X: CIRCLE 2,750,750,70,100
+RESULTAT  : När det här programmet är kört kommer en svart cirkel,
+	    målad i rosa och en rosa cirkel att finnas på skärmen.
+
+5.5	RSND
+
+FORMAT: RSND (n)
+SYFTE : Att läsa värdet i ett ljudregister.
+
+Funktionen RSND läser värdet på en not i de fyra första ljudregistren,
+vilka är uppsatta av SUPER EXPANDER och värdet på volymsetet i det femte
+ljudregistret. (Se Del 4.2) Den här funktionen kan bara användas för att
+bestämma innehållet i ljudregistren efter ett SOUND-kommando. (Se Del 4.3.4)
+
+EXEMPEL   : Att använda RSND-funktionen i ett program
+AKTION    : Skriv in följande korta program och kör det:
+PROGRAMDEL: 10 X=255: SOUND X,X,X,0,9
+	    20 Y=RSND(5)
+	    30 FOR Z=Y TO 0 STEP -1
+	    40 SOUND X,X,X,0,Z
+	    50 FOR C=1 TO 500:NEXT C,Z
+	    60 FOR Z=0 TO Y
+	    70 SOUND X,X,X,0,Z
+	    80 FOR C=1 TO 500:NEXT C,Z
+	    90 SOUND X,X,X,0,0
+RESULTAT  : Ett musikackord kommer att spelas, först med stigande och sedan
+	    med avtagande volym.
+
+5.6	RPOT
+
+FORMAT: RPOT (n)
+SYFTE : Att läsa värdet på en paddle.
+
+Funktionen RPOT kommer att läsa värdet på en paddle och returnera en siffra i
+skalan 0 till 255. Det här representerar positionen på paddle i relation till
+den vänstra kanten på skärmen. värdet på n är 0 för att läsa en paddle och 1
+för att läsa den andra.
+
+EXEMPEL : Att läsa värdet på en paddle i direkttillstånd
+AKTION  : Koppla till ett paddle-set till spelporten på din VIC. (Se din
+	  VIC 20 Programmeringshandbok och tillhörande litteratur) Sätt på
+	  paddle-kontrollen i medursriktning tills du når den bortersta
+	  positionen.
+SKRIV   : PRINT RPOT (0) [RETURN]
+UTSKRIFT: 0
+AKTION  : Sätt på paddle-kontrollen så långt som går i motsatt riktning.
+SKRIV   : PRINT RPOT (0) [RETURN]
+UTSKRIFT: 255
+
+
+5.7	 RPEN
+
+FORMAT: RPEN (n)
+SYFTE : Att läsa värdet på ljuspennan.
+
+Funktionen RPEN kommer att läsa värdet på den position som ljuspennan pekar
+på på skärmen. Om n=0 kommer positionen att läsas (x-värdet) i relation till
+vänstra kanten och om n=1 kommer positionen på pennan att läsas relaterad
+till toppen på skärmen (y-värdet). Ett värde i skalan 0 till 255 kommer att
+returneras i bägge fallen.
+
+NOTERA: Om de returnerade värdena i den här funktionen faller utanför skalan
+	behöver din ljuspenna justeras. I instruktionerna du fick med din
+	penna får du reda på hur du gör detta.
+
+EXEMPEL   : För att läsa punkten på skärmen på vilken ljuspennan pekar
+AKTION    : Koppla en ljuspenna till spelporten på din VIC. Skriv följande
+	    program och kör det:
+PROGRAMRAD: 10 X=RPEN(0):Y=RPEN(1):PRINT X,Y:GOTO 10
+AKTION    : Peka med ljuspennan på olika punkter på skärmen.
+RESULTAT  : En serie av nummerpar kommer att rullas upp på skärmen. Numren
+	    till vänster är X-värdet och numren till höger är Y-värdet.
+
+5.8	RJOY
+
+FORMAT: RJOY (n)
+SYFTE : Att läsa värdet på ett joystick.
+
+Funktionen RJOY bestämmer värdet som indikerar en joysticks-förflyttning.
+Du måste använda något nummer mellan 0 och 255 som parameter på den här
+funktionen. Eftersom det måste finnas en parameter så påverkar inte dess
+värde det värde som returneras av funktionen.
+
+Värdena, som genereras av joystick när den flyttas i varje riktning och när
+eldknappen är nedtryckt, visas i schemat nedan. Ett diagram som visor dessa
+värden är Figur 5-1.
+
+RIKTNING		VÄRDE		     ELDKNAPP
+					       |
+UPP			  1      	.------+---------------------.
+NED			  2      	|      v _     C= COMMODORE  |
+HÖGER			  8      	|       / \                  |
+VÄNSTER			  4      	|      (128)   1             |
+HÖGER DIAGONALT UPP	  9      	|   5 _ \_/    _       _ 9   |
+VÄNSTER DIAGONALT UPP	  5      	|    |\       /|\      /|    |
+HÖGER DIAGONALT NED	 10     	|      \       |      /      |
+VÄNSTER DIAGONALT NED	  6      	|       \   ___|__   /       |
+ELDKNAPP		128    		|        \ /      \ /        |
+INGEN FLYTTNING		  0      	|         /    0   \         |
+					| 4 <----( POSITION )----> 8 |
+					|         \        /         |
+					|        / \______/ \        |
+					|       /     |      \       |
+					|      /      |       \      |
+					|    |/      \|/       \|    |
+					|   6 ¯       ¯        ¯ 10  |
+					|             2              |
+					`----------------------------'
+			                  Figur 5-1. Joystick-värden
+
+EXEMPEL   : Att returnera alla möjliga värden till joystick
+AKTION    : Koppla joystick till spelporten på din VIC. (Se din VIC
+	    Användarhandbok) Skriv in och kör följande korta program:
+PROGRAMDEL: 10 X=RJOY (0):PRINT X
+	    20 FOR S=1 TO 1000 NEXT
+	    30 GOTO 10
+RESULTAT  : Värdena på alla joystick-positioner och på eldknappen skrivs ut på
+	    skärmen.
+
+5.9	Användningen av läsfunktionerna
+
+Funktionerna som läser värden på spelapparaterna har en uppenbar användning.
+När du skriver spel så måste du veta positionen som spelaren har indikerat.
+RPOT, RJOY och RPEN tillåter dig att med lätthet göra detta.
+
+Fördelen med de andra kommandona är att de kan användas som analys- eller
+korrigeringsverktyg. Om ditt program inte fungerar korrekt kan du, till
+exempel, läsa värdena i färg- eller ljudregistren vid ett speciellt tillfälle
+och se om värdena returnerar vad du hade väntat dig.
+
+------------------------------------------------------------------------
+
+DEL SEX : SAMMANFATTNING
+
+6.1 Introduktion
+
+Den här delen innehåller ett program som använder SUPER EXPANDER kassetten.
+Programmet är beskrivet, och en hel programlistning ges för att du ska
+fundera igenom det själv och pröva det.
+
+6.2 Programbeskrivning
+
+Den första delen av programmet som finns i Del 6.3 illustrerar några av de
+former som kan göras på skärmen med SUPER EXPANDER högupplösande grafiska
+set. Den andra delen av programmet sätter musik till programmet samtidigt som
+de tillhörande noterna ritas på skärmen på en notrad.
+
+6.3 Programlistning
+
+Här följer nu en komplett listning över programmet;
+
+ 6 REM CYANSKÄRM
+ 8 POKE36879,59
+10 GOSUB1200
+12 PRINT"(SHIFT och CLR/HOME)(4 CRSR DOWN)(7 blanka)KONSTVERK":GOSUB1300
+16 FORG=1TO100:NEXT
+17 REM VÄLJ GRAFIK
+18 GRAPHIC2
+19 REM VÄLJ FÄRG
+20 COLOR3,30,10:GOSUB1500:GOSUB2100
+30 REM RITA FYRKANT
+40 DRAW2,400,450TO600,450:GOSUB2000
+60 DRAW2TO600,650:GOSUB2000
+80 DRAW2TO400,650:GOSUB2000
+100 DRAW2TO400,450:GOSUB2000:SCNCLR:GOSUB1500
+130 REM RITA CIRKEL
+135 CHAR18,7,"CIRKEL":GOSUB2500
+140 CIRCLE2,512,512,70,100 GOSUB2100:SCNCLR:GOSUB1500
+170 REM RITA TRIANGEL
+175 CHAR18,7,"TRIANGEL":GOSUB25000
+180 DRAW2,550,450TO350,650:GOSUB2000
+200 DRAW2TO750,650:GOSUB2000
+220 DRAW2TO550,450:GOSUB2000:SCNCLR:GOSUB1500
+250 REM RITA ELLIPS
+255 CHAR18,8,"ELLIPS":GOSUB2500
+260 CIRCLE2,512,512,200,100:GOSUB2100:SCNCLR:GOSUB1500
+300 REM RITA ARC
+305 CHAR18,9,"ARC":GOSUB2500
+310 CIRCLE2,512,512,70,100,25,75:GOSUB2100:SCNCLR:GOSUB1500
+350 REM PRICKA PUNKTER
+355 CHAR18,8,"PRICKA PUNKTER":GOSUB2500
+360 POINT2,400,450,400,650,600,650,600.450:GOSUB2100:SCNCLR:GOSUB1500
+495 CHAR18,3,"MÅLAD CIRKEL":GOSUB2500
+500 CIRCLE2,512,512,70,1 00:GOSUB2100:REGION7
+505 REM MÅLA FORMER
+510 PAINT2,512,512:GOSUB2100:SCNCLR:GOSUB1500
+535 REGION0:CHAR18,3,"MÅLAD FYRKANT":GOSUB2500
+540 DRAW2,400,450TO600,450:GOSUB2100
+550 DRAW2TO600,650:GOSUB2100
+560 DRAW2TO400,650:GOSUB2100
+570 DRAW2TO400,450:GOSUB2100
+580 REGION2:PAINT2,512,512:GOSUB2100:SCNCLR:GOSUB1500
+605 REGION0:CHAR18,3,"MÅLAD ELLIPS":GOSUB2500
+610 CIRCLE2,512,512,200,100:GOSUB2100
+620 REGION6:PAINT2,512,512:GOSUB2100:SCNCLR: GOSUB1500
+645 REGION0:CHAR18,3,"MÅLAD TRIANGEL":GOSUB2500
+650 DRAW2,550,450TO350,650:GOSUB2100
+660 DRAW2TO750,650:GOSUB2100
+670 DRAW2TO550,450:GOSUB2100
+680 REGIONS:PAINT2,512,512:GOSUB2100:REGION0
+681 REM GÖRA MUSIK
+686 GRAPHIC0:GOSUB1200
+687 PRINT"(SHIFT och CLR/HOME)(4 CRSR DOWN)(8 blanka)MUSIK":
+    GOSUB1300:GRAPHIC2:GOSUB3000
+690 REM SPELA ACKORD
+691 SOUND225,225,225,0,9:FORG=1TO2000:NEXT:SOUND0,0,0,0:GOSUB3000
+695 R=400
+697 REM RITA NOTRADER
+700 DRAW2,1,RTO999,R:GOSUB2100
+710 R=R+100:IFR<800THEN730
+720 GOTO700
+725 REM RITA KLAV
+730 CIRCLE2,200,900,7,14
+740 DRAW2,200,900,TO200,325
+750 CIRCLE2,200,400,52,75,75,25
+760 CIRCLE2,200,663,130,196,25,75
+770 CIRCLE2,200,700 100,147,75,25
+775 CIRCLE2,200,625,60 80,5,75
+780 CIRCLE2,250,660,7,14
+790 GOSUB2500
+795 REM RITA NOTER
+800 R=300:R1=900:A=0
+805 REGION0
+810 CIRCLE2,R,R1,28,40
+812 DRAW2,R+28,R1TOR+28,R1-200
+815 A=A+1:ONAGOSUB915,920,925,930,935,940,945,950
+820 R=R+90:R1=R1-50
+830 IFR<1000THENGOSUB1000
+840 GOTO810
+855 REM SPELA NOTER
+915 PRINT"(CTRL och <- )V9T6S2O2C":RETURN
+920 PRINT"(CTRL och <- )V9T6S2O2D":RETURN
+920 PRINT"(CTRL och <- )V9T6S2O2E":RETURN
+920 PRINT"(CTRL och <- )V9T6S2O2F":RETURN
+920 PRINT"(CTRL och <- )V9T6S2O2G":RETURN
+920 PRINT"(CTRL och <- )V9T6S2O2A":RETURN
+920 PRINT"(CTRL och <- )V9T6S2O2B":RETURN
+920 PRINT"(CTRL och <- )V9T6S2O3T7C":RETURN
+1000 FORG=1TO500:NEXT
+1002 REM SKRIV UT NOTER
+1005 AA$="(CTRL och <- )V9T4S202"
+1006 REGION6
+1007 CHAR4,6,"C":PRINTAA$"CR";
+1010 CHAR4,7,"D":PRINT"DR";
+1015 CHAR4,8,"E":PRINT"ER";
+1020 CHAR4,9,"F":PRINT"FR";
+1025 CHAR4,10,"G":PRINT"GR";
+1030 CHAR4,11,"A":PRINT"AR";
+1035 CHAR4,12,"B":PRINT"BR";
+1040 CHAR4,13,"C":PRINT"T803C"
+1050 FORG=1TO2000:NEXT:SCNCLR
+1067 GRAPHIC0:END
+1195 REM TA BORT SKÄRM
+1200 POKE36865,150:RETURN
+1295 REM SKRIV PÅ SKÄRMEN
+1300 X1=36865:FORJ=150TO35STEP-1:POKEX1,J:FORG=1TO10:NEXTG,J:RETURN
+1500 CHAR2,6,"KONSTVERK":GOSUB2500:RETURN
+2500 RETURN
+2000 PRINT"(CTRL och <- )V9T2S303C" FORS=1TO500:NEXT:RETURN
+2100 FORQQ=1TO500:NEXT:RETURN
+2500 FORW=1TO1000:NEXT:RETURN
+3000 CHAR2,7,"MUSIC":RETURN
+30010 REM SUPER
+30015 REM EXPANDER
+30020 REM DEMO
+
+[ tecknad bild på en stordator med en massa fläktar/rattar, en man som pekar
+  på datorn och säger till en annan man: "VIC-20 Folkdatorn", med påståendet
+  "Idag går det minst 100 datorer på det här utrymmet!" under bilden ]
+
+------------------------------------------------------------------------
+
+REGISTER
+
+Ackord, spela musik			11
+Altgenerator				11,13
+Arc, att rita en			9
+Avslutning av musikteckenutskrift	12
+Avslutning av SUPER EXPANDER-program	3
+Axlar, x och y				6
+Basgenerator				11,13
+BASIC, förenlighet med VIC		1,3
+Brus, att skapa				11,13
+CHAR					2,9
+CIRCLE					2,3,9
+Cirkel, att rita en			9
+COLOR					2,7,8,15
+Direkt tillstånd			2
+DRAW					9
+Ellips					9
+Expansionsenhet, VIC 1010		1
+Expansion, minne			2
+Fel, indikationer			3
+Funktionstangenter:
+	förtilldelning av värden till	2,4
+	tillägg av vagnretur till	5
+	ändring av tilldelning		4
+	ändring av värden till		1,4,5
+Färgregister				6,7,8,9,15
+Färgvärden				6
+Färg, ändra tecken			7,8
+Förtecken, #				14
+	   b				14
+Generator				11,13
+Gradian					9
+Grafiskt tillstånd, flerfärg		6,7,8,9
+		    högupplösande	7,8,9
+		    kombinerat		6,7,9
+GRAPHIC					2,7,15
+Hjälpfärg				2,6
+Högupplösande grafiskt tillstånd	7,8,9
+Indirekt tillstånd			2
+Joystick, returnerade värden av		1,16,17
+Kassett, laddning av			1
+KEY					2,4
+Kommandon, komma in i SUPER EXPANDER	2
+Kommandon, lista			2
+Koordinater, skärm			6,8,9
+Laddning av SUPER EXPANDER kassett	1
+Ljudregister				11,15
+Ljuspenna, returnerade värden av	2
+Läsa funktioner				2,15,17
+Matrisskärm				6,7
+Minne, extra RAM			1,2
+Musik, gå in i ensamnottillstånd	12
+Musikteckenset				12
+Musikteckenutskrift, initialisering	12
+		     avslutning		12
+Musiktillstånd, komma in i		12
+Måla grafiska former			1,9
+Nollpunkt på skärmkoordinater		6
+Oktavtal				13
+Origo, skärm				6
+Paddles, värden returnerade av		1,16
+PAINT					2,7,9
+POINT					2,8
+Pricka grafiskt				1,6
+PRINT					11,12,15
+Program, köra SUPER EXPANDER		3
+	 avsluta SUPER EXPANDER		3
+RAM, extra minne			1,2
+Ramfärg					2,6
+RCOLR					15
+RDOT					2,16
+Redigering				17
+REGION					2,7,15
+Register, färg				6,7,8,9,15
+	  ljud				11,15
+Rektanglar, att rita			8
+Rensning av grafisk skärm		10
+RESTORE-tangent				3,12
+RETURN					2
+RGR					2,15
+Rita en arc				9
+     en cirkel				9
+     en ellips				9
+     en rad				8
+RJOY					16,17
+RPEN					2,16,17
+RPOT					2,16,17
+RSND					2,17
+Rutnät					6
+SCNCLR					2,10
+Skala av skärmkoordinater		6
+Skriva musik				11,12
+Skärm, färg				6,7,8
+       koordinater			6,8,9
+       matris				6,7
+       origo				6
+       ram				6,7
+       rensa en grafisk			10
+Soprangenerator				11,13
+SOUND					2,11,15
+Tangenter, funktion			1,2
+Tangent, RESTORE			3,12
+Teckenfärg				2,7,8,9
+Teckenset, ändring			7,8
+	   musik			12
+Tempo, sätta musik			14
+Textutskrift				6
+Tillstånd, gå in i musik-		12
+	   högupplösande grafiskt	7,8,9
+	   flerfärg, grafiskt		6,7,8,9
+Tillägg av vagnretur			5
+Trianglar				8
+Utskrift av musiktecken			12
+Vagnretur, tillägg av			5
+VIC 1010 Expansionsenhet		1
+Volym, sätta enkeltons			13
+       sätta flertons			11
+
+------------------------------------------------------------------------
+
+SAMMANFATTNING AV SUPER EXPANDER KOMMANDON
+
+Operation				Syntax				Sida
+Ändra funktionstangentstilldelning	KEY el. KEY n,"entry" ........	4
+Välja grafiskt set			GRAPHIC n ....................	7
+Välja färg				COLOR sc,bo,ch,au ............	7
+Pricka punkt(er)			POINT cr,x,y
+				    el. POINT cr,x,y,x1,y1 ...........  8
+Ändra teckenfärg			REGION c .....................  8
+Dra linje(r)				DRAW cr,x,y TO x1,y1
+				    el. DRAW cr,x,y TO x1,y1 TO x2,y2
+				    el. DRAW cr TO x,y ...............  9
+Rita en cirkulär form			CIRCLE cr,x,y,rx,ry ..........  9
+Rita en cirkelbåge			CIRCLE cr,x,y,rx,ry,as,af ....  9
+Måla en sluten area			PAINT cr,x,y .................  9
+Skriva ut text på grafisk skärm		CHAR rad,kolumn,"text" ....... 10
+Rensa en grafisk skärm			SCNCLR ....................... 10
+Spela ett ackord		        SOUND s1,s2,s3,s4,s5 ......... 11
+Gå in i enkelnots musiktillstånd	CTRL/vänsterpil .............. 12
+Skriva ut musiktecken			P ............................ 12
+Avsluta musikteckensutskrift		Q ............................ 12
+Sätta volym				V n .......................... 13
+Välja tongenerator			S n .......................... 13
+Välja oktav				O n .......................... 13
+Definiera tonlängd			T n .......................... 13
+Spela paus(er)			        R ............................ 14
+Spela not(er)				C,D,E,F,G,A,B i kombination .. 14
+Spela med halvtonshöjning		# ............................ 14
+Spela med halvtonssänkning		$ ............................ 14
+Läsa grafiskt tillstånd			RGR (z) ...................... 15
+Läsa värde i färgregister		RCOLR (w) .................... 15
+Läsa färg på en punkt på skärmen	RDOT (x,y) ................... 16
+Läsa värde i ljudregister		RSND (u) ..................... 16
+Läsa värde från paddle-spel		RPOT (p) ..................... 16
+Läsa värde från ljuspenna		RPEN (K) ..................... 16
+Läsa värde från joystick		RJOY (z) ..................... 17
+
+Kommandot KEY kan endast användas i direkt tillstånd. Kommandona REGION och
+DRAW är endast tillgängliga i indirekt tillstånd. Alla de andra kommandona är
+tillgängliga i både direkt och indirekt tillstånd. Kommandon som används för
+att göra grafik och SOUND-kommandot exekveras i direkt tillstånd genom att
+RETURN-tangenten trycks ned. De återstående musikkommandona exekveras när
+tangenten som är associerad till kommandot tryck ned efter det att du har gått
+in i singelnots musiktillstånd. Läsvärdena måste föregås av BASIC-kommandot
+PRINT i direkt tillstånd. I indirekt (program) tillstånd måste du ta PRINT på
+singelnotsmusik.
+
+Tillägg till sammanfattningen finns på den andra sidan bladet.
+
+------------------------------------------------------------------------
+
+SAMMANFATTNING (fortsättning)
+
+Parametrarna i kommandoformaten		Färgerna och deras associerade
+finns i listan nedan			    värde finns i listan nedan
+
+n	ett heltal					 0 Svart
+"entry"	ett användardefinierat kommando			 1 Vit
+							 2 Röd
+sc	skärmbakgrundsfärg				 3 Cyan
+bo	skärmramsfärg					 4 Violett
+cha     teckenfärg					 5 Grön
+au      hjälpfärg					 6 Blå
+cr      färgregister					 7 Gul
+x,y	koordinater till en punkt på skärmen		 8 Orange
+c	färg                              		 9 Ljus Orange
+rx	halva vidden på en cirkulär form  		10 Rosa
+ry	halva höjden på en cirkulär form		11 Ljus Cyan
+os	startpunkt på en arc i gradianer		12 Ljus Violett
+af	slutpunkt på en arc i gradianer 		13 Ljus Grön
+"text"	teckensträng					14 Ljus Blå
+s1-s4	tongeneratorer              			15 Ljus Gul
+s5	volymstyrka
+p	en enkel musikton mellan C och B
+z	något nummer mellan 0 och 255
+w	ett nummer mellan 0 och 3
+u	ett nummer i skalan 1 till 5
+K	antingen 0 eller 1
+
+Kommandona som tillhör funktionstangenterna när SUPER EXPANDER kassetten är
+initialiserad finns i listan nedan:
+
+KEY 1,"GRAPHIC"
+KEY 2,"COLOR"
+KEY 3,"DRAW"
+KEY 4,"SOUND"
+KEY 5,"CIRCLE"
+KEY 6,"POINT"
+KEY 7,"PAINT"
+KEY 8,"LIST"+CHR$(13)
+
+------------------------------------------------------------------------
+
+EXTRA PROGRAMEXEMPEL SOM INTE FINNS I ORIGINALUTGÅVAN AV MANUALEN
+
+10 GRAPHIC3:COLOR2,0,0,12
+20 FORX=0TO360STEP3
+30 Y=SIN(X*pi/180)
+40 POINT3,X,-500*Y+512
+50 NEXTX
+60 REGION1:CHAR10,10,"Y=SIN(X)"
+
+------------------------------------------------------------------------
+
+1 POKE45,084:POKE46,006:CLR
+10 GRAPHIC3:COLOR0,2,5,3
+20 FORX=1TO256STEP25:CIRCLE1,512,512,256-X,256+X:NEXT
+30 FORX=1TO256STEP25:CIRCLE0,512,512,256-X,256+X:NEXT
+45 FORX=1TO256STEP25:CIRCLE1,512,512,256+X,256-X:NEXT
+50 FORX=1TO256STEP25:CIRCLE0,512,512,256+X,256-X:NEXT
+60 REGION(5+8)
+70 FORX=1TO256STEP25:CIRCLE2,512,512,256-X,256+X:NEXT
+80 FORX=1TO256STEP25:CIRCLE3,512,512,256+X,256-X:NEXT:LOAD
+
+------------------------------------------------------------------------
+
+1 REM POKE45,166:POKE46,006:CLR
+10 X=250:Y=240:GRAPHIC1
+20 X1=X+250:Y1=Y+240:FORZ=1TO20
+30 COLOR0,0,6,2:DRAW2,X,YTOX,Y1TOX1,Y1TOX1,YTOX,Y
+40 X=RND(10)*1000:X1=RND(10)*100:Y=RND(10)*1000:Y1=RND(10)*150:NEXT
+50 FORZ=1TO12:PAINT3,X,Y
+60 X=RND(10)*1000:Y=RND(10)*1000:NEXT:LOAD
+
+------------------------------------------------------------------------
+
+10 GRAPHIC2:COLOR2,3,1,0
+20 DRAW2,0,300TO1023,300:DRAW2,0,600TO1023,600:DRAW2,512,0TO512,1023
+30 CIRCLE2,150,150,50,70,50,20:CIRCLE0,150,150,50,70,50,20
+40 CIRCLE2,750,150,100,60,0,80:CIRCLE0,750,150,100,60,0,80
+50 REGION4:PAINT2,100,400:REGION5:PAINT2,600,400
+60 COLOR0,0,1,0:SCNCLR:CIRCLE2,512,512,400,500:CIRCLE0,512,512,400,500
+70 COLOR1,4,5,0:DRAW2,0,0TO1023,1023:DRAW2,0,1023TO1023,0
+80 REGION2:PAINT2,250,500:REGION4:PAINT2,750,500
+90 REGION5:PAINT2,500,250:REGION7:PAINT2,500,750
+100 COLOR1,1,0,0:CIRCLE2,512,512,300,400
+110 CHAR10,2,"DIT IS EEN TEST":REGION0:CIRCLE0,512,512,300,400
+120 FORI=1TO1500:NEXTI:SCNCLR:LOAD
+
+------------------------------------------------------------------------
+
+5 A=0:B=6:C=1:D=2
+10 GRAPHIC1:COLOR0,2,1,6
+20 CIRCLE1,512,512,128*.75,128:PAINT1,512,512
+30 CIRCLE2,512,512,256*.75,256:PAINT2,400,400
+40 CIRCLE3,512,512,500*.75,500:PAINT3,300,300
+50 FORLO=1TO9:COLOR1,2,0,6:FORX=1TO650:NEXT
+60 COLOR0,6,1,2:FORX=1TO650:NEXTX,LO
+70 CLR:POKE45,123:POKE46,005:LOAD""
+
+------------------------------------------------------------------------
+
+10 GRAPHIC3
+20 COLOR3,3,14,2:CIRCLE2,512,512,256*.75,256,25,75
+30 DRAW2,512,256TO512,0:CIRCLE2,512,512,500*.75,500,25,75
+40 DRAW2,512,1000TO512,770:DRAW3,512,770TO680,770TO580,512TO512,512TO512,770
+50 DRAW2,512,256TO680,256TO580,512:DRAW2,512,256TO512,512
+60 PAINT2,450,900:PAINT2,550,300:PAINT3,550,700:REGION0:POINT0,770,512
+70 CHAR16,11,"COMMODORE":CHAR18,11,"COMPUTER"
+80 CLR:POKE45,127:POKE46,005:LOAD
+
+*********
+
+End of the iDOC= etext of the Super Expander Manual.
+
+*********

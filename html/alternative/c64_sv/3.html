@@ -1,0 +1,482 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="sv" dir="LTR">
+<head>
+ <title>iDOC= | Commodore 64 användarmanual</title>
+ <link rev="made" href="m&#65;ilto:peter&#64;softwolves.pp&#46;se">
+ <meta name="author" content="Peter Karlsson">
+ <meta name="description" content="iDOC=:s HTML-version av den svenska Commodore 64-användarmanualen, kapitel 3">
+ <link rel="stylesheet" type="text/css" href="c64.css">
+ <link rel="next" href="4.html" title="Nästa">
+ <link rel="previous" href="2.html" title="Föregående">
+ <link rel="first" href="0.html" title="Första">
+ <link rel="last" href="k-p.html" title="Sista">
+ <link rel="toc" href="./" title="Innehållsförteckning">
+ <link rel="copyright" href="./" title="Upphovsrättsinformation">
+ <link rel="appendix" href="a-b.html" title="Bilagor">
+ <link rel="help" href="../../../help/" title="Vävplatshjälp">
+ <link rel="search" href="../../search" title="Sök">
+ <link rel="index" href="../" title="iDOC=:s textindex">
+ <link rel="home" href="../../main" title="iDOC=">
+ <!-- $Id: 3.html,v 1.8 2003/05/01 20:33:02 peter Exp $ -->
+</head>
+
+<body>
+<div class="logo">
+
+<h1>
+ <a href="../../">
+  <img src="../../../pics/idoccbm.gif" width=211 height=150 border=0
+       alt="iDOC="></a>
+ <a href="../../../pics/cbm/c64anvmanual.jpg">
+  <img src="../../../pics/cbm/c64anvmanual-tumnagel.jpg" border=0
+       alt="Commodore 64 användarmanual" width=100 height=149></a>
+</h1>
+
+</div>
+
+<div class="navigation">
+ [ <a href="2.html">&lt;-- Föregående</a>
+ | <a href="./">Innehållsförteckning</a>
+ | <a href="4.html">Nästa --&gt;</a>
+ ]
+</div>
+
+<div class="intro">
+<h1>3. BÖRJA PROGRAMMERA I BASIC</h1>
+
+<ul>
+ <li>Nästa steg<br>
+     - GOTO
+ <li>Redigeringstips
+ <li>Variabler
+ <li>IF ... THEN
+ <li>FOR ... TO ... NEXT
+</ul>
+</div>
+
+<div class="body">
+<h2 id="s1">3.1 NÄSTA STEG</h2>
+
+<p>
+ Hittills har vi utfört enklare uppgifter genom att skriva in en enda rad med
+instruktioner i datorn. Efter det att vi tryckt på <kbd>RETURN</kbd> utfördes den
+begärda uppgiften direkt. Detta kallas DIREKT-mod eller KALKYLATOR-mod.
+<p>
+ Men för att kunna utföra något meningsfullt måste vi få datorn att arbeta
+med mer än en instruktionsrad. Ett antal instruktioner kombinerade
+tillsammans bildar ett PROGRAM, vilket gör att du bättre kan utnyttja
+Commodore 64's fulla kapacitet.
+<p>
+ För att se hur enkelt det är att skriva ditt första Commodore 64 program,
+pröva följande:
+<p>
+ Radera skärmen genom att hålla ned <kbd>SHIFT</kbd> och tryck på <kbd>CLR/HOME</kbd>.
+<p>
+ Skriv NEW och tryck på <kbd>RETURN</kbd>. (Detta raderar ut eventuella tal som kan
+ligga kvar i datorns minne från tidigare experiment).
+<p>
+ Skriv nu följande exakt som det står. (kom ihåg att trycka <kbd>RETURN</kbd> efter
+varje rad).
+<pre class=screen>
+  10 ?"COMMODORE 64"
+  20 GOTO 10
+  <span class=block>_</span>
+</pre>
+<p>
+ Skriv nu RUN och tryck <kbd>RETURN</kbd> -- se vad som händer. Skärmen kommer nu att
+fyllas med "COMMODORE 64" i vänsterkanten. När du har sett färdigt tryck på
+<kbd>RUN/STOP</kbd> för att stoppa programmet.
+<pre class=screen>
+  COMMODORE 64
+  COMMODORE 64
+  COMMODORE 64
+  COMMODORE 64
+  COMMODORE 64
+  COMMODORE 64
+  COMMODORE 64
+  COMMODORE 64
+  COMMODORE 64
+  COMMODORE 64
+  COMMODORE 64
+  COMMODORE 64
+  BREAK IN 10
+  READY
+  <span class=block>_</span>
+</pre>
+<p>
+ Ett antal viktiga begrepp, som introducerades i detta korta program, är
+grundläggande för all programmering.
+<p>
+ Lägg märke till att varje instruktionsrad föregicks av ett nummer. Dessa
+radnummer talar om för datorn i vilken ordningsföljd de olika
+instruktionerna ska utföras. Dessa nummer är också en referenspunkt i den
+händelse programmet behöver gå tillbaka till en specifik rad. Radnummer kan
+vara vilket som helst heltal mellan 0 och 63999.
+<pre>
+  10 PRINT "COMMODORE 64"
+  ^    ^
+  |    |-- Instruktion
+  |
+  +------- Radnummer
+</pre>
+
+<p>
+ Det är god programmeringsteknik att numrera raderna i steg om 10 -- i den
+händelse du senare önskar lägga till ytterligare instruktioner. Förutom
+PRINT använde vårt program ytterligare ett BASIC-kommando, nämligen GOTO.
+Detta instruerar datorn att gå direkt till en bestämd rad och utföra vad som
+står där och därefter fortsätta vidare därifrån.
+<pre>
+  +--&gt; 10 PRINT "COMMODORE 64"
+  |
+  +--- 20 GOTO 10
+</pre>
+<p>
+ I vårt exempel skriver programmet meddelandet i rad 10, går till nästa rad
+(20), vilket instruerar datorn att gå tillbaka till rad 10 för att skriva
+meddelandet en gång till. Detta upprepas hela tiden. Eftersom vi inte givit
+programmet någon väg ut ur denna slinga, snurrar programmet runt utan slut
+tills dess vi avbryter det utifrån med <kbd>RUN/STOP</kbd>-tangenten.
+<p>
+ Skriv LIST direkt du har stoppat programmet. Ditt program visas då på
+skärmen, som du skrivit det, emedan det finns i datorns minne. Lägg också
+märke till att datorn omvandlade ? till PRINT åt dig. Programmet kan nu
+ändras, sparas eller köras igen.
+<p>
+ En annan viktig skillnad mellan att skriva in något i direktmod och att
+skriva program är att direkt efter datorn utfört instruktionerna och du
+raderat skärmen är instruktionerna förlorade om du använt direktmod. Ett
+program kan du emellertid alltid få tillbaka genom att skriva LIST.
+<p>
+ När det gäller förkortningar, glöm inte av att datorn kanske inte får plats
+med alla instruktioner om du använder för många på en rad.
+
+
+<h2 id="s2">3.2 REDIGERINGSTIPS</h2>
+
+Om du gör ett fel på en rad har du ett antal korrigeringsmöjligheter.
+
+<ol>
+ <li>Du kan skriva om en hel rad, och datorn ersätter alltid den gamla raden
+     med den nya.
+
+ <li>En oönskad rad kan raderas genom att skriva radnumret följt av <kbd>RETURN</kbd>.
+
+ <li>Du kan också enkelt redigera en rad med hjälp av CRSR-tangenterna och
+     redigeringstangenterna.
+</ol>
+
+<p>
+ Föreställ dig att du gjort ett skrivfel på en av raderna i exemplet. För
+att korrigera utan att skriva om hela raden ger följande:
+<p>
+ Skriv LIST. Använd därefter <kbd>SHIFT</kbd> och <kbd>CRSR UPP/NED</kbd> tangenterna
+tillsammans och flytta markören upp till den rad som behöver ändras.
+<p>
+ CRSR-höger tangenten används for att flytta markaren till det tecken du
+vill ändra. Skriv det nya tecknet Över det gamla. Tryck nu på <kbd>RETURN</kbd> så
+ersätter datorn det gamla tecknet med det nya.
+<p>
+ Om du behöver mer utrymme på en rad, ställ markaren där utrymmet behovs och
+tryck ned <kbd>SHIFT</kbd> och <kbd>INST/DEL</kbd>. samtidigt och du får utrymme for ett
+ytterligare tecken. Skriv nu in den information du önskar och tryck
+<kbd>RETURN</kbd>. På liknande sätt kan du ta bort oönskade tecken genom att placera
+markaren omedelbart till häger om det tecken som du vill avlägsna och
+därefter trycka på <kbd>INST/DEL</kbd>-tangenten.
+<p>
+ För att övertyga dig om att ändringarna accepterats av datorn, skriv LIST
+och det korrigerade programmet visas på skärmen. Radnummer behöver inte
+skrivas in i nummerföljd. Datorn lägger dem själv i rätt följd.
+<p>
+ Försök nu att redigera vårt enkla program genom att ändra rad 10 genom att
+lägga till ett komma (,) vid slutet av raden så som visas nedan. Glöm inte
+att flytta ned markören under rad 20 innan du skriver RUN.
+<pre class=screen>
+  10 PRINT "COMMODORE 64",
+
+
+  COMMODORE   COMMODORE   COMMODORE   COMMODORE
+  COMMODORE   COMMODORE   COMMODORE   COMMODORE
+  COMMODORE   COMMODORE   COMMODORE   COMMODORE
+  COMMODORE   COMMODORE   COMMODORE   COMMODORE
+  COMMODORE   COMMODORE   COMMODORE   COMMODORE
+  COMMODORE   COMMODORE   COMMODORE   COMMODORE
+  COMMODORE   COMMODORE   COMMODORE   COMMODORE
+  COMMODORE   COMMODORE   COMMODORE   COMMODORE
+  COMMODORE   COMMODORE   COMMODORE   COMMODORE
+  COMMODORE   COMMODORE   COMMODORE   COMMODORE
+  COMMODORE   COMMODORE   COMMODORE   COMMODORE
+  COMMODORE   COMMODORE   COMMODORE   COMMODORE
+  COMMODORE   COMMODORE   COMMODORE   COMMODORE
+  BREAK IN 10
+  READY
+  <span class=block>_</span>
+</pre>
+
+<h2 id="s3">3.3 VARIABLER</h2>
+
+<p>
+ Variabler är en av de mest använda egenskaperna hos programspråken, därför
+att de kan representera mängder av information som finns i datorn. Att
+förstå hur variabler fungerar ger datoranvändandet enklare och tillåter dig
+att använda finesser som annars vore omöjliga att utnyttja.
+<p>
+ Föreställ dig ett antal lådor i datorn. Dessa lådor kan användas att
+förvara siffervärden eller en rad med bokstäver. Varje låda ska märkas med
+ett namn som vi själva väljer. Det namnet kallas variabel och representerar
+informationen i lådan. Om vi exempelvis säger:
+<pre>
+  10 X% = 15
+  20 X = 23.5
+  30 X$ = "SUMMAN AV X% + X="
+</pre>
+<p>
+ Datorn skulle kunna representera variablerna på följande sätt:
+<pre>
+  X%  15
+  X   23.5
+  X$  SUMMAN AV X% + X =
+</pre>
+<p>
+ En variabel motsvarar lådan, eller minnesplatsen, där det aktuella värdet av
+variabeln lagras. Som du ser kan vi tilldela endera heltal, decimaltal eller
+bokstäver till variabler.
+<p>
+ Procenttecknet (%) efter ett variabelnamn betyder att variabeln ska
+representera ett heltal mellan 0 och +-32767. Följande är tillåtna namn på
+heltalsvariabler:
+<pre>
+  A%
+  X%
+  A1%
+  NM%
+</pre>
+<p>
+ Dollartecknet ($) efter ett variabelnamn betyder att variabelnamnet
+representerar en textrad (textsträng). Följande är exempel på
+strängvariabler
+<pre>
+  A$
+  X$
+  MI$
+</pre>
+<p>
+ Decimaltalsvariabler följer samma system, med följande exempel:
+<pre>
+  A1
+  X
+  Y
+  MI
+</pre>
+<p>
+ När man tilldelar en variabel ett namn måste man komma ihåg: För det
+första: en variabel kan ha ett eller två tecken. Det första tecknet måste
+vara en bokstav mellan A och Z. Det andra tecknet kan vara en bokstav eller
+en siffra. Ett tredje tecken kan användas för att indikera vilken sorts
+variabel det gäller (heltals- eller sträng-variabel) % eller $.
+<p>
+ Du kan använda variabelnamn med mer än två bokstäver men endast de två
+första används av datorn. Därför är variabelnamn såsom PA och PARTNO samma
+och refererar till samma variabel-låda.
+<p>
+ Den sista regeln för variabelnamn är enkel: De får inte innehålla några av
+BASIC's reserverade ord såsom GOTO, RUN etc. Se appendix D för en komplett
+sammanställning.
+<p>
+ För att se hur variabler kan användas kan du skriva in det program vi
+visade tidigare och sedan köra det. Kom ihåg att trycka <kbd>RETURN</kbd> efter varje
+rad.
+<pre class=screen>
+  10 X% = 15
+  20 X = 23.5
+  30 X$ = "SUMMAN AV X% + X ="
+  40 PRINT "X% = "; X%, "X = "; X
+  50 PRINT X$; X% + X
+</pre>
+<p>
+ Om du gjort allt rät har du fått upp följande på din bildskärm.
+<pre class=screen>
+  RUN
+  X% = 15    X = 23.5
+  SUMMAN AV X% + XD = 38.5
+  READY
+  <span class=block>_</span>
+</pre>
+<p>
+ Vi har använt alla de trick vi hittills lärt hur man kan formatera
+utskriften på skärmen och skrivit ut summan av de två variablerna.
+<p>
+ På rad 10 och 20 tilldelade vi ett heltalsvärde till X% och ett
+flyttalsvärde till X. Rad 40 kombinerar de två typerna av PRINT-kommandon
+för att skriva ut ett meddelande och de aktuella variabelnamn- värdena på X%
+och X. Rad 50 skriver ut textsträngen med variabelnamnet X$ och summan av X%
+och X.
+<p>
+ Lägg märke till att trots att X används som en del i varje variabel, gör %
+och $-tecknen variablerna unika så de kan representera olika värden. Men
+variabler är ännu mer kraftfulla. Om du ändrar dess värde ersätts det gamla
+värdet med det nya i samma låda. Detta tillåter dig att skriva en
+instruktion såsom:
+<pre>
+  X = X + 1
+</pre>
+<p>
+ Detta kan inte accepteras i normal matematik, men är en mycket vanlig
+formulering vid programmering. Det betyder: Tag det aktuella värdet på X,
+lägg till ett och lägg tillbaka summan i lådan som representerar X.
+
+
+<h2 id="s4">3.4 IF...THEN</h2>
+
+<p>
+ Beväpnade med möjligheten att enkelt uppdatera värde på variabler, kan vi
+nu prova ett program som:
+
+<pre class=screen>
+  NEW
+  10 CT = 0
+  20 ?"COMMODORE 64"
+  30 CT = CT + 1
+  40 IF CT &lt; 5 THEN 20
+  50 END
+</pre>
+<p>
+ Vad vi nu gjort är att vi infört två nya BASIC-kommandon, och fått viss
+kontroll över det lilla PRINT-program vi introducerade i början av detta
+kapitel.
+<p>
+ IF...THEN lägger till vissa förutsättningar för programmet. Det ger att OM
+(= IF) ett uttryck är sant DÅ (THEN) ska något utfaras. Om inte uttrycket
+är sant utförs nästa programrad.
+<p>
+ Ett antal förutsättningar eller villkor kan ställas upp vid användning av
+IF...THEN-kommandona:
+
+<table border=0>
+ <tr><td>&lt;<td>Mindre än
+ <tr><td>&gt;<td>Större än
+ <tr><td>=<td>Lika med
+ <tr><td>&lt;&gt;<td>Inte lika med
+ <tr><td>&gt;=<td>Större än eller lika med
+ <tr><td>&lt;=<td>Mindre än eller lika med
+</table>
+<p>
+ Det är enkelt att använda dessa jämförelser mellan två värden, men de är
+ändå överraskande användbara.
+<pre>
+       10 CT = 0
+  +--&gt; 20 ? "COMMODORE 64"
+  |    30 CT = CT + 1
+  +-&lt;- 40 IF CT &lt; 5 THEN 20
+       |
+       V
+       50 END
+</pre>
+<p>
+ I detta programexempel har vi gjort en "loop" (slinga) som kräver vissa
+förutsättningar genom att säga: IF (om) ett värde är mindre än ett annat
+värde THEN (då) ska något utföras.
+<p>
+ Rad 10 sätter värdet på CT till 0. Rad 20 skriver ut meddelandet. Rad 30
+ökar värdet på CT med 1. Denna rad räknar upp hur många gånger loopen
+genomlöpts. Rad 40 är vår kontrollrad. Om CT är mindre än 5, vilket betyder
+att programmet arbetat sig genom loopen mindre än 5 gånger, går programmet
+tillbaka till 20 och skriver en gång till. När CT blir lika med 5, det
+betyder att "COMMODORE 64" skrivits 5 gånger, går programmet till rad 50.
+Rad 50 signalerar till datorn att avsluta programmet.
+<p>
+ Prova nu programmet och se vad vi menar. Genom att ändra CT-gränsen i rad
+40 kan du få önskat antal rader utskrivna.
+<p>
+ IF...THEN kan utföra en mängd andra nyttigheter vilka vi visar längre fram.
+
+
+<h2 id="s5">3.5 FOR...TO...NEXT</h2>
+
+<p>
+ Det finns en enklare och mer använd väg att utföra vad vi gjorde i det
+förra exemplet. Vi kan använda en FOR...TO...NEXT-loop. Studera följande:
+<pre class=screen>
+  NEW
+
+  10 FOR CT = 1 TO 5
+  20 ? "COMMODORE 64"
+  30 NEXT CT
+
+  RUN
+  COMMODORE 64
+  COMMODORE 64
+  COMMODORE 64
+  COMMODORE 64
+  COMMODORE 64
+</pre>
+
+<p>
+ Som du ser har programmet blivit kortare och mer rättfram.
+<p>
+ CT startar med värdet 1 på rad 10 Rad 20 utför utskriften. På rad 30 ökas
+CT med 1.
+<p>
+ NEXT-kommandot på rad 30 sänder automatiskt programmet tillbaka till rad 10
+där FOR delen av FOR...NEXT-instruktionen finns. Detta förlopp fortsätter
+till dess att CT når den gräns du skrivit in efter nyckelordet TO, (här 5).
+<p>
+ Variabeln som används i en FOR...NEXT-loop kan ökas med ett värde mindre än
+ett, om så önskas.
+<p>
+ Prova följande:
+<pre class=screen>
+  NEW
+
+  10 FOR NB = 1 TO 10 STEP .5
+  20 PRINT NB,
+  30 NEXT NB
+
+  RUN
+  1          1.5           2             2.5
+  3          3.5           4             4.5
+  5          5.5           6             6.5
+  7          7.5           8             8.5
+  9          9.5           10
+</pre>
+<p>
+ Om du skriver in och kör detta program, kommer du att se tal från 1 till
+10, med 0.5 steg utskrivna på skärmen.
+<p>
+ Allt vi gjort är att skriva ut de värden NB har när programmet går genom
+loopen.
+<p>
+ Du kan även bestämma om variabeln ska öka eller minska. Ersätt rad 10 med
+följande:
+<pre>
+  10 FOR NB = 10 TO 1 STEP -.5
+</pre>
+<p>
+ och se motsatsen hända, då NB minskar från 10 till 1.
+
+
+</div>
+
+<div class="bottomnavigation">
+ [ <a href="2.html">&lt;-- Föregående</a>
+ | <a href="./">Innehållsförteckning</a>
+ | <a href="4.html">Nästa --&gt;</a>
+ ]
+</div>
+
+
+<div class="bottom">
+
+<a href="http://validator.w3.org/check?uri=http://www.softwolves.pp.se/idoc/alternative/c64_sv/3.html">
+ <img src="../../../pics/vh401.gif" width=88 height=31 border=0
+  alt="[HTML 4.01]">
+</a>
+
+<address>
+ <a href="../../../">Peter Karlsson</a> /
+ $Date: 2003/05/01 20:33:02 $ /
+ <a href="m&#65;ilto:peter&#64;softwolves.pp&#46;se">peter&#64;softwolves.pp&#46;se</a>
+</address>
+</div>
+</body>
+</html>

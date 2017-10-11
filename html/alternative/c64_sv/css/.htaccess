@@ -1,0 +1,12 @@
+# Skriv om adresser som använder gamla CSS-adressen
+# -------------------------------------------------
+#
+# $Id: .htaccess,v 1.1 2002/04/05 20:50:23 peter Exp $
+
+RewriteEngine on
+
+RewriteCond %{DOCUMENT_ROOT}	^/home/peter/public_html
+RewriteRule ^.*$		/idoc/alternative/c64_sv/		[L,R=301]
+
+RewriteCond %{DOCUMENT_ROOT}	^/var/www
+RewriteRule ^.*$		/softwolves/idoc/alternative/c64_sv/	[L,R=301]

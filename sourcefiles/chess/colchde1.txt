@@ -1,0 +1,822 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore 64
+related documents in electronic text format that might otherwise cease to
+exist with the rapid advancement of computer technology and declining
+interest in 8-bit computers on the part of the general population. If you
+would like to help by converting C64 related hardcopy documents to
+electronic texts please contact the manager of International Project 64,
+Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The first
+characters of the file name are an abbreviation of the original document
+name and the language of the etext. The version number of the etext follows
+next. After that a letter may appear to indicate the particular source of
+the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International Project
+64 make no representations about the accuracy or suitability of this
+material for any purpose. This etext is provided "as-is". Please refer to
+the warranty of the original document, if any, that may included in this
+etext. No other warranties, express or implied, are made to you as to the
+etext or any medium it may be on. Neither the author(s) nor the members of
+International Project 64 will assume liability for damages either from the
+direct or indirect use of this etext or from the distribution of or
+modification to this etext. Therefore if you read this document or use the
+information herein you do so at your own risk.
+
+*********
+
+The International Project 64 etext of the Colossus Chess 4 manual, converted to
+text by Christian Janoff <mepk@rbg.informatik.th-darmstadt.de>.
+
+COLCHDE1.TXT, September 1997, etext #17.
+
+*********
+                              COLOSSUS CHESS 4
+
+                              EURO GOLD
+                                      STARLINE
+
+
+                             INHALTSVERZEICHNIS
+
+Kapitel 1 Einführung                   Kapitel 3 Das Schachspiel
+          a) Allgemeines                         a) Neues Spiel
+          b) Benötigte Hardware                  b) Ihr Zug
+          c) Programm starten                    c) COLOSSUS' Zug
+          d) Kurzfassung                         d) Spielende
+
+Kapitel 2 Bildschirmanzeige            Kapitel 4 Tastatureingaben
+          a) Allgemeines                         a) Cursorbewegungen
+          b) Das Schachbrett                     b) Numerische Dateneingaben -
+          c) Mitteilungen und Fragen                WICHTIG- unbedingt lesen!
+          d) Die Zugnotationen                   c) Kommandos (Befehle)
+             - Die Namen der Spieler
+             - Die Schachuhren         Kapitel 5 Programm-Informationen
+             - Die Spielzüge                     a) Statistiken
+          e) Technische Informationen            b) Eröffnungs-Bibliothek
+             - Zugtiefe                          c) Ergebnisse
+             - Untersuchte Stellungen
+             - Beste Zugfolge          Kapitel 6 Spiele und Problemstellungen
+             - Gegenwärtige Taktik               a) Spiele
+             - Zugvorschläge                     b) Problemstellungen
+
+
+
+
+                            Kapitel 1 - Einführung
+
+a) Allgemeines
+
+COLOSSUS ist ein Computer-Schach-Programm, das speziell für einen
+Heim-Computer konzipiert wurde. Es ist das Ergebnis einer acht Jahre langen
+Erfahrung und der Verwendung der neuesten Programmiertechniken.
+COLOSSUS beherrscht perfekt alle Schachregeln einschl. der Fünfzig-Züge-Regel
+und Remis durch Zugwiederholung. Darüberhinaus beherrscht es alle
+Standard-Endspiele wie die äußerst schwierigen Endspiele König mit zwei
+Läufern gegen König oder König mit Läufer und Springer gegen König.
+
+b) Benötigte Hardware
+
+COLOSSUS läuft auf einem Commodore 64 mit Kassetteneinheit bzw.
+Diskettenlaufwerk.
+
+c) Programm starten
+
+- Diskettenversion:
+Geben sie LOAD"CHESS",8,1 ein und drücken Sie RETURN. Das Programm wird
+automatisch nachgeladen und gestartet.
+
+- Kassettenversion:
+Drücken Sie SHIFT und RUN/STOP gleichzeitig! Dann drücken Sie die PLAY-Taste
+am Rekorder und das Programm wird automatisch geladen und gestartet.
+
+d) Kurzfassung
+
+COLOSSUS verfügt über viele Besonderheiten, so daß Sie zunächst vielleicht
+vom Umfang der Anleitung überfordert sind. Sie brauchen dann nicht gleich
+die ganze Anleitung von vorne bis hinten durchlesen. Es reicht, wenn Sie sich
+zunächst mit den wichtigsten Kapiteln vertraut machen. Dies sind:
+1c) Programm starten
+3b) Ihr Zug         und
+4a) Cursorbewegungen
+Die gebräuchlichsten Kommandos aus Kapitel 4c) sind GO (sofortige
+Zugausführung) und NEW GAME (neues Spiel), sowie TYPE (Spielstärke).
+Danach können Sie die anderen Kapitel in Ruhe lesen, wenn Sie die wirklich
+erstaunlichen Besonderheiten von COLOSSUS entdecken wollen.
+
+
+
+
+                        Kapitel 2 - Bidschirmanzeigen
+
+a) Allgemeines
+
+Das Programm benutzt zwei Anzeigen, um klare und umfassende Informationen
+über den Spielstand, die gegenwärtigen Zugerwägungen des Programms und die
+gespielten Züge zu liefern.
+
+In der Haupt-Anzeige ist das Schachbrett zu sehen. Ggf. werden hier auch
+Mitteilungen und Fragen ausgegeben. Die zweite Anzeige wird für Zugnotationen,
+die Namen der Spieler, die Schachuhren und zur Anzeige der Überlegungen
+des Programms einschließlich der vorausschauenden Planung, Stellungsbewertung,
+gegenwärtigen und Gesamttaktik mit Bewertung genutzt.
+Der Bildschirm kann mit der Leeraste zwischen beiden Anzeigen hin- und her
+geschaltet werden.
+
+b) Das Schachbrett
+
+Die Haupt-Anzeige stellt ein Schachbrett mit der augenblicklichen Anordnung der
+Figuren dar. Die Zahlen und Buchstaben, die um das Brett herum angeordnet sind,
+helfen bei der algebraischen Bezeichnung der einzelnen Felder.
+
+c) Mitteilungen und Fragen
+Verschiedene Mitteilungen und Fragen werden von Fall zu Fall am Rande des
+Brettes ausgegeben. Mehr dazu im späteren Kapitel.
+
+d) Zugnotationen
+Die zweite Bildschirmanzeige gibt Auskunft über die letzten sieben Züge mit
+Zugnummern - aufgeteilt in zwei Spalten, über den Zügen werden jeweils Farbe
+und Namen des Spielers sowie die verbrauchte Zeit ausgegeben.
+
+- Namen der Spieler:
+Über jeder Spalte wird der Name des weißen/schwarzen Spielers angezeigt, und
+zwar setzt das Programm für sich den Namen "COLOSSUS" ein, und für den Spieler
+"Opponent" (Gegner).
+
+- Die Schachuhren:
+Unter dem Namen wird jeweils die verbrauchte Zeit ausgegeben. Die Ausgabe
+erfolgt in folgendem Format: hh:mm:ss (hh=Stunden, mm=Minuten, ss=Sekunden).
+Die Uhren zeigen die bis zu dem jeweiligen Spielstand verbrauchte Zeit.
+
+- Die Spielzüge:
+Die Spielzüge werden in algebraischer Notation angezeigt. Zuerst ist das
+Ursprungsfeld genannt, als zweites wird das Zielfeld notiert. Ein "X" hinter
+dem Zug gibt an, daß eine Figur geschlagen wurde, anderenfalls wird ein "-"
+notiert. Bei Rochaden werden die Ursprungs- und Zielfelder des Königs
+angezeigt. En-passant-Schläge werden mit "EP" hinter dem Zug gekennzeichnet.
+Bedrohungen werden mit "/" angezeigt. Ein Buchstabe kennzeichnet die
+bedrohte Figur, und zwar N = Knight (Springer), B = Bishop (Läufer),
+R = Rook (Turm) und Q = Queen (Dame).
+Ein Zug, durch den Schach geboten wird, wird mit "+" gekennzeichnet.
+
+e) Technische Informationen
+Am unteren Rand der zweiten Bildschirmanzeige werden detaillierte Informationen
+über den Rechenprozeß des Programms ausgegeben. Diese Informationen können
+einen Einblick verschaffen, wie ein gutes Schachprogramm arbeitet. Diese
+Anzeige verbraucht nur 1% der Rechenzeit des Programms.
+
+- Zugtiefe:
+Wenn COLOSSUS den nächsten Zug berechnet, zeigt es die Tiefe der Vorausplanung
+in Halbzügen an. Das Programm untersucht die meisten Züge in der angegebenen
+Tiefe, geht bei einigen jedoch noch weiter.
+
+- Untersuchte Stellungen:
+Die Anzahl der Stellungen wird in der Reihenfolge der gespielten Züge
+angezeigt. Die Stellungen werden nach jedem Zug neu berechnet und untersucht.
+
+- Beste Zugfolge:
+Das Programm zeigt die besten Züge an, die es ermittelt hat. Sie verschaffen
+sich diesen besten Zug durch den normalen Zugvorschlag, und damit gleichzeitig
+eine Analyse des Spiels über die nächsten möglichen Züge. Gewöhnlich wird
+kein Zug vorgeschlagen, durch den eine Figur geschlagen wird.
+Daneben wird diese beste Zugfolge bewertet. Die Anzeige der Bewertung erfolgt
+durch zwei Zahlen. Die erste Zahl beinhaltet die materielle, die zweite
+Zahl die Positionsbewertung. Eine positive Zahl bedeutet, daß das Programm
+die eigene Stellung besser bewertet. Mit einer negativen Zahl wird die
+Stellung des Gegners besser bewertet. Wurde die Zugfolge gefunden, die zum
+Matt führt, wird die materielle Bewertung auf plus oder minus 62 gesetzt.
+Die positionelle Bewertung gibt die Anzahl der Züge bis zum Matt an.
+
+- Gegenwärtige Taktik:
+Die gegenwärtige vom Programm erwägte Taktik (Zugfolge) wird ebenfalls
+angezeigt. Sie können verfolgen, wie sie während des Rechenprozesses wechselt.
+Die Länge der gezeigten Zugfolge kann nötigenfalls festgelegt werden. Weitere
+Detailinformationen erhalten Sie, wenn Sie die Beschreibung des Kommandos
+"Parameter ändern" nachlesen.
+
+- Zugvorschlag:
+COLOSSUS nutzt die Zeit des Spielers für eigene Berechnungen. Es geht davon
+aus, daß der Spieler einen vorsichtigen Zug macht und berechnet weiter die
+möglichen Folgezüge. Findet das Programm keinen Zug, findet auch keine
+Berechnung statt. Der vom Programm vorausgesetzte Zug wird angezeigt, und Sie
+können ihn als Zugvorschlag übernehmen. Über die Qualität dieses Zugvorschlages
+müssen Sie jedoch selbst entscheiden. Führen Sie einen anderen Zug aus, war die
+Rechenzeit des Programms umsonst, es wird jedoch mindestens jeden dritten Zug
+richtig voraussagen.
+
+
+
+
+                         Kapitel 3 - Das Schachspiel
+
+a) Neues Spiel:
+Wenn ein neues Spiel begonnen wird, sind die Figuren in Ihrer Grundstellung
+aufgebaut. Die Schachuhren stehen auf Null und die Anzeigen sind gelöscht.
+Sie haben die Wahl des ersten Zuges. Mit SHIFT-G weisen Sie COLOSSUS die
+weißen Steine zu und es beginnt. Weitere Einzelheiten zu diesem G-Befehl
+können Sie einem späteren Kapitel entnehmen.
+
+b) Ihr Zug (Your Move):
+Wenn Sie am Zuge sind, werden Sie vom Programm mit "Your Move" am unteren
+Rand der Haupt-Anzeige zum Ziehen aufgefordert. Sie geben den Zug ein, indem
+Sie den Cursor wie folgt positionieren (siehe auch Kapitel Cursorbewegungen):
+
+1) Fahren Sie mit dem Cursor auf das Feld mit der Figur, die Sie ziehen
+wollen, und drücken Sie RETURN oder den Feuerknopf (wenn der Joystick aktiviert
+ist). So legen Sie das Ursprungsfeld fest, das dann bereits angezeigt wird.
+Haben Sie versehentlich das Ursprungsfeld falsch festgelegt, können Sie mit
+der DEL-Taste die Eingabe wieder zurücknehmen. Der Cursor wird als inverse
+Linie in dem Feld angezeigt, in dem er sich gerade befindet.
+
+2) Wenn Sie den zu ziehenden Stein festgelegt haben, fahren Sie mit dem Cursor
+auf Ihr Zielfeld, das dann auch als solches angezeigt wird.
+Ist der Zug nicht erlaubt, wird die Mitteilung "Illegal" ausgegeben und die
+Zuganzeige gelöscht. Sie müssen dann den Zug beginnend mit Schritt 1 neu
+eingeben.
+
+Führt der Zug zu einer Bauernumwandlung, fragt das Programm mit "Promote to?",
+in welche Figur der Bauer umgewandelt werden soll. Bezeichnen Sie die Figur,
+indem Sie den jeweiligen Buchstaben eingeben:
+N=Knight(Springer), B=Bishop(Läufer), R=Rook(Turm) oder Q=Queen(Dame). Drücken
+Sie eine andere Taste, wird der Bauer in eine Dame umgewandelt. Achtung: Wollen
+Sie eine Rochade durchführen, ziehen Sie den König zwei Felder weiter in die
+entsprechende Richtung. Zum En-passent-Schlag geben Sie den Zug wie oben
+beschrieben ein.
+
+Ein legaler Zug wird auf dem Brett durch blinkenden Cursor angezeigt. Der Zug
+wird dann durchgeführt.
+
+c) COLOSSUS Zug:
+Wenn das Programm seinen Zug berechnet, wird die Mitteilung "Let me think.."
+ausgegeben. Die technischen Informationen auf der zweiten Anzeige werden
+während dieses Denkprozesses ständig neu aufbereitet.
+Hat das Programm seine Berechnungen beendet, wird der Zug rechts neben dem
+Schachbrett ausgegeben und wie unter b) beschrieben ausgeführt.
+Mit der Commodore-Taste brechen Sie die Berechnung des Programms ab. Es wird
+die Nachricht "Escape" ausgegeben und der bis dahin gefundene beste Zug
+ausgeführt. Hat COLOSSUS einen Zug gefunden, der sicher zum Matt führt, wird
+dies mit der Mitteilung "Mate in N" (Matt in N) angekündigt. N steht für die
+Anzahl der Züge bis zum Matt.
+
+d) Spielende:
+Wenn ein Spiel beendet ist, werden die Uhren angehalten und eine Mitteilung
+zeigt den Endstand rechts neben dem Schachbrett an. Die Mitteilungen lauten:
+
+- Drawn (Remis):
+Das Spiel endete Remis wegen einer 3-Züge-Wiederholung, der 50-Züge-Regel
+oder wegen Materialmangel. Letzteres liegt vor, wenn nur noch König, König
+und ein Läufer oder König und ein Springer gegen den anderen König spielen.
+
+- Checkmate (Schachmatt)
+
+- Stalemate (Patt):
+Eine Partei wurde ins Patt gesetzt.
+
+- Time up (Zeitablauf):
+Eine Partei hat die zulässige Bedenkzeit überschritten. Dies kann nur im
+Turniermodus vorkommen.
+
+Mit "What now?" fragt COLOSSUS, was nun geschehen soll und wartet auf ein
+Kommando. Mit SHIFT-N starten Sie ein neues Spiel.
+
+
+
+
+                         Kapitel 4 - Tastatureingaben
+
+a) Cursorbewegungen
+Der Cursor wird als inverse Linie mitten durch ein Feld dargestellt. Er kann
+auf drei Arten bewegt werden:
+
+1) Cursortasten:
+Mit den Cursortasten können Sie den Cursor wie gewohnt führen. Wird er über
+eine Seite des Brettes hinausgeführt, steht er wieder auf der entgegengesetzten
+Seite.
+
+2) Alphanumerische Tasten:
+Mittels Eingabe der Feldbezeichnungen über die Tasten A-H und 1-8 kann der
+Cursor ebenfalls bewegt werden. Nach jeder Feldeingabe muß RETURN gedrückt
+werden.
+Beispiel: E2 RETURN E4 RETURN der Bauer (Pawn) wird von E2 nach E4 geführt.
+Diese Eingabe kann gekürzt werden: E2 RETURN 4 RETURN.
+
+3) Joystick:
+Ist der Joystick aktiviert, kann der Cursor auch mittels Joystick geführt
+werden.
+
+Ist weiß am Zug, steht der Cursor in A1.
+Ist schwarz am Zug, steht der Cursor in H8.
+
+b) Numerische Daten -WICHTIG- bitte lesen:
+Viele Programm-Kommandos benötigen Zahleneingaben, um neue Parameterwerte zu
+setzen.
+Das Programm verwendet eine einfach zu handhabende, fehlersichere Methoder für
+die Zahleneingabe. Zunächst wird der gegenwärtige Parameterwert an der
+entsprechenden Stelle ausgegeben. Um den Wert zu erhöhen, drücken Sie die
+Cursor-aufwärts-Taste. Überschreiten Sie dabei die obere Wertgrenze, wird
+wieder der untere Wert angezeigt. Wenn Sie den Wert senken wollen, drücken Sie
+die Cursor-abwärts-Taste. Unterschreiten Sie die untere Wertgrenze, wird wieder
+der obere Grenzwert angezeigt. Schließen Sie die Eingabe mit RETURN ab. Wenn
+Sie keine Parameter ändern wollen, drücken Sie RETURN, ohne vorher die
+Cursortasten gedrückt zu haben.
+
+c) Kommandos (Befehle):
+Die folgenden Kommandos können Sie eingeben, wenn Sie am Zug sind, bzw. nach
+Spielende. Die Anzeige erfolgt, indem Sie SHIFT und den entsprechenden
+Großbuchstaben drücken. Die Kommandos sind nachfolgend aufgelistet und so
+konzipiert, daß sie verständlich und einfach zu handhaben sind.
+Beachten Sie:
+1) Wenn Sie ein Kommando mit Zahlen eingeben, und der Bildschirm zeigt die
+zweite, die Textanzeige, schaltet das Programm automatisch auf den
+Grafikbildschirm um.
+2) Nach Eingabe eines Kommandos wird Ihre Schachuhr angehalten.
+
+- Stellung beliebig wählen (SHIFT-A):
+Mit diesem Kommando kann jede zulässige Stellung aufgebaut werden. Es wird
+folgende Nachricht ausgegeben:
+Alter Position: SSSSS : Command? (SSSSS steht auf der Seite der Partei, die
+am Zug ist)
+
+In diesem Wahlmodus steht ein weiteres Untermenü zur Einrichtung des
+Schachbrettes zur Verfügung:
++ Ursprungsdaten zurückholen (G eingeben):
+Stellen Sie, nachdem Sie die Stellung verändert haben, noch Fehler fest,
+können Sie die ursprüngliche Position mit diesem Befehl wiederherstellen.
+
++ Anzahl der Züge (M eingeben)
+Mit "Move number?" fordert Sie das Programm auf, die Anzahl der Züge
+einzugeben (siehe 4b).
+
++ Zugrecht (S eingeben):
+Dies verhindert den Wechsel zwischen Weiß und Schwarz. Die Farbe der Steine
+wird durch die Seite mit Zugrecht bestimmt.
+
++ Figuren einsetzen:
+Um die Figuren auf dem Schachbrett beliebig umzusetzen, fahren Sie mit dem
+Cursor auf das entsprechende Feld und geben den entsprechenden Buchstaben
+ein, um das Feld zu belegen oder zu löschen:
+C=Löschen(Clear), P=Bauer(Pawn), N=Springer(Knight), B=Läufer(Bishop),
+R=Turm(Rook), Q=Dame(Queen), K=König(King)
+Um die aktuelle Feldbelegung zu ändern, positionieren Sie den Cursor auf das
+Feld und geben den jeweiligen Buchstaben ein. Nach der Umbelegung des Feldes
+rückt der Cursor ein Feld weiter nach rechts. In diesem Modus können Sie keine
+Feldbenennung über die alphanumerische Tastatur vornehmen.
+
++ Brett löschen (W eingeben):
+Dieser Befehl löscht alle Figuren vom Schachbrett, damit die Stellung schneller
+eingegeben werden kann.
+
++ Neues Spiel (SHIFT-N):
+Dieses Kommando ist auch während dieses Modus möglich (Beschreibung folgt
+später).
+
++ Exit (E eingeben):
+Hiermit können Sie den Modus verlassen, wenn Sie die Stellung aufgebaut oder
+verändert haben. Denken Sie daran, vorher das Zugrecht zuzuweisen. Sollte diese
+neue Stellung nicht zulässig sein, wird die Mitteilung "Illegal" ausgegeben,
+und Sie können den Modus nicht verlassen. Sie müssen dann erst die Stellung
+berichtigen.
+Die Stellung kann aus einem der folgenden Gründe illegal sein:
+
+Eine Partei hat keinen König,
+Eine Partei hat mehr als einen König,
+Die Partei, die nicht am Zug ist, steht im Schach,
+Eine Partei hat einen Bauern auf der ersten oder letzten Reihe,
+Eine Partei hat mehr als acht Bauern oder umgewandelte Figuren.
+
+Wenn Sie den Modus verlassen, und Sie haben die Stellung manipuliert (hierzu
+gehört auch der Seitenwechsel S), wird die Zugnotation gelöscht, und Sie
+können keine Züge mehr zurücknehmen oder durch ein Spiel wandern.
+
+- Zug zurück (SHIFT-B) und Zug vorwärts (SHIFT-F):
+Alle Spielzüge werden gespeichert (max. 120). Dies erlaubt es, Züge
+zurückzugehen und von dem alten Spielstand aus den Spielverlauf zu analysieren,
+um so eigene Schwächen und Fehler zu erkennen. Sie können danach wieder bis
+zur aktuellen Stellung vorgehen und weiterspielen.
+Sie können aber auch von einem älteren Spielstand das Spiel wieder aufnehmen
+und nun eine andere Taktik verwenden. Sie können nur schrittweise durch das
+Spiel gehen, also Zug um Zug. Wenn sie also wieder für dieselbe Partei ziehen
+wollen, müssen Sie immer zwei Züge vor- und zurückgehen.
+Achtung: Tatsächlich speichert das Programm nur 120 Züge. Dies reicht in fast
+allen Fällen aus. Sollte diese Zugzahl einmal überschritten werden, können Sie
+maximal die letzten 120 Züge zurückgehen, jedoch nicht mehr bis zum
+Spielbeginn.
+
+- Farben (SHIFT-C eingeben):
+Die Zeichen-, Untergrund- und Rahmenfarbe kann wahlweise in eine der 16 Farben
+geändert werden. Die einzige Begrenzung besteht darin, daß die Zeichen- und
+Untergrundfarbe nicht gleich sein darf, da die Anzeige dann nicht mehr lesbar
+wäre. Versuchen Sie es trotzdem, wird wieder die Mitteilung "Illegal"
+ausgegeben, und Sie müssen die Farbe neu eingeben. Beachten Sie auch, daß Sie
+für die Zeichen eine hellere Farbe wählen als für den Untergrund, da sonst
+die Farbe der Steine invertiert dargestellt wird, so daß die weißen Figuren
+dunkler als die schwarzen erscheinen. Die vorgegebenen Farben sind:
+Ziehcn=2(cyan), Untergrund=0(schwarz), Rahmen=14(hellblau) - Eingabe vergleiche
+Kapitel 4b).
+
+- Diskette / Kassette (SHIFT-D):
+Dieser Befehl erlaubt es, Stellungen abzuspeichern und wieder zu laden, sowohl
+von Diskette als auch von Kassette.
+
++ Diskettenbetrieb:
+Das Programm fragt "Initialize, Load or Save?" (Initialisieren, laden oder
+speichern). Geben Sie ein: I für Initialisieren, L für Laden einer
+abgespeicherten Stellung oder S für Speichern der aktuellen Stellung.
+
++ Kassettenbetrieb:
+Das Programm fragt nur "Load or Save?". Geben Sie L für Laden einer
+abgespeicherten Stellung oder S für Speichern der aktuellen Stellung ein.
+
+Der Druck auf jede andere Taste veranlaßt das Verlassen dieses Modus. COLOSSUS
+fragt nach der File-Nummer, die als Bestandteil des File-Namens auf der
+Diskette oder Kassette gespeichert ist.
+Taucht während des Ladevorgangs ein Fehler auf, so ist leider die aktuelle
+Stellung verloren. Beachten Sie, daß die Parameterwerte wie Zugtempo
+(Spielstärke) und die verbrauchte Zeit nicht mit abgespeichert wird. Diese
+Werte müssen von Hand neu eingegeben werden.
+Fehler werden mit "Error N" angezeigt. N ist die Fehlernummer nach der
+Tabelle im Programmierhandbuch.
+Mit der STOP-Taste kann der Lade- und Speichervorgang abgebrochen werden.
+
+- Schachuhr stellen (SHIFT-E):
+Die Schachuhr kann für beide Parteien von 00:00:00 bis 255:59:59 gestellt
+werden. Das Programm fragt erst nach den Werten des weißen und dann nach den
+Werten des schwarzen Spielers (siehe Kapitel 4b).
+Die verbrauchte Zeit kann z.B. während des Mittelspiels geändert werden, um
+das Zugtempo zu steigern, und so die Spielstärke des Programms zu mindern.
+Das Programm beachtet die verbrauchte Zeit, um darüber zu entscheiden, in
+welcher Zeit es ziehen muß, um in der vorgegebenen Zeit zu bleiben. Setzen Sie
+die Zeit also hoch, spielt COLOSSUS schneller.
+
+- COLOSSUS gegen COLOSSUS (SHIFT-G):
+Dieser Befehl zwingt das Programm für denjenigen zu ziehen, der gerade an der
+Reihe ist. Dadurch kann das Programm z.B. auch dazu gebracht werden, gegen
+sich selbst zu spielen pder das Spiel fortzusetzen, nachdem Sie mit SHIFT-S
+eine kontrollierte Zugfolge gespielt haben (wird später erläutert). Es kann
+auch dazu genutzt werden, die Seiten während des Mittelspiels zu tauschen.
+Dann werden die Schachuhren sofort gelöscht und Sie spielen mit den
+schwarzen Steinen. Am Ende des Spiels tritt das Kommando selbständig außer
+Kraft.
+
+- Blindschach (SHIFT-I):
+Nach diesem Kommando können Sie eine Blindschach-Variante spielen, wie es
+einige starke Spieler von Zeit zu Zeit praktizieren. Dazu müssen Sie einer
+der Ziffern 0 bis 3 eingeben (siehe Kapitel 4b), wenn das Programm mit
+"Invisibility?" nach der Stufe des Blindschachs fragt:
+0 ist die vorgegebene Anzeige, wobei alle Steine stehenbleiben
+1 macht die weißen Steine unsichtbar
+2 macht die schwarzen Steine unsichtbar
+3 macht alle Steine unsichtbar
+
+Die Züge werden nach wie vor sichtbar notiert. Das Wort "Invisible"
+(unsichtbar) wird ausgegeben, um Verwirrungen zu vermeiden.
+
+- Joystick (SHIFT-J):
+Mit diesem Befehl kann die Joystick-Funktion ein- und ausgeschaltet werden.
+Über den jeweiligen Joystick-Status wird eine Mitteilung ausgegeben. Der
+Joystick muß in Port 2 angeschlossen sein.
+
+- Legale Züge (SHIFT-L):
+Hiermit werden dem Spieler alle legalen Züge, die aus der gegenwärtigen
+Stellung möglich sind, gezeigt. Fahren Sie zuerst mit dem Cursor auf den
+jeweiligen Stein und drücken Sie erst dann SHIFT-L. Alle legalen
+Zugmöglichkeiten der Figur werden durch blinkende Cursor auf den möglichen
+Zielfeldern angezeigt. Danach kehrt der Cursor wieder auf das Ursprungsfeld
+zurück. Gibt es für die angesprochene Figur keinen legalen Zug, bleibt der
+Cursor stehen. Dieses Kommando ist vor allem für den lernwilligen Anfänger
+gedacht.
+
+- Neues Spiel (SHIFT-N):
+Mit diesem Kommando kann ein neues Spiel begonnen werden. Wenn Sie nicht
+den Wahl-Modus (SHIFT-A) seit dem letzten SHIFT-N benutzt haben, sind noch
+alle Notationen vorhanden, bis Sie den ersten Zug des neuen Spiels
+ausgeführt haben, so daß Sie bis dahin noch mit SHIFT-B oder -F das alte
+Spiel analysieren können.
+
+- Spielrichtung (SHIFT-O):
+Die Spielrichtung kann mit diesem Kommando vertauscht werden, so daß Sie
+mit den schwarzen Steinen von unten nach oben spielen können. Auch die
+algebraische Notation wird vertauscht.
+
+- COLOSSUS gegen COLOSSUS (SHIFT-P)
+Wenn Sie diesen Befehl eingeben, spielt das Programm gegen sich selbst. Wenn
+ein Spiel beendet ist, wartet das Programm einen Moment, um Ihnen Gelegenheit
+zu geben, die Schlußstellung kurz zu betrachten. Dann beginnt es automatisch
+ein neues Spiel. Dieser Befehl wird ignoriert, wenn sich das Programm im
+Problem- oder Endlos-Modus befindet oder das Spiel vorbei ist. Wenn Sie
+während der Denkzeit (nicht während des Zuges) die Commodore-Taste drücken,
+beendet COLOSSUS das Spiel gegen sich selbst und Sie können die Stellung
+derjenigen Partei übernehmen, die gerade am Zug ist.
+Während das Programm gegen sich selbst spielt, werden beide Parteien als
+COLOSSUS bezeichnet.
+
+- Parameter ändern (SHIFT-Q):
+Hiermit können Sie einige interne Parameter ändern, um verschiedene Funktionen
+zu ändern (siehe Kapitel 4b).
+
++ Mit "Book?" fragt COLOSSUS, ob es seine Eröffnungs-Bibliothek anwenden soll
+oder nicht: 0=nein 1=ja (normaler Betrieb)
+
++ Mit "Prediction?" (Voraussage) will das Programm wissen, ob es Ihre
+Bedenkzeit für seine Berechnungen nützen soll, was es ja normalerweise macht.
+Wenn Sie diesen Wert in 0 ändern, unterbleibt dies, was Ihnen das Spiel
+erheblich erleichtert.
+
++ Danach fragt das Programm mit "Line depth?" (Zugtiefe), wieviele Halbzüge
+es bei der Berechnung der gegenwärtigen Taktik mitteilen soll. Normal werden
+zwei Halbzüge angezeigt. Sie können zwischen 1 und 15 Halbzügen wählen.
+
++ Mit "Dimensions?" fragt das Programm, ob das Schachbrett zwei- oder drei-
+dimensional dargestellt werden soll.  Normalerweise ist der Wert 2
+(zweidimensional) eingestellt. Sie können den Wert auf 3 (dreidimensional)
+ändern.
+
++ Schließlich fragt COLOSSUS mit "Draw score?", ob der Spielstand manipuliert
+werden soll. Sie können den materiellen Spielstand von -9 bis +9 verändern
+und den positionellen Teil von -60 bis +60. Je kleiner der Spielstand ist,
+umso größere Anstrengungen wird das Programm unternehmen, um zu gewinnen.
+Wenn der Spielstand hoch ist, also günstig für COLOSSUS, spielt es sorgloser
+und Ihre Chancen stehen etwas besser.
+
+- Nachspielen (SHIFT-R):
+Mit diesem Befehl kann das ganze Spiel nachvollzogen werden, um beispielsweise
+einem Besucher den Spielverlauf bis zur aktuellen Stellung vorzuführen. Das
+Programm pausiert zwischen zwei Zügen, um Ihnen Gelegenheit zur Betrachtung
+zu geben. Die Pause kann auf eine Zeit von 0 bis 20 Sekunden festgelegt
+werden.
+Sie können das Nachspielen während der Pause mit der Commodore-Taste abbrechen.
+Während des Zuges ist das nicht möglich, denn dann erscheint die Anzeige
+"*Replaying*" über dem Schachbrett.
+
+- Schach ohne COLOSSUS (SHIFT-S):
+Mit diesem Befehl wird COLOSSUS als Gegenspieler ausgeschaltet. Sie können nun
+mit einem anderen Partner über das Programm Schach spielen oder ein Spiel bis
+zu einer bestimmten Stellung nachspielen. Das Programm übernimmt dabei eine
+Schiedsrichterfunktion, denn es läßt nur legale Züge zu. In dieser Funktion
+sind beide Anzeigen mit "Opponent" überschrieben.
+
+- Spielstärke-Modus und Spiel-Modus (SHIFT-T):
+Das Programm verfügt über sechs Spielmodi mit unterschiedlicher Geschwindigkeit
+(Spielstärke) und Spielarten. Je mehr Zeit Sie dem Programm zur Zugberechnung
+lassen, umso stärker spielt es.
+Mit "Type?" fordert das Programm Sie auf, einen der folgenden Modi zu wählen
+(numerische Dateneingabe siehe Kapitel 4b).
+1) Turniermodus:
+Alle Turnierparameter können eingegeben werden.
+Zuerst fragt das Programm nach der Anzahl der Züge bis zur ersten
+Zeitkontrolle, danach nach der Anzahl der Züge bis zur zweiten Zeitkontrolle.
+Anschließend werden die Zeiten bis zur ersten und zweiten Zeitkontrolle
+eingegeben.
+COLOSSUS nimmt es nicht so genau mit Ihrer Zeitkontrolle und wird nicht auf
+Sieg reklamieren, wenn Sie einmal die Zeit überschritten haben.
+Selbst überschreitet COLOSSUS seine Zeit gewöhnlich nicht.
+
+2) Freier Zeitmodus:
+Dies ist eine einfachere Version des Turniermodus.
+Hier brauchen Sie nicht alle vier Parameter einzustellen. Mit "Move time?"
+fragt das Programm nach der Bedenkzeit für seine Züge. Durchschnittlich
+berechnet das Programm dann seine Züge in der eingegebenen Bedenkzeit. Wenn
+Sie 0 Sekunden eingeben, haben Sie die schnellste und zugleich schwächste
+Stufe gewählt. Auf diese Art haben Sie die Möglichkeit, zwischen etlichen
+Spielstärken zu wählen.
+Das Programm setzt von sich aus 60 Züge bis zur ersten und zweiten
+Zeitkontrolle. Die Zeit bis zur jeweiligen Zeitkontrolle beträgt automatisch
+60 mal die von Ihnen durchschnittlich je Zug vorgegebene Zeit. Haben Sie keine
+Zugzeit eingegeben, geht das Programm von 10 Sekunden durchschnittlicher
+Bedenkzeit je Zug aus.
+
+3) Blitzschach-Modus:
+In Schachclubs wird vielfach aus Trainingsgründen Schach gegen die Uhr
+gespielt. Jeder Spieler hat eine festgelegte Zeit (meistens 5 Minuten), in
+der er alle Züge ausführen muß. Bei Zeitüberschreitung hat der Spieler
+verloren, dessen Zeit abgelaufen ist. Auch COLOSSUS versucht alle Züge
+in der festgesetzten Zeit auszuführen. Hat ein Spieler die Zeit überschritten,
+ist das Spiel beendet, und es wird die Mitteilung "Time up" ausgegeben.
+Mit SHIFT-E können Sie COLOSSUS oder sich selbst ein Zeit-Handicap aufgeben,
+indem Sie die betreffende Uhr vor Spielbeginn vorstellen.
+Dies ist eine ausgezeichnete Trainingsmöglichkeit für Spieler, die noch
+besser als COLOSSUS spielen können.
+
+4) Gleichzeit-Modus:
+In diesem Modus versucht COLOSSUS in der gleichen Zeit wie Sie zu ziehen.
+Führen Sie einige schnelle Züge aus, wird das Programm also auch schnelle
+Züge durchführen, um mit Ihrem Tempo Schritt zu halten. Wenn Sie jedoch
+länger über einen möglichen Zug nachdenken, läßt sich COLOSSUS ebenfalls
+länger Zeit. In der Praxis wird die Uhr des Programms Ihrer Zeit etwas
+hinterherhinken.
+
+5) Endlos-Modus:
+In diesem Modus können Schach-Rätsel nach dem Motto - Suchen Sie den besten
+Zug aus dieser Stellung - gelöst werden. COLOSSUS berechnet alle möglichen
+Zugkombinationen, um sicherzustellen, daß keine unnötigen Opfer gebracht
+werden. Das Programm setzt seine Suche bis zu 12 Halbzüge fort, es sei denn,
+Sie brechen die Suche vorher ab, das Programm findet ein schnelleres Matt
+oder nur einen legalen Zug.
+Dieser Modus ist auch beim Briefschach sehr hilfreich. Sie können das
+Programm beispielsweise nachts arbeiten lassen, um den besten Zug zu finden.
+Bei Beginn des Modus werden die Uhren auf Null gesetzt, so daß die Bedenkzeit
+gespeichert werden kann. Die Eröffnungs-Bibliothek wird bei diesem Modus
+nicht zu Rate gezogen. Im normalen Turniermodus kann das Programm denselben
+Zug in wesentlich kürzerer Zeit finden, weil dann offensichtlich schlechte
+Züge außer acht gelassen werden können.
+
+6) Problem-Modus:
+In diesem Modus löst COLOSSUS Matt-Probleme.
+Nachdem Sie diesen Modus eingeschaltet haben, fragt das Programm mit
+"Problem type?" nach der Art des Problems:
+1 - Normales-Matt = in der Form, daß Weiß am Zug Schwarz in X Zügen Matt
+setzt.
+2 - Selbst-Matt = in der Form, daß Weiß am Zug von Schwarz in X Zügen Matt
+gesetzt wird.
+3 - Hilfs-Matt = in der Form, daß Weiß am Zug Schwarz hilft, Weiß in X
+Zügen Matt zu setzen.
+
+Natürlich kann COLOSSUS Matt für Schwarz genauso schnell finden.
+COLOSSUS ist ein Schachprogramm für Heim-Computer, das in der Lage ist,
+ein Selbst- und Hilfs-Matt zu finden.
+Das Programm fragt mit "Mate in?" nach der Anzahl der Züge bis zum geplanten
+Matt. COLOSSUS findet das Matt in bis zu sieben Zügen im voraus.
+
+Wenn das Programm beginnt, nach dem Matt zu suchen, werden die Uhren auf Null
+gestellt, damit die Zeit bis zur gefundenen Lösung gespeichert werden kann.
+Hat das Programm einen Weg zum Matt gefunden, wird dieser Weg unter der
+Zuganzeige ausgegeben und die Uhren werden angehalten. Mit "Continue?" fragt
+das Programm, ob es weitersuchen soll. Wenn Sie mit der Lösung zufrieden sind,
+geben Sie N ein, anderenfalls Y (YES), und das Programm sucht einen anderen
+Weg und setzt die Uhren wieder in Gang. Haben Sie N gedrückt, macht COLOSSUS
+direkt seinen Zug. Die Suche kann so lange fortgesetzt werden, bis keine
+Matt-Lösung mehr übrig ist. Das Programm führt dann das zuletzt gefundene Matt
+auf dem Brett aus. Es gibt die Mitteilung "No mate" (kein Matt) aus, wenn kein
+Matt in der angegebenen Zugzahl erreicht werden kann.
+Das Programm springt am Ende in den Wahl-Modus (SHIFT-A), damit Sie gleich
+eine neue Stellung eingeben können.
+COLOSSUS ist eines der schnellsten Programme bei der Lösung von
+Schach-Problemen.
+
+- Nächstbester Zug (SHIFT-U)
+Nachdem das Programm gezogen hat, können Sie es mit diesem Befehl anweisen,
+einen anderen Zug auszuführen. Dies können Sie so oft wiederholen, bis alle
+Züge aufgebraucht sind. Wenn keine anderen Züge mehr übrig sind, wird die
+Mitteilung "*No more moves*" ausgegeben. COLOSSUS beginnt dann auf der Zugliste
+mit dem ersten Zug.
+
+Wenn das Programm seine Eröffnungs-Bibliothek benutzt, wird es bei diesem
+Befehl auf eine alternative Eröffnung zurückgreifen. Sie können sich auch so
+die Eröffnungs-Bibliothek ansehen und sich die Eröffnung aussuchen, die Ihnen
+am besten liegt. Ist die Eröffnungs-Bibliothek durchgesehen oder durchgespielt,
+wählt COLOSSUS seinen besten Zug, ohne auf die Eröffnungs-Bibliothek
+zurückzugreifen.
+
+- Lautstärke (SHIFT-V):
+Die Lautstärke des Piepens läßt sich von 0 (leise) bis 15 (laut) festlegen
+(siehe Kapitel 4b).
+
+
+
+
+                       Kapitel 5 - Programm-Informationen
+
+a) Statistische Daten:
+
+Autor:              M.P. Bryant
+Publizist:          CDS Group Ltd.,
+                    Silver House, Silver Street.,
+                    Doncaster, England
+Programmiersprache: 6502 Assembler
+Programmlänge:      28K
+andere Daten:       5K
+Berechnungen/Sek.:  ca. 300 durchschnittlich
+Bewertungspunkte:   1850+ Elo (156+ BCF)
+
+b) Eröffnungs-Bibliothek:
+Die Eröffnungs-Bibliothek umfaßt ca. 3000 Positionen, die zu Beginn des Spiels
+schnell und sicher gespielt werden. Wenn aus einer Stellung mehrere Eröffnungen
+spielbar sind, entscheidet sich COLOSSUS für die seiner Meinung nach beste
+Eröffnung.
+
+
+
+
+            Kapitel 6 - Spiele und Probleme (nur Diskettenversion)
+
+Auf der Programmdiskette befinden sich einige Spiele und Problemstellungen.
+Diese können mit dem Diskettenkommando geladen werden. Es handelt sich hier um
+eine Sammlung der besten Spiele von Programmen für Mikro- und Mini-Computer
+sowie von reinen Schach-Computern.
+Sie können die Probleme selbst lösen oder zusehen, wie COLOSSUS sie löst.
+
+a) Spiele:
+Die Stellungen und Notationen der Spiele sind gespeichert. Sie können die
+Spiele nachvollziehen, wie unter 4c beschrieben (SHIFT-R).
+
+File-Nr. Spielpaarung                                           Ergebnis
+
+         Computer/Spieler - Simultanturnier Sommer 1978
+   0     Walter Browne - Chess 4.6 (CDC Cyber 176)................0 : 1
+
+         Computer/Spieler Herausforderung Herbst 1978
+   1     David Levy - Chess 4.7 (CDC Cyber 176).................0.5 : 0.5
+   2     Chess 4.7 (CDC Cyber 176) - David Levy...................1 : 0
+         Computer/Spieler Freundschaftsspiel Herbst 1980
+   3     Mike Valvo - Belle (Custom built Computer)...............0 : 1
+   4     Belle (Custom built Computer) - Hans Berliner............0 : 1
+
+         Computer/Spieler Freundschaftsspiel März 1982
+   5     J.H. Donner - Belle (Custom built Computer)..............1 : 0
+
+         Computer/Spieler Simultanturnier September 1983
+   6     A. Karpow - Mephisto III (MC 68000)....................0.5 : 0.5
+
+         4. Computer Schach Weltmeisterschaftsturnier 1983
+   7     Cray Blitz (Cray 1 XMP) - BCP (Custom built Computer)....1 : 0
+   8     Fidelity - Cray Blitz ...................................0 : 1
+   9     Cray Blitz - Advance 3.0.................................1 : 0
+  10     Nuchess - Cray Blitz...................................0.5 : 0.5
+  11     Belle - Cray Blitz.......................................0 : 1
+  12     Pheonix - Belle..........................................0 : 1
+  13     Schach 2.7 - Chaos.....................................0.5 : 0.5
+  14     Nuchess - Philidor.......................................1 : 0
+  15     Merlin - Bebe............................................1 : 0
+  16     Advance 3.0 - Sfinks X (TRS 80)..........................1 : 0
+  17     Pion - Fidelity..........................................0 : 1
+  18     Mephisto X - Conchess....................................1 : 0
+  19     Awit - Ostrich...........................................1 : 0
+  20     Novag - Bobby..........................................0.5 : 0.5
+  21     Shy - Patsoc 2.0.......................................0.5 : 0.5
+
+         3. Mikro-Computer Weltmeisterschaft 1983
+  22     Elite A/S - Mephisto Excalibur...........................1 : 0
+  23     Logichess 2.2 - Elite A/S................................0 : 1
+  24     Elite A/S - Mephisto X...................................1 : 0
+  25     Elite A/S - Novag X....................................0.5 : 0.5
+  26     Chess 2001 X - Elite A/S.................................0 : 1
+  27     Eite A/S - Super Constellation.........................0.5 : 0.5
+  28     Superstar - Elite A/S....................................0 : 1
+
+         Schach-Championat der Zeitschrift HOME-COMPUTER Frühjahr 1984
+  29     COLOSSUS 2.0 - Superchess 3.0............................1 : 0
+
+         Computer/Spieler Herausforderung April 1984
+  30     Cray Blitz - David Levy..................................0 : 1
+  31     David Levy - Cray Blitz..................................1 : 0
+  32     Cray Blitz - David Levy..................................0 : 1
+  33     David Levy - Cray Blitz..................................1 : 0
+
+         Computer/Spieler Freundschaftsspiel April 1984
+  34     Victor Korchnoi - Nuchess................................1 : 0
+
+b) Problemstellungen:
+Zu jeder Stellung ist die Matt-Lösung von COLOSSUS gespeichert. Sie können
+mit SHIFT-F und -R nachvollzogen werden (s.o.)
+Weiß ist am Zug, wenn nicht anders notiert. Es sind folgende Stellungen
+gespeichert:
+
+File-Nr. Problem-Beschreibung
+ 100     Selbst-Matt in 2
+ 101     Selbst-Matt in 2
+ 102     Selbst-Matt in 2
+ 103     Selbst-Matt in 3
+ 104     Selbst-Matt in 4
+ 105     Selbst-Matt in 5
+ 106     Matt in 2
+ 107     Matt in 2
+ 108     Matt in 3
+ 109     Matt in 3
+ 110     Matt in 3
+ 111     Matt in 4
+ 112     Matt in 4
+ 113     Matt in 4
+ 114     Matt in 4
+ 115     Matt in 5
+ 116     Hilfs-Matt in 2 (Schwarz am Zug)
+ 117     Hilfs-Matt in 2
+ 118     Hilfs-Matt in 2 (Schwarz am Zug)
+
+
+
+                                  RUSHWARE
+                         Microhandelsgesellschaft mbH
+                           An der Gümpgesbrücke 24
+                               4044 Kaarst 2
+                           Tel. 02101/68499+68561
+
+*********
+
+End of the International Project 64 etext of the Colossus Chess 4 manual.
+
+*********

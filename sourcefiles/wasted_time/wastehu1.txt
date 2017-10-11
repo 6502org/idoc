@@ -1,0 +1,272 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore 64
+related documents in electronic text format that might otherwise cease to
+exist with the rapid advancement of computer technology and declining
+interest in 8-bit computers on the part of the general population. If you
+would like to help by converting C64 related hardcopy documents to
+electronic texts please contact the manager of International Project 64,
+Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The first
+characters of the file name are an abbreviation of the original document
+name and the language of the etext. The version number of the etext follows
+next. After that a letter may appear to indicate the particular source of
+the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International Project
+64 make no representations about the accuracy or suitability of this
+material for any purpose. This etext is provided "as-is". Please refer to
+the warranty of the original document, if any, that may included in this
+etext. No other warranties, express or implied, are made to you as to the
+etext or any medium it may be on. Neither the author(s) nor the members of
+International Project 64 will assume liability for damages either from the
+direct or indirect use of this etext or from the distribution of or
+modification to this etext. Therefore if you read this document or use the
+information herein you do so at your own risk.
+
+*********
+
+The International Project 64 etext of the Wasted Time manual, converted to
+text by Adam Dohos <hosza@szabinet.hu>
+
+WASTEHU1.TXT, July 1998, etext #41.
+
+*********
+
+WASTED TIME
+
+C64 disk
+
+KEZELÉSI ùTMUTATò
+
+
+- Hé, emberek! Végünk van! - üvöltötte a csillagvizsgáló helyiségbôl
+lerohanva A.P. Smith úr, az erôsen élemedett korú csillagász. A többiek
+azonban valahogy nem akarták átérezni a bejelentés jelentôségét.
+- Mi van, maga vén marha, mostanra már teljesen megkergült? - kérdezte
+az egyik különösképpen tuskó fiatal kolléga. - Mi az, hogy végünk van?
+- Mi az, mi az! egy üstökös tart a Föld felé, és két napon belül ide is
+ér - méltatlankodott Smith úr, és jogos felháborodásában hozzávágta
+fiatal kollégájához a zsebszámítógépét, de elhibázta.
+- Na és akkor mi van? - kérdezett vissza az ifjonc, kissé kevésbé
+magabiztosan.
+- Pályaanalízist végeztem. az üstököst nem fogja semmilyen égitest
+megállítani, sem a pályáját módosítani - vágta ki az öreg olyan diadalmas
+képpel, mintha nem is a Föld jövôjérôl lenne szó.
+- De hát... El tudjuk hárítani, igaz?
+- Minden bizonnyal. Megmondaná, kedves kolléga, hogy mivel?
+
+A többi csillagász erre már nem tudott mit lépni. Megszeppenten
+elvonultak külön-külön pályaanalízist végezni, és még megszeppentebben
+nyugtázták, hogy az öregnek bizony igaza van.
+
+Végül is, nevetséges helyzet. Itt áll az emberiség a XXV. század utolsó
+negyedében, és az egész fennmaradását egy nyavalyás üstökös fenyegeti. Ez
+nem fordulhatott volna elô az olyannyira lenézett XX. században. Igaz, ha
+a teljes leszerelést nem valósítják meg a XXI. század elején, akkor
+valószínûleg az emberiségnek nemhogy üstökösre, de semmi másra nem lenne
+gondja. Az most egy más kérdés, hogy a teljes leszerelés nem józan
+pacifista megfontolásból, hanem kényszerbôl született. A XXI. században a
+rohamos technikai fejlôdés alaposan megtorpant (pár évvel késôbb pedig
+teljesen megállt). Miután a konkrét tudományos elôrelépés ritka volt,
+mint a fehér holló, bizonyos volt, hogy elôbb-utóbb háború fog kitörni -
+azokért a tudósokért, akik még képesek továbblépni valamennyit.
+Szerencsére ebben a helyzetben jött az Elpocsékolt Idô elôtti utolsó nagy
+találmány: a fegyverdetektor. Senki sem tudta, milyen elven mûködött,
+mert a feltalálója nem adta ki a kezébôl, de ennek segítségével némi
+huzavona után sikerült megvalósítani a teljes leszerelést. És hamarosan
+jött az Elpocsékolt Idô kora. Több mint 400 évig a tudomány szinte egy
+helyben ácsorgott. Csak a XXV. század elsô felének közepén született újra
+egy olyan zseni, aki felnôve ismét el tudta indítani a beragadt szekeret.
+Az emberiség jelenleg is az ô általa elindított fejlôdés korát éli meg.
+És bár ez a fejlôdés ismét lassulóban van, megszületett közben az
+emberiség egyik nagy álma: az Idôgép. Még nagyon kísérleti stádiumban
+van, és hatalmas energiákat emészt fel a használata, azonban mûködése
+elvi síkon már bizonyított, a munkálatok jelenleg arra irányulnak, hogy
+minél biztonságosabb legyen, és minél kevesebb energiát igényeljen.
+
+Végül is, a halálra ítélt bolygónak ez az Idôgép jelentette az egyetlen
+reményt. Az ötlet az volt, hogy az Elpocsékolt Idô korának elejére vissza
+kell juttatni egy adathordozót, amely tartalmazza az elmúlt évek
+eredményeit, valamint a figyelmeztetést a közelgô katasztrófára. Az
+idôutazónak természetesen egy fiatal, vasszervezetû férfinek kellett
+lennie, aki jó eséllyel átvészeli az utazást károsodások nélkül. ìgy
+esett a választás az Önképzô Osztag (lelkes harcmûvészet-mániások kis
+csoportja) egyik ifjú tagjára. További nehézséget jelentett, hogy
+komolyabb mechanikus és elektronikus szerkezetekre az idôutazás
+katasztrofális hatással lehet (hogy ez mitôl függ, azt ezidáig nem
+sikerült kideríteni), és természetesen az Idôgép által átvitt ayagok
+tömege is korlátozott volt (pontosabban nem korlátozott, hanem energia
+függvénye). Majdnem két nap alatt sikerült az ifjút nagyjából
+felkészíteni, megadtak neki minden lehetséges információt (és amit
+lehetett, elhallgattak...), majdnem egészen egy órával az üstökös
+érkezése elôtt útjára indították. A fiatalembert rendben meg is érkezett
+a múltba, és megkezdte küldetésének végrehajtását...
+
+
+A játék kezelése:
+
+Elsô betöltés elôtt célszerû egy játéklemezt készíteni az eredeti
+lemásolásával, bár ez nem feltétlenül szükséges.
+
+A játék irányítható joystickkel vagy joystick módban használt egérrel.
+Egyes egerek ugyanis joystick módba kapcsolhatóak úgy, hogy a számítógép
+bekapcsolása közben lenyomva tartjuk a jobb gombot. A továbbiakban csak a
+két mód különbségeire térünk ki.
+
+A játék LOAD"W*",8,1 paranccsal tölthetô be. Az INTRO (továbblépés
+tûzgombbal) után egy rövid bevezetô következik, amely elején
+kiválaszthatjuk, hogy milyen nyelven kommunikáljon velünk a játék (angol
+vagy magyar), majd megszemlélhetjük az eseményeket hôsünk szemszögébôl
+(továbblépés mindig a tûzgombbal). Ezután kiválaszthatunk négy tárgyat a
+joystick segítségével (tûzgombbal felvehetjük vagy letehetjük az aktuális
+tárgyat), majd RETURN megnyomásával kezdôdik a kaland.
+
+A képernyô felsô felében a helyszínre, esetleg a helyszín aktuális
+pozíciójára jellemzô képet látjuk. A bal alsó negyed a szövegablak, itt
+jelennek meg a játék üzenetei. A jobb alsó negyed alsó részén van a
+mozgásablak, fölötte bal oldalon az irányító ikonok, jobb oldalon pedig a
+nálunk lévô tárgyak neveinek elsô 7 betûje, a tárgyakra majd itt
+hivatkozhatunk. Az ikonok közül a joystickkel választhatunk.
+
+
+Az irányító ikonok:
+
+	 1   	 2	 3       4
+	 5   	 6	 7	 8
+	 9   	10	11	12
+
+1: A nálunk lévô tárgyak listája és rövid jellemzésük.
+
+2: Ha az aktuális pozícióban van tárgy (a mozgás-ablakban egy kis barna
+   szimbólum látható emberünk mellett), akkor ezzel az ikonnal azt
+   magunkhoz vehetjük. Ha mégsem sikerül felvenni, annak oka van... Ha a
+   pozíciónkban sok tárgy van, akkor csak az elsô ötbôl lehet egyszerre
+   válogatni.
+
+3: Az elôzô ikon ellentéte, a nálunk lévô tárgyak közül letehetünk egyet,
+   és késôbb felvehetjük, ha akarjuk.
+
+4: Mozgás. A mozgatás joystickkel történik. Mivel az egérrel elég
+   kényelmetlen lenne, a RETURN megnyomására kis nyilak jelennek meg,
+   amelyekre clickelgetve mozoghatunk. A RETURN újbóli megnyomására ismét
+   joystick-módba kerülünk. A mozgás befejezése tûzgombbal (click-módban
+   az alsó jellel) hajtható végre.
+
+5: Támadás. Csak akkor használható, ha a mi pozíciónkban áll egy másik
+   személy is. Ilyenkor a kiválasztott tárggyal emberünk megtámadja az
+   illetôt, legyen akármi a tárgy...
+
+6: Input/output menü. Opciók
+
+   - Load: Játékállás betöltése lemezrôl. Meg kell adni az állás nevét,
+     és a töltés végrehajtódik, ha van ilyen nevû állás a lemezen.
+
+   - Save: A játékállás kimentése lemezre. Egy játéklemezen 35 állás
+     lehet, ha ez nem elég, akkor készítsünk több játéklemezt. Meg kell
+     adni az állás nevét (a program csak betûket fogad el), és a mentés
+     megtörténik, ha van hely a lemezen, és még nincs rajta a megadott
+     névvel egyezô állás.
+
+   - Quickload: Játékállás betöltése a memóriából. Ha még nem mentettünk
+     a memóriába, akkor újrakezdésnek felel meg.
+
+   - Quicksave: Játékállás elmentése a memóriába. A memóriában csak egy
+     állás lehet, de ezt a lemezes állásmentés/töltés nem változtatja
+     meg.
+
+   - New Game: A játék újrakezdése. Az újrakezdés azt jelenti, hogy a
+     bevezetôben kiválasztott tárgyakkal indulunk a játék elejérôl.
+     Mielôtt a program ezt végrehajtaná, megerôsítést kér.
+
+   - Quit: Kilépés Basic-be. Itt is megerôsítést kér a program.
+
+   - Continue: A játék folytatása.
+
+Ha az állástöltés vagy -mentés során hiba következik be, arra a program
+figyelmeztet.
+
+7: Valaminek a használatba vétele. Négy lehetôség van:
+
+   a) Egyik tárgyunk használata: kétszer kell clickelnünk a tárgyon.
+
+   b) Két tárgy használata egymáson: mindkét tárgy kiválasztása.
+
+   c) Pozíciónkban lévô objektum használata: hagyjuk el a nyillal a
+      tárgymezôt lefelé, és most kiválaszthatjuk a mozgás-ablakban, hogy
+      mit akarunk használni.
+
+   d) Tárgy használata pozíciónkban lévô objektumon: elôször a tárgyat
+      kell kiválasztani, majd az objektumot a mozgás-ablakban.
+
+8: Megvizsgálhatunk egy, a pozíciónkban lévô dolgot. RETURN megnyomására
+   visszakapjuk az aktuális helyszín leírását.
+
+9: Ajtó kinyitása. Rá kell clickelni az ajtóra. Az ajtók jól láthatóak,
+   ha tôlünk északra vannak, azonban ha délre van ajtó, akkor az ugyanúgy
+   nyíl formájában látszik, mint a sima út. Ha egy nyíllal jelzett úton
+   dél felé nem tudunk továbbmenni, akkor a nyíl egy becsukott ajtót
+   jelképez, és azt ki kell valahogy nyitnunk. Ha az ajtó valamilyen
+   biztosabb módon (pl. kulccsal) van bezárva, akkor valamilyen
+   nyitóalkalmatosság (pl. kulcs) használatával kell próbálkoznunk.
+
+10: Ajtó becsukása, az elôzô ikon ellentéte.
+
+11: Ez az ikon is csak akkor mûködik, ha valamilyen másik személy is áll
+    a pozíciónkban, ekkor emberünk megpróbál kommunikálni vele.
+
+12: Szintén csak akkor mûködik, ha áll még valaki a pozíciónkban,
+    emberünk ekkor a kiválasztott tárgyat próbálja meg átadni az
+    illetônek. Miután a játékban nincs visszalépés, jól gondoljuk meg az
+    ikon használatát!
+
+
+A játék bizonyos pontján meg kell adni néhány kapcsoló sorrendjét. A
+kapcsolók betûkkel vannak jelölve, sorrendjük:
+
+		G  D  F  B  C  E  A.
+
+Mozogni természetesen arra lehet, amerre nincs akadály, azaz kelet és
+nyugat felé akkor, ha szabad az út vagy egy nyíl jelöli a következô
+helyszín ki/bejáratát, északra és délre pedig akkor, ha van utat jelzô
+nyíl vagy (kinyitott) ajtó.
+
+Ha sikerül a játékot végigjátszani, akkor még megtekinthetjük küldetésünk
+következményeit.
+
+
+A játékhoz jó szórakozást kíván a Freebrain Software(r) és a Commodore
+Világ Szerkesztôsége.
+
+A visszküldött hibás játékokat díjmentesen kicseréljük.
+
+Figyelem! A játék jogvédett, így másolása és terjesztése a szerzôk
+engedélye nélkül tilos és törvényellenes (nem számít engedély nélküli
+másolásnak a játéklemez-készítés)!
+
+
+COM-WARE Kft. (c) 1993
+Budapest, XI. Vásárhelyi Pál u. 8. 1114
+Postacím: 1519 Budapest, Pf.: 363.
+
+Freebrain Software(r)
+
+*********
+
+End of the International Project 64 etext of Wasted Time.
+
+*********

@@ -1,0 +1,5719 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore
+64 related documents in electronic text format that might otherwise
+cease to exist with the rapid advancement of computer technology and
+declining interest in 8-bit computers on the part of the general
+population. If you would like to help by converting C64 related
+hardcopy documents to electronic texts please contact the manager of
+International Project 64, Peter Karlsson, at m9944@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document.  However, certain portions, such as diagrams, program
+listings, and indexes may have been either altered or sacrificed due
+to the limitations of plain vanilla text.  Diagrams may have been
+eliminated where ASCII-art was not feasible.  Program listings may be
+missing display codes where substitutions were not possible.  Tables
+of contents and indexes may have been changed from page number
+references to section number references. Please accept our apologies
+for these limitations, alterations, and possible omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The
+first characters of the file name are an abbreviation of the original
+document name and the language of the etext. The version number of the
+etext follows next. After that a letter may appear to indicate the
+particular source of the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International
+Project 64 make no representations about the accuracy or suitability
+of this material for any purpose.  This etext is provided "as-is".
+Please refer to the warantee of the original document, if any, that
+may included in this etext.  No other warantees, express or implied,
+are made to you as to the etext or any medium it may be on.  Neither
+the author(s) nor the members of International Project 64 will assume
+liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext.
+Therefore if you read this document or use the information herein you
+do so at your own risk.
+
+*********
+
+The International Project 64 PRE-RELEASE etext of the Swedish
+Comal-80 0.12/0.14 manual, converted to text by Peter Karlsson
+<m9944@abc.se>
+
+COMALSE0.TXT, May 1997, etext #7.
+
+Note from the etexter (in Swedish):
+
+Ofta förekommande stavfel (som **sekvensiella (sekventiella) och
+**formattera (formatera)) har rättats, men inte feluttryck som initialisera
+(initiera), och saker som det numera finns andra ord för (printer -
+skrivare, mod - läge). Ej heller har onödiga bindestreck tagits bort
+(kommando-rad, sprite-grafik).
+
+Danska namn har skrivits om med danska bokstäver, och vissa saknade tecken
+har lagts till. I övrigt har ingen ändring gjorts, mer än layoutmässig, för
+att det ska vara enklare att läsa som text. Rubriker är markerade med
+en asterisk (*) i vänstermarginalen, och uppslagsord i kommandolistninger är
+markerade med plustecken, för att underlätta sökning. Om du vill söka efter
+kommandot "PRINT" söker du på "+ PRINT".
+
+Förhandsversion - programlistningar saknas.
+
+Eftersom texten är inläst via bildläsare och OCR-program kan vissa ord vara
+helt uppåt väggarna fel. Om du hittar sådana, rapportera de gärna, så det
+kan rättas.
+
+*********
+
+HANDBOK
+för
+VIC 64 ***** COMAL-80
+
+av
+BØRGE R. CHRISTENSEN
+################################
+
+(Diskettversion: rev. 00.12 för VIC-64 med VIC 1541)
+
+© 1984, författaren och Förlagsgruppen för teknisk utbildning i Norrköping AB
+
+Upplaga 1:1 1000 ex
+Översättning: Å Fredriksson
+Sättning: DELTA
+Tryck: GRAFAX
+ISBN 91-86398-32-6
+
+Distribution: Handic Electronic AB
+              Box 1063
+              436 00 ASKIM/GÖTEBORG
+              Tel: 031-28 97 90
+
+              Litteratur och föreningstjänst
+              Box 1338
+              17126 SOLNA
+              Tel: 08-730 02 75
+
+              Förlagsgruppen
+              Nygatan 85
+              602 34 NORRKÖPING
+              Tel: 011-13 40 80
+
+
+* Förord
+
+Programspråket COMAL (COMmon Algorithmic Language) definierades 1973 av
+Benedict Løfstedt och undertecknad med utgångspunkt i en önskan att göra
+tillvaron lättare för de människor, som vill programmera datorer utan att
+nödvändigtvis vara professionella programmerare. Vi startade med språket
+BASIC och det på den tiden helt nya Pascal.
+
+Om man ser lite närmare på BASIC finner man; att huvudanledningen till att
+det är så lätt att använda, kan sökas i dess s k operativa miljö mer än i
+språket som sådant. En nybörjare som använder BASIC, kan knappa in en eller
+några programsatser och få dessa utfärda med hjälp av ett enkelt kommando.
+Radnumren används för att radera eller sätta in nya satser och ange deras
+ordningsföljd, dvs när de skall utföras. Man behöver ingen krävande editor
+eller ett invecklat kommandospråk till ett operativsystem. Indata och utdata
+förmedlas enkelt över terminalen/datorns tangentbord/bildskärm eller över en
+printer.
+
+Å andra sidan råder det inget tvivel om, att BASIC som programspråk
+betraktat är hopplöst föråldrat. Det har aldrig varit något speciellt bra
+språk och ur modern synvinkel är det en ren katastrof. Om man börjar att
+programmera i BASIC kommer man lätt på avvägar och får efter kort tid
+problem att slåss med, som kan lösas mycket lättare med ett programspråk som
+i högre grad är anpassat till det sätt som människan tänker på.
+
+COMAL har samma enkla operativa miljö som kännetecknar BASIC. Det har även
+detta språks enkla kommandon som t ex INPUT, PRINT, READ osv. Därtill har
+det också några kommandon som hämtas från Pascal. Med COMAL är det lätt - ja
+nästan oundvikligt - att skriva välstrukturerade program. I stället för att
+leda användaren bort från de moderna, effektiva strukturerade metoderna i
+programmeringen ger COMAL en nära nog perfekt inlärning av denna metod.
+
+Med COMAL-80 till VIC-64 är det nu för var och en möjligt att lära känna och
+kunna öva sig i att använda moderna programmeringsprinciper. Som den Farsta
+COMAL-80 någonsin, omfattar VIC-64 COMAL-80 enkla men effektiva
+styrinstruktioner för högupplösningsgrafiken, som är inbyggd i VIC-64. Detta
+ger helt nya mödligheter- inte minst för undervisningen i skolorna.
+
+VIC-64 COMAL-80 ger en hittills osedd kombination av slagkraftig
+programmering och ett material med många inbyggda mödligheter.
+
+Tønder, oktober, 1983
+
+Børge R. Christensen
+
+
+* Inläsning och start av COMAL-80
+
+Din COMAL-80-tolk levereras på två disketter. De är identiskt lika. Du kan
+inte kopiera disketterna och du bör alltså använda den ena disketten i ditt
+dagliga programmeringsarbete med COMAL-80 och förvara den andra på en
+skyddad plats. Använd bara denna andra diskett, om du på grund av någon
+olyckshändelse får din arbetsdiskett förstörd. Skulle olyckan vara framme
+och arbetsdisketten bli förstörd, då kan du mot en mindre expeditionsavgift
+få en ny arbetsdiskett. Du bör dock lägga märke till att ett sådant ombyte
+är förbundet med två villkor:
+
+1. Att den förstörda eller defekta disketten lämnas till säljaren.
+
+2. Att ditt registerkort, som finns längst bak i denna bok, har fyllts i och
+finns hos Förlagsgruppen vid bytestillfället.
+
+Du bör därför, innan du överhuvudtaget börjar arbeta med din COMAL-80-tolk,
+fylla i och sända in detta registreringskort till Förlagsgruppen Nygatan 85,
+602 34 Norrköping. Märk kuvertet "Comal-garantikort".
+
+På disketten finns olika slags programfiler. Av dessa skall speciellt
+nämnas:
+
+BOOT COMAL
+AUTOBOOT
+COMAL.1
+COMAL.2
+GENERROR.E.L
+
+De två första är programfiler i BASIC, som kan användas för att starta upp
+din nyförvärvade COMAL-80. Du kan använda följande metoder:
+
+[1] Skriv:
+
+LOAD "BOOT COMAL",8 och tryck på <RETURN>-tangenten
+
+När texten READY kommer fram, slår du in:
+
+RUN och trycker på <RETURN>-tangenten.
+
+Nu sätter inlåsningen av COMAL-80-tolken igång och efter ca 1,5 minuter är
+COMAL-80 inläst och klar att använda.
+
+I stället för ovanstående startprocedur kan du göra så här:
+
+[2] Skriv:
+
+LOAD"AUTOBOOT",8,1 och tryck på <RETURN>.
+
+Nu startar inläsningen av COMAL-80 automatiskt och efter ca 1,5 minuter är
+den inläst och klar att använda.
+
+Programmen COMAL.1 och COMAL.2 används under uppstartningen efter denna
+procedur och kan inte läsas in av dia.
+
+Programmet GENERROR.E.L är en listfil, som kan läsas in i COMAL-80, (se
+ENTER). Efter inläsning av filen kan programmet köras, och det kan användas
+för att förse varje diskett med alla COMAL-80:s feltexter. Detta program är
+speciellt värdefullt, om du vill nyformatera oanvända disketter för att
+spara COMAL-80-program. Utan GENERROR.E.L, kommer COMAL-80-tolken endast att
+skriva ut ett felnummer, om du t ex skulle ha ett syntaxfel. Om Du däremot
+har kört in programmet GENERROR.E.L på den nyformaterade disketten, kan
+COMAL-80 istället skriva ut felmeddelandena i klartext (se även SETMSG).
+
+Utöver de här nämnda programmen, innehåller disketten en mängd program, som
+fungerar som förklarande exempel till denna användarhandbok. Dessa program
+finns också listade längst bak i boken. Programmen kan kopieras fritt från
+diskett till diskett (använd LOAD och SAVE eller LIST och ENTER). Men var
+snäll och kom ihåg att programmen omfattas av normal upphovsrätt och därför
+inte får användas i kommersiellt bruk!
+
+Denna handbok är inte någon lärobok utan snarare en uppslagsbok, där alla
+kommandon och funktioner har listats i alfabetisk ordning tillsammans med en
+översikt över deras individuella syntax. Vi gör inget försök att lära ut
+COMAL-80 till användaren, som därför hänvisas till litteraturhänvisningen
+som finns längst bak i boken. Du kan köpa extra exemplar av handboken från
+din VIC-handlare eller direkt från Förlagsgruppen.
+
+Såväl programdiskett och dess innehåll som denna handbok omfattas av
+copyright, upphovsmannarätt, som innehas av författaren och det förlag som
+angivits. De må därför icke i någon form kopieras, rättas, ändras eller
+försäljas. Försäljning kan endast ske genom auktoriserade
+VIC-representanter.
+
+Lycka till!
+
+
++ ABS
+
+Se under STANDARDFUNKTIONER
+
++ AND
+
+Se under UTTRYCK
+
++ APPEND
+
+Se under OPEN
+
++ ATN
+
+Se under STANDARDFUNKTIONER
+
++ AUTO
+
+AUTO är ett kommando, som får COMAL-systemet att sätta radnummer automatiskt
+under programskrivningen. Efter AUTO har knappats in, och man tryckt på <RE
+TURN> skriver systemet:
+
+	0010
+
+och väntar på att man skriver in en rad. När raden avslutas med tryck på
+<RETURN>, svarar systemet:
+
+	0020
+
+och väntar på ytterligare en rad. Man stänger av AUTO genom att avsluta en
+rad med två nedslag på <RETURN> tangenten.
+
+Om ordet AUTO följs av ett tillåtet radnummer, börjar listan av framtagna
+nummer med detta. T ex får kommandot:
+
+	AUTO 110
+
+systemet att ta fram följande radnummer:
+
+	0110, 0120, 0130, ...
+
+Lägger man till ett komma, följt av ytterligare ett heltal, använder
+systemet detta som tillväxtfaktor för radnumren. Alltså får kommandot:
+
+	AUTO ,2
+
+systemet att ta fram denna följd av radnummer
+
+	0010, 0012, 0014, ...
+
+och
+
+	AUTO 110,2
+
+får systemet att numrera inslagna rader med:
+
+	0110, 0112, 0114, ...
+
++ BASIC
+
+BASIC är ett kommando, som får systemet att skifta över till den inbyggda
+BASIC-tolken. COMAL-tolken kan endast återstartas genom att man företar en
+förnyad inläsning av den från disketten (se Inläsning och uppstartning av
+COMAL i inledningen till handboken).
+
++ CASE WHEN
++ OTHERWISE
++ ENDCASE
+
+CASE-satsen används som inledning till en CASE-struktur som anger en
+flerfaldig förgrening. Syntaxen för en CASE-sats är:
+
+CASE <uttryck> [OF]
+
+är ett numeriskt uttryck, ett textuttryck eller ett logiskt uttryck.
+
+Nyckelordet OF står inom hakparentes för att ange, att det automatiskt sätts
+dit av systemet, om användaren inte själv skriver det.
+
+En CASE-sats kan bara användas, om det sker tillsammans med WHEN- och
+ENDCASE-satserna. Syntaxen för en WHEN-sats är:
+
+	WHEN <lista på uttryck>
+
+Uttrycken i listan skall vara av samma typ som uttrycket i den tillhörande
+CASE-satsen. Uttrycken i listan skall vara skilda med kommatecken (,).
+
+ENDCASE-satsen består endast av ett ord:
+
+	ENDCASE
+
+Man kan också ha en OTHERWISE-sats i CASE-strukturen. Syntaxen är:
+
+	OTHERWISE
+
+CASE-strukturen är uppbyggd som visas i följande diagram:
+
+CASE <uttryck> OF
+
+WHEN <uttrycks-lista>           ,',
+                              ,'   ',        +---------.
+programavsnitt A-1           <uttryck>---+---| lista 1  > A-1
+                              ',   ,'    |   +---------'   ·
+WHEN <uttrycks-lista>           ',' _____|_________________|
+                                  ,'     |   +---------.
+programavsnitt A-2                |      |---| lista 2  > A-2
+                                  |      |   +---------'   ·
+                                  |______|_________________|
+...                               |      |
+                                  :      :
+WHEN <uttrycks-lista>             :      :
+                                  |      |   +---------.
+programavsnitt A-n                |      |---| lista n  > A-3
+                                  |      |   +---------'   ·
+OTHERWISE                         |______|_________________|
+                                  |      |
+Programavsnitt B                  |      `-------------->  B
+                                  |                        ·
+ENDCASE                           |________________________|
+                                  |
+                                  v
+
+Efter det att uttrycket efter CASE har utvärderats, undersöks listan efter
+det första WHEN. Om ett av uttrycken ger samma värde som CASE-uttrycket,
+utförs programavsnittet A-t, och därefter fortsätts med de satser som står
+efter ENDCASE. Om värdet av CASE-uttrycket inte återfinns bland uttrycken i
+den första WHEN-satsen, undersöks nästa lista och om likhet hittas där,
+utförs satserna A-2 och därefter fortsätts efter ENDCASE. Har värdet ännu
+inte återfunnits, fortsätts med den tredje WHEN-listan osv.
+
+Ett alternativt programavsnitt, B, kan sättas in och blir utfört, om
+uttryckets värde (i CASE-satsen) inte återfinns i någon WHEN-lista. Detta
+avsnitt skall inledas med en OTHERWISE-sats. OTHERWISE-delen kan utelämnas,
+men i så fall stoppar COMAL-tolken programutförandet med ett felmeddelande,
+om uttrycket efter CASE-satsen inte återfinns i någon av WHEN-satserna.
+
+Lägg märke till, att högst ett av programavsnitten blir utfört. Skulle det
+vara så, att uttryckets värde kan finnas i mer än en av listorna (efter
+WHEN), blir bara programavsnittet för den första listan som har "rätt" värde
+utförd. Programtexten i A-1, A-2, ...  A-n och B kommer att visas med
+"indrag" under utlistning av programmet. Detta ser COMAL-tolken till
+automatiskt.
+
+Exempel: se angivna rader i programmen "småtexter": 540-690,1610-1700;
+"kartotek": 400-530 OBS! kolla efter pgmövers.! <sic!>
+
++ CAT
+
+CAT är ett kommando, som används för att skriva ut diskens
+innehållsförteckning (katalogen) som visar de filer som finns på disketten.
+
++ CHAIN
+
+Satsen:
+
+	CHAIN "<programnamn>"
+
+gör, att programmet <programnamn> blir inläst i datorns minne från diskett i
+1541-stationen. Ett program med tillhörande variabler, som kanske finns i
+arbetsminnet innan CHAIN-satsen utförs, kommer att raderas. Det inlästa
+programmet körs omedelbart efter inläsningen.
+
+CHAIN kan också användas som kommando:
+
+Exempel:
+	CHAIN "inläsning",
+	CHAIN "huvudprogram".
+
++ CHR$
+
+Se under STANDARDFUNKTIONER
+
++ CLOSE
+
+Satsen:
+
+	CLOSE
+
+gör, att alla filer stängs. Fogar man till ett numeriskt uttryck, får man:
+
+	CLOSE <uttryck>
+
+Denna utgåva av CLOSE stänger endast den fil, som har samma nummer som
+svarar mot värdet av <uttryck>.
+
+CLOSE kan också utföras som direktkommando.
+
+Exempel: se angivna rader i "kartotek": 2590, 2710.
+
++ CLOSED
+
+Om ett procedurhuvud avslutas med nyckelordet CLOSED blir de variabler, som
+förekommer i proceduren, antagna att vara lokala, dvs samma variabler kan
+användas i "ytterprogrammet" utan risk för påverkan. Normalt sker detta
+endast för parametrarna (se även PROCsatserna).
+
+Exempel:
+
+	PROC FÖNSTER(FRÅN,TILL) CLOSED
+	  SCREEN(FRÅN,1)
+	  FOR I := FRÅN TO TILL DO EXEC RADERA'RAD(I)
+          SCREEN(FRÅN,1)
+        ENDPROC FÖNSTER
+
+	PROC SCREEN(L,C) CLOSED
+	  PRINT CHR$(19) // HOME
+	  FOR I := 1 TO L-1 DO PRINT CHR$(17), // NED
+	  FOR I := 1 TO C-1 DO PRINT CHR$(29), // FRAM
+	ENDPROC SCREEN
+
+	PROC RADERA'RAD(L) CLOSED
+	  SCREEN(L,1)
+	  FOR I := 1 TO 40 DO PRINT " ",
+	ENDPROC RADERA'RAD //
+
++ CON
+
+Kommandot:
+
+	CON
+
+återupptar utförandet av ett program, som stoppats med nedtryckning av
+STOP-tangenten eller med en STOP-sats. På grund av hur den interna lagringen
+av variabler etc. sker, kan inte detta kommando utföras sedan man har lagt
+till eller tagit bort programrader eller tillfogat nya variabelnamn.
+
++ COS
+
+Se under STANDARDFUNKTIONER
+
++ DATA
+
+DATA-satsen används för att ange konstanter, som skall läsas med READ-satser
+(se även READ). Konstanterna skiljs åt med kommatecken. DATA-satserna kan
+placeras var som helst i programmet, de läggs vid programmets start i en
+datakö, vars element läses i den ordning de förekommer i programmet.
+Talkonstanter kan skrivas med förtecken. Textkonstanter skall omges med
+citationstecken (").
+
+Exempel:
+
+	DATA "Hans Andersson", 5678, "Peter Jansson", 1245
+	DATA "Lina Hansson", 4567, "Lisa Jakobsson", 2578
+
++ DEL
+
+DEL-kommandot används för att ta bort en eller flera rader från programmet i
+maskinens minne. T ex tar kommandot:
+
+	DEL 100
+
+bort rad 100. Kommandot:
+
+	DEL 100-200
+
+tar bort alla rader mellan och inklusive 100 till 200.
+Kommandot:
+
+	DEL -300
+
+tar bort alla rader till och med rad 300 och kommandot:
+
+	DEL 300
+
+tar bort alla rader från och med rad 300
+
+OBS! man kan inte ta bort en rad bara genom att skriva radnumret följt av
+tryck på <RETURN>. Det går bara i BASIC!
+
++ DELETE
+
+DELETE-kommandot används för att radera filer på disk. Exempel: Kommandot
+DELETE "0:gammaltext" raderar filen "gammaltext" på disketten (se även PASS)
+
++ DIM
+
+DIM-satsen används som i BASIC till att deklarera tabeller och
+textvariabler. I COMAL-80 kan man deklarera tabeller med hur många
+dimensioner som helst och indexnumreringen behöver inte börja med 0 eller 1.
+Låt oss se på några exempel:
+
+	DIM TABELL(100)
+
+deklarerar en tabell med reella tal med index gående från 1 till 100. Vill
+man att undre gränsen skall vara 0, skall man skriva:
+
+	DIM TABELL(0:100)
+
+Man kan använda vilket heltal som helst till nedre eller övre gräns, om bara
+det första är mindre än eller lika med det andra heltalet.
+
+	DIM FÄLT (-7:7)
+
+deklarerar en tabell med index från och med -7 till och med 7. Satsen:
+
+	DIM ELEV(30:100,8:10)
+
+deklarerar en tvådimensionell siffertabell med index från 30 till 100 och
+från 8 till 10.
+
+Satsen:
+
+	DIM NAMN$(30:100,8:10) OF 30
+
+deklarerar en tvådimensionell texttabell med index från 30 till 100 och från
+8 till 10. Varje komponent har plats för 30 tecken.
+
+	DIM NAMN$ OF 30
+
+deklarerar en enkel textvariabel med plats för 30 tecken. Enkla
+textvariabler måste alltid deklareras i COMAL-80.
+
+Exempel: se angivna radnummer i "småtext": 50-170; "kartotek": 80-160.
+
++ DIV
+
+DIV är en operator som används vid heltalsdivision. Den definieras av:
+
+A DIV B = INT(A/B) (heltalsdelen av div.)
+
+där A och B kan vara reella tal eller hela tal. Se även under MOD och under
+UTTRYCK.
+
++ DO
+
+DO är ett nyckelord, som används för att avsluta en FOR eller en WHILE-sats.
+Se under FOR och WHILE.
+
++ EDIT
+
+EDIT-kommandot används för att skriva ut programraderna i maskinens minne,
+men utan den indragning, som vanligen skapas av LIST-kommandot.
+
+EDIT används for att skriva ut rader från ett program, som skall rättas med
+hjälp av skärmeditorn, i de fall några av dessa rader skulle bli överskrivna
+om kommandot LIST används.
+
++ ELIF
+
+ELIF-satsen ("elseif") kan endast användas i samband med en IF-sats. Se
+under IF.
+
++ ELSE
+
+ELSE-satsen kan endast användas i samband med en IF-sats. Se IF.
+
++ END
+
+END-satsen gör, att utförandet av programmet stoppas.
+
++ ENDCASE
+
+ENDCASE används för att avsluta det sista programblocket i en
+CASE-konstruktion. Se under CASE.
+
++ ENDFOR
+
+ENDFOR används för att avsluta en FORslinga och ersätter automatiskt
+kommandot NEXT. Se under FOR.
+	
++ ENDIF
+
+ENDIF används för att avsluta det sista blocket med satser i en
+IF-konstruktion. Se IF.
+
++ ENDFUNC
+
+ENDFUNC-satsen används för att avsluta en användardefinierad funktion. Se
+under FUNC.
+
++ ENDPROC
+
+ENDPROC-satsen används för att avsluta en procedur. Se under PROC.
+
++ ENDWHILE
+
+ENDWHILE-satsen används för att avsluta det satsblock som styrs av en
+tillhörande WHILE-sats. Se under WHILE.
+
++ ENTER
+
+Kommandot:
+
+	ENTER "<programnamn>", <enhetsnummer>
+
+gör att programmet <programnamn> läses in från enheten som har numret
+<enhetsnummer>. Om inget enhetsnummer är angivet, använder systemet disken
+(nr 8). Om en hetsnumret är angivet till 1, använder systemet bandspelaren.
+Man kan endast hämta fram program, som sparats med LIST-kommandot (se LIST),
+på detta sätt. De rader, som läses in med ENTER, flätas samman med de rader,
+som redan finns i minnet på samma sätt som om raderna knappats in via
+tangentbordet (till skillnad från vid LOAD).
+
++ EOD
+
+EOD (End-Of-Data) är en logisk funktion, som antar värdet TRUE (sant), så
+snart det sista värdet i datalistan har lästs (eller listan är tom).
+
+Exempel:
+
+	REPEAT
+	  READ NAMN$(I), TELENR(I)
+	  I:+1 (vilket betyder "I:=I+1")
+	UNTIL EOD
+	MAX:=I-1
+	DATA "David Bengtsson", 554564, "Martin Eriksson", 234567
+	DATA "Jens Erik Jenssen", 200330, "Olle Holmgren", 611100
+
++ EOF
+
+EOF (End-Of-File) är en logisk funktion. EOF(X), där X är ordningsnumret på
+en sekventiell fil, antar värdet TRUE (sant), när sista posten i filen har
+hämtats.
+
+Exempel:
+
+	OPEN FILE 2, "NYCKLAR", READ
+	REPEAT
+	  READ FILE 2: NAMN$, ADRESS$, STAD$
+	  PRINT NAMN$
+	  PRINT ADRESS$
+	  PRINT STAD$
+	UNTIL EOF(2)
+	CLOSE
+
++ ESC
+
+Ordet ESC används dels i TRAP-satsen (se denna), dels som en
+STANDARDFUNKTION (se dessa).
+
++ ETIKETTER (Labels)
+
+En etikett kan användas som en hoppadress för en GOTO-sats. Syntaxen för
+etikett är:
+
+	<namn>:
+
+Exempel:
+
+	WHILE TRUE DO // OÄNDLIG SLINGA
+	  INPUT NAMN$
+	  IF NAMN$="" THEN GOTO HALT
+	  ...
+	  ...
+	ENDWHILE
+	HALT:
+
+OBSERVERA! GOTO <radnummer> kan INTE användas i COMAL-80/VIC-64.
+
++ EXEC
+
+EXEC är ett ord, som kan sättas framför ett procedurnamn i ett anrop på
+proceduren. Om ordet används, får proceduranropet denna syntax:
+
+EXEC <procedurnamn> (<lista över aktuella parametrar>)
+
+Normalt används ordet EXEC icke i CBM COMAL-80, men med hänsyn till
+jämförbarheten med äldre versioner av COMAL, accepteras ordet av förtolken,
+och kan under listningen återges av systemet, när kommandot SETEXEC (se
+detta ord) används.
+
+En närmare beskrivning av procedurer och parametrar finns under PROC.
+
++ EXP
+
+Se under STANDARDFUNKTIONER
+
++ FALSE
+
+Två konstanter, TRUE (sant) och FALSE (falskt) är fördefinierade, för att
+förbättra programmens läsbarhet. TRUE svarar mot 1 och FALSE är lika med 0 I
+COMAL-80 betraktas ett numeriskt uttryck i relevant sammanhang som FALSKT,
+om det har värdet 0, i övrigt anses det vara SANT.
+
+Exempel: Efter tilldelningen:
+
+	SLUT := FALSE
+
+har det logiska uttrycket: TAL>MAX AND SLUT värdet FALSE. I verkligheten är
+SLUT inget annat än en numerisk variabel med värdet noll, och den kan också
+i övrigt användas som sådan, om man vill.
+
++ FILE
+
+FILE är ett nyckelord, som används i READ/WRITE och INPUT/PRINT-satser när
+de används i förbindelse med filhantering. Se READ FILE, WRITE FILE, INPUT
+FILE och PRINT FILE.
+
++ FOR
+
+FOR-satsen och FOR-slingor fungerar på samma sätt som i BASIC. Dock är
+COMAL-80 utvidgad med:
+
+	FOR <"som i BASIC"> DO <programsats>
+
+Nyckelordet DO används endast för att skilja FOR-delen från den följande
+programsatsen (ungefär som THEN i den "långa" IF-satsen).
+
+Den "långa" FOR-satsen kan också användas som kommando.
+
+OBSERVERA! En flerradig FOR-slinga avslutas med en ENDFOR-sats. Förtolken
+accepterar dock även ordet NEXT som i BASIC, men ändrar automatiskt detta
+till ENDFOR. Man behöver inte knappa in index-variabeln efter ENDFOR. Om den
+icke slås in, sätter förtolken in den automatiskt vid första körningen av
+programmet.
+
+Exempel: "småtext", raderna 2120-2330, "kartotek", raderna 2860, 2910, 2920,
+2960 etc.
+
++ FUNC
++ ENDFUNC
++ RETURN
+
+FUNC-satsen används för att inleda en användardefinierad funktion.
+
+ENDFUNC används för att avsluta en sådan funktion, och med
+
+RETURN-satsen sänder man tillbaka funktionens värde till programmet.
+
+FUNC-satsen har denna syntax:
+
+	FUNC <funktionsnamn> (<lista med formella parametrar>)
+
+ENDFUNC-satsen har denna syntax:
+
+	ENDFUNC <funktionsnamn>
+
+RETURN-satsens syntax är:
+
+	RETURN <aritmetiskt uttryck>
+
+En funktion är uppbyggd efter följande schema:
+
+	FUNC <funktionsnamn>(<parameterlista>)
+	...
+	...
+	RETURN <aritmetiskt uttryck>
+	...
+	ENDFUNC <funktionsnamn>
+
+Som visas ovan kan listan med formella parametrar vara tom. Man kan ha flera
+RETURN-satser i funktionens "kropp", men man måste ha minst en, som kan ange
+funktionsvärdet till huvudprogrammet. Funktioner i denna COMAL-version
+(00.12), kan endast ge tillbaka talvärden (hela eller decimala).
+
+Funktioner kan vara slutna, liksom procedurer (se under CLOSED).
+
+Exempel:
+
+	FUNC SFD(X,Y)
+	  IF X MOD Y=0 THEN // OM X KAN DELAS MED Y
+	    RETURN Y // Y ÄR STÖRSTA GEMENSAMMA DIVISOR
+	  ELSE
+	    RETURN SFD(Y,X MOD Y) // ANVÄND EUKLIDES ALGORITM
+	  ENDIF
+	ENDFUNC SFD
+
+Denna funktion kan t ex anropas med satsen:
+
+	IF SFD(A,B)=1 THEN PRINT "TALEN ÄR EJ DELBARA MED VARANDRA"
+
+Andra exempel: "småtext", raderna 2770-2830, 2850-2910.
+
++ GOTO
+
+GOTO-satsen åstadkommer att programutföringen fortsätter på ett bestämt
+ställe i programmet. Syntaxen är:
+
+	GOTO <etikett>
+
+Se under ETIKETT för närmare definition av <etikett> och exempel på hur en
+GOTO-sats används.
+
+MÄRK VÄL!! Resultatet av ett uthopp från en procedur är oförutsägbart!!
+
++ INT
+
+Se under STANDARDFUNKTIONER
+
++ IN
+
+IN är en operator, som används i förbindelse med textsträngar.
+
+Uttrycket:
+
+	<text-1> IN <text-2>
+
+har värdet 0 om <text-1> ej finns som en sammanhängande deltext i <text-2>.
+Om <text-1> däremot finns som en sammanhängande deltext i <text-2> så blir
+värdet av uttrycket positionen på (=läget av) första förekomsten av <text-1>
+i <text-2>, dvs numret på det tecken i <text-2> som bildar början på
+<text-1>. Om <text-1> är den "tomma textmängden", "", ger uttryckets värde
+längden på <text-2> plus ett, dvs detsamma som BASICs LEN(<text-2>)+1.
+
+Exempel: "småtext", rad 2010.
+
++ INPUT
+
+INPUT-satsen har följande syntax:
+
+	INPUT <variabellista>;
+
+eller:
+
+	INPUT <ledtext>: <variabellista>;
+
+där <ledtext> är ett textuttryck.
+
+Anmärkning: Om det finns mer än en textvariabel i variabellistan, skall
+varje text avslutas med ett tryck på RETURN-tangenten under inknappningen.
+Orsaken till detta är, att i COMAL-80 uppfångas ALLA tecken som knappas in
+av en textvariabel, alltså även citationstecken och kommatecken, som alltså
+inte kan användas som skiljetecken mellan texter. Ingår ett funktionsanrop i
+variabellistan (t ex som index till ett tabell-element) så får dessa icke
+innehålla INPUT-satser, då dessa i så fall kommer att radera innehållet i
+indata-bufferten.
+
+Avslutas INPUT-satsen med ett semikolon (;) fungerar det så, att markören
+stannar på raden efter inläsningen.
+
+Exempel: "kartotek", raderna 390, 910,1520.
+
++ INPUT FILE
+
+INPUT FILE-satsen används för att hämta data från sekventiella eller direkta
+filer, när dessa data lagrats undan med en PRINT FILE-sats. T ex gör satsen:
+
+	INPUT FILE 2: NAMN$, ADRESS$, STAD$
+
+att värden tilldelas variablerna i listan efter kolonet (:) genom att
+värdena hämtas sekventiellt i den fil, som öppnats med ordningsnumret 2 (se
+även OPEN).
+
+Satsen:
+
+	INPUT FILE 2,I: NAMN$, TELEFON
+
+hämtar värden till variablerna på listan i post nr I i den direkta fil, som
+öppnats med ordningsnumret 2.
+
+MÄRK VÄL! När man hämtar data från en diskett, använder man normalt READ
+FILE-satsen (se detta ord), eftersom den är snabbare än INPUT FILE-satsen.
+Om man hämtar data från kassettbandspelaren (Datasetten) är man hänvisad
+till enbart INPUT FILE-satsen. När man hanterar data på diskett använder man
+normalt satserna WRITE FILE/READ FILE. Då man hanterar data på kassett skall
+man använda PRINT FILE/INPUT FILE. Var också uppmärksam på att man inte kan
+använda direkta filer tillsammans med kassettbandspelaren.
+
+Se även OPEN FILE.
+
+Exempel: "kartotek", raderna 2530, 2560.
+
++ IF
++ ELSE
++ ELIF
++ ENDIF
+
+Syntaxen för en IF-sats är:
+
+	IF <uttryck> THEN
+
+eller:
+
+	IF <uttryck> THEN <programsatser>
+
+Den första formen kan endast användas tillsammans med en ENDIF-sats. I detta
+fall kan THEN uteslutas och i så fall lägger förtolken till det själv.
+
+ELIF-satsen har syntaxen:
+
+	ELIF <uttryck> THEN
+
+En ELSE-sats består endast av ordet ELSE, och en ENDIF-sats är också bara
+ett ord.
+
+De fyra satserna ingår i följande strukturer:
+
+a. IF .. ENDIF                               SANT
+                                            ------>
+IF <uttryck> THEN
+                                       +---------.
+Programavsnitt A                |      | uttryck  >  A
+                        FALSKT  |      +---------'   ·
+ENDIF                           |        |-----------'
+                                V        v
+
+Om <uttryck> har ett värde som motsvarar SANT (TRUE), utförs
+programavsnittet A. Ar värdet av <uttryck> FALSKT (FALSE), ignoreras blocket
+A och förtolken fortsätter utförandet med programavsnitten efter
+ENDIF-satsen.
+
+Programtexten mellan IF och ENDIF rycks in under utlistningen av programmet.
+
+b. IF .. ELSE .. ENDIF
+
+IF <uttryck> THEN
+                                       +---------.
+Programavsnitt A                       | uttryck  >  A
+                                       +---------'   ·
+ELSE                               .-----|-----------'
+                                   |     |
+Programavsnitt B                   |     `---------> B
+                                   |                 ·
+ENDIF                              |-----------------'
+                                   v
+
+Om värdet av uttrycket <uttryck> är TRUE, utförs programavsnitt A. Motsvarar
+värdet FALSE, utförs programavsnitt B.
+
+Programtexten mellan styrsatserna kommer att dras in under utlistningen.
+
+c. IF .. ELIF .. ELSE .. ENDIF
+
+IF <uttryck> THEN
+                                       +---------.
+Programavsnitt A                       | uttryck  >   A
+                                       +---------'    ·
+ELIF <uttryck-1> THEN              .-----|------------'
+                                   |   +-----------.
+Programavsnitt A-1                 |   | uttryck-1  > A-1
+                                   |   +-----------'   ·  
+ELIF <uttryck-2> THEN              |-----|-------------'
+                                   |   +-----------.
+Programavsnitt A-2                 |   | uttryck-2  > A-2 
+                                   |   +-----------'   ·
+...                                |-----|-------------'
+                                   |     :
+...                                |     :
+                                   |     :
+ELSE                               |     |
+                                   |     |
+Programavsnitt B                   |     `--------->  B
+                                   |                  ·
+ENDIF                              |------------------'
+                                   v
+
+Nyckelordet ELIF är en sammandragning av ELSE IF. Som visats i
+blockdiagrammet vid sidan av figuren kommer endast ett av programblocken i
+strukturen att bli utfört. Lägg märke till att om mer än ett av uttrycken är
+sant, så blir bara det programblock, som har det första sanna uttrycket
+utfört.
+
+Det sista alternativet har ELSE utelämnat och vi får:
+
+d. IF .. ELIF .. ELIF .... ENDIF
+
+Lägg märke till att då vi får alla programblock mellan styrsatserna indragna
+under utlistningen, är det mycket lätt att upptäcka om det avslutande ENDIF
+är bortglömt. Det är också lätt att överblicka hela det område som en
+IF-sats styr, och att se, om en given sats finns med i ett av blocken eller
+inte.
+
+IF <uttryck> THEN
+                                       +---------.
+Programavsnitt A                       | uttryck  >   A
+                                       +---------'    ·
+ELIF <uttryck-1> THEN              .-----|------------'
+                                   |   +-----------.
+Programavsnitt A-1                 |   | uttryck-1  > A-1
+                                   |   +-----------'   ·  
+ELIF <uttryck-2> THEN              |-----|-------------'
+                                   |   +-----------.
+Programavsnitt A-2                 |   | uttryck-2  > A-2 
+                                   |   +-----------'   ·
+...                                |-----|-------------'
+                                   |     :
+...                                |     :
+                                   |     :
+ELIF <uttryck-n> THEN              |     |
+                                   |   +-----------.
+Programavsnitt A-n                 |   | uttryck-n  > A-n
+                                   |   +-----------'   ·
+ENDIF                              |-----'-------------'
+                                   v
+
+Exempel: "småtext", raderna 1080-1120, 1600-1720, 1650, 1670, 1710;
+
+"kartotek", raderna 2160-2260. I båda programmen finns flera exempel.
+
++ KEY$
+
+Se under STANDARDFUNKTIONER. sid 36
+
++ LEN
+
+Se under STANDARDFUNKTIONER. sid 36
+
++ LET
+
+I COMAL uttrycks en tilldelning med hjälp av tecknet
+
+	:=
+
+För att underlätta programmeringen är det dock möjligt att använda ett
+vanligt likhetstecken under programinskrivningen. Detta ändras av förtolken
+automatiskt till ":=". Nyckelordet LET ignoreras av förtolken, om det slås
+in. Man kan ha så många tilldelningar på en rad som radlängden tillåter,
+tilldelningarna skall då skiljas med ett semikolon (;).
+
+Utom vanliga tilldelningar med hjälp av ":=" finns också möjlighet att
+direkt addera till eller subtrahera från en variabel. Detta anges med
+tecknen ":+" eller ":-".
+
++ LINEFEED +/-
+
+LINEFEED + genererar radskifte efter vagnretur vid utlistning och liknande.
+LINEFEED - genererar inget radskifte efter vagnretur (default-värde, dvs det
+värde, som sätts in om inget värde anges av användaren).
+
++ LIST
+
+LIST är ett kommando, som används när man vill skriva ut hela eller delar av
+det program, som för tillfället finns i arbetsminnet.
+
+Kommandot:
+
+	LIST
+
+får systemet att skriva en lista över hela programmet.
+
+Kommandot:
+
+	LIST 100
+
+får systemet att skriva ut rad 100.
+
+Kommandot:
+
+	LIST 100-200
+
+ger en utskrift av raderna från och med 100 till och med 200 och kommandot:
+
+	LIST -300
+
+gör, att alla rader till och med rad 300 skrivs ut.
+
+Kommandot:
+
+	LIST 300-
+
+ger en listning av alla rader från och med rad 300.
+
+Normalt kommer en programlista att löpa över skärmen tills programlistningen
+är utskriven till slut, eller man trycker på RUN/STOP-tangenten. Man kan
+även stoppa listningen genom att trycka på mellanslagstangenten. När man
+åter trycker på mellanslaget så fortsätter listningen. Om man har stoppat
+listningen med ett tryck på mellanslaget kan man inte använda de vanliga
+editeringsmöjligheterna. Dessa träder först i funktion när man stoppat
+listningen med RUN/STOP-tangenten.
+
+LIST-kommandot kan också användas för att spara program som ASCII-filer på
+diskett eller kassettband.
+
+Kommandot:
+
+	LIST "MITTPROGRAM"
+
+lagrar det program, som för tillfället ligger i arbetsminnet som en
+programfil med namnet "MITTPROGRAM". Programmet sparas som källkod, och kan
+därför flätas samman med ett annat i maskinens minne (se ENTER). Eftersom
+LIST-kommandot arbetar direkt på källkoden, är denna form också tillåten:
+
+	LIST 100-200 "MITTPROGRAM"
+
+I detta fall sparas raderna 100-200 i programfilen "MITTPROGRAM". Vill man
+använda kassettbandspelaren i stället för disk-stationen (enhet 8), måste
+man använda följande version av LIST-kommandot:
+
+	LIST "<filnamn>", 1
+
+Ett program, som sparats med hjälp av LIST"<namn>" kan läsas som en vanlig
+ASCII-fil genom att man Öppnar filen med:
+
+	OPEN FILE 2, "<namn>", READ
+
+De enskilda programraderna kan också läsas in i en textvariabel med:
+
+	INPUT FILE 2: A$
+
+OBS! Se även under EDIT-kommandot.
+
++ LOAD
+
+LOAD är ett kommando som läser in program från disketten till arbetsminnet.
+T ex:
+
+	LOAD "OLSONMONITOR"
+
+kommer att läsa in programmet "OLSONMONITOR" till arbetsminnet.
+
+LOAD-kommandot kan endast användas i förbindelse med program, som sparats på
+diskett med kommandot SAVE (se SAVE). Kommandot kan ej användas i
+förbindelse med program, som lagrats på kassettband.
+
++ LOG
+
+Se under STANDARDFUNKTIONER. sid 36
+
++ MOD
+
+MOD är en tvåställig operator och definieras med:
+
+A MOD B = A - INT(A/B) * B
+
+dvs resten efter division av A med B. Se även DIV och UTTRYCK
+
++ NAMN	
+
+Namn i COMAL-80 får bestå av upp till 78 tecken, som alla är signifikanta,
+dvs tas med vid jämförelser. Första tecknet måste vara en bokstav, resten
+kan vara bokstäver, siffror eller ett av tecknen "'" och "_". Var uppmärksam
+på, att det senaste tecknet, (understrykningstecken) kommer att på
+bildskärmen visas som vänsterpil "<-".
+		
+Exempel: ANTAL'ELEVER, MAXTAL, ADRESS$, FÖRNAMN$
+
++ NEW
+
+Detta kommando gör, att innehållet i maskinens arbetsminne raderas (både
+program och data).
+
++ NEXT
+
+Se under ENDFOR.
+
++ NOT
+
+Se under UTTRYCK.
+
++ NULL
+
+NULL-satsen utför den "tomma processen", dvs absolut ingenting. Liksom den
+tomma mängden i matematiken, kan den dock vara mycket nyttig av syntaktiska
+skäl.
+
+Exempel: "kartotek", rad 2960.
+
++ OF
+
+Nyckelordet OF används i COMAL-80 för att avsluta en CASE-sats och under en
+deklaration av en textvariabel eller en texttabell. Se även CASE och DIM.
+
++ OPEN
+
+OPEN-satsen används for att öppna datafiler på en yttre enhet. T ex:
+
+	OPEN FILE 2, "TECKEN", WRITE
+
+öppnar filen "TECKEN". Ordningsnumret 2 används i resten av programmet för
+att hänvisa till denna fil och nyckelordet WRITE betyder, att filen öppnas
+for att man vill spara data på den. Ordningsnumret kan vara ett heltal från
+1 till och med 254, och utom for WRITE kan en fil öppnas med READ, APPEND
+eller RANDOM. READ betyder att man vill hämta data sekventiellt, APPEND
+betyder att man vill spara på filen som en förlängning av filens nuvarande
+innehåll och RANDOM används for att öppna en direkt fil for hämtning eller
+lagring. Ordet RANDOM måste följas av ett uttryck, som anger postlängden. T
+ex:
+
+	OPEN FILE 34, "KUNDER", RANDOM 100
+
+Konstanten 100 efter ordet RANDOM anger, att varje post får vara på upp till
+100 bytes. Se även READ FILE och WRITE FILE.
+
+Önskar man öppna filer på kassettenheten, kan man göra det genom att foga
+till en UNIT-del i kommandot:
+
+	OPEN FILE 2, "DATAFIL", UNIT 1, READ
+
+öppnar filen "DATAFIL" på enhet nr 1 (kassetten):
+
+	OPEN FILE 3, "", UNIT 1, READ
+
+kommer att öppna den första filen som finns på kassettstationen för hämtning
+in till arbetsminnet.
+
+Exempel: se "kartotek" raderna 2560, 2640. "kartotek/d", raderna 2520, 2640.
+
++ OR
+
+Se under UTTRYCK.
+
++ ORD
+
+ORD(X$) är en standardfunktion som har effekt på textsträngar. Den sänder
+tillbaka ASCII-värdet av det första tecknet i X$.
+
++ OTHERWISE
+
+En OTHERWISE-sats används i förbindelse med ett alternativval i en
+CASE-konstruktion. Se under CASE.
+
++ OUTPUT
+
+Se under SELECT.
+
++ PASS
+
+PASS-satsen används för att sända kommandon vidare till diskettstationens
+inbyggda operativsystem. Satsen har följande syntax:
+
+	PASS "<diskettkommando>"
+
+Exempel:
+
+	PASS "n0:bokprogram,bc"
+
+formateras en ny diskett. Disketten får namnet "bokprogram" och
+identifikationen blir "bc".
+
+	PASS "c0:nytext=0:småtext"
+
+lagrar undan en kopia av "småtext" under namnet "nytext".
+
+	PASS "r0:småtext/d=0:småtext"
+
+döper om filen "småtext" till "småtext/d".
+
+	PASS "s0:gammaltext"
+
+raderar filen "gammaltext" (se även DELETE)
+
+	PASS "i"
+
+initialiserar en diskett som nyss satts in i diskettstationen.
+
+	PASS "v"
+
+"rensar upp" på disketten (stänger ev. öppna filer etc).
+
++ PEEK
+
+PEEK(I) är en standardfunktion, som hämtar värdet av byte nr I från
+arbetsminnet.
+
++ POKE
+
+POKE I, J är en sats, som sätter byte nr I i arbetsminnet till J.
+
+PRINT
+
+En PRINT-sats har generellt samma syntax som i BASIC. I COMAL-80 kan man
+dock bestämma skrivzonens bredd med hjälp av systemvariabeln ZONE.
+
+T ex:
+
+	ZONE 10
+	PRINT 1, 2, 3
+		
+ger följande utskrift:
+
+	1         2         3
+	123456789012345678901234567890 <--kolumn-nummer
+
+varemot dessa två rader:
+
+	ZONE 5
+	PRINT 1, 2, 3
+
+ger följande utskrift:
+
+	1    2    3
+	12345678901234567890 <--kolumnnummer
+
+Omedelbart efter strömtillslag är värdet på ZONE lika med noll, vilket
+betyder, att om inga andra värden på ZONE specificeras, så ger PRINT-satsen
+från de två ovanstående exemplen utskriften:
+
+	123
+
+dvs inga mellanrum alls mellan tecknen.
+
+Semikolon (;) ger alltid ett extra mellanrum. T ex:
+
+	PRINT 1;2;3
+
+skriver ut följande:
+
+	1 2 3
+
+TAB används for att tabulera in till en bestämd kolumn på raden. Således ger
+t ex satsen:
+
+	PRINT "Jens E. Jensen", TAB(20), 11
+
+följande utskrift:
+
+	Jens E. Jensen     11
+	123456789012345678901234567890 <--kolumn-nummer
+
+Om värdet av uttrycket i parentesen efter TAB är mindre än nuvarande
+kolumnläge, görs först ett radbyte. Om värdet är mindre än 1 får man ett
+felmeddelande.
+
+Exempel: I såväl "småtext" som "kartotek" finns talrika exempel på
+PRINT-satser.
+
++ PRINT FILE
+
+PRINT FILE-satsen används för att lagra data i sekventiella eller direkta
+filer. Så lagrar t ex satsen:
+
+	PRINT FILE 2: NAMN$, TELENR
+
+värdena av de två variablerna i listan (alltså NAMN$ och TELENR)
+sekventiellt i filen med ordningsnumret 2 (se även OPEN). Satsen:
+
+	PRINT FILE 4,I: NAMN$, TELENR
+
+lagrar värdena av variablerna i post nr I i den direkta fil som har öppnats
+med ordningsnumret 4.
+
+Data, som har lagrats med PRINT FILE måste hämtas med INPUT FILE. Se i
+övrigt närmare om lagring och hämtning av data genom användning av
+kommandona PRINT FILE/INPUT FILE under INPUT FILE.
+
++ PROC
++ ENDPROC
+
+Om ett block med satser inleds med satsen:
+
+	PROC <namn>
+
+där <namn> är ett giltigt namn, och avslutas med satsen:
+
+	ENDPROC <namn>
+
+kan detta block anropas som ett underprogram med hjälp av satsen:
+
+	<namn>.
+
+Namnet efter ENDPROC står inom spetsiga parenteser för att ange, att man
+inte behöver ange det under inslagningen. Förtolken fogar själv till det
+saknade namnet vid första körningen.
+
+När underprogrammet är utfört, fortsätter programkörningen med programraden
+som följer på den sats som anropade underprogrammet (proceduren).
+
+Programtexten mellan PROC och ENDPROC kommer att visas med indrag när
+programmet LISTas.
+
+Diagrammet nedan visar sammanhanget mellan verkningen av PROC och
+ENDPROC-satserna och den sats som anropar proceduren:
+
+     ...
+.--> PROC <namn>
+|    procedurkropp ---.
+|    ENDPROC <namn>   |
+|    ...              |
+`--- <namn>           |
+     ... <------------'
+
++ PROCEDURER MED PARAMETRAR
+
+I VIC-64-COMAL-80 kan PROC-satsen utvidgas till:
+
+	PROC <namn>(<lista på formella parametrar>)
+
+och nu talar vi om ett riktigt procedurhuvud. En procedur med parametrar
+skall anropas så här:
+
+	<namn>(<lista på aktuella parametrar>)
+
+Då procedurer med parameteröverföring är ett stort framsteg i förhållande
+till BASIC, och samtidigt också därför ganska okänt för många läsare, skall
+detta begrepp beskrivas mer i detalj i det följande avsnittet.
+
+** Exempel nr 1
+
+En procedur inleds med satsen:
+
+	PROC PROV (I, J)
+
+och anropas med satsen:
+
+	PROV (FÖRST, SIST)
+
+I detta fall är I och J i procedurhuvudet de formella parametrarna och de
+skall tilldelas ett värde, när proceduren anropas. Namnen FÖRST och SIST i
+anropet är de aktuella parametrarna och måste ha tilldelats värden innan
+denna sats kan utföras. Under proceduranropet får I sig tilldelat värdet av
+FÖRST och J värdet på SIST. Man kan säga att I övertar FÖRSTs värde och J
+övertar SISTs värde. Därför kallar man också I och J för värdeparametrar
+(called-by-value). Men det ligger ännu mer häri: I och J blir behandlade som
+lokala variabler av proceduren PROV och de kommer inte att vara kända för
+den programvärld, som ligger utanför proceduren. De kan därför inte heller
+förväxlas med eventuella andra variabler I och J någon annanstans i
+programmet. De aktuella parametrarna till en värdeparameter kan vara
+konstanter, variabler eller uttryck. Proceduren PROV kan t ex anropas på
+följande tillåtna sätt:
+
+	PROV (1,8)
+
+eller
+
+	PROV (I+1, J-1)
+
+Ett anrop till en procedur kan även företas inifrån proceduren själv, den
+kallar alltså sig själv "rekursivt". I detta fall sätter förtolken upp nya
+utrymmen för I och J, som om den aldrig hade sett dem tidigare, och den
+kommer icke att förväxla värdena från ett anrop med ett annat. Eftersom
+rekursion och lokala variabler i flera nivåer är en ganska komplicerad
+historia, är denna korta översikt inte rätt plats for att göra någon större
+utredning av detta ämne.
+
+** Exempel nr 2
+
+En procedur inleds med:
+
+	PROC SKRIVPOST (R, N$, REF M())
+
+och anropas med:
+
+	SKRIVPOST (ELEVNR, NAMN$, TECKEN)
+
+I detta fall är R och N$ formella värdeparametrar och under anropet blir de
+tilldelade värdet på respektive ELEVER och NAMN$. Teckensträngen REF M()
+betyder en formell parameter M, som är en referensparameter
+(called-by-reference). Tecknen () efter M betyder, att M hänvisar till en
+endimensionell tabell. Om anropet skall vara tillåtet, måste TECKEN vara en
+endimensionell tabell. För referensparametrar sker ingen tilldelning under
+anropet, den formella parametern blir endast använd som ett slags "öknamn"
+på den aktuella parametern. TECKEN kommer således att få utstå allt det, som
+SKRIVPOST utsätter M för. SKRIVPOST kunde också vara inlett med:
+
+	PROC SKRIVPOST(R, REF N$, REF M())
+
+Den enda skillnaden i förhållande till föregående procedurhuvud är, att N$
+nu är en referensparameter. N$ hänvisar endast till NAMN$, och det sker
+ingen tilldelning. Det ökar naturligtvis hastigheten och spar minnesutrymme.
+
+** Exempel nr 3
+
+En procedur inleds med:
+
+	PROC SKRIV'UT (REF TABELL(,))
+
+Tecknen (,) efter parameternamnet TABELL anger, att TABELL endast kan
+hänvisa till en tvådimensionell tabell. Tecknen (,,) visar, att man hänvisar
+till en tredimensionell tabell, osv.
+
+Ytterligare exempel kan återfinnas i programmen "småtext" och "kartotek".
+
+En procedur kan också vara sluten. Detta anges genom att man avslutar
+procedurhuvudet med ordet CLOSED. I detta fall kommer alla variabler, som
+förekommer i procedurens kropp, att behandlas som lokala variabler på samma
+sätt som värdeparametrarna tidigare. Arbetsminnet för de lokala variablerna
+frigörs, när proceduranropet är avslutat.
+
++ RANDOM
+
+Se under OPEN. sid 26
+
++ READ
+
+READ-satsen är definierad på samma sätt som i BASIC. Se även under EOD.
+
++ READ FILE
+
+READ FILE-satsen används för att läsa från sekventiella och direkta filer,
+som sparats på diskett. T ex kommer:
+
+	READ FILE 2: NAMN$, ADRESS$, STAD$
+
+att tilldela värden till variablerna på listan genom att läsa sekventiellt i
+den fil, som har ordningsnumret 2 (se även OPEN).
+
+Satsen:
+
+	READ FILE 4, I: NAMN$, ELEVER, KLASSNR
+
+tilldelar värden till variablerna på listan genom att läsa post nr I i den
+direkta fil, som har öppnats med ordningsnumret 4.
+
+Exempel finns i "kartotek", raderna 2530 och 2560.
+
++ REF
+
+Se under PROC.
+
++ REM
+
+REM-satser kan användas i VIC-64 COMAL-80, men förtolken ändrar nyckelordet
+REM till symbolen "//". I COMAL-80 kan en kommentar placeras på sin egen rad
+(som en REM-sats) eller användas för att avsluta en programrad vilken som
+helst. Bara kommentaren inleds med "//". Många exempel kan återfinnas i
+"småtext" och "kartotek".
+
++ RENUM
+
+RENUM ändrar följden av radnummer i ett program till följande sekvens:
+
+0010, 0020, 0030, ...
+
+Kommandot:
+
+	RENUM 1000
+
+ändrar radnumren till:
+
+1000, 1010, 1020, ...
+
+Kommandot:
+
+	RENUM 1000, 2
+
+ändrar radnumren till:
+
+1000, 1002, 1004, ...
+
+Kommandot:
+
+	RENUM, 2
+
+ändrar radnumren till:
+
+0010, 0012, 0014, ...
+
++ REPEAT
++ UNTIL
+
+REPEAT- och UNTIL-satserna ingår i följande slingstruktur:
+
+
+REPEAT               -----------------> A
+                           ^       .---------+
+Programavsnitt A      .----|------<  uttryck |
+                      |    |       `---------+
+UNTIL <uttryck>       |    +------------'
+                      v
+
+Blocket med satser A, blir upprepat tills uttrycket vid UNTIL antar värdet
+SANT (TRUE). När detta sker, fortsätter programkörningen med satsen som
+folier efter UNTIL-satsen.
+
+Programtexten mellan REPEAT och UNTIL kommer att dras in vid LISTning av
+programmet.
+
+Exempel finns i "småtext", raderna 480-710 samt "kartotek", raderna
+950-1010.
+
++ RESTORE
+
+Satsen:
+
+	RESTORE
+
+medför, att DATA-pekaren sätts till att peka på den första DATA-satsen i
+programmet, dvs det första elementet i datakön.
+
++ RETURN
+
+RETURN-satsen används, när man vill lämna en procedur, innan man har kommit
+fram till ENDPROC-satsen. Dessutom används satsen för att returnera värdet
+från en användardefinierad funktion (se FUNC).
+
+Exempel: "småtext", raderna 1380, 2790, 2810, 2870, 2890 och "kartotek", rad
+1740.
+
++ RND
+
+RND-funktionen använd för att ta fram följder av slumptal precis som i
+BASIC. I COMAL-80 finns följande utvidgning
+
+	RND (X,Y)
+
+där X och Y är två heltal och X är mindre än eller lika med Y. Denna
+funktion tar fram slumpade heltal i intervallet från och med X till och med
+Y.
+
++ RUN
+
+RUN-kommandot gör att alla variabler nollställs, ett s k "prepass" blir
+utfört, dvs alla strukturer undersöks om de har något fel. Maskinen börjar
+därefter köra programmet som finns i arbetsminnet med dess första
+programsats.
+
++ SAVE
+
+SAVE-kommandot används för att spara program från maskinens arbetsminne på
+diskett.
+
+	SAVE "RÄKNEBOK"
+
+Ett program, som sparats på diskett med hjälp av SAVE-kommandot, kan hämtas
+genom att man använder LOAD-kommandot (se LOAD).
+
+Kommandot kan ej användas för att spara program på kassettband.
+
++ SELECT OUTPUT
+
+SELECT OUTPUT kan användas både i program och som kommando. Kommandot:
+
+	SELECT OUTPUT "LP"
+
+dirigerar de följande utskrifterna från systemet till printern (LP står för
+LINE PRINTER). Kommandot:
+
+	SELECT OUTPUT "DS"
+
+återför systemet till att ge utskrifter på bildskärmen (DS står för
+DATASCREEN). Om satsen:
+
+	SELECT OUTPUT "LP"
+
+förekommer i ett program, kommer alla utskrifter etter denna sats på
+printern ända tills följande sats förekommer i programmet:
+
+	SELECT OUTPUT "DS"
+
+Då återkommer utskrifterna på bildskärmen.
+
+OBSERVERA! De texter, som skrivs ut som instruktionstext i en INPUT-sats,
+kommer alltid att skrivas ut på bildskärmen.
+
+Exempel, se "småtext", raderna 2110,2360 och i "kartotek" rad 1530.
+
++ SETEXEC
+
+Kommandot:
+
+	SETEXEC-
+
+gör, att nyckelordet EXEC inte blir utskrivet vid utlistning av programmet.
+
+Kommandot:
+
+	SETEXEC+
+
+gör, att nyckelordet EXEC skrivs ut. I förbindelse med systemstart utförs
+SETEXEC-, dvs nyckelordet EXEC blir alltså inte utskrivet med mindre än
+kommandot SETEXEC+ utförs (se också EXEC).
+
++ SETMSG
+
+Kommandot:
+
+	SETMSG-
+
+åstadkommer, att feltexterna som ligger på systemdisketten, inte mer hämtas
+in från denna. I stället ger systemet endast ett felnummer, men markerar
+fortförande felet på den nyss inslagna raden.
+
+Kommandot:
+
+	SETMSG+
+
+gör, att feltexterna hämtas in från systemdisketten. Vid uppstart av
+systemet utförs SETMSG+.
+
++ SGN
+
+Se under STANDARDFUNKTIONER.
+
++ SIN
+
+Se under STANDARDFUNKTIONER.
+
++ SQR
+
+Se under STANDARDFUNKTIONER.
+
++ STATUS
+
+Kommandot:
+
+	STATUS
+
+får systemet att visa ett eventuellt felmeddelande från diskettstationen
+1541 och släcker fellampan.
+
++ SIZE
+
+SIZE-kommandot får systemet att visa antalet lediga bytes i minnet.
+
++ STANDARDFUNKTIONER
+
+VIC-64 COMAL-80 innehåller följande standardfunktioner:
+
+++ ABS(X)
+
+ger absoluta beloppet på X
+
+++ ATN(X)
+
+ger i radianer arcustangens av X
+
+++ CHR$(X)
+
+ger det tecken som svarar mot talvärdet X (där X kan vara ett tal från 0
+till 255) i VIC-64ans teckenuppsättning (Se Appendix A bak i boken [not från
+e-textaren: Appendix A ingår inte i denna e-text]).
+
+++ COS(X)
+
+ger cosinus av X, X i radianer.
+
+++ EOD
+
+ger värdet TRUE (sant), om sista elementet i datakön är läst eller kön är
+tom (dvs om det inte finns några DATA-satser kvar att läsa i programmet). I
+motsatt fall ger det värdet FALSE (falskt).
+
+++ EOF(X)
+
+ger värdet TRUE, om filslut-markeringen i filen med ordningsnumret X har
+uppnåtts, annars värdet FALSE.
+
+++ ESC
+
+ger värdet TRUE, om RUN/STOP-tangenten har varit nedtryckt, annars värdet
+FALSE. Funktionen verkar endast om den vanliga effekten av
+RUN/STOP-tangenten är satt ur funktion med en TRAP ESC-sats eller ett
+kommando (se TRAP)
+
+++ EXP(X)
+
+ger grundexponentialfunktionens värde i punkten X (e upphöjt med X).
+
+++ INT(X)
+
+ger heltalsdelen av X, dvs det största heltal, som är mindre än eller lika
+med X.
+
+++ KEY$
+
+ger det första tecknet i inslagningsbufferten. Om ingen tangent varit
+nedtryckt, ger det CHR$(0) som värde.
+
+Exempel på användningen av KEY$:
+
+	PROC HÄMTA'TECKEN(REF T$)
+	  T$=CHR$(0)
+	  WHILE T$=CHR$(0) DO T$:=KEY$
+	ENDPROC HÄMTA'TECKEN
+
+++ LEN(X$)	
+
+ger längden på texten X$.
+
+++ LOG(X)
+
+ger den naturliga logaritmen för X, X större än 0.
+
+++ ORD(X$)
+
+ger det talvärde, som internt i VIC-64 representerar det första tecknet i
+texten X$ (Se Appendix A bak i boken [not från e-textaren: Appendix A ingår
+inte i denna e-text]).
+
+++ RND (X)	
+
+ger en följd slumptal i intervallet från 0 till 1. Om X är positivt eller 0,
+startar följden slumpartat. Om X är negativt, startar följden med samma tal
+varje körning. Starttalet beror på det numeriska värdet på X.
+
+RND (X,Y) där X och Y är heltal, ger ett slumpmässigt heltal inom det slutna
+intervallet från X till Y. Om Y anges med en negativ talkonstant, skall det
+omges med parenteser (t ex: RND(5,(-1))). Om X är större än eller lika med
+Y, ger funktionen konstant talet X.
+
+++ SGN(X)
+
+ger tecknet för X: -1 om X är negativt, 0 om X är lika med noll och 1 om X
+är ett positivt tal.
+
+++ SQR(X)
+
+ger kvadratroten ur X, X får ej vara negativt.
+
+++ TAN(X)
+
+ger tangens för X, X i radianer.
+
+
++ STEP
+
+Se under FOR. sid 15
+
++ STOP
+
+STOP-satsen gör att programkörningen stoppas. Utförandet kan fortsätta igen
+med hjälp av CON-kommandot (se CON).
+
++ SYS
+
+Satsen:
+
+	SYS I
+
+gör att förtolken ger ett subrutinanrop till byte nr I i arbetsminnet.
+
++ TAB
+
+Se under PRINT.
+
++ TAN
+
+Se under STANDARDFUNKTIONER.
+
++ TEXTBEHANDLING, DELTEXTER
+
+En textvariabel skall alltid deklareras. T ex deklarerar:
+
+	DIM NAMN$ OF 30
+
+en textvariabel (strängvariabel) NAMN$, med plats för 30 tecken. När man
+deklarerar en strängtabell, skall det maximala antalet element också anges.
+T ex deklarerar:
+
+	DIM ADRESS$ (100,3) OF 20
+
+en tvådimensionell strängtabell, där varje element kan bestå av 20 tecken.
+Deltexter anges genom att man skriver positionen på första och sista tecknet
+i strängen. Om t ex NAMN$ innehåller följande text: "RICKARD PAWSON", kommer
+
+	NAMN$ (9:11)
+
+att vara detsamma som "PAW".
+
+OBSERVERA! Om variabeln TOMMA$ är deklarerad med längden 60 tecken, kommer
+tilldelningen:
+
+	TOMMA$(1:60):=""
+
+att fylla upp TOMMA$ med mellanrum. För variabeln NAMN$ är uttrycket NAMN$
+(5) ekvivalent (lika med) NAMN$ (5:5).
+
+Exempel: I programmet "småtext" finns talrika exempel på användningen av
+textvariabler och deltexter (strängvariabler och delsträngar).
+
++ THEN
+
+THEN är ett nyckelord, som används for att avsluta en IF-sats. Se IF.
+
++ TRUE
+
+TRUE är en fördefinierad konstant med värdet 1. Se FALSE för ytterligare
+detaljer.
+
++ TO
+
+Se under FOR.
+
++ TRAP
+
+TRAP-satsen/kommandot använd for att sätta den normala funktionen av
+RUN/STOP-tangenten ur spel. Normalt avbryter en nedtryckning av
+RUN/STOP-tangenten programutförandet. Om systemet möter följande
+sats/kommando:
+
+	TRAP ESC-
+
+kommer ett tryck på RUN/STOP-tangenten endast att registreras i
+systemvariabeln ESC medan programutförandet fortsätter utan hinder. Man kan
+återskapa den normala funktionen av RUN/STOP-tangenten genom att använda
+satsen/kommandot:
+
+	TRAP ESC+
+
+Vid systemstart sätts TRAP ESC+.
+
+Se även under ESC.
+
++ UTTRYCK
+
+I COMAL-80 finns det numeriska uttryck och stränguttryck.
+
+Ett numeriskt uttryck kan innehålla konstanter, variabler och numeriska
+funktioner, och man kan använda parenteser och nedanstående operaturer,
+enligt vanliga matematiska regler:
+
+	+       enställigt +          +A
+	-       enställigt -          -A
+	^       potenshöjning         A^B
+	*       multiplikation        A*B
+	/       division              A/B
+	DIV     heltalsdivision       A DIV B
+	MOD     rest efter division   A MOD B
+	+       addition              A+B
+	-       subtraktion           A-B
+
+Om A och B är heltal är A MOD B den så kallade principiella resten från
+divisionen av A med B. Dvs det minsta icke-negativa heltalet R, så att:
+
+	A = B*Q + R
+
+och A DIV B är kvoten Q.
+
+Numeriska värden kan jämföras med hjälp av följande jämförelse-operatorer:
+
+Mindre än                       <
+Mindre än eller lika med        <=
+Lika med                        =
+Större än                       >
+Större än eller lika med        >=
+Skild från eller Inte lika med  <>
+
+Numeriska uttryck kan användas som Booleska uttryck. Ett numeriskt värde av
+noll tolkas som FALSE dvs falskt medan däremot varje värde som är skilt från
+noll tolkas som TRUE dvs sant. En logisk operation ger en numerisk 1:a för
+TRUE och en 0:a för FALSE.
+
+Vi kan använda följande Booleska uttryck:
+
+NOT
+
+logisk negation. NOT A ger värdet FALSE, om A har värdet TRUE, eller TRUE,
+om A har värdet
+
+AND
+
+logisk förbindning. A AND B ger värdet TRUE om både A och B är TRUE. I alla
+andra fall ger uttrycket värdet FALSE.
+
+OR
+
+logisk förbindning. A OR B ger värdet FALSE om både A och B är FALSE, i alla
+andra fall ger uttrycket värdet TRUE.
+
+Ett stränguttryck kan bestå av strängkonstanter, textvariabler
+(strängvariabler) eller strängfunktioner som har kedjats samman med
++tecknet. Textuttryck kan jämföras med hjälp av operatorerna:
+
+<  <=  =  >=  >  <>
+
+som i detta fall betyder "kommer före", "kommer före eller är lika med", "är
+lika med", "kommer efter eller är lika med", "kommer efter" och "är icke
+lika med" i bokstavsordning. OBSERVERA att texter med villkorsoperatorer är
+uttryck som ger numeriska värden; 1 för TRUE och 0 för FALSE.
+
+IN
+
+används för jämförelser mellan strängar. Uttrycket A$ IN B$ ger värdet 0
+(dvs FALSE) om A$ icke finns som en delsträng i B$. Om A$ finns som
+delsträng av B$ så ger uttrycket läget för det första tecken som är lika.
+
+Exempel:
+
+Om NAMN$ har värdet "JOHN COLLINS" så kommer uttrycket:
+
+EFTERNAMN$ IN NAMN$ att ge värdet 6 (TRUE) om EFTERNAMN$ är "COLLINS", men
+värdet 0 (FALSE), om EFTERNAMN$ är "COLIN".
+
+Prioriteterna för de operatorer som nämns ovan är:
+
+^ (exponentiering)
+* DIV MOD
+< <= = >= > <> IN
+NOT
+AND
+OR
+
++ UNTIL	
+
+UNTIL-satsen används för att avsluta satsblocket i en REPEAT...UNTIL-slinga.
+Se REPEAT, UNTIL.
+
++ USING	
+
+Satsen:
+
+	PRINT USING <format>: <uttryck>, <uttryck> ... .
+
+används för att skriva ut värdena i listan över <uttryck>, styrt av
+textuttrycket <format>. Detta program:
+
+	0010 SELECT OUTPUT "LI"
+	0020 //
+	0030 REPEAT
+	0040   INPUT X
+	0050   PRINT "OFORMATERAT: ", X, TAB (30),
+	0060   PRINT USING "FORMATERAT: -#####.##": X
+	0070 UNTIL X = 0
+
+ger följande utskrift
+
+OFORMATERAT: 3               FORMATERAT:    3.00
+OFORMATERAT: - 3             FORMATERAT:   -3.00
+OFORMATERAT: - .3            FORMATERAT:   -0.30
+OFORMATERAT: .3              FORMATERAT:    0.30
+OFORMATERAT: 234.4567        FORMATERAT:  234.46
+OFORMATERAT: -234.5678       FORMATERAT: -234.57
+OFORMATERAT: 123444567       FORMATERAT: *******
+OFORMATERAT: -.123456        FORMATERAT:   -0.12
+OFORMATERAT: 3.4E-04         FORMATERAT:    0.00
+OFORMATERAT: 0               FORMATERAT:    0.00
+
+Följande program ger samma utskrift:
+
+	0010 DIM FORMAT$ OF 20
+	0020 FORMAT$:="#####.##"
+	0030 SELECT OUTPUT "LI"
+	0040 //
+	0050 REPEAT
+	0060   INPUT X
+	0070   PRINT "OFORMATERAT: ", X, TAB (30),
+	0080   PRINT USING "FORMATERAT: "+FORMAT$: X
+	0090 UNTIL X = 0
+
+
++ WHEN
+
+WHEN används för att inleda ett programblock i en CASE-konstruktion. Se
+under CASE.
+
++ WHILE
++ ENDWHILE
+
+WHILE och ENDWHILE-satserna används för att skapa följande struktur:
+
+WHILE <uttryck> DO         +---------.
+                           | uttryck  > -------> A
+Programsatser A            +---------'           ·
+                             |     ^-------------'
+ENDWHILE                     v
+
+Blocket med programsatser, A, utförs så länge som värdet på uttrycket efter
+WHILE är sant. När uttrycket blir falskt, fortsätter utförandet med satsen
+efter ENDWHILE.
+
+Programtexten mellan WHILE och ENDWHILE kommer att ryckas in under LISTning
+av programmet.
+
+Om bara en sats skall styras av uttrycket efter WHILE, kan hela slingan
+skrivas på en rad. T ex:
+
+	WHILE X<A(I) DO I:=I+1
+
+ENDWHILE skall inte skrivas ut i detta fall. (Jämför FORslingor).
+
+Exempel finns i "kartotek", raderna 300-540, 1830-1920 och i "småtext",
+raderna 1050-1130, 1590-1740.
+
++ WRITE FILE
+
+WRITE FILE-satsen används för att skriva i sekventiella eller direkta filer.
+Så kommer t ex:
+
+	WRITE FILE 2: NAMN$, ADRESS$, KOD
+
+att skriva värdena på variablerna i listan sekventiellt i filen med
+ordningsnumret 2 (se även OPEN). Satsen:
+
+	WRITE FILE 4, <postnr>: NAMN$, ADRESS$, AVDNR
+
+skriver värdet av listans variabler i den post som anges av <postnr>, i den
+direkta fil, som har öppnats med logiskt filnummer 4. En variabel på listan
+efter WRITE FILE kan vara namnet på en tabell. I så fall blir alla tabellens
+komponenter skrivna i den fil eller post man hänvisar till.
+
+Man kan adressera enskilda bytes i en post. När t ex följande utförs:
+
+	READ FILE 4, <postnr>, <bytenr>: X
+	WRITE FILE 4, <postur>, <bytena>: X
+
+läser och skriver X i byte nr <bytenr> i posten <postur>.
+
+OBS! SKRIVNING KAN ENDAST SKE FRAMIFRÅN I EN POST EFTERSOM RESTEN AV POSTEN
+NOLLSTÄLLS VID DENNA OPERATION!!!!!
+
+Exempel i "kartotek": rad 2650, 2680; "småtext": rad 2630.
+
++ ZONE
+
+ZONE används för att bestämma bredden av skrivzonerna. Se under PRINT
+
+* VIC-64 COMAL-80 GRAFIK
+
+Här används ett nytt begrepp, "musen". På amerikanska kallas den också för
+"The Turtle", (sköldpaddan). Vi behåller det rara danska namnet "musen" ända
+tills någon funnit på en bra svensk beteckning för denna fördefinierade
+figur eller form.
+
++ BACK
+
+Syntax: BACK <d>
+
+Flyttar "musen" <d> enheter bakåt. Om pennan är nere (se PENDOWN), ritas en
+linje i nuvarande färg.
+
+BACKGROUND
+
+Syntax: BACKGROUND <färg>
+
+där <färg> är ett heltal från 0 till 15 (se Appendix B, bak i boken).
+Satsen/kommandot sätter bakgrunden till den färg, som anges med <färg>. När
+man använder högupplösningsgrafiken, fungerar ej instruktionen, innan
+förtolken har stött på en CLEAR-sats/kommando (se CLEAR).
+
+Exempel: kommandot/satsen:
+
+	BACKGROUND 6
+
+sätter bakgrunden till färgen blå.
+
++ BORDER
+
+Syntax: BORDER <färg>
+
+Sätter kanten runt "arbetsytan" på bildskärmen till den färg som anges med
+<färg> (se även BACKGROUND).
+
++ CLEAR
+
+Syntax: CLEAR
+
+Rensar grafikbildskärmen.
+
++ DRAWTO
+
+Syntax: DRAWTO <x>,<y>
+
+Ritar en linje från pennans nuvarande läge till punkten (<x>,<y>).
+
++ FILL
+
+Syntax: FILL <x>,<y>
+
+Fyller ut det slutna område som innehåller punkten (<x>,<y>) med pennans
+nuvarande färg (se PENCOLOR). Kanten på ett slutet område definieras så här:
+En kantpunkt är en punkt, som har en annan färg än bakgrunden, eller en
+punkt på kanten av nuvarande ram (se FRAME).
+
++ FORWARD
+
+Syntax: FORWARD <d>
+
+Musen flyttas <d> enheter framåt. Om pennan är nere tecknas en linje i
+nuvarande färg.
+
++ FRAME
+
+Syntax: FRAME <xmin>,<xmax>,<ymin>,<ymax>
+
+Definierar den ram, innanför vilken man kan rita. Man ritar icke i punkter
+vars koordinater ligger utanför detta område, om nedre vänstra hörnet är
+angivet med (<xmin>,<ymin>), och om övre högra hörnet är (<xmax>,<ymax>).
+Musen (eller "The Turtle") visas dock även utanför ramen. Vid uppstartning
+av systemet täcker ramen hela skärmen, dvs man har
+
+	<xmin>::=0 <xmax>::=319 <ymin>::=0 <ymax>::=199
+
++ GETCOLOR
+
+Syntax: GETCOLOR (<x>,<y>)
+
+Denna funktion ger färgen på punkten (<x>,<y>). Om den angivna punkten
+ligger utanför den för tillfället gällande ramen, ger funktionen värdet -1.
+
++ HEADING
+
+HEADING är en funktion, som ger riktningen för musen. Riktningen anges i
+grader moturs med vågrätt till höger som utgångspunkt.
+
++ LEFT
+
+Syntax: LEFT <v>
+
+Musen vrider huvudet <v> grader åt vänster (motsols).
+
++ MOVETO
+
+Syntax: MOVETO <x>,<y>
+
+Flyttar pennan utan att rita från nuvarande läge till det läge som anges av
+(<x>,<y>).
+
+PENCOLOR
+
+Syntax: PENCOLOR <färg>
+
+Sätter den färg, som man ritar med, dvs pennans färg. Detta är samtidigt den
+färg som markören får och den färg i vilken texten skrivs på bildskärmen.
+Dessutom är det musens färg. Normalt skall man for <färg> använda ett
+talvärde mellan 0 och 15 (se BACKGROUND), men om man använder ett negativt
+tal. ritas det i samma färg som bakgrunden.
+
++ PENDOWN
+
+Syntax: PENDOWN
+
+Pennan sänks, dvs de rörelser pennan därefter gör lämnar ett skrivspår, ett
+streck, så länge som rörelsen pågår innanför ramen och pennans färg är olika
+bakgrundens.
+
++ PENUP
+
+Syntax: PENUP
+
+Pennan lyfts, dvs dess rörelser lämnar icke längre något streck på skärmen.
+
++ PLOT
+
+Syntax: PLOT <x>,<y>
+
+Märker ut punkten (<x>,<y>) i pennans nuvarande färg.
+
++ PLOTTEXT
+
+Syntax: PLOTTEXT <x>,<y>,<text>
+
+Den text, som anges av textuttrycket <text>, visas på grafikskärmen så, att
+nedre vänstra hörnet av första tecknet i <text> placeras i den punkt som
+anges av (<x>,<y>). Lägg märke till att de använda koordinaterna blir satta
+lika med de största hela multiplarna av 8, som är mindre än eller lika med
+de angivna värdena. Texter kan endast framställas i förbindelse med
+högupplösningsgrafik.
+
++ POSITION
+
+Syntax: POSITION <x>,<y>
+
+Pennan flyttas till positionen (<x>,<y>). En linje ritas endast om pennan är
+nere och har en färg, som är skild från bakgrundsfärgen.
+
++ RIGHT
+
+Syntax: RIGHT <v>
+
+Musen vrider huvudet <v> grader åt höger (medsols).
+
++ SCREENECCO
+
+Syntax: SCREENECCO <visa>
+
+Om <visa> har värdet TRUE, blir den linje som markören står på, visad överst
+på grafikskärmen. Detta fungerar dock endast i högupplösningsgrafik. Man kan
+flytta markören upp och ned som vanligt och på detta sätt få se en bild av
+var och en av de linjer som står på textskärmen. Texterna står alltid i
+ljusblå färg på mörkblå bakgrund. Kommandot:
+
+	SCREENECCO TRUE
+
+utförs alltid tillsammans med SETGRAPHIC 0 (initialisering av
+högupplösningsgrafiken).
+
++ SETGRAPHIC
+
+Syntax: SETGRAPHIC <typ>
+
+Kommando/sats, som initialiserar grafiksystemen och gör den grafiska skärmen
+synlig. På VIC-64 finns två olika grafikmoder:
+
+Högupplösningsgrafik: <typ> = 0
+Flerfärgsgrafik:      <typ> = 1
+
+I högupplösningsgrafik har man 320*200 punkter att förfoga över. Hela den
+grafiska skärmen delas upp i 40*25 block om vardera 8*8 punkter. Inom varje
+block kan man endast ha två färger, av vilka den ena är bakgrundsfärgen. Den
+andra färgen definieras, så snart en punkt inom blocket används. Om en punkt
+inom samma block åter används med en annan färg så skiftar hela blocket till
+denna sista färg.
+
+I Flerfärgsgrafik har man endast halva upplösningen mot högupplösningen i
+vågrätt riktning dvs man kan förfoga över 160*200 punkter. Skärmen blir även
+i detta fall uppdelad i 40*25 block, som nu är på 8*4 punkter vardera. Nu
+kan varje block innehålla fyra olika färger, av vilka en är bakgrundsfärg.
+
+SETGRAPHIC-kommandot/satsen med angiven typ initialiserar grafiksystemet,
+rensar bildskärmen, ställer musen i nedre vänstra hörnet pekande vågrätt åt
+höger och tar fram grafikskärmen. SETGRAPHIC utan typangivning gör endast
+att grafikskärmen tas fram. Resultatet av eventuella operationer, som kan ha
+utförts bakom textskärmen, blir synliga.
+
++ SETHEADING
+
+Syntax: SETHEADING <v>
+
+Musen vrider sitt huvud i riktning <v> grader motsols med utgångspunkt från
+riktningen vågrätt åt höger.
+
++ SETTEXT
+
+Syntax: SETTEXT
+
+Gömmer grafikskärmen och visar textskärmen. Grafikkommandon fungerar likväl
+fortförande på den gömda grafikskärmen.  Resultatet av sådana kommandon kan
+lätt avslöjas genom att man använder en SETGRAPHIC-sats/ kommando. En
+STOP-sats eller ett felmeddelande utfor automatiskt SETTEXT-kommandot.
+
++ TURTLESIZE
+
+Syntax: TURTLESIZE <s>
+
+Definierar storleken på musen. Storleken <s> skall vara ett heltal i det
+slutna intervallet mellan 1 och 10. Vid systemstart är <s> lika med 10.
+
++ TURTLESTATE
+
+Syntax: TURTLESTATE <tillstånd>
+
+Om <tillstånd> har värdet TRUE, visas musen, men om <tillstånd> har värdet
+FALSE visas ej musen.
+
+* VIC-64 COMAL-80 SPRITE-GRAFIK
+
+Ordet "sprite" betyder "alf", "fe" eller "nisse". På VIC-64 betecknar
+"sprite" en fördefinierad figur, som kan röra sig runt på skärmen oberoende
+av eller i samspel med övrig grafik. Man kan ha upp till 8 sådana figurer på
+skärmen samtidigt. I "Grafik och ljud på VIC-64", kan man läsa en utförlig
+redogörelse för sprite-figurer.. I det följande kommer vi att syssla med hur
+man ritar en sprite och hur man kan styra den. I den tidigare nämnda boken
+kan man se, hur en sprite byggs upp. Den beskrivna metoden är emellertid
+mycket tekniskt präglad och därför finns på COMAL-disketten ett program, som
+heter "SPRITEDESIGN". I det följande kommer vi att utgå från, att detta
+program används för uppritning och redigering av sprites.
+
+** SPRITEEDITOR
+
+När 64:an kör COMAL och systemdisketten sitter i 1541-stationen, startas
+spriteeditorn med följande kommando:
+
+	CHAIN "SPRITEDESIGN"
+
+Editorn startar med att märka ut en kvadrat på vänster sida av bildskärmen
+och ställer därefter en rad frågor i övre högra hörnet. Det första lyder så
+här:
+
+	MULTICOLOR?
+
+Man skall nu slå in 0 eller 1. Om man slår in 0, blir sprite-figuren ritad i
+högupplösningsgrafik; om man slår 1 får man en flerfärgs sprite-figur.
+
+Låt oss först se, vad som sker därefter, om man startar med att slå in 0,
+alltså anger högupplösningsgrafik. Programmet skriver då
+
+	COLOR:
+
+och väntar på, att ett färgnummer slås in (se Appendix B bak i boken). Vi
+kan t ex slå in <CTRL 8>, som betyder gul.  Därefter frågar programmet:
+
+	EXPANDX?
+
+Här kan man återigen välja att slå in 0 eller 1. Om man slår in 0 så tecknas
+sprite-figuren i normal (liten) storlek i vågrätt riktning. Om man slår in 1
+så ritas figuren i dubbel storlek utefter vågräta axeln (X-riktningen). Låt
+oss tänka oss att vi slår in 1. Det ger en mycket tydlig figur på skärmen.
+Nu skriver programmet:
+
+	BACKCOL:
+
+och ber därmed om uppgift på bakgrundsfärg. Som svar skall man använda ett
+av de tidigare nämnda CTRL eller C= tangenterna. Slår man t ex C= och 4 får
+man en grå bakgrund.
+
+Som tecken på att editorn nu fått de nödvändigaste frågorna besvarade, ritas
+en mindre kvadrat under "frågeschemat" och markören sätts i övre vänstra
+hörnet av den stora kvadraten. Man kan nu börja att rita sin sprite-figur.
+
+Det sker på följande sätt:
+
+Man kan föreställa sig att kvadraten består av 24*21 fält (ett
+fält=markören). Markören kan flyttas fritt runt i kvadraten med hjälp av de
+vanliga styrtangenterna. I samtliga 24*21 fälten skall man nu markera, om
+man vill att fältet skall visa bakgrundsfärgen eller förgrundsfärgen. Det
+gör man genom att slå in 0 eller 1. Om man slår 0, får det fält som markören
+står på, bakgrundsfärgen. Om man slår in 1, får fältet förgrundsfärgen.
+
+När man så markerat samtliga 24*21 fält, kan man ändra på sin ritning om man
+så vill genom att flytta markören till ett bestämt fält och ändra
+markeringen (0 eller 1) för just detta fält.
+
+Samtidigt med att man ritar sin sprite-figur så visas figuren i sin rätta
+storlek i den mindre kvadraten, som kom fram nederst till höger på skärmen.
+
+När man är klar med uppritningen av sin sprite-figur, skall den sparas på
+disketten, så att man senare kan hämta fram den för användning i ett
+program. Det gör man genom att trycka på tangenten med bokstaven "s" (for
+SAVE). Spriteeditorn svarar med att skriva:
+
+	FILENAME:
+
+under den stora kvadraten. Användaren skall nu bara slå in ett tillåtet
+filnamn och trycka på RETURN-tangenten. Så sparas de 64 tecken, som
+definierar sprite-figuren i en sekventiell fil med det av användaren angivna
+namnet. Den kan senare läsas med hjälp av OPEN FILE och READ FILE. Den sista
+bytens (byte nr 64) värde anger, om det är fråga om en högupplösnings- eller
+flerfärgs sprite. 0 = högupplösning, 1 =flerfärgs.
+
+Låt oss sedan se vad som sker om man slår in 1, när editorn skriver:
+
+	MULTICOLOR?
+
+Man får därefter samma frågor som tidigare men editorn ställer ytterligare
+två frågor:
+
+	MULTICOLOR-1:
+	MULTICOLOR-2:
+
+och för vart och ett av dessa skall en av färgkoderna slås in. Dessa två
+färger kommer vi att kalla sidofärger. Man har alltså angivit totalt fyra
+färger: en bakgrundsfärg (BACKCOL), en förgrundsfärg (COLOR) och två
+sidofärger (MULTICOL-1) och MULTICOL-2).
+
+Man fortsätter nu som ovan beskrivits, blott med den skillnaden att man nu
+kan använda tangenterna 0, 1, 2 och 3 för markering av resp bakgrundsfärg
+förgrundsfärg och de två sidofärgerna. Dessutom skall man lägga märke till
+att varje markering nu definierar färgen på två fält i vågrätt riktning och
+ej som i högupplösningsgrafik, där varje fält kan ha sin färg. Men så har
+man ju i stället fyra färger att arbeta med, och inte bara två, som vid
+högupplösningsgrafik.
+
+Om man senare önskar ändra sin sprite-figur, kan man även här använda
+spriteeditorn. Man skall då starta upp rutinen som beskrivits här ovan och
+när markören ställer sig i ritkvadratens övre vänstra hörn, skall man trycka
+på tangenten med bokstaven "l" (for LOAD). Nu skriver editorn:
+
+	FILENAME?
+
+och man skall slå in namnet på den sekventiella fil, som innehåller den
+sprite-figur, som man vill ändra. Därpå ritar editorn den önskade figuren
+och man kan ändra den genom att flytta runt med markören och ändra
+markeringarna for de fält, som man vill ändra. När redigeringen är avslutad,
+sparas den nya ritningen genom att man trycker på "s" och anger ett nytt
+filnamn.  Den gamla ritningen kan ev. raderas genom att man använder
+DELETE-kommandot (se DELETE eller PASS).
+
+Editorn stoppas genom att man trycker på tangenten med bokstaven "q" (för
+QUIT, lämna).
+
+Vi skall nu övergå till att titta litet på de olika sprite-ord, som kan
+användas i förbindelse med COMAL-80/64. Till de enskilda orden är inga
+exempel visade. Läsaren hänvisas till de två programmen "uppmottak" och
+"kollision", vilka i detalj genomgås i tillägget till detta avsnitt.
+
++ DATACOLLISION
+
+Syntax: DATACOLLISION(<sprite>,<läs>)
+
+Detta är en funktion, som används för att undersöka, om sprite-figur nr
+<sprite> har stött ihop med annan grafisk information på skärmen (dvs en
+icke-bakgrundspunkt på sprite-figuren sammanfaller med en
+icke-bakgrundspunkt för en annan grafisk figur). Om <läs> har värdet TRUE,
+registreras en sammanstötning, så snart den sker. Om <läs> har värdet FALSE,
+registreras det, om en sammanstötning har skett tidigare. Funktionen ger
+alltså värdet TRUE, om spritefigur nr <sprite> tidigare har stött samman med
+annan grafisk information.
+
++ DEFINE
+
+Syntax: DEFINE <teckning>, <definition>
+
+där <teckning> är ett heltal från 0-47 och <definition> är ett stränguttryck
+som innehåller de 64 tecken, som definierar en sprite-figur (se under
+SPRITEEDITOR). Man kan ha ett förråd på totalt 48 figurer, och med hjälp av
+var och en av dessa figurer, kan man definiera en av de 8 sprite-figurer,
+som kan finnas i skärmen samtidigt. Man kan ev använda samma teckning för
+definition av fler än en av de sprite-figurer som uppträder på skärmen.
+
++ HIDESPRITE
+
+Syntax: HIDESPRITE <sprite>
+
+Sprite-figur nr <sprite> visas icke längre på skärmen.
+
++ IDENTIFY
+
+Syntax: IDENTIFY <sprite>,<teckning>
+
+Sprite-figur nr <sprite> visar teckning nr <teckning>. Man kan föreställa
+sig, att man har ett skåp fullt med teckningar av olika sprites (0-47).
+Varje gång, man använder IDENTIFY-satsen, tar man en teckning från skåpet
+och låter en figur efter den nuvarande teckningen uppträda på skärmen med
+det nummer <sprite> anger. Numret <sprite> skall vara ett heltal mellan 0
+och 7. Om musen är framme, uppträder denna som sprite-figur nr 7.
+
++ PRIORITY
+
+Syntax: PRIORITY <sprite>,<p>
+
+Om <p> har värdet TRUE så blir sprite-figur nr <sprite> visad bakom ev
+existerande grafik. Om <p> har värdet FALSE, kommer figuren<sprite> att
+visas framfor ev. annan grafik. De enskilda sprite-figurernas inbördes
+prioritet är fastlagd på förhand. Av två sprite-figurer har den med lägst
+nummer högst prioritet.
+
++ SPRITEBACK
+
+Syntax: SPRITEBACK <färg-1>,<färg-2>
+
+där <färg-1> och <färg-2> är heltal från 0-15. Satsen används för att
+omdefiniera de två sidofärgerna i en flerfärgs-sprite (se under
+SPRITEEDITOR).
+
++ SPRITECOLLISION
+
+Syntax: SPRITECOLLISION(<sprite>,<läs>)
+
+En funktion som ger värdet TRUE, om och endast om sprite-figur nr <sprite>
+stöter ihop med eller tidigare har stött samman med en annan sprite-figur.
+Om <läs> se under DATACOLLISION.
+
++ SPRITECOLOR
+
+Syntax: SPRITECOLOR <sprite>,<färg>
+
+Sätter förgrundsfärgen för sprite-figur nr <sprite> till den färg som anges
+med <färg>, där <färg> är ett heltal från 0 till 15 (Se under
+SPRITEEDITOR).
+
++ SPRITEPOS
+
+Syntax: SPRITEPOS <sprite>,<x>,<y>
+
+Sätter sprite-figur nr <sprite> så, att figurens övre vänstra hörn befinner
+sig i punkten (<x>,<y>).
+
++ SPRITESIZE
+
+Syntax: SPRITESIZE <sprite>,<x>,<y>
+
+Om <x> har värdet TRUE (ett talvärde skilt från noll), blir sprite figur nr
+<sprite> expanderad till dubbla storleken i horisontell riktning. Om <y> har
+värdet TRUE (ett talvärde skilt från noll), blir sprite-figur nr <sprite>
+expanderad i dubbel storlek i vertikal riktning.
+
+** TVÅ EXEMPEL
+
+Exempel nr 1: programmet "UPPMOTTAK"
+
+I proceduren "hämtasprite" öppnas filen "ballong" med filnr 2 och variabeln
+"figur$" får sig tilldelad värdet på den sträng om 64 tecken, som har
+sparats i filen.
+
+I proceduren "ritasprite" sker följande:
+
+200: De 64 tecken, som är värdet av "figur$" används för att definiera
+teckning nr 45.
+210: Sprite-figur nr 2 får dubbel storlek i båda riktningarna.
+220: Bakgrundsfärgen sätts till färg nr 8 (orange). 
+230: Ramfärgen sätts till färg nr 2 (röd).
+240: Förgrundsfärgen till sprite nr 2 sätts till 11 (grå).
+250: Man byter om till grafik.
+260: För sprite-figur nr 2 används teckning nr 45 (som tidigare definierats
+på rad nr 170).
+
+I proceduren "användsprite" styrs "ballongen" snett upp över skärmen och när
+den stöter mot "taket" så rör den sig snett nedåt över skärmen:
+
+330: Läget på sprite-figur nr 2 sätts till (x,y) dvs övre vänstra hörnet av
+figuren.
+350: Om figur nr 2 stöter mot annan grafik ("taket"), får variabeln
+"uppmot'taket" värdet TRUE.
+360: Om "uppmot'taket" har värdet TRUE, sänds figuren i "ballongen" nedåt
+igen.
+
+I proceduren "rita'tak" ritas en vågrät linje ("taket") på en höjd av 180
+enheter.
+
+I proceduren "ned'igen" dirigeras figuren ned efter att ha stött ihop med
+"taket".
+
+590: Figuren styrs, så dess övre vänstra hörn är i punkten (x,y).
+610: Programmet stannar, om man tryckt på ESC-tangenten.
+
+Exempel nr 2: programmet "KOLLISION"
+
+Programmet har många gemensamma drag med föregående program. Följande rader
+bör observeras:
+
+230: sprite-figur nr 2 ritas efter teckning nr 45.
+240: sprite-figur nr 3 ritas efter teckning nr 45.
+
+De två sprite-figurerna alltså framställda efter samma teckning.
+
+360: Variabeln "möte" får värdet TRUE, så snart sprite-figur nr 2 stöter
+ihop med en annan sprite-figur, i detta fall nr 3.
+370: Om de två sprite-figurerna stöter ihop, rör de sig tillbaka igen.
+
+Läsaren uppmanas att göra experiment med dessa två program genom att ändra
+parametrarna for färger, storlekar mm. Filen "ballong" ligger på
+COMAL-programdisketten.
+
+Se även programlistningarna längst bak i boken.
+
+* APPENDIX A
+
+Teckenvärdena för PRINT, CHR$ och ASC
+
+[Etextarens not: Denna lista är borttagen, eftersom C64:ans
+teckenuppsättning är svår att efterlikna i ISO-text. Jag hänvisar till
+C64-manualen]
+
+* APPENDIX B
+
+De 16 färgerna du kan använda är
+
+ 0 SVART
+ 1 VIT
+ 2 RÖD
+ 3 CYAN
+ 4 PURPUR
+ 5 GRÖN
+ 6 BLÅ
+ 7 GUL
+ 8 ORANGE
+ 9 BRUN
+10 LJUSRÖD
+11 GRÅ 1
+12 GRÅ 2
+13 LJUSGRÖN
+14 LJUSBLÅ
+15 GRÅ 3
+
+** LITTERATURHÄNVISNING
+(Engelsk, dansk och svensk litteratur)
+
+[1. DANSKA BÖCKER]
+
+COMAL, Problemløsning og programmering
+I+II, Børge R. Christensen, förlag BOGIKA, Ikast, Danmark
+
+Diskett med böckernas program för VIC-64 kan köpas efter skriftlig
+beställning hos författaren. Priset för båda disketterna är kr 200:-. Skriv
+till Børge R. Christensen, Viben 34, 6270 Tønder, Danmark.
+
+Programmering i COMAL-80
+Poul Østergaard, Teknisk Forlag, Köpenhamn, Danmark
+
+Svensk översättning från Förlagshuset under våren 1984.
+
+4 * COMAL
+Leif Pehrsson m fl. Forlaget SYSTIME, Herning, Danmark.
+
+Svensk översättning från Förlagshuset under våren 1984.
+
+[ENGELSKA BÖCKER]
+
+COMAL HANDBOOK
+Len Lindsay, Reston Publishing Company, USA
+
+Beginning COMAL
+Børge Christensen, Ellis Horwood Ltd, England
+
+Structured Programming with COMAL
+Roy Atherton, Ellis Horwood Ltd, England
+
+Foundations in Computer Studies with COMAL
+John Kelly, Education Company of Ireland, Irland
+
+Starting with COMAL
+Erik Gratte, Prentice Hall International, England
+
+[SVENSKA BÖCKER]
+
+COMAL SNABBGUIDE
+Åke Fredriksson, COMAL-klubben i Sverige, Mölndal
+
+COMAL-80 på VIC-64
+Børge R. Christensen i övers. av Å Fredriksson,
+Förlagsgruppen, Norrköping
+
+
+Planerade svenska utgåvor:
+
+COMAL Handbok, Len Lindsay, t svenska av Å Fredriksson *)
+Strukturerad programmering i Comal, Roy Atherton, övers. Å F-n. *)
+Programmering i COMAL-80, Poul Østergaard, övers. Å F-n. *)
+4 * COMAL - 4 * VIC, Leif Pehrsson m fl. Förlagsgruppen, Norrköping.
+
+*) samtliga utkommer på svenska från Förlagsgruppen, Norrköping.
+
+Dessutom beräknar COMAL-Klubben i Sverige ge ut sitt nyhetsblad med början
+1984 som kvartalsblad. Distribueras endast till medlemmar i COMAL-Klubben i
+Sverige. Medlemsavgift 100:-/år. Kansli: c/o Åke Fredriksson,
+Gustavsbergsgatan 8, 431 37 MÖLNDAL. Telefon 031-87 70 84. Postgiro 42 17
+64-2.
+
+* Om programmen "KARTOTEK" "SMÅTEXT"
+
+1. Programmet "kartotek"
+
+Programmet hämtas in med kommandot:
+
+	CHAIN "KARTOTEK"
+
+och börjar med att skriva
+
+	1 = Inskrivning
+	2 = Utskrift
+	3 = Rättelser
+	4 = Tag bort
+	5 = Sluta
+
+Välj funktion:
+
+Genom att slå in ett av de fem angivna talvärdena, får man den funktion
+aktiverad som anges mitt för talvärdet. Under körningen ger programmet själv
+instruktioner om, vad man skall göra.
+
+Programmet är skrivet med hänsyn till att man använder diskdrive 1541 for
+Iagring av sina data. Versionen "kartotek/k" använder kassettbandspelare
+
+Programmet "småtext"
+
+Programmet startas genom att man skriver in:
+
+	CHAIN "SMÅTEXT"
+
+Överst i bildskärmen framkommer en kommando-rad:
+
+	Ange arbete: n j u s 1 a
+
+De olika bokstäverna står för följande n(y text), j(ustera), u(tskrift),
+s(para), l(adda) och alvbryt). Följande exempel går igenom användningen av
+kommandona:
+
+Tryck först på tangenten 'n'. Lägg märke till att n:et då skrivs i negativ
+(omvänt) utfirande och att ett smalt, blinkande streck blir synligt på rad
+4. Knappa in följande text:
+
+	Anton har en häst, som heter Sörenson.
+
+Och tryck därefter på tangenten med snabel-a (@). Programmet skriver då
+återigen kommandoraden:
+
+	Ange arbete: n j u s 1 a
+
+Tryck nu på 'j'. Bokstaven 'j' lyser upp negativt och programmet skriver:
+
+	Sök:
+
+med ett blinkande streck därunder. Knappa in ordet 'häst' och tryck på
+snabel-a igen. Bokstaven 'h' i 'häst' börjar att blinka med ett streck
+under. Knappa in orden 'mycket liten' och lägg märke till hur de sätts in i
+texten. Tryck till slut på snabel-a igen för att komma tillbaka till
+kommandoraden.
+
+Då systemet ligger i j(usterings)-tillstånd kan man alltid också använda
+alla vanliga redigeringstangenter, utom Markör-upp och Markör-ned, i det att
+"småtext" är radorienterat. Pröva t ex följande: tryck på 'j' och svara
+Liten' när programmet ber om ett sök-ord. Tryck på snabel-a. Textmarkören,
+det blinkande strecket ställer sig under 'l' i 'liten'. Tryck på knappen
+<DEL> sex gånger och lägg märke till att ordet 'mycket' stryks ut. Tryck på
+snabel-a för att komma tillbaka till kommando-raden.
+
+Ett tryck på 'u' ger möjlighet att få en utskrift med korrekt uppdelning av
+texten i hela ord. Genom att använda 's' och 'l' kan man respektive spara på
+och ladda in texter på/från disketten/kassetten. På COMAL-80-disketten
+ligger datafilen "text".  Denna kan t ex hämtas in genom att starta
+"småtext" och trycka på 'l'.
+
+Med "småtext" kan man spara och hämta texter på diskett. Med "småtext/k" kan
+man spara och hämta texter på kassett.
+
+* OM GRAFIKPROGRAMMEN
+
+Grafikprogrammen "graf.01" - "graf.09" demonstrerar samtliga satser som kan
+användas i förbindelse med x-y-grafik och s k turtle-grafik. Programmen
+"kollision" och "uppmottak", som omtalades mer i detalj i det föregående
+avsnittet demonstrerar en stor del av sprite-grafiken.. Författaren har
+ansträngt sig att använda sådana namn på variabler och procedurer, att pro-
+grammen skall vara självförklarande. Programmen startas med kommandon som t
+ex:
+
+	CHAIN "GRAF.03"
+
+och stoppas genom att man trycker på mellanslagstangenten (den långa längst
+ned).
+
+De flesta programmen använder en följd gemensamma standardprocedurer. Dessa
+procedurer visas ej i alla programlistningar. Läsaren hänvisas i varje givet
+fall till att titta på en listning på bildskärmen eller ev. själv framställa
+listor på sin egen printer med kommandona:
+
+	SELECT "LP"
+	LIST
+
+På följande sidor visas COMAL-80-programmen på disketten i listat format.
+
+[Programlistningarna följs av en UU-kodad T64-fil i vilken listningarna
+finns i PETSCII-format. Dessa kan laddas in i COMAL-tolken med kommandot
+ENTER].
+
+0010 // uppmottak
+0020 // ---------
+0030 //
+0040 dim figur$ of 64
+0050 trap esc-
+0060 hamta'sprite
+0070 while true do
+0080  rita'sprite
+0090  rita'tak
+0100  anvand'sprite
+0110 endwhile
+0120 //
+0130 proc hamta'sprite
+0140  open file 2,"ballong",read
+0150  read file 2: figur$
+0160  close
+0170 endproc hamta'sprite
+0180 //
+0190 proc rita'sprite
+0200  define 45,figur$
+0210  spritesize 2,1,1
+0220  background 8
+0230  border 2
+0240  spritecolor 2,11
+0250  setgraphic 0
+0260  identify 2,45
+0270 endproc rita'sprite
+0280 //
+0290 proc anvand'sprite
+0300  uppmot'tak:=false
+0310  for x:=0 to 319 do
+0320   y:=2/3*x
+0330   spritepos 2,x,y
+0340   x1:=x
+0350   uppmot'tak:=datacollision(2,true)
+0360   if uppmot'tak then ned'igen
+0370  endfor x
+0380 endproc anvand'sprite
+0390 //
+0400 proc stoppa'sprite
+0410  pencolor 8
+0420  border 8
+0430  background 11
+0440  settext
+0450  trap esc+
+0460  print chr$(14),chr$(147)
+0470  stop
+0480 endproc stoppa'sprite
+0490 //
+0500 proc rita'tak
+0510  pencolor 11
+0520  moveto 0,180
+0530  drawto 319,180
+0540 endproc rita'tak
+0550 //
+0560 proc ned'igen
+0570  for x:=x1 to 0 step -1 do
+0580   y:=2/3*x
+0590   spritepos 2,x,y
+0600  endfor x
+0610  if esc then stoppa'sprite
+0620 endproc ned'igen
+0630 //
+
+0010 // kollision
+0020 // ---------
+0030 //
+0040 dim figur$ of 64
+0050 trap esc-
+0060 //
+0070 hamta'sprite
+0080 definera'sprite
+0090 while true do spriteshow
+0100 //
+0110 proc hamta'sprite
+0120  open file 2,"ballong",read
+0130  read file 2: figur$
+0140  close
+0150 endproc hamta'sprite
+0160 //
+0170 proc definera'sprite
+0180  background 8
+0190  border 2
+0200  pencolor 7
+0210  setgraphic 0
+0220  define 45,figur$
+0230  identify 2,45
+0240  identify 3,45
+0250  spritesize 2,1,1
+0260  spritesize 3,1,1
+0270  spritecolor 2,11
+0280  spritecolor 3,11
+0290 endproc definera'sprite
+0300 //
+0310 proc spriteshow
+0320  for x:=-20 to 200 do
+0330   x0:=x
+0340   spritepos 2,x,100
+0350   spritepos 3,270-x,100
+0360   mote:=spritecollision(2,true)
+0370   for t:=1 to 5 do null
+0380   if mote then tillbaka
+0390  endfor x
+0400 endproc spriteshow
+0410 //
+0420 proc tillbaka
+0430  for x:=x0 to -20 step -1 do
+0440   spritepos 2,x,100
+0450   spritepos 3,270-x,100
+0460   for t:=1 to 5 do null
+0470  endfor x
+0480  if esc then stopshow
+0490 endproc tillbaka
+0500 //
+0510 proc stopshow
+0520  border 10
+0530  background 11
+0540  pencolor 8
+0550  settext
+0560  print chr$(147),chr$(14)
+0570  trap esc+
+0580  stop
+0590 endproc stopshow
+0600 //
+
+0010 // paddle.l
+0020 // --------
+0030 //
+0040 proc paddle(pair,ref x,ref y) closed
+0050  cia:=13*4096+12*256
+0060  sid:=13*4096+4*256
+0070  poke cia+13,1 //stäng av timer a avbrott
+0080  ddra:=peek(cia+2)
+0090  poke cia+2,12*16
+0100  poke cia,4*16*pair
+0110  x:=peek(sid+25); y:=peek(sid+26)
+0120  poke cia+2,ddra
+0130  poke cia+13,128+1 // sätt på timer
+0140 endproc paddle
+0150 //
+0160 repeat
+0170  paddle(1,x,y)
+0180  print x;y
+0190 until false
+
+0010 // joystick.l
+0020 // ----------
+0030 //
+0040 proc joystick(no,ref direction$)
+0050  j:=peek(no+56319)
+0060  i:=15-j mod 16
+0070  case i of
+0080  when 1
+0090   direction$:="upp"
+0100  when 2
+0110   direction$:="ner"
+0120  when 4
+0130   direction$:="vänster"
+0140  when 5
+0150   direction$:="upp vänster"
+0160  when 6
+0170   direction$:="ner vänster"
+0180  when 8
+0190   direction$:="höger"
+0200  when 9
+0210   direction$:="upp höger"
+0220  when 10
+0230   direction$:="ner höger"
+0240  otherwise
+0250   direction$:="ingen"
+0260  endcase
+0270  if j div 16 mod 2=0 then direction$:=direction$+" eld!"
+0280 endproc joystick
+0290 dim a$ of 100
+0300 print chr$(147) // rensa skärmen
+0310 repeat
+0320  joystick(2,a$)
+0330  print "{home}",a$,"         "
+0340 until false
+
+0005 // kartotek2
+0006 //
+0007 //
+0010 //Litet adresskartotek
+0020 //skrivet av chris jorge
+0030 //version 02: 28. maj 1983
+0040 //cbm comal-80
+0050 //
+0060 maxant:=40; maxfält:=5
+0070 //
+0080 dim efternamn$ of 20
+0090 dim förnamn$ of 20
+0100 dim gatuadr$ of 20, stad$ of 20
+0110 dim annat$ of 20
+0120 dim enhet$ of 1, svar$ of 1
+0130 dim job$ of 1
+0140 dim text$(1:maxfält) of 15
+0150 dim f$(1:maxant,maxfält) of 20
+0160 dim namn$ of 40, f12$ of 40
+0170 //
+0180 max:=0; post:=0
+0190 text$(1):="1. Efternamn"
+0200 text$(2):="2. Förnamn"
+0210 text$(3):="3. Gata husnr."
+0220 text$(4):="4. Postnr. stad"
+0230 text$(5):="5. Andre uppl."
+0240 //
+0250 hämta'adresser
+0260 meny
+0270 spara'adresser
+0280 //
+0290 proc meny
+0300  while true do //forever
+0310   rensa'skärmen
+0320   skriv'från(5,1)
+0330   print "1 = Inskrivning"
+0340   print "2 = Utskrivning"
+0350   print "3 = Rättelser"
+0360   print "4 = Ta bort post"
+0370   print "5 = Avsluta"
+0380   print
+0390   input "Välj job: ": job$
+0400   case job$ of
+0410   when "1"
+0420    inskrivning
+0430   when "2"
+0440    utskrivning
+0450   when "3"
+0460    rättelser
+0470   when "4"
+0480    ta'bort
+0490   when "5"
+0500    return
+0510   otherwise
+0520    null //inget
+0530   endcase
+0540  endwhile
+0550 endproc meny
+0560 //
+0570 proc inskrivning
+0580  repeat
+0590   rensa'skärmen
+0600   for fält:=1 to maxfält do hämta(fält)
+0610   hämta'svar("Rättelser (j/<ret>)?",svar$)
+0620   if svar$<>"" then rätta'post
+0630   hämta'svar("Insätt (n/<ret>)? ",svar$)
+0640   if svar$="" then sätt'upp
+0650   hämta'svar("Flera (n/<ret>)? ",svar$)
+0660  until svar$="n"
+0670 endproc inskrivning
+0680 //
+0690 proc hämta(fält)
+0700  case fält of
+0710  when 1
+0720   slå'in(text$(1),efternamn$)
+0730  when 2
+0740   slå'in(text$(2),förnamn$)
+0750  when 3
+0760   slå'in(text$(3),gatuadr$)
+0770  when 4
+0780   slå'in(text$(4),stad$)
+0790  when 5
+0800   slå'in(text$(5),annat$)
+0810  otherwise
+0820   null //anullera processen
+0830  endcase
+0840 endproc hämta
+0850 //
+0860 proc slå'in(ledtext$,ref buf$)
+0870  skriv'från(2*fält+3,1)
+0880  print ledtext$,":"
+0890  rensa'infält(fält)
+0900  skriv'från(2*fält+3,20)
+0910  input "": buf$
+0920 endproc slå'in
+0930 //
+0940 proc rätta'post
+0950  repeat
+0960   rensa'rad(20)
+0970   input "Ange fält nummer: ": fält
+0980   hämta(fält)
+0990   rensa'rad(20)
+1000   hämta'svar("Flera rättelser (j/<ret>)? ",svar$)
+1010  until svar$=""
+1020 endproc rätta'post
+1030 //
+1040 proc sätt'upp
+1050  namn$:=efternamn$+förnamn$
+1060  binsök(namn$)
+1070  //
+1080  for j:=max to post step -1 do
+1090   for fält:=1 to maxfält do
+1100    f$(j+1,fält):=f$(j,fält)
+1110   endfor fält
+1120  endfor j
+1130  sätt'in(post)
+1140  max:=max+1
+1150 endproc sätt'upp
+1160 //
+1170 proc sätt'in(post)
+1180  f$(post,1):=efternamn$
+1190  f$(post,2):=förnamn$
+1200  f$(post,3):=gatuadr$
+1210  f$(post,4):=stad$
+1220  f$(post,5):=annat$
+1230 endproc sätt'in
+1240 //
+1250 proc binsök(n$)
+1260  v:=1; h:=max
+1270  while v<=h do
+1280   m:=(v+h) div 2
+1290   f12$:=f$(m,1)+f$(m,2)
+1300   if n$<f12$ then
+1310    h:=m-1
+1320   else
+1330    v:=m+1
+1340   endif
+1350  endwhile
+1360  post:=v
+1370 endproc binsök
+1380 //
+1390 proc utskrivning
+1400  repeat
+1410   ok:=true
+1420   rensa'skärmen
+1430   skriv'från(10,1)
+1440   print "1 = En enkel adress"
+1450   print "2 = Lista över samtliga"
+1460   print
+1470   input "Ange jobb:  ": job$
+1480   print
+1490   print "1 = Utskrift pa skärm"
+1500   print "2 = Utskrift pa printer"
+1510   print
+1520   input "Ange enhet:": enhet$
+1530   if enhet$="2" then select output "lp"
+1540   case job$ of
+1550   when "1"
+1560    for fält:=1 to 2 do hämta(fält)
+1570    finn(efternamn$,förnamn$)
+1580    if funnet then skriv'ut(post)
+1590   when "2"
+1600    for post:=1 to max do skriv'ut(post)
+1610   otherwise
+1620    ok:=false
+1630   endcase
+1640  until ok
+1650 endproc utskrivning
+1660 //
+1670 proc finn(en$,fn$)
+1680  if max=0 then
+1690   rensa'skärmen
+1700   skriv'från(10,10)
+1710   print "Kartoteket är tomt!"
+1720   funnet:=false
+1730   vänta(2)
+1740   return
+1750  endif
+1760  namn$:=en$+fn$
+1770  bin'finn(namn$)
+1780 endproc finn
+1790 //
+1800 proc bin'finn(n$)
+1810  v:=1; h:=max
+1820  funnet:=false
+1830  while not (funnet or h<v) do
+1840   m:=(v+h) div 2
+1850   f12$:=f$(m,1)+f$(m,2)
+1860   funnet:=(n$=f12$)
+1870   if n$<f12$ then
+1880    h:=m-1
+1890   else
+1900    v:=m+1
+1910   endif
+1920  endwhile
+1930  if funnet then post:=m
+1940 endproc bin'finn
+1950 //
+1960 proc skriv'ut(n)
+1970  if enhet$<>"2" then
+1980   rensa'skärmen
+1990   skriv'från(10,1)
+2000  endif
+2010  print f$(n,2);f$(n,1),","
+2020  print f$(n,3),","
+2030  print f$(n,4)
+2035  print f$(n,5)
+2040  if enhet$<>"2" then
+2050   hämta'svar("Tryck på <return>: ",svar$)
+2060  else
+2070   ryck'fram
+2080  endif
+2090 endproc skriv'ut
+2100 //
+2110 proc rättelser
+2120  rensa'skärmen
+2130  skriv'från(10,1)
+2140  for fält:=1 to 2 do hämta(fält)
+2150  finn(efternamn$,förnamn$)
+2160  if funnet then
+2170   rensa'skärmen
+2180   for fält:=1 to maxfält do
+2190    skriv'från(2*fält+3,1)
+2200    print text$(fält)
+2210    skriv'från(2*fält+3,20)
+2220    print f$(post,fält)
+2230   endfor fält
+2240   rätta'post
+2250   sätt'in(post)
+2260  endif
+2270 endproc rättelser
+2280 //
+2290 proc ta'bort
+2300  rensa'skärmen
+2310  for fält:=1 to 2 do hämta(fält)
+2320  finn(efternamn$,förnamn$)
+2330  if funnet then
+2340   skriv'ut(post)
+2350   skriv'från(20,1)
+2360   hämta'svar("Skall denna post raderas (j/<ret>)? ",svar$)
+2370   if svar$="j" then stryk'post
+2380  endif
+2390 endproc ta'bort
+2400 //
+2410 proc stryk'post
+2420  for i':=post to max do
+2430   for fält:=1 to maxfält do
+2440    f$(i',fält):=f$(i'+1,fält)
+2450   endfor fält
+2460  endfor i'
+2470  max:=max-1
+2480 endproc stryk'post
+2490 //
+2500 proc hämta'adresser
+2510  klargör
+2520  open file 5,"adrlista",read
+2530  read file 5: max
+2540  for n:=1 to max do
+2550   for fält:=1 to maxfält do
+2560    read file 5: f$(n,fält)
+2570   endfor fält
+2580  endfor n
+2590  close file 5
+2600 endproc hämta'adresser
+2610 //
+2620 proc spara'adresser
+2630  klargör
+2635  pass "s0:adrlista" // ta bort gammal adresslista ( mogf 12/83 )
+2640  open file 5,"adrlista",write
+2650  write file 5: max
+2660  for n:=1 to max do
+2670   for fält:=1 to maxfält do
+2680    write file 5: f$(n,fält)
+2690   endfor fält
+2700  endfor n
+2710  close file 5
+2720 endproc spara'adresser
+2730 //
+2740 proc hämta'svar(ledtext$,ref svar$)
+2750  rensa'rad(20)
+2760  print chr$(18),ledtext$,
+2770  input "": svar$
+2780 endproc hämta'svar
+2790 //
+2800 proc rensa'skärmen
+2810  print chr$(147),
+2820 endproc rensa'skärmen
+2830 //
+2840 proc rensa'infält(fält)
+2850  skriv'från(2*fält+3,20)
+2860  for p:=1 to 19 do print " ",
+2870 endproc rensa'infält
+2880 //
+2890 proc skriv'från(x,y)
+2900  print chr$(19),
+2910  for p:=1 to x-1 do print
+2920  for p:=1 to y-1 do print chr$(29),
+2930 endproc skriv'från
+2940 //
+2950 proc vänta(t)
+2960  for p:=1 to t*750 do null
+2970 endproc vänta
+2980 //
+2990 proc rensa'rad(ln)
+3000  skriv'från(ln,1)
+3010  for p:=1 to 39 do print " ",
+3020  skriv'från(ln,1)
+3030 endproc rensa'rad
+3040 //
+3050 proc klargör
+3060  rensa'skärmen
+3070  hämta'svar("Klargör diskett och tryck <ret>",svar$)
+3080 endproc klargör
+3090 //
+
+0005 // småtext
+0006 // -------
+0007 //
+0010 initialisering
+0020 småtext'monitor
+0030 //
+0040 proc initialisering
+0050  dim text$ of 1000, tecken$ of 1
+0060  dim t$ of 1, avb$ of 10
+0070  dim clr$ of 1, stryk$ of 1
+0080  dim bak$ of 1, fram$ of 1
+0090  dim bort$ of 1, ned$ of 1
+0100  dim streck$ of 1, noll$ of 1
+0110  dim enh$ of 1, inskjut$ of 1
+0120  dim mark$ of 1, upp$ of 1
+0130  dim hem$ of 1, retur$ of 1
+0140  dim revon$ of 1, revoff$ of 1
+0150  dim job$ of 1, spcs$ of 20
+0160  dim rad$ of 40, sök$ of 40
+0170  dim nedåt$ of 24, bortåt$ of 40
+0180  dim filnamn$ of 15
+0190  //
+0200  bak$:=chr$(157) //crsr back
+0210  fram$:=chr$(29) //crsr right
+0220  stryk$:=chr$(20) //delete
+0230  streck$:=chr$(164) //markering
+0240  noll$:=chr$(0) //ASCII null
+0250  clr$:=chr$(147) //clear screen
+0260  ned$:=chr$(17) //crsr down
+0270  upp$:=chr$(145) //crsr up
+0280  inskjut$:=chr$(148) //insert
+0290  hem$:=chr$(19) //crsr home
+0300  retur$:=chr$(13) //return
+0310  revon$:=chr$(18) //reverse on
+0320  revoff$:=chr$(146) //reverse off
+0330  //
+0340  for i:=1 to 40 do
+0350   bortåt$(i:i):=fram$
+0360  endfor i
+0370  //
+0380  for i:=1 to 24 do
+0390   nedåt$(i:i):=ned$
+0400  endfor i
+0410  //
+0420  spcs$(1:20):="" //mellanrum
+0430  bredd:=39; max:=0
+0440  köerna'skall'in:=false
+0450 endproc initialisering
+0460 //
+0470 proc småtext'monitor
+0480  repeat
+0490   repeat
+0500    rensa'skärmen
+0510    visa'text
+0520    ok:=true; pil:=0
+0530    ange'jobb
+0540    case job$ of
+0550    when "n"
+0560     skriv'ny'text
+0570    when "j"
+0580     förändra'text
+0590    when "u"
+0600     skriv'ut'texten
+0610    when "s"
+0620     spara'texten
+0630    when "l"
+0640     hämta'texten
+0650    when "a"
+0660     köerna'skall'in:=true
+0670    otherwise
+0680     ok:=false
+0690    endcase
+0700   until ok
+0710  until köerna'skall'in
+0720 endproc småtext'monitor
+0730 //
+0740 proc ange'jobb
+0750  skriv'från(1,1)
+0760  print "Ange jobb:     n j u s l a"
+0770  hämta(job$,1,12)
+0780 endproc ange'jobb
+0790 //
+0800 proc skriv'ny'text
+0810  avb$:=upp$+ned$+bak$+fram$
+0820  avb$:=avb$+inskjut$+clr$+hem$
+0830  rensa'skärmen
+0840  visa'jobb("n")
+0850  max:=1; pil:=1; text$:=" "
+0860  sätt'av:=3
+0870  hämta'text(text$,max,pil)
+0880  max:=max-1
+0890  text$:=text$(1:max)
+0900 endproc skriv'ny'text
+0910 //
+0920 proc visa'jobb(job$)
+0930  skriv'från(1,1)
+0940  print "               n j u s l a"
+0950  p:=job$ in "n j u s l a"
+0960  skriv'från(1,p+15)
+0970  rev'on
+0980  print job$,
+0990  rev'off
+1000 endproc visa'jobb
+1010 //
+1020 proc hämta(ref tecken$,x,y)
+1030  tecken$:=""; t$:=noll$
+1040  tid:=0
+1050  while t$=noll$ do
+1060   t$:=key$
+1070   tid:=tid+1
+1080   if job$="j" then
+1090    markera(5,20)
+1100   else
+1110    markera(x,y)
+1120   endif
+1130  endwhile
+1140  kolla'tecken:=(t$ in avb$)
+1150  if kolla'tecken then return
+1160  if t$=retur$ then t$:="^"
+1170  print t$,
+1180  tecken$:=t$
+1190 endproc hämta
+1200 //
+1210 proc markera(x,y)
+1220  hämta'märke
+1230  skriv'från(x,y)
+1240  if tid mod 8<4 then
+1250   print mark$,
+1260  else
+1270   print streck$,
+1280  endif
+1290  print bak$,
+1300 endproc markera
+1310 //
+1320 proc förändra'text
+1330  avb$:=upp$+ned$+inskjut$+clr$+hem$
+1340  visa'text
+1350  visa'jobb("j")
+1360  hämta'söktext
+1370  finn(pil)
+1380  if not funnet then return
+1390  rensa'skärmen
+1400  visa'jobb("j")
+1410  fönster
+1420  sätt'av:=3
+1430  hämta'text(text$,max,pil)
+1440 endproc förändra'text
+1450 //
+1460 proc hämta'söktext
+1470  skriv'från(1,1)
+1480  print "söker:"
+1490  sätt'av:=1
+1500  job$:="a"
+1510  m:=1; p:=1; sök$:=" "
+1520  hämta'text(sök$,m,p)
+1530  job$:="j"
+1540  sök$:=sök$(1:m-1)
+1550 endproc hämta'söktext
+1560 //
+1570 proc hämta'text(ref text$,ref max,ref pil)
+1580  hämta(tecken$,x(pil),y(pil))
+1590  while not tecken$="@" do
+1600   if not kolla'tecken then
+1610    case tecken$ of
+1620    when stryk$
+1630     stryk'tecken
+1640    when bak$
+1650     if pil>1 then pil:=pil-1
+1660    when fram$
+1670     if pil<max then pil:=pil+1
+1680    otherwise
+1690     sätt'in'tecken
+1700    endcase
+1710    if job$="j" then fönster
+1720   endif
+1730   hämta(tecken$,x(pil),y(pil))
+1740  endwhile
+1750 endproc hämta'text
+1760 //
+1770 proc sätt'in'tecken
+1780  text$(pil+1:max+1):=text$(pil:max)
+1790  text$(pil):=tecken$
+1800  pil:=pil+1; max:=max+1
+1810 endproc sätt'in'tecken
+1820 //
+1830 proc stryk'tecken
+1840  if pil=1 then return //do nothing
+1850  if pil=2 then
+1860   text$:=text$(2:max)
+1870  else
+1880   text$:=text$(1:pil-2)+text$(pil:max)
+1890  endif
+1900  pil:=pil-1
+1910  max:=max-1
+1920 endproc stryk'tecken
+1930 //
+1940 proc visa'text
+1950  rensa'skärmen
+1960  skriv'från(4,1)
+1970  print text$
+1980 endproc visa'text
+1990 //
+2000 proc finn(ref p)
+2010  funnet:=sök$ in text$
+2020  p:=funnet
+2030 endproc finn
+2040 //
+2050 proc skriv'ut'texten
+2060  välj'enhet
+2070  rensa'skärmen
+2080  visa'jobb("u")
+2090  skriv'från(4,1)
+2100  lt:=0; ln:=0; rad$:=""
+2110  if enh$="p" then select output "lp"
+2120  for tt:=1 to max do
+2130   if text$(tt:tt)="^" then
+2140    print rad$
+2150    rad$:=""; lt:=0; ln:+1
+2160   else
+2170    rad$:=rad$+text$(tt:tt)
+2180    lt:=lt+1
+2190    if text$(tt)=" " then mp:=tt
+2200    if lt=bredd then
+2210     if text$(tt+1)=" " then
+2220     lt:=bredd; tt:=tt+1
+2230    else
+2240     margin:=tt-mp
+2250     tt:=mp
+2260     lt:=bredd-margin
+2270    endif
+2280    print rad$(1:lt)
+2290    rad$:=""
+2300    lt:=0; ln:+1
+2310    endif
+2320   endif
+2330  endfor tt
+2340  print rad$
+2350  if enh$="p" then
+2360   select output "ds"
+2370  else
+2380   vänta
+2390  endif
+2400 endproc skriv'ut'texten
+2410 //
+2420 proc välj'enhet
+2430  rensa'skärmen
+2440  visa'jobb("u")
+2450  skriv'från(5,1)
+2460  print "s = utskrift på skärm"
+2470  print
+2480  print "p = utskrift på printer"
+2490  print
+2500  print "Ange enhet:"
+2510  repeat
+2520   hämta(enh$,9,14)
+2530  until enh$ in "sp"
+2540 endproc välj'enhet
+2550 //
+2560 proc spara'texten
+2570  visa'jobb("s")
+2580  skriv'från(24,1)
+2590  print "Filnamn",
+2600  input filnamn$
+2610  filnamn$:="@0:"+filnamn$
+2620  open file 2,filnamn$,write
+2630  write file 2: text$
+2640  close
+2650 endproc spara'texten
+2660 //
+2670 proc hämta'texten
+2680  visa'jobb("l")
+2690  skriv'från(24,1)
+2700  print "Filnamn",
+2710  input filnamn$
+2720  open file 2,filnamn$,read
+2730  read file 2: text$
+2740  close
+2745  max:=len(text$)
+2750 endproc hämta'texten
+2760 //
+2770 func x(p)
+2780  if p mod 40=0 then
+2790   return p div 40+sätt'av
+2800  else
+2810   return p div 40+sätt'av+1
+2820  endif
+2830 endfunc x
+2840 //
+2850 func y(p)
+2860  if p mod 40=0 then
+2870   return 40
+2880  else
+2890   return p mod 40
+2900  endif
+2910 endfunc y
+2920 //
+2930 proc vänta
+2940  skriv'från(1,1)
+2950  rev'on
+2960  print "Tryck på Return-tangenten: ",
+2970  input "": t$
+2980  rev'off
+2990 endproc vänta
+3000 //
+3010 proc hämta'märke
+3020  if 0<pil and pil<=max then
+3030   mark$:=text$(pil)
+3040  else
+3050   mark$:=" "
+3060  endif
+3070 endproc hämta'märke
+3080 //
+3090 proc fönster
+3100  skriv'från(5,1)
+3110  if pil<=20 then
+3120   print spcs$(1:20-pil),
+3130   print text$(1:pil),
+3140  else
+3150   print text$(pil-19:pil),
+3160  endif
+3170  if max-20<=pil then
+3180   if pil+1<=max then
+3190    print text$(pil+1:max),
+3200    print spcs$(1:20-(max-pil))
+3210   endif
+3220  else
+3230   print text$(pil+1:pil+20)
+3240  endif
+3250 endproc fönster
+3260 //
+3270 proc rev'on
+3280  print revon$,
+3290 endproc rev'on
+3300 //
+3310 proc rev'off
+3320  print revoff$,
+3330 endproc rev'off
+3340 //
+3350 proc skriv'från(rad,tecken)
+3360  markör'hem
+3370  markör'ner'till(rad)
+3380  markör'bort'till(tecken)
+3390 endproc skriv'från
+3400 //
+3410 proc markör'hem
+3420  print hem$,
+3430 endproc markör'hem
+3440 //
+3450 proc markör'ner'till(ln)
+3460  print nedåt$(1:ln-1),
+3470 endproc markör'ner'till
+3480 //
+3490 proc markör'bort'till(pl)
+3500  print bortåt$(1:pl-1),
+3510 endproc markör'bort'till
+3520 //
+3530 proc rensa'skärmen
+3540  print clr$,
+3550 endproc rensa'skärmen
+3560 //
+
+0005 // rita'sprites (tegnnisse)
+0010 dim mobs$ of 64, ch$ of 1, tal$ of 4
+0020 open file 2,"0:sprites",read
+0030 read file 2: mobs$
+0040 define 0,mobs$
+0050 read file 2: mobs$
+0060 define 1,mobs$
+0070 read file 2: mobs$
+0080 define 2,mobs$
+0090 close file 2
+0100 background 2
+0110 border 2
+0112 instruktion
+0120 setgraphic 0
+0130 turtlestate false
+0140 init'nöt
+0150 spritecolor 0,1
+0160 spritecolor 1,1
+0170 spritecolor 2,0
+0180 spritecolor 3,0
+0190 spritesize 0,1,1
+0200 spritesize 1,1,1
+0210 spritesize 2,1,1
+0220 spritesize 3,1,1
+0230 identify 0,0
+0240 identify 2,0
+0250 identify 1,1
+0260 identify 3,1
+0270 d:=7.5; delta1:=d; delta2:=d
+0280 upp:=64; ned:=114
+0290 x1:=120; x2:=120
+0300 y1:=upp; y2:=ned
+0310 repeat
+0320  x1:+delta1; x2:+delta2
+0330  if x1<1 then x1:=1; delta1:=0
+0340  if x2<1 then x2:=1; delta2:=0
+0350  if x1>270 then x1:=270; delta1:=0
+0360  if x2>270 then x2:=270; delta2:=0
+0370  if delta1>=0 then
+0380   spritepos 0,x1,y1
+0390   spritepos 1,x1,y1
+0400  else
+0410   spritepos 1,x1,y1
+0420   spritepos 0,x1,y1
+0430  endif
+0440  if delta2>=0 then
+0450   spritepos 2,x2,y2
+0460   spritepos 3,x2,y2
+0470  else
+0480   spritepos 3,x2,y2
+0490   spritepos 2,x2,y2
+0500  endif
+0510  ch$:=key$
+0520  if ch$<>chr$(0) then
+0530   if ch$="a" then delta1:=-d
+0540   if ch$="d" then delta1:=d
+0550   if ch$="s" then delta1:=0
+0560   if ch$="j" then delta2:=-d
+0570   if ch$="l" then delta2:=d
+0580   if ch$="k" then delta2:=0
+0590   if ch$=" " then i:=y1; y1:=y2; y2:=i
+0600  endif
+0610  if spritecollision(1,true) or spritecollision(3,false) then collision
+0620  flytta'nöt
+0630 until ch$="q"
+0640 settext
+0650 proc init'nöt
+0660  nnöt:=2
+0670  dim nötter(nnöt,2)
+0680  ny'nöt
+0690  for i:=4 to nnöt+3 do
+0700   spritecolor i,8
+0710   identify i,2
+0720   spritesize i,0,0
+0730  endfor i
+0740  spritecolor 5,7
+0750  pencolor 8
+0760  rita'nöt
+0770  moveto 0,20
+0780  drawto 0,199
+0790  drawto 319,199
+0800  drawto 319,20
+0810  drawto 0,20
+0820  svart:=0; vit:=0
+0830  point
+0840  i:=spritecollision(1,true)
+0850 endproc init'nöt
+0860 //
+0870 proc flytta'nöt
+0880  flytta
+0890  rita'nöt
+0900 endproc flytta'nöt
+0910 //
+0920 proc rita'nöt
+0930  for i:=1 to nnöt do spritepos i+3,nötter(i,1),nötter(i,2)
+0940 endproc rita'nöt
+0950 //
+0960 proc flytta
+0970  for i:=1 to nnöt do
+0980   nötter(i,2):-i*4
+0990   if nötter(i,2)<40 then nötter(i,2):=200; nötter(i,1):=rnd(1,270)
+1000  endfor i
+1010 endproc flytta
+1020 //
+1030 proc collision
+1040  vit:+spritecollision(1,false)
+1050  svart:+spritecollision(3,false)
+1060  byt'om
+1070  for i:=1 to nnöt do
+1080   if spritecollision(i+3,false) then
+1090    nötter(i,1):=rnd(1,270)
+1100    nötter(i,2):=200
+1110   endif
+1120  endfor i
+1130  point
+1140  rita'nöt
+1150  i:=spritecollision(1,true)
+1160 endproc collision
+1170 //
+1180 proc point
+1190  pencolor 1
+1200  str(vit,tal$)
+1210  plottext 40,8,"white: "+tal$
+1220  pencolor 0
+1230  str(svart,tal$)
+1240  plottext 200,8,"black:  "+tal$
+1250 endproc point
+1260 //
+1270 proc str(i,ref tal$) closed
+1280  tal$:="    "; j:=1000
+1290  for k:=1 to 4 do
+1300   tal$(k):=chr$(48+i div j)
+1310   i:=i mod j; j:=j/10
+1320  endfor k
+1330 endproc str
+1340 proc ny'nöt
+1350  for i:=1 to nnöt do
+1360   nötter(i,1):=rnd(8,280)
+1370   nötter(i,2):=rnd(10,80)
+1380  endfor i
+1390 endproc ny'nöt
+1400 //
+1410 proc byt'om
+1420  if vit<=svart then
+1430   y1:=upp; y2:=ned
+1440  else
+1450   y1:=ned; y2:=upp
+1460  endif
+1470 endproc byt'om
+1480 //
+1500 proc instruktion
+1510  print "{clear}"
+1520  print "figurerna flyttas som anges här :"
+1530  print
+1540  print
+1550  print "  den vita spelaren:"
+1560  print
+1570  print "a   flytta åt vänster"
+1580  print "s   sluta flytta"
+1590  print "d   flytta åt höger"
+1600  print
+1610  print "  den svarta spelaren:"
+1620  print
+1630  print "j   flytta åt vänster"
+1640  print "k   sluta flytta"
+1650  print "l   flytta åt höger"
+1660  print
+1670  print " starta med någon tangent:"
+1680  repeat
+1690  until key$<>chr$(0)
+1700 endproc instruktion
+
+0001 //
+0010 proc soundinit(volume)
+0020  sid:=13.25*4096
+0030  dim thisnote$ of 3
+0040  poke sid+24,volume
+0050  for i:=2 to 16 step 7 do poke sid+i,0
+0060  for i:=3 to 17 step 7 do poke sid+i,8
+0070  for i:=5 to 19 step 7 do poke sid+i,6*16+12
+0080  for i:=6 to 20 step 7 do poke sid+i,0
+0090  for i:=4 to 18 step 7 do poke sid+i,0
+0100  dim notes$ of 3*96, values(0:95,2)
+0110  for i:=0 to 95 do
+0120   read notes$(i*3+1:i*3+3),values(i,1),values(i,2)
+0130  endfor i
+0140  data "c0 ",1,18
+0150  data "c0#",1,35
+0160  data "d0 ",1,52
+0170  data "d0#",1,70
+0180  data "e0 ",1,90
+0190  data "f0 ",1,110
+0200  data "f0#",1,132
+0210  data "g0 ",1,155
+0220  data "g0#",1,179
+0230  data "a0 ",1,205
+0240  data "b0 ",1,233
+0250  data "h0 ",2,6
+0260  data "c1 ",2,37
+0270  data "c1#",2,69
+0280  data "d1 ",2,104
+0290  data "d1#",2,140
+0300  data "e1 ",2,179
+0310  data "f1 ",2,220
+0320  data "f1#",3,8
+0330  data "g1 ",3,54
+0340  data "g1#",3,103
+0350  data "a1 ",3,155
+0360  data "b1 ",3,210
+0370  data "h1 ",4,12
+0380  data "c2 ",4,73
+0390  data "c2#",4,139
+0400  data "d2 ",4,208
+0410  data "d2#",5,25
+0420  data "e2 ",5,103
+0430  data "f2 ",5,185
+0440  data "f2#",6,16
+0450  data "g2 ",6,108
+0460  data "g2#",6,206
+0470  data "a2 ",7,53
+0480  data "b2 ",7,163
+0490  data "h2 ",8,23
+0500  data "c3 ",8,147
+0510  data "c3#",9,21
+0520  data "d3 ",9,159
+0530  data "d3#",10,50
+0540  data "e3 ",10,205
+0550  data "f3 ",11,114
+0560  data "f3#",12,32
+0570  data "g3 ",12,216
+0580  data "g3#",13,156
+0590  data "a3 ",14,107
+0600  data "b3 ",15,70
+0610  data "h3 ",16,47
+0620  data "c4 ",17,37
+0630  data "c4#",18,42
+0640  data "d4 ",19,63
+0650  data "d4#",20,100
+0660  data "e4 ",21,154
+0670  data "f4 ",22,227
+0680  data "f4#",24,63
+0690  data "g4 ",25,177
+0700  data "g4#",27,56
+0710  data "a4 ",28,214
+0720  data "b4 ",30,141
+0730  data "h4 ",32,94
+0740  data "c5 ",34,75
+0750  data "c5#",36,85
+0760  data "d5 ",38,126
+0770  data "d5#",40,200
+0780  data "e5 ",43,52
+0790  data "f5 ",45,198
+0800  data "f5#",48,127
+0810  data "g5 ",51,97
+0820  data "g5#",54,111
+0830  data "a5 ",57,172
+0840  data "b5 ",61,26
+0850  data "h5 ",64,188
+0860  data "c6 ",68,149
+0870  data "c6#",72,169
+0880  data "d6 ",76,252
+0890  data "d6#",81,143
+0900  data "e6 ",86,105
+0910  data "f6 ",91,140
+0920  data "f6#",96,254
+0930  data "g6 ",102,194
+0940  data "g6#",108,223
+0950  data "a6 ",115,88
+0960  data "b6 ",122,52
+0970  data "h6 ",129,120
+0980  data "c7 ",137,43
+0990  data "c7#",145,83
+1000  data "d7 ",153,247
+1010  data "d7#",163,31
+1020  data "e7 ",172,210
+1030  data "f7 ",183,25
+1040  data "f7#",193,252
+1050  data "g7 ",205,133
+1060  data "g7#",217,189
+1070  data "a7 ",230,176
+1080  data "b7 ",244,103
+1090  data "z  ",0,0
+1100 endproc soundinit
+1110 proc adsr(voice,attack,decay,sustain,release)
+1120  j:=sid+(voice-1)*7
+1130  poke j+5,attack*16+decay
+1140  poke j+6,sustain*16+release
+1150 endproc adsr
+1160 data "a1",2,"z",2,"c2",2,"a1",2,"e1",2,"z",2,"a1",2,"e1",2
+1170 data "c1",2,"z",2,"e1",2,"c1",2,"a0",6,"z",2,"e0",2,"a0",2
+1180 data "c1",2,"a0",2,"h0",2,"a0",2,"h0",2,"a0",2,"g0#",2,"h0",2,"d1",2
+1190 data "h0",2,"c1",2,"z",2,"a0",2,"z",2,"a1",2,"z",2,"c2",2,"a1",2,"e1",2
+1200 data "z",2,"a1",2,"e1",2,"c1",2,"z",2,"e1",2,"c1",2,"a0",6
+1210 data "z",2,"c1",2,"z",2,"c1",2,"z",2,"c1",2,"z",2,"c1",2
+1220 data "z",2,"a1",2,"z",2,"c1",2,"z",2,"c1",4,"h0",2,"z",2
+1230 data "e1",2,"z",2,"e1",2,"z",2,"e1",2,"z",2,"e1",2,"z",2
+1240 data "c2",2,"z",2,"e1",2,"z",2,"e1",4,"d1#",2,"z",2,"h0",2
+1250 data "e1",2,"g1",2,"e1",2,"f1#",2,"e1",2,"f1#",2,"e1",2,"d1#",2
+1260 data "f1#",2,"a1",2,"f1#",2,"g1",2,"f1#",2,"g1",2,"f1#",2,"e1",2
+1270 data "g1",2,"e1",2,"d1#",2,"e1",2,"a1",2,"e1",2,"d1#",2,"e1",2
+1280 data "h1",2,"e1",2,"d1#",2,"e1",2,"c2",2,"e1",2,"d1#",2,"e1",2
+1290 data "c2",2,"h1",2,"a1",2,"h1",2,"g1",2,"f1#",2,"e1",2,"g1",2
+1300 data "z",2,"g1",.7,"f1#",.7,"g1",.7,"f1#",2,"e1",6,"z",2,"e1",2
+1310 data "z",2,"g1",2,"e1",2,"h0",2,"z",2,"e1",2,"h0",2,"g0",2
+1320 data "z",2,"h0",2,"g0",2,"e0",6,"z",2,"b0",4,"a0",2,"z",2
+1330 data "d1",4,"c1#",2,"d1",2,"g1",4,"f1",2,"e1",2,"f1",2,"z",2
+1340 data "d1",2,"z",2,"f1",2,"z",2,"a1",2,"e1",2,"d1",2,"z",2
+1350 data "f1",2,"d1",2,"h0",2,"z",2,"d1",2,"h0",2,"g0",6,"z",2
+1360 data "g0",2,"c1",2,"e1",2,"c1",2,"d1",2,"c1",2,"d1",2,"c1",2
+1370 data "h0",2,"d1",2,"f1",2,"d1",2,"e1",2,"d1",2,"e1",2,"d1",2
+1380 data "c1",2,"e1",2,"c1",2,"h0",2,"c1",2,"f1",2,"c1",2,"h0",2
+1390 data "c1",2,"g1",2,"c1",2,"h0",2,"c1",2,"a1",2,"c1",2,"h0",2
+1400 data "c1",2,"a1",2,"g1",2,"f1",2,"g1",2,"e1",2,"d1",2,"c1",2
+1410 data "e1",2,"z",2,"d1",.7,"e1",.7,"d1",.7,"e1",.7,"d1",.7,"c1",6
+1420 data "z",2,"e1",2,"z",2,"e1",2,"z",2,"e1",2,"z",2,"e1",2
+1430 data "z",2,"c2",2,"z",2,"e1",2,"z",2,"e1",4,"d1",2,"z",2
+1440 data "d1",2,"z",2,"d1",2,"z",2,"d1",2,"z",2,"d1",2,"z",2
+1450 data "h1",2,"z",2,"d1",2,"z",2,"d1",4,"c1",2,"z",2,"a1",4
+1460 data "c2",2,"a1",2,"g1",4,"f1",8,"a1",.7,"g1",.7,"f1",.7,"e1",.7
+1470 data "d1",12,"f1",.7,"e1",.7,"d1",.7,"c1",.7,"b0",2,"d1",2,"f1",2
+1480 data "d1",2,"b0",2,"a0",2,"b0",2,"a0",2,"g0#",2,"z",2,"e0",2
+1490 data "z",2,"f0",4,"e0",2,"z",2,"a0",4,"g0#",2,"h0",2,"d1",4
+1500 data "c1",2,"h0",2,"c1",4,"a0",.7,"h0",.7,"c1",.7,"d1",.7,"e1",4
+1510 data "c1",2,"e1",2,"a1",2.5,"z",3,"e1",3,"z",2,"d1",3,"c1",3.5
+1520 data "h0",3.7,"c1",4,"h0",9,"a0",14,"z",30,"xx",0
+1530 soundinit(15)
+1540 dim n$ of 3, n1$ of 1, n3$ of 1
+1550 s:=sid
+1560 for ii:=1 to 3 do
+1570  adsr(ii,0,4,12,10)
+1580 endfor ii
+1590 control:=32
+1600 repeat
+1610  n$:="   "
+1620  read n$(1:3),lng
+1630  if n$<>"xx " then
+1640  if n$<>"z  " then
+1650   n$(2):=chr$(ord(n$(2))+4)
+1660   i:=((n$ in notes$)-1)/3
+1670   poke s,values(i,2)
+1680   poke s+1,values(i,1)
+1690   poke s+4,control+1
+1700  else
+1710   poke s+4,control
+1720   for ii:=1 to 20 do
+1730   endfor ii
+1740  endif
+1750  for ii:=1 to lng*30 do
+1760  endfor ii
+1770  poke s+4,control
+1780  s:+7
+1790  if s=sid+3*7 then s:=sid
+1800  endif
+1810 until eod
+1820 poke sid+24,0
+1830 proc k
+1840  poke sid+24,0
+1850 endproc k
+
+0005 // grafik.01
+0010 pencolor 0
+0020 background 10
+0030 border 11
+0040 setgraphic 0
+0050 turtlestate false
+0055 axlar
+0060 //
+0070 flytta'till(0,-5)
+0080 rita'till(5,0)
+0090 rita'till(-5,5)
+0100 rita'till(0,-5)
+0110 //
+0120 //
+0130 fyll'i(1,1)
+0140 while key$=chr$(0) do null
+0150 settext
+0160 print chr$(14),
+0170 pencolor 8
+0180 background 11
+0190 border 10
+0200 //
+0210 proc flytta'till(x,y)
+0220  x:=160+x*16
+0230  y:=100+y*10
+0240  moveto x,y
+0250 endproc flytta'till
+0260 //
+0270 proc rita'till(x,y)
+0280  x:=160+x*16
+0290  y:=100+y*10
+0300  drawto x,y
+0310 endproc rita'till
+0320 //
+0330 proc fyll'i(x,y)
+0340  x:=160+x*16
+0350  y:=100+y*10
+0360  fill x,y
+0370 endproc fyll'i
+0380 //
+5000 proc axlar
+5010  dx:=2; dy:=2
+5020  moveto 0,100
+5030  drawto 320,100
+5040  moveto 160,0
+5050  drawto 160,200
+5060  rita'skala
+5070  moveto 160,100
+5080 endproc axlar
+5090 //
+5100 proc rita'skala
+5110  moveto 0,100
+5120  for m:=0 to 319 step 16 do
+5130   lodrätt'markering(m,100)
+5140  endfor m
+5150  for m:=0 to 199 step 10 do
+5160   vågrätt'markering(160,m)
+5170  endfor m
+5180 endproc rita'skala
+5190 //
+5200 proc lodrätt'markering(x,y)
+5210  moveto m,y+dy
+5220  drawto m,y-dy
+5230 endproc lodrätt'markering
+5240 //
+5250 proc vågrätt'markering(x,y)
+5260  moveto x+dx,y
+5270  drawto x-dx,y
+5280 endproc vågrätt'markering
+5290 //
+
+0010 grafik'start
+0020 trekant
+0030 grafik'stopp
+0040 //
+0050 proc grafik'start
+0060  pencolor 0
+0070  background 10
+0080  border 11
+0090  setgraphic 0
+0100  turtlestate false
+0110  axlar
+0120 endproc grafik'start
+0130 //
+0140 proc trekant
+0150  flytta'till(0,0)
+0160  rita'till(7,7)
+0170  rita'till(5,-3)
+0180  rita'till(0,0)
+0190 endproc trekant
+0200 //
+0210 proc grafik'stopp
+0220  while key$=chr$(0) do null
+0230  settext
+0240  print chr$(14),
+0250  pencolor 8
+0260  background 11
+0270  border 10
+0280 endproc grafik'stopp
+0290 //
+0300 proc flytta'till(x,y)
+0310  x:=160+x*16
+0320  y:=100+y*10
+0330  moveto x,y
+0340 endproc flytta'till
+0350 //
+0360 proc rita'till(x,y)
+0370  x:=160+x*16
+0380  y:=100+y*10
+0390  drawto x,y
+0400 endproc rita'till
+0410 //
+0420 proc fyll'i(x,y)
+0430  x:=160+x*16
+0440  y:=100+y*10
+0450  fill x,y
+0460 endproc fyll'i
+0470 //
+0480 proc axlar
+0490  dx:=2; dy:=2
+0500  moveto 0,100
+0510  drawto 320,100
+0520  moveto 160,0
+0530  drawto 160,200
+0540  rita'skala
+0550  moveto 160,100
+0560 endproc axlar
+0570 //
+0580 proc rita'skala
+0590  moveto 0,100
+0600  for m:=0 to 319 step 16 do
+0610   lodrätt'markering(m,100)
+0620  endfor m
+0630  for m:=0 to 199 step 10 do
+0640   vågrätt'markering(160,m)
+0650  endfor m
+0660 endproc rita'skala
+0670 //
+0680 proc lodrätt'markering(x,y)
+0690  moveto m,y+dy
+0700  drawto m,y-dy
+0710 endproc lodrätt'markering
+0720 //
+0730 proc vågrätt'markering(x,y)
+0740  moveto x+dx,y
+0750  drawto x-dx,y
+0760 endproc vågrätt'markering
+0770 //
+
+0005 // grafik.03
+0010 grafik'start
+0020 triangel'med'skugga
+0030 grafik'stopp
+0040 //
+0050 proc triangel'med'skugga
+0060  flytta'till(0,0)
+0070  rita'till(7,7)
+0080  rita'till(5,-3)
+0090  rita'till(0,0)
+0100  fyll'i(2,1)
+0110 endproc triangel'med'skugga
+0120 //
+5000 proc grafik'start
+5010  pencolor 0
+5020  background 10
+5030  border 11
+5040  setgraphic 0
+5050  turtlestate false
+5060  axlar
+5070 endproc grafik'start
+5080 //
+5090 proc grafik'stopp
+5100  while key$=chr$(0) do null
+5110  settext
+5120  print chr$(14),
+5130  pencolor 8
+5140  background 11
+5150  border 10
+5160 endproc grafik'stopp
+5170 //
+5180 proc flytta'till(x,y)
+5190  x:=160+x*16
+5200  y:=100+y*10
+5210  moveto x,y
+5220 endproc flytta'till
+5230 //
+5240 proc rita'till(x,y)
+5250  x:=160+x*16
+5260  y:=100+y*10
+5270  drawto x,y
+5280 endproc rita'till
+5290 //
+5300 proc fyll'i(x,y)
+5310  x:=160+x*16
+5320  y:=100+y*10
+5330  fill x,y
+5340 endproc fyll'i
+5350 //
+5360 proc axlar
+5370  dx:=2; dy:=2
+5380  moveto 0,100
+5390  drawto 320,100
+5400  moveto 160,0
+5410  drawto 160,200
+5420  rita'skala
+5430  moveto 160,100
+5440 endproc axlar
+5450 //
+5460 proc rita'skala
+5470  moveto 0,100
+5480  for m:=0 to 319 step 16 do
+5490   lodrätt'markering(m,100)
+5500  endfor m
+5510  for m:=0 to 199 step 10 do
+5520   vågrätt'markering(160,m)
+5530  endfor m
+5540 endproc rita'skala
+5550 //
+5560 proc lodrätt'markering(x,y)
+5570  moveto m,y+dy
+5580  drawto m,y-dy
+5590 endproc lodrätt'markering
+5600 //
+5610 proc vågrätt'markering(x,y)
+5620  moveto x+dx,y
+5630  drawto x-dx,y
+5640 endproc vågrätt'markering
+5650 //
+
+0010 graf'start
+0020 segla'i'solen
+0025 fyll'upp
+0030 graf'stop
+0040 //
+0050 proc segla'i'solen
+0070  for a:=0 to 360 step 60 do
+0080   t:=a/180*3.14159
+0090   x:=2*sin(t)-4; y:=2*cos(t)
+0100   trekant(x,y)
+0110  endfor a
+0120 endproc segla'i'solen
+0130 //
+0140 proc trekant(x,y)
+0150  flytta'till(x,y)
+0160  x:=x+7; y:=y+7
+0170  rita'till(x,y)
+0180  x:=x-2; y:=y-10
+0190  rita'till(x,y)
+0200  x:=x-5; y:=y+3
+0210  rita'till(x,y)
+0220 endproc trekant
+0230 //
+0240 proc fyll'upp
+0250  for r:=2 to 3 do
+0260   for a:=0 to 360 step 30 do
+0270    t:=a/180*3.14159
+0280    x:=r*cos(t); y:=r*sin(t)
+0290    fyll(x,y)
+0300   endfor a
+0310  endfor r
+0320 endproc fyll'upp
+0330 //
+5000 proc graf'start
+5010  pencolor 0
+5020  background 10
+5030  border 11
+5040  setgraphic 0
+5050  turtlestate false
+5060  axlar
+5070 endproc graf'start
+5080 //
+5090 proc graf'stop
+5100  while key$=chr$(0) do null
+5110  settext
+5120  print chr$(14),
+5130  pencolor 8
+5140  background 11
+5150  border 10
+5160 endproc graf'stop
+5170 //
+5180 proc flytta'till(x,y)
+5190  x:=160+x*16
+5200  y:=100+y*10
+5210  moveto x,y
+5220 endproc flytta'till
+5230 //
+5240 proc rita'till(x,y)
+5250  x:=160+x*16
+5260  y:=100+y*10
+5270  drawto x,y
+5280 endproc rita'till
+5290 //
+5300 proc fyll(x,y)
+5310  x:=160+x*16
+5320  y:=100+y*10
+5330  fill x,y
+5340 endproc fyll
+5350 //
+5360 proc axlar
+5370  dx:=2; dy:=2
+5380  moveto 0,100
+5390  drawto 320,100
+5400  moveto 160,0
+5410  drawto 160,200
+5420  rita'skala
+5430  moveto 160,100
+5440 endproc axlar
+5450 //
+5460 proc rita'skala
+5470  moveto 0,100
+5480  for m:=0 to 319 step 16 do
+5490   lodrätt'markering(m,100)
+5500  endfor m
+5510  for m:=0 to 199 step 10 do
+5520   vågrätt'markering(160,m)
+5530  endfor m
+5540 endproc rita'skala
+5550 //
+5560 proc lodrätt'markering(x,y)
+5570  moveto m,y+dy
+5580  drawto m,y-dy
+5590 endproc lodrätt'markering
+5600 //
+5610 proc vågrätt'markering(x,y)
+5620  moveto x+dx,y
+5630  drawto x-dx,y
+5640 endproc vågrätt'markering
+5650 //
+
+0010 graf'start
+0020 cirkel
+0030 graf'stop
+0040 //
+0050 proc cirkel
+0060  markering(1,-2)
+0070  flytta'till(5,-2)
+0080  for a:=0 to 360 step 10 do
+0090   t:=a/180*3.14159
+0100   x:=4*cos(t)+1
+0110   y:=4*sin(t)-2
+0120   rita'till(x,y)
+0130  endfor a
+0140 endproc cirkel
+0150 //
+0160 proc markering(x,y)
+0170  flytta'till(x-2/16,y)
+0180  rita'till(x+2/16,y)
+0190  flytta'till(x,y-2/15)
+0200  rita'till(x,y+2/15)
+0210 endproc markering
+0220 //
+0230 proc graf'start
+0240  pencolor 0
+0250  background 10
+0260  border 11
+0270  setgraphic 0
+0280  turtlestate false
+0290  axlar
+0300 endproc graf'start
+0310 //
+0320 proc graf'stop
+0330  while key$=chr$(0) do null
+0340  settext
+0350  print chr$(14),
+0360  pencolor 8
+0370  background 11
+0380  border 10
+0390 endproc graf'stop
+0400 //
+0410 proc flytta'till(x,y)
+0420  x:=160+x*16
+0430  y:=100+y*15
+0440  moveto x,y
+0450 endproc flytta'till
+0460 //
+0470 proc rita'till(x,y)
+0480  x:=160+x*16
+0490  y:=100+y*15
+0500  drawto x,y
+0510 endproc rita'till
+0520 //
+0530 proc fyll(x,y)
+0540  x:=160+x*16
+0550  y:=100+y*15
+0560  fill x,y
+0570 endproc fyll
+0580 //
+0590 proc axlar
+0600  dx:=2; dy:=2
+0610  moveto 0,100
+0620  drawto 320,100
+0630  moveto 160,0
+0640  drawto 160,200
+0650  rita'skala
+0660  moveto 160,100
+0670 endproc axlar
+0680 //
+0690 proc rita'skala
+0700  moveto 0,100
+0710  for m:=0 to 319 step 16 do
+0720   lodrätt'markering(m,100)
+0730  endfor m
+0740  for m:=10 to 209 step 15 do
+0750   vågrätt'markering(160,m)
+0760  endfor m
+0770 endproc rita'skala
+0780 //
+0790 proc lodrätt'markering(x,y)
+0800  moveto m,y+dy
+0810  drawto m,y-dy
+0820 endproc lodrätt'markering
+0830 //
+0840 proc vågrätt'markering(x,y)
+0850  moveto x+dx,y
+0860  drawto x-dx,y
+0870 endproc vågrätt'markering
+0880 //
+
+0010 graf'start
+0020 rita'graf
+0030 graf'stop
+0040 //
+0050 proc rita'graf
+0060  flytta'till(-10,f(-10))
+0070  for x:=-10 to 10 step .2 do
+0090   rita'till(x,f(x))
+0100  endfor x
+0110 endproc rita'graf
+0120 //
+0130 func f(x)
+0140  return 2*exp(x/10)*sin(x)
+0150 endfunc f
+0160 //
+5000 proc markering(x,y)
+5010  flytta'till(x-2/16,y)
+5020  rita'till(x+2/16,y)
+5030  flytta'till(x,y-2/15)
+5040  rita'till(x,y+2/15)
+5050 endproc markering
+5060 //
+5070 proc graf'start
+5080  pencolor 0
+5090  background 10
+5100  border 11
+5110  setgraphic 0
+5120  turtlestate false
+5130  axlar
+5140 endproc graf'start
+5150 //
+5160 proc graf'stop
+5170  while key$=chr$(0) do null
+5180  settext
+5190  print chr$(14),
+5200  pencolor 8
+5210  background 11
+5220  border 10
+5230 endproc graf'stop
+5240 //
+5250 proc flytta'till(x,y)
+5260  x:=160+x*16
+5270  y:=100+y*15
+5280  moveto x,y
+5290 endproc flytta'till
+5300 //
+5310 proc rita'till(x,y)
+5320  x:=160+x*16
+5330  y:=100+y*15
+5340  drawto x,y
+5350 endproc rita'till
+5360 //
+5370 proc fyll(x,y)
+5380  x:=160+x*16
+5390  y:=100+y*15
+5400  fill x,y
+5410 endproc fyll
+5420 //
+5430 proc axlar
+5440  dx:=2; dy:=2
+5450  moveto 0,100
+5460  drawto 320,100
+5470  moveto 160,0
+5480  drawto 160,200
+5490  rita'skala
+5500  moveto 160,100
+5510 endproc axlar
+5520 //
+5530 proc rita'skala
+5540  moveto 0,100
+5550  for m:=0 to 319 step 16 do
+5560   lodrätt'markering(m,100)
+5570  endfor m
+5580  for m:=10 to 209 step 15 do
+5590   vågrätt'markering(160,m)
+5600  endfor m
+5610 endproc rita'skala
+5620 //
+5630 proc lodrätt'markering(x,y)
+5640  moveto m,y+dy
+5650  drawto m,y-dy
+5660 endproc lodrätt'markering
+5670 //
+5680 proc vågrätt'markering(x,y)
+5690  moveto x+dx,y
+5700  drawto x-dx,y
+5710 endproc vågrätt'markering
+5720 //
+
+0010 start'robert
+0020 flytta'till(0,-3)
+0030 riktning(0)
+0040 framåt(7)
+0050 vänster(90)
+0060 framåt(7)
+0070 vänster(90)
+0080 framåt(7)
+0090 vänster(90)
+0100 framåt(7)
+0110 vänster(90)
+0120 stop'robert
+0130 //
+0140 proc start'robert
+0150  pencolor 0
+0160  background 10
+0170  border 11
+0180  setgraphic 0
+0190  turtlestate true
+0200  endproc start'robert
+0210 //
+0220 proc stop'robert
+0230  while key$=chr$(0) do null
+0240  settext
+0250  print chr$(14),
+0260  pencolor 8
+0270  background 11
+0280  border 10
+0290 endproc stop'robert
+0300 //
+0310 proc framåt(x)
+0320  forward x*10
+0330 endproc framåt
+0340 //
+0350 proc vänster(v)
+0360  nu:=(nu+v) mod 180
+0370  left v
+0380 endproc vänster
+0390 //
+0400 proc riktning(v)
+0410  nu:=v
+0420  setheading v
+0430 endproc riktning
+0440 //
+0450 proc flytta'till(x,y)
+0460  moveto x*16+160,y*10+100
+0470 endproc flytta'till
+0480 //
+0490 proc robert'hem
+0500  flytta'till(0,0)
+0510  riktning(0)
+0520 endproc robert'hem
+0530 //
+
+0010 start'robert
+0020 cirkel'kvadrater
+0030 stop'robert
+0040 //
+0050 proc cirkel'kvadrater
+0060  flytta'till(0,0)
+0070  for vinkel:=0 to 360 step 10 do
+0080   kvadrat(0,0,vinkel,5)
+0090  endfor vinkel
+0100 endproc cirkel'kvadrater
+0110 //
+0120 proc kvadrat(x,y,v,s)
+0130  flytta'till(x,y)
+0140  riktning(v)
+0150  for k:=1 to 4 do
+0160   framåt(s)
+0170   vänster(90)
+0180  endfor k
+0190 endproc kvadrat
+0200 //
+5000 proc start'robert
+5010  pencolor 0
+5020  background 10
+5030  border 11
+5040  setgraphic 0
+5050  turtlestate true
+5060 endproc start'robert
+5070 //
+5080 proc stop'robert
+5090  while key$=chr$(0) do null
+5100  settext
+5110  print chr$(14),
+5120  pencolor 8
+5130  background 11
+5140  border 10
+5150 endproc stop'robert
+5160 //
+5170 proc framåt(x)
+5180  forward x*10
+5190 endproc framåt
+5200 //
+5210 proc vänster(v)
+5220  nu:=(nu+v) mod 180
+5230  left v
+5240 endproc vänster
+5250 //
+5260 proc riktning(v)
+5270  nu:=v
+5280  setheading v
+5290 endproc riktning
+5300 //
+5310 proc flytta'till(x,y)
+5320  moveto x*16+160,y*10+100
+5330 endproc flytta'till
+5340 //
+5350 proc robert'hem
+5360  flytta'till(0,0)
+5370  riktning(0)
+5380 endproc robert'hem
+5390 //
+
+0010 start'robert
+0020 stor'konst
+0025 plottext 200,10,"poul papkasse"
+0030 stop'robert
+0040 //
+0050 proc stor'konst
+0060  for b:=1 to 40 do
+0070   x:=rnd(-8,3); y:=rnd(-8,3)
+0080   sida:=rnd(1,5)
+0090   kvadrat(x,y,0,sida)
+0100   fyll(x+sida/2,y+sida/2)
+0110  endfor b
+0120 endproc stor'konst
+0130 //
+0140 proc kvadrat(x,y,v,s)
+0150  flytta'till(x,y)
+0160  riktning(v)
+0170  for k:=1 to 4 do
+0180   framåt(s)
+0190   vänster(90)
+0200  endfor k
+0210 endproc kvadrat
+0220 //
+0230 proc start'robert
+0240  pencolor 0
+0250  background 10
+0260  border 11
+0270  setgraphic 0
+0280  turtlestate true
+0290 endproc start'robert
+0300 //
+0310 proc stop'robert
+0320  while key$=chr$(0) do null
+0330  settext
+0340  print chr$(14),
+0350  pencolor 8
+0360  background 11
+0370  border 10
+0380 endproc stop'robert
+0390 //
+0400 proc framåt(x)
+0410  forward x*10
+0420 endproc framåt
+0430 //
+0440 proc vänster(v)
+0450  nu:=(nu+v) mod 180
+0460  left v
+0470 endproc vänster
+0480 //
+0490 proc riktning(v)
+0500  nu:=v
+0510  setheading v
+0520 endproc riktning
+0530 //
+0540 proc flytta'till(x,y)
+0550  moveto x*16+160,y*10+100
+0560 endproc flytta'till
+0570 //
+0580 proc robert'hem
+0590  flytta'till(0,0)
+0600  riktning(0)
+0610 endproc robert'hem
+0620 //
+0630 proc fyll(x,y)
+0640  x:=16*x+160; y:=10*y+100
+0650  fill x,y
+0660 endproc fyll
+0670 //
+begin 644 comal.t64
+M0S8T('1A<&4@:6UA9V4@9FEL90```````````````````1,`$P```%9)0RTV
+M-"!#3TU!3"TX,"U04D]'4D%-(`&!,##6-```H`(```````!54%!-3U1404L@
+M("`@("`@`8$P,,XT``!&!P```````$M/3$Q)4TE/3B`@("`@("`!@3`PY3$`
+M`.0+````````4$%$1$Q%+DP@("`@("`@(`&!,#`+,P``F0T```````!*3UE3
+M5$E#2RY,("`@("`@`8(P,!A+``!T$````````$M!4E1/5$5+("`@("`@("`!
+M@3`PTTT``%PK````````4TU=5$585"`@("`@("`@(`&!,#`\/P``_T@`````
+M``!43TU415-014P@("`@("`@`8$P,"-'```+6````````$U54TE+("`@("`@
+M("`@("`!@3`P2C4``/YN````````1U)!1DE++C`Q("`@("`@(`&!,##B-0``
+M&'0```````!'4D%&24LN,#(@("`@("`@`8$P,"DV``#*>0```````$=2049)
+M2RXP,R`@("`@("`!@3`PG3<``,-_````````1U)!1DE++C`T("`@("`@(`&!
+M,##%-@``,(<```````!'4D%&24LN,#4@("`@("`@`8$P,,TV``#%C0``````
+M`$=2049)2RXP-B`@("`@("`!@3`PYC,``&*4````````1U)!1DE++C`W("`@
+M("`@(`&!,#"C-```&)@```````!'4D%&24LN,#@@("`@("`@`8$P,#<U``"+
+MG````````$=2049)2RXP.2`@("`@("`!@0!`0$```)*A````````0D%,3$].
+M1R`@("`@("`@(`&!`$#$0```TJ$```````!34%))5$53("`@("`@("`@,3`@
+M+R\@55!034]45$%+#3`P,C`@+R\@+2TM+2TM+2TM#3`P,S`@+R\-,#`T,"!$
+M24T@1DE'55(D($]&(#8T#3`P-3`@5%)!4"!%4T,M#3`P-C`@2$%-5$$G4U!2
+M251%#3`P-S`@5TA)3$4@5%)512!$3PTP,#@P(%))5$$G4U!2251%#3`P.3`@
+M4DE402=404L-,#$P,"!!3E9!3D0G4U!2251%#3`Q,3`@14Y$5TA)3$4@#3`Q
+M,C`@+R\-,#$S,"!04D]#($A!351!)U-04DE412`-,#$T,"!/4$5.($9)3$4@
+M,BPB0D%,3$].1R(L4D5!1`TP,34P(%)%040@1DE,12`R.B!&24=54B0-,#$V
+M,"!#3$]310TP,3<P($5.1%!23T,@2$%-5$$G4U!2251%#3`Q.#`@+R\-,#$Y
+M,"!04D]#(%))5$$G4U!2251%(`TP,C`P($1%1DE.12`T-2Q&24=54B0-,#(Q
+M,"!34%))5$5325I%(#(L,2PQ#3`R,C`@0D%#2T=23U5.1"`X#3`R,S`@0D]2
+M1$52(#(-,#(T,"!34%))5$5#3TQ/4B`R+#$Q#3`R-3`@4T541U)!4$A)0R`P
+M#3`R-C`@241%3E1)1ED@,BPT-0TP,C<P($5.1%!23T,@4DE402=34%))5$4-
+M,#(X,"`O+PTP,CDP(%!23T,@04Y604Y$)U-04DE412`-,#,P,"!54%!-3U0G
+M5$%+.CU&04Q310TP,S$P($9/4B!8.CTP(%1/(#,Q.2!$3PTP,S(P(%DZ/3(O
+M,RI8#3`S,S`@4U!2251%4$]3(#(L6"Q9#3`S-#`@6#$Z/5@-,#,U,"!54%!-
+M3U0G5$%+.CU$051!0T],3$E324].*#(L5%)512D-,#,V,"!)1B!54%!-3U0G
+M5$%+(%1(14X@3D5$)TE'14X-,#,W,"!%3D1&3U(@6`TP,S@P($5.1%!23T,@
+M04Y604Y$)U-04DE410TP,SDP("\O#3`T,#`@4%)/0R!35$]04$$G4U!2251%
+M(`TP-#$P(%!%3D-/3$]2(#@-,#0R,"!"3U)$15(@.`TP-#,P($)!0TM'4D]5
+M3D0@,3$-,#0T,"!3151415A4(`TP-#4P(%1205`@15-#*PTP-#8P(%!224Y4
+M($-(4B0H,30I+$-(4B0H,30W*0TP-#<P(%-43U`@#3`T.#`@14Y$4%)/0R!3
+M5$]04$$G4U!2251%#3`T.3`@+R\-,#4P,"!04D]#(%))5$$G5$%+(`TP-3$P
+M(%!%3D-/3$]2(#$Q#3`U,C`@34]6151/(#`L,3@P#3`U,S`@1%)!5U1/(#,Q
+M.2PQ.#`-,#4T,"!%3D104D]#(%))5$$G5$%+#3`U-3`@+R\-,#4V,"!04D]#
+M($Y%1"=)1T5.(`TP-3<P($9/4B!8.CU8,2!43R`P(%-415`@+3$@1$\-,#4X
+M,"!9.CTR+S,J6`TP-3DP(%-04DE415!/4R`R+%@L60TP-C`P($5.1$9/4B!8
+M#3`V,3`@248@15-#(%1(14X@4U1/4%!!)U-04DE410TP-C(P($5.1%!23T,@
+M3D5$)TE'14X-,#8S,"`O+PTQ,"`O+R!+3TQ,25-)3TX-,#`R,"`O+R`M+2TM
+M+2TM+2T-,#`S,"`O+PTP,#0P($1)32!&24=54B0@3T8@-C0-,#`U,"!44D%0
+M($530RT-,#`V,"`O+PTP,#<P($A!351!)U-04DE410TP,#@P($1%1DE.15)!
+M)U-04DE410TP,#DP(%=(24Q%(%12544@1$\@4U!2251%4TA/5PTP,3`P("\O
+M#3`Q,3`@4%)/0R!(04U402=34%))5$4@#3`Q,C`@3U!%3B!&24Q%(#(L(D)!
+M3$Q/3D<B+%)%040-,#$S,"!214%$($9)3$4@,CH@1DE'55(D#3`Q-#`@0TQ/
+M4T4-,#$U,"!%3D104D]#($A!351!)U-04DE410TP,38P("\O#3`Q-S`@4%)/
+M0R!$149)3D5202=34%))5$4@#3`Q.#`@0D%#2T=23U5.1"`X#3`Q.3`@0D]2
+M1$52(#(-,#(P,"!014Y#3TQ/4B`W#3`R,3`@4T541U)!4$A)0R`P#3`R,C`@
+M1$5&24Y%(#0U+$9)1U52)`TP,C,P($E$14Y42499(#(L-#4-,#(T,"!)1$5.
+M5$E&62`S+#0U#3`R-3`@4U!2251%4TE:12`R+#$L,0TP,C8P(%-04DE415-)
+M6D4@,RPQ+#$-,#(W,"!34%))5$5#3TQ/4B`R+#$Q#3`R.#`@4U!2251%0T],
+M3U(@,RPQ,0TP,CDP($5.1%!23T,@1$5&24Y%4D$G4U!2251%#3`S,#`@+R\-
+M,#,Q,"!04D]#(%-04DE415-(3U<@#3`S,C`@1D]2(%@Z/2TR,"!43R`R,#`@
+M1$\-,#,S,"!8,#H]6`TP,S0P(%-04DE415!/4R`R+%@L,3`P#3`S-3`@4U!2
+M251%4$]3(#,L,C<P+5@L,3`P#3`S-C`@34]413H]4U!2251%0T],3$E324].
+M*#(L5%)512D-,#,W,"!&3U(@5#H],2!43R`U($1/($Y53$P-,#,X,"!)1B!-
+M3U1%(%1(14X@5$E,3$)!2T$-,#,Y,"!%3D1&3U(@6`TP-#`P($5.1%!23T,@
+M4U!2251%4TA/5PTP-#$P("\O#3`T,C`@4%)/0R!424Q,0D%+02`-,#0S,"!&
+M3U(@6#H]6#`@5$\@+3(P(%-415`@+3$@1$\-,#0T,"!34%))5$503U,@,BQ8
+M+#$P,`TP-#4P(%-04DE415!/4R`S+#(W,"U8+#$P,`TP-#8P($9/4B!4.CTQ
+M(%1/(#4@1$\@3E5,3`TP-#<P($5.1$9/4B!8#3`T.#`@248@15-#(%1(14X@
+M4U1/4%-(3U<-,#0Y,"!%3D104D]#(%1)3$Q"04M!#3`U,#`@+R\-,#4Q,"!0
+M4D]#(%-43U!32$]7(`TP-3(P($)/4D1%4B`Q,`TP-3,P($)!0TM'4D]53D0@
+M,3$-,#4T,"!014Y#3TQ/4B`X#3`U-3`@4T545$585"`-,#4V,"!04DE.5"!#
+M2%(D*#$T-RDL0TA2)"@Q-"D-,#4W,"!44D%0($530RL-,#4X,"!35$]0(`TP
+M-3DP($5.1%!23T,@4U1/4%-(3U<-,#8P,"`O+PTQ,"`O+R!0041$3$4N3`TP
+M,#(P("\O("TM+2TM+2TM#3`P,S`@+R\-,#`T,"!04D]#(%!!1$1,12A004E2
+M+%)%1B!8+%)%1B!9*2!#3$]3140-,#`U,"!#24$Z/3$S*C0P.38K,3(J,C4V
+M#3`P-C`@4TE$.CTQ,RHT,#DV*S0J,C4V#3`P-S`@4$]+12!#24$K,3,L,2`O
+M+U-46TY'($%6(%1)3452($$@059"4D]45`TP,#@P($1$4D$Z/5!%14LH0TE!
+M*S(I#3`P.3`@4$]+12!#24$K,BPQ,BHQ-@TP,3`P(%!/2T4@0TE!+#0J,38J
+M4$%)4@TP,3$P(%@Z/5!%14LH4TE$*S(U*3L@63H]4$5%2RA3240K,C8I#3`Q
+M,C`@4$]+12!#24$K,BQ$1%)!#3`Q,S`@4$]+12!#24$K,3,L,3(X*S$@+R\@
+M4UM45"!072!424U%4@TP,30P($5.1%!23T,@4$%$1$Q%#3`Q-3`@+R\-,#$V
+M,"!215!%050@#3`Q-S`@4$%$1$Q%*#$L6"Q9*0TP,3@P(%!224Y4(%@[60TP
+M,3DP(%5.5$E,($9!3%-%#3$P("\O($I/65-424-++DP-,#`R,"`O+R`M+2TM
+M+2TM+2TM#3`P,S`@+R\-,#`T,"!04D]#($I/65-424-+*$Y/+%)%1B!$25)%
+M0U1)3TXD*2`-,#`U,"!*.CU0145+*$Y/*S4V,S$Y*0TP,#8P($DZ/3$U+4H@
+M34]$(#$V#3`P-S`@0T%312!)($]&#3`P.#`@5TA%3B`Q#3`P.3`@1$E214-4
+M24].)#H](E504"(-,#$P,"!72$5.(#(-,#$Q,"!$25)%0U1)3TXD.CTB3D52
+M(@TP,3(P(%=(14X@-`TP,3,P($1)4D5#5$E/3B0Z/2)66TY35$52(@TP,30P
+M(%=(14X@-0TP,34P($1)4D5#5$E/3B0Z/2)54%`@5EM.4U1%4B(-,#$V,"!7
+M2$5.(#8-,#$W,"!$25)%0U1)3TXD.CTB3D52(%9;3E-415(B#3`Q.#`@5TA%
+M3B`X#3`Q.3`@1$E214-424].)#H](DA<1T52(@TP,C`P(%=(14X@.0TP,C$P
+M($1)4D5#5$E/3B0Z/2)54%`@2%Q'15(B#3`R,C`@5TA%3B`Q,`TP,C,P($1)
+M4D5#5$E/3B0Z/2).15(@2%Q'15(B#3`R-#`@3U1(15)725-%(`TP,C4P($1)
+M4D5#5$E/3B0Z/2))3D=%3B(-,#(V,"!%3D1#05-%(`TP,C<P($E&($H@1$E6
+M(#$V($U/1"`R/3`@5$A%3B!$25)%0U1)3TXD.CU$25)%0U1)3TXD*R(@14Q$
+M(2(-,#(X,"!%3D104D]#($I/65-424-+#3`R.3`@1$E-($$D($]&(#$P,`TP
+M,S`P(%!224Y4($-(4B0H,30W*2`O+R!214Y302!32UM2345.#3`S,3`@4D50
+M14%4(`TP,S(P($I/65-424-+*#(L020I#3`S,S`@4%))3E0@(A,B+$$D+"(@
+M("`@("`@("`B#3`S-#`@54Y424P@1D%,4T4-,#4@+R\@2T%25$]414LR#3`P
+M,#8@+R\-,#`P-R`O+PTP,#$P("\OS$E4150@041215-32T%25$]414L-,#`R
+M,"`O+U-+4DE6150@058@0TA225,@2D]21T4-,#`S,"`O+U9%4E-)3TX@,#(Z
+M(#(X+B!-04H@,3DX,PTP,#0P("\O0T)-($-/34%,+3@P#3`P-3`@+R\-,#`V
+M,"!-05A!3E0Z/30P.R!-05A&6TQ4.CTU#3`P-S`@+R\-,#`X,"!$24T@1494
+M15).04U.)"!/1B`R,`TP,#DP($1)32!&7%).04U.)"!/1B`R,`TP,3`P($1)
+M32!'05150412)"!/1B`R,"P@4U1!1"0@3T8@,C`-,#$Q,"!$24T@04Y.050D
+M($]&(#(P#3`Q,C`@1$E-($5.2$54)"!/1B`Q+"!35D%2)"!/1B`Q#3`Q,S`@
+M1$E-($I/0B0@3T8@,0TP,30P($1)32!415A4)"@Q.DU!6$9;3%0I($]&(#$U
+M#3`Q-3`@1$E-($8D*#$Z34%804Y4+$U!6$9;3%0I($]&(#(P#3`Q-C`@1$E-
+M($Y!34XD($]&(#0P+"!&,3(D($]&(#0P#3`Q-S`@+R\-,#$X,"!-05@Z/3`[
+M(%!/4U0Z/3`-,#$Y,"!415A4)"@Q*3H](C$N(,5&5$523D%-3B(-,#(P,"!4
+M15A4)"@R*3H](C(N(,9<4DY!34XB#3`R,3`@5$585"0H,RDZ/2(S+B#'051!
+M($A54TY2+B(-,#(R,"!415A4)"@T*3H](C0N(-!/4U1.4BX@4U1!1"(-,#(S
+M,"!415A4)"@U*3H](C4N(,%.1%)%(%504$PN(@TP,C0P("\O#3`R-3`@2%M-
+M5$$G041215-315(-,#(V,"!-14Y9#3`R-S`@4U!!4D$G041215-315(-,#(X
+M,"`O+PTP,CDP(%!23T,@345.62`-,#,P,"!72$E,12!44E5%($1/("\O1D]2
+M159%4@TP,S$P(%)%3E-!)U-+6U)-14X-,#,R,"!32U))5B=&4EU.*#4L,2D-
+M,#,S,"!04DE.5"`B,2`](,E.4TM2259.24Y'(@TP,S0P(%!224Y4("(R(#T@
+MU5132U))5DY)3D<B#3`S-3`@4%))3E0@(C,@/2#26U1414Q315(B#3`S-C`@
+M4%))3E0@(C0@/2#402!"3U)4(%!/4U0B#3`S-S`@4%))3E0@(C4@/2#!5E-,
+M551!(@TP,S@P(%!224Y4(`TP,SDP($E.4%54("+66TQ*($I/0CH@(CH@2D]"
+M)`TP-#`P($-!4T4@2D]")"!/1@TP-#$P(%=(14X@(C$B#3`T,C`@24Y32U))
+M5DY)3D<-,#0S,"!72$5.("(R(@TP-#0P(%544TM2259.24Y'#3`T-3`@5TA%
+M3B`B,R(-,#0V,"!26U1414Q315(-,#0W,"!72$5.("(T(@TP-#@P(%1!)T)/
+M4E0-,#0Y,"!72$5.("(U(@TP-3`P(%)%5%523@TP-3$P($]42$525TE312`-
+M,#4R,"!.54Q,("\O24Y'150-,#4S,"!%3D1#05-%(`TP-30P($5.1%=(24Q%
+M(`TP-34P($5.1%!23T,@345.60TP-38P("\O#3`U-S`@4%)/0R!)3E-+4DE6
+M3DE.1R`-,#4X,"!215!%050@#3`U.3`@4D5.4T$G4TM;4DU%3@TP-C`P($9/
+M4B!&6TQ4.CTQ(%1/($U!6$9;3%0@1$\@2%M-5$$H1EM,5"D-,#8Q,"!(6TU4
+M02=35D%2*"+26U1414Q315(@*$HO/%)%5#XI/R(L4U9!4B0I#3`V,C`@248@
+M4U9!4B0\/B(B(%1(14X@4EM45$$G4$]35`TP-C,P($A;351!)U-605(H(LE.
+M4UM45"`H3B\\4D54/BD_("(L4U9!4B0I#3`V-#`@248@4U9!4B0](B(@5$A%
+M3B!36U14)U504`TP-C4P($A;351!)U-605(H(L9,15)!("A.+SQ2150^*3\@
+M(BQ35D%2)"D-,#8V,"!53E1)3"!35D%2)#TB3B(-,#8W,"!%3D104D]#($E.
+M4TM2259.24Y'#3`V.#`@+R\-,#8Y,"!04D]#($A;351!*$9;3%0I(`TP-S`P
+M($-!4T4@1EM,5"!/1@TP-S$P(%=(14X@,0TP-S(P(%-,72=)3BA415A4)"@Q
+M*2Q%1E1%4DY!34XD*0TP-S,P(%=(14X@,@TP-S0P(%-,72=)3BA415A4)"@R
+M*2Q&7%).04U.)"D-,#<U,"!72$5.(#,-,#<V,"!33%TG24XH5$585"0H,RDL
+M1T%454%$4B0I#3`W-S`@5TA%3B`T#3`W.#`@4TQ=)TE.*%1%6%0D*#0I+%-4
+M040D*0TP-SDP(%=(14X@-0TP.#`P(%-,72=)3BA415A4)"@U*2Q!3DY!5"0I
+M#3`X,3`@3U1(15)725-%(`TP.#(P($Y53$P@+R]!3E5,3$5202!04D]#15-3
+M14X-,#@S,"!%3D1#05-%(`TP.#0P($5.1%!23T,@2%M-5$$-,#@U,"`O+PTP
+M.#8P(%!23T,@4TQ=)TE.*$Q%1%1%6%0D+%)%1B!"548D*2`-,#@W,"!32U))
+M5B=&4EU.*#(J1EM,5"LS+#$I#3`X.#`@4%))3E0@3$5$5$585"0L(CHB#3`X
+M.3`@4D5.4T$G24Y&6TQ4*$9;3%0I#3`Y,#`@4TM2258G1E)=3B@R*D9;3%0K
+M,RPR,"D-,#DQ,"!)3E!55"`B(CH@0E5&)`TP.3(P($5.1%!23T,@4TQ=)TE.
+M#3`Y,S`@+R\-,#DT,"!04D]#(%);5%1!)U!/4U0@#3`Y-3`@4D5014%4(`TP
+M.38P(%)%3E-!)U)!1"@R,"D-,#DW,"!)3E!55"`BP4Y'12!&6TQ4($Y534U%
+M4CH@(CH@1EM,5`TP.3@P($A;351!*$9;3%0I#3`Y.3`@4D5.4T$G4D%$*#(P
+M*0TQ,#`P($A;351!)U-605(H(L9,15)!(%);5%1%3%-%4B`H2B\\4D54/BD_
+M("(L4U9!4B0I#3$P,3`@54Y424P@4U9!4B0](B(-,3`R,"!%3D104D]#(%);
+M5%1!)U!/4U0-,3`S,"`O+PTQ,#0P(%!23T,@4UM45"=54%`@#3$P-3`@3D%-
+M3B0Z/45&5$523D%-3B0K1EQ23D%-3B0-,3`V,"!"24Y37$LH3D%-3B0I#3$P
+M-S`@+R\-,3`X,"!&3U(@2CH]34%8(%1/(%!/4U0@4U1%4"`M,2!$3PTQ,#DP
+M($9/4B!&6TQ4.CTQ(%1/($U!6$9;3%0@1$\-,3$P,"!&)"A**S$L1EM,5"DZ
+M/48D*$HL1EM,5"D-,3$Q,"!%3D1&3U(@1EM,5`TQ,3(P($5.1$9/4B!*#3$Q
+M,S`@4UM45"=)3BA03U-4*0TQ,30P($U!6#H]34%8*S$-,3$U,"!%3D104D]#
+M(%-;5%0G55!0#3$Q-C`@+R\-,3$W,"!04D]#(%-;5%0G24XH4$]35"D@#3$Q
+M.#`@1B0H4$]35"PQ*3H]149415).04U.)`TQ,3DP($8D*%!/4U0L,BDZ/49<
+M4DY!34XD#3$R,#`@1B0H4$]35"PS*3H]1T%454%$4B0-,3(Q,"!&)"A03U-4
+M+#0I.CU35$%$)`TQ,C(P($8D*%!/4U0L-2DZ/4%.3D%4)`TQ,C,P($5.1%!2
+M3T,@4UM45"=)3@TQ,C0P("\O#3$R-3`@4%)/0R!"24Y37$LH3B0I(`TQ,C8P
+M(%8Z/3$[($@Z/4U!6`TQ,C<P(%=(24Q%(%8\/4@@1$\-,3(X,"!-.CTH5BM(
+M*2!$258@,@TQ,CDP($8Q,B0Z/48D*$TL,2DK1B0H32PR*0TQ,S`P($E&($XD
+M/$8Q,B0@5$A%3@TQ,S$P($@Z/4TM,0TQ,S(P($5,4T4@#3$S,S`@5CH]32LQ
+M#3$S-#`@14Y$248@#3$S-3`@14Y$5TA)3$4@#3$S-C`@4$]35#H]5@TQ,S<P
+M($5.1%!23T,@0DE.4UQ+#3$S.#`@+R\-,3,Y,"!04D]#(%544TM2259.24Y'
+M(`TQ-#`P(%)%4$5!5"`-,30Q,"!/2SH]5%)510TQ-#(P(%)%3E-!)U-+6U)-
+M14X-,30S,"!32U))5B=&4EU.*#$P+#$I#3$T-#`@4%))3E0@(C$@/2#%3B!%
+M3DM%3"!!1%)%4U,B#3$T-3`@4%))3E0@(C(@/2#,25-402!<5D52(%-!351,
+M24=!(@TQ-#8P(%!224Y4(`TQ-#<P($E.4%54("+!3D=%($I/0D(Z("`B.B!*
+M3T(D#3$T.#`@4%))3E0@#3$T.3`@4%))3E0@(C$@/2#55%-+4DE&5"!002!3
+M2UM232(-,34P,"!04DE.5"`B,B`](-544TM22494(%!!(%!224Y415(B#3$U
+M,3`@4%))3E0@#3$U,C`@24Y0550@(L%.1T4@14Y(150Z(CH@14Y(150D#3$U
+M,S`@248@14Y(150D/2(R(B!42$5.(%-%3$5#5"!/5510550@(DQ0(@TQ-30P
+M($-!4T4@2D]")"!/1@TQ-34P(%=(14X@(C$B#3$U-C`@1D]2($9;3%0Z/3$@
+M5$\@,B!$3R!(6TU402A&6TQ4*0TQ-3<P($9)3DXH149415).04U.)"Q&7%).
+M04U.)"D-,34X,"!)1B!&54Y.150@5$A%3B!32U))5B=55"A03U-4*0TQ-3DP
+M(%=(14X@(C(B#3$V,#`@1D]2(%!/4U0Z/3$@5$\@34%8($1/(%-+4DE6)U54
+M*%!/4U0I#3$V,3`@3U1(15)725-%(`TQ-C(P($]+.CU&04Q310TQ-C,P($5.
+M1$-!4T4@#3$V-#`@54Y424P@3TL-,38U,"!%3D104D]#(%544TM2259.24Y'
+M#3$V-C`@+R\-,38W,"!04D]#($9)3DXH14XD+$9.)"D@#3$V.#`@248@34%8
+M/3`@5$A%3@TQ-CDP(%)%3E-!)U-+6U)-14X-,3<P,"!32U))5B=&4EU.*#$P
+M+#$P*0TQ-S$P(%!224Y4("++05)43U1%2T54(%M2(%1/350A(@TQ-S(P($95
+M3DY%5#H]1D%,4T4-,3<S,"!66TY402@R*0TQ-S0P(%)%5%523@TQ-S4P($5.
+M1$E&(`TQ-S8P($Y!34XD.CU%3B0K1DXD#3$W-S`@0DE.)T9)3DXH3D%-3B0I
+M#3$W.#`@14Y$4%)/0R!&24Y.#3$W.3`@+R\-,3@P,"!04D]#($))3B=&24Y.
+M*$XD*2`-,3@Q,"!6.CTQ.R!(.CU-05@-,3@R,"!&54Y.150Z/49!3%-%#3$X
+M,S`@5TA)3$4@3D]4("A&54Y.150@3U(@2#Q6*2!$3PTQ.#0P($TZ/2A6*T@I
+M($1)5B`R#3$X-3`@1C$R)#H]1B0H32PQ*2M&)"A-+#(I#3$X-C`@1E5.3D54
+M.CTH3B0]1C$R)"D-,3@W,"!)1B!.)#Q&,3(D(%1(14X-,3@X,"!(.CU-+3$-
+M,3@Y,"!%3%-%(`TQ.3`P(%8Z/4TK,0TQ.3$P($5.1$E&(`TQ.3(P($5.1%=(
+M24Q%(`TQ.3,P($E&($953DY%5"!42$5.(%!/4U0Z/4T-,3DT,"!%3D104D]#
+M($))3B=&24Y.#3$Y-3`@+R\-,3DV,"!04D]#(%-+4DE6)U54*$XI(`TQ.3<P
+M($E&($5.2$54)#P^(C(B(%1(14X-,3DX,"!214Y302=32UM2345.#3$Y.3`@
+M4TM2258G1E)=3B@Q,"PQ*0TR,#`P($5.1$E&(`TR,#$P(%!224Y4($8D*$XL
+M,BD[1B0H3BPQ*2PB+"(-,C`R,"!04DE.5"!&)"A.+#,I+"(L(@TR,#,P(%!2
+M24Y4($8D*$XL-"D-,C`S-2!04DE.5"!&)"A.+#4I#3(P-#`@248@14Y(150D
+M/#XB,B(@5$A%3@TR,#4P($A;351!)U-605(H(M1264-+(%!=(#Q215154DX^
+M.B`B+%-605(D*0TR,#8P($5,4T4@#3(P-S`@4EE#2R=&4D%-#3(P.#`@14Y$
+M248@#3(P.3`@14Y$4%)/0R!32U))5B=55`TR,3`P("\O#3(Q,3`@4%)/0R!2
+M6U1414Q315(@#3(Q,C`@4D5.4T$G4TM;4DU%3@TR,3,P(%-+4DE6)T9274XH
+M,3`L,2D-,C$T,"!&3U(@1EM,5#H],2!43R`R($1/($A;351!*$9;3%0I#3(Q
+M-3`@1DE.3BA%1E1%4DY!34XD+$9<4DY!34XD*0TR,38P($E&($953DY%5"!4
+M2$5.#3(Q-S`@4D5.4T$G4TM;4DU%3@TR,3@P($9/4B!&6TQ4.CTQ(%1/($U!
+M6$9;3%0@1$\-,C$Y,"!32U))5B=&4EU.*#(J1EM,5"LS+#$I#3(R,#`@4%))
+M3E0@5$585"0H1EM,5"D-,C(Q,"!32U))5B=&4EU.*#(J1EM,5"LS+#(P*0TR
+M,C(P(%!224Y4($8D*%!/4U0L1EM,5"D-,C(S,"!%3D1&3U(@1EM,5`TR,C0P
+M(%);5%1!)U!/4U0-,C(U,"!36U14)TE.*%!/4U0I#3(R-C`@14Y$248@#3(R
+M-S`@14Y$4%)/0R!26U1414Q315(-,C(X,"`O+PTR,CDP(%!23T,@5$$G0D]2
+M5"`-,C,P,"!214Y302=32UM2345.#3(S,3`@1D]2($9;3%0Z/3$@5$\@,B!$
+M3R!(6TU402A&6TQ4*0TR,S(P($9)3DXH149415).04U.)"Q&7%).04U.)"D-
+M,C,S,"!)1B!&54Y.150@5$A%3@TR,S0P(%-+4DE6)U54*%!/4U0I#3(S-3`@
+M4TM2258G1E)=3B@R,"PQ*0TR,S8P($A;351!)U-605(H(M-+04Q,($1%3DY!
+M(%!/4U0@4D%$15)!4R`H2B\\4D54/BD_("(L4U9!4B0I#3(S-S`@248@4U9!
+M4B0](DHB(%1(14X@4U1264LG4$]35`TR,S@P($5.1$E&(`TR,SDP($5.1%!2
+M3T,@5$$G0D]25`TR-#`P("\O#3(T,3`@4%)/0R!35%)92R=03U-4(`TR-#(P
+M($9/4B!))SH]4$]35"!43R!-05@@1$\-,C0S,"!&3U(@1EM,5#H],2!43R!-
+M05A&6TQ4($1/#3(T-#`@1B0H22<L1EM,5"DZ/48D*$DG*S$L1EM,5"D-,C0U
+M,"!%3D1&3U(@1EM,5`TR-#8P($5.1$9/4B!))PTR-#<P($U!6#H]34%8+3$-
+M,C0X,"!%3D104D]#(%-44EE+)U!/4U0-,C0Y,"`O+PTR-3`P(%!23T,@2%M-
+M5$$G041215-315(@#3(U,3`@2TQ!4D=<4@TR-3(P($]014X@1DE,12`U+")!
+M1%),25-402(L4D5!1`TR-3,P(%)%040@1DE,12`U.B!-05@-,C4T,"!&3U(@
+M3CH],2!43R!-05@@1$\-,C4U,"!&3U(@1EM,5#H],2!43R!-05A&6TQ4($1/
+M#3(U-C`@4D5!1"!&24Q%(#4Z($8D*$XL1EM,5"D-,C4W,"!%3D1&3U(@1EM,
+M5`TR-3@P($5.1$9/4B!.#3(U.3`@0TQ/4T4@1DE,12`U#3(V,#`@14Y$4%)/
+M0R!(6TU402=!1%)%4U-%4@TR-C$P("\O#3(V,C`@4%)/0R!34$%202=!1%)%
+M4U-%4B`-,C8S,"!+3$%21UQ2#3(V,S4@4$%34R`B4S`Z04123$E35$$B("\O
+M(%1!($)/4E0@1T%-34%,($%$4D534TQ)4U1!("@@34]'1B`Q,B\X,R`I#3(V
+M-#`@3U!%3B!&24Q%(#4L(D%$4DQ)4U1!(BQ74DE410TR-C4P(%=2251%($9)
+M3$4@-3H@34%8#3(V-C`@1D]2($XZ/3$@5$\@34%8($1/#3(V-S`@1D]2($9;
+M3%0Z/3$@5$\@34%81EM,5"!$3PTR-C@P(%=2251%($9)3$4@-3H@1B0H3BQ&
+M6TQ4*0TR-CDP($5.1$9/4B!&6TQ4#3(W,#`@14Y$1D]2($X-,C<Q,"!#3$]3
+M12!&24Q%(#4-,C<R,"!%3D104D]#(%-005)!)T%$4D534T52#3(W,S`@+R\-
+M,C<T,"!04D]#($A;351!)U-605(H3$5$5$585"0L4D5&(%-605(D*2`-,C<U
+M,"!214Y302=2040H,C`I#3(W-C`@4%))3E0@0TA2)"@Q."DL3$5$5$585"0L
+M#3(W-S`@24Y0550@(B(Z(%-605(D#3(W.#`@14Y$4%)/0R!(6TU402=35D%2
+M#3(W.3`@+R\-,C@P,"!04D]#(%)%3E-!)U-+6U)-14X@#3(X,3`@4%))3E0@
+M0TA2)"@Q-#<I+`TR.#(P($5.1%!23T,@4D5.4T$G4TM;4DU%3@TR.#,P("\O
+M#3(X-#`@4%)/0R!214Y302=)3D9;3%0H1EM,5"D@#3(X-3`@4TM2258G1E)=
+M3B@R*D9;3%0K,RPR,"D-,C@V,"!&3U(@4#H],2!43R`Q.2!$3R!04DE.5"`B
+M("(L#3(X-S`@14Y$4%)/0R!214Y302=)3D9;3%0-,C@X,"`O+PTR.#DP(%!2
+M3T,@4TM2258G1E)=3BA8+%DI(`TR.3`P(%!224Y4($-(4B0H,3DI+`TR.3$P
+M($9/4B!0.CTQ(%1/(%@M,2!$3R!04DE.5"`-,CDR,"!&3U(@4#H],2!43R!9
+M+3$@1$\@4%))3E0@0TA2)"@R.2DL#3(Y,S`@14Y$4%)/0R!32U))5B=&4EU.
+M#3(Y-#`@+R\-,CDU,"!04D]#(%9;3E1!*%0I(`TR.38P($9/4B!0.CTQ(%1/
+M(%0J-S4P($1/($Y53$P-,CDW,"!%3D104D]#(%9;3E1!#3(Y.#`@+R\-,CDY
+M,"!04D]#(%)%3E-!)U)!1"A,3BD@#3,P,#`@4TM2258G1E)=3BA,3BPQ*0TS
+M,#$P($9/4B!0.CTQ(%1/(#,Y($1/(%!224Y4("(@(BP-,S`R,"!32U))5B=&
+M4EU.*$Q.+#$I#3,P,S`@14Y$4%)/0R!214Y302=2040-,S`T,"`O+PTS,#4P
+M(%!23T,@2TQ!4D=<4B`-,S`V,"!214Y302=32UM2345.#3,P-S`@2%M-5$$G
+M4U9!4B@BRTQ!4D=<4B!$25-+1514($]#2"!44EE#2R`\4D54/B(L4U9!4B0I
+M#3,P.#`@14Y$4%)/0R!+3$%21UQ2#3,P.3`@+R\-,#4@+R\@4TU=5$585`TP
+M,#`V("\O("TM+2TM+2T-,#`P-R`O+PTP,#$P($E.251)04Q)4T5224Y'#3`P
+M,C`@4TU=5$585"=-3TY)5$]2#3`P,S`@+R\-,#`T,"!04D]#($E.251)04Q)
+M4T5224Y'(`TP,#4P($1)32!415A4)"!/1B`Q,#`P+"!414-+14XD($]&(#$-
+M,#`V,"!$24T@5"0@3T8@,2P@059")"!/1B`Q,`TP,#<P($1)32!#3%(D($]&
+M(#$L(%-44EE+)"!/1B`Q#3`P.#`@1$E-($)!2R0@3T8@,2P@1E)!320@3T8@
+M,0TP,#DP($1)32!"3U)4)"!/1B`Q+"!.140D($]&(#$-,#$P,"!$24T@4U12
+M14-+)"!/1B`Q+"!.3TQ,)"!/1B`Q#3`Q,3`@1$E-($5.2"0@3T8@,2P@24Y3
+M2TI55"0@3T8@,0TP,3(P($1)32!-05)+)"!/1B`Q+"!54%`D($]&(#$-,#$S
+M,"!$24T@2$5-)"!/1B`Q+"!215154B0@3T8@,0TP,30P($1)32!2159/3B0@
+M3T8@,2P@4D563T9&)"!/1B`Q#3`Q-3`@1$E-($I/0B0@3T8@,2P@4U!#4R0@
+M3T8@,C`-,#$V,"!$24T@4D%$)"!/1B`T,"P@4UQ+)"!/1B`T,`TP,3<P($1)
+M32!.141=5"0@3T8@,C0L($)/4E1=5"0@3T8@-#`-,#$X,"!$24T@1DE,3D%-
+M3B0@3T8@,34-,#$Y,"`O+PTP,C`P($)!2R0Z/4-(4B0H,34W*2`O+T-24U(@
+M0D%#2PTP,C$P($9204TD.CU#2%(D*#(Y*2`O+T-24U(@4DE'2%0-,#(R,"!3
+M5%)92R0Z/4-(4B0H,C`I("\O1$5,151%#3`R,S`@4U1214-+)#H]0TA2)"@Q
+M-C0I("\O34%22T5224Y'#3`R-#`@3D],3"0Z/4-(4B0H,"D@+R_!T\/)R2!.
+M54Q,#3`R-3`@0TQ2)#H]0TA2)"@Q-#<I("\O0TQ%05(@4T-2145.#3`R-C`@
+M3D5$)#H]0TA2)"@Q-RD@+R]#4E-2($1/5TX-,#(W,"!54%`D.CU#2%(D*#$T
+M-2D@+R]#4E-2(%50#3`R.#`@24Y32TI55"0Z/4-(4B0H,30X*2`O+TE.4T52
+M5`TP,CDP($A%320Z/4-(4B0H,3DI("\O0U)34B!(3TU%#3`S,#`@4D5455(D
+M.CU#2%(D*#$S*2`O+U)%5%523@TP,S$P(%)%5D].)#H]0TA2)"@Q."D@+R]2
+M159%4E-%($].#3`S,C`@4D563T9&)#H]0TA2)"@Q-#8I("\O4D5615)312!/
+M1D8-,#,S,"`O+PTP,S0P($9/4B!).CTQ(%1/(#0P($1/#3`S-3`@0D]25%U4
+M)"A).DDI.CU&4D%-)`TP,S8P($5.1$9/4B!)#3`S-S`@+R\-,#,X,"!&3U(@
+M23H],2!43R`R-"!$3PTP,SDP($Y%1%U4)"A).DDI.CU.140D#3`T,#`@14Y$
+M1D]2($D-,#0Q,"`O+PTP-#(P(%-00U,D*#$Z,C`I.CTB(B`O+TU%3$Q!3E)5
+M30TP-#,P($)2141$.CTS.3L@34%8.CTP#3`T-#`@2UQ%4DY!)U-+04Q,)TE.
+M.CU&04Q310TP-#4P($5.1%!23T,@24Y)5$E!3$E315))3D<-,#0V,"`O+PTP
+M-#<P(%!23T,@4TU=5$585"=-3TY)5$]2(`TP-#@P(%)%4$5!5"`-,#0Y,"!2
+M15!%050@#3`U,#`@4D5.4T$G4TM;4DU%3@TP-3$P(%9)4T$G5$585`TP-3(P
+M($]+.CU44E5%.R!024PZ/3`-,#4S,"!!3D=%)TI/0D(-,#4T,"!#05-%($I/
+M0B0@3T8-,#4U,"!72$5.(").(@TP-38P(%-+4DE6)TY9)U1%6%0-,#4W,"!7
+M2$5.(")*(@TP-3@P($9<4EM.1%)!)U1%6%0-,#4Y,"!72$5.(")5(@TP-C`P
+M(%-+4DE6)U54)U1%6%1%3@TP-C$P(%=(14X@(E,B#3`V,C`@4U!!4D$G5$58
+M5$5.#3`V,S`@5TA%3B`B3"(-,#8T,"!(6TU402=415A414X-,#8U,"!72$5.
+M(")!(@TP-C8P($M<15).02=32T%,3"=)3CH]5%)510TP-C<P($]42$525TE3
+M12`-,#8X,"!/2SH]1D%,4T4-,#8Y,"!%3D1#05-%(`TP-S`P(%5.5$E,($]+
+M#3`W,3`@54Y424P@2UQ%4DY!)U-+04Q,)TE.#3`W,C`@14Y$4%)/0R!335U4
+M15A4)TU/3DE43U(-,#<S,"`O+PTP-S0P(%!23T,@04Y'12=*3T)"(`TP-S4P
+M(%-+4DE6)T9274XH,2PQ*0TP-S8P(%!224Y4("+!3D=%($I/0D(Z("`@("!.
+M($H@52!3($P@02(-,#<W,"!(6TU402A*3T(D+#$L,3(I#3`W.#`@14Y$4%)/
+M0R!!3D=%)TI/0D(-,#<Y,"`O+PTP.#`P(%!23T,@4TM2258G3EDG5$585"`-
+M,#@Q,"!!5D(D.CU54%`D*TY%1"0K0D%+)"M&4D%-)`TP.#(P($%60B0Z/4%6
+M0B0K24Y32TI55"0K0TQ2)"M(14TD#3`X,S`@4D5.4T$G4TM;4DU%3@TP.#0P
+M(%9)4T$G2D]"0B@B3B(I#3`X-3`@34%8.CTQ.R!024PZ/3$[(%1%6%0D.CTB
+M("(-,#@V,"!36U14)T%6.CTS#3`X-S`@2%M-5$$G5$585"A415A4)"Q-05@L
+M4$E,*0TP.#@P($U!6#H]34%8+3$-,#@Y,"!415A4)#H]5$585"0H,3I-05@I
+M#3`Y,#`@14Y$4%)/0R!32U))5B=.62=415A4#3`Y,3`@+R\-,#DR,"!04D]#
+M(%9)4T$G2D]"0BA*3T(D*2`-,#DS,"!32U))5B=&4EU.*#$L,2D-,#DT,"!0
+M4DE.5"`B("`@("`@("`@("`@("`@3B!*(%4@4R!,($$B#3`Y-3`@4#H]2D]"
+M)"!)3B`B3B!*(%4@4R!,($$B#3`Y-C`@4TM2258G1E)=3B@Q+%`K,34I#3`Y
+M-S`@4D56)T].#3`Y.#`@4%))3E0@2D]")"P-,#DY,"!2158G3T9&#3$P,#`@
+M14Y$4%)/0R!625-!)TI/0D(-,3`Q,"`O+PTQ,#(P(%!23T,@2%M-5$$H4D5&
+M(%1%0TM%3B0L6"Q9*2`-,3`S,"!414-+14XD.CTB(CL@5"0Z/4Y/3$PD#3$P
+M-#`@5$E$.CTP#3$P-3`@5TA)3$4@5"0]3D],3"0@1$\-,3`V,"!4)#H]2T59
+M)`TQ,#<P(%1)1#H]5$E$*S$-,3`X,"!)1B!*3T(D/2)*(B!42$5.#3$P.3`@
+M34%22T5202@U+#(P*0TQ,3`P($5,4T4@#3$Q,3`@34%22T5202A8+%DI#3$Q
+M,C`@14Y$248@#3$Q,S`@14Y$5TA)3$4@#3$Q-#`@2T],3$$G5$5#2T5..CTH
+M5"0@24X@059")"D-,3$U,"!)1B!+3TQ,02=414-+14X@5$A%3B!215154DX-
+M,3$V,"!)1B!4)#U215154B0@5$A%3B!4)#H](EXB#3$Q-S`@4%))3E0@5"0L
+M#3$Q.#`@5$5#2T5.)#H]5"0-,3$Y,"!%3D104D]#($A;351!#3$R,#`@+R\-
+M,3(Q,"!04D]#($U!4DM%4D$H6"Q9*2`-,3(R,"!(6TU402=-6U)+10TQ,C,P
+M(%-+4DE6)T9274XH6"Q9*0TQ,C0P($E&(%1)1"!-3T0@.#PT(%1(14X-,3(U
+M,"!04DE.5"!-05)+)"P-,3(V,"!%3%-%(`TQ,C<P(%!224Y4(%-44D5#2R0L
+M#3$R.#`@14Y$248@#3$R.3`@4%))3E0@0D%+)"P-,3,P,"!%3D104D]#($U!
+M4DM%4D$-,3,Q,"`O+PTQ,S(P(%!23T,@1EQ26TY$4D$G5$585"`-,3,S,"!!
+M5D(D.CU54%`D*TY%1"0K24Y32TI55"0K0TQ2)"M(14TD#3$S-#`@5DE302=4
+M15A4#3$S-3`@5DE302=*3T)"*")*(BD-,3,V,"!(6TU402=37$M415A4#3$S
+M-S`@1DE.3BA024PI#3$S.#`@248@3D]4($953DY%5"!42$5.(%)%5%523@TQ
+M,SDP(%)%3E-!)U-+6U)-14X-,30P,"!625-!)TI/0D(H(DHB*0TQ-#$P($9<
+M3E-415(-,30R,"!36U14)T%6.CTS#3$T,S`@2%M-5$$G5$585"A415A4)"Q-
+M05@L4$E,*0TQ-#0P($5.1%!23T,@1EQ26TY$4D$G5$585`TQ-#4P("\O#3$T
+M-C`@4%)/0R!(6TU402=37$M415A4(`TQ-#<P(%-+4DE6)T9274XH,2PQ*0TQ
+M-#@P(%!224Y4(")37$M%4CHB#3$T.3`@4UM45"=!5CH],0TQ-3`P($I/0B0Z
+M/2)!(@TQ-3$P($TZ/3$[(%`Z/3$[(%-<2R0Z/2(@(@TQ-3(P($A;351!)U1%
+M6%0H4UQ+)"Q-+%`I#3$U,S`@2D]")#H](DHB#3$U-#`@4UQ+)#H]4UQ+)"@Q
+M.DTM,2D-,34U,"!%3D104D]#($A;351!)U-<2U1%6%0-,34V,"`O+PTQ-3<P
+M(%!23T,@2%M-5$$G5$585"A2148@5$585"0L4D5&($U!6"Q2148@4$E,*2`-
+M,34X,"!(6TU402A414-+14XD+%@H4$E,*2Q9*%!)3"DI#3$U.3`@5TA)3$4@
+M3D]4(%1%0TM%3B0](D`B($1/#3$V,#`@248@3D]4($M/3$Q!)U1%0TM%3B!4
+M2$5.#3$V,3`@0T%312!414-+14XD($]&#3$V,C`@5TA%3B!35%)92R0-,38S
+M,"!35%)92R=414-+14X-,38T,"!72$5.($)!2R0-,38U,"!)1B!024P^,2!4
+M2$5.(%!)3#H]4$E,+3$-,38V,"!72$5.($9204TD#3$V-S`@248@4$E,/$U!
+M6"!42$5.(%!)3#H]4$E,*S$-,38X,"!/5$A%4E=)4T4@#3$V.3`@4UM45"=)
+M3B=414-+14X-,3<P,"!%3D1#05-%(`TQ-S$P($E&($I/0B0](DHB(%1(14X@
+M1EQ.4U1%4@TQ-S(P($5.1$E&(`TQ-S,P($A;351!*%1%0TM%3B0L6"A024PI
+M+%DH4$E,*2D-,3<T,"!%3D172$E,12`-,3<U,"!%3D104D]#($A;351!)U1%
+M6%0-,3<V,"`O+PTQ-S<P(%!23T,@4UM45"=)3B=414-+14X@#3$W.#`@5$58
+M5"0H4$E,*S$Z34%8*S$I.CU415A4)"A024PZ34%8*0TQ-SDP(%1%6%0D*%!)
+M3"DZ/51%0TM%3B0-,3@P,"!024PZ/5!)3"LQ.R!-05@Z/4U!6"LQ#3$X,3`@
+M14Y$4%)/0R!36U14)TE.)U1%0TM%3@TQ.#(P("\O#3$X,S`@4%)/0R!35%)9
+M2R=414-+14X@#3$X-#`@248@4$E,/3$@5$A%3B!215154DX@+R]$3R!.3U1(
+M24Y'#3$X-3`@248@4$E,/3(@5$A%3@TQ.#8P(%1%6%0D.CU415A4)"@R.DU!
+M6"D-,3@W,"!%3%-%(`TQ.#@P(%1%6%0D.CU415A4)"@Q.E!)3"TR*2M415A4
+M)"A024PZ34%8*0TQ.#DP($5.1$E&(`TQ.3`P(%!)3#H]4$E,+3$-,3DQ,"!-
+M05@Z/4U!6"TQ#3$Y,C`@14Y$4%)/0R!35%)92R=414-+14X-,3DS,"`O+PTQ
+M.30P(%!23T,@5DE302=415A4(`TQ.34P(%)%3E-!)U-+6U)-14X-,3DV,"!3
+M2U))5B=&4EU.*#0L,2D-,3DW,"!04DE.5"!415A4)`TQ.3@P($5.1%!23T,@
+M5DE302=415A4#3$Y.3`@+R\-,C`P,"!04D]#($9)3DXH4D5&(%`I(`TR,#$P
+M($953DY%5#H]4UQ+)"!)3B!415A4)`TR,#(P(%`Z/4953DY%5`TR,#,P($5.
+M1%!23T,@1DE.3@TR,#0P("\O#3(P-3`@4%)/0R!32U))5B=55"=415A414X@
+M#3(P-C`@5EM,2B=%3DA%5`TR,#<P(%)%3E-!)U-+6U)-14X-,C`X,"!625-!
+M)TI/0D(H(E4B*0TR,#DP(%-+4DE6)T9274XH-"PQ*0TR,3`P($Q4.CTP.R!,
+M3CH],#L@4D%$)#H](B(-,C$Q,"!)1B!%3D@D/2)0(B!42$5.(%-%3$5#5"!/
+M5510550@(DQ0(@TR,3(P($9/4B!45#H],2!43R!-05@@1$\-,C$S,"!)1B!4
+M15A4)"A45#I45"D](EXB(%1(14X-,C$T,"!04DE.5"!2040D#3(Q-3`@4D%$
+M)#H](B([($Q4.CTP.R!,3CHK,0TR,38P($5,4T4@#3(Q-S`@4D%$)#H]4D%$
+M)"M415A4)"A45#I45"D-,C$X,"!,5#H]3%0K,0TR,3DP($E&(%1%6%0D*%14
+M*3TB("(@5$A%3B!-4#H]5%0-,C(P,"!)1B!,5#U"4D5$1"!42$5.#3(R,3`@
+M248@5$585"0H5%0K,2D](B`B(%1(14X-,C(R,"!,5#H]0E)%1$0[(%14.CU4
+M5"LQ#3(R,S`@14Q312`-,C(T,"!-05)'24XZ/514+4U0#3(R-3`@5%0Z/4U0
+M#3(R-C`@3%0Z/4)2141$+4U!4D=)3@TR,C<P($5.1$E&(`TR,C@P(%!224Y4
+M(%)!1"0H,3I,5"D-,C(Y,"!2040D.CTB(@TR,S`P($Q4.CTP.R!,3CHK,0TR
+M,S$P($5.1$E&(`TR,S(P($5.1$E&(`TR,S,P($5.1$9/4B!45`TR,S0P(%!2
+M24Y4(%)!1"0-,C,U,"!)1B!%3D@D/2)0(B!42$5.#3(S-C`@4T5,14-4($]5
+M5%!55"`B1%,B#3(S-S`@14Q312`-,C,X,"!66TY400TR,SDP($5.1$E&(`TR
+M-#`P($5.1%!23T,@4TM2258G550G5$585$5.#3(T,3`@+R\-,C0R,"!04D]#
+M(%9;3$HG14Y(150@#3(T,S`@4D5.4T$G4TM;4DU%3@TR-#0P(%9)4T$G2D]"
+M0B@B52(I#3(T-3`@4TM2258G1E)=3B@U+#$I#3(T-C`@4%))3E0@(E,@/2!5
+M5%-+4DE&5"!072!32UM232(-,C0W,"!04DE.5"`-,C0X,"!04DE.5"`B4"`]
+M(%544TM22494(%!=(%!224Y415(B#3(T.3`@4%))3E0@#3(U,#`@4%))3E0@
+M(L%.1T4@14Y(150Z(@TR-3$P(%)%4$5!5"`-,C4R,"!(6TU402A%3D@D+#DL
+M,30I#3(U,S`@54Y424P@14Y()"!)3B`B4U`B#3(U-#`@14Y$4%)/0R!66TQ*
+M)T5.2$54#3(U-3`@+R\-,C4V,"!04D]#(%-005)!)U1%6%1%3B`-,C4W,"!6
+M25-!)TI/0D(H(E,B*0TR-3@P(%-+4DE6)T9274XH,C0L,2D-,C4Y,"!04DE.
+M5"`BQDE,3D%-3B(L#3(V,#`@24Y0550@1DE,3D%-3B0-,C8Q,"!&24Q.04U.
+M)#H](D`P.B(K1DE,3D%-3B0-,C8R,"!/4$5.($9)3$4@,BQ&24Q.04U.)"Q7
+M4DE410TR-C,P(%=2251%($9)3$4@,CH@5$585"0-,C8T,"!#3$]310TR-C4P
+M($5.1%!23T,@4U!!4D$G5$585$5.#3(V-C`@+R\-,C8W,"!04D]#($A;351!
+M)U1%6%1%3B`-,C8X,"!625-!)TI/0D(H(DPB*0TR-CDP(%-+4DE6)T9274XH
+M,C0L,2D-,C<P,"!04DE.5"`BQDE,3D%-3B(L#3(W,3`@24Y0550@1DE,3D%-
+M3B0-,C<R,"!/4$5.($9)3$4@,BQ&24Q.04U.)"Q214%$#3(W,S`@4D5!1"!&
+M24Q%(#(Z(%1%6%0D#3(W-#`@0TQ/4T4-,C<T-2!-05@Z/4Q%3BA415A4)"D-
+M,C<U,"!%3D104D]#($A;351!)U1%6%1%3@TR-S8P("\O#3(W-S`@1E5.0R!8
+M*%`I(`TR-S@P($E&(%`@34]$(#0P/3`@5$A%3@TR-SDP(%)%5%523B!0($1)
+M5B`T,"M36U14)T%6#3(X,#`@14Q312`-,C@Q,"!215154DX@4"!$258@-#`K
+M4UM45"=!5BLQ#3(X,C`@14Y$248@#3(X,S`@14Y$1E5.0R!8#3(X-#`@+R\-
+M,C@U,"!&54Y#(%DH4"D@#3(X-C`@248@4"!-3T0@-#`],"!42$5.#3(X-S`@
+M4D5455).(#0P#3(X.#`@14Q312`-,C@Y,"!215154DX@4"!-3T0@-#`-,CDP
+M,"!%3D1)1B`-,CDQ,"!%3D1&54Y#(%D-,CDR,"`O+PTR.3,P(%!23T,@5EM.
+M5$$@#3(Y-#`@4TM2258G1E)=3B@Q+#$I#3(Y-3`@4D56)T].#3(Y-C`@4%))
+M3E0@(M1264-+(%!=(-)%5%523BU404Y'14Y414XZ("(L#3(Y-S`@24Y0550@
+M(B(Z(%0D#3(Y.#`@4D56)T]&1@TR.3DP($5.1%!23T,@5EM.5$$-,S`P,"`O
+M+PTS,#$P(%!23T,@2%M-5$$G35M22T4@#3,P,C`@248@,#Q024P@04Y$(%!)
+M3#P]34%8(%1(14X-,S`S,"!-05)+)#H]5$585"0H4$E,*0TS,#0P($5,4T4@
+M#3,P-3`@34%22R0Z/2(@(@TS,#8P($5.1$E&(`TS,#<P($5.1%!23T,@2%M-
+M5$$G35M22T4-,S`X,"`O+PTS,#DP(%!23T,@1EQ.4U1%4B`-,S$P,"!32U))
+M5B=&4EU.*#4L,2D-,S$Q,"!)1B!024P\/3(P(%1(14X-,S$R,"!04DE.5"!3
+M4$-3)"@Q.C(P+5!)3"DL#3,Q,S`@4%))3E0@5$585"0H,3I024PI+`TS,30P
+M($5,4T4@#3,Q-3`@4%))3E0@5$585"0H4$E,+3$Y.E!)3"DL#3,Q-C`@14Y$
+M248@#3,Q-S`@248@34%8+3(P/#U024P@5$A%3@TS,3@P($E&(%!)3"LQ/#U-
+M05@@5$A%3@TS,3DP(%!224Y4(%1%6%0D*%!)3"LQ.DU!6"DL#3,R,#`@4%))
+M3E0@4U!#4R0H,3HR,"TH34%8+5!)3"DI#3,R,3`@14Y$248@#3,R,C`@14Q3
+M12`-,S(S,"!04DE.5"!415A4)"A024PK,3I024PK,C`I#3,R-#`@14Y$248@
+M#3,R-3`@14Y$4%)/0R!&7$Y35$52#3,R-C`@+R\-,S(W,"!04D]#(%)%5B=/
+M3B`-,S(X,"!04DE.5"!2159/3B0L#3,R.3`@14Y$4%)/0R!2158G3TX-,S,P
+M,"`O+PTS,S$P(%!23T,@4D56)T]&1B`-,S,R,"!04DE.5"!2159/1D8D+`TS
+M,S,P($5.1%!23T,@4D56)T]&1@TS,S0P("\O#3,S-3`@4%)/0R!32U))5B=&
+M4EU.*%)!1"Q414-+14XI(`TS,S8P($U!4DM<4B=(14T-,S,W,"!-05)+7%(G
+M3D52)U1)3$PH4D%$*0TS,S@P($U!4DM<4B="3U)4)U1)3$PH5$5#2T5.*0TS
+M,SDP($5.1%!23T,@4TM2258G1E)=3@TS-#`P("\O#3,T,3`@4%)/0R!-05)+
+M7%(G2$5-(`TS-#(P(%!224Y4($A%320L#3,T,S`@14Y$4%)/0R!-05)+7%(G
+M2$5-#3,T-#`@+R\-,S0U,"!04D]#($U!4DM<4B=.15(G5$E,3"A,3BD@#3,T
+M-C`@4%))3E0@3D5$750D*#$Z3$XM,2DL#3,T-S`@14Y$4%)/0R!-05)+7%(G
+M3D52)U1)3$P-,S0X,"`O+PTS-#DP(%!23T,@34%22UQ2)T)/4E0G5$E,3"A0
+M3"D@#3,U,#`@4%))3E0@0D]25%U4)"@Q.E!,+3$I+`TS-3$P($5.1%!23T,@
+M34%22UQ2)T)/4E0G5$E,3`TS-3(P("\O#3,U,S`@4%)/0R!214Y302=32UM2
+M345.(`TS-30P(%!224Y4($-,4B0L#3,U-3`@14Y$4%)/0R!214Y302=32UM2
+M345.#3,U-C`@+R\-,#4@+R\@4DE402=34%))5$53("A414=.3DE34T4I#3`P
+M,3`@1$E-($U/0E,D($]&(#8T+"!#2"0@3T8@,2P@5$%,)"!/1B`T#3`P,C`@
+M3U!%3B!&24Q%(#(L(C`Z4U!2251%4R(L4D5!1`TP,#,P(%)%040@1DE,12`R
+M.B!-3T)3)`TP,#0P($1%1DE.12`P+$U/0E,D#3`P-3`@4D5!1"!&24Q%(#(Z
+M($U/0E,D#3`P-C`@1$5&24Y%(#$L34]"4R0-,#`W,"!214%$($9)3$4@,CH@
+M34]"4R0-,#`X,"!$149)3D4@,BQ-3T)3)`TP,#DP($-,3U-%($9)3$4@,@TP
+M,3`P($)!0TM'4D]53D0@,@TP,3$P($)/4D1%4B`R#3`Q,3(@24Y35%)52U1)
+M3TX-,#$R,"!3151'4D%02$E#(#`-,#$S,"!455)43$535$%412!&04Q310TP
+M,30P($E.250G3EQ4#3`Q-3`@4U!2251%0T],3U(@,"PQ#3`Q-C`@4U!2251%
+M0T],3U(@,2PQ#3`Q-S`@4U!2251%0T],3U(@,BPP#3`Q.#`@4U!2251%0T],
+M3U(@,RPP#3`Q.3`@4U!2251%4TE:12`P+#$L,0TP,C`P(%-04DE415-)6D4@
+M,2PQ+#$-,#(Q,"!34%))5$5325I%(#(L,2PQ#3`R,C`@4U!2251%4TE:12`S
+M+#$L,0TP,C,P($E$14Y42499(#`L,`TP,C0P($E$14Y42499(#(L,`TP,C4P
+M($E$14Y42499(#$L,0TP,C8P($E$14Y42499(#,L,0TP,C<P($0Z/3<N-3L@
+M1$5,5$$Q.CU$.R!$14Q403(Z/40-,#(X,"!54%`Z/38T.R!.140Z/3$Q-`TP
+M,CDP(%@Q.CTQ,C`[(%@R.CTQ,C`-,#,P,"!9,3H]55!0.R!9,CH]3D5$#3`S
+M,3`@4D5014%4(`TP,S(P(%@Q.BM$14Q403$[(%@R.BM$14Q403(-,#,S,"!)
+M1B!8,3PQ(%1(14X@6#$Z/3$[($1%3%1!,3H],`TP,S0P($E&(%@R/#$@5$A%
+M3B!8,CH],3L@1$5,5$$R.CTP#3`S-3`@248@6#$^,C<P(%1(14X@6#$Z/3(W
+M,#L@1$5,5$$Q.CTP#3`S-C`@248@6#(^,C<P(%1(14X@6#(Z/3(W,#L@1$5,
+M5$$R.CTP#3`S-S`@248@1$5,5$$Q/CTP(%1(14X-,#,X,"!34%))5$503U,@
+M,"Q8,2Q9,0TP,SDP(%-04DE415!/4R`Q+%@Q+%DQ#3`T,#`@14Q312`-,#0Q
+M,"!34%))5$503U,@,2Q8,2Q9,0TP-#(P(%-04DE415!/4R`P+%@Q+%DQ#3`T
+M,S`@14Y$248@#3`T-#`@248@1$5,5$$R/CTP(%1(14X-,#0U,"!34%))5$50
+M3U,@,BQ8,BQ9,@TP-#8P(%-04DE415!/4R`S+%@R+%DR#3`T-S`@14Q312`-
+M,#0X,"!34%))5$503U,@,RQ8,BQ9,@TP-#DP(%-04DE415!/4R`R+%@R+%DR
+M#3`U,#`@14Y$248@#3`U,3`@0T@D.CU+15DD#3`U,C`@248@0T@D/#Y#2%(D
+M*#`I(%1(14X-,#4S,"!)1B!#2"0](D$B(%1(14X@1$5,5$$Q.CTM1`TP-30P
+M($E&($-()#TB1"(@5$A%3B!$14Q403$Z/40-,#4U,"!)1B!#2"0](E,B(%1(
+M14X@1$5,5$$Q.CTP#3`U-C`@248@0T@D/2)*(B!42$5.($1%3%1!,CH]+40-
+M,#4W,"!)1B!#2"0](DPB(%1(14X@1$5,5$$R.CU$#3`U.#`@248@0T@D/2)+
+M(B!42$5.($1%3%1!,CH],`TP-3DP($E&($-()#TB("(@5$A%3B!).CU9,3L@
+M63$Z/5DR.R!9,CH]20TP-C`P($5.1$E&(`TP-C$P($E&(%-04DE414-/3$Q)
+M4TE/3B@Q+%12544I($]2(%-04DE414-/3$Q)4TE/3B@S+$9!3%-%*2!42$5.
+M($-/3$Q)4TE/3@TP-C(P($9,651402=.7%0-,#8S,"!53E1)3"!#2"0](E$B
+M#3`V-#`@4T545$585"`-,#8U,"!04D]#($E.250G3EQ4(`TP-C8P($Y.7%0Z
+M/3(-,#8W,"!$24T@3EQ45$52*$Y.7%0L,BD-,#8X,"!.62=.7%0-,#8Y,"!&
+M3U(@23H]-"!43R!.3EQ4*S,@1$\-,#<P,"!34%))5$5#3TQ/4B!)+#@-,#<Q
+M,"!)1$5.5$E&62!)+#(-,#<R,"!34%))5$5325I%($DL,"PP#3`W,S`@14Y$
+M1D]2($D-,#<T,"!34%))5$5#3TQ/4B`U+#<-,#<U,"!014Y#3TQ/4B`X#3`W
+M-C`@4DE402=.7%0-,#<W,"!-3U9%5$\@,"PR,`TP-S@P($1205=43R`P+#$Y
+M.0TP-SDP($1205=43R`S,3DL,3DY#3`X,#`@1%)!5U1/(#,Q.2PR,`TP.#$P
+M($1205=43R`P+#(P#3`X,C`@4U9!4E0Z/3`[(%9)5#H],`TP.#,P(%!/24Y4
+M#3`X-#`@23H]4U!2251%0T],3$E324].*#$L5%)512D-,#@U,"!%3D104D]#
+M($E.250G3EQ4#3`X-C`@+R\-,#@W,"!04D]#($9,651402=.7%0@#3`X.#`@
+M1DQ95%1!#3`X.3`@4DE402=.7%0-,#DP,"!%3D104D]#($9,651402=.7%0-
+M,#DQ,"`O+PTP.3(P(%!23T,@4DE402=.7%0@#3`Y,S`@1D]2($DZ/3$@5$\@
+M3DY<5"!$3R!34%))5$503U,@22LS+$Y<5%1%4BA)+#$I+$Y<5%1%4BA)+#(I
+M#3`Y-#`@14Y$4%)/0R!2251!)TY<5`TP.34P("\O#3`Y-C`@4%)/0R!&3%E4
+M5$$@#3`Y-S`@1D]2($DZ/3$@5$\@3DY<5"!$3PTP.3@P($Y<5%1%4BA)+#(I
+M.BU)*C0-,#DY,"!)1B!.7%1415(H22PR*3PT,"!42$5.($Y<5%1%4BA)+#(I
+M.CTR,#`[($Y<5%1%4BA)+#$I.CU23D0H,2PR-S`I#3$P,#`@14Y$1D]2($D-
+M,3`Q,"!%3D104D]#($9,651400TQ,#(P("\O#3$P,S`@4%)/0R!#3TQ,25-)
+M3TX@#3$P-#`@5DE4.BM34%))5$5#3TQ,25-)3TXH,2Q&04Q312D-,3`U,"!3
+M5D%25#HK4U!2251%0T],3$E324].*#,L1D%,4T4I#3$P-C`@0EE4)T]-#3$P
+M-S`@1D]2($DZ/3$@5$\@3DY<5"!$3PTQ,#@P($E&(%-04DE414-/3$Q)4TE/
+M3BA)*S,L1D%,4T4I(%1(14X-,3`Y,"!.7%1415(H22PQ*3H]4DY$*#$L,C<P
+M*0TQ,3`P($Y<5%1%4BA)+#(I.CTR,#`-,3$Q,"!%3D1)1B`-,3$R,"!%3D1&
+M3U(@20TQ,3,P(%!/24Y4#3$Q-#`@4DE402=.7%0-,3$U,"!).CU34%))5$5#
+M3TQ,25-)3TXH,2Q44E5%*0TQ,38P($5.1%!23T,@0T],3$E324].#3$Q-S`@
+M+R\-,3$X,"!04D]#(%!/24Y4(`TQ,3DP(%!%3D-/3$]2(#$-,3(P,"!35%(H
+M5DE4+%1!3"0I#3$R,3`@4$Q/5%1%6%0@-#`L."PB5TA)5$4Z("(K5$%,)`TQ
+M,C(P(%!%3D-/3$]2(#`-,3(S,"!35%(H4U9!4E0L5$%,)"D-,3(T,"!03$]4
+M5$585"`R,#`L."PB0DQ!0TLZ("`B*U1!3"0-,3(U,"!%3D104D]#(%!/24Y4
+M#3$R-C`@+R\-,3(W,"!04D]#(%-44BA)+%)%1B!404PD*2!#3$]3140-,3(X
+M,"!404PD.CTB("`@("([($HZ/3$P,#`-,3(Y,"!&3U(@2SH],2!43R`T($1/
+M#3$S,#`@5$%,)"A+*3H]0TA2)"@T."M)($1)5B!**0TQ,S$P($DZ/4D@34]$
+M($H[($HZ/4HO,3`-,3,R,"!%3D1&3U(@2PTQ,S,P($5.1%!23T,@4U12#3$S
+M-#`@4%)/0R!.62=.7%0@#3$S-3`@1D]2($DZ/3$@5$\@3DY<5"!$3PTQ,S8P
+M($Y<5%1%4BA)+#$I.CU23D0H."PR.#`I#3$S-S`@3EQ45$52*$DL,BDZ/5).
+M1"@Q,"PX,"D-,3,X,"!%3D1&3U(@20TQ,SDP($5.1%!23T,@3EDG3EQ4#3$T
+M,#`@+R\-,30Q,"!04D]#($)95"=/32`-,30R,"!)1B!6250\/5-605)4(%1(
+M14X-,30S,"!9,3H]55!0.R!9,CH]3D5$#3$T-#`@14Q312`-,30U,"!9,3H]
+M3D5$.R!9,CH]55!0#3$T-C`@14Y$248@#3$T-S`@14Y$4%)/0R!"650G3TT-
+M,30X,"`O+PTQ-3`P(%!23T,@24Y35%)52U1)3TX@#3$U,3`@4%))3E0@(I,B
+M#3$U,C`@4%))3E0@(D9)1U5215).02!&3%E45$%3(%-/32!!3D=%4R!(6U(@
+M.B(-,34S,"!04DE.5"`-,34T,"!04DE.5"`-,34U,"!04DE.5"`B("!$14X@
+M5DE402!34$5,05)%3CHB#3$U-C`@4%))3E0@#3$U-S`@4%))3E0@(D$@("!&
+M3%E45$$@750@5EM.4U1%4B(-,34X,"!04DE.5"`B4R`@(%-,551!($9,6514
+M02(-,34Y,"!04DE.5"`B1"`@($9,651402!=5"!(7$=%4B(-,38P,"!04DE.
+M5"`-,38Q,"!04DE.5"`B("!$14X@4U9!4E1!(%-014Q!4D5..B(-,38R,"!0
+M4DE.5"`-,38S,"!04DE.5"`B2B`@($9,651402!=5"!66TY35$52(@TQ-C0P
+M(%!224Y4(")+("`@4TQ55$$@1DQ95%1!(@TQ-C4P(%!224Y4("),("`@1DQ9
+M5%1!(%U4($A<1T52(@TQ-C8P(%!224Y4(`TQ-C<P(%!224Y4("(@4U1!4E1!
+M($U%1"!.74=/3B!404Y'14Y4.B(-,38X,"!215!%050@#3$V.3`@54Y424P@
+M2T59)#P^0TA2)"@P*0TQ-S`P($5.1%!23T,@24Y35%)52U1)3TX-,#$@+R\-
+M,#`Q,"!04D]#(%-/54Y$24Y)5"A63TQ5344I(`TP,#(P(%-)1#H],3,N,C4J
+M-#`Y-@TP,#,P($1)32!42$E33D]4120@3T8@,PTP,#0P(%!/2T4@4TE$*S(T
+M+%9/3%5-10TP,#4P($9/4B!).CTR(%1/(#$V(%-415`@-R!$3R!03TM%(%-)
+M1"M)+#`-,#`V,"!&3U(@23H],R!43R`Q-R!35$50(#<@1$\@4$]+12!3240K
+M22PX#3`P-S`@1D]2($DZ/34@5$\@,3D@4U1%4"`W($1/(%!/2T4@4TE$*TDL
+M-BHQ-BLQ,@TP,#@P($9/4B!).CTV(%1/(#(P(%-415`@-R!$3R!03TM%(%-)
+M1"M)+#`-,#`Y,"!&3U(@23H]-"!43R`Q."!35$50(#<@1$\@4$]+12!3240K
+M22PP#3`Q,#`@1$E-($Y/5$53)"!/1B`S*CDV+"!604Q515,H,#HY-2PR*0TP
+M,3$P($9/4B!).CTP(%1/(#DU($1/#3`Q,C`@4D5!1"!.3U1%4R0H22HS*S$Z
+M22HS*S,I+%9!3%5%4RA)+#$I+%9!3%5%4RA)+#(I#3`Q,S`@14Y$1D]2($D-
+M,#$T,"!$051!(")#,"`B+#$L,3@-,#$U,"!$051!(")#,",B+#$L,S4-,#$V
+M,"!$051!(")$,"`B+#$L-3(-,#$W,"!$051!(")$,",B+#$L-S`-,#$X,"!$
+M051!(")%,"`B+#$L.3`-,#$Y,"!$051!(")&,"`B+#$L,3$P#3`R,#`@1$%4
+M02`B1C`C(BPQ+#$S,@TP,C$P($1!5$$@(D<P("(L,2PQ-34-,#(R,"!$051!
+M(")',",B+#$L,3<Y#3`R,S`@1$%402`B03`@(BPQ+#(P-0TP,C0P($1!5$$@
+M(D(P("(L,2PR,S,-,#(U,"!$051!(")(,"`B+#(L-@TP,C8P($1!5$$@(D,Q
+M("(L,BPS-PTP,C<P($1!5$$@(D,Q(R(L,BPV.0TP,C@P($1!5$$@(D0Q("(L
+M,BPQ,#0-,#(Y,"!$051!(")$,2,B+#(L,30P#3`S,#`@1$%402`B13$@(BPR
+M+#$W.0TP,S$P($1!5$$@(D8Q("(L,BPR,C`-,#,R,"!$051!(")&,2,B+#,L
+M.`TP,S,P($1!5$$@(D<Q("(L,RPU-`TP,S0P($1!5$$@(D<Q(R(L,RPQ,#,-
+M,#,U,"!$051!(")!,2`B+#,L,34U#3`S-C`@1$%402`B0C$@(BPS+#(Q,`TP
+M,S<P($1!5$$@(D@Q("(L-"PQ,@TP,S@P($1!5$$@(D,R("(L-"PW,PTP,SDP
+M($1!5$$@(D,R(R(L-"PQ,SD-,#0P,"!$051!(")$,B`B+#0L,C`X#3`T,3`@
+M1$%402`B1#(C(BPU+#(U#3`T,C`@1$%402`B13(@(BPU+#$P,PTP-#,P($1!
+M5$$@(D8R("(L-2PQ.#4-,#0T,"!$051!(")&,B,B+#8L,38-,#0U,"!$051!
+M(")',B`B+#8L,3`X#3`T-C`@1$%402`B1S(C(BPV+#(P-@TP-#<P($1!5$$@
+M(D$R("(L-RPU,PTP-#@P($1!5$$@(D(R("(L-RPQ-C,-,#0Y,"!$051!(")(
+M,B`B+#@L,C,-,#4P,"!$051!(")#,R`B+#@L,30W#3`U,3`@1$%402`B0S,C
+M(BPY+#(Q#3`U,C`@1$%402`B1#,@(BPY+#$U.0TP-3,P($1!5$$@(D0S(R(L
+M,3`L-3`-,#4T,"!$051!(")%,R`B+#$P+#(P-0TP-34P($1!5$$@(D8S("(L
+M,3$L,3$T#3`U-C`@1$%402`B1C,C(BPQ,BPS,@TP-3<P($1!5$$@(D<S("(L
+M,3(L,C$V#3`U.#`@1$%402`B1S,C(BPQ,RPQ-38-,#4Y,"!$051!(")!,R`B
+M+#$T+#$P-PTP-C`P($1!5$$@(D(S("(L,34L-S`-,#8Q,"!$051!(")(,R`B
+M+#$V+#0W#3`V,C`@1$%402`B0S0@(BPQ-RPS-PTP-C,P($1!5$$@(D,T(R(L
+M,3@L-#(-,#8T,"!$051!(")$-"`B+#$Y+#8S#3`V-3`@1$%402`B1#0C(BPR
+M,"PQ,#`-,#8V,"!$051!(")%-"`B+#(Q+#$U-`TP-C<P($1!5$$@(D8T("(L
+M,C(L,C(W#3`V.#`@1$%402`B1C0C(BPR-"PV,PTP-CDP($1!5$$@(D<T("(L
+M,C4L,3<W#3`W,#`@1$%402`B1S0C(BPR-RPU-@TP-S$P($1!5$$@(D$T("(L
+M,C@L,C$T#3`W,C`@1$%402`B0C0@(BPS,"PQ-#$-,#<S,"!$051!(")(-"`B
+M+#,R+#DT#3`W-#`@1$%402`B0S4@(BPS-"PW-0TP-S4P($1!5$$@(D,U(R(L
+M,S8L.#4-,#<V,"!$051!(")$-2`B+#,X+#$R-@TP-S<P($1!5$$@(D0U(R(L
+M-#`L,C`P#3`W.#`@1$%402`B134@(BPT,RPU,@TP-SDP($1!5$$@(D8U("(L
+M-#4L,3DX#3`X,#`@1$%402`B1C4C(BPT."PQ,C<-,#@Q,"!$051!(")'-2`B
+M+#4Q+#DW#3`X,C`@1$%402`B1S4C(BPU-"PQ,3$-,#@S,"!$051!(")!-2`B
+M+#4W+#$W,@TP.#0P($1!5$$@(D(U("(L-C$L,C8-,#@U,"!$051!(")(-2`B
+M+#8T+#$X.`TP.#8P($1!5$$@(D,V("(L-C@L,30Y#3`X-S`@1$%402`B0S8C
+M(BPW,BPQ-CD-,#@X,"!$051!(")$-B`B+#<V+#(U,@TP.#DP($1!5$$@(D0V
+M(R(L.#$L,30S#3`Y,#`@1$%402`B138@(BPX-BPQ,#4-,#DQ,"!$051!(")&
+M-B`B+#DQ+#$T,`TP.3(P($1!5$$@(D8V(R(L.38L,C4T#3`Y,S`@1$%402`B
+M1S8@(BPQ,#(L,3DT#3`Y-#`@1$%402`B1S8C(BPQ,#@L,C(S#3`Y-3`@1$%4
+M02`B038@(BPQ,34L.#@-,#DV,"!$051!(")"-B`B+#$R,BPU,@TP.3<P($1!
+M5$$@(D@V("(L,3(Y+#$R,`TP.3@P($1!5$$@(D,W("(L,3,W+#0S#3`Y.3`@
+M1$%402`B0S<C(BPQ-#4L.#,-,3`P,"!$051!(")$-R`B+#$U,RPR-#<-,3`Q
+M,"!$051!(")$-R,B+#$V,RPS,0TQ,#(P($1!5$$@(D4W("(L,3<R+#(Q,`TQ
+M,#,P($1!5$$@(D8W("(L,3@S+#(U#3$P-#`@1$%402`B1C<C(BPQ.3,L,C4R
+M#3$P-3`@1$%402`B1S<@(BPR,#4L,3,S#3$P-C`@1$%402`B1S<C(BPR,3<L
+M,3@Y#3$P-S`@1$%402`B03<@(BPR,S`L,3<V#3$P.#`@1$%402`B0C<@(BPR
+M-#0L,3`S#3$P.3`@1$%402`B6B`@(BPP+#`-,3$P,"!%3D104D]#(%-/54Y$
+M24Y)5`TQ,3$P(%!23T,@04134BA63TE#12Q!5%1!0TLL1$5#05DL4U535$%)
+M3BQ214Q%05-%*2`-,3$R,"!*.CU3240K*%9/24-%+3$I*C<-,3$S,"!03TM%
+M($HK-2Q!5%1!0TLJ,38K1$5#05D-,3$T,"!03TM%($HK-BQ355-404E.*C$V
+M*U)%3$5!4T4-,3$U,"!%3D104D]#($%$4U(-,3$V,"!$051!(")!,2(L,BPB
+M6B(L,BPB0S(B+#(L(D$Q(BPR+")%,2(L,BPB6B(L,BPB03$B+#(L(D4Q(BPR
+M#3$Q-S`@1$%402`B0S$B+#(L(EHB+#(L(D4Q(BPR+")#,2(L,BPB03`B+#8L
+M(EHB+#(L(D4P(BPR+")!,"(L,@TQ,3@P($1!5$$@(D,Q(BPR+")!,"(L,BPB
+M2#`B+#(L(D$P(BPR+")(,"(L,BPB03`B+#(L(D<P(R(L,BPB2#`B+#(L(D0Q
+M(BPR#3$Q.3`@1$%402`B2#`B+#(L(D,Q(BPR+"):(BPR+")!,"(L,BPB6B(L
+M,BPB03$B+#(L(EHB+#(L(D,R(BPR+")!,2(L,BPB13$B+#(-,3(P,"!$051!
+M("):(BPR+")!,2(L,BPB13$B+#(L(D,Q(BPR+"):(BPR+")%,2(L,BPB0S$B
+M+#(L(D$P(BPV#3$R,3`@1$%402`B6B(L,BPB0S$B+#(L(EHB+#(L(D,Q(BPR
+M+"):(BPR+")#,2(L,BPB6B(L,BPB0S$B+#(-,3(R,"!$051!("):(BPR+")!
+M,2(L,BPB6B(L,BPB0S$B+#(L(EHB+#(L(D,Q(BPT+")(,"(L,BPB6B(L,@TQ
+M,C,P($1!5$$@(D4Q(BPR+"):(BPR+")%,2(L,BPB6B(L,BPB13$B+#(L(EHB
+M+#(L(D4Q(BPR+"):(BPR#3$R-#`@1$%402`B0S(B+#(L(EHB+#(L(D4Q(BPR
+M+"):(BPR+")%,2(L-"PB1#$C(BPR+"):(BPR+")(,"(L,@TQ,C4P($1!5$$@
+M(D4Q(BPR+")',2(L,BPB13$B+#(L(D8Q(R(L,BPB13$B+#(L(D8Q(R(L,BPB
+M13$B+#(L(D0Q(R(L,@TQ,C8P($1!5$$@(D8Q(R(L,BPB03$B+#(L(D8Q(R(L
+M,BPB1S$B+#(L(D8Q(R(L,BPB1S$B+#(L(D8Q(R(L,BPB13$B+#(-,3(W,"!$
+M051!(")',2(L,BPB13$B+#(L(D0Q(R(L,BPB13$B+#(L(D$Q(BPR+")%,2(L
+M,BPB1#$C(BPR+")%,2(L,@TQ,C@P($1!5$$@(D@Q(BPR+")%,2(L,BPB1#$C
+M(BPR+")%,2(L,BPB0S(B+#(L(D4Q(BPR+")$,2,B+#(L(D4Q(BPR#3$R.3`@
+M1$%402`B0S(B+#(L(D@Q(BPR+")!,2(L,BPB2#$B+#(L(D<Q(BPR+")&,2,B
+M+#(L(D4Q(BPR+")',2(L,@TQ,S`P($1!5$$@(EHB+#(L(D<Q(BPN-RPB1C$C
+M(BPN-RPB1S$B+"XW+")&,2,B+#(L(D4Q(BPV+"):(BPR+")%,2(L,@TQ,S$P
+M($1!5$$@(EHB+#(L(D<Q(BPR+")%,2(L,BPB2#`B+#(L(EHB+#(L(D4Q(BPR
+M+")(,"(L,BPB1S`B+#(-,3,R,"!$051!("):(BPR+")(,"(L,BPB1S`B+#(L
+M(D4P(BPV+"):(BPR+")","(L-"PB03`B+#(L(EHB+#(-,3,S,"!$051!(")$
+M,2(L-"PB0S$C(BPR+")$,2(L,BPB1S$B+#0L(D8Q(BPR+")%,2(L,BPB1C$B
+M+#(L(EHB+#(-,3,T,"!$051!(")$,2(L,BPB6B(L,BPB1C$B+#(L(EHB+#(L
+M(D$Q(BPR+")%,2(L,BPB1#$B+#(L(EHB+#(-,3,U,"!$051!(")&,2(L,BPB
+M1#$B+#(L(D@P(BPR+"):(BPR+")$,2(L,BPB2#`B+#(L(D<P(BPV+"):(BPR
+M#3$S-C`@1$%402`B1S`B+#(L(D,Q(BPR+")%,2(L,BPB0S$B+#(L(D0Q(BPR
+M+")#,2(L,BPB1#$B+#(L(D,Q(BPR#3$S-S`@1$%402`B2#`B+#(L(D0Q(BPR
+M+")&,2(L,BPB1#$B+#(L(D4Q(BPR+")$,2(L,BPB13$B+#(L(D0Q(BPR#3$S
+M.#`@1$%402`B0S$B+#(L(D4Q(BPR+")#,2(L,BPB2#`B+#(L(D,Q(BPR+")&
+M,2(L,BPB0S$B+#(L(D@P(BPR#3$S.3`@1$%402`B0S$B+#(L(D<Q(BPR+")#
+M,2(L,BPB2#`B+#(L(D,Q(BPR+")!,2(L,BPB0S$B+#(L(D@P(BPR#3$T,#`@
+M1$%402`B0S$B+#(L(D$Q(BPR+")',2(L,BPB1C$B+#(L(D<Q(BPR+")%,2(L
+M,BPB1#$B+#(L(D,Q(BPR#3$T,3`@1$%402`B13$B+#(L(EHB+#(L(D0Q(BPN
+M-RPB13$B+"XW+")$,2(L+C<L(D4Q(BPN-RPB1#$B+"XW+")#,2(L-@TQ-#(P
+M($1!5$$@(EHB+#(L(D4Q(BPR+"):(BPR+")%,2(L,BPB6B(L,BPB13$B+#(L
+M(EHB+#(L(D4Q(BPR#3$T,S`@1$%402`B6B(L,BPB0S(B+#(L(EHB+#(L(D4Q
+M(BPR+"):(BPR+")%,2(L-"PB1#$B+#(L(EHB+#(-,30T,"!$051!(")$,2(L
+M,BPB6B(L,BPB1#$B+#(L(EHB+#(L(D0Q(BPR+"):(BPR+")$,2(L,BPB6B(L
+M,@TQ-#4P($1!5$$@(D@Q(BPR+"):(BPR+")$,2(L,BPB6B(L,BPB1#$B+#0L
+M(D,Q(BPR+"):(BPR+")!,2(L-`TQ-#8P($1!5$$@(D,R(BPR+")!,2(L,BPB
+M1S$B+#0L(D8Q(BPX+")!,2(L+C<L(D<Q(BPN-RPB1C$B+"XW+")%,2(L+C<-
+M,30W,"!$051!(")$,2(L,3(L(D8Q(BPN-RPB13$B+"XW+")$,2(L+C<L(D,Q
+M(BPN-RPB0C`B+#(L(D0Q(BPR+")&,2(L,@TQ-#@P($1!5$$@(D0Q(BPR+")"
+M,"(L,BPB03`B+#(L(D(P(BPR+")!,"(L,BPB1S`C(BPR+"):(BPR+")%,"(L
+M,@TQ-#DP($1!5$$@(EHB+#(L(D8P(BPT+")%,"(L,BPB6B(L,BPB03`B+#0L
+M(D<P(R(L,BPB2#`B+#(L(D0Q(BPT#3$U,#`@1$%402`B0S$B+#(L(D@P(BPR
+M+")#,2(L-"PB03`B+"XW+")(,"(L+C<L(D,Q(BPN-RPB1#$B+"XW+")%,2(L
+M-`TQ-3$P($1!5$$@(D,Q(BPR+")%,2(L,BPB03$B+#(N-2PB6B(L,RPB13$B
+M+#,L(EHB+#(L(D0Q(BPS+")#,2(L,RXU#3$U,C`@1$%402`B2#`B+#,N-RPB
+M0S$B+#0L(D@P(BPY+")!,"(L,30L(EHB+#,P+")86"(L,`TQ-3,P(%-/54Y$
+M24Y)5"@Q-2D-,34T,"!$24T@3B0@3T8@,RP@3C$D($]&(#$L($XS)"!/1B`Q
+M#3$U-3`@4SH]4TE$#3$U-C`@1D]2($E).CTQ(%1/(#,@1$\-,34W,"!!1%-2
+M*$E)+#`L-"PQ,BPQ,"D-,34X,"!%3D1&3U(@24D-,34Y,"!#3TY44D],.CTS
+M,@TQ-C`P(%)%4$5!5"`-,38Q,"!.)#H](B`@("(-,38R,"!214%$($XD*#$Z
+M,RDL3$Y'#3$V,S`@248@3B0\/B)86"`B(%1(14X-,38T,"!)1B!.)#P^(EH@
+M("(@5$A%3@TQ-C4P($XD*#(I.CU#2%(D*$]21"A.)"@R*2DK-"D-,38V,"!)
+M.CTH*$XD($E.($Y/5$53)"DM,2DO,PTQ-C<P(%!/2T4@4RQ604Q515,H22PR
+M*0TQ-C@P(%!/2T4@4RLQ+%9!3%5%4RA)+#$I#3$V.3`@4$]+12!3*S0L0T].
+M5%)/3"LQ#3$W,#`@14Q312`-,3<Q,"!03TM%(%,K-"Q#3TY44D],#3$W,C`@
+M1D]2($E).CTQ(%1/(#(P($1/#3$W,S`@14Y$1D]2($E)#3$W-#`@14Y$248@
+M#3$W-3`@1D]2($E).CTQ(%1/($Q.1RHS,"!$3PTQ-S8P($5.1$9/4B!)20TQ
+M-S<P(%!/2T4@4RLT+$-/3E123TP-,3<X,"!3.BLW#3$W.3`@248@4SU3240K
+M,RHW(%1(14X@4SH]4TE$#3$X,#`@14Y$248@#3$X,3`@54Y424P@14]$#3$X
+M,C`@4$]+12!3240K,C0L,`TQ.#,P(%!23T,@2R`-,3@T,"!03TM%(%-)1"LR
+M-"PP#3$X-3`@14Y$4%)/0R!+#3`U("\O($=2049)2RXP,0TP,#$P(%!%3D-/
+M3$]2(#`-,#`R,"!"04-+1U)/54Y$(#$P#3`P,S`@0D]21$52(#$Q#3`P-#`@
+M4T541U)!4$A)0R`P#3`P-3`@5%525$Q%4U1!5$4@1D%,4T4-,#`U-2!!6$Q!
+M4@TP,#8P("\O#3`P-S`@1DQ95%1!)U1)3$PH,"PM-2D-,#`X,"!2251!)U1)
+M3$PH-2PP*0TP,#DP(%))5$$G5$E,3"@M-2PU*0TP,3`P(%))5$$G5$E,3"@P
+M+"TU*0TP,3$P("\O#3`Q,C`@+R\-,#$S,"!&64Q,)TDH,2PQ*0TP,30P(%=(
+M24Q%($M%620]0TA2)"@P*2!$3R!.54Q,#3`Q-3`@4T545$585"`-,#$V,"!0
+M4DE.5"!#2%(D*#$T*2P-,#$W,"!014Y#3TQ/4B`X#3`Q.#`@0D%#2T=23U5.
+M1"`Q,0TP,3DP($)/4D1%4B`Q,`TP,C`P("\O#3`R,3`@4%)/0R!&3%E45$$G
+M5$E,3"A8+%DI(`TP,C(P(%@Z/3$V,"M8*C$V#3`R,S`@63H],3`P*UDJ,3`-
+M,#(T,"!-3U9%5$\@6"Q9#3`R-3`@14Y$4%)/0R!&3%E45$$G5$E,3`TP,C8P
+M("\O#3`R-S`@4%)/0R!2251!)U1)3$PH6"Q9*2`-,#(X,"!8.CTQ-C`K6"HQ
+M-@TP,CDP(%DZ/3$P,"M9*C$P#3`S,#`@1%)!5U1/(%@L60TP,S$P($5.1%!2
+M3T,@4DE402=424Q,#3`S,C`@+R\-,#,S,"!04D]#($993$PG22A8+%DI(`TP
+M,S0P(%@Z/3$V,"M8*C$V#3`S-3`@63H],3`P*UDJ,3`-,#,V,"!&24Q,(%@L
+M60TP,S<P($5.1%!23T,@1EE,3"=)#3`S.#`@+R\--3`P,"!04D]#($%83$%2
+M(`TU,#$P($18.CTR.R!$63H],@TU,#(P($U/5D543R`P+#$P,`TU,#,P($12
+M05=43R`S,C`L,3`P#34P-#`@34]6151/(#$V,"PP#34P-3`@1%)!5U1/(#$V
+M,"PR,#`--3`V,"!2251!)U-+04Q!#34P-S`@34]6151/(#$V,"PQ,#`--3`X
+M,"!%3D104D]#($%83$%2#34P.3`@+R\--3$P,"!04D]#(%))5$$G4TM!3$$@
+M#34Q,3`@34]6151/(#`L,3`P#34Q,C`@1D]2($TZ/3`@5$\@,S$Y(%-415`@
+M,38@1$\--3$S,"!,3T126U14)TU!4DM%4DE.1RA-+#$P,"D--3$T,"!%3D1&
+M3U(@30TU,34P($9/4B!-.CTP(%1/(#$Y.2!35$50(#$P($1/#34Q-C`@5EU'
+M4EM45"=-05)+15))3D<H,38P+$TI#34Q-S`@14Y$1D]2($T--3$X,"!%3D10
+M4D]#(%))5$$G4TM!3$$--3$Y,"`O+PTU,C`P(%!23T,@3$]$4EM45"=-05)+
+M15))3D<H6"Q9*2`--3(Q,"!-3U9%5$\@32Q9*T19#34R,C`@1%)!5U1/($TL
+M62U$60TU,C,P($5.1%!23T,@3$]$4EM45"=-05)+15))3D<--3(T,"`O+PTU
+M,C4P(%!23T,@5EU'4EM45"=-05)+15))3D<H6"Q9*2`--3(V,"!-3U9%5$\@
+M6"M$6"Q9#34R-S`@1%)!5U1/(%@M1%@L60TU,C@P($5.1%!23T,@5EU'4EM4
+M5"=-05)+15))3D<--3(Y,"`O+PTQ,"!'4D%&24LG4U1!4E0-,#`R,"!44D5+
+M04Y4#3`P,S`@1U)!1DE+)U-43U!0#3`P-#`@+R\-,#`U,"!04D]#($=2049)
+M2R=35$%25"`-,#`V,"!014Y#3TQ/4B`P#3`P-S`@0D%#2T=23U5.1"`Q,`TP
+M,#@P($)/4D1%4B`Q,0TP,#DP(%-%5$=205!(24,@,`TP,3`P(%154E1,15-4
+M051%($9!3%-%#3`Q,3`@05A,05(-,#$R,"!%3D104D]#($=2049)2R=35$%2
+M5`TP,3,P("\O#3`Q-#`@4%)/0R!44D5+04Y4(`TP,34P($9,651402=424Q,
+M*#`L,"D-,#$V,"!2251!)U1)3$PH-RPW*0TP,3<P(%))5$$G5$E,3"@U+"TS
+M*0TP,3@P(%))5$$G5$E,3"@P+#`I#3`Q.3`@14Y$4%)/0R!44D5+04Y4#3`R
+M,#`@+R\-,#(Q,"!04D]#($=2049)2R=35$]04"`-,#(R,"!72$E,12!+15DD
+M/4-(4B0H,"D@1$\@3E5,3`TP,C,P(%-%5%1%6%0@#3`R-#`@4%))3E0@0TA2
+M)"@Q-"DL#3`R-3`@4$5.0T],3U(@.`TP,C8P($)!0TM'4D]53D0@,3$-,#(W
+M,"!"3U)$15(@,3`-,#(X,"!%3D104D]#($=2049)2R=35$]04`TP,CDP("\O
+M#3`S,#`@4%)/0R!&3%E45$$G5$E,3"A8+%DI(`TP,S$P(%@Z/3$V,"M8*C$V
+M#3`S,C`@63H],3`P*UDJ,3`-,#,S,"!-3U9%5$\@6"Q9#3`S-#`@14Y$4%)/
+M0R!&3%E45$$G5$E,3`TP,S4P("\O#3`S-C`@4%)/0R!2251!)U1)3$PH6"Q9
+M*2`-,#,W,"!8.CTQ-C`K6"HQ-@TP,S@P(%DZ/3$P,"M9*C$P#3`S.3`@1%)!
+M5U1/(%@L60TP-#`P($5.1%!23T,@4DE402=424Q,#3`T,3`@+R\-,#0R,"!0
+M4D]#($993$PG22A8+%DI(`TP-#,P(%@Z/3$V,"M8*C$V#3`T-#`@63H],3`P
+M*UDJ,3`-,#0U,"!&24Q,(%@L60TP-#8P($5.1%!23T,@1EE,3"=)#3`T-S`@
+M+R\-,#0X,"!04D]#($%83$%2(`TP-#DP($18.CTR.R!$63H],@TP-3`P($U/
+M5D543R`P+#$P,`TP-3$P($1205=43R`S,C`L,3`P#3`U,C`@34]6151/(#$V
+M,"PP#3`U,S`@1%)!5U1/(#$V,"PR,#`-,#4T,"!2251!)U-+04Q!#3`U-3`@
+M34]6151/(#$V,"PQ,#`-,#4V,"!%3D104D]#($%83$%2#3`U-S`@+R\-,#4X
+M,"!04D]#(%))5$$G4TM!3$$@#3`U.3`@34]6151/(#`L,3`P#3`V,#`@1D]2
+M($TZ/3`@5$\@,S$Y(%-415`@,38@1$\-,#8Q,"!,3T126U14)TU!4DM%4DE.
+M1RA-+#$P,"D-,#8R,"!%3D1&3U(@30TP-C,P($9/4B!-.CTP(%1/(#$Y.2!3
+M5$50(#$P($1/#3`V-#`@5EU'4EM45"=-05)+15))3D<H,38P+$TI#3`V-3`@
+M14Y$1D]2($T-,#8V,"!%3D104D]#(%))5$$G4TM!3$$-,#8W,"`O+PTP-C@P
+M(%!23T,@3$]$4EM45"=-05)+15))3D<H6"Q9*2`-,#8Y,"!-3U9%5$\@32Q9
+M*T19#3`W,#`@1%)!5U1/($TL62U$60TP-S$P($5.1%!23T,@3$]$4EM45"=-
+M05)+15))3D<-,#<R,"`O+PTP-S,P(%!23T,@5EU'4EM45"=-05)+15))3D<H
+M6"Q9*2`-,#<T,"!-3U9%5$\@6"M$6"Q9#3`W-3`@1%)!5U1/(%@M1%@L60TP
+M-S8P($5.1%!23T,@5EU'4EM45"=-05)+15))3D<-,#<W,"`O+PTP-2`O+R!'
+M4D%&24LN,#,-,#`Q,"!'4D%&24LG4U1!4E0-,#`R,"!44DE!3D=%3"=-140G
+M4TM51T=!#3`P,S`@1U)!1DE+)U-43U!0#3`P-#`@+R\-,#`U,"!04D]#(%12
+M24%.1T5,)TU%1"=32U5'1T$@#3`P-C`@1DQ95%1!)U1)3$PH,"PP*0TP,#<P
+M(%))5$$G5$E,3"@W+#<I#3`P.#`@4DE402=424Q,*#4L+3,I#3`P.3`@4DE4
+M02=424Q,*#`L,"D-,#$P,"!&64Q,)TDH,BPQ*0TP,3$P($5.1%!23T,@5%))
+M04Y'14PG345$)U-+54='00TP,3(P("\O#34P,#`@4%)/0R!'4D%&24LG4U1!
+M4E0@#34P,3`@4$5.0T],3U(@,`TU,#(P($)!0TM'4D]53D0@,3`--3`S,"!"
+M3U)$15(@,3$--3`T,"!3151'4D%02$E#(#`--3`U,"!455)43$535$%412!&
+M04Q310TU,#8P($%83$%2#34P-S`@14Y$4%)/0R!'4D%&24LG4U1!4E0--3`X
+M,"`O+PTU,#DP(%!23T,@1U)!1DE+)U-43U!0(`TU,3`P(%=(24Q%($M%620]
+M0TA2)"@P*2!$3R!.54Q,#34Q,3`@4T545$585"`--3$R,"!04DE.5"!#2%(D
+M*#$T*2P--3$S,"!014Y#3TQ/4B`X#34Q-#`@0D%#2T=23U5.1"`Q,0TU,34P
+M($)/4D1%4B`Q,`TU,38P($5.1%!23T,@1U)!1DE+)U-43U!0#34Q-S`@+R\-
+M-3$X,"!04D]#($9,651402=424Q,*%@L62D@#34Q.3`@6#H],38P*U@J,38-
+M-3(P,"!9.CTQ,#`K62HQ,`TU,C$P($U/5D543R!8+%D--3(R,"!%3D104D]#
+M($9,651402=424Q,#34R,S`@+R\--3(T,"!04D]#(%))5$$G5$E,3"A8+%DI
+M(`TU,C4P(%@Z/3$V,"M8*C$V#34R-C`@63H],3`P*UDJ,3`--3(W,"!$4D%7
+M5$\@6"Q9#34R.#`@14Y$4%)/0R!2251!)U1)3$P--3(Y,"`O+PTU,S`P(%!2
+M3T,@1EE,3"=)*%@L62D@#34S,3`@6#H],38P*U@J,38--3,R,"!9.CTQ,#`K
+M62HQ,`TU,S,P($9)3$P@6"Q9#34S-#`@14Y$4%)/0R!&64Q,)TD--3,U,"`O
+M+PTU,S8P(%!23T,@05A,05(@#34S-S`@1%@Z/3([($19.CTR#34S.#`@34]6
+M151/(#`L,3`P#34S.3`@1%)!5U1/(#,R,"PQ,#`--30P,"!-3U9%5$\@,38P
+M+#`--30Q,"!$4D%75$\@,38P+#(P,`TU-#(P(%))5$$G4TM!3$$--30S,"!-
+M3U9%5$\@,38P+#$P,`TU-#0P($5.1%!23T,@05A,05(--30U,"`O+PTU-#8P
+M(%!23T,@4DE402=32T%,02`--30W,"!-3U9%5$\@,"PQ,#`--30X,"!&3U(@
+M33H],"!43R`S,3D@4U1%4"`Q-B!$3PTU-#DP($Q/1%);5%0G34%22T5224Y'
+M*$TL,3`P*0TU-3`P($5.1$9/4B!-#34U,3`@1D]2($TZ/3`@5$\@,3DY(%-4
+M15`@,3`@1$\--34R,"!674=26U14)TU!4DM%4DE.1R@Q-C`L32D--34S,"!%
+M3D1&3U(@30TU-30P($5.1%!23T,@4DE402=32T%,00TU-34P("\O#34U-C`@
+M4%)/0R!,3T126U14)TU!4DM%4DE.1RA8+%DI(`TU-3<P($U/5D543R!-+%DK
+M1%D--34X,"!$4D%75$\@32Q9+419#34U.3`@14Y$4%)/0R!,3T126U14)TU!
+M4DM%4DE.1PTU-C`P("\O#34V,3`@4%)/0R!674=26U14)TU!4DM%4DE.1RA8
+M+%DI(`TU-C(P($U/5D543R!8*T18+%D--38S,"!$4D%75$\@6"U$6"Q9#34V
+M-#`@14Y$4%)/0R!674=26U14)TU!4DM%4DE.1PTU-C4P("\O#3$P($=2048G
+M4U1!4E0-,#`R,"!314=,02=))U-/3$5.#3`P,C4@1EE,3"=54%`-,#`S,"!'
+M4D%&)U-43U`-,#`T,"`O+PTP,#4P(%!23T,@4T5'3$$G22=33TQ%3B`-,#`W
+M,"!&3U(@03H],"!43R`S-C`@4U1%4"`V,"!$3PTP,#@P(%0Z/4$O,3@P*C,N
+M,30Q-3D-,#`Y,"!8.CTR*E-)3BA4*2TT.R!9.CTR*D-/4RA4*0TP,3`P(%12
+M14M!3E0H6"Q9*0TP,3$P($5.1$9/4B!!#3`Q,C`@14Y$4%)/0R!314=,02=)
+M)U-/3$5.#3`Q,S`@+R\-,#$T,"!04D]#(%1214M!3E0H6"Q9*2`-,#$U,"!&
+M3%E45$$G5$E,3"A8+%DI#3`Q-C`@6#H]6"LW.R!9.CU9*S<-,#$W,"!2251!
+M)U1)3$PH6"Q9*0TP,3@P(%@Z/5@M,CL@63H]62TQ,`TP,3DP(%))5$$G5$E,
+M3"A8+%DI#3`R,#`@6#H]6"TU.R!9.CU9*S,-,#(Q,"!2251!)U1)3$PH6"Q9
+M*0TP,C(P($5.1%!23T,@5%)%2T%.5`TP,C,P("\O#3`R-#`@4%)/0R!&64Q,
+M)U504"`-,#(U,"!&3U(@4CH],B!43R`S($1/#3`R-C`@1D]2($$Z/3`@5$\@
+M,S8P(%-415`@,S`@1$\-,#(W,"!4.CU!+S$X,"HS+C$T,34Y#3`R.#`@6#H]
+M4BI#3U,H5"D[(%DZ/5(J4TE.*%0I#3`R.3`@1EE,3"A8+%DI#3`S,#`@14Y$
+M1D]2($$-,#,Q,"!%3D1&3U(@4@TP,S(P($5.1%!23T,@1EE,3"=54%`-,#,S
+M,"`O+PTU,#`P(%!23T,@1U)!1B=35$%25"`--3`Q,"!014Y#3TQ/4B`P#34P
+M,C`@0D%#2T=23U5.1"`Q,`TU,#,P($)/4D1%4B`Q,0TU,#0P(%-%5$=205!(
+M24,@,`TU,#4P(%154E1,15-4051%($9!3%-%#34P-C`@05A,05(--3`W,"!%
+M3D104D]#($=2048G4U1!4E0--3`X,"`O+PTU,#DP(%!23T,@1U)!1B=35$]0
+M(`TU,3`P(%=(24Q%($M%620]0TA2)"@P*2!$3R!.54Q,#34Q,3`@4T545$58
+M5"`--3$R,"!04DE.5"!#2%(D*#$T*2P--3$S,"!014Y#3TQ/4B`X#34Q-#`@
+M0D%#2T=23U5.1"`Q,0TU,34P($)/4D1%4B`Q,`TU,38P($5.1%!23T,@1U)!
+M1B=35$]0#34Q-S`@+R\--3$X,"!04D]#($9,651402=424Q,*%@L62D@#34Q
+M.3`@6#H],38P*U@J,38--3(P,"!9.CTQ,#`K62HQ,`TU,C$P($U/5D543R!8
+M+%D--3(R,"!%3D104D]#($9,651402=424Q,#34R,S`@+R\--3(T,"!04D]#
+M(%))5$$G5$E,3"A8+%DI(`TU,C4P(%@Z/3$V,"M8*C$V#34R-C`@63H],3`P
+M*UDJ,3`--3(W,"!$4D%75$\@6"Q9#34R.#`@14Y$4%)/0R!2251!)U1)3$P-
+M-3(Y,"`O+PTU,S`P(%!23T,@1EE,3"A8+%DI(`TU,S$P(%@Z/3$V,"M8*C$V
+M#34S,C`@63H],3`P*UDJ,3`--3,S,"!&24Q,(%@L60TU,S0P($5.1%!23T,@
+M1EE,3`TU,S4P("\O#34S-C`@4%)/0R!!6$Q!4B`--3,W,"!$6#H],CL@1%DZ
+M/3(--3,X,"!-3U9%5$\@,"PQ,#`--3,Y,"!$4D%75$\@,S(P+#$P,`TU-#`P
+M($U/5D543R`Q-C`L,`TU-#$P($1205=43R`Q-C`L,C`P#34T,C`@4DE402=3
+M2T%,00TU-#,P($U/5D543R`Q-C`L,3`P#34T-#`@14Y$4%)/0R!!6$Q!4@TU
+M-#4P("\O#34T-C`@4%)/0R!2251!)U-+04Q!(`TU-#<P($U/5D543R`P+#$P
+M,`TU-#@P($9/4B!-.CTP(%1/(#,Q.2!35$50(#$V($1/#34T.3`@3$]$4EM4
+M5"=-05)+15))3D<H32PQ,#`I#34U,#`@14Y$1D]2($T--34Q,"!&3U(@33H]
+M,"!43R`Q.3D@4U1%4"`Q,"!$3PTU-3(P(%9=1U);5%0G34%22T5224Y'*#$V
+M,"Q-*0TU-3,P($5.1$9/4B!-#34U-#`@14Y$4%)/0R!2251!)U-+04Q!#34U
+M-3`@+R\--34V,"!04D]#($Q/1%);5%0G34%22T5224Y'*%@L62D@#34U-S`@
+M34]6151/($TL62M$60TU-3@P($1205=43R!-+%DM1%D--34Y,"!%3D104D]#
+M($Q/1%);5%0G34%22T5224Y'#34V,#`@+R\--38Q,"!04D]#(%9=1U);5%0G
+M34%22T5224Y'*%@L62D@#34V,C`@34]6151/(%@K1%@L60TU-C,P($1205=4
+M3R!8+418+%D--38T,"!%3D104D]#(%9=1U);5%0G34%22T5224Y'#34V-3`@
+M+R\-,3`@1U)!1B=35$%25`TP,#(P($-)4DM%3`TP,#,P($=2048G4U1/4`TP
+M,#0P("\O#3`P-3`@4%)/0R!#25)+14P@#3`P-C`@34%22T5224Y'*#$L+3(I
+M#3`P-S`@1DQ95%1!)U1)3$PH-2PM,BD-,#`X,"!&3U(@03H],"!43R`S-C`@
+M4U1%4"`Q,"!$3PTP,#DP(%0Z/4$O,3@P*C,N,30Q-3D-,#$P,"!8.CTT*D-/
+M4RA4*2LQ#3`Q,3`@63H]-"I324XH5"DM,@TP,3(P(%))5$$G5$E,3"A8+%DI
+M#3`Q,S`@14Y$1D]2($$-,#$T,"!%3D104D]#($-)4DM%3`TP,34P("\O#3`Q
+M-C`@4%)/0R!-05)+15))3D<H6"Q9*2`-,#$W,"!&3%E45$$G5$E,3"A8+3(O
+M,38L62D-,#$X,"!2251!)U1)3$PH6"LR+S$V+%DI#3`Q.3`@1DQ95%1!)U1)
+M3$PH6"Q9+3(O,34I#3`R,#`@4DE402=424Q,*%@L62LR+S$U*0TP,C$P($5.
+M1%!23T,@34%22T5224Y'#3`R,C`@+R\-,#(S,"!04D]#($=2048G4U1!4E0@
+M#3`R-#`@4$5.0T],3U(@,`TP,C4P($)!0TM'4D]53D0@,3`-,#(V,"!"3U)$
+M15(@,3$-,#(W,"!3151'4D%02$E#(#`-,#(X,"!455)43$535$%412!&04Q3
+M10TP,CDP($%83$%2#3`S,#`@14Y$4%)/0R!'4D%&)U-405)4#3`S,3`@+R\-
+M,#,R,"!04D]#($=2048G4U1/4"`-,#,S,"!72$E,12!+15DD/4-(4B0H,"D@
+M1$\@3E5,3`TP,S0P(%-%5%1%6%0@#3`S-3`@4%))3E0@0TA2)"@Q-"DL#3`S
+M-C`@4$5.0T],3U(@.`TP,S<P($)!0TM'4D]53D0@,3$-,#,X,"!"3U)$15(@
+M,3`-,#,Y,"!%3D104D]#($=2048G4U1/4`TP-#`P("\O#3`T,3`@4%)/0R!&
+M3%E45$$G5$E,3"A8+%DI(`TP-#(P(%@Z/3$V,"M8*C$V#3`T,S`@63H],3`P
+M*UDJ,34-,#0T,"!-3U9%5$\@6"Q9#3`T-3`@14Y$4%)/0R!&3%E45$$G5$E,
+M3`TP-#8P("\O#3`T-S`@4%)/0R!2251!)U1)3$PH6"Q9*2`-,#0X,"!8.CTQ
+M-C`K6"HQ-@TP-#DP(%DZ/3$P,"M9*C$U#3`U,#`@1%)!5U1/(%@L60TP-3$P
+M($5.1%!23T,@4DE402=424Q,#3`U,C`@+R\-,#4S,"!04D]#($993$PH6"Q9
+M*2`-,#4T,"!8.CTQ-C`K6"HQ-@TP-34P(%DZ/3$P,"M9*C$U#3`U-C`@1DE,
+M3"!8+%D-,#4W,"!%3D104D]#($993$P-,#4X,"`O+PTP-3DP(%!23T,@05A,
+M05(@#3`V,#`@1%@Z/3([($19.CTR#3`V,3`@34]6151/(#`L,3`P#3`V,C`@
+M1%)!5U1/(#,R,"PQ,#`-,#8S,"!-3U9%5$\@,38P+#`-,#8T,"!$4D%75$\@
+M,38P+#(P,`TP-C4P(%))5$$G4TM!3$$-,#8V,"!-3U9%5$\@,38P+#$P,`TP
+M-C<P($5.1%!23T,@05A,05(-,#8X,"`O+PTP-CDP(%!23T,@4DE402=32T%,
+M02`-,#<P,"!-3U9%5$\@,"PQ,#`-,#<Q,"!&3U(@33H],"!43R`S,3D@4U1%
+M4"`Q-B!$3PTP-S(P($Q/1%);5%0G34%22T5224Y'*$TL,3`P*0TP-S,P($5.
+M1$9/4B!-#3`W-#`@1D]2($TZ/3$P(%1/(#(P.2!35$50(#$U($1/#3`W-3`@
+M5EU'4EM45"=-05)+15))3D<H,38P+$TI#3`W-C`@14Y$1D]2($T-,#<W,"!%
+M3D104D]#(%))5$$G4TM!3$$-,#<X,"`O+PTP-SDP(%!23T,@3$]$4EM45"=-
+M05)+15))3D<H6"Q9*2`-,#@P,"!-3U9%5$\@32Q9*T19#3`X,3`@1%)!5U1/
+M($TL62U$60TP.#(P($5.1%!23T,@3$]$4EM45"=-05)+15))3D<-,#@S,"`O
+M+PTP.#0P(%!23T,@5EU'4EM45"=-05)+15))3D<H6"Q9*2`-,#@U,"!-3U9%
+M5$\@6"M$6"Q9#3`X-C`@1%)!5U1/(%@M1%@L60TP.#<P($5.1%!23T,@5EU'
+M4EM45"=-05)+15))3D<-,#@X,"`O+PTQ,"!'4D%&)U-405)4#3`P,C`@4DE4
+M02='4D%&#3`P,S`@1U)!1B=35$]0#3`P-#`@+R\-,#`U,"!04D]#(%))5$$G
+M1U)!1B`-,#`V,"!&3%E45$$G5$E,3"@M,3`L1B@M,3`I*0TP,#<P($9/4B!8
+M.CTM,3`@5$\@,3`@4U1%4"`N,B!$3PTP,#DP(%))5$$G5$E,3"A8+$8H6"DI
+M#3`Q,#`@14Y$1D]2(%@-,#$Q,"!%3D104D]#(%))5$$G1U)!1@TP,3(P("\O
+M#3`Q,S`@1E5.0R!&*%@I(`TP,30P(%)%5%523B`R*D584"A8+S$P*2I324XH
+M6"D-,#$U,"!%3D1&54Y#($8-,#$V,"`O+PTU,#`P(%!23T,@34%22T5224Y'
+M*%@L62D@#34P,3`@1DQ95%1!)U1)3$PH6"TR+S$V+%DI#34P,C`@4DE402=4
+M24Q,*%@K,B\Q-BQ9*0TU,#,P($9,651402=424Q,*%@L62TR+S$U*0TU,#0P
+M(%))5$$G5$E,3"A8+%DK,B\Q-2D--3`U,"!%3D104D]#($U!4DM%4DE.1PTU
+M,#8P("\O#34P-S`@4%)/0R!'4D%&)U-405)4(`TU,#@P(%!%3D-/3$]2(#`-
+M-3`Y,"!"04-+1U)/54Y$(#$P#34Q,#`@0D]21$52(#$Q#34Q,3`@4T541U)!
+M4$A)0R`P#34Q,C`@5%525$Q%4U1!5$4@1D%,4T4--3$S,"!!6$Q!4@TU,30P
+M($5.1%!23T,@1U)!1B=35$%25`TU,34P("\O#34Q-C`@4%)/0R!'4D%&)U-4
+M3U`@#34Q-S`@5TA)3$4@2T59)#U#2%(D*#`I($1/($Y53$P--3$X,"!31514
+M15A4(`TU,3DP(%!224Y4($-(4B0H,30I+`TU,C`P(%!%3D-/3$]2(#@--3(Q
+M,"!"04-+1U)/54Y$(#$Q#34R,C`@0D]21$52(#$P#34R,S`@14Y$4%)/0R!'
+M4D%&)U-43U`--3(T,"`O+PTU,C4P(%!23T,@1DQ95%1!)U1)3$PH6"Q9*2`-
+M-3(V,"!8.CTQ-C`K6"HQ-@TU,C<P(%DZ/3$P,"M9*C$U#34R.#`@34]6151/
+M(%@L60TU,CDP($5.1%!23T,@1DQ95%1!)U1)3$P--3,P,"`O+PTU,S$P(%!2
+M3T,@4DE402=424Q,*%@L62D@#34S,C`@6#H],38P*U@J,38--3,S,"!9.CTQ
+M,#`K62HQ-0TU,S0P($1205=43R!8+%D--3,U,"!%3D104D]#(%))5$$G5$E,
+M3`TU,S8P("\O#34S-S`@4%)/0R!&64Q,*%@L62D@#34S.#`@6#H],38P*U@J
+M,38--3,Y,"!9.CTQ,#`K62HQ-0TU-#`P($9)3$P@6"Q9#34T,3`@14Y$4%)/
+M0R!&64Q,#34T,C`@+R\--30S,"!04D]#($%83$%2(`TU-#0P($18.CTR.R!$
+M63H],@TU-#4P($U/5D543R`P+#$P,`TU-#8P($1205=43R`S,C`L,3`P#34T
+M-S`@34]6151/(#$V,"PP#34T.#`@1%)!5U1/(#$V,"PR,#`--30Y,"!2251!
+M)U-+04Q!#34U,#`@34]6151/(#$V,"PQ,#`--34Q,"!%3D104D]#($%83$%2
+M#34U,C`@+R\--34S,"!04D]#(%))5$$G4TM!3$$@#34U-#`@34]6151/(#`L
+M,3`P#34U-3`@1D]2($TZ/3`@5$\@,S$Y(%-415`@,38@1$\--34V,"!,3T12
+M6U14)TU!4DM%4DE.1RA-+#$P,"D--34W,"!%3D1&3U(@30TU-3@P($9/4B!-
+M.CTQ,"!43R`R,#D@4U1%4"`Q-2!$3PTU-3DP(%9=1U);5%0G34%22T5224Y'
+M*#$V,"Q-*0TU-C`P($5.1$9/4B!-#34V,3`@14Y$4%)/0R!2251!)U-+04Q!
+M#34V,C`@+R\--38S,"!04D]#($Q/1%);5%0G34%22T5224Y'*%@L62D@#34V
+M-#`@34]6151/($TL62M$60TU-C4P($1205=43R!-+%DM1%D--38V,"!%3D10
+M4D]#($Q/1%);5%0G34%22T5224Y'#34V-S`@+R\--38X,"!04D]#(%9=1U);
+M5%0G34%22T5224Y'*%@L62D@#34V.3`@34]6151/(%@K1%@L60TU-S`P($12
+M05=43R!8+418+%D--3<Q,"!%3D104D]#(%9=1U);5%0G34%22T5224Y'#34W
+M,C`@+R\-,3`@4U1!4E0G4D]"15)4#3`P,C`@1DQ95%1!)U1)3$PH,"PM,RD-
+M,#`S,"!224M43DE.1R@P*0TP,#0P($9204U=5"@W*0TP,#4P(%9;3E-415(H
+M.3`I#3`P-C`@1E)!35U4*#<I#3`P-S`@5EM.4U1%4B@Y,"D-,#`X,"!&4D%-
+M750H-RD-,#`Y,"!66TY35$52*#DP*0TP,3`P($9204U=5"@W*0TP,3$P(%9;
+M3E-415(H.3`I#3`Q,C`@4U1/4"=23T)%4E0-,#$S,"`O+PTP,30P(%!23T,@
+M4U1!4E0G4D]"15)4(`TP,34P(%!%3D-/3$]2(#`-,#$V,"!"04-+1U)/54Y$
+M(#$P#3`Q-S`@0D]21$52(#$Q#3`Q.#`@4T541U)!4$A)0R`P#3`Q.3`@5%52
+M5$Q%4U1!5$4@5%)510TP,C`P($5.1%!23T,@4U1!4E0G4D]"15)4#3`R,3`@
+M+R\-,#(R,"!04D]#(%-43U`G4D]"15)4(`TP,C,P(%=(24Q%($M%620]0TA2
+M)"@P*2!$3R!.54Q,#3`R-#`@4T545$585"`-,#(U,"!04DE.5"!#2%(D*#$T
+M*2P-,#(V,"!014Y#3TQ/4B`X#3`R-S`@0D%#2T=23U5.1"`Q,0TP,C@P($)/
+M4D1%4B`Q,`TP,CDP($5.1%!23T,@4U1/4"=23T)%4E0-,#,P,"`O+PTP,S$P
+M(%!23T,@1E)!35U4*%@I(`TP,S(P($9/4E=!4D0@6"HQ,`TP,S,P($5.1%!2
+M3T,@1E)!35U4#3`S-#`@+R\-,#,U,"!04D]#(%9;3E-415(H5BD@#3`S-C`@
+M3E4Z/2A.52M6*2!-3T0@,3@P#3`S-S`@3$5&5"!6#3`S.#`@14Y$4%)/0R!6
+M6TY35$52#3`S.3`@+R\-,#0P,"!04D]#(%))2U1.24Y'*%8I(`TP-#$P($Y5
+M.CU6#3`T,C`@4T542$5!1$E.1R!6#3`T,S`@14Y$4%)/0R!224M43DE.1PTP
+M-#0P("\O#3`T-3`@4%)/0R!&3%E45$$G5$E,3"A8+%DI(`TP-#8P($U/5D54
+M3R!8*C$V*S$V,"Q9*C$P*S$P,`TP-#<P($5.1%!23T,@1DQ95%1!)U1)3$P-
+M,#0X,"`O+PTP-#DP(%!23T,@4D]"15)4)TA%32`-,#4P,"!&3%E45$$G5$E,
+M3"@P+#`I#3`U,3`@4DE+5$Y)3D<H,"D-,#4R,"!%3D104D]#(%)/0D525"=(
+M14T-,#4S,"`O+PTQ,"!35$%25"=23T)%4E0-,#`R,"!#25)+14PG2U9!1%)!
+M5$52#3`P,S`@4U1/4"=23T)%4E0-,#`T,"`O+PTP,#4P(%!23T,@0TE22T5,
+M)TM60412051%4B`-,#`V,"!&3%E45$$G5$E,3"@P+#`I#3`P-S`@1D]2(%9)
+M3DM%3#H],"!43R`S-C`@4U1%4"`Q,"!$3PTP,#@P($M60412050H,"PP+%9)
+M3DM%3"PU*0TP,#DP($5.1$9/4B!624Y+14P-,#$P,"!%3D104D]#($-)4DM%
+M3"=+5D%$4D%415(-,#$Q,"`O+PTP,3(P(%!23T,@2U9!1%)!5"A8+%DL5BQ3
+M*2`-,#$S,"!&3%E45$$G5$E,3"A8+%DI#3`Q-#`@4DE+5$Y)3D<H5BD-,#$U
+M,"!&3U(@2SH],2!43R`T($1/#3`Q-C`@1E)!35U4*%,I#3`Q-S`@5EM.4U1%
+M4B@Y,"D-,#$X,"!%3D1&3U(@2PTP,3DP($5.1%!23T,@2U9!1%)!5`TP,C`P
+M("\O#34P,#`@4%)/0R!35$%25"=23T)%4E0@#34P,3`@4$5.0T],3U(@,`TU
+M,#(P($)!0TM'4D]53D0@,3`--3`S,"!"3U)$15(@,3$--3`T,"!3151'4D%0
+M2$E#(#`--3`U,"!455)43$535$%412!44E5%#34P-C`@14Y$4%)/0R!35$%2
+M5"=23T)%4E0--3`W,"`O+PTU,#@P(%!23T,@4U1/4"=23T)%4E0@#34P.3`@
+M5TA)3$4@2T59)#U#2%(D*#`I($1/($Y53$P--3$P,"!3151415A4(`TU,3$P
+M(%!224Y4($-(4B0H,30I+`TU,3(P(%!%3D-/3$]2(#@--3$S,"!"04-+1U)/
+M54Y$(#$Q#34Q-#`@0D]21$52(#$P#34Q-3`@14Y$4%)/0R!35$]0)U)/0D52
+M5`TU,38P("\O#34Q-S`@4%)/0R!&4D%-750H6"D@#34Q.#`@1D]25T%21"!8
+M*C$P#34Q.3`@14Y$4%)/0R!&4D%-750--3(P,"`O+PTU,C$P(%!23T,@5EM.
+M4U1%4BA6*2`--3(R,"!.53H]*$Y5*U8I($U/1"`Q.#`--3(S,"!,1494(%8-
+M-3(T,"!%3D104D]#(%9;3E-415(--3(U,"`O+PTU,C8P(%!23T,@4DE+5$Y)
+M3D<H5BD@#34R-S`@3E4Z/58--3(X,"!3151(14%$24Y'(%8--3(Y,"!%3D10
+M4D]#(%))2U1.24Y'#34S,#`@+R\--3,Q,"!04D]#($9,651402=424Q,*%@L
+M62D@#34S,C`@34]6151/(%@J,38K,38P+%DJ,3`K,3`P#34S,S`@14Y$4%)/
+M0R!&3%E45$$G5$E,3`TU,S0P("\O#34S-3`@4%)/0R!23T)%4E0G2$5-(`TU
+M,S8P($9,651402=424Q,*#`L,"D--3,W,"!224M43DE.1R@P*0TU,S@P($5.
+M1%!23T,@4D]"15)4)TA%30TU,SDP("\O#3$P(%-405)4)U)/0D525`TP,#(P
+M(%-43U(G2T].4U0-,#`R-2!03$]45$585"`R,#`L,3`L(E!/54P@4$%02T%3
+M4T4B#3`P,S`@4U1/4"=23T)%4E0-,#`T,"`O+PTP,#4P(%!23T,@4U1/4B=+
+M3TY35"`-,#`V,"!&3U(@0CH],2!43R`T,"!$3PTP,#<P(%@Z/5).1"@M."PS
+M*3L@63H]4DY$*"TX+#,I#3`P.#`@4TE$03H]4DY$*#$L-2D-,#`Y,"!+5D%$
+M4D%4*%@L62PP+%-)1$$I#3`Q,#`@1EE,3"A8*U-)1$$O,BQ9*U-)1$$O,BD-
+M,#$Q,"!%3D1&3U(@0@TP,3(P($5.1%!23T,@4U1/4B=+3TY35`TP,3,P("\O
+M#3`Q-#`@4%)/0R!+5D%$4D%4*%@L62Q6+%,I(`TP,34P($9,651402=424Q,
+M*%@L62D-,#$V,"!224M43DE.1RA6*0TP,3<P($9/4B!+.CTQ(%1/(#0@1$\-
+M,#$X,"!&4D%-750H4RD-,#$Y,"!66TY35$52*#DP*0TP,C`P($5.1$9/4B!+
+M#3`R,3`@14Y$4%)/0R!+5D%$4D%4#3`R,C`@+R\-,#(S,"!04D]#(%-405)4
+M)U)/0D525"`-,#(T,"!014Y#3TQ/4B`P#3`R-3`@0D%#2T=23U5.1"`Q,`TP
+M,C8P($)/4D1%4B`Q,0TP,C<P(%-%5$=205!(24,@,`TP,C@P(%154E1,15-4
+M051%(%12544-,#(Y,"!%3D104D]#(%-405)4)U)/0D525`TP,S`P("\O#3`S
+M,3`@4%)/0R!35$]0)U)/0D525"`-,#,R,"!72$E,12!+15DD/4-(4B0H,"D@
+M1$\@3E5,3`TP,S,P(%-%5%1%6%0@#3`S-#`@4%))3E0@0TA2)"@Q-"DL#3`S
+M-3`@4$5.0T],3U(@.`TP,S8P($)!0TM'4D]53D0@,3$-,#,W,"!"3U)$15(@
+M,3`-,#,X,"!%3D104D]#(%-43U`G4D]"15)4#3`S.3`@+R\-,#0P,"!04D]#
+M($9204U=5"A8*2`-,#0Q,"!&3U)705)$(%@J,3`-,#0R,"!%3D104D]#($92
+M04U=5`TP-#,P("\O#3`T-#`@4%)/0R!66TY35$52*%8I(`TP-#4P($Y5.CTH
+M3E4K5BD@34]$(#$X,`TP-#8P($Q%1E0@5@TP-#<P($5.1%!23T,@5EM.4U1%
+M4@TP-#@P("\O#3`T.3`@4%)/0R!224M43DE.1RA6*2`-,#4P,"!.53H]5@TP
+M-3$P(%-%5$A%041)3D<@5@TP-3(P($5.1%!23T,@4DE+5$Y)3D<-,#4S,"`O
+M+PTP-30P(%!23T,@1DQ95%1!)U1)3$PH6"Q9*2`-,#4U,"!-3U9%5$\@6"HQ
+M-BLQ-C`L62HQ,"LQ,#`-,#4V,"!%3D104D]#($9,651402=424Q,#3`U-S`@
+M+R\-,#4X,"!04D]#(%)/0D525"=(14T@#3`U.3`@1DQ95%1!)U1)3$PH,"PP
+M*0TP-C`P(%))2U1.24Y'*#`I#3`V,3`@14Y$4%)/0R!23T)%4E0G2$5-#3`V
+M,C`@+R\-,#8S,"!04D]#($993$PH6"Q9*2`-,#8T,"!8.CTQ-BI8*S$V,#L@
+M63H],3`J62LQ,#`-,#8U,"!&24Q,(%@L60TP-C8P($5.1%!23T,@1EE,3`TP
+M-C<P("\O#0!_``'_P`/_X`/CX`?9\`??\`?9\`/GX`/_X`/_X`+_H`%_0`$^
+M0`"<@`"<@`!)``!)```^```^```^```<````#```/@``?P``_X``_\``@^``
+MJ^``@_``?/!X;'`P_HPQ_TP;.:`.?/`$UD@!@P<#`8<!@P<`Q@`/[^`.;.``
+M`$````````````````````````````````#\````````````````````````
+M`````````````````````````````$`P``!X``#\``#\``#\``!X```P````
+J````````````````````````````````````````````````````````
+`
+end
+
+*********
+
+* OBS! Skillnader COMAL 80 vers. 0.12/0.14
+
+Efter version 0.12, som den här baken behandlar, har ytterligare en
+skivbaserad COMAL-version för VIC 64 kommit, med versionsnumret 0.14.
+Skillnader mellan versioner är relativt små, endast några instruktioner har
+tillkommit i version 0.14. Det går också att köra program skrivna i den ena
+versionen med den andra. För att föra över program från en version till en
+annan, gör på följande sätt. Lista först programmet till skiva med LIST
+eller EDIT. Du kan sedan läsa in programmet till den andra versionen med
+kommandot ENTER.
+
+De enda instruktioner som skiljer sig mellan versionerna är några grafik-instruktioner. Följande tabell visar några instruktioner som 
+har olika namn i de båda versionerna.
+
+0.12                         0.14
+
+POSITION                     SETXY
+
+SCREENECCO TRUE              SPLITSCREEN
+SCREENECCO FALSE             FULLSCREEN
+
+TURTLESTATE TRUE             SHOWTURTLE
+TURTLESTATE FALSE            HIDETURTLE
+
+I version 0.14 finns också en grafik-instruktion som inte finns i 0.12. HOME
+flyttar pennan till "hem-positionen", mitten av skärmen, och sätter vinkeln
+till 0. Detta är för övrigt också den position som 0.14 startar i varje gång
+SET-GRAPHIC 0 eller 1 används (i 0.12 placeras pennan då i nedre vänstra
+hörnet). En annan skillnad är att man inte får samma resultat när man
+använder instruktionen SETHEADING. Vinklarna är inte samma i de båda
+versionerna. Figuren nedan visar hur vinklarna pekar.
+
+
+0.12         90               0.14          0
+              |                     -90     |
+    +-180 ----+---- 0               270 ----+---- 90
+              |                             |
+             -90                           +-180
+             270
+
+
+Tre av funktionstangenterna har fått speciella funktioner i 0.14. Följande
+tabell visar vilka.
+
+F1  Ger samma resultat som SETTEXT, dvs återgår till text-mod.
+
+F3  Ger samma resultat som SETGRAPHIC + SPLITSCREEN, hoppar alltså in i
+    grafik-mod med två rader att skriva på överst på skärmen.
+
+F4  Ger samma resultat som SETGRAPHIC + FULLSCREEN, grafik-mod utan några
+    rader att skriva på.
+
+Observera att det grafik-mod som F3 och F4 ger är det senast använda
+grafik-modet (0 eller 1). Om inget sådant mod är aktivt (om du inte använt
+något, eller rensat minnet sedan det förra) händer ingenting när du trycker
+funktionstangenterna.
+
+Eftersom 0.14 har några fler instruktioner än 0.12 tar den också upp lite
+mer plats. Vid uppstart, och efter kommandot NEW, skall respektive version
+ha följande antal lediga bytes.
+
+0.12 10153
+0.14  9902
+
+*********
+
+End of the International Project 64 etext of the Swedish
+Comal-80 0.12/0.14 manual.
+
+*********

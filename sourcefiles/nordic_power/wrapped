@@ -1,0 +1,1709 @@
+5. august 2002
+This is version 0.5 of the german manual of the cartridge NORDIC POWER. If
+you find some failures send me an email to: quasar_ctr@gmx.de THX!
+
+Ciao,
+                        QuasaR /CENTRiC
+
+1 INBETRIEBNAHME
+1.1 EINBAU DES NORDIC POWER
+1.2 RESET-TASTE
+1.3 FREEZER-TASTE
+
+2 DAS RESET MENUE
+2.1 RESET/ RESET + CLEAR
+2.2 DAS POWER BASIC
+2.2.1 INTERLEAVE 3 DISK TURBO
+2.2.2 BESONDERE TASTENBELEGUNG
+2.2.3 VEREINFACHTE FLOPPY-BEFEHLE
+2.2.4 BASIC-BEFEHLSERWEITERUNG
+2.2.5 DAS TURBO-TAPE 249
+2.2.6 DIE CENTRONICS-SCHNITTSTELLE
+2.3 DAS TOOLKIT-MENUE
+2.3.1 DISKETTEN KOPIEREN
+2.3.2 FILES KOPIEREN
+2.3.3 FILE TRANSFER
+2.3.4 PACKER
+2.3.5 SPRITE-EDITOR
+2.3.6 DIA SHOW
+2.3.7 LOADER SPEICHERN
+2.4 DER MASCHINENSPRACHE-MONITOR
+2.4.1 BEFEHLSÜBERSICHT
+2.4.2 BEFEHLSBESCHREIBUNG
+2.4.3 DISK-MONITOR
+
+3 DAS FREEZER-MENÜ
+3.1 BACKUPS
+3.1.1 BACKUP VORBEREITEN
+3.1.2 BACKUP ERSTELLEN
+3.1.3 BACKUP AUF DISK SPEICHERN
+3.1.4 BACKUP MIT DATASETTE
+3.1.5 BACKUF WIEDER LADEN
+3.1.6 PROBLEM-HILFE
+3.2 DAS UTILITY-MENÜ
+3.2.1 TURBOLINKER
+3.2.2 TEXTÄNDERUNG
+3.2.3 PARAMETER
+3.2.4 POKES
+3.2.5 SPRITE KOLLISIONEN
+3.2.6 JOYSICK VERTAUSCHEN
+3.2.7 AUTOFEUER
+3.2.8 BREMSE
+3.3 DAS EDITOR-MENUE
+3.3.1 BILD ANSEHEN
+3.3.2 SPRITE-EDITOR
+3.3.3 BILD AUSDRUCKEN
+3.3.4 TEXT AUSDRUCKEN
+3.3.5 BILD SPEICHERN
+3.3.6 BILD LADEN
+3.3.7 DIASHOW
+
+4 HINWEISE und TIPS
+4.1 RECHTLICHE HINWEISE
+4.2 NÜTZLICHE TIPS
+
+Mit dem Kauf des NORDIC POWER erhalten Sie ein Modul in modernster
+Cartridge-Technik für Commodore 64 und 128 (64-Modus). NO RDIC POWER macht
+es in vielen Fällen möglich, auch Programme mit Kopierschutz anzuhalten,
+zu bearbeiten und zu freezen, obwohl deren Kopierschutz Speicherstellen
+für Freezer abfragt.
+
+Das Modul enthält eine Vielzahl von neuen Befehlen und Funktionen für
+Ihren Computer. Soweit es sich dabei um Begriffe handelt, die Sie bereits
+aus dem normalen Betrieb Ihres Rechners kennen, sind diese nicht
+erläutert. Lesen Sie im Zweifelsfalle in Ihrem Rechner- oder
+Floppy-Handbuch nach.
+
+Ebenfalls nicht gesondert erläutert werden deutsche Bezeichnungen, die
+sich von selbst verstehen.
+
+Kapitel 1:INBETRIEBNAHNE
+
+1.1 EINBAU
+
+Beim Anschließen Computer und alle sein. Andernfalls Anlage entstehen.
+
+oder Entfernen des NORDIC POWER zuessen der anderen angeschlossenen Geräte
+ausgeschaltet können Schäden an Ihrem Modul oder an Ihrer
+
+NORDIC POWER wird in den MODUL-Schacht Ihres Computers eingesteckt. Wenn
+Sie von vorn auf den Rechner schauen, befindet sich der Schacht hinten
+rechts im Rechner. Der Schacht wird auch EXPANSION- oder ERWEITERUNGS-Port
+genannt.
+
+Setzen Sie NORDIC POWER so ein, dass die beiden Knöpfe (Taster) des Moduls
+sich hinten rechts befinden (Blickrichtung von vorn auf den Rechner). Es
+ist gegebenenfalls etwas Druck erforderlich, damit das Modul fest in dem
+Schacht sitzt. Drücken Sie das Modul jedoch niemals mit Gewalt in den
+Schacht.
+
+Schalten Sie Ihre Geräte ein, zuerst Monitor und Rechner, dann die Floppy
+und den Drucker. Wenn Sie einen C128 oder einen PC128D besitzen, so wird
+automatisch der 64er Modus eingestellt.
+
+NORDIC POWER meldet sich mit seinem Reset-Menü (Einschaltmenü). Wenn Sie
+für andere Betriebsarten Ihres Rechners vermeiden möchten, dass Ihr
+Rechner sich mit dem Reset-Menü meldet, halten Sie beim Einschalten oder
+bei einem RESET die CTRL-Taste fest. Sie gelangen dann in das normale
+Betriebssystem Ihres Rechners. NORDIC POWER ist in Wartestellung und es
+wird erst aktiviert, wenn Sie ein der POWER-TASTEN am Modul drücken. Wenn
+Sie beim Einschalten oder beim RESET die CBM-Taste (Commodore-Taste)
+gedrueckt halten, meldet sich der Rechner direkt im Power-Basis-Modus.
+
+
+Das      Modul besitzt zwei Hauptmenüs :
+
+a) Das RESET-Menü
+b) Das FREEZE-Menü
+
+Diese beiden Menüs werden durch Drücken des ihnen zugeordneten
+Modultasters aufgerufen werden.
+
+1.2     RESET-TASTE
+
+Die Taste befindet sich hinten rechts am Modul.
+
+Wenn Sie diese Taste betätigen, gelangen Sie immer wieder ins Reset-Menü,
+genau auch wie nach dem Einschalten des Rechners. Der Speicherinhalt Ihres
+Rechners geht jedoch beim Drücken der Reset-Taste nicht verloren.
+Lediglich BASIC-Programme erfordern danach ein RENEW, also eine
+Neuaufbereitung. Das geht ganz einfach per Befehl und ist in Kapitel 2.2.4
+beschrieben.
+
+1.3     FREEZER-TASTE
+
+Diese Taste sitzt hinten links am Modul, Wenn Sie die Freezer-Taste
+betätigen, wird der normale Programmablauf im Computer unterbrochen. Die
+Kontrolle über den Computer und das laufende Programm wird an das
+Freezer-Menü übergeben. Vom Freezer-Menue aus können Sie die
+Backup-Funktion sowie die Graphik-, Sprite- und Monitorfunktionen aufrufen
+oder das Programm verändert oder unverändert weiterlaufen lassen.
+
+Der Freezer-Knopf hat keine Funktion wenn der Rechner abgestürzt ist,
+d.h., wenn der Prozessor des Rechners nicht mehr arbeitet, Der Prozessor
+nimmt seinen normalen Betrieb wieder auf wenn Sie nach einem Absturz die
+Reset-Taste betätigen.
+
+Es reicht aus, wenn die FREEZER-Taste kurz angetippt wird, Die
+FREEZER-Taste sollte auf keinen Fall länger als eine Sekunde festgehalten
+werden. Sonst kann es passieren, dass die Freeze-Funktion nicht mehr
+korrekt arbeitet. Also: Tippen Sie die Taste nur kurz an. Dann können Sie
+sicher sein, dass Ihr Programm erfolgreich eingefroren wird.
+
+Kapitel 2: RESET-MENUE
+
+Nach dem Einschalten des Rechners mit eingestecktem Modul oder nach einem
+Reset meldet sich dieser automatisch mit dem Reset-Menü Folgende
+Funktionen können durch Drücken der Funktionstasten ausgewählt werden :
+
+Normaler Reset
+
+2)      F3      Reset + Clear
+
+3)      F5      Power-Basic mit Fastload und Centronics
+
+4)      F7 Toolkit
+
+8)      FS      Monitor
+
+-F-     steht für "Funktionstaste",
+
+Die     aufgeführten Funktionen werden nun der Reihe nach erläutert.
+
+2.1     RESET/RESET + CLEAR
+
+Wenn Sie mit F1 oder F3 einen Reset ausführen, meldet sich Ihr Computer
+mit seiner üblichen Einschaltmeldung. NORDIC POWER macht sich jetzt
+"unsichtbar". Das heißt, obwohl NORDIC POWER weiterhin betriebsbereit ist,
+belegt es keine Speicherstelle Ihres Rechners. Dadurch kann das Modul von
+laufenden Programmen nicht erkannt werden. Gleichfalls stört es daher auch
+nicht den Ablauf eines laufenden Programms. Somit bietet NORDIC POWER in
+Bezug auf die Lauffähigkeit von Programmen hardwaremäßig die beste
+Kompatibilität.
+
+Mit F3 wird zusätzlich vor dem Reset die Clear-Funktion aufgerufen. Diese
+füllt den Rechner-Speicher mit einem bestimmten Wert. Dadurch wird das
+Backup-Kompaktierungssystem (Komprimieren von Programmen, auch Crunchen
+genannt) noch wirkungsvoller und die gefreezten Programme kürzer.
+
+2.2     DAS POWER-BASIC
+
+Mit POWER-BASIC wird der TURBO- und UTILITY-Teil von NORDIC POWER
+bezeichnet. Wenn Sie im Direktmodus arbeiten oder Basie-Programme
+programmieren, stehen Ihnen viele Hilfsfunktionen zur Verfügung.
+
+2,2.1 INTERLEAVE 3 DISK-TURBO
+
+Das Fastload des NORDIC POWER setzt Maßstäbe für Geschwindigkeit und
+Kompatibilität bei seriell angeschlossenen Floppys,
+
+Wenn POWER-BASIC aktiv ist, wird das Laden und Speichern um etwa den
+Faktor 18 bis 20 mal schneller. Das Disk-Turbo (Fastload) ist
+Rechner-Speicher unabhängig und sollte daher keine Inkompatibilitaet zu
+Programmen im Rechner bewirken. Die Ladezeit von 249 Blocks beträgt etwa 7
+Sekunden. Der Bildschirm wird dabei nicht abgeschaltet ! Das Disk-Turbo
+arbeitet beim Abspeichern mit normalen
+
+Commodore GCR-Code. Das Einladen der Files auf anderen Systemen, die das
+Commodore Format benutzen, ist daher ohne weiteres möglich. Das Disk-Turbo
+lädt und speichert immer absolut das heißt von und bis zu den Adressen, an
+denen das Programm tatsächlich im Rechnerspeicher steht.
+
+Wenn kommerzielle Programme einen eigenen Lader besitzen, wird das
+Fastload von NORDIC POWER automatisch abgeschaltet. Die mit INTERLEAVE 3
+abgespeicherten Files können auch ohne das Modul schnell geladen werden,
+indem Sie den Fastloader auf Disk speichern.
+
+2.2.2 BESONDERE TASTENBELEGUNG
+
+Um Ihnen das Programmierer-Leben zu erleichtern bringt Ihnen POWERBASIC
+eine ganze Palette von Tastenfunktionen:
+
+1) Funktionstasten
+
+Die Funktionstasten im POWER-BASIC-Modus sind weitgehend
+speeddoskompatibel belegt :
+
+Fl = LIST (four BASIC-Programme)
+
+F2 = Sprung in den Maschinensprache-Monitor
+
+F3 = RUN (Starten eines BASIC-Programms)
+
+F4 = Hintergrundfarbe ändern
+
+F5 = LOAD"*",8,1 (lädt das erste File von Disk)
+
+F6 = Rahmenfarbe ändern
+
+F7 = Directory anzeigen ohne Speicherverlust
+
+F8 =    SYS$COOO mit dein Cursor auf dem C
+        (Sprung in ein Maschine-Programm bei hexadezimal
+        COOO = dezimal 49152.) Dadurch, dass der Cursor auf
+        dem C steht, können Sie die Einsprungadresse besonders
+        leicht verändern.
+
+2) VEREINFACHTE LADE- UND SPEICHER-BEFEHLE
+
+/name = LOAD"name",8,1
+
+^name = LOAD"name",8:RUN
+
+&name = VERIFY"name",8,1
+
+\name = SAVE"name",8
+
+Wenn Sie mit diesen Befehlen laden, werden die Zeiger nur dann auf das
+Basic-Ende gesetzt, wenn das Programm an den Basic-Anfang geladen wird.
+Auch wird beim Eingeben des File-Namens nicht der STRING-Speicher
+überschrieben. Maschine-Programmierer werden dieses und die folgende
+Besonderheit zu schätzen wissen. Besonders lange Files können mit dem \
+Befehl abgespeichert werden, auch wenn der normale Interpreter sonst ein
+OUT OF MEMORY melden würde.
+
+Sie können auch direkt aus der Directory laden. Fahren Sie dazu den CURSOR
+auf die linke Ziffer des Blockeintrages des Programms in der Directory,
+welches Sie laden möchten und drücken Sie dann F5.
+
+2.2.3 VEREINFACHTE FLOPPY-BEFEHLE
+
+Anstelle des Formats OPEN 15,8,15,"befehl":CLOSE15 können Sie in Zukunft
+einfach den @-Befehl eingeben:
+
+@ oder @8 oder @9 liest den Fehlerkanal der Floppy und zwar @ den
+Fehlerkanal der aktuellen Floppy (die zuletzt benutzt wurde, @8 den der
+Floppy Nummer 8 und @9 den von Floppy 9. Mit @8 bzw. @9 wird dei
+angesprochene Floppy zur aktuellen Floppy.
+
+@I initialisiert die Floppy
+
+@V führt ein VALIDATE durch (nicht bei 40-Track Disks anwenden! )
+
+@R:neuer name=alter Name benennt ein File um
+
+@N:name         löscht die Disk und gibt ihr den Namen "name"
+
+@N:name,ID formatiert eine Disk mit ID. Das Fast-Format des NORDIC POWER
+benötigt weniger als 20 Sekunden.
+
+Wichtig: Disketten können mit 40 Tracks formatiert und somit deren
+Speicherkapazität von 664 auf 749 Blocks erhöht werden. Dazu geben Sie
+beim Formatierbefehl hinter der ID das Pluszeichen ein, z.B. @N:name,37+.
+In der Directory steht dann neben der ID das Kennzeichen 4A.
+35-Spur-Disketten, die bereits mit Programmen beschrieben sind, können
+nicht mehr auf 40 Spuren erweitert werden.
+
+Achtung: Mit der eingebauten Lade- und Saveroutine können 40
+Tracks verwendet werden. Die Spuren 36-40 sind jedoch nicht unter
+dem normalen Commodore-Betriebssystem nutzbar. Man sieht das File
+zwar in der Directory, jedoch ist es nicht möglich es zu laden.
+Die Floppy meldet entweder FILE NOT FOUND oder ILLEGAL TRACK OR
+SECTOR.
+Wenn Sie Files von NORDIC POWER 40-Spur-Disks ohne das Cartridge
+einladbar haben möchten, gibt es zwei Möglichkeiten:
+
+1) Sie saven das Programm mit AUTOSTART ab oder 2) Sie speichern den LADER
+mit auf die Diskette.
+
+Wenn Sie bei 40 Spur Disks ein Validate durchführen, wird die Disk nur
+noch auf 35 Spuren les- und beschreibbar gemacht.
+
+@$ oder nur F7 zeigt die Directory
+
+@s:name löscht (scratcht) das normale File "name"
+
+@H:name,ID ändert den Namen und die ID einer Disk, ohne den Inhalt der
+Disk zu zerstören. Ein besonders nützlicher Befehl für alle, die ihre
+Disketten nachträglich neu nummerieren wollen. Der Befehl existiert im
+normalen DOS der 1541 nicht. Die neue ID kann 5-stellig sein! Bei
+40-Spur-Disks muss auf der 4. und 5. Stelle 4A stehen, sonst können die
+zusätzlichen Spuren nicht mehr gelesen werden.
+
+Wenn Sie zwei Laufwerke angeschlossen haben, können Sie die Befehle auch
+an das zweite Laufwerk senden. Geben Sie dazu zunächst @9 ein um den
+Fehlerkanal zu lesen. Alle nachfolgenden Floppy-Befehle werden jetzt an
+das Laufwerk Nr.9 gesandt. Auf Laufwerk 8 schalten Sie mit @8 zurück.
+
+Um versehentliches Formatieren oder Löschen eines Programms zu vermeiden,
+erscheint bei diesen Befehlen die Meldung ARE YOU SURE (Sind Sie sicher).
+Geben Sie J (für Ja) ein um fortzufahren oder N (für Nein) um abzubrechen.
+
+Die Bedeutung der Fehlermeldungen der Floppy wurden nicht weiter
+verändert. Gegebenenfalls können Sie die Bedeutung der Meldungen in Ihren
+Floppy-Handbuch nachschlagen.
+
+2.2.4 BASIC-BEFEHLSERWEITERUNG
+
+Eine Reihe von zusätzlichen Befehlen erleichtert Ihnen das Programmieren
+in Basie. Die Befehle werden alle im Direkt-Modus eingegeben und können
+auch abgekürzt werden. Schreiben Sie dazu nur die ersten drei Buchstaben.
+Außerdem können Sie im Direkt-Modus den KONITOR aufrufen.
+
+Sie besitzen die Möglichkeit, in ihr normales Betriebssystem zu springen.
+Dabei wird ein Warmstart durchgeführt, d.h. Basic-Programme werden
+gelöscht und die Zeiger zurückgesetzt. Geben Sie dazu den Befehl CMD ein
+und schließen die Eingabe mit Return ab. NORDIC POWER ist nach dem Reset
+abgeschaltet und wird erst wieder durch Drücken eines Tasters aktiviert.
+
+OLD stellt ein versehentlich mit NEW oder durch RESET gelöschtes
+Basie-Programm wieder her.
+
+DELETE löscht Zeilen von Basic-Programmen. Die Anwendung ist ähnlich dem
+LIST-Befehl, jedoch muss immer die Anfangszeile angegeben werden.
+
+Beispiel:       DEL 100-500     löscht von Zeile 100 bis 500
+        DEL 100-        löscht alles ab Zeile 100
+        DEL -100        löscht alles bis Zeile 100
+
+LINESAVE        kann Teile aus BASIC-Programmen abspeichern.
+
+Beispiel:       LIN"name",8,100-500 speichert die Zeilen von 100 bis 500
+eines Basie-Programms ab. Mit MERGE können Sie diese Zeilen in andere
+Programme einfügen (siehe unten).
+
+RENUMBER: Mit Renumber bezeichnet man das neue Durchnummerieren von
+Basic-Programm-Zeilen. Wichtig ist dabei, dass auch sogenannte
+Sprungadressen mit umgerechnet werden, wie z.B. GOTO, GOSUB oder IF THEN,
+damit das Programm lauffähig bleibt und nicht gesondert nachbearbeitet
+werden muss. Wird ein Programm geMERGET und verwendet eines der geMERGETen
+Programme Sprünge, empfehlen wir daher auch, vor dem MERGE bzw. ggf. auch
+danach die RENUMBER Funktion zu verwenden und nicht den erweiterten
+MERGE-Befehl für gleichzeitiges RENUMBER zu verwenden.
+
+Der RENUMBER-Befehl ist wie folgt anzuwenden : RENUNBER XX,YY . XX steht
+hierbei für die Nummer der neuen Anfangszeile, YY für den Zeilenabstand.
+Während der Umrechnung verändert sich die Bildschirmfarbe, woran Sie
+-insbesondere bei längeren Programmen erkennen können, dass der Befehl
+noch nicht abgearbeitet ist.
+
+MERGE lädt ein Basie-Programm von Disk nach und fügt die Zeilen dieses
+Programms in ein bereits im Speicher befindliches Basic-Programm ein. Wenn
+zwei Zeilen die gleiche Zeilen-Nummer besitzen, wird die alte Zeile
+überschrieben. Beim Merge können auch Zeilennummern angepasst werden.
+GOSUB und GOTO werden jedoch nicht umgerechnet.
+
+Beispiel:MER"name",8 fügt das Programm "name'" in ein bestehendes Programm
+ein.
+
+Beispiel:MER"name",8,1000,10 nummeriert erst die Zeilen des Programms
+"name" neu. Dabei bekommt die erste Zeile des Programms "name" die
+ZeilenNummer 1000, die nächste 1010, 1020 usw. Bei sehr langen Programmen
+mit Zeilenumrechnung kann das Merge einige Zeit dauern. Werden Sie also
+nicht ungeduldig. Ihr Computer ist nicht abgestürzt.
+
+
+APPEND ist ähnlich wie MERGE, aber lädt ein Basic-Programm an das ENDE
+eines vorhandenen Programms. Bei APPEND sollten die Zeilennummern des
+nachgeladenen Programms möglichst höher sein als die des im Speicher
+befindlichen Programms. Gegebenenfalls muss vorher ein RENUMBER
+durchgeführt werden (siehe oben). Geben Sie APP"name",8 ein
+
+AUTO nummeriert Zeilen bei der Eingabe von BASIC-Programmen durch. Geben
+Sie ein AUT020,10 so wird automatisch die Zeilennummer 20 als erste
+Zeilennummer vorgegeben. Jede weitere Zeile erhält eine jeweils um 10
+höhere Nummer. Man gibt beim Programmieren nicht einer nachfolgenden Zeile
+einfach eine um 1 erhöhte Zeilennummer, da es sein kann, dass man später
+noch zwischen zwei Zeilen weitere einfügen möchte. Um den AUTO-Modus zu
+verlassen, gehen Sie mit dem Cursor auf eine leere Zeile und drücken
+RETURN. Der AUTO-Modus kann wieder aufgenommen werden, indem Sie erneut
+AUTO eingeben.
+
+BOOT lädt und startet ein Programm. Einschränkend gilt für
+Maschine-Programme, dass der Programm-Einsprung bei der ersten
+Speicheradresse des Programms sein muss. Ist dies nicht der Fall, müssen
+Sie die Einsprungadresse kennen und über den SYS-Befehl anspringen. Bei
+BASIC-Programmen gibt es keine solche Einschränkung. Beispiel:
+BOO"name",8.
+
+FLIST listet ein BASIC-Programm direkt von Disk auf einen Drucker mit der
+Geräteadresse 4, ohne ein anderes im Speicher befindliches Programm zu
+beeinträchtigen. Beispiel:PLI"name",8. PLIST arbeitet nicht mit
+Maschine-Programmen oder sequentiellen Files. Bei einem Centronicsdrucker
+am Userport erfolgt eine Umrechnung und Ausgabe der CBM-Steuerzeichen.
+
+SLIST entspricht PLIST, jedoch erfolgt die Ausgabe auf dem Bildschirm.
+
+DT+ und DT- schaltet die Disk-Turbo-Routinen ein und aus. Dieses ist dann
+besonders nützlich, wenn Sie z.B. einen Parallel-Speeder in Rechner und
+Floppy eingebaut haben.
+
+TT+ oder TT- schaltet die TURBO-TAPE-Routinen an bzw. aus.
+
+AUS schaltet die erweiterten Basie-Befehle und die Funktionstasten ab. Nur
+das Fastload und die Centronicsschnittstelle bleiben erhalten. Dies erhöht
+die Kompatibilität mit einigen Programmen.
+
+$ Mit diesem Zeichen können Sie Hexadezimalzahlen in Dezimalzahlen
+umwandeln.
+
+# Wandelt Dezimal- in Hexadezimalzahlen um.
+
+Hexadezimalzahlen können auch in BASIC-Programmen benutzt werden, die
+später unter dem normalen Commodore-BASIC laufen sollen. Es
+        können Hex.-Zahlen bei allen Eingaben verwendet werden, z.B. POKE
+        $D020,0. Auch Basie-Zeilen können mit Hex.-Zahlen eingegeben
+        werden. Die Zahlen werden von NORDIC POWER automatisch
+umgerechnet.
+        Wenn Sie z.B. eingegeben haben  100 SYS$COOO, so steht in Ihrem
+        Programm dann SYS49152.
+
+COPY oder @C ruft das File-Copy auf
+
+BACKUP oder @B ruft das BACKUP auf
+
+Pack-Befehl : Bei Angabe von Filename und Gerät wird das Programm geladen
+und gepackt. Dann muss der neue Filename und das zum abspeichern
+gewünschte Gerät angegeben werden. Sie besitzen folgende Möglichkeiten :
+Disk 8/9, Tape Commodore o. Turbo-Tape-Format Bei Wahl von
+Commodore-Format muss sich das Original Betriebssystem (Taperoutinen) im
+Rechner befinden,
+
+2~2.5 DAS TURBO-TAPE 249
+
+Datasetten Besitzer mit Programmen im TURBO-TAPE Format können aufatmen.
+Jetzt können Sie nicht nur vom POWER-BASIC aus Ihre Programme im in Europa
+üblichen TURBO-TAPE Format laden, sondern auch abspeichern und Freezen,
+und zwar bis zu einer Länge von 249 Blocks.
+
+Im Einschaltzustand des BASIC ist das TURBO-TAPE an. Mit TT-schalten Sie
+es aus, mit TT+ können Sie das ausgeschaltete Turbo wieder aktivieren. Sie
+erhalten eine entsprechende Bestätigung Ihres Befehles (TURBO-TAPE
+ANIAUS).
+
+TURBO-TAPE ist unter Geräte-Adresse 7 immer aktiv, d.h., bei
+abgeschaltetem TURBO-TAPE (TT-) wird bei dem Befehl LOAD"name'*,7 mit
+TURBO geladen.
+
+2.2.6 CENTRONICS SCHNITTSTELLE
+
+Mit NORDIC POWER ist es möglich, Drucker mit Parallelschnittstelle, (unter
+Verwendung eines entsprechenden Kabels) über den USERPORT des
+C64/128(64-Modus) zu betreiben. Der Drucker wird automatisch erkannt. Es
+darf dabei jedoch kein weiterer Drucker am seriellen Port angeschlossen
+sein. Die Schnittstelle arbeitet bei Druckfunktionen des Moduls, von
+Monitor aus und unter POWER BASIC. Es gibt jedoch kommerzielle Software,
+die dieses Schnittstelle eventuell abschaltet
+
+2.3     DAS TOOLKIT MENÜ
+2.4     
+Auch das Toolkit enthält eine eigene Menüführung. Zuerst ein Überblick
+über die Tastenbelegung:
+
+F1 = Reset
+
+F3 = Device 8/9
+
+F5 = DOS-Command
+
+F7 = Directory
+
+1) = Disk-Backup
+
+2) = Filecopy
+
+4) = Packer
+
+5) = Sprite Editor
+
+6) = DIA-SHOW
+
+7) LOADER Speichern
+
+Die Funktionen 1-7 werden nun nach der Reihe erklärt:
+
+2.3.1 DISKETTEN KOPIEREN
+
+Der Disk-Kopierer ist ein sehr schneller serieller Kopierer für
+ungeschützte Disketten. Wenn das Einlegen oder Wenden einer Disk oder in
+Diskettenwechsel erforderlich wird, weist das Programm Sie darauf hin.
+QUELLDISKETTE EINLEGEN bedeutet Original einlegen, ZIELDISKETTE EINLEGEN
+bedeutet Kopie-Diskette einlegen. Die Zieldiskette muss nur bei 3 1/2 Zoll
+Disks(1581) vorher formatiert sein.
+Denken Sie jedoch daran, dass alle vor dem Kopieren sich auf der
+Leerdiskette befindenden Daten nach dem Kopieren überschrieben sind.
+Vergewissern Sie sich also vorher, welche Diskette Sie als Zieldiskette
+verwenden wollen. Die Dauer eines kompletten Kopiervorgangs beansprucht
+unterschiedlich viel Zeit, je nach Laufwerk.
+
+Wenn Sie geschützte oder defekte Disketten kopieren, erhalten Sie vom
+Programm eine Fehlermeldung.
+
+File zu kopieren wählen Sie aus dem Backup-Menü die entsprechenden
+Parameter, legen die zu kopierende Original-Diskette ein und starten den
+Kopiervorgang mit der SPACE(LEER)-TASTE.
+
+Mit der Taste (1) wählen Sie die Floppy bzw. die Spurzahl aus:
+
+1541 35 Tracks oder 1570
+        bzw. 1571 einseitig
+1541 40 Tracks
+1571 doppelseitig
+1581 doppelseitig
+
+Mit der Taste (2) wird die Geräteadresse der Quell-Floppy eingestellt, mit
+der Taste (3) die der Ziel-Floppy. Quell- und Ziel-Floppy müssen zur
+gleichen Gruppe gehören, d.h. es kann z.B. nicht von einer 1571
+doppelseitig nach 1581 oder 1541 ein Backup gemacht werden. Benutzen Sie
+zum Umkopieren von in diesen Fällen das FILECOPY für einzelne Files.
+
+2.3.2 FILES (VON DISKETTE) KOPIEREN
+
+Das integrierte FILE-COPY kann PROGRAMM-, SEQUENTIELLE und USER-Files bis
+zu 249 Blocks Länge im Standard-Format kopieren. Der FILE-KOPIERER
+unterstützt bis zu zwei Disketten-Laufwerke und auch den gemischten
+Betrieb von verschiedenen Floppys. Durch eine Mehrfach-Output-Option ist
+es möglich, das Abspeichern mehrmals zu wiederholen ohne Files neu
+einlesen zu müssen.
+
+Die Einträge der Directory werden angezeigt. Sie können in der Directory
+mit dem CURSOR auf und abfahren. Soll ein File kopiert werden, drücken Sie
+RETURN. Das File wird dann mit einem "<" markiert. Eine Fehleingabe
+löschen Sie mit nochmaligem RETURN.
+
+Files, die nicht verarbeitet werden können, wie z.B. RELATIVE Files,
+werden übergangen. Sobald alle Directory-Einträge abgehakt sind, werden
+die Files nacheinander eingeladen. Da der Speicherplatz einer Diskette
+größer als der des Rechners ist, können mehrere Kopierdurchgänge
+erforderlich sein. Es wird Ihnen angezeigt, ob Sie die QUELL-DISK (Disk
+mit Ihren Programmen) oder die ZIEL-DISK (auf die kopiert wird) einlegen
+müssen. Die Ziel-Disk (oder Ziel-Disketten wenn Sie die Mehrfach-Option
+gewählt haben) müssen vorher formatiert sein.
+
+2.3.3 FILE-TRANSFER von CASSETTE auf DISK
+
+In das NORDIC POWER MODUL ist ein Übertragungssystem für Programme von
+CASSETTE nach DISKETTE eingebaut. Es können NOVA-, TAPE- und TURBO-TAPE
+Files auf Disk umkopiert werden. Der Filetransfer wird insbesondere zum
+Umkopieren von mehrteiligen NOVA-LOAD-Programme auf Disk benötigt. Gehen
+Sie wie folgt vor:
+
+1)      Laden Sie das Hauptprogramm bis zum Titelbild. Spulen Sie das Band
+nicht zurück!
+
+2)      Freezen Sie das Programm. Stoppen Sie die Datasette.
+        Bei NOVA-Ladern machen Sie mit 3) weiter, sonst mit 4)
+
+3)      Wählen Sie im Utility-Menü PARAMETER aus.
+        Wenn nach Parameter-Code gefragt wird, geben Sie NOVA ein.
+        Es erfolg die Meldung "installiert".
+
+4)      Packen Sie das Programm mit der Backup-Funktion im Freezer-Menue.
+Dann speichern Sie es auf Disk ab.
+
+5)      Nach dem Speichern des Hauptteils auf Disk, gehen Sie per RESET
+ins Toolkit-Menü und wählen FILE-TRANSFER für Nachladeteile. Mit F1
+selektieren Sie NOVA LOAD, TURBO TAPE oder STANDARD Tape. Jetzt können Sie
+die weiteren Programmteile übertragen.
+
+Wenn kein Transfer möglich ist, handelt es sich bei dem Cassetten-Programm
+entweder nicht um ein NOVA Programm oder um ein Programm mit eigenen
+Ladern, das so nicht umkopiert werden kann. Daher ist eine
+Erweiterungsdisk geplant, die entsprechende Parameter und File-Transfer
+Routinen bieten soll.
+
+Beachten        Nachladeteile werden bei manchen Cassetten-Programmen
+mehrfach hintereinander abgespeichert um das Zurückspulen zu vermeiden.
+Bei Disketten ist dies nicht erforderlich, da jederzeit darauf zugegriffen
+werden kann. Manche Nachladeprogramme können sehr lang sein, d.h. sie
+können mehr als zwei Disketten-Seiten erfordern. Halten Sie bei sehr
+langen Programmen daher immer mehrere formatierte Disketten bereit.
+
+Beachten Sie., Das Hauptprogramm sollte immer von der ORIGINAL-CASSETTE
+übertragen werden. Andernfalls kann es sein, dass die NOVA-Routine nicht
+richtig arbeitet.
+
+Nachladeteile werden bei NOVA TRANSFER im Standard-Format abgespeichert.
+Einige Nachladeteile arbeiten aufgrund insbesondere von Timer-Abfragen
+nicht im Schnelladeverfahren. hier kommt es also auf einen Versuch an.
+
+NACHLADER wieder einladen
+
+Nach dem Start des Hauptprogramms von Disk, werden die weiteren Teile
+jetzten. Wenn auch von Disk nachgeladen. Wenn die einzelnen Teile länger
+als eine Diskettenseite sind, wird die LED Ihrer Floppy blinken. Legen Sie
+dann die Diskette mit dem nächsten Teil ein und drücken Sie SPACE (die
+Leertaste). Die Floppy wird dann den nächsten Teil einladen. In einigen
+Fällen kann es erforderlich sein, dass Sie, obwohl Sie von Diskette laden,
+auf der Datasette die PLAY-Taste einrasten müssen.
+
+Nachladeprogramme können immer auch ohne das NORDIC POWER geladen werden.
+Außerdem können Sie mit NOVA auch einige sehr langsame Kassetten-Programme
+auf Disk übertragen.
+
+2.3.4 PACKER
+
+Mit diesen Befehl können Programme, insbesondere solche mit viel Graphik,
+komprimiert (verkürzt) werden. Dabei erhält das komprimierte Programm
+einen Vorspann, der es nach dem Starten wieder in seine ursprüngliche
+Länge verwandelt. Daher werden kurze Programme eventuell länger. Packen
+lohnt sich also erst ab einer bestimmten Programmlänge (ca. 10 Blöcke).
+
+Nach der Auswahl der Option PACKER werden Sie zunächst nach dem File-Namen
+des ursprünglichen Files gefragt, danach nach dem Gerät (Disk 8/9 oder
+Tape im Commodore o. Turbo-Tape-Format). Nach Eingabe des Gerätes wird
+geladen, dann beginnt das Packen. Danach wird der File-Name des neuen
+(gepackten) Files abgefragt. Wenn Sie diesen eingegeben und mit RETURN
+bestätigt haben, wird nach den Gerät gefragt, auf welches gespeichert
+werden soll. Ist auch diese Eingabe mit RETURN abgeschlossen worden,
+beginnt die Speicherung.
+
+Achtung: Das Abspeichern im Commodore-Format setzt das
+ORIGINALBETRIEBSSYSTEM voraus (die TAPE-Routinen werden benötigt !).
+
+Der Packer kann auch direkt aus dem POWER-BASIC-Bereich mit dem Befehl
+PACK aufgerufen werden.
+
+2.3.5 SPRITE EDITOR
+
+Die Bedienung des SPRITE-EDITORs ist unter EDITOR-Menü (Kapitel 3.3.2
+SPRITE-EDITOR und 3.2.5 SPRITE KOLLISIONEN) erklärt.
+
+2.3.6 DIA-SHOW
+
+Mit dieser Funktion des NORDIC POWER wird es Ihnen ermöglicht, sich Ihre
+eigene Bilder-Show zu erstellen. Die Bilder (Grafiken) müssen dabei das
+HIRES- oder das HIRES-MULTICOLOR-Format besitzen. Speichern Sie zunächst
+den Bild-Lader ab (F1 :Bildlader im Commodore-Format auf Band speichern,
+F3 Bildlader auf Disk speichern). Frieren Sie dann das entsprechende
+Hires-Bild ein, wählen aus dem Freezer-Menue den EDITOR und dort die
+Funktion DIASHOW-BILD. Nun speichern Sie nach Auswahl der entsprechenden
+Parameter das Bild ab. Das File erhält vor dem Namen die Kennung NF als
+Kennzeichen für die DIA-SHOW. Cassetten-Benutzer müssen die Bilder immer
+mit TURBO-TAPE abspeichern. DIASHOW-Bilder haben immer eines der beiden
+ART-STUDIO-Formate und können mit diesen Programmen auch bearbeitet
+werden. Diesen Vorgang wiederholen Sie bitte mit allen Bildern, die Sie in
+Ihre persönliche DIASHOW aufnehmen wollen.
+Um die DIA-SHOW zu starten drücken Sie bitte die entsprechende
+Funktionstaste (F5: Tape-Show Start, F7: Disk-Show Start).Wenn das nächste
+Bild geladen und gezeigt werden soll, müssen Sie die Space-Taste drücken.
+Ist ein Joystick angeschlossen ist drücken Sie den Feuerknopf.
+
+Wollen Sie die Bilder-Show beenden, drücken Sie einfach RUN-STOP und
+RESTORE.
+
+2.3.7 LOADER SPEICHERN
+
+Diese Funktion des NORDIC POWER gibt ihnen die Möglichkeit, einen etwa 8
+mal schnelleren Schnell-Lader auf Disk abzuspeichern. Dieses Fastload kann
+ohne Modul benutzt werden.
+
+Wird der erzeugte Lader mit dem Namen LOADER (NP) eingeladen und
+gestartet, werden automatisch die Programme auf der Disk angezeigt. Jetzt
+kann man mit dem Cursor auf ein zu ladendes Programm fahren. Bei Druck auf
+die Return-Taste wird das Programm geladen. Der Lader wird in die
+Directory-Spur geschrieben und belegt daher keine Blocks auf der Disk.
+
+2.4 DER MASCHINE-MONITOR
+
+NORDIC POWER besitzt einen sehr umfassenden MASCHINENSPRACHEMONITOR. Es
+würde den Rahmen dieser Anleitung sprengen, dem Leser das Programmieren in
+MASCHINENSPRACHE beizubringen. Sie erwarten das sicher genauso wenig wie
+einen Lehrgang über das Programmieren in Basic. Daher wird auf die
+Einführungskurs in den 64er Fachzeitschriften und die entsprechende
+Fachliteratur verwiesen.
+
+In den MONITOR kommen Sie vom POWER-BASIC mit dem Befehl MONITOR
+(abgekürzt MON) oder auch über die Funktionstaste F2. Sie können den
+MONITOR auch vom RESET- und Freezer-Menue aus aufrufen.
+
+Wenn Sie den MONITOR vom Freezer-Menue auswählen, können Sie den gesamten
+Speicher des Rechners untersuchen, einschließlich STACK, ZEROPAGE und
+BILDSCHIRKSPEICHER ohne irgendwelche Speicherwerte zu zerstören.
+Änderungen, die Sie im Speicher vornehmen, werden dann in das eventuell zu
+freezende Programm mit übernommen. Das gilt unabhängig davon ob Sie auf
+Disk oder Tape abspeichern.
+
+Wie oben bereits erwähnt ist etwas Erfahrung in Maschinensprache
+erforderlich um mit dem Monitor zu arbeiten. Wenn Befehle ohne Kenntnis
+der Wirkung des Befehls eingegeben werden, führt das sicher zu
+unerwarteten Ergebnissen, meist zum Absturz des Programms oder des
+Computers selbst. Bei Maschinensprache muss man sehr viel analysieren und
+untersuchen. Wenn Sie es also versuchen wollen ....
+
+2.4.1 BEFEHLS-ÜBERSICHT
+
+        A - Assemble
+        B - BASIC-Befehl ausführen
+        C - Vergleichen
+        D - Disassemble
+        F - Speicher mit Wert füllen
+        G - Programm ausführen
+        H - Hunt (Speicher durchsuchen nach Wert)
+        I - Interpretation in ASCII
+        I*- Interpretation im CBM Bildschirm-Code
+        IO - CIA und VIC anzeigen (nur nach Freezen)
+        L - LOAD
+        M - Speicheranzeige hexadezimal
+        N - Zahlenkonvertierung
+        P - (Vorzeichen) Ausgabe auf Drucker
+        R - Register beim Einsprung anzeigen
+        S - SAVE
+        T - Speicherbereich kopierten (Transferieren)
+        V - VERIFY
+        X - Rücksprung ins RESET/Freezer-Menue oder
+        $ - Directory anzeigen
+        * - Hin- und Herschalten zwischen RAM und ROM
+        @ - Fehlerkanal lesen oder Floppy-Befehl sende
+        @*8 - Umschalten auf Floppy-Monitor Gerät 8
+        @*9 - Umschalten auf Gerät 9
+        @* - Zurückschalten auf Computer
+        @ME - Memory Execute in Floppy
+        @BR - Sektor von Disk in Computer einlesen
+        @BW - Sektor vom Computer auf Disk schreiben
+
+2.4.2 BEFEHLS-BESCHREIBUNG
+
+1. Speicher untersuchen
+
+Der Speicher kann in HEX/ASCII, disassembliert oder als ASCII oder
+Bildschirm-Code angezeigt werden.
+
+Beispiel:
+        .D      C000    D000 disassembliert von C000 bis D000
+        .M      C000    D000 zeigt Inhalt in HEX/ASCII
+        .I      C000    D000 zeigt ASCII-Code
+        .D      C000    disassembliert Befehl ab C000
+        .M      C000- scrollt Speicher ab C000
+        .D              disassembliert ab letzter Adresse
+        .I*     zeigt Bildschirm-Code ab letzter Adresse
+
+Die Anzeige wird auf zwei Arten kontrolliert:
+
+a) F1 bewirkt Scrollen aufwärts zu höheren Speicherstellen, F3 Scrollen
+abwärts zu niedrigern Speicherstellen, also einen Schnelldurchlauf des
+Speicherinhalts. Während des Scrollens kann die Durchlaufrichtung mit F1
+bzw. F3 geändert werden. Mit jeder anderen Taste halten Sie das Scrollen
+an. STOP oder CURSOR DOWN bringt Sie zum Eingabe-Prompt zurück. Durch
+Drücken von F5 wird Aufwärtsscrollen mit Bildschirmlöschen bewirkt.
+
+F7 zeigt die Directory.
+
+Die geshifteten Tasten F2 und F8 werden nicht genutzt. Mit F4 wird die
+Rahmen- und mit F6 die Hintergrundfarbe gewählt.
+
+b) CURSOR UP bzw. CURSOR DOWN scrollt jeweils die oberste oder unterste
+Zeile des Bildschirms weiter. Der beste Weg beim langsamen Editieren. Der
+Speicherinhalt kann stets überschrieben werden: Bytes, Mnemonics oder
+Codes. Die Eingabe wird mit RETURN abgeschlossen. Ein Fragezeichen zeigt
+Eingabefehler an.
+
+RAM/ROM-Umschaltung. Beim Monitor-Einsprung wird als Default-Wert die
+Stellung RAM vorgegeben. Um auf ROM und I/Os umzuschalten bzw. dann wieder
+auf RAM zurück geben Sie * RETURN ein.
+
+2) Assemblieren:z.B.:   A C000 LDA #$01
+Assembliert einen Befehl nach C000. Die nächste Adresse wird nach RETURN
+vorgegeben.
+
+3) Registeranzeige:     R
+
+Programmzähler, Accu, X- und Y-Register, Speicherstelle 01 und der
+Stack-Pointer werden in HEX angezeigt, das Status-Register binär. Änderung
+der Register durch überschreiben und RETURN.
+
+4) Mit Wert füllen: z.B.: F C000 D000 AA
+füllt den Speicherbereich von C000 bis D000 mit dem Wert AA.
+
+5) HUNT (Speicher durchsuchen): H C000 D000 01 02 03 oder
+        .H C000 D000 "STRINGNAME"
+Wie Sie sehen, können Sie den Speicher sowohl auf Hex-Werte wie auf
+Strings durchsuchen. Strings sind in Anführungszeichen zu setzen. Nur wenn
+Werte gefunden wurden werden entsprechende Adressen angezeigt.
+
+6) COMPARE (Speicherbereiche vergleichen): C C000 D000 2000 vergleicht den
+Bereich von C000 bis D000 mit dem Bereich beginnend ab 2000. Adressen mit
+unterschiedlichen Werten werden angezeigt.
+
+7) TRANSFER (Speicherbereich kopieren): T C000 D000 E000
+kopiert den Speicherbereich von C000 bis D000 ins RAM nach E000. Daten von
+E000 bis 0000 werden dabei überschrieben. Bei dieser intelligenten
+Kopierroutine dürfen Speicherbereiche auch überlappen. Es kann vorwärts
+und rückwärts kopiert werden.
+
+8) GO (Sprung in Maschine Programm): GO C000
+lädt Register mit gem. Registeranzeige und startet ein Maschineprogramm ab
+C000. Das Programmende kann RTS oder BRK sein.
+
+9) Zahlenkonvertierung:
+
+        .N $C000 oder
+        .N 49152 oder
+        .N %10101010
+rechnet in die drei Basissysteme hex, dezimal und binär um. Die Systeme
+werden in eben dieser Reihenfolge angezeigt. Wenn nur ein Byte konvertiert
+wird, wird auch der ASCII-Wert angezeigt.
+
+10) DRUCKEN: PM C000 D000
+        .PD C000 D000
+        .PH C000 DOOG
+P stellt das Vorzeichen dar, das die Ausgabe auf den Drucker lenkt
+(Drucker-Adresse 4). Halten Sie die Stop-Taste fest, um den Befehl
+abzubrechen.
+
+11) BASIC-BEFEHL: Beispiele:    BPRINT8*256
+        .BPRINT"TEST"
+        .BLIST
+
+12)     LOAD und SAVE:
+.L"name"
+.L"name",8,C000
+.L"",l,C000
+.S"name'*,8,C000,D000
+.S"name",8,C000,D000,E000
+.V*'name"
+
+Wenn bei LOAD keine Adresse angegeben ist, wird an die Absolutadresse
+geladen. Wird die LOAD-Adresse angebeben, wird verschieblich beginnend ab
+der angegebenen Adresse geladen. Bei Save müssen mindestens die Anfangs-
+und die Endadresse angegeben werden. Wird eine dritte Adresse angegeben,
+so gilt diese als Absolutadresse für späteres Wiedereinladen (nur bei
+Disk). Alle Disk-I/Os benutzen RAM-Speicherstellen. Wenn Sie den Monitor
+vom Freezer-Menue aufgerufen haben, können Sie keine Speicherstellen unter
+$0900 abspeichern oder in diesen Bereich Programme laden.
+
+13) Die Werte der CIAs und des VIC können Sie sich mit dem Befehl IO
+anzeigen lassen, Die Register werden in hex dargestellt und zwar
+DC00-DC0F, DD00-DDOF und D000-D02F. Änderungen durch Überschreiben werden
+mit in das BACKUP übernommen. Der Befehl arbeitet nur, wenn der MONITOR
+vom Freezer-Menue aus aufgerufen wurde.
+
+2.4~3 DISK-HONITOR
+
+Floppy-Besitzer verfügen ebenfalls über einen Floppy- und Disk-Monitor.
+Der Einsprung erfolgt vom MONITOR aus mit @*.
+
+Der Default-Wert "0" kennzeichnet das RAM des Computers. Es muss also
+hinter @* immer die Geräteadresse - und zwar 8 bzw. 9 angegeben werden.
+Beispiele:
+
+@*8     Lesen und       Schreiben Floppy Nr. 8
+@*9     Lesen und       Schreiben Nr. 9
+@*89    Lesen von       8 und Schreiben nach 9
+@*08    Lesen aus       Computer und schreiben nach Floppy 8
+@*      Rückkehr        zum Default-Wert.
+
+Alle Monitor-Befehle können auch für die Floppy verwendet werden,
+natürlich nur soweit sie sinnvoll sind. (RAM/ROM Umschaltung gibt es beim
+6502 nicht). Ausnahme bildet der C-Befehl. Bei Speichertransfers zwischen
+Floppy und Computer müssen vorher die Parameter mit @* ... eingegeben
+werden.
+
+Andere Disk-Befehle:
+
+Formate:
+@UJ     bewirkt einen Floppy-Reset
+@I      initialisiert die Floppy
+@ME     (Adresse) führt ein Programm in der Floppy aus
+@BR     (SPUR) (SEKTOR) (SPEICHER-SEITE).
+@BW     (SPUR) (SEKTOR) (SPEICHER-SEITE).
+
+Beispiele:
+
+@BR 12 01 40 liest Track 18, Sektor 01 in Rechner ab 4000
+@BW 11 00 40 schreibt von Comp. 4000 nach Tr. 17 Sektor 00.
+
+Wenn bei Block-Read bzw. Block-Write keine Page im Rechner angegeben ist,
+wird die Seite $CF benutzt. Die Parameter werden in hex eingegeben. Bevor
+Sie einen neuen Sektor auf Disk schreiben, prüfen Sie ob Sie den Sektor
+wirklich überschreiben wollen. Er ist sonst unwiederbringlich verloren.
+
+Kapitel 3 : Das Freezer-Menue
+
+Die Funktionstasten des Freezer-Menüs weisen folgende Belegung auf
+
+Fl      = BACKUP
+
+F3      = UTILITY-Menü
+
+F5      = EDITOR-Menue
+
+F7      = MONITOR
+
+F8      = NEUSTART
+
+Die Funktionen werden nun wie beim Reset-Menü in chronologischer
+Reihenfolge erläutert.
+
+3.1 BACKUP
+
+Als Backup beim Freezen bezeichnen wir eine Arbeitskopie eines Programms,
+wie es zum Zeitpunkt des Freezens im Rechnerspeicher stand. Solche Backups
+sind von der Form und Länge her nicht unbedingt gleich dem Original des
+Programms auf der Diskette. NORDIC POWER macht bei Backups eine
+"Blitzaufnahme" des Inhalts des Computer-Speichers, d.h. der Graphik, der
+Sprites, der Variablen, der Zeitkonstanten usw. Diese Informationen werden
+beim Freezen mittels des integrierten PACKERS kompaktiert (komprimiert,
+verdichtet) und können wahlweise auf Diskette oder Cassette gespeichert
+werden.
+
+3.1 1 BACKUP VORBEREITEN
+
+Nehmen Sie eine leere Diskette zur Hand. Wenn die Diskette noch unbenutzt
+ist, muss sie zuerst formatiert werden.
+
+Wählen Sie RESET oder RESET-Clear aus dem RESET-MENUE.
+
+3.1.2 BACKUP ERSTELLEN
+
+Laden Sie jetzt das Programm, von dem Sie die Arbeitskopie machen möchten.
+Sobald das Programm geladen und gestartet ist (Programm muss laufen !),
+kann es eingefroren werden (Beim Einfrieren wird der Ablauf des Programms
+angehalten). Betätigen Sie dazu den FREEZERKNOPF. Im allgemeinen ist es am
+besten, ein Programm im ersten Bild oder Titelbild anzuhalten und
+einzufrieren. Die meisten Programme können jedoch zu jedem Zeitpunkt des
+Programmablaufs eingefroren werden.
+Wählen Sie die Backup-Funktion aus dem Freezer-Menü. Der Rahmen des
+Bildschirms blinkt jetzt etwa 10 bis 20 Sekunden. Das zeigt Ihnen an, dass
+der Compacker, der das Programm komprimiert, arbeitet. Sobald das Programm
+komprimiert ist, können Sie es abspeichern. Rufen Sie dazu die
+entsprechende SAVE-Funktion im Backup-Menü auf. Sie können entscheiden, ob
+Sie auf Cassette (TAPE) oder DISK abspeichern wollen.
+
+3.1.3 BACKUP AUF DISK SPEICHERN
+
+Bevor Sie Ihr BACKUP auf Diskette speichern, können Sie festlegen, ob das
+BACKUP später mit NORDIC POWER oder unabhängig davon, d.h. auf einem
+Rechner o h n e NORDIC POWER eingeladen werden kann. Wenn mit Option (1)
+abgespeichert wird, erhält das Backup einen zusätzlichen integrierten
+Fastloader, so dass andere Fast-Load-Systeme, die bereits in Ihrem Rechner
+eingebaut sind, abgeschaltet werden. Wenn in Ihrem Rechner ein
+Fastload-System eingebaut ist und Sie das Fastload von NORDIC-POWER nicht
+benutzen wollen, so besteht die Möglichkeit, das Backup als normales File
+(ohne Fastload) abzuspeichern. Gegebenenfalls sollten Sie das vorher
+ausprobieren, bevor Sie mehrere Backups machen.
+
+Backups können auf drei verschiedene Arten gespeichert (abgesavet) werden
+und zwar als:
+
+1)      Abspeichern eines Files (Programms) mit Autostart und Fastload.
+Das entstehende File ist modulunabhängig und kann auch ohne NORDIC POWER
+schnell geladen werden.
+
+2)      Abspeichern Normal ; Das Programm muss später mit -Run" gestartet
+werden. Bei Programmen, die mehr als 202 Blocks auf der Diskette belegen,
+entstehen zwei Files. Diese Version ist ebenfalls modulunabhängig.
+
+3)      Abspeichern Normal ; Das Programm muss später mit -Run" gestartet
+werden. Auch bei Programmen die länger als 202 Blocks lang sind entsteht
+immer ein File. Diese Version kann später nur mit NORDIC POWER im
+POWER-BASIC-Modus oder mit den LOADER (NP) (siehe Kapitel 2.3.7)
+eingeladen werden.
+
+Wählen Sie die gewünschte Funktion und geben Sie dem Programm einen Namen.
+Achten Sie darauf, dass der Name nicht bereits auf der Disk vorkommt. Der
+Name darf bis zu 15 Zeichen lang sein.
+
+Drücken Sie nun RETURN um den Speichervorgang zu starten. Sollte aus
+irgendeinem Grunde das Laufwerk nicht reagieren, schalten Sie es kurz aus
+und dann wieder ein. Danach starten Sie den Speicher-Vorgang noch einmal
+neu. Dieses kann eventuell dann erforderlich werden, wenn Sie kommerziell
+geschützte Software verwendet haben. Bein Kopierschutz wird häufig mit
+veränderten DOS-Routinen für die Floppy gearbeitet, die durch das Aus- und
+Einschalten gelöscht werden müssen.
+
+Nach dem Abspeichern ist Ihr BACKUP fertig. Sie können es sofort noch
+einmal abspeichern, im gleichen oder in einem der anderen Formate, wie
+oben beschrieben.
+
+Ebenso können Sie Ihr Programm weiterlaufen lassen (F3 = NEUSTART) und es
+auch verlassen (Fl = Sprung ins Reset-Menü).
+
+Im Durchschnitt können Sie drei NORDIC POWER auf einer Diskettenseite
+unterbringen. Wenn nicht genügend Platz beim Abspeichern auf der Diskette
+vorhanden war, erhalten Sie eine Fehlermeldung wie "DISK FULL- oder -FILE
+TOO LARGE. In diesen Fall
+ist Ihr BACKUP nicht korrekt auf der Disk gespeichert. Sie müssen eine
+Disk mit mehr freiem Speicherplatz einlegen und den Speichervorgang
+wiederholen.
+
+Ebenfalls können Sie im Backup-Menü DOSBEFEHLE senden (F5 für Laufwerk 8 /
+F6 für Laufwerk 9 ) und sich die Directory anzeigen lassen (F7 für
+Laufwerk 8 / F8 für Laufwerk 9).
+
+3.1.4 BACKUP MIT DATASSETTE
+
+Mit "TAPE" oder "BAND" wird im NORDIC POWER die CASSETTE für die DATASETTE
+bezeichnet.
+
+Für "TAPE" gibt es zwei Geschwindigkeits-Optionen:
+
+1) TAPE :       Hierbei wird das Programm in einem Commodore-eigenen
+Format abgespeichert. Wird diese Art des Speicherns gewählt, muss sich das
+Original-Commodore-Betriebssystem im Rechner befinden, da dessen
+Tape-Routinen benötigt werden. Benutzen Sie diese Geschwindigkeit, wenn
+Sie aus irgend welchen Gründen Ihre Programme einmal auf Geräten ohne
+Erweiterung einladen wollen.
+
+2) TURBO TAPE: Die Backups werden im bekannten TURBO-TAPE-Format
+        abgespeichert. Bis zu einer Länge von 186 Blocks kön-
+        nen die Programme später auch ohne NORDIC POWER eingela-
+        den werden (Selbstverständlich nur mit TURBO-TAPE).
+        Bei dieser Routine ist es gleichgültig, welches Betriebs-
+        system sich im Rechner befindet. Sie sollten Ihre Bänder
+        mit TURBO-TAPE markieren, damit Sie beim späteren Wieder-
+        Einladen die richtige Laderoutine aufrufen.
+
+3.1.5 BACKUP WIEDER LADEN
+
+Denken Sie bitte daran, dass Datenspeicher wie die Datasette oder die
+Floppy nie zu nahe an einem Monitor oder Fernseher aufgestellt sein
+sollten. Selbstverständlich wissen Sie, dass Bänder und Disketten einer
+gewissen Pflege bedürfen. Die Schreib-Lese-Köpfe sollten von Zeit zu Zeit
+gereinigt werden.
+
+Wenn Sie eine Datasette verwenden, sollten Sie zunächst sicherstellen,
+dass das Band in der Cassette richtig und fest aufgewickelt ist.
+
+Wenn Sie Backups wieder laden, müssen Sie bei TAPE unterscheiden, ob das
+Programm mit oder ohne TURBO-TAPE gespeichert ist.
+
+Programme ohne TURBO-TAPE laden Sie wie üblich, d.h. mit SHIFT/RUNSTOP
+oder mit LOAD. Dazu muss das TURBO mit TT- ausgeschaltet sein.
+
+Programme mit TURBO-TAPE laden Sie genauso, jedoch muss TURBO mit TT+
+eingeschaltet sein. Oder Sie laden TURBO-TAPE Programme, die einen Namen
+haben, mit LOAD"name",7. Dies geht auch dann, wenn TURBO mit TT-
+ausgeschaltet ist.
+
+Von Diskette laden Sie am besten mit dem integrierten Fast-Load von NORDIC
+POWER. Das Fast-Load aktivieren Sie, indem im Reset-Menü die Funktion
+POWER-BASIC wählen.
+
+Sie können dann aus der DIRECTORY der Disk heraus laden:
+
+1. Drücken Sie die F7 (Funktionstaste F7 ) oder @$. Damit wird Ihnen die
+Directory angezeigt, ohne ein Programm im Speicher zu zerstören. Bei einer
+längeren Directory können Sie die Anzeige abbrechen, indem Sie die
+Stop-Taste betätigen.
+
+2) Fahren Sie den CURSOR an den linken Rand des Block-Eintrages von dem
+Programm, das Sie laden möchten.
+
+3) Drücken Sie "F5". Damit wird das Programm geladen. Wenn es sich bei dem
+geladenen Programm um ein Autostart-Programm handelt, startet es sich
+automatisch. Ansonsten drücken Sie F3 (RUN).
+
+Sie können sowohl BASIC- als auch Maschine-Programmen auch mit dem
+Boot-Befehl laden und starten (lesen Sie dazu ggf. noch einmal im Kapitel
+2.2.4 nach).
+
+LADEN ohne das MODUL ist ebenfalls komfortabel:
+
+1) Laden Sie zunächst den LOADER. Geben Sie dazu ein LOAD"LOAD*",8 Dann
+starten Sie mit -RUN-. Der LOADER muss dabei natürlich sich auf der Disk
+befinden, das heißt, Sie müssen ihn vorher abgespeichert haben (vgl.
+Kapitel 2.3.7).
+
+2) Sie sehen nun das DIRECTORY. Gehen Sie mit dem CURSOR auf das zu
+ladende Programm und drücken "RETURN".
+
+Wenn ein mehrteiliges Programm mit dem LOADER geladen wird, so wird der
+jeweils erste Teil schnell geladen.
+
+3.1.6 PROBLEM-HILFE
+
+1) Programm läßt sich nicht abspeichern
+
+Wahrscheinlich haben Sie ein Programm eingeladen, dessen Kopierschutz
+Routinen des Floppy-DOS verändert. Durch einen RESET der Floppy können Sie
+dieses rückgängig machen. Schalten Sie Ihre Floppy aus und wieder ein
+(Hardware-Reset). Versuchen Sie das Abspeichern noch einmal.
+
+Meldet sich die Floppy mit dem Fehler "DRIVE NOT READY", so haben Sie
+vielleicht versehentlich eine Disk eingelegt, die nicht formatiert ist.
+Formatieren Sie die Disk und versuchen Sie das Speichern aufs neue.
+
+Wenn die Floppy nach dem Anlaufen oder während des Speicherns die Meldung
+"DISK FULL" ausgibt, reicht der Speicherplatz auf der Diskette für Ihr
+BACKUP nicht aus. Es muss eine neue (formatierte) Diskette eingelegt
+werden.
+
+
+Andere Fehlermeldungen im Zusammenhang mit NORDIC POWER bedeuten in der
+Regel, dass die eingelegte Diskette selbst fehlerhaft ist. (Die Bedeutung
+der Fehlermeldungen ist in Ihrem Commodore Floppy-Handbuch ausführlich
+beschrieben).
+
+2) Ein Programm lässt sich nicht laden
+
+Es gibt bestimmte Programme, die prüfen, ob der Rechnerspeicher für ein
+FREEZEN (Einfrieren des Programms) vorkonfiguriert wurde. Sie wissen
+vielleicht, dass man durch vorkonfigurieren des Rechnerspeichers beim
+Packen kürzere Files erzielt. Als Schutz vor dem FREEZEN fragen daher
+einige Programme dieses vorkonfigurieren ab. Sie schützen sich vor solchen
+dummen Abfragen, indem Sie den Rechner kurz aus- und wieder einschalten.
+Wählen Sie dann im RESET-Menü den normalen RESET ohne CLEAR. Ihr BACKUP
+wird jetzt zwar ein bisschen länger, ab Sie haben den einfältigen
+Software-Schutz überlistet.
+
+Es gibt immer wieder Programme auf Cassette, die sich davor schützen, dass
+der Anwender auch eine Floppy-Station besitzt. Schützen Sie sich vor
+diesen einfältigen Programm-Schreibern, indem Sie die Floppy erst dann
+einschalten, wenn Sie das Programm eingefroren haben.
+
+3) Das BACKUP ist OK, aber es läuft nicht
+Versuchen Sie es einmal, nach dem Laden die Floppy auszuschalten und dann
+zu starten. Eine andere Möglichkeit ist, das Programm in einem anderen
+Stadium abzuspeichern, z.B. am Spielende. Prinzipiell ist es kaum möglich,
+dass sich ein Programm nicht mit NORDIC POWER lauffähig einfrieren lässt.
+Es können jedoch unter Umständen mehrere Versuche in verschiedenen
+Programmstadien nötig sein.
+
+Oft helfen auch Spezial- -POKES" oder bestimmte "PARAMETER". Lesen Sie
+mehr darüber in Kapitel 4.
+
+3.2 Das UTILITY-Menü
+
+Die Funktionstastenbelegung gleicht der des Backup-Menüs, jedoch springt
+der Rechner bei Betätigung von Fl in das FREEZER-Hauptmenü. Das
+Utility-Menü wartet mit folgenden Funktionen auf :
+
+1) Turbolinker
+
+2) Text ändern
+
+3) Parameter
+
+4) Pokes
+
+5) Sprite Kollisionen
+
+6) Joystick vertauschen
+
+7) Autofeuer
+
+8) Bremse
+
+3.2.1 Der TURBOLINKER
+
+Kommerzielle Programme auf Disk besitzen häufig die Eigenschaft, andere
+Fastloads abzuschalten und durch ein eigenes, programminternes Fastload zu
+ersetzen.
+
+Um Nachladeteile von Floppy 8 schnell laden zu können, gibt es
+TURBOLINKER. Wenn Sie die Funktion vor dem PACKEN (BACKUP) gewählt haben,
+wird beim Nachladen von Floppy 8 der modulinterne Schnellader
+eingeschaltet. Wenn Sie nach Aktivierung von TURBO-LINKER das Programm
+wieder starten wollen, sollten Sie die Floppy vorher kurz aus und wieder
+einschalten. Wenn Sie PACKEN und per BACKUP abspeichern, können Sie das
+Programm später nur von POWER-BASIC aus einladen.
+
+Turbolinker arbeitet nicht mit allen Programmen zusammen.
+
+3.2.2 TEXTAENDERUNG
+
+Diese Funktion ermöglicht es Ihnen, Texte zu verändern, ähnlich wie ein
+RENAME eines Files auf einer Disk.
+
+Notieren Sie sich zunächst, welche Texte Sie verändern und welchen Text
+Sie an diese Stelle setzen möchten. Dann wählen Sie TEXT AENDERN aus dein
+Freezer-Menue, Der Befehl hat das Format:
+
+TEXT NEU = TEXT ALT.
+
+Um zum Beispiel den Text "CARTRIDGE" zu löschen und an seiner Stelle
+"MODUL" einzusetzen, schreiben Sie:
+
+Cartridge=Modul
+
+Danach drücken Sie RETURN. NORDIC POWER durchsucht jetzt den gesamten
+Rechner-Speicher auf den STRING "Cartridge". Überall, wo es diesen STRING
+findet, wird er gegen "Modul" ausgetauscht. Nach Abarbeitung des Befehls
+wird Ihnen angezeigt, wie oft der STRING gefunden und ausgetauscht wurde.
+
+Beachten Sie: Sie können keine Texte austauschen, die kürzer als 4 Zeichen
+sind. Achten Sie darauf, dass der alte Text KORREKT so geschrieben ist,
+wie er auf dem Bildschirm angezeigt wurde. Bei ungenauer Eingabe kann
+nichts gefunden werden. Wenn Ihr neuer Text länger als der alte ist,
+werden die überzähligen Zeichen weggelassen.
+
+Es kann vorkommen, dass der veränderte Text nicht sofort auf dem
+Bildschirm angezeigt wird. Sie werden ihn dann jedoch später im laufenden
+Programm wiederfinden. Einige Programmierer schützen ihre Programme mit
+ihrem Namen. Solche Namen können dann nicht in allen Fällen mit TEXT
+AENDERN ausgetauscht werden.
+
+TEXT ÄNDERN kann sowohl CBM-ASCII als auch Bildschirm Codes erkennen und
+bearbeiten. Es gibt jedoch auch Programme, die Ihre Zeichen und
+Schriftarten selbst definieren. Solche Zeichen können ebenfalls nicht mit
+TEXT ÄNDERN bearbeitet werden. Computer-Anwender mit
+Maschinensprachekenntnissen können in diesen Fällen die Such-Befehle des
+eingebauten Maschine-Monitors benutzen.
+
+3.2.3 Das PARAMETER-SYSTEM
+
+NORDIC POWER besitzt ein eingebautes System, das spezielle PARAMETER in
+ein eingefrorenes Programm einlesen kann. Dadurch wird es unter anderem
+möglich, mehrteilige Programme von Band auf Disk zu übertragen. Die
+nachzuladenden Programmteile können sogar in den meisten Fällen mit
+Fast-Load geladen werden. Dazu soll es eine spezielle ERWEITERUNGS-DISK
+geben, die gesondert bestellt werden kann. Auf dieser Disk werden sich die
+erforderlichen Routinen und Parameter zum Transferieren befinden.
+
+Für das NOVALOAD-System sind die Parameter bereits fest in NORDIC POWER
+integriert. Sie benötigen dazu die DISK nicht. NOVA-LOAD bzw. NOVATRANSFER
+erlaubt das Übertragen vieler Programme von CASSETTE auf DISK.
+
+MEHRTEILIGE PROGRAMME
+
+Hierbei handelt es sich um Programme, die während des Programmablaufs
+Teile nachladen. Von etlichen dieser Programme ist ein BACKUP auf DISK
+dadurch möglich, dass man zunächst den Hauptteil einfriert und
+abspeichert; dann erst werden die Nachlader mit einem Filecopy auf die
+DISK kopiert. In einigen Fällen wird dieses jedoch durch entsprechende
+Programmierung unmöglich gemacht. Solche Programme unterstützt dieses
+Modul nicht. Im Bedarfsfall empfehlen wir auf Disk-Sicherheitskopien mit
+guten NIBBLERN auszuweichen oder das entsprechende PROGRAMM AUF CASSETTE
+zu verwenden.
+
+Mehrteilige Programme auf CASSETTE werden nach zwei Kategorien
+unterschieden:
+
+1) NOVA-LADER: Beispiele von NOVALADERN sind die verschiedenen Spiele mit
+Olympischen Disziplinen und einige andere. Die meisten Spiele dieser Art
+können auf Disk transferiert werden. Sie erkennen diese Art von Ladern an
+Ihrem NOVALOAD-Titelbild.
+
+2) INDIVIDUELLE LADER: Diese Programme benötigen spezielle Parameter und
+Filecopy Routinen, die auf der Erweiterungs-Disk erhältlich sein werden.
+
+Zu NOVALOAD und -TRANSFER lesen Sie bitte auch Kapitel 2.3.3
+
+3.2.4 POKES EINGEBEN
+
+Als Spiele-Freak sind Ihnen sicher die in vielen Computerzeitschriften
+veröffentlichen Trainer-POKES bekannt, die Ihnen ein verlängertes der
+sogar unendliches Spiel ermöglichen. Bei diesen Pokes ist es meist
+erforderlich, einen RESET durchzuführen. Drücken Sie dazu die rechte
+hintere Taste des Moduls.
+
+NORDIC POWER bietet jedoch mehr. Sie können die Trainer-POKES eingeben,
+nachdem Sie ein Spiel eingefroren haben. Wählen Sie dazu POKES nach dem
+Freezen. Geben Sie dann den oder die POKES der Reihe nach ein. Wenn Sie
+fertig sind, drücken Sie RETURN. Jetzt können Sie das Programm wieder mit
+Ihren POKES starten oder es mit dieser Veränderung abspeichern. Einige
+nützliche POKES sind in Kapitel 4 beschrieben. Bitte beachten Sie die
+Veröffentlichungen von POKES in den entsprechenden Zeitschriften. Eine
+Sammlung von POKES oder andere spezielle POKES sind von uns nicht
+erhältlich.
+
+Sie können die Pokes auch als Hexadezimalzahlen eingeben, z.B. POKE
+$1000,$80
+
+Um den VIC und die CIA des gefreezten Programmes anzusprechen wird ein *
+verwendet. Beispiel : POKE *$D020,0.
+
+MONITOR-EINGABE von POKR2
+
+Manchmal kann es erforderlich sein, dass POKES im Maschine-Code eingegeben
+werden müssen. Dabei hilft Ihnen der MONITOR von NORDIC POWER. Wählen Sie
+dazu den MONITOR vom Freezer-Menü aus. Bei dieser Eingabeart werden
+Grundkenntnisse in Maschinensprache vorausgesetzt.
+
+Die Bedienung des Maschinensprache-Monitors ist in Kapitel 2.4 erklärt,
+
+3.2.5 SPRITE KOLLISIONEN
+
+Um mit dieser Funktion arbeiten zu können, frieren Sie das Programm erst
+einmal ein. Nach Wahl von SPRITE KOLLISIONEN aus dem Utility-Menü können
+Sie nun folgende Auswahl treffen :
+
+-Kollisionen zwischen Sprites abschalten
+
+-Kollisionen zwischen Sprites und Hintergrund abschalten
+
+-beides gleichzeitig abschalten.
+
+Danach können Sie das Programm wieder starten oder es in diesem Zustand
+abspeichern.
+
+Wenn Sie erfolgreich waren, werden Sie feststellen, dass keine Reaktion
+auftritt wenn Sprites kollidieren. Sie können nun das ganze Spiel
+durchlaufen, ohne dass ein Abschuss oder eine Zerstörung auftritt. Ihre
+Ergebnisse mit dieser Funktion hängen von der Programmierung des Spiels
+ab.
+
+Es ist durchaus möglich, dass Figuren auftreten, die keine Sprites sind
+oder dass die Kollisionen in einigen Fällen nicht vom VIC-Chip überwacht
+werden. In diesem Fall hat die Funktion keine Wirkung.
+
+Zu SPRITES lesen Sie bitte auch das Kapitel 3.3.2
+
+3.2.6 JOYSTICK VERTAUSCHEN
+
+Diese Funktion erlaubt es Ihnen, durch einen einfachen Tastendruck
+softwaremäßig den Joystick-Port zu vertauschen. Das lästige umstecken bei
+Benutzung des falschen Ports fällt also weg.
+
+3.2.7 AUTOFEUER
+
+Das Autofeuer ist nur bei einem Joystick in Port 2 wirksam. Erscheint nach
+Wahl dieser Funktion "GEFUNDEN :0" auf dem Bildschirm, müssen Sie erst den
+Port vertauschen. Es ist nicht möglich, ein Programm mit AUTOFEUER durch
+einen BACKUP abzuspeichern,
+
+3.2.8 BREMSE
+
+Wird der IRQ (Interrupt-Vektor) bei den gefreezten Programm über den Timer
+in der Speicherstelle $DC05 gesteuert, erscheint folgende Meldung auf dem
+Bildschirm :
+
+INTERRUPT TIMER : Aktueller Wert
+
+Der Wert kann nun von 1-255 beliebig verändert werden. Besonders
+bei Spielen mit Zeit kann ein kleinerer Wert eine Beschleunigung und
+ein größerer Wert eine Verlangsamung bewirken, Das geht nicht bei
+jedem Spiel.
+
+Danach (oder gleich nach Wahl der Bremse-Funktion, wenn kein IRQ-Timer
+vorliegt) erscheint:
+
+ZEIT(l-99/0=AUS).
+
+Damit ergibt sich eine weitere Verzögerungsmöglichkeit für den
+Spielablauf. Es kann nun ein Wert zwischen 0 und 99 gewählt werden.
+
+-Mit 0 schaltet man eine zuvor gewählte Bremsfunktion aus. Der IRQ-Timer
+enthält nun aber nicht mehr seinen Original-Wert. Diesen Wert muss man
+sich merken und selbst wieder eingeben.
+
+-Mit 1-99 kann das Programm verzögert werden, wobei 99 die größtmögliche
+Verzögerung bewirkt.
+
+Nun erscheint INTERRUPT sperren JA/NEIN
+Bei Wahl von JA kann dadurch während der Verzögerung auch der IRQ
+gesperrt und verlangsamt werden.
+Wurde am Anfang nicht INTERRUPT-TIMER angezeigt, so sollte Ihre
+Eingabe hier NEIN lauten.
+
+Es ist auch möglich, von einem so verzögerten Programm ein Backup zu
+machen, mit dem dann ein Spiel trainiert werden kann.
+
+3.3 Das EDITOR Menü
+
+Um mit dem EDITOR zu arbeiten, freezen Sie zunächst wieder das Spiel.
+Wählen Sie dann die Funktion EDITOR aus dem Freezer-Menü.
+
+Das EDITOR-Menue besitzt folgende Tastenbelegung
+
+Fl: Hauptmenü (FREEZER)
+
+F3: Neustart
+
+F5: DOS-Befehl Floppy 8
+
+F7: Directory Floppy 8
+
+1) Bild ansehen
+
+2) Sprite Editor
+
+3) Bild ausdrucken
+
+4) Text ausdrucken
+
+5) Bild speichern
+
+6) Bild laden
+
+7) Diashow Bild
+
+In der Mitte des Bildschirms wird Ihnen der gefreezte Grafikmodus
+angezeigt (TEXT; TEXT+ (bei geändertem Zeichensatz); TEXT MULTICOLOR;
+HIRES; HIRES MULTICOLOR; EXTENDED COLOR).
+
+Die Funktionen 1-7 werden nun in chronologischer Reihenfolge näher
+erläutert.
+
+3.3.1 BILD ANSEHEN
+
+Bei Auswahl dieser Funktion wird Ihnen die gefreezte Programmsituation
+angezeigt. Diese können Sie nun wie folgt verändern :
+
+Mit den Tasten 1-8 können Sie die sich im Bild befindenden Sprites 1
+6 senkrecht vergrößern.
+Mit der Taste <SHIFT> und 1-8 können Sie die sich im Bild befinden
+den Sprites 1-8 waagerecht vergrößern.
+
+F6: DOS-Befehl Floppy 9
+
+F8: Directory Floppy 9
+
+Mit :
+        Fi ~ HINTERGRUNDFARBE ändern
+        F2 = BILDRAHMENFARBE ändern
+        F3 = VIDEORAM HI ändern (nur bei HIRES sinnvoll)
+        F5 = VIDEORAM LOW ändern (nur bei HIRES sinnvoll)
+
+
+F7 =    FARBRAM ändern
+        Nach 16-maligem Drücken der Taste <16 Farben) erscheint
+        wieder die Original-Farbe.
+
+Durch Drücken von <SPACE> ~ Leertaste gelangen Sie zurück in das
+EDITOR-Menue.
+
+3.3.2 SPRITES
+
+Bei Aufruf des Sprite-Editors wird das beim Freezen aktuelle Sprite in
+Editorfeld angezeigt und seine Speicheradresse ausgegeben.
+
+Der Bildschirm gliedert sich in zwei Felder. Links befindet sich das
+EDITORFELD, rechts wird Ihnen das aktuelle Sprite angezeigt (in klein und
+groß). Neben dieser SPRITEANZEIGE wird Ihnen die Adresse genannt, bei der
+das Sprite im Speicher liegt. Diese Adresse kann erhöht und verringert
+werden.
+
++/- erhöht bzw. erniedrigt um $40 (1 Sprite-Block von 64 Bytes)
+
+SHIFT-Taste mit +/- erhöht bzw. erniedrigt um $100 (4 Sprite-Blöcke)
+
+Commodore-Taste mit +/- erhöht bzw. erniedrigt um $1000 (64 Sprite-Blöcke)
+
+Jedes Sprite, dass sich beim Freezen im Speicher befindet, kann so auf dem
+Bildschirm angezeigt werden. Sie können den gesamten Rechner-Speicher auf
+Sprites durchsehen. Beim "Durchblättern" des Speichers wandern die Sprites
+über den SPRITEANZEIGER.
+
+Die Sprites können nun auf folgende Art und Weise bearbeitet werden
+
+(V) von Speicher        Diese Funktion kopiert das aktuelle, im
+SPRITEANZEIGER dargestellte Sprite vom Speicher in das EDITORFELD, so dass
+Sie es nach belieben bearbeiten können.
+
+Hiermit wird das sich momentan im EDITORFELD befindende Sprite zu der
+angegebenen Adresse in den Speicher kopiert.
+
+Vertauscht Speicher mit Editorfeld.
+
+EDITORFELD löschen.
+
+Invertieren.
+
+nach (u)nten/ (o)ben/ (,)links/ (.)rechts das SPRITE im EDITORFELD
+verschieben.
+
+SPRITE im EDITORFELD nach unten/oben spiegeln.
+
+SPRITE im EDITORFELD nach rechts/links spiegeln.
+
+(I) in Speicher
+
+(T) tausche (C) clear (N) negativ (U/0/1/.)
+
+( 1 )
+(2)
+
+(S) speichern
+
+(M) Modus (E) Ende RUN/STOP
+
+(L) laden       SPRITE in das EDITORFELD einladen. Dies stellt
+        keinen Eingriff in den Speicher dar, es wird
+        nichts gelöscht.
+(S) speichern   EDITORFELDSPRITE abspeichern.
+(M) Modus :     Normal oder Multicolour-Sprite umschalten.
+(E) Ende        Zurück in das EDITOR-Menue.
+RUN/STOP        wie (E) Ende
+
+Die unter der Adressen-Angabe stehende Anzeige hat folgende Bedeutung :
+
+B = Hintergrundfarbe (zu verändern mit F1)
+
+S = Spritefarbe (zu verändern mit F7 ).
+
+1 und 2 = Farben von Multicoloursprites ( Ändern: F3 = Multicolourfarbe 1/
+F5 = Multicolourfarbe 2).
+
+Mit <SPACE> oder <RETURN> wird ein Punkt im EDITORFELD gesetzt oder
+gelöscht.
+
+Bei MULTICOLOR-Sprites wird die Punktfarbe aus jeweils zwei benachbarten
+Punkten bestimmt.
+
+Mit diesen Funktionen bietet der Sprite-EDITOR die Möglichkeit, ein
+Programm, insbesondere Spiel, Ihren persönlichen Vorstellungen anzupassen.
+Sie können nun das geänderte Programm wieder starten oder es als BACKUP
+abspeichern.
+
+Beachten Sie: Ein Programm benutzt nie alle Sprite-Positionen. An
+unbenutzten Positionen werden daher Zufallsbilder angezeigt. Wenn Sie mit
+Datasette arbeiten, sollten Sie bei dem Laden und Speichern von Sprites
+für Editierzwecke Namen verwenden. Wenn Sie keinen Namen angeben, wird das
+nächste Programm von der Datasette nachgeladen. Das Laden können Sie mit
+RUN/STOP abbrechen.
+
+Es gibt viele Variationsmöglichkeiten, Sprites in Programmen darzustellen.
+Sie werden daher auch Zufallsergebnisse finden, die nicht vorgesehen sind.
+
+3.3.3 BILD AUSDRUCKEN
+
+Wenn Sie einen Punkt-Graphik-fähigen Commodore-Drucker (MPS 601 oder
+NPS803 oder kompatiblen) oder einen entsprechenden EPSON-Drucker oder
+kompatiblen besitzen, können Sie Bildschirminhalte ausdrucken. Gehen Sie
+dazu wie folgt vor:
+
+1) Frieren Sie das Programm an der Stelle ein, an der Sie ausdrucken
+wollen.
+
+2) Gehen Sie dann in das EDITOR-Menue und wählen den Punkt(3) für Bild
+ausdrucken. Selbstverständlich können Sie das Bild vorher noch (wie in
+Punkt -BILD ANSEHEN" beschrieben) Ihren Vorstellungen entsprechend
+anpassen.
+
+3) Vergewissern Sie sich, dass Ihr Drucker sich im Einschaltzustand
+befindet. Wenn Sie sich nicht sicher sind, schalten Sie ihn kurz aus und
+wieder ein. Stellen Sie sicher, dass das Papier richtig justiert ist.
+
+4) Wählen Sie nun die entsprechenden Parameter :
+
+(1) SPRITES drucken JA/NEIN
+
+(2) Ausdruck INVERS/NORMAL
+
+(3) Automatischer Zeilenvorschub JA/NEIN
+
+(4) Zeilenabstand NORMAL/SCHMAL
+
+(5) Drucker-Typ :       EPSON 9 NADELN
+        EPSON 24 NADELN
+        EPSON FARBE (9 NADELN); hierbei werden 16 Farben ausgedruckt
+        CBM 801/803
+
+5) Drücken Sie Fl um mit dem Ausdruck zu beginnen. Nach dem Ausdruck
+gelangen Sie in das Menü zurück. Den Druckvorgang können Sie mit RUN/STOP
+abbrechen. Programme können bei NORDIC POWER nach dem Ausdruck von
+Hardcopys grundsätzlich wieder gestartet werden. Einige Programme
+verwenden Graphiken im RASTER-SPLIT. In solchen Fällen werden Sie nur von
+Teilen des Bildes einen brauchbaren Ausdruck bekommen.
+
+Benutzer des STAR NL 10 mit seriellem Interfacemodul können über Parameter
+Epson drucken. Sie erhalten dann eine höhere Punktdichte.
+
+3.3.4 TEXT AUSDRUCKEN
+
+NORDIC POWER ermöglicht es Ihnen, eine Texthardcopy des Bildschirms zu
+machen. Dies ist jedoch nur bei angezeigter Grafikart TEXT möglich.
+
+3.3 5 BILD SPEICHERN
+
+NORDIC POWER besitzt die Fähigkeit, HI-RES und MULTICOLOR HI-RES Bilder
+auf Cassette oder Disk zu speichern. Dieses können Bilder aus
+PROGRAMM-LADERN, GRAPHIKEN aus einem Spiel und andere Graphiken sein.
+
+Um ein Bild abzuspeichern, lassen Sie das Programm bis zu dem gewünschten
+Bild laufen und freezen dann das Programm. Wählen Sie dann die Funktion
+(E) BILD Speichern aus dem EDITOR MENUE und folgen
+
+Sie den Anweisungen auf dem Bildschirm. Wenn es sich bei einem Bild nicht
+um ein HIRES Bild handelt, wird eine Fehlermeldung angezeigt. Drücken Sie
+RUN/STOP um in das Menü zurückzugelangen.
+
+HIRES-Bilder können in zwei verschiedenen Formaten abgespeichert werden:
+
+1) HI-EDDI: Bilder in diesem Format werden in Farbe mit Videoarm
+abgespeichert. Sie können mit HI-EDDI bearbeitet werden.
+
+2) ART-STUDIO: Diese Bilder können mit ART STUDIO bearbeitet werden.
+
+HIRES MULTICOLOUR-Bilder können im Format KOALAPAINTER, BLAZING PADDLES,
+ADVANCED ART STUDIO, ARTIST 64 und IMAGE SYSTEM abgespeichert und später
+auch mit diesen Programmen bearbeitet werden.
+
+Je nachdem welcher Grafikmodus beim Freezen bestand, gelangen Sie
+automatisch in das entsprechende Auswahlmenü.
+
+Wichtig: Es wird keine Kennung des Grafikformates mit abgespeichert. Daher
+ist es unbedingt erforderlich, dass Sie sich das Format merken und
+gegebenenfalls notieren, da sonst ein späteres Laden nicht möglich ist,
+Wir empfehlen eine Kennung direkt hinter dem Bildnamen, z.B. NAME,koala.
+
+3.3.6 BILD LADEN
+
+Diese Funktion ermöglicht es Ihnen, die abgespeicherten Bilder oder auch
+Bilder von anderen Mal- und Zeichenprogrammen in ein anderes Programm
+einzuladen. Das ursprünglich gefreezte Bild wird dann durch das
+eingeladene ersetzt. Unbedingt erforderlich zum Gelingen dieser Aktion
+ist, dass sowohl Grafikmodus als auch das Format der beiden Bilder
+identisch sind.
+
+Mit Hilfe der Funktionen <Bild laden> und <Bild speichern> sowie den
+Sprite- und Text-Editier-Funktionen wird es also möglich,
+Bildschirmdarstellungen von Programmen fast beliebig zu verändern und
+sozusagen aus einem alten Spiel ein neues zu machen.
+
+3.3.7 DIASHOW
+
+Hiermit werden die Bilder für die Diashow auf Disk oder Tape
+abgespeichert. Dem Filenamen des Bildes wird dabei ein <NP> vorangestellt.
+
+Soll das Bild auf Tape gespeichert werden, so muss zum Abspeichern das
+TURBO-TAPE-Format gewählt werden. Andernfalls kann das Bild bei einer
+DIA-Show von Cassette nicht gefunden werden.
+
+Zur Vorgehensweise siehe auch Diashow Utility in Kapitel 2.3.6.
+
+
+KAPITEL 4: NUETZLICHE TIPS
+
+4.1 RECHTLICHE HINWEISE
+
+NORDIC POWER ist das zur Zeit wohl eines der mächtigsten Module. Viele
+Programmierer versuchen jedoch, es dem Computer-Besitzer zu erschweren,
+seine Software seinen individuellen Wünschen anzupassen. In der
+Bundesrepublik Deutschland streiten sich die Experten heute, inwieweit ein
+Computerprogramm dem Käufer gehört bzw. inwieweit er nur die Rechte
+erworben hat, das Programm zu benutzen und inwieweit gegebenenfalls das
+erlaubte Benutzen ein Verändern durch den Anwender mit beinhaltet. Einige
+Fachzeitschriften vertreten die Auffassung, dass jedem Programmeigentümer
+seine Sicherheitskopie zusteht. Einige Softwarehersteller versuchen dieses
+Recht zu bestreiten, so dass nach deren Wünschen Sie bei jeder Bearbeitung
+von ORIGINAL-SOFTWARE oder Sicherheitskopien mit eine Erlaubnis des
+Eigentümers der Software-Rechte einholen müssten.
+
+Wir können die Entwicklung der Situation nicht voraussehen. Sie müssen
+also für sich selbst entscheiden, wann Sie den Eigentümer der Software um
+Genehmigung fragen und wann Sie es unterlassen. Viele könnten dabei jedoch
+grundsätzlich ablehnen, obwohl sie Ihnen die Genehmigung vielleicht gar
+nicht verweigern dürften. Bis die rechtliche Situation nicht eindeutig
+geklärt ist, können wir Ihnen auch keine Verhaltensregeln vorschlagen.
+Eines jedoch ist sicher: Das Kopieren und Tauschen bzw. Kopieren und
+Verkaufen ist zur Zeit in Deutschland nicht erlaubt. Anwender in anderen
+Staaten informieren sich bitte über die dort herrschende Gesetzgebung.
+
+4.2 POKES und TIPS
+
+Einige Programme müssen durch POKES etwas angepasst werden, um erfolgreich
+mit NORDIC POWER bearbeitet werden zu können. Bei jedem POKE muss das Wort
+POKE (also der Befehl POKE) wiederholt werden. Ein POKE, der für ein
+bestimmtes Spiel gilt, kann nicht für ein anderes Spiel verwendet werden.
+
+WIZBALL: Es gibt zwei Versionen davon. Versuchen Sie die beiden POKE
+Serien, um herauszufinden, welche Version Sie besitzen: a) POKE
+31866,41:POKE 37511,96:POKE 35588,96 b) POKE 45,127:POKE
+31871,41:POKE35602,96:POKE 37516,96
+
+EAGLES:                 POKE 60392,96
+ZONE RANGER:            POKE 45,127:POKE 46,0:POKE 47,0
+SCOOBY DOO:                     POKE 12477,76:POKE 12478,234:POKE 12479,48
+BALLBLAZER:                     POKE 224,13:POKE225,0
+YIE AR KUNG FU II:      POKE 224,203:POKE225,227:POKE231,53
+URIDIUM PLUS:           POKE 1288,234:POKE1289,234
+GREEN BERET:            POKE 256,96
+
+Wenn Sie ein Spiel finden sollten, das sich nicht erfolgreich freezen
+lassen will, versuchen Sie einmal die NMI-Timer-Interrupts abzuschalten
+mit folgenden POKES:
+
+POKE45,127:POKE46,0:POKE47,0
+
+Das ist zwar keine Erfolgsgarantie, aber einen Versuch wert. Denken Sie
+auch daran, es kann sein, dass sich ein Programm an der Vorkonfigurierung
+des Speichers stört. Versuchen Sie es noch einmal, indem Sie nach dem
+Einschalten den normalen RESET wählen.
+
+Und, wie schon an anderer Stelle beschrieben, gibt es für
+Cassetten-Benutzer zu NORDIC POWER eine ERWEITERUNGS-DISKETTE, die viele
+PARAMETER für das FREEZEN bereit hält. Fragen Sie nach dieser Disk, wenn
+Sie Ihre Möglichkeiten erweitern wollen.

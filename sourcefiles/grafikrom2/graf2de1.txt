@@ -1,0 +1,443 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore 64
+related documents in electronic text format that might otherwise cease to
+exist with the rapid advancement of computer technology and declining
+interest in 8-bit computers on the part of the general population. If you
+would like to help by converting C64 related hardcopy documents to
+electronic texts please contact the manager of International Project 64,
+Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The first
+characters of the file name are an abbreviation of the original document
+name and the language of the etext. The version number of the etext follows
+next. After that a letter may appear to indicate the particular source of
+the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International Project
+64 make no representations about the accuracy or suitability of this
+material for any purpose. This etext is provided "as-is". Please refer to
+the warranty of the original document, if any, that may included in this
+etext. No other warranties, express or implied, are made to you as to the
+etext or any medium it may be on. Neither the author(s) nor the members of
+International Project 64 will assume liability for damages either from the
+direct or indirect use of this etext or from the distribution of or
+modification to this etext. Therefore if you read this document or use the
+information herein you do so at your own risk.
+
+*********
+
+The International Project 64 etext of the Grafik ROM II manual, converted to
+text by Christian Janoff <mepk@rbg.informatik.th-darmstadt.de>
+
+GRAF2DE1.TXT, September 1997, etext #17.
+
+*********
+                  MPS802 & 1526 Grafik-ROM II
+
+
+Wir freuen uns über Ihr Interesse an unserem Grafik-ROM II
+und möchten Ihnen einige Hinweise zum Einbau des Grafik-ROMs
+geben.
+Bitte stellen Sie fest, welches Bauteil (ROM = 24 Pins oder
+EPROM = 28 Pins) sich in Ihrem Drucker befindet.
+Wenn Ihr Drucker mit einem EPROM (28 Pins) ausgestattet ist,
+kann der Baustein ausgetauscht werden, ohne Veränderungen an
+ihrem Drucker vorzunehmen.
+Sollte Ihr Drucker mit einem ROM (24 Pins) ausgerüstet sein,
+müssen Änderungen vorgenommen werden.
+
+Dazu bieten sich zwei Alternativen an:
+
+ 1.) Sie verwenden einen Adaptersockel, den Sie über unsere
+     Adresse beziehen können. Preis DM 15.-
+
+ 2.) Sie löten die beiden Jumper J3 + J4 um. Wir haben eine
+     Beschreibung mit Skizze für den Umbau beigefügt, die Sie
+     bitte sorgfältig lesen und genau befolgen sollten.
+
+Bei sachgemäßer Ausführung der Lötarbeiten wird Ihr Drucker
+auch ohne Adaptersockel mit unserem Grafik-ROM II problemlos
+funktionieren!
+
+Gleichzeitig weisen wir darauf hin, daß bei unsachgemäßem Einbau,
+Umbau oder Gewaltanwendung an Ihrem Drucker keine Haftung
+unsererseits besteht!
+Die Änderung sowie der Einbau geschieht auf eigene Gefahr!
+
+Wenn Sie die Lötarbeiten nicht selbst ausführen können, sollten
+Sie den Rat eines Fachmanns befolgen oder den Adaptersockel
+verwenden.
+Für evt. Rückfragen stehen wir Ihnen gerne zur Verfügung!
+
+Tel.: 0234/793212
+
+*********
+
+MPS802 & 1526 GRAFIK-ROM II
+
+Das Grafik-ROM II ist ein erweitertes Druckerbetriebssystem, für die Drucker
+1526 und MPS802, das zu dem alten Betriebssystem REV 07c kompatibel ist.
+Die Erweiterung umfaßt 19 neue Befehle, die unter anderem den kompletten
+Grafikmodus des MPS801 beinhalten. Desweiteren existieren drei Grafik-Befehle,
+die zu EPSON und vergleichbaren Druckern kompatibel sind. Diese Befehle
+ermöglichen einen Grafikausdruck mit den meisten Programmen (Print Shop, Hi-
+Eddi, Printfox, News Room, Garfield, Simons Basic, Koala Printer und viele
+andere), die derzeit für den C64/128 erhältlich sind. Darüberhinaus enthält
+das Grafik-ROM II sechs internationale Zeichensätze (Amerikanisch, Deutsch,
+Französisch, Dänisch, Spanisch, VIZAWRITE Deutsch).
+Ein ladbarer Zeichensatz ermöglicht es, zusätzlich bis zu 10 selbstdefinierte
+Zeichen zu verwenden. Aus dem alten Zeichensatz wurden drei Zeichen (k,g,')
+neu gestaltet, um eine bessere Lesbarkeit zu erreichen. Das Grafik-ROM II
+enthält eine zeitsparende Druckwegoptimierung während des Grafikdrucks
+im Epson-Modus (bei Leerzeilen erfolgt kein Kopftransport). Weitere
+Fähigkeiten sind eine Unterstreichungsfunktion und eine Hexdumpbetriebsart
+(alle Druckdaten werden hexadezimal dargestellt). Nach dem Einschalten
+des Druckers sind die Sekundäradressen abgeschaltet, um ein unmittelbares
+Grafikdrucken zu gewährleisten. Dieser Zustand kann aber per Befehl
+umgeschaltet werden. Die Zeilenzahl pro Seite ist auf 72 voreingestellt für
+das in Deutschland übliche 12" (Zoll) * 240mm Druckpapierformat.
+Die Funktionszeichen für Breitschrift chr$(1) & chr$(129) sind nun identisch
+mit chr$(14) & chr$(15). Dies ermöglicht zusätzlich Kompatibilität zur alten
+Betriebssystemversion des 1526. Der MPS802 ist in der Lage, 640 Bildpunkte
+in einer Zeile zu drucken. Der MPS801 schafft jedoch nur 480 Punkte.
+Dementsprechend sind Grafikausdrucke im MPS801 Grafikbetrieb um ein Viertel
+kleiner. Ein Grafikausdruck vollzieht sich mit dem neuen Grafik-ROM II
+ca. 5 bis 6 mal schneller als mit der bedingt grafikfähigen Version REV07c.
+Sogar der grafikfähige Drucker MPS801 druckt Grafik um die Hälfte langsamer
+als der MPS802/1526 mit dem Grafik-ROM II.
+Die Umrüstung des Druckers erfolgt einfach durch den Austausch des alten
+Druckerbetriebssystems (EPROM) durch das neue Grafik-ROM II. Sollte Ihr
+Drucker ein ROM enthalten (24 Kontakte), dann besteht die Möglichkeit einer
+Anpassung durch ein Umlöten der Jumper (zwei Drahtbrücken) oder durch eine
+Adapterfassung DM 20.- (mit bis zu vier verschiedenen Druckerbetriebssystemen
+in einem 27256 EPROM). Im Lieferumfang zusätzlich enthalten sind eine
+ausführliche Anleitung (Einbau; Programmierung) sowie mehrere
+Programmbeispiele.
+Der Kaufpreis des Grafik-ROM II beträgt DM 78.- (incl. Porto und Verpackung).
+6 Monate Garantie ab Verkaufsdatum! Der Versand erfolgt ausschließlich
+per Nachnahme. Bestellungen sind zu richten an:
+
+Heinz Haarmann, Kosterstr. 92, 4630 Bochum 1, Tel. 0234/793212
+
+*********
+
+Allgemeine Beschreibung:
+========================
+
+Das Grafik-ROM II stellt eine Erweiterung zur MPS802 / 1526
+Betriebssystemversion REV 07c dar. Die neuen Befehle umfassen Grafik,
+Zeichensatz und eine Reihe von Zusatzfunktionen. Die Befehle werden
+über das Escape-Steuerzeichen chr$(27) und ein danach folgendes
+Befehlszeichen ausgewählt. Danach können zusätzliche Parameter folgen,
+die in den Beispielen mit "Lo" für Lowbyte, "Hi" für Highbyte und
+"n" als Parameter bezeichnet werden. Da ein Zeichen nur Zahlen
+zwischen 0 und 255 darzustellen vermag, müssen größere Zahlen in zwei
+Zeichen, also Low und Hi übertragen werden. Dieses Format berechnet
+sich für Hi = INT(Wert/256) und Low = Wert-Hi*256.
+Neben den Befehlen sind noch einige Festeinstellungen zu erläutern: In
+dem alten Zeichensatz sind die drei Zeichen "k", "g", "'" verändert
+worden. Um sofort mit grafikfähigen Programmen wie Print Shop arbeiten
+zu können, sind die Sekundäradressen nach dem Einschalten des Druckers
+abgeschaltet. Diese können mit den Basic Befehlen open4,4:print#4,
+chr$(27)chr$(0):close4 eingeschaltet werden (siehe Seite 2). Das
+Wiederabschalten der Sekundäradresse ist möglich über die Befehle:
+open4,4,11:print#4:close4. Die Funktionszeichen für Breitschrift
+chr$(14) & chr$(15) sind gleichwertig zu den Zeichen chr$(1) &
+chr$(129), die früher bei alten Versionen des 1526 existierten.
+Desweiteren ist die Voreinstellung der Zeilen pro Seite von 66 auf 72
+eingestellt. Das entspricht dem Papierformat 12" (Zoll) * 240mm. Der
+Druckerselbsttest ist geändert worden. Der komplette Zeichensatz (groß
+& klein) wird dadurch schon nach 5 Zeilen ersichtlich. Wenn Sie die
+Formatierung oder Grafik verwenden, dann wird ein eventuell vorher
+definierter Zeichensatz überschrieben. Das gleiche gilt für die
+Formatierungsdaten und das selbstdefinierbare Zeichen nach Grafik oder
+Zeichensatzbetrieb. Diese Einschränkungen resultieren aus dem sehr
+knapp bemessenen RAM des Druckers. Bitte lesen Sie das folgende
+Kapitel sorgfältig durch. Für eventuelle Schäden, die durch
+fehlerhaftes Einbauen entstehen, kann keine Haftung übernommen werden.
+Zur Orientierung ist auf Seite 3 eine Einbauskizze abgebildet.
+
+Einbauanleitung:
+================
+
+Für die Umrüstung ist zuerst der Drucker auszuschalten und von Netz-
+und IEC- Busstecker zu trennen. Das Farbband muß entfernt und das
+Handrad abgezogen werden. Auf dem Druckerboden sind vier Schrauben,
+die das Obergehäuse halten, zu lösen. Danach hebe man das
+Druckergehäuse ab und löse das Abschirmblech über der Platine (zwei
+Schrauben). Der Steckplatz des Austauschteiles liegt parallel neben
+dem Prozessor 6504 (U7D) und hat wie dieser ebensoviele Kontakte. Das
+alte ROM muss vorsichtig herausgehebelt werden. Vergleichen Sie nun die
+Länge des Grafik-ROMs mit dem alten ROM. Ist das Grafik-ROM um zwei
+Kontakte länger, dann müssen noch 4 kleine Draht-Brücken mit Hilfe
+eines Lötkolbens vor dem jetzt freien ROM-Sockel geändert werden. Die
+Draht-Brücken sind mit J1 bis J4 auf der Platine gekennzeichnet. Für
+das Grafik-ROM II müssen J1 und J2 geöffnet sowie J3 und J4 verbunden
+werden. Das Grafik-ROM II kann aber auch mit einem Adaptersockel
+angepaßt werden.
+Bei dem Einsetzen des Grafik-ROM II muß in jedem Fall die kleine
+Kerbe, wie bei den anderen Chips auf der Druckerplatine, zur
+Druckerrückwand zeigen.
+
+Befehle über Escape chr$(27)
+=============================
+
+Grafik:
+
+  "K";chr$(Lo);chr$(Hi);Grafikdaten...(max 640)
+  "L";chr$(Lo);chr$(Hi);Grafikdaten...(max 1280)
+  "*";chr$(n);chr$(Lo);chr$(Hi);Grafikdaten...(max 1280)
+
+  n bezeichnet die Punktdichte
+  n = 0        entspricht ESC "K"
+  n = 1 bis 3  entspricht ESC "L"
+  n = 4        entspricht ESC "K"
+
+  Die Zeichen Lo und Hi geben die Anzahl der Grafikzeichen an.
+  Ist die Punktdichte größer als 640, dann werden in Folge je zwei
+  Zeichen miteinander ODER verknüpft.
+
+Vertikaltabulatoren:
+
+  "0"                  Zeilenabstand für Grafik
+  "1"                  Zeilenabstand für Grafik
+  "2"                  Zeilenabstand für Text
+  "3";chr$(n/216 Zoll) Zeilenabstand
+  "A";chr$(n/72 Zoll)  Zeilenabstand
+
+Zeichensatz:
+
+  "Z";chr$(n)....  80 Zeichen Bitmusterdaten
+  n gibt ein Bitmuster des Zeichensatzes an. Es müssen 80 Zeichen
+  übertragen werden!
+
+  "R";chr$(n)
+  n ist die Nummer des Zeichensatzes, den man auswählen will.
+  n = 0  entspricht  Amerikanisch
+  n = 1  entspricht  Deutsch
+  n = 2  entspricht  Dänisch
+  n = 3  entspricht  Spanisch
+  n = 4  entspricht  Französisch
+  n = 5  wie 1
+  n = 6  entspricht  Deutsch Vizawrite
+  n = 7  entspricht  Selbstdefinierter Zeichensatz
+
+  Die selbstdefinierten Zeichen sind nach der Auswahl über ESC "R" durch
+  die ASCII Werte chr$(240 - 249) zu erreichen.
+
+Diverses:
+
+  "-";chr$(n)
+  n = 0 oder 1  entspricht Unterstreichung aus- oder anschalten.
+
+  "H"
+  Alle folgenden Daten werden hexadezimal ausgedruckt, die letzten 19
+  bleiben jedoch unberücksichtigt.
+
+  chr$(0);chr$(141) (oder chr$(13))
+  Sekundäradressen wieder erlauben.
+
+Grafik nach MPS801 Vorbild:
+===========================
+
+Einleitung der Grafikbetriebsart:
+chr$(8);
+
+Wiederholbares Bitmuster:
+chr$(26);chr$(n);chr$(n)
+
+Druckstart-Position:
+chr$(27)chr$(16)chr$(Hi)chr$(Lo)
+
+Verlassen der Grafikbetriebsart:
+chr$(15)
+
+Die MPS801 Grafik wird mit chr$(8); eingeleitet. Alle folgenden
+Zeichen werden als Bitmustergrafik erkannt, sobald ihr ASCII-Wert
+größer als 127 ist. Textdaten werden ignoriert. Erfolgt ein Carriage
+Return chr$(13), dann wird ohne Zeilenabstand gedruckt. Das
+wiederholbare Bitmuster wird über chr$(26) aufgerufen. Die
+nachfolgenden Daten sind die Anzahl der Wiederholungen (1 bis 255) und
+das Bitmuster, das wiederholt werden soll. Die Druckstartposition
+benötigt zwei Erkennungszeichen chr$(27);chr$(16) und zwei Parameter
+als Längenangabe in Einzelpunktschritten. Das wiederholbare Bitmuster
+und die Druckstartposition gelten nur für die Grafikbetriebsart. Das
+Zeichen chr$(15) schaltet wieder um auf Textbetrieb.
+
+Druckeranpassung:
+=================
+
+Für einige Textprogramme ist eine Neueinstellung der Druckeranpassung
+notwendig. Am Beispiel Textomat betrifft dies die Einstellung
+"Initialisierung" mit den hexadezimalen Daten 1b008d (Sekundäradressen
+einschalten). Der Druckertyp wird auf MPS802 und die Sekundäradresse
+auf 7 eingestellt. Die Wertezuweisung der Umlaute erfolgt dezimal
+unter dem Menüpunkt "Tabelle". Die Werte der Umlaute (Zeichensatz
+Nr.6) sind aus dem Programmdemo zu entnehmen.
+
+Einbauskizze:
+
++----------------------+ +-----------------------------+
+|                      | |              +------------+ |
+|    DRUCKER-          | |              |    U4D     | |
+|    MECHANIK          | |              |  (6532)    | |
+|                      | |              +------------+ |
+|                      | |              +------------+ |
+|                      | |              |    U5D     | |
+|                      | |              |  (6532)    | |
+|                      | |              +------------+ |
+|                      | |              +------------+ |
+|                      | |              |    U6D     | |
+|                      | |              |  (6522)    | |
+|                      | |              +------------+ |
+|                      | |                  +--------+ |
+|                      | |                  |  U7D   | |
+|                      | |                  | (6504) | |
+|                      | |                  +--------+ |
+|                      | |                  +--------+ |
+|                      | |                  |  U8D   | |
+|                      | |                  | (ROM)  | | <- AUSTAUSCHTEIL
+|                      | |                  +--------+ |    (GRAFIK-ROM II)
+|                      | |                             |
+|                      | +-----------------------------+ PLATINE
+|                      |
+|                      |          +------------+
+|                      |        +-+------------+-+
+|                      |        | |            | |
+|                      |        | |            | |
+|                      |        | |            | |
++----------------------+        +-+------------+-+
+                                  +------------+   TRAFO
+
+Parameter-Einstellung
+=====================
+
+TEXTOMAT PLUS       Anpassung Umlaute siehe StarTexter!
+-------------
+
+TEXTOMAT PLUS (C) 1985 DATA BECKER GmbH TEXTOMAT PLUS (C) 1985 DATA BECKER GmbH
+      **** STEUERZEICHEN ****                 **** STEUERZEICHEN ****
+                Teil1:                                 Teil2:
+        o : ......................
+        u : ......................
+    f ein : 0e....................               ab1 : 24......................
+    f aus : 0f....................               ab2 : 36......................
+    U ein : 1b2d0111..............               ab3 : 48......................
+    U aus : 1b2d0011..............              di10 : ........................
+        0 : ......................              di12 : ........................
+        1 : ......................              di15 : ........................
+        2 : ......................    Zeilenvorschub : ........................
+        3 : ......................     Wagenrücklauf : 0d......................
+        4 : ......................     Seitenwechsel : ........................
+        5 : ......................   Initialisierung : 1b008d..................
+        6 : ......................        Grafik ein : ........................
+        7 : ......................        Grafik aus : ........................
+        8 : ......................
+        9 : ......................
+  Teil2 mit F1    zurück mit F2        Teil1 mit F2    zurück mit F1
+
+STARTEXTER
+----------
+
+======================================  ======================================
+.Hintergrund:........1................  .Zeilenabstand:......0................
+.Schriftfarbe:.......0................  .Zeilen/Seite:......66................
+.Blockfarbe:.........0................  .Randvorschub:......10................
+.Rahmen+Schotten:...15................  .Einzelblätter:......1................
+.Cursorfarben:.....160................  .Schriftart:.........3................
+.Leistenfarben:....147................  .Abst. Kopfzeile:....1................
+.Orientierungen:...240................  .Abst. Fußzeile:.....1................
+.80-Zeichen:.......191................  .Druckeradresse:.....4................
+.* Zeichensatz:......1................  .Sekundäradresse:....7................
+.Druckertyp:.........1................  .Wandlung/ALF:.......2................
+===Parameter=====Zeile=====Spalte=====  ===Parameter=====Zeile=====Spalte=====
+
+                                        ======================================
+                                        .ä:................123................
+  Bitte benutzen Sie für eine           .ö:................124................
+  richtige Einstellung der              .ü:................125................
+  Drucker-Parameter                     .ß:................126................
+  das mitgelieferte Handbuch!           .Ä:.................91................
+                                        .Ö:.................92................
+                                        .Ü:.................93................
+                                        .<Paragraph>:......221................
+                                        .Breit ein:.........14................
+                                        .Breit aus:.........15................
+                                        ===Parameter=====Zeile=====Spalte=====
+
+*********
+
+begin 700 demo1.prg
+M`0@V"`H`GS0L-#J&1"0H,34I.H%)LC"D,3$ZAT0Z1"0H22FRQRA$*3J".I@T
+M+,<H,C<I(C`B`'D(%`"8-"PB$<A%6$%$15I)34%,.B`@W20R,R#=)#7"(-TD
+M-<,@W20UQ"#=)#?"(-TD-\,@W20WQ"#=)#?%(-TB.P"6"!X`F#0L(A$DPS`@
+MW23$PB#=),3#(-TDQ,0B`-D(*`"8-"PB$<1%6DE-04P@("`@.B`@W2`S-2#=
+M(#DQ(-T@.3(@W2`Y,R#=(#$R,]T@,3(TW2`Q,C7=(#$R-MTB.P#W"#(`F#0L
+M(A$@,3DRW2`R,3G=(#(R,-T@,C(Q(@`Z"3P`F#0L(A'`P,#`P,#`P,#`P,#`
+MP+'`P,#`L<#`P,"QP,#`P+'`P,#`L<#`P,"QP,#`P+'`P,#`L<#`P,"Q(CL`
+M6`E&`)@T+"(1P,#`P+'`P,#`L<#`P,"QP,#`P"(`=PED`)@T+,<H,C<I(C(B
+M.R(1VD5)0TA%3E-!5%HB`+@);@"!2;(PI#8ZF#0L(A'.4BXZ(DDB("`@/3XB
+MQR@R-RDB4B+'*$DI.SJ/(%I%24-(14Y3051:+4%54U=!2$P`W@EX`(%5LC"D
+M,3$ZF#0L(B`@("`B1"0H52D[.H(ZF#0Z@CJ@-``/"H(`@S,U+#DQ+#DR+#DS
+C+#$R,RPQ,C0L,3(U+#$R-BPQ.3(L,C$Y+#(R,"PR,C$````U
+`
+end
+
+begin 700 demo2.prg
+M`0@V"`4`CR!:14E#2$5.4T%46B`M($=%3D52051/4B!&5452($1!4R!'4D%&
+M24LM4D]-($E)`$P("@"?-"PT.I@T+,<H,C<I(EHB.P!7"!0`@4.R,*0Y`&D(
+M'@"!1+(QI#@ZAUHD*$0I`)$(*`"+6B0H1"FR(B*G@5BR0ZPXI#@P.I@T+,<H
+M,"D[.H(ZB3(P,`"8"#(`@D0`K0@\`(%3LC&D.#J!6K(XI#&IJS$`T0A&`(O*
+M*%HD*#FK6BDL4RPQ*;(B*B*G5K)6JC*N*%JK,2D`Y0A0`():.I@T+,<H5BD[
+M.E:R,`#N"%H`@E,L0P`""<@`F#0LQR@R-RDB4B+'*#<I`#<)W`"!6K(PI#DZ
+MF#0L(B`BQR@R-#"J6BD[.H(ZF#0L(CPM($Y%544@6D5)0TA%3B(ZH#0`/0F0
+M`3H`3@GH`X,@(B`J*BHJ*BHJ(@!?"?(#@R`B("H@("`@("HB`'`)_`.#("(@
+M("H@("`@("(`@0D&!(,@(B`@("H@("`@(@"2"1`$@R`B("`@*B`@("`B`*,)
+M&@2#("(@("H@("`@("(`M`DD!(,@(B`J("`@("`J(@#%"2X$@R`B("HJ*BHJ
+M*BHB`,L).`0Z`-P)3`2#("(@("HJ*BH@("(`[0E6!(,@(B`J("`@("H@(@#^
+M"6`$@R`B*B`@*BH@("HB``\*:@2#("(J("H@("`@*B(`(`IT!(,@(BH@*B`@
+M("`J(@`Q"GX$@R`B*B`@*BH@("HB`$(*B`2#("(@*B`@("`J("(`4PJ2!(,@
+M(B`@*BHJ*B`@(@!9"IP$.@"1"H@3CR!(2452($M/14Y.14X@3D]#2"`V-"!$
+M051!6D5)3$5.($5)3D=%1E5%1U0@5T521$5.`)<*DA,Z`*\*#R>#.H\@14Y$
+/12!-05)+245254Y'````
+`
+end
+
+begin 700 demo3.prg
+M`0@;"`H`@4FR,:0R-34Z022R022JQRA)*3J"`"$(%``Z`"H(&0"?-"PT`$T(
+M&@"8-"S'*#$T*2)'4D%02$E++41%34\BQR@Q-2DZF#0`<P@<`)@T+,<H,C<I
+M(C`B.H\@6D5)3$5.+5I725-#2$5.4D%530!^"!X`@4FR,:0S`+<(*`"8-"RC
+M,C"K22DB$45)3D9!0TA%(,1)0TA412+'*#(W*2)+(L<H,C4U*<<H,"E!)")4
+M15A4`+T(+0""`.L(+@"8-"S'*#(W*2(S(L<H,S8I.H\@14Y44U!224-(5"!#
+M2%(D*#(W*2(R(@#Q"#(`.@`:"3H`F#0LQR@R-RDB,2(ZCR!%3E134%))0TA4
+M($-(4B0H,C<I(C`B`"4)/`"!2;(PI#,`8@E&`)@T+*,Q-:M)*2(11$]04$5,
+M5$4@Q$E#2%1%(L<H,C<I(BHBQR@Q*<<H,C4U*<<H,"E!)")415A4`&@)50""
+M`'@)5@"8-"S'*#(W*2(R(@!^"5H`.@"B"60`022R(B(Z@4FR,:0R-34Z022R
+M022JQRA)L#$R."DZ@@"O"7@`F#0LQR@X*3L`N@F"`(%)LC&D,P#$"8P`F#0L
+M020`R@F1`((`UPF6`)@T+,<H,34I`-T)H``Z`!$*J@"8-"PZF#0LQR@Q-"G'
+M*#$W*2+:14E#2$5.4T%46E9/4D5)3E-414Q,54Y'(#HB.P`J"K0`@4FR,:0X
+M.H=!.I@T+,<H02D[.H(`2PJ^`(,Y,2PY,BPY,RPQ,C,L,3(T+#$R-2PQ,C8L
+M,3,`8PK(`)@T.I@T+,<H,C<I(BTBQR@Q*3L`@0K2`)@T+"(1U4Y415)35%)%
+M24-(54Y'($%.(CL`E@K<`)@T+,<H,C<I(BTBQR@P*3L`MPKF`)@T+"(1("`@
+EU4Y415)35%)%24-(54Y'($%54R(`O@KP`)@T`,4*^@"@-````)@T
+`
+end
+*********
+
+End of the International Project 64 etext of the Grafik ROM II manual.
+
+*********

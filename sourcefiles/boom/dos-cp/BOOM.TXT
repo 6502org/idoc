@@ -1,0 +1,78 @@
+
+
+BOOM
+
+KEZELSI —TMUTAT•
+
+
+N‚h ny sz¢ a j t‚kr¢l:
+
+A j t‚k c‚lja, hogy kijussunk az idegenek  ltal elfoglalt terletr“l
+£gy, hogy k”zlk min‚l t”bbet, lehet“leg az ”sszeset megsemmis¡tsk.
+H romf‚le fegyver  ll ehhez rendelkez‚snkre, amiket a p ly k kl”nb”z“
+pontjain tal lunk. Utunk sor n felvehetnk kulcsokat, amikkel a kapukat
+nyithatjuk, eg‚szs‚ggyi l d kat, amik megcsappant ‚leter“pontjainkat
+n”velik, fegyvereket, illetve hozz val¢ l“szereket, amelyek a harcban
+seg¡tenek bennnket. A kulcsok kiv‚tel‚vel mindezeket ellenfeleink
+meg”l‚s‚vel is megszerezhetjk. Teljes¡tm‚nynkr“l a p ly n tal lhat¢
+EXIT el‚r‚se ut n r”vid ‚rt‚kel‚st kapunk, az ”tvenedik p lya ut n
+pedig teljes¡tettk kldet‚snket.
+
+
+A j t‚k ir ny¡t sa:
+
+A Boom kiz r¢lag billenty–zetr“l ir ny¡that¢, ennek magyar zata a
+joystick korl tozott sz m£ funkci¢j t meghalad¢ ir ny¡t si lehet“s‚g.
+A j t‚k alapbe ll¡t s t megtekinthetjk, illetve m¢dos¡thatjuk a
+j t‚kk‚perny“ megjelen‚se ut n b rmikor a (font jel) gomb megnyom s val.
+Ha m¢dos¡tani szeretn‚nk ezt, csak a v lasztani k¡v nt billenty–t kell
+letni, majd az £j gomb megnyom s val cser‚lhetjk az  ltalunk
+v lasztott billenty–re az adott ir ny¡t si funkci¢t.
+
+Figyelem! - Hi nyos be ll¡t s eset‚n nem lehet visszal‚pni a j t‚kba.
+	  - Csak a bet–billenty–k haszn lhat¢k.
+	  - Egy gomb csak egy funkci¢t l that el.
+
+Be ll¡t s ut n a j t‚k a (font jel) gomb ism‚telt let‚s‚vel
+folytathat¢. Nem v ltoztathat¢k a fegyverek v laszt sa (1, 2, 3), a
+fut s (SHIFT + ir ny), valamint az  ll sment‚s (F7), illetve  ll st”lt‚s
+(F1) billenty–i. Egy lemezoldalon egyszerre csak egy  ll st lehet
+t rolni.
+
+
+K•DTBLZAT
+
+ 1 KM3C
+ 2 V5BD
+ 3 18O9
+ 4 E7WT
+ 5 ZX2Y
+ 6 1PAF
+ 7 L4H2
+ 8 JDOK
+ 9 D3G1
+10 SP4X
+11 7F8K
+12 O6C9
+13 Z7Y5
+14 2BES
+15 MN36
+16 J9OK
+17 Z1XY
+18 37P2
+19 1D56
+20 C3MF
+21 9TIO
+22 8BYX
+23 OR7T
+24 W1N9
+25 HL1X
+26 9NTO
+27 3P5K
+28 4OD6
+29 7CZY
+30 5JGZ
+31 8OK9
+32 X1N7
+
+A k¢dok null t (0) nem tartalmaznak, ezeken a helyeken O bet–t ssnk.

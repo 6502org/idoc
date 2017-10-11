@@ -1,0 +1,938 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore 64
+related documents in electronic text format that might otherwise cease to
+exist with the rapid advancement of computer technology and declining
+interest in 8-bit computers on the part of the general population. If you
+would like to help by converting C64 related hardcopy documents to
+electronic texts please contact the manager of International Project 64,
+Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The first
+characters of the file name are an abbreviation of the original document
+name and the language of the etext. The version number of the etext follows
+next. After that a letter may appear to indicate the particular source of
+the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International Project
+64 make no representations about the accuracy or suitability of this
+material for any purpose. This etext is provided "as-is". Please refer to
+the warranty of the original document, if any, that may included in this
+etext. No other warranties, express or implied, are made to you as to the
+etext or any medium it may be on. Neither the author(s) nor the members of
+International Project 64 will assume liability for damages either from the
+direct or indirect use of this etext or from the distribution of or
+modification to this etext. Therefore if you read this document or use the
+information herein you do so at your own risk.
+
+*********
+
+The International Project 64 etext of the article "Mehr Tips und Tricks",
+written and donated for IP64 distribution by Nikolaus Heusler
+<nikolaus.heusler@lrz.tu-muenchen.de>.
+
+TIPS_DE1.TXT, June 1997, etext #14.
+
+Note from the etexter: 
+
+This is german text.
+
+This text deals with the C 64. It's a huge collection of interesting hints,
+tips and gags for programming it.
+
+No part of this text may be copied, stored or published in any way without
+prior written permission by the author. It is not allowed to store copies of
+this text or of parts of it on computer-discettes or on computers which can
+be accessed in the public, for example on the internet.
+
+Das Werk einschliesslich aller seiner Teile ist urheberrechtlich geschuetzt.
+Jede Verwertung ausserhalb der engen Grenzen des Urheberrechtsgesetzes ist
+ohne vorherige schriftliche Zustimmung des Verfassers unzulaessig und
+strafbar. Dies gilt insbesondere fuer Vervielfaeltigungen, Uebersetzungen
+und die Verarbeitung in elektronischen Systemen.
+
+Einwilligungen zur Weiterverarbeitung wird der Verfasser im Einzelfall auf
+schriftliche Anfrage gern geben, falls keine kommerziellen Interessen mit
+der Verarbeitung verfolgt werden.
+
+Produkt- und Herstellerangaben in dem Text werden ohne Ruecksicht auf
+eventuellen Patentschutz veroeffentlicht. Warennamen werden ohne Gewaehr-
+leistung der freien Verwendbarkeit benutzt. Die Texte wurden mit groesster
+Sorgfalt zusammengestellt. Trotzdem sind Fehler nicht vollstaendig
+auszuschliessen. Fuer fehlerhafte Angaben und deren Folgen kann der Autor
+weder juristische Verantwortung noch irgendeine Haftung uebernehmen.
+
+Verfasser / Author: Nikolaus Heusler
+                    Zwengauerweg 18
+                    D-81479 Muenchen
+                    Germany
+
+Bei schriftlichen Anfragen bitte Rueckporto beilegen, ich antworte gern.
+
+This version was published in the internet on the project "IP 64" in June
+1997.
+
+*********
+
+Mehr Tips und Tricks
+
+Tips und Tricks sind für jeden Computerfan das Salz in der Suppe. Deshalb
+haben wir für Sie wieder interessante Effekte und Kniffe gesammelt.
+
+Nikolaus Heusler
+
+
+Das Geheimnis der SHIFT-Tasten
+
+Vielleicht haben Sie es schon einmal gehört: Die beiden SHIFT-Tasten des C
+64 lassen sich getrennt abfragen. Das folgende Basic-Listing hilft Ihnen
+dabei:
+
+start tok64 shift
+10 poke 56334,0
+20 poke 56320,253:if peek(56321)=127 then 100
+30 poke 56320,191:if peek(56321)=239 then 200
+40 poke 56334,1
+50 print "keine shift taste"
+60 run
+100 print "linke shift-taste"
+110 run
+200 print "rechte shift-taste"
+210 run
+stop tok64
+
+In Zeile 10 schalten wir die normale Tastaturabfraghe des Systems ab, in
+Zeile 40 wieder an. Die Tastatur des C 64 ist als Matrix in acht Zeilen zu
+je acht Spalten unterteilt. In Zeile 20 bewirkt der POKE-Befehl, daß die 2.
+Zeile der Matrix geprüft wird. Dort sitzt in Spalte 8 die linke SHIFT-Taste,
+die übrigens identisch mit SHIFT LOCK ist. Ist das entsprechende Bit
+gelöscht, wird in Zeile 100 der Text ausgegeben. Ansonsten prüft Zeile 30,
+ob die rechte SHIFT-Taste (Matrix: Zeile 7, Spalte 5) betätigt wurde. Diese
+Technik läßt sich in eigenen Programmen beispielsweise zur Steuerung eines
+Raumschiffs einsetzen. Muß nicht zwischen den beiden SHIFT-Tasten
+unterschieden werden, geht es auch einfacher:
+
+start tok64 tasten
+10 a=peek (653)
+20 if (a and 1) then print "shift  ";
+30 if (a and 2) then print "commodore  ";
+40 if (a and 4) then print "ctrl  ";
+50 print : run
+stop tok64
+
+Das Programm ist sogar in der Lage, gleichzeitigen Druck auf mehrere der
+drei genannten Tasten (SHIFT links oder rechts, COMMODORE und CTRL) zu
+erkennen.
+
+
+Doppel-PEEK
+
+Wenn man zum Beispiel feststellen möchte, wo ein Basicprogramm im Speicher
+endet, gibt man ein:
+
+PRINT PEEK(45) + 256 * PEEK(46)
+
+Als Ergebnis erhält man die erste Speicherzelle hinter dem Programm. Die
+Speicherzellen 45 und 46 enthalten im Format »HIGH-LOWBYTE« diese Adresse.
+Im Handbuch sind im Anhang noch weitere nützliche Speicherzellen
+beschrieben. Wenn man die DEF FN-Funktion trickreich einsetzt, kann man
+obige Zeile wesentlich kürzer und erheblich eleganter schreiben:
+
+DEF FN DEEK(X) = PEEK (X) + 256 * PEEK(X+1)
+
+Um nun wieder das Ende des Basicprogramms auszugeben, reicht
+
+PRINT FN DEEK(45)
+
+Weitere nützliche Speicherzellenpaare dieser Art:
+
+43/44   Beginn des Programms im Speicher
+57/58   augenblickliche Basiczeilennummer
+59/60   vorherige Basiczeilennummer
+63/64   augenblickliche DATA-Zeilennumer
+187/188 Zeiger auf letzten Filenamen
+209/210 Zeiger auf Start der aktuellen Bildschirmzeile
+243/244 wie 209/210, zeigt auf Farb-RAM
+785/786 USR-Vektor
+788/789 Interrupt-Vektor
+792/793 Vektor für RESTORE-Taste
+
+Alle können mit der oben definierten DEEK-Funktion gelesen werden.
+
+
+RUN STOP abfange
+
+Bei vielen professionellen Programmen möchte man aus Gründen der
+Bedienungssicherheit, daß das Programm nicht abgebrochen werden kann. Die
+untenstehenden Programmzeilen bewirken, daß Druck auf die RUN/STOP-Taste
+einen Neustart bewirkt.
+
+start tok64 runstop
+20 restore
+30 data 165,145,201,127,208,3,32,142,166,96
+40 for i=828 to 837 : read s : poke i,s : next
+50 poke 808,60 : poke 809,3
+stop tok64
+
+Zwei Dinge sind zu beachten:
+
+1. Die erste Zeile des Programms sollte eine Variable testen, von der man
+weiß, daß sie innerhalb des Programms ständig gebraucht wird, also immer
+ungleich Null ist. Beispiel:
+
+10 IF I <> 0 THEN .....
+
+Für ..... sollten Sie die Zeilennummer einsetzen, bei der das Programm nach
+<RUN STOP> weiterarbeiten soll. Beispiel:
+
+10 IF I <> 0 THEN 100
+100 PRINT "BITTE DIESES PROGRAMM NICHT UNTERBRECHEN!"
+110 (weiter im Programm)
+
+2. Obwohl das Programm neu gestartet wird, bleiben alle Variablenwerte
+erhalten, sie werden also nicht gelöscht.
+
+
+Fehler bei LIST umgehen
+
+Stößt der C 64 beim Listen hinter REM auf den Code <SHIFT L>, so bricht er
+das Listen mit einem ?SYNTAX ERROR ab, da er aufgrund eines Systemfehlers
+versehentlich in den FOR-Befehl verzweigt. Dies wird gern als Listschutz
+verwendet. Mit einem kleinen Trick jedoch kann der ?SYNTAX ERROR umgangen
+werden: Wenn der C 64 unbedingt FOR-Paramter will, geben wir ihm eben
+welche:
+
+LIST 10- A=1 TO 1
+
+Dieser Befehl listet das Programm ab Zeile 10 und bricht bei einem <SHIFT L>
+nicht ab!
+
+Nach 12 maligem Listen erscheint allerdings ein ?OUT OF MEMORY ERROR, da zu
+viele FOR..NEXT-Schleifen eröffnet und nicht geschlossen wurden. Hängt man
+also noch ein :NEXT an obigen Befehlsfolge an, kann auch dieser Nebeneffekt
+vermieden werden.
+
+
+Turbo-POKE für C 128
+
+Besitzen Sie einen C 128, den Sie vorwiegend im C 64-Modus betreiben? Dann
+freuen wir uns, Ihnen einen POKE mitteilen zu können, der den 64'er-Modus
+(nur beim C 128) um bis zu 55 Prozent beschleunigt:
+
+POKE 53296,1 : POKE 53265,10
+
+Der Bildschirm wird abgeschaltet und der Rechner mit 2 MHz statt bisher 0,94
+MHz getaktet. Mit
+
+POKE 53296,PEEK(53296)AND254:POKE 53265,27
+
+wird der Normalzustand wiederhergestellt. Einige Einschränkungen sind
+allerdings zu machen: Während des Turbo-Modus sind keine Floppy-Zugriffe
+möglich. Druckerausgaben und Tastaturabfragen sind jedoch möglich. Die POKEs
+eignen sich vor allem für zeitkritische Berechnungen und andere
+zeitkritische Routinen, bei denen eine Bildschirmanzeige nicht unbedingt
+notwendig ist. Beim »puren« C 64 bewirken die POKEs nur, daß der Bildschirm
+ausgeschaltet wird. Grund: Die Speicherzelle 53296 ist hier nicht belegt,
+der POKE geht ins Leere.
+
+
+Professionell Nachladen
+
+Gewöhnlich hat das Nachladen eines Maschinenprogrammes von einem
+Basicprogramm aus mit dem Befehl LOAD "CODE",8,1 einen lästigen Nebeneffekt:
+Das Basicprogramm wird von vorn gestartet. Diesen Effekt vermeiden Sie,
+indem Sie stattdessen schreiben: SYS 57812 ("CODE"),8,1:POKE 780,0:SYS
+65493. Kurz eine Erklärung: Der erste SYS-Befehl setzt die File-Parameter,
+also den Namen, die Geräte- und Sekundäradresse. POKE 780,0 sagt dem System,
+daß geladen, kein VERIFY ausgeführt werden soll. Der nächste SYS-Befehl
+schließlich ruft die LOAD/VERIFY-Routine auf.
+
+Dieser Trick ist nur für Besitzer eines C 64 interessant, auf dem C 128 bzw.
+C 16 steht ohnehin der BLOAD-Befehl zur Verfügung.
+
+
+Professioneller Absturz
+
+Möchten Sie Ihren C 64 einmal nach allen Regeln der Kunst
+durcheinanderbringen? Dann geben Sie erst SYS 62391 ein. Danach wird jede
+mit RETURN bestätigte Eingabe, wie richtig sie auch sein mag, mit einer
+Fehlermeldung abgewiesen. Noch schlimmer wird es, wenn der Anwender
+versucht, mit <SHIFT CLR HOME> den Schirm zu löschen. Der Cursor flackert
+hektisch in der linken oberen Ecke des Bildschirms. Nur noch einige wenige
+Tasten sind funktionsfähig. Das ist ganz interessant, wenn man
+beispielsweise ein Programm zu Kopierschutzzwecken beenden möchte. Dazu
+verwendet man folgende Zeile:
+
+10 SYS 62391:A
+
+Probieren Sie es aus, aber Vorsicht: Aus dieser Nummer kommen Sie nur noch
+durch Ausschalten des C 64 heraus. Ihr Programm geht dabei verloren.
+
+
+Maschinenprogramme als Basicprogramm laden und starten
+
+Wir werden oft gefragt, wie man in Assembler ein Programm schreiben kann,
+das sich dann wie normales Basic mit LOAD "NAME",8 laden und mit RUN starten
+läßt. Hier ist ein Lösungsvorschlag im Profi-Ass Format:
+
+10 .OPT O2      ; Objektcode auf Disk
+20 * = 2049     ; Startadresse ist Basic-Start
+30 .BYT 1,1     ; Linkpointer erzeugen
+40 .BYT 202,7   ; Zeilennummer 1994
+50 .BYT 158     ; Code für SYS
+60 .ASC "2061"
+70 .BYT 0,0,0   ; Zeichen für Programmende
+80              ; hier geht es mit Speicherzelle 2061 weiter
+
+Bevor Sie den Assembler anwerfen, sollten Sie natürlich eine Datei anlegen,
+in die der Objektcode geschrieben wird:
+
+OPEN 2,8,2,"NAME,P,W"
+
+Danach wird beispielsweise mit SYS 36864 der Profi-Ass gestartet. Bei
+Verwendung anderer Assembler kann die Vorgehensweise entsprechend etwas
+anders aussehen.
+
+
+Sortieren mit Double Bubble
+
+Etwas Neues zum Thema »Sortieren«: Die Routine nennt sich »Double Bubble«.
+Warum, werden Sie gleich sehen. Dieses Verfahren eignet sich besonders gut
+zur Sortierung von bereits vorsortierten Feldern, beispielsweise wenn in
+einer Dateiverwaltung neue Elemente eingefügt werden sollen. Die »Bubbles«
+bewegen sich dabei abwechselnd auf- und abwärts. Nehmen wir an, Sie hätten
+ein Feld, das so aussieht:
+
+9 1 2 3 4 5 6 7
+
+Das »herkömmliche« Bubblesort sortiert so (beachten Sie die 9):
+
+1 9 2 3 4 5 6 7
+1 2 9 3 4 5 6 7
+1 2 3 9 4 5 6 7
+1 2 3 4 9 5 6 7
+1 2 3 4 5 9 6 7
+1 2 3 4 5 6 9 7
+1 2 3 4 5 6 7 9
+
+Es werden also sieben Durchläufe benötigt, nur weil das ganze Feld über das
+eine »falsche« Element »drübergehievt« werden muß. Und hier Double-Bubble:
+
+9 1 2 3 4 5 6 7
+
+Nach dem ersten Durchlauf:
+
+1 2 3 4 5 6 7 9
+
+Nun zum Aufbau. Nehmen wir an, die (numerischen) Daten befinden sich im Feld
+A() mit der Dimension AN. Z soll als Zwischenspeicher verwendet werden. FLAG
+signalisiert, ob ein Tausch stattgefunden hat, oder nicht.
+
+1. Teil: Bubblesort sortiert wie gewohnt, absteigend sortiert, das heißt,
+die kleinen Blasen steigen nach oben.
+
+1000 FLAG = 0 : FOR N=AN TO 2 STEP -1
+1010 IF A(N) < A(N-1) THEN Z=A(N) : A(N) = A(N-1) : A(N-1)=Z : FLAG = 1
+1020 NEXT
+
+Anschließend wird der Vorgang umgekehrt, das heißt, aufsteigend sortiert,
+nur daß die großen Blasen abwärts sinken.
+
+1030 FOR N=1 TO AN-1
+1040 IF A(N) > A(N+1) THEN Z=A(N) : A(N) = A(N+1) : A(N+1)=Z : FLAG = 2
+1050 NEXT
+
+Die letzte Zeile schließlich lautet:
+
+1060 IF FLAG THEN 1000
+
+Das war's auch schon. In vorsortierten Feldern dürfte sich zur Sortierung
+kaum eine noch einfachere und schnellere Methode finden lassen.
+
+start tok64 bubble
+1000 flag = 0 : for n=an to 2 step -1
+1010 if a(n) < a(n-1) then z=a(n) : a(n) = a(n-1) : a(n-1)=z : flag = 1
+1020 next
+1030 for n=1 to an-1
+1040 if a(n) > a(n+1) then z=a(n) : a(n) = a(n+1) : a(n+1)=z : flag = 2
+1050 next
+1060 if flag then 1000
+stop tok64
+
+
+Die erste Dimension
+
+Im Commodore-Basic sind bei dimensionierten Variablen elf Elemente Standard.
+Sie können ja zum Beispiel den Befehl PRINT A(10) oder A(10) = 19 verwenden,
+ohne vorher das Array A dimensioniert zu haben, und erhalten trotzdem keinen
+?BAD SUBSCRIPT ERROR. Das funktioniert, weil Basic beim Start alle Arrays,
+egal ob String oder numerisch, mit dem Dimensionswert 10 (die Zählung
+beginnt bei Null, also elf Elemente) vorbelegt.
+
+Das Kuriose dabei: Nachdem einer der beiden obigen Befehle abgearbeitet
+wuree, bewirkt DIM A(10) einen ?REDIM'D ARRAY ERROR, obwohl Sie doch noch
+gar kein Array dimensioniert haben!
+
+
+Formatierte Zeilen
+
+Der folgende Einzeiler verändert den Editor des C 64 derart, daß
+Leerzeichen, die direkt nach einer Zeilennummer stehen, nicht ignoriert
+werden. Somit kann ein Basic-Listing noch während der Eingabe formatiert
+werden.
+
+FOR I=131 TO 128 STEP -1 : POKE I,234 : NEXT
+
+Nun sind nach der Zeilennummer beliebig viele Spaces erlaubt, die der Editor
+sonst ja »von Amts wegen« einfach ignoriert. Auf diese Weise eingegebene
+Programme sind allerdings noch nicht ohne weiteres lauffähig. Geben Sie vor
+dem Start mit RUN erst einen SYS 58303 ein, da das Programm sonst außer
+einem ?SYNTAX ERROR nichts zustande bringt. Die Fehlermeldung, die bei
+Eingabe des SYS 58303 erscheint, sollten Sie ignorieren.
+
+
+Der langsamste Computer der Welt
+
+Wer bis jetzt immer stolz auf die Arbeitsgeschwindigkeit seines C 64 war,
+sollte einmal folgenden POKE ausprobieren:
+
+POKE 56325,0
+
+An dieser Adresse befindet sich ein »Timer«, der dafür zuständig ist, daß
+normalerweise regelmäßig 60 mal pro Sekunde ein »Interrupt« ausgelöst wird.
+Dadurch blinkt der Cursor, wird TI$ weitergestellt und nicht zuletzt die
+Tastatur abgefragt. Durch Einschreiben einer Null in diese Zelle wird ab
+sofort der Interrupt so oft ausgeführt, daß der Computer kaum noch Zeit für
+seine normalen Tätigkeiten hat. Er wird scheiber langsamer. Den
+Normalzustand erreichen Sie durch POKE 56325,64 oder <RUN STOP/RESTORE>.
+
+
+Das kürzeste Zeichenprogramm der Welt
+
+besteht aus nur einem POKE-Befehl. Sie glauben es nicht? Dann geben Sie doch
+einmal ein:
+
+POKE 788,90
+
+Und wenn Sie jetzt den Cursor bewegen, hinterläßt dieser eine Spur auf dem
+Bildschirm - wie in einem Zeichenprogramm. Was steckt dahinter? Durch POKE
+788,90 wird die Interrupt-Routine auf die Adresse $ea5a umgelenkt. Dort
+steht nur noch der Rest der normalerweise vollständig durchlaufenen
+Cursor-Steuerungsroutine. Es wird lediglich noch das Zeichen unter dem
+Cursor geholt und invertiert. Dann wird auch schon in die Routine
+gesprungen, die die Farbe unter dem Cursor setzt. Normalerweise wird hier
+der Farbwert im X-Register übergeben. Da dieser Teil der IRQ-Routine nicht
+mehr ausgeführt wird, befindet sich im X-Register ein mehr oder weniger
+zufälliger Wert.
+
+Haben Sie Probleme mit diesem Trick? Falls Ihr Cursor nach POKE 788,90 keine
+sichtbare Spur hinterläßt, sondern ganz verschwindet, schalten Sie den
+Computer kurz aus und wieder ein. Geben Sie dann ein:
+
+PRINT PEEK (65408)
+
+In dieser Speicherzelle steht die Versionsnummer des Systems, welches Ihren
+C 64 schmückt. Erscheint hier eine Null, besitzen Sie einen sehr alten C 64,
+auf dem der Trick mit dem kürzesten Zeichenprogramm leider nicht
+funktionsfähig ist. Sorry, aber man kann nicht alles haben...
+
+
+DATA-Tip
+
+Nuller in DATA-Zeilen können auch einfach weggelassen werden. Das spart ein
+wenig Speicherplatz und Tipp-Arbeit. Statt
+
+10 DATA 34,0,2,45,0,0,23,0,0,0,2
+
+kann man auch schreiben:
+
+10 DATA 34,,2,45,,,23,,,,2
+
+Ebenso lassen sich die "" bei Leerstrings in DATAs einsparen. Bei Strings
+gibt es noch eine Besonderheit zu beachten: Sollen geSHIFTete Buchstaben in
+DATA Verwendung finden, müssen die Texte in Anführungszeichen gesetzt
+werden, da der Interpreter sie sonst in Tokens wandelt. Sonst können die
+Anführungszeichen wegfallen.
+
+
+Titelzeilen
+
+Bei manchen Programmen ist es nützlich, wenn nicht immer der ganze
+Bildschirm gescrollt wird, sondern nur zum Beispiel die untere Hälfte.
+Normalerweise müßte man dazu neue Scroll-Routinen schreiben, wozu allerdings
+Kenntnisse in Maschinensprache notwendig sind. Das hat uns keine Ruhe
+gelassen, und wir haben nach einer reinen Basic-Lösung gesucht. Voilà: Es
+geht auch anders. Man kann durch einen einzigen POKE das Betriebssystem so
+ändern, daß eine bestimmte Anzahl von Zeilen am oberen Bildschirmrand nicht
+mehr gescrollt werden.
+
+Als erstes müssen wir das Betriebssystem in das RAM kopieren, wo es dann
+verändert werden kann. Die folgende kleine Schleife erledigt das
+freundlicherweise für uns, braucht dafür jedoch 2 Minuten. Ist halt nur
+Basic.
+
+10 X = 16384 : FOR I=40960 TO 49151 : POKE I,PEEK(I) : POKE I+X,PEEK(I+X)
+   : NEXT
+
+POKE I,PEEK(I) ist scheinbar sinnlos, es wird der Inhalt einer Speicherzelle
+in sich selbst kopiert. Dennoch ist dieser Befehl an dieser Stelle
+erforderlich. Eine genauere Erklärung würde hier zu weit führen.
+
+Jetzt können wir mit
+
+20 POKE 1,53
+
+das geänderte System aktivieren. Oder besser, das »änderbare«. Denn geändert
+haben wir nichts. Noch nichts.
+
+In Speicherzelle 59639 steht die Nummer der obersten Scroll-Zeile minus
+eins. Sollen also beispielsweise fünf Zeilen am oberen Bildschirmrand nicht
+gescrollt werden, geben Sie
+
+30 POKE 59639,4
+
+ein. Um den Effekt zu testen, lösche man den Bildschirm und gebe in der
+ersten Bildschirmzeile ein:
+
+FOR I=1 TO 1000 : PRINT I : NEXT
+
+Das Scrolling wird nicht in den ersten fünf Bildschirmzeilen. Der Normalwert
+dieser Speicherzelle ist 255 (alle Zeilen scrollen). Sie sollten darauf
+achten, daß keine Werte über 23 in diese Zelle gepoket werden. Um einen
+Bereich am unteren Bildschirmrand gegen Scrollen zu schützen, ist leider
+wesentlich mehr Aufwand vonnöten.
+
+
+Malnehmen für Könner
+
+Auch bei Multiplikationen läßt sich ein Geschwindigkeitsgewinn erzielen,
+indem die größere der beiden Zahlen, die malgenommen werden sollen, vor den
+Stern gestellt wird. PRINT 3463 * 2 ist also schneller als PRINT 2 * 3463,
+obwohl mathematisch gleichbedeutend (kommutativ). Nicht nur aus
+Geschwindigkeitsgründen sollten Sie die Potenzfunktion soweit als möglich
+vermeiden. Geben Sie einmal ein PRINT 7^2, Sie werden sich wundern! Besser
+ist PRINT 7*7.
+
+
+SIN, COS, TAN im Gradmaß
+
+Wer seinen C 64 schon einmal für trigonometrische Berechnungen eingesetzt
+hat, der hat sich vielleicht über eine Eigenart geärgert: Sämtliche Winkel
+sind hier im Bogenmaß, also als Vielfache von Pi (¶) anzugeben. Mit einem
+Einzeiler ist es jedoch möglich, die Arithmetik des C 64 auf Gradmaß
+umzustellen. Um den Sinus von 70 Grad zu erhalten, können Sie dann direkt
+SIN (70) schreiben.
+
+2 H=58080:FOR I=H TO H+9:POKE I,0:NEXT:POKE H,135:POKE H+1,52:POKE H+5,137
+  :POKE H+6,52
+
+Bevor wir freilich das Betriebssystem überhaupt ändern können, müssen wir es
+ins RAM kopieren:
+
+1 X = 16384 : FOR I=40960 TO 49151 : POKE I,PEEK(I) : POKE I+X,PEEK(I+X)
+  : NEXT : POKE 1,53 : POKE 64982,53
+
+Für diese Schleife braucht der Computer knapp zwei Minuten.
+
+Neben SIN, COS und TAN gibt es noch eine vierte trigonometrische Funktion:
+den Arcustangens ATN. Hier ist nicht das Argument, sondern das Ergebnis ein
+Winkel. Dies ist nicht so einfach in Gradangaben umzuwandeln, daher werden
+noch zwei weitere Zeilen benötigt. Beachten Sie, daß hierbei der
+Cassettenpuffer belegt wird, also keine Tape-Operationen mehr erlaubt sind.
+
+3 DATA 134,101,46,224,212,32,67,224,169,64,160,3,76,40,186
+4 FOR I=832 TO 846:READ D:POKE I,D:NEXT:POKE 58153,64:POKE 58154,3
+
+Zur Funktionsweise: Zum Ändern von SIN, COS und TAN (Zeile 2) werden einfach
+die im Betriebssystem gespeicherten Konstanten Pi*2 und Pi/2 durch die
+Fließkommawerte 360 und 90 ersetzt. Bei der ATN-Funktion fügen wir in das
+Betriebssystem eine Routine ein, die das Ergebnis mit 180/Pi multipliziert.
+
+start tok64 gradmass
+1 x = 16384 : for i=40960 to 49151 : poke i,peek(i) : poke i+x,peek(i+x) : \
+next : poke 1,53 : poke 64982,53
+2 h=58080:for i=h to h+9:poke i,0:next:poke h,135:poke h+1,52:poke h+5,137:\
+poke h+6,52
+3 data 134,101,46,224,212,32,67,224,169,64,160,3,76,40,186
+4 for i=832 to 846:read d:poke i,d:next:poke 58153,64:poke 58154,3
+stop tok64
+
+
+Alles relativ
+
+Mit LOCATE positioniert man beim C 128 den Grafik-Cursor an eine Stelle des
+Hires-Bildschirms, DRAW zeichnet Punkte. Interessanterweise lassen sich
+beide Befehle auch relativ adressieren. Dazu wird ein Pluszeichen vor die
+Parameter gesetzt. LOCATE +20,+50 bewegt den Grafik-Cursor von seiner
+aktuellen Position um 20 Pixel nach rechts und 50 Pixel nach unten. DRAW
+1,+40,+60 zeichnet gemessen von der aktuellen Position des Stiftes einen
+Punkt 40 Pixel weiter rechts, 60 Pixel weiter unten. Negative Werte führen
+zu Fehlermeldungen.
+
+
+Die Floating-Point-Darstellung
+
+Preisfrage: Wie gelangt man ohne Aufwand oder große Rechenarbeit an die
+Fließkomma-Darstellung (MFLPT) einer beliebigen Zahl? Antwort: Durch einen
+Einzeiler:
+
+CLR : A=nnnn : B=PEEK(45)+256*PEEK(46) : FOR T=2 TO 6 : PRINT PEEK(B+T) : NEXT
+
+Für nnnn setzen Sie die umzurechnende Zahl ein. Nach Betätigung von <RETURN>
+erscheinen die fünf Zahlen der MFLPT-Darstellung untereinander: Das erste
+Byte ist der Exponent, die restlichen vier Bytes geben die Mantisse an.
+
+Erklärung: Mit dem CLR-Befehl wird sichergestellt, daß die nächste Variable,
+die angelegt wird, auch direkt hinter dem Basicprogramm steht. In unserem
+Fall ist das die Variable A, der der gesuchte Wert zugewiesen wird. Danach
+legt der Einzeiler den aktuellen Basic-Ende-Zeiger in B ab. Die nächsten
+zwei Bytes hinter diesem Zeiger übergehe man (sie enthalten den
+Variablennamen). Dann schließlich folgen die fünf gesuchten Bytes: Die
+Floating-Point-Darstellung der Variablen A.
+
+
+Die Lösung des Filterproblems
+
+Viele Programme für den C 64 nutzen auf eindrucksvolle Weise dessen
+hervorragende Sound-Möglichkeiten. Doch leider gibt es gerade dort, wo sich
+besoders schöne Effekte erzielen lassen, nicht selten Probleme: Bei der
+Filterung der erzeugten Töne durch die im SID integrierten Analog-Filter. Es
+gibt nämtlich Unterschiede bei der Bestückung von zwei Kondensatoren im C
+64, die für die Filter zuständig sind. So finden sich als C 10 und C 11 bei
+älteren C 64 Werte von 470 pF oder 2,2 nF. Selbst die Schaltpläne des C 64
+in einschlägiger Literatur sind hinsichtlich dieser Werte nicht einheitlich.
+Der Grund für dieses Verwirrspiel liegt darin, daß Commodore bei der
+Entwicklung des C 64 zunächst einen Wert von 470 pF für diese Kondensatoren
+eingeplant hat. Dieser Wert ist viel zu klein bemessen; der Frequenzbereich,
+in dem das Filter wirkt, liegt nur zu einem kleinen Teil in dem
+Frequenzbereich, in dem die vom SID erzeugten Töne liegen. Abhilfe würde ein
+größerer Wert, beispielsweise 2,2 nF schaffen. In neueren C 64 wurden
+entsprechend größere Kondensatoren eingesetzt.
+
+Wer nun in seinem »Brotkasten« zwei 470 pF Kondensatoren als C 10 und C 11
+findet, kann seinen Computer recht leicht dem neuen »Standard« anpassen. Es
+muß lediglich zu jedem der beiden Kondensatoren ein weiterer parallel
+geschaltet werden. Als Wert für diese beiden zusätzlichen Kondensatoren
+bietet sich 1,5 nF an. Es ergibt sich dann ein Gesamtwert von jeweils 1,97
+nF, was in etwa 2,2 nF entspricht. Die Bauform der Kondensatoren ist im
+Prinzip egal. Es dürfen allerdings keine Elektrolyt-Kondensatoren (Elkos)
+verwendet werden. Am günstigsten für den Einbau sind Styroflex- oder
+Keramik-Kondensatoren.
+
+Der Einbau läuft wie folgt ab: Erst schraubt man den C 64 auf (Vorsicht:
+Garantie-Verlust!). Dann suche man auf der Platine nach den beiden
+Kondensatoren, neben denen C 10 und C 11 auf der Platine steht. Sie befinden
+sich in der Nähe der oberen linken Ecke bei Pin 1 des SID und sehen gleich
+aus. Auf dem Kondensator ist mehr oder weniger deutlich der Wert
+aufgedruckt: Entweder 470 pF oder 2,2 nF. Meistens steht nur etwas mit 47
+oder 22 da. Ist letzteres der Fall, kann das Gerät mit gutem Gewissen sofort
+wieder zugeschraubt werden, denn dann hat er bereits den richtigen
+Kondensatortyp eingebaut. Andernfalls soll nun vorsichtig jeweils ein 1,5
+nF-Kondensator an die Pins des jeweiligen 470 pF Kondensators gelötet
+werden. Dann kann man den C 64 wieder zuschrauben und sich über den neuen
+Sound freuen, der jetzt bei Programmen wie »Shades« oder »Giana Sisters«
+ertönt.
+
+Der Einbau ist normalerweise vollkommen unproblematisch, falls man über
+genügend Löterfahrung verfügt.
+
+
+16 Funktionstasten abfragen
+
+Mit einem genialen Trick lassen sich per Programm bis zu 16 Funktionstasten
+des C 64 abfragen. Wir kommen dabei ohne umständliche IF..THEN-Abfragen aus.
+Definieren Sie nur am Anfang Ihres Programms die Funktion
+
+10 DEFFNA(X)=(X > 2)*(X < 7)*(((X-3-(X < 4)*4)*2)+(Y=0 OR Y=2))-(Y > 1)*8)
+
+An entsprechender Stelle im Programm steht dann die Zeile
+
+100 X=PEEK(197):Y=PEEK(653):IFFNA(X)=0 THEN 100
+110 weiter im Programm
+
+Wurde eine Funktionstaste gedrückt, macht der Computer mit Zeile 110 weiter.
+In X erhalten Sie nun bis zu 16 verschiedene Werte, die für folgende
+Kombinationen stehen:
+
+<f 1>, <f 3>, <f 5>, <f 7> allein
+<f 2>, <f 4>, <f 6>, <f 8> mit <SHIFT>
+<f 9>, <f11>, <f13>, <f15> mit <CBM>
+<f10>, <f12>, <f14>, <f16> mit <CTRL>
+
+
+Das Eine oder das Andere, aber nicht beides
+
+Gute Basic-Programmierer können durch die Verwendung der logischen
+Operatoren AND und OR ihre Programme verkürzen. Ein wichtiger Operator fehlt
+dem C 64 allerdings: Das ausschließende Oder (exclusive or, EOR). Bei AND
+ist das Ergebnis 1, wenn beide Operanden 1 sind. Bei OR erscheint die 1,
+wenn einer der beiden Operanden 1 ist. Was fehlt, ist die EOR-Verknüpfung,
+die eine 1 liefert, wenn genau ein Operand 1 ist, nicht aber beide.
+
+EOR läßt sich aber mit AND und OR simulieren:
+
+X = (A OR B) - (A AND B)
+
+X ist das Ergebnis der bitweisen EOR-Verknüpfung von A und B.
+
+
+Disketten-Check
+
+Bei vielen Programmen, die auf die Diskette zugreifen, ist es wichtig, daß
+der Benutzer auch die richtige Diskette eingelegt hat. Wie kommt man an den
+Disketten-Namen? Man kann hier wie folgt vorgehen:
+
+10 OPEN 1,8,15,"I":OPEN 2,8,2,"#":PRINT#1,"M-R"CHR$(144)CHR$(7)CHR$(16)
+20 INPUT#1,A$:CLOSE 2:CLOSE 1
+
+Danach steht der Disk-Name in A$ und kann mit einer IF..THEN-Anfrage auf
+Richtigkeit überprüft werden. Falls der Name kürzer als 16 Zeichen ist, wird
+er mit geshifteten Spaces auf diese Länge aufgefüllt. Dies sollte man bei
+einer IF-Abfrage beachten. Die folgende Zeile entfernt die rechtsbündigen
+geshifteten Spaces:
+
+30 IF RIGHT$(A$,1) = CHR$(160) THEN A$=LEFT$(A$,LEN(A$)-1):GOTO 30
+
+start tok64 diskchek
+10 open 1,8,15,"i":open 2,8,2,"#":print#1,"m-r"chr$(144)chr$(7)chr$(16)
+20 input#1,a$:close 2:close 1
+30 if right$(a$,1) = chr$(160) then a$=left$(a$,len(a$)-1):goto 30
+stop tok64
+
+
+DISK FULL
+
+Haben Sie gewußt, daß man ganz einfach von einem Basicprogramm aus
+feststellen kann, wie viele Blocks auf der eingelegten Diskette frei sind?
+Diese Angabe zu kennen ist nützlich, falls beispielsweise vom Programm aus
+eine Datei gespeichert werden soll, um vorher zu testen, ob sie überhaupt
+noch auf die Diskette paßt.
+
+Zwei Programmzeilen, passend in ein Programm integriert, genügen:
+
+start tok64 diskfull
+10 open1,8,15,"i":print#1,"m-r"chr$(250)chr$(2)chr$(3)
+20 get#1,a$b$b$:a=asc(a$+chr$(0))+256*asc(b$+chr$(0))
+30 close 1
+stop tok64
+
+Lassen Sie sich nicht davon verwirren, daß hinter GET# in Zeile 20 B$
+zweimal steht. Dies hat seine Richtigkeit. Nach der Ausführung dieser beiden
+Zeilen steht in der Variablen A die Anzahl der noch freien Blocks auf dieser
+Diskette. Die Anzahl der belegten Blocks ergibt sich übrigens nach der
+Formel 664-A. Der maximale Speicherplatz jeder Diskette beträgt nämlich
+genau 664 Blocks zu je 254 Bytes, also 168656 Bytes oder 164 KByte.
+
+
+Einfacher Directory-Listschutz
+
+Wer seine Disketten vor fremden Augen schützen will, muß beim Formatieren
+einen speziellen Namen wählen:
+
+OPEN 1,8,15,"N:NAME,<SHIFT L>":CLOSE 1
+
+Achtung: Dieser Befehl löscht alle Daten der Diskette unwiderruflich. Statt
+<SHIFT L> drücken Sie die Tasten SHIFT und L gleichzeitig. Das Komma nicht
+vergessen! Durch das Sonderzeichen bricht der C 64 nach dem Laden das Listen
+des Inhaltsverzeichnisses mit einem ?SYNTAX ERROR ab. Programme und Dateien
+können aber dennoch problemlos wie gewohnt gespeichert und geladen werden.
+
+
+1328 Blocks free
+
+Wenn man eine 1571 am C 64 oder am C 128 im 64'er-Modus betreibt, wird man
+feststellen, daß die 1571 nur im 1541-Modus läuft. Der Schreib-Lese-Kopf für
+die zweite Diskettenseite wird nicht genutzt. Mit einem kleinen Befehl an
+das Laufwerk kann es jedoch in den 1571-Modus geschaltet werden, auch beim C
+64 sind dann 1328 Datenblöcke frei:
+
+OPEN 1,8,15,"U0>M1":CLOSE 1
+
+Wenn keine Diskette eingelegt ist, löst dieser Befehl eine Fehlermeldung
+aus, die Sie aber getrost ignorieren dürfen. Formatieren Sie nun eine leere
+Diskette und schauen Sie sich das Inhaltsverzeichnis an: 1328 Blocks free.
+Großen Datenmengen steht nichts mehr im Weg. Der Befehl wirkt nur auf
+Laufwerken vom Typ 1571 (nicht 1541).
+
+
+Lange Zahlenkolonnen
+
+Oft werden zum Beispiel mit Schleifen wie dieser Zahlenlisten auf dem Schirm
+ausgegeben:
+
+100 FOR I=1 TO 1000: PRINT AR(I): NEXT
+
+Hier soll der Inhalt des 1000 Felder umfassenden Feldes AR() ausgegeben
+werden. Eine lange Folge von 1000 dahingeschmissenen Zahlen ist die Folge,
+ein Mensch wird kaum mitlesen oder kontrollieren können. Die CTRL-Taste
+verlangsamt zwar leicht, aber nicht genug. Wenn es Ihnen zu schnell geht,
+bauen Sie einfach einen Befehl wie WAIT 198,1,1:POKE 198,0 ein. Oben wäre
+das also:
+
+100 FOR I=1 TO 1000: PRINT AR(I): WAIT 198,1,1:POKE 198,0: NEXT
+
+Die Nummern erscheinen ganz normal auf dem Bildschirm, allerdings nur so
+lange, bis Sie eine Taste drücken. Dann hält der Computer so lange an, bis
+Sie noch eine Taste drücken. Es klingt seltsam, aber der dritte Parameter
+beim relativ unbekannten Befehl WAIT 198,1,1 sorgt dafür, daß der Computer
+so lange wartet, bis der Inhalt der Speicherzelle 198 (= Anzahl der bisher
+gedrückten Tasten) gerade ist. Wenn Sie eine Taste drücken (eine ungerade
+Anzahl), wartet der Computer so lange, bis Sie eine weitere Taste drücken.
+Diese Technik findet Anwendung, wenn Sie zum Beispiel mit PEEK einen großen
+Speicherbereich oder wie hier eine dimensionierte Variable durchsehen.
+
+
+Ohne Directory
+
+Es ist auf erstaunlich einfache Weise möglich, Programme nur durch Angabe
+von Start-Track und -Sektor von Diskette zu laden. Folgende Zeilen
+übertragen diese Werte in das Floppy-RAM:
+
+start tok64 ohnedir
+10 input"starttrack";tr
+20 input"sektor";se
+30 open 1,8,15,"i"
+40 print#1,"m-w"chr$(126)chr$(0)chr$(1)chr$(tr)
+50 print#1,"m-w"chr$(111)chr$(2)chr$(1)chr$(se)
+60 close 1
+stop tok64
+
+Danach soll der Befehl LOAD"*",8 bzw. LOAD"*",8,1 folgen. Das Programm wird
+nun wie jedes andere auch geladen, unabhängig davon, ob es im Directory
+eingetragen ist oder nicht und auch, falls das Directory leer sein sollte.
+
+Man kann so beispielsweise seine Programme vor fremden Zugriffen schützen,
+indem man auf einer beschriebenen Diskette mit Hilfe eines
+Disketten-Monitors Start-Track und -Sektor eines Programms ausliest, sich
+merkt oder notiert und das Directory wiederum mit Hilfe des
+Disketten-Monitors durch Überschreiben löscht. Man kann nun die auf dieser
+Diskette enthaltenen Programme nur noch laden, wenn man Start-Track und
+-Sektor kennt und mit obigem Programm eingibt.
+
+Allerdings darf jetzt kein Validate mehr ausgeführt werden. Dieser Befehl
+würde nämlich die von dem »versteckten« File belegten Bereiche als frei
+markieren, das Programm könnte beim nächsten Speichern auf diese Diskette
+überschrieben werden. Es ist allerdings durchaus möglich, noch andere
+»normale« Programme dazu zu speichern.
+
+
+LIST in Basicprogrammen
+
+Normalerweise ist es nicht möglich, den LIST-Befehl innerhalb von
+Basicprogrammen zu verwenden, da der C 64 die Bearbeitung des Programms nach
+dem LIST-Befehl stoppt. Mit einem kleinen Trick ist es aber trotzdem
+möglich. Das folgende Beispiel listet innerhalb des Programms die Zeile 10.
+
+start tok64 list
+10 poke768,61:sys42980,list10:poke768,138
+20 wait198,1: poke198,0: print"weiter": goto10
+stop tok64
+
+Natürlich können Sie in Zeile 10 anstelle des LIST 10 auch zum Beispiel LIST
+10- oder LIST 400-500 usw. schreiben. Vergessen Sie nicht das Komma nach dem
+SYS-Befehl!
+
+
+Kurze Funktionstasten-Abfrage
+
+Das folgende Programm ist ein Beispiel dafür, wie man einfach und kurz die
+Funktionstasten abfragt.
+
+start tok64 f-tasten
+10 a=peek(203) : on a goto 60,70,50,20,30,40:goto 10
+20 print "f1":goto 10
+30 print "f3":goto 10
+40 print "f5":goto 10
+50 print "f7":goto 10
+60 print "return":goto 10
+70 print "cursor rechts":goto 10
+stop tok64
+
+Die Speicherzelle 203 enthält den »Scan-Code« der momentan gedrückten Taste.
+Dieser Code unterscheidet sich vom Ascii-Code, er hängt mit der Verteilung
+der Tasten auf dem Keyboard zusammen. Der Wert 64 bedeutet, daß keine Taste
+gedrückt wurde. Zufällig haben die Funktionstasten ziemlich niedrige Codes
+(3 = F7, 4 = F1, 5 = F3, 6 = F5), so daß sich die Abfrage über den
+ON..GOTO-Befehl anbietet. Sollten Sie mit der Funktionsweise nicht so ganz
+klarkommen, schlagen Sie im C 64-Handbuch den ON..GOTO-Befehl nach.
+
+
+Vorgaben
+
+Viele Programmierer verwenden einen Befehl wie den folgenden, wenn Sie vom
+Anwender eine Eingabe erwarten und ihm schon eine mögliche Antwort vorgeben
+wollen:
+
+INPUT"SIND SIE SICHER{2 SPACES}J{3 LEFT}";A$
+
+Hier wird die Frage gestellt: SIND SIE SICHER? zusammen mit einem »Default«.
+Ein Default ist eine Vorgabe, in diesem Fall die Antwort »J«, die dem
+Programm übergeben wird, wenn der Anwender nur <RETURN> drückt, ohne etwas
+einzugeben. Dieser Trick funktioniert meistens ohne weiteres, die
+Cursor-Steuer-Kommandos sorgen dafür, daß sowohl die Vorgabe »J« (Sie hätten
+ebenso gut »N« schreiben können) wie auch das Fragezeichen, das der
+INPUT-Befehl selbst erzeugt, auf dem Bildschirm an der richtigen Stelle
+stehen.
+
+Sie erkennen das Problem: Was tun, wenn die Länge des Defaults vorher nicht
+bekannt ist? Wenn die Vorgabe in einer Variable steht? Dann behelfen Sie
+sich am besten so:
+
+PRINT"PROMPT ";X;:POKE211,6:INPUTX
+
+Hierbei meint »PROMPT« den Abfrage-Text, zum Beispiel »Sind Sie sicher«. Der
+Befehl POKE 211,6 bewirkt, daß der Cursor in die 6. Bildschirmspalte gesetzt
+wird. Sie müssen je nach Länge des Prompts diesen Wert variieren (hier
+»PROMPT« = 6 Zeichen, daher 6). Verwenden Sie diese Technik mit einer
+String-Variable anstelle von X, schreiben Sie zwei Leerzeichen nach dem
+Prompt anstelle des einen.
+
+
+Directory ohne Programmverlust
+
+Häufig möchte man das Inhaltsverzeichnis einer Diskette in den Speicher
+bringen und listen, ohne das dabei im Speicher befindliche Programm zu
+löschen. Haben Sie nicht gerade eine Erweiterung wie DOS 5.1 zur Hand, hilft
+folgender Kniff:
+
+POKE 44,PEEK(46)+1
+
+Der Basic-Speicher wird auf einen freien Speicherplatz umgestellt. Jetzt
+können Sie wie gewohnt das Directory mit LOAD "$",8 laden und mit LIST
+ansehen. Mit
+
+POKE 44,8:CLR
+
+gelangen Sie dann wieder ins normale Programm zurück. Mit dieser Methode
+lassen sich auch andere Basic-Programme ohne Verlust des Hauptprogramms
+listen, allerdings nicht editieren, verändern oder starten.
+
+Als krönenden Abschluß präsentieren wir Ihnen noch ein kurzes Programm, das
+ebenfalls das Directory anzeigt - allerdings ohne Klimmzüge über
+POKE-Befehle und sehr schnell.
+
+start tok64 dir
+0 print" 0";:open 1,8,0,"$":poke 781,1:sys 65478:get a$,a$,a$,a$:x$=chr$(0)
+1 for i=1to7:get a$,b$,c$,d$:print a$b$c$d$;:next:print:get a$,a$,a$,b$:if \
+st then sys 65484:close 1:end
+2 print asc(a$+x$)+256*asc(b$+x$);:goto 1
+stop tok64
+*********
+
+End of the International Project 64 etext of the article "Mehr Tips und
+Tricks".
+
+*********

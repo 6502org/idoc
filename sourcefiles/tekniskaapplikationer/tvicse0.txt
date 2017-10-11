@@ -1,0 +1,2675 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore 64
+related documents in electronic text format that might otherwise cease to
+exist with the rapid advancement of computer technology and declining
+interest in 8-bit computers on the part of the general population. If you
+would like to help by converting C64 related hardcopy documents to
+electronic texts please contact the manager of International Project 64,
+Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The first
+characters of the file name are an abbreviation of the original document
+name and the language of the etext. The version number of the etext follows
+next. After that a letter may appear to indicate the particular source of
+the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International Project
+64 make no representations about the accuracy or suitability of this
+material for any purpose. This etext is provided "as-is". Please refer to
+the warranty of the original document, if any, that may included in this
+etext. No other warranties, express or implied, are made to you as to the
+etext or any medium it may be on. Neither the author(s) nor the members of
+International Project 64 will assume liability for damages either from the
+direct or indirect use of this etext or from the distribution of or
+modification to this etext. Therefore if you read this document or use the
+information herein you do so at your own risk.
+
+*********
+
+The International Project 64 etext of the book "Tekniska applikationer på
+VIC", converted to text by Peter Karlsson <pk@abc.se>
+
+TVICSE0.TXT, April 1998, etext #28.
+
+Note from the etexter (in Swedish):
+
+Tack till Sune Windisch vid Förlagsgruppen Data för tillståndet att
+distribuera denna bok i elektronisk form.
+
+Denna förhandsversion saknar programlistningarna. De tillkommer senare.
+
+*********
+
+TEKNISKA APPLIKATIONER PÅ VIC
+
+Sune Windisch
+
+©1982, författaren och Förlagsgruppen för Teknisk utbildning i Norrköping AB
+Upplaga 1:1
+Illustrationer: Göran Wikhäll
+Tryck: Grafax, Uppsala 1982
+ISBN 91-86398-07-5
+
+Distribution: Litteratur och föreningstjänst
+              Box 1338
+              171 26 SOLNA
+              Tel: 08-730 02 75
+
+              Handic electronic ab
+              Box 1063
+              463 00 ASKIM/GÖTEBORG
+              TEl: 031-28 97 90
+
+*********
+
+INNEHÅLLSFÖRTECNKNING
+
+0. FÖRORD
+1. VIC:S I/O-REGISTER
+ 1.1 Tidsfördröjningar
+ 1.2 Analog/digital-omvandlare
+ 1.3 Digital/analog-omvandlare
+ 1.4 Datorn ersätter fasta komponenter i styrapplikationer
+ 1.5 Automatisk telefonuppringare
+2. VIC-RELÄKASSETT
+ 2.1 Sammanfattning över POKE för utgångarna
+ 2.2 Ingångarna på VIC-REL
+3. RS 232C-SNITTET
+ 3.1 Överföring av data mellan olika enheter
+ 3.2 Mottagande av data på RS 232
+4. EPROM-PROGRAMMERARE
+
+
+[0.] FÖRORD
+
+Applikationsexempel innebär i det här fallet att de teorier och
+programmeringsexempel som du tillgodogjort dig ur böckerna MIKRODATORNS
+FUNKTION och ASSEMBLER PÅ VIC avslutas med små praktiska exempel. De två
+nämnda böckerna ska alltså ha studerats innan du tar itu med den här boken.
+
+Utöver det så ligger nivån på boken, liksom tidigare böcker i serien, på
+typisk nybörjarnivå. Efter den här boken bör du totalt ha fått så mycket
+"kunskap" inom området att du kan gå vidare på egen han med praktiska
+exempel som "dyker upp" i din omgivning.
+
+Även den här boken är avsedd att kunna studeras i cirkel eller som
+självstudier.
+
+Lycka till med studierna.
+
+Sune Windisch
+
+
+[1.] VIC:s I/O - REGISTER
+
+  MÅLRUTA
+
+  Det här avsnittet ska med praktiska exempel fördjupa de teoretiska
+  kunskaper om I/O-registren, som du förhoppningsvis erhållit i MIKRODATORNS
+  FUNKTION. Du ska här endast arbeta med enkla in- och ut-rutiner.
+
+Utrustningsbehov utöver VIC:
+
+ - Anslutningsdon (kontakt till User port)
+ - Kopplingsdeck
+ - lysdioder
+ - switchar (i DIP-kapsel)
+
+Allra först ska du få bekanta dig med de in- och ut-gångar som du har till
+ditt förfogande. I VIC sköts allt I/O-arbete av kretsen 6522 som också
+kallas VIA (Versatile Interface Adapter =generell anpassningkrets).
+
+Det finns två VIA-kretsar i VIC men i det här kapitlet ska endast den ena
+användas eftersom det är den som är "ansluten internt till user port".
+
+Vid I/O-arbete kan du ansluta dina enheter till user port Åse figur 2).
+Informationen på user port är endast kopplad till en bestämd minnesadress så
+att porten går i princip att programmässigt hantera som vilken minnesadress
+som helst.
+
+Ytterligare en minnesadress "känns av" för att definiera om I/O-stiftet ska
+användas som in- eller ut- gång. Skissen enligt figur 1 visar principen. För
+de stift vi ska använda är det adress 37136 som används som lagringsplats
+till porten medan adress 37138 bestämmer i vilken riktning informationen ska
+sändas. Observera att figur 1:s sätt att beskriva adress 37138 endast är
+symbolisk för att visa att då en bit är noll används motsvarande bit i 37136
+som loport och då en bit i 37138 är ett så används motsvarande bit i 37136
+som "utport". Även kapitel 7 i MIKRODATORNS FUNKTION beskriver principerna.
+
+
+ |     +---+ +---+ +---+ +---+ +---+ +---+ +---+ +---+   MINNES- |
+ | Bit | 7 | | 6 | | 5 | | 4 | | 3 | | 2 | | 1 | | 0 |   ADRESS  |
+ |     +---+ +---+ +---+ +---+ +---+ +---+ +---+ +---+   37136   |
+ |       |     |     |     |     |     |     |     |             |
+ |     +<-+  +<-+  +<-+  +<-+  +<-+  +<-+  +<-+  +<-+    MINNES- |
+ | Bit /1 0/ /1 0/ /1 0/ /1 0/ /1 0/ /1 0/ /1 0/ /1 0/   ADRESS  |
+ |      +->+  +->+  +->+  +->+  +->+  +->+  +->+  +->+   37138   |
+  \      |     `--.  `-.   `.    |     |     |     |            /
+   \     `--------.`---.`-.  `.  `\    |    /'  .--'           /
+    `------N---M---L---K---J---H---F---E---D---C---B---A------'
+
+  Figur 1 Principen för in- ut-registren.
+
+
+För att praktiskt kunna använda user port måste du givetvis veta vilka stift
+du ska använda. Fig. 2 visar kontakten samt en tabell över vilka stift som
+motsvarar bitarna i minnesadressen.
+
+
+  .-==--==================--.   1  2  3  4  5  6  7  8  9  10 11 12
+  |                         | +-##-##-##-##-##-##-##-##-##-##-##-##-+
+  |_________________________| |                                     |
+  | ####### () () ### ##### | +-##-##-##-##-##-##-##-##-##-##-##-##-+
+  `-------------------|\/|--'   A  B  C  D  E  F  H  J  K  L  M  N
+                      |  |    /\
+                      |   \___||
+                       \_______/
+                       USER PORT
+
+  ANSLUTNING  ADRESS I MINNET  ADRESS TILL SAMHÖRANDE  FUNKTION
+  HOS USER                     DATARIKTNINGSREGISTER
+  PORT
+
+    1                                                  Jord
+    2                                                  +5V (100mA)
+    A                                                  Jord
+    C         37136 bit 0      37138 bit 0
+    D         37136 bit 1      37138 bit 1
+    E         37136 bit 2      37138 bit 2
+    F         37136 bit 3      37138 bit 3
+    H         37136 bit 4      37138 bit 4
+    J         37136 bit 5      37138 bit 5
+    K         37136 bit 6      37138 bit 6
+    L         37136 bit 7      37138 bit 7
+    N                                                  Jord
+
+
+  Figur 2 Delar av user port
+
+
+Det är lika bra att direkt börja studera ett programexempel. Om vi som
+exempel låter stiften C, D, E och F vara utgångar och H, J, K och L vara
+ingångar så skulle en uppkoppling kunna ske enligt figur 3
+
+
+  Adress 37138   0   0   0   0   1   1   1   1
+
+               +---+---+---+---+---+---+---+---+
+  Adress 37136 |   |   |   |   |   |   |   |   |
+               +---+---+---+---+---+---+---+---+
+                 |L  |K  |J  |H  |F  |E  |D  |C
+                 /   /   /   /  \ / \ / \ / \ /   (fyra lysdioder)
+                 |   |   |   |  ¯|¯ ¯|¯ ¯|¯ ¯|¯
+                 +---+---+---+   +---+---+---+
+               __|__                       __|__
+  Kopplas  -->  ---                         ---
+  exempelvis     ¯                           ¯
+  till stift A
+
+  Figur 3 Uppkoppling till programexemplet
+
+
+Nu har vi byggt upp det tekniska och nu gäller det att göra ett program för
+att läsa av inbenen och sedan skicka ut det avlästa på utbenen. En
+flödesplan för problemet skulle kunna se ut så här:
+
+
+              .-----------.
+              |   START   |
+              `-----------'
+                    |
+                    V
+              +-----------+     
+              |INITIERING |
+              +-----------+
+           .------->|
+           |        V
+           |  +-----------+
+           |  |  LÄS AV   |
+           |  |  INBENEN  |
+           |  +-----------+
+           |        |
+           |        V
+           |  +-----------+               
+           |  |SKICKA UT  |
+           |  |DET AVLÄSTA|
+           |  |PÅ UTBENEN |
+           |  +-----------+
+           |        |
+           `--------'
+
+
+Det här programmet skulle hela tiden ligga och läsa av loportarna för att
+omedelbart visa det avlästa resultatet med lysdioderna på utbenen.
+
+I början av boken ASSEMBLER PÅ VIC beskrevs hur du lätt kunde skilja på
+basicprogram och de maskinkodsprogram du gör. Det skedde genom att du sänkte
+minnestoppen för basicprogrammen' vilket gjordes med POKE-satserna:
+
+15 POKE 51,0:POKE 52,26
+16 POKE 55,0:POKE 56,26
+
+Vi kan använda samma inlagringsadresser som tidigare för
+maskinkodsprogrammet. Alltså med start på adress 6912 (hexadecimalt $1B00).
+
+Använd maskinspråksmonitorn eller basicprogrammet från boken ASSEMBLER PÅ
+VIC för att skriva in programmet på nästa sida med startadress $1B00.
+
+Använd maskinspråksmonitorn eller basicprogrammet enligt boken ASSEMBLER PÅ
+VIC och skriv in följande program med start på 'adress 4608 decimalt
+($1200).
+
+ADRESS LABEL OP.KOD OPERAND M.KOD KOMMENTAR
+1B00         LDA    #$0F    A9 \
+1B01                        0F |  Definierar in- och ut-portar.
+1B02         STA    $9112   8D |- 37138 decimalt = 
+1B03                        12 |  9112 hexadecimalt
+1B04                        91 /
+1B05         LDA    $9110   AD \
+1B06                        10 |- Läser switcharnas tillstånd.
+1B07                        91 /
+1B08         LDX    #04     A2 \
+1B09                        04 |
+1B0A SKIFT   LSR    AREG    4A |- 4 högerskift av A-registret.
+1B0B         DEX            CA |
+1B0C         BNE    SKIFT   D0 |
+1B0D                        FC /
+1B0E         STA    $9110   8D \
+1B0F                        10 |- Skriv ut värde på lysdioderna.
+1B10                        91 /
+1B11         JMP            4C \
+1B12                        05 |- Nästa läsning.
+1B13                        1B /
+
+Då du lagrat in programmet så starta det genom att skriva SYS 6912. Du kan
+ändra switcharna på ingångarna medan programmet exekveras. Det ser nästan ut
+som om switcharna och lysdioderna är sammankopplade, men de är
+hårdvarumässigt helt skilda från varandra. Programmet kopplar
+mjukvarumässigt ihop lysdioderna med switcharna. På grund av att datorn är
+så snabb så uppfattar vi inte själva exekveringstiden. Vad det här
+programmet gör framgår av figur 4.
+
+
+  +-----------------------------------------+
+  |                   2 Det lästa skiftas   |
+  | +---+---+---+---+   4 steg åt höger     |
+  | | X | X | X | X | --. --. --. --.       |
+  | +---+---+---+---+   V   V   V   V       |
+  |   ^   ^   ^   ^   +---+---+---+---+     |
+  | 1 Först avläses   | X | X | X | X |     |
+  |   ingångarna.     +---+---+---+---+     |
+  |   ^   ^   ^   ^    3 Innehållet skrives |
+  |   |   |   |   |      ut.                |
+  |   |   |   |   |     V   V   V   V       |
+  +-----------------------------------------+
+      ^   ^   ^   ^     V   V   V   V
+    +---+---+---+---+-----+---+---+---+
+    |   |   |   |   |     |   |   |   |
+    +---+---+---+---+-----+---+---+---+
+      |   |   |   |     |   |   |   |
+      /   /   /   /    \ / \ / \ / \ /
+      |   |   |   |    ¯|¯ ¯|¯ ¯|¯ ¯|¯
+      +---+---+---+-----+---+---+---+
+                                  __|__
+                                   ---
+                                    ¯
+
+  Figur 4 Principen för program och uppkoppling
+
+
+Observera att öppen switch känns som etta och genom att stänga switchen
+sänks ingången och känns som nolla. Switchen ska alltså vara öppet för att
+lysdioden ska aktiveras.
+
+Givetvis kan du välja vilket stift som helst av de här åtta som inport
+respektive utport. Vi kan ändra exemplet och anta att vi ska läsa in data på
+K och skicka ut det på C. Då går det att i datariktningsregistret lagra in
+01 (hexadecimalt) eftersom de andra benen hos user port inte har någon
+betydelse. Uppkopplingsexemplet blir då enligt figur 5.
+
+
+  +---+---+---+---+---+---+---+---+
+  |   | K |   |   |   |   |   | C |
+  +---+---+---+---+---+---+---+---+
+        |                       |
+        /                      \ /
+        |                      ¯|¯
+      __|__                   __|__
+       ---                     ---
+        ¯                       ¯
+
+  Figur 5 Uppkopplingsexempel
+
+
+Ett programexempel till det här skulle givetvis kunna utföras på samma sätt
+som det tidigare programmet men man skiftar i stället 6 steg. I praktiken är
+det däremot ofta så att det förekommer flera in- och ut-portar men vid ett
+viss tillfälle vill man kanske endast läsa av ett ben och endast skriva ut
+på ett ben. Det går att utföra med hjälp av de logiska instruktionerna och s
+k maskning.
+
+Eftersom det inlästa ordet finns på adress $9110 är det lämpligt att göra en
+logisk OCH-operation mellan adress $9110 och $40 enligt:
+
+  innehåll på adress 9110 X1XXXXXX
+                      $40 01000000   AND
+                          --------
+                          01000000
+
+Här framgår att om bit 6 är 1 så blir resultatet efter AND=$40. Om däremot
+bit 6 är noll så blir resultatet noll.
+
+Programexemplet till figur 5 skulle kunna se ut så här:
+
+1B00   LDA  #$01    A9
+1B01                01
+1B02   STA  $9112   8D
+1B03                12
+1B04                91
+1B05   LDA  $9110   AD
+1B06                10
+1B07                91
+1B08   AND  $40     29
+1B09                40
+1B0A   BEQ  $02     F0
+1B0B                02
+1B0C   LDA  #$01    A9
+1B0D                01
+1B0E   STA  $9110   8D
+1B0F                10
+1B10                91
+1B11   JMP  $1B05   4C
+1B12                05
+1B13                1B
+
+Starta programmet och kontrollera att lysdioden "följer" dina växlingar med
+switchen.
+
+Det går inte att komma ifrån att det är betydligt enklare att utföra de
+olika operationerna med basicprogram. Enda anledningen till att "gå ner" i
+maskinkod är vid de tillfällen som inte basic "hinner med". Vi kan studera
+det sista exemplet utfört i basic.
+
+10 POKE 37138,1
+20 A=PEEK(37136) AND 64
+30 IF A=0 THEN 60
+40 POKE 37136,1
+50 GOTO 20
+60 POKE 37136,0
+70 GOTO 20
+
+Arbetar man i basic är det dessutom enkelt att kombinera med text och bilder
+på skärmen, vilket i och för sig är tidskrävande men ofta illustrativt.
+Exempelvis skulle programmet kunna kompletteras med följande rader:
+
+45 PRINT " SWITCHEN ÄR PÅSLAGEN"
+65 PRINT " SWITCHEN ÄR AVSLAGEN"
+
+Prova även det här basicalternativet.
+
+Kombinationen att arbeta med in och ut-operationer på en dator som VIC gör
+att man gärna vill illustrera uppkopplingarna på bildskärmen. Att rita på
+bildskärmen tar i regel förhållandevis lång tid och utförs därför med fördel
+i maskinkod. Här ska dock demonstreras ett exempel i basic eftersom det är
+enklare att både utföra och förstå.
+Ha kvar den sista uppkopplingen på kopplingsdecket och skriv in följande
+program. Skriv RUN, växla mellan de två lägena på switchen och studera vad
+som händer!
+
+
+[...listning 1...]
+
+
+Om du skrivit in programmet rätt så ritas figur 5 upp och då du växlar lägen
+på switchen sluts och öppnas switchen på bilden också. Samtidigt tänds och
+släcks lampan på bilden. Att så här illustrativt kunna följa vad som sker i
+en "process" är i regel ett måste i industriapplikationer.
+
+
+[1.1] TIDSFÖRDRÖJNINGAR
+
+Då I/O-program utförs finns ofta behov av att kunna "matcha" olika
+operationer på tid. Maskinkodsinstruktionerna styrs av en klockpuls med
+frekvensen 1MHz. I appendix B bak i boken ASSEMBLER PÅ VIC beskrivs alla
+maskininstruktionerna. Som överskrift i en kolumn står det No. Cycles. Se
+nedanstående figur:
+
+  DEC                 DEC Decremement memory by one              DEC
+  Operation: M - 1 -> M                              N B C I D V
+                                                     V V - - - -
+
+     Addressing    Assembly Language   OP   No.   No.
+       Mode               From        CODE Bytes Cycles
+
+     Zero Page     DEC  Oper           C6    2     5
+     Zero Page,X   DEC  Oper, X        D6    2     6
+     Absolute      DEC  Oper           CE    3     6
+     Absolute,X    DEC  Oper, X        DE    3     7
+
+På grund av frekvensen på 1 MHz tar en cycle cirka 1 µsekund (mikrosekund).
+Står det i instruktionens beskrivning att det åtgår 2 cycles så tar det
+alltså 2 µsek. att exekvera instruktionen.
+
+[Bild på en klocka]
+
+Det här kan du använda dig av för att göra subrutiner, vilka är avsedda som
+tidsfördröjningar. Genom att utföra en sekvens ett visst antal gånger går
+det att erhålla mer "tydliga tidsfördröjningar" än på några mikrosekunder.
+
+Vi tar ett exempel
+
+Med program enligt den här flödesplanen kan du åstadkomma olika
+fördröjningar!
+
+                                       |
+                                       V
+                               +--------------+
+                               | Ladda adress |
+                               | med värdet N |
+                               +--------------+
+                        .------------->|
+                        |              V
+          FÖRDRÖJNING 1 |      +--------------+
+                        |      | Räkna ner    |
+                        |      | adress med 1.|
+                        |      +--------------+
+                        |              |
+                        |              V
+                        |             ,',
+                        |           ,'   ',
+                        `-<--------', =0? ,'
+                        Nej          ', ,'
+                                       '
+                                       |
+                                       V
+
+
+Programmet skulle kunna se ut så här:
+
+LDA #N
+STA adress
+DEC adress
+BNE -1
+
+LDA omfattar 2 cycler och tar alltså 1 µsek att exekvera.
+STA omfattar 4 cycler och tar 2 µsek att exekvera.
+De här två instruktionerna exekveras endast en gång och tar tillsammans
+alltså 3 µsek.
+
+DEC omfattar 6 cycler och tar 3 µsek.
+BNE omfattar 3 cycler och tar 1,5 µsek.
+
+De två sista instruktionerna kommer att exekveras N gånger och genom att
+variera N fås olika fördröjningstid. Är N=1 kommer fördröjningstiden att bli
+3+4,5=7,5 µsek. N kan maximalt vara 255 (8 bitar) och fördröjningen kan
+maximalt bli 3+255*4,5=1150,5 µsek. Fortfarande är fördröjningen för kort
+för att man ska ha praktisk användning av den. Genom att lägga ytterligare
+en fördröjningsloop där FÖRDRÖJNING1 ligger inne i den nya loopen kan
+betydligt större fördröjning erhållas. Flödesschemat på nästa sida visar
+principen. För att i slutskedet kunna erhålla en fördröjning så nära en
+sekund som möjligt är N i FÖRDRÖJNING 1 valt till 255 och N i FÖRDRÖJNING 2
+valt till 220.
+
+
+  FLÖDESPLAN FÖR FÖRDRÖJNING 2
+
+                                      |
+                                      V
+                             +------------------+
+                             | Ladda "adress+1" |
+                             | med 220          |
+                             +------------------+
+                      .-------------->|
+                      |               V
+                      |      ++----------------++
+                      |      || FÖRDRÖJNING 1  ||
+                      |      ++----------------++
+                      |               V
+                      |      +------------------+
+                      |      | Räkna ner        |
+                      |      | "adress+1" med 1.|
+                      |      +------------------+
+                      |               |
+                      |               V
+                      |              ,',
+                      |            ,'   ',
+                      `-<---------', =0? ,'
+                      Nej           ', ,'
+                                      '
+                                      |
+                                      V
+
+
+
+Enligt den tidigare beskrivningen skulle FÖRDRÖJNING 1 med N=255 innebära en
+fördröjning på:
+
+        LDA #255                     2 µsek
+        STA adress                   4 µsek
+        DEC adress \ 9*255=       2295 µsek
+        BNE xxxx   /       ----------------
+                           Totalt 2301 µsek
+
+Hela fördröjningen med FÖRDRÖJNING 2 innehållande FÖRDRÖJNING 1 skulle då se
+ut så här:
+
+        LDA #220                     2 µsek
+        STA adress+1                 4 µsek
+        FÖRDRÖJNING 1  2301*220=506220 µsek
+        DEC adress+1 \ 9*220=     1980 µsek
+	BNE xxx	     /   ------------------
+                         Totalt 508206 µsek
+
+Fördröjning 1 och 2 tar tillsammans 0,508206 sekunder och tyvärr är tiden
+fortfarande något kort. Ska det här användas som subrutin bör man nog
+inrikta sig på en rutin som tar en sekund. Därför tar vi ytterligare en loop
+runt de här enligt flödesplan på nästa sida.
+
+  FLÖDESPLAN FÖR FÖRDRÖJNING 3
+
+                                      |
+                                      V
+                             +------------------+
+                             | Ladda "adress+2" |
+                             | med 2            |
+                             +------------------+
+                      .-------------->|
+                      |               V
+                      |      ++----------------++
+                      |      || FÖRDRÖJNING 2  ||
+                      |      || (innehållande  ||
+                      |      ||  FÖRDRÖJNING 1)||
+                      |      ++----------------++
+                      |               V
+                      |      +------------------+
+                      |      | Räkna ner        |
+                      |      | "adress+2" med 1.|
+                      |      +------------------+
+                      |               |
+                      |               V
+                      |              ,',
+                      |            ,'   ',
+                      `-<---------', =0? ,'
+                      Nej           ', ,'
+                                      '
+                                      |
+                                      V
+
+Nu är nästan subrutinen klar och dess exekveringstid blir följande:
+
+        LDA #02                      2 µsek
+        STA adress+2                 4 µsek
+
+        FÖRDRÖJNING 2          1016412 µsek
+        (2 gånger)
+
+        DEC adress+2 \ 9*2=         18 µsek
+        BNE xxxx     /  -------------------
+                        Totalt 1016436 µsek
+
+Rutinerna tillsammans fördröjer alltså drygt 1 sekund. Nu visar det sig
+emellertid att klockfrekvensen är c:a 1.02 MHz och i databladen specificeras
+tiden för en cycle att vara minst 0.96 µsek och max 0.99 µsek. Det innebär
+att de genomgångna rutinerna tar minst 0.96*1,016436 = 0.975 sekunder och
+högst 0.99*1,016436 = 1 sek.
+
+Det är alltså risk att fördröjningen går lite för fort.
+
+Nu ska den här fördröjningen kompletteras så att den blir en komplett
+subrutin. En subrutin bör alltid kompletteras med information så att den som
+gör huvudprogrammet får helt klart för sig hur data ska föras till och från
+subrutinen. Även vilka minnesadresser som upptas av subrutinen brukar vara
+viktig information. Antag att den här subrutinen ska användas av ett
+basicprogram. Då måste det ges besked om hur önskat antal sekunder ska
+överföras från basicprogrammet till subrutinen. Flödesplanen nedan gäller
+för den kompletta subrutinen. Om vi som tidigare lägger vårt
+maskinkodsprogram från adress 1B00 är det lämpligt att basicprogrammet
+skriver in antal sekunder på adress 1AFF. På nästa sida hittar du
+programlistan för maskin kodsprogrammet samt tilläg för att köra det från
+basic. Observera att tiden är lite för kort, vilket märks om man använder
+det för längre fördröjningar.
+
+Uppgift: Försök att korrigera programmet så att det på din maskin ger exakt
+         en sekunds fördröjning.
+
+              .---------------.
+              |   SUBRUTIN    |
+              |  FÖRDRÖJNING  |
+              `---------------'
+         .----------->|
+         |            V
+         |   ++---------------++
+         |   || Fördröjnings- ||
+         |   || rutin på      ||
+         |   || 1016436 µsek  ||
+         |   ++---------------++
+         |            |
+         |            V
+         |   +-----------------+
+         |   |Räkna ner värdet |
+         |   |(antal sekunder) |
+         |   |som "kommer" från|
+         |   |huvudprogrammet  |
+         |   |med 1.           |
+         |   +-----------------+
+         |            |
+         |            V
+         |           ,',
+         |         ,'   ',
+         `-<------', =0 ?,'
+          Nej       ', ,'
+                      '
+                      | Ja
+                      V
+              .---------------.
+              | Återvänd till |
+              | huvudprogram! |
+              `---------------'
+
+
+Programmet som ar uppbyggt som tre loopar runt varandra kanske verkar
+krångligt. Om du inte redan insett det så bör du veta att anledningen till
+att bygga upp programmet så här är att det maximalt går att lagra 255 på en
+minnesadress. Det ger att antalet nedräkningar i en loop blir begränsat.
+
+Programmet till subrutinen skulle kunna se ut så här:
+
+   ADRESS    MEMO  OPERAND  MASKINKOD  KOMMENTAR
++-------------------------------------+
+|  1B00 +--->LDA   #$02     A9        |
+|  1B01 |                   02        |
+|  1B02 |    STA   $1B26    8D        |
+|  1B03 |                   26        |
+|  1B04 |                   1B        |
+|+------+--------------------------+  |
+|| 1B05 |+-->LDA   #$DC     A9     |  |
+|| 1B06 ||                  DC     |  |
+|| 1B07 ||   STA   $1B25    8D     |  |
+|| 1B08 ||                  25     |  |1
+|| 1B09 ||                  1B     |5 |0
+||+-----++----------------------+  |9 |1
+|||1B0A ||+->LDA   #$FF     A9  |2 |8 |6
+|||1B0B |||                 FF  |3 |2 |4
+|||1B0C |||  STA   $1B24    8D  |0 |0 |3
+|||1B0D |||                 24  |1 |6 |0
+|||1B0E |||                 1B  |  |  |
+|||1B0F |||+>DEC   $1B24    CE  |µ |µ |µ
+|||1B10 ||||                24  |s |s |s
+|||1B11 ||||                1B  |e |e |e
+|||1B12 |||+-BNE   -3       D0  |k |k |k
+|||1B13 |||                 FB  |  |  |
+||+-----+++---------------------+  |  |
+|| 1B14 |||  DEC   $1B25    CE     |  |
+|| 1B15 |||                 25     |  |
+|| 1B16 |||                 1B     |  |
+|| 1B17 ||+--BNE   -13      D0     |  |
+|| 1B18 ||                  F1     |  |
+|+------++-------------------------+  |
+|  1B19 ||   DEC   $1B26    CE        |
+|  1B1A ||                  26        |
+|  1B1B ||                  1B        |
+|  1B1C |+---BNE   -23      D0        |
+|  1B1D |                   E7        |
++-------+-----------------------------+
+   1B1E |    DEC   $1AFF    CE         Räknar antal sekunder
+   1B1F |                   FF
+   1B20 |                   1A
+   1B21 +----BNE   -33      D0
+   1B22                     DD
+   1B23      RTS            60         Återhopp till basic
+
+Ladda in programmet på något av de sätt som beskrivits i ASSEMBLER PÅ VIC.
+Den här subrutinen kan sedan exempelvis användas av programmet från sidan 11
+med mindre förändringar.
+
+Exempelvis kan följande tillägg och förändringar göras:
+
+5 PRINT "ANGE FÖRDRÖJNING I SEK"
+6 INPUT "MAX 255";N
+
+130 IF A=0 THEN 221
+
+140 IF F=1 THEN 120
+145 F=1
+
+221 IF F=0 THEN 120
+222 F=0
+224 POKE 6911,N
+225 SYS 6912
+
+F används som "flagga" så att endast förändringar på ingången ska
+registreras.
+
+Nu då du lagt ner mängder av tid på att lära dig göra tidsfördröjningar kan
+det vara dags att berätta att det finns en "realtidsklocka" i VIC, samt
+färdiga rutiner för att använda klockan.
+
+Den inbyggda realtidsklockan räknas upp var 1/60-dels sekund. Alltså räknas
+den upp 60 gånger på en sekund. Ska den användas i tidsfördröjningar är det
+lämpligt att nollställa den (om den inte används som realtidsklocka i andra
+applikationer) för att sedan "känna då den passerar" önskad tid. På sätt och
+vis använder du den då som "ett slags stoppur".
+
+[Bild på en löpare och en tidtagare]
+
+Klockan ställs genom att man laddar A, X och Y-registren och därefter gör
+ett subrutinsuthopp till subrutinen på adress $FFDB. A-reg. ska innehålla
+tidens mest signifikanta del och Y-registret ska innehålla den minst
+signifikanta delen. För att nollställa klockan skulle exempelvis följande
+rutin användas:
+
+    LDA #0
+    LDX #0
+    LDY #0
+    JSR $FFDB
+
+Då klockan ska läsas så sker det med en rutin som ligger på adress $FFDE.
+Där blir det givetvis omvänt. Först sker uthopp till rutinen. Vid återhopp
+innehåller A-registret klockans mest signifikanta del, X-reg innehåller den
+mellersta och Y-reg innehåller den minst signifikanta. Rutinen skulle kunna
+se ut på följande sätt:
+
+    JSR $FFDE
+    STA "adress"
+    STX "adress+1"
+    STY "adress+2"
+
+Registren är "hopkopplade" på följande sätt
+
+    +-------+-------+-------+
+    | A-reg | X-reg | Y-reg |
+    +-------+-------+-------+
+
+Y-registret räknas alltså upp 60 gånger på en sekund. På 4 sekunder har den
+räknat till 240. På 5 sekunder har X-reg räknats upp med ett och Y-reg
+"räknat runt" och fortsatt till 45. Det är lite besvärligt att register som
+inte är jämnt delbara med 60 används men du får se de tre registren som ett
+24-bits register, vilka visar tiden kodade binärt.
+
+Du kan studera timerns funktion genom att sätta ihop de två beskrivna
+"programsnuttarna" till ett program. Om LDA #0 startar i adress lB00 så
+kommer JSR $FFDE att finnas på adress 1B09. "adress" kan då bli 1B16,
+"adress+1"=lB17 och "adress+2"=1B18.
+
+På nästa sida hittar du en komplett programlista över inladdningsprogrammet
+i basic. Maskinkodsprogrammet ligger som datasatser och raderna 160 till 200
+exekverar maskinkodsprogrammet och skriver ut resultatet. Försök att göra
+ett eget program där du använder den färdiga klockan som fördröjning till
+uppkopplingen enligt figur 5.
+
+[ ... listning ... ]
+
+
+[1.2] ANALOG/DIGITAL OMVANDLARE
+
+I tekniska applikationer handlar det _mycket_ ofta om att omvandla analoga
+signaler så de passar datorns arbetssätt och detsamma åt andra hållet,
+nämligen att omvandla datorns digitala signaler så de passar omgivningens
+analoga arbetssätt.
+
+Om man har tillgång till en 8-bitars databuss på vilken det analoga värdet
+ska presenteras går det exempelvis att mäta värden inom intervallet 0-255.
+Antag att det är en spänning som ska mätas. Om den analogt varierar mellan 0
+och 255 volt enligt figur 6a så kan man digitalt få en noggrannhet på 1 volt
+eftersom 8 bitar kan "visa" 256 unika kombinationer. Om vi däremot vill mäta
+mellan 0 och 511 volt så hade vi endast fått en noggrannhet på 2 volt o s v.
+Figur 6b visar den digitala motsvarigheten till den analoga signalen.
+Eftersom vi hela tiden rör oss i steg då vi arbetar digitalt blir den kurvan
+lite kantig. I exemplet enligt figur 6b kan vi få en feltolkning på ± 0,5
+volt. Om i stället mätintervallet hade varierat mellan 0 och 255 millivolt
+så hade givetvis felindikeringen blivit mindre räknat i millivolt ( 0,5
+millivolt), men lika stort i förhållande till mätintervallet.
+
+
+   a) ANALOGT                         b) DIGITALT
+  
+      Volt                               Volt
+  255 ^ . . . . . . . .___      11111111 ^ . . . . . . . .___
+      |              ,'                  |              _¯
+      |            ,'                    |            _¯
+      |          ,'                      |          _¯
+      |        ,'                        |        _¯
+      |      ,'                          |      _¯
+      |    ,'                            |    _¯
+    5 +  ,'                     00000101 |  _¯
+      |,'                                |_¯
+    0 +-------------------> tid        0 +-------------------> tid
+
+  Figur 6 Analog / digital signal
+
+
+Har man fler än 8 bitar till sitt förfogande kan man representera ett större
+intervall eller erhålla större noggrannhet.
+
+Hur man praktiskt går tillväga för den här omvandlingen kan variera. De
+olika metoderna varierar med olika snabbhet i förhållande till antalet
+ingående komponenter. I industriella sammanhang är en metod som kallas
+successiv approximation den vanligaste. Det innebär i princip att man jämför
+den inkommande analoga signalen med kända signaler och försöker få dessa
+lika. Ungefär som vid vägning med en balansvåg. Byggblocken för den här
+jämförelsen framgår av figur 7.
+
+
+           A/D-omvandlare
+           +-------------------------------------------+
+           |         +------------------+  +---------+ |
+           |  +-<----|  D/A-OMVANDLARE  |<-|SPÄNNINGS| |
+           |  |      +--+-+-+-+-+-+-+-+-+  |REFERENS | | DIGITAL
+           |  |         | | | | | | | |    +---------+ | UTGÅNG
+           |  |         +-+=+=+=+=+=+=+=========================
+           |  |         | | +-+=+=+=+=+=========================
+           |  |         | | | +-+=+=+=+=========================
+  ANALOG   |  |         | | | | +-+=+=+=========================
+  INSIGNAL |  | |\   +--'-'-'-'-'-'-'-'--+             |
+    -===------+-| \__|REGISTER SOM STÄLLS|  +--------+ |
+           |    | /  |SUCCESIVT          |<-| KLOCKA | |
+           |  .-|/   +-+----------------++  +--------+ |
+           |__|__      | . . . . . . .  |              |
+           | ---       |kontrollsignaler|              |
+           |  ¯                                        |
+           +-------------------------------------------+
+
+  Figur 7 A/D-omvandlare enligt successiv approximation.
+
+
+Den kända spänningsreferensen kommer från ett register som ställs av en
+klocka och sedan omvandlas i en D/A-omvandlare (D/A-omvandlare beskrivs
+efter det här avsnittet). Man startar med alla bitarna nollställda och sedan
+lägger man den mest signifikanta biten hög (se fig 8). Om den är mindre än
+den analoga signalen så får den förbli hög, annars så nollställs den.
+Därefter ettställs nästa bit och man jämför, eventuellt nollställer o.s.v.
+Det här blir ett förhållandevis snabbt sätt att jämföra eftersom vi endast
+behöver jämföra 8 gånger för att hitta det närmaste talet.
+
+
+  Spänning
+    255^
+       :   :   :   :   :   :   :   :   :
+    192+   +---+   :   :   :   :   :   :
+       |   |   |   :   :   :   :   :   :
+       |   |   |   :   :   :   :   :   :
+    160+   |   +---+   :   :   :   :   :
+       |   |   :   |   :   :   :   :   :
+    144+   |   :   +---+   :   :   :   :
+    140+   |   :   :   |   +---+   :   :
+    138+ - + - - - - - + - + - +-------+ - analog inspänning
+    136+   |   :   :   +---+   :   :   :
+       |   |   :   :   :   :   :   :   :
+    128+---+   :   :   :   :   :   :   :
+       |   :   :   :   :   :   :   :   :
+       :   :   :   :   :   :   :   :   :
+       |   :   :   :   :   :   :   :   :
+      0+---------------------------------> klockpuls nr.
+         1   2   3   4   5   6   7   8
+        ===-===-===-===-===-===-===-===-
+         1   0   0   0   1   0   1   0
+        \______________________________/
+                  DIGITAL UTSIGNAL
+
+  Figur 8 Signaldiagram för A/D-omvandling
+
+
+Hos VIC ligger den här funktionen inbyggd hos videokretsen 6561. Till den
+kopplas ingångarna från potentiometrarna i "PADDLE".
+
+Använd kontakten till kontrollporten och koppla in potentiometern från
+komponentsatsen enligt figur 9. Koppla också lysdioderna till USER PORT
+enligt figur 9. 
+Värdet från kontrollportens stift 9 läses via 6561 till minnesadress 36872.
+I adress 36872 återfinns alltså ett digitalt värde motsvarande den analoga
+signalen från potentiometern. Med det här inbyggt är det inte svårt att
+programmässigt "läsa" den analoga signalen och sedan skicka ut den som
+digital signal till lysdioderna.
+
+
+                    | DATOR |
+
+     ___________  _ |       |___+-----------------------------------+
+   .' o o o o o `.           ===| A   C   D   E   H   J   K   L     |
+    \  o o7o o9 /   |       |   +-----------------------------------+
+     `---|---|-' - -              |  _|_ _|_ _|_ _|_ _|_ _|_ _|_ _|_
+      +5V|   |      |       |     |  \ / \ / \ / \ / \ / \ / \ / \ /
+         |   |                    |  _V_ _V_ _V_ _V_ _V_ _V_ _V_ _V_
+         |   |      |       |     |   |   |   |   |   |   |   |   |
+    +-+  |   |                    +---+---+---+---+---+---+---+---'
+    | |<-'   |      |       |     |
+    | |      |                  __|__
+    +-+      |      |       |    ---
+     |_______|                    ¯
+                    |       |
+
+  Figur 9 Uppkoppling enligt exempel
+
+
+Från potentiometern kommer det in en analog spänning som kan varieras mellan
+0-5 volt. Genom att presentera den analoga signalen som en digital utsignal
+med de 8 lysdioderna, kommer varje lysdiod att motsvara 0,625 volt.
+Potentiometerns värde bör vara omkring 470 kohm eftersom 5-voltsspänningen
+ger maximalt 100 mA.
+
+Om vi skulle göra en flödesplan till den här uppkopplingen skulle den se ut
+så här
+
+                   .---------.
+                   |  START  |
+                   `---------'
+                        |
+                        V
+              +--------------------+
+              | Sätt USER PORT-    |
+              | benen som "utben". |
+              +--------------------+
+           .----------->|
+           |            V
+           |        +-----------+
+           |       / Läs av    /
+           |      / Potentio- /
+           |     / metern    /
+           |    +-----------+
+           |            |
+           |            V
+           |        +------------+
+           |       / Skicka ut  /
+           |      / det lästa  /
+           |     / värdet till/
+           |    /lysdioderna./
+           |   +------------+
+           |            |
+           `------------'
+
+Ett maskinkodsprogram för att kontinuerligt avläsa potentiometern kan se ut
+så här:
+
+1B00  LDA #255   A9
+1B01             FF
+1B02  STA $9112  8D  Sätter USER PORT som utportar
+1B03             12
+1B04             91
+1B05  LDA $9008  AD
+1B06             08  Läs av potentiometer
+1B07             90
+1B08  LDA $9110  8D
+1B09             10  Skickar ut värdet till lysdioderna
+1B0A             91
+1B0B  JMP $1B05  4C
+1B0C             05  Återhopp för nästa läsning
+1B0D             1B
+
+OBSERVERA! Eftersom det här är ett maskinkodsprogram i en s k oändlig loop
+måste du trycka RUN/STOP och RESTORE för att bryta exekveringen.
+
+Ett basicprogram med samma funktion skulle kunna se ut så här:
+
+10 POKE 37138,255
+20 POKE 37136,PEEK(36872)
+30 GOTO 20
+
+
+[1.3] DIGITAL/ANALOG OMVANDLARE
+
+I en A/D-omvandlare enligt figur 7 ingår det även en D/A-omvandlare. Den
+kallas ofta DAC (Digital Analog Converter) och kan vara uppbyggd av ett
+resistansnät enligt figur 10. Ett lämpligt värde på R brukar vara 100 kohm.
+_Observera_ att det digitala ordets minst signifikanta bit är inkopplad längst
+till vänster (bit 0).
+
+Resistansnätet i figur 10 är uppbyggt på ett sådant sätt att varje bit ger
+sitt tillskott av signalen enligt det binära mönstret.
+
+
+    .-------------.
+    |    Analog   |
+    `-|\ utsignal |
+      | >---------+---
+    .-|/
+    |
+    `-------------------------------------------.
+       2R     R    R    R    R    R    R    R   |
+    .--==--+-==-+-==-+-==-+-==-+-==-+-==-+-==-+-'
+    |      |    |    |    |    |    |    |    |
+  __|__   .¯.  .¯.  .¯.  .¯.  .¯.  .¯.  .¯.  .¯.
+   ---  2R|_|2R|_|2R|_|2R|_|2R|_|2R|_|2R|_|2R|_|
+    ¯      |    |    |    |    |    |    |    |
+     BIT   0    1    2    3    4    5    6    7
+
+  Figur 10 Digital/analog omvandlare
+
+
+För att förstå följande förklaringar ordentligt bör du kunna ohms lag och
+resistansnätsteorier.
+
+Antag att bit noll (0) = 0 volt. Då ligger de två vänstra resistorerna
+parallellkopplade enligt figur 11a. Då ligger bit 1 kopplad likadant som bit
+noll gjorde tidigare i figur 10. Figur 11b visar resultatet av
+parallellkopplingen och figur 11c visar ersättningsresistansen inkopplad.
+Figur 11d visar det slutliga resultatet (jämför figur 10 med 11d)
+
+
+  +-+-----------------+-+--------------------------+
+  |a|                 |b|                          |
+  +-'   2R    R       +-'     |                    |
+  |   .-==-+-==-+-=   |    .--+--.       |         |
+  |   |    |    |     |    |     |      .¯.        |
+  |   | 2R.¯.2R.¯.    | 2R.¯. 2R.¯.  =  | |        |
+  |   |   |_|  |_|    |   |_|   |_|     |_|        |
+  |   `----+    |     |    +--+--+       |         |
+  |        |    |     |       |                    |
+  |   BIT 0=0V  1     | Re=(R1*R2)/    Re=(2R*2R)/ |
+  |                   |    (R1+R2)        (2R+2R)  |
+  |                   | Re=(4R^2)/                 |
+  |                   |    4R      = R             |
+  +-+-----------------+-+--------------------------+
+  |c|                 |d|                          |
+  +-'    Re  R        +-'       2R                 |
+  |    .-==--==-+-=   |    .----==-+-=             |
+  |    |        |     |    |       |               |
+  |  __|__   2R.¯.    |  __|__    .-.              |
+  |   ---      |_|    |   ---   2R|_|              |
+  |    ¯        |     |    ¯       |               |
+  |         BIT 1     |        BIT 1               |
+  |                   |                            |
+  +-------------------+----------------------------+
+
+  Figur 11 Principen för resistansnätet
+
+
+Med samma resonemang skulle vi kunna anta att alla bitar utom bit 7 är noll
+volt (låga). Med tanke på det som nyss visades skulle då hela resistansnätet
+fungera enligt figur 12. Eftersom resistorerna är lika stora och det går att
+anta att "ettan" på bit 7 är c:a 5 V så blir spänningsnivån till
+operationsförstärkaren 2,5 volt (spänningsdelning).
+
+                       
+                         |,
+       Re=2R            -| ', __
+    +--=====---+---------| +,'
+    |          |         |,'
+  __|__    2R .¯.        '
+   ---        | |
+    ¯         |_|
+               |
+        BIT 7=5volt
+
+  Figur 12 Del av resistansnätet
+
+
+Skulle resonemanget att anslutningarna motsvarar de binära värdena stämma,
+så kommer bit 6 att ge ett spänningstillskott på 1,25 V till
+operationsförstärkaren o s v.
+
+Vi kan testa det genom att räkna fram spänningen om endast bit 6 är
+ettställd. Då ser kopplingen i stället ut enligt figur 13.
+
+
+                                 |,
+        2R          R           -| ', __
+    +--=====---+--====---+-------| +,'
+    |          |         |       |,'
+  __|__    2R .¯.    2R .¯.      '
+   ---        | |       | |
+    ¯         |_|       |_|
+               |         |
+          BIT 6=5V  BIT 7=0V
+
+
+  Figur 13 Del av resistansnätet
+
+
+Figur 13 kan ritas om så att det lättare går att beskriva
+spänningsdelningen. Figur 14 är samma koppling men ritad på ett annat sätt.
+
+
+                           2R
+                    .-----====------.
+                2R  |               |
+  Bit 6 = 5 V -====-+               +-- Bit 7,5,4,3,2,1
+                    |  R        2R  |   och 0 = 0 volt
+                    `-====--+--====-'
+                            |
+                            |          |,
+                            |         -| ', __
+                            `----------| +,'
+                                       |,'
+                                       '
+
+  Figur 14 Figur 13 omritad
+
+
+Eftersom operationsförstärkaren är högohmig på ingången belastar inte den
+resistansnätet och kan uteslutas i figuren utan att funktionen ändras.
+
+Då erhålls i stället en koppling enligt figur 15. Räknar vi ut
+ersättningsresistansen för de två parallellkopplade reststanserna så blir
+den 1,2 R. Då har vi en koppling enligt figur 15b och kan räkna ut
+spänningen över 1,2R. Totalt är det 5V över 3,2R. Om de 5 volten ska
+fördelas jämnt över "varje R" så får vi dividera enligt:
+
+   5
+  --- = 1,5625
+  3,2
+
+Nu vill vi veta spänningen över de 1,2R som parallellkopplingen utgör. Den
+måste vara:
+
+  1,5625 * 1,2 = 1,875 volt
+
+
+  a)
+                   2R
+               .--====--.
+          2R   |        |
+    5 V -====--+        +---- 0 V
+               |   3R   |
+               `--====--'
+
+  b)
+          2R     1,2R
+    5 V -====-+--====-+--- 0 V
+
+  Figur 15 Spänningberäkning för bit 6
+
+
+Nu vet du spänningen över 1,2R och eftersom det är ersättningsresistansen
+för parallellkopplingen måste samma spänning ligga över de 3R vi är
+intresserade av. Då kan vi återgå till kopplingen enligt figur 16.
+
+Nu vet vi att 1,875 volt finns över de 3R vi har i figur 16. Genom att
+dividera med 3 och multiplicera med 2 erhålls spänningen i punkten ut till
+operationsförstärkaren.
+
+  1,875 * 2
+  --------- = 1,25
+      3
+
+1,25 volt finns det tydligen ut till operationsförstärkaren. Det var just
+den spänning vi startade med att konstatera att vi bör ha för att
+resistansstegen ska följa det binära mönstret.
+
+
+  1,875V  1,25V     0V
+   ---====--+--=====--
+       R    |   2R
+            |          |,
+            |         -| ',
+            `----------| +,'
+                       |,'
+                       '
+
+  Figur 16 Beräkning av spänningsnivån till OP-förstärkaren.
+
+
+För att praktiskt kunna prova D/A-omvandlaren måste man ha tillgång till en
+voltmeter. Av den anledningen är det inte inlagt som praktisk övning i den
+här boken. För dig som har tillgång till instrument och komponenter på
+arbetet eller privat är det dock lärorikt att koppla upp och testa
+D/A-omvandlaren. Använd 100 kohm som R och då naturligtvis 200 kohm som 2R.
+För att inte belasta resistansnätet bör du använda en operationsförstärkare
+enligt de genomgångna exemplen för att "ta ut" den analoga signalen. Då
+behöver du också lämpligt spänningsaggregat för matningsspänningen till
+OP:n. I värsta fall går det att använda två seriekopplade batterier där du
+använder deras gemensamma punkt som jord.
+
+Lägg alla benen på USER PORT som utgångar och gör ett litet program där du
+kan skicka ut olika värden, vilka sedan läses av på instrumentet.
+
+
+[1.4] DATORN ERSÄTTER "FASTA KOMPONENTER I STYRAPPLIKATIONER"
+
+Målet i de här böckerna har varit att alla ska kunna studera efter den, även
+de utan elektronikkunskaper. Ibland är det dock svårt att helt undvika
+sådant som kräver vissa förkunskaper. Eftersom den här boken ska vara
+teknisk bör det här avsnittet vara med.
+
+I digitala sammanhang används grindar i fasta uppkopplingar för att få en
+viss logisk funktion i en styrapplikation (se kapitel 1 i MIKRODATORNS
+FUNKTION).
+
+Använder man dator kan ofta dessa komponenter utlämnas. Dessutom får man en
+flexibilitet i systemet med möjligheter till ändringar i "uppkopplingar"
+utan att byta ut komponenter. Det enda som behövs är att låta justera
+programmet.
+
+Vi kan med två switchar simulera ingångar till logikgrindarna och med en
+lysdiod visa resultatet ut. Figur 17 visar uppkopplingen. Stift C och D på
+USER PORT kan vara ingångar till grinden och stift E kan vara utgång.
+Programmet kan vara uppbyggt så man kan välja någon av de vanligaste
+grindfunktionerna, vilka är AND,OR, NAND, NOR och EXOR. För att kunna byta
+grindfunktion utan att avbryta exekveringen används en switch kopplad till
+stift L på USER PORT.
+
+
+  | D A T O R            +-------+         |
+  |                      | Symbo-|         |
+  |                      | lisk  |         |
+  |                      | grind |         |
+  |                      +-+-+-+-+         |
+  |                        | | |           |
+  |    ,------------------------------.    |
+  +----+         USER PORT : : :      +----+
+       |      L            E D C      |
+       `------+-----------------------'
+              |   Utgång_Q_| | |   \ Ingång A
+              +       _|_    | |___ \_________
+  Skifte av    \      \./    |     \Ingång B  |
+  logisk        \     ¯|¯    |_____ \_________|
+  funktion    +        |                      |
+              |        |______________________|
+              |_______________________________|
+                                            __|__
+                                             ---
+                                              ¯
+ 
+  Figur 17 Datorn som logisk grind
+
+
+Flödesplan till problemet med de logiska grindarna. Eftersom man ska klara
+av så pass många grindar med programmet blir flödesplanen ganska komplex.
+
+
+                             .-------.
+                             | START |
+                             `-------'
+                                 |
+   .---------------------------->|<---------------------------------.
+   |                             V                                  |
+   |                     +----------------+                         |
+   |                     | Välj funktion! |                         |
+   |                     +----------------+                         |
+   |                             |                                  |
+   |                             |<-------------------------------. |
+   |                             V                                | |
+   |                            ,',         ____________          | |
+   |                          ,'   ',  Ja  /Känn på in-/          | |
+   |                         ', AND?,'--->/gångarna   /           | |
+   |                           ', ,'     ¯¯¯¯¯¯¯¯¯¯¯¯¯            | |
+   |                             |              |                 | |
+   |                             |Nej          ,',                | |
+   | .-------------------------->|           ,'"1"',__\++------++ | |
+   | |                           V           ',ut?,'Ja/|| SUB1 || | |
+   | |    ____________          ,',            ','     ++------++ | |
+   | |   /Känn på in-/Ja      ,'   ',           |Nej       |      | |
+   | |  /gångarna   /<-------', OR? ,'          V          |      | |
+   | | ¯¯¯¯¯¯¯¯¯¯¯¯¯           ', ,'        ++-------+     V      | |
+   | |        |                  |          || SUB0 ||--->/?\Ja   | |
+   | |       ,',                 |Nej       ++------++    \./¯¯¯¯¯' ^
+   | |     ,'"1"',__\++------++  |<--------------------.   |Nej     |
+   | |     ',ut?,'Ja/|| SUB1 ||  V                      \  `------->|
+   | |       ','     ++------++ ,',         ____________ \________  |
+   | |        VNej       |    ,'   ',  Ja  /Känn på in-/          | |
+   | |    ++------++     |   ',NAND?,'--->/gångarna   /           | |
+   | |    || SUB0 ||---->V     ', ,'     ¯¯¯¯¯¯¯¯¯¯¯¯¯            | |
+   | |    ++------++  Ja/?\      |              |                 | |
+   |  ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯\./      |Nej          ,',                | |
+   |<--------------------'Nej .->|           ,'"1"',__\++------++ | |
+   | .------------------------'  V           ',ut?,'Ja/|| SUB1 || | |
+   | |    ____________          ,',            ','     ++------++ | |
+   | |   /Känn på in-/Ja      ,'   ',           |Nej       |      | |
+   | |  /gångarna   /<-------', NOR?,'          V          |      | |
+   | | ¯¯¯¯¯¯¯¯¯¯¯¯¯           ', ,'        ++------++     V      | |
+   | |        |                  |          || SUB0 ||--->/?\Ja   | |
+   | |       ,',                 |Nej       ++------++    \./¯¯¯¯¯' ^
+   | |     ,'"1"',__\++------++  |<--------------------.   |Nej     |
+   | |     ',ut?,'Ja/|| SUB1 ||  V                      \  `------->|
+   | |       ','     ++------++ ,',         ____________ \________  |
+   | |        |Nej       |    ,'   ',  Ja  /Känn på in-/          | |
+   | |        V          |   ',EXOR?,'--->/gångarna   /           | |
+   | |    ++------++     |     ', ,'     ¯¯¯¯¯¯¯¯¯¯¯¯¯            | |
+   | |    || SUB0 ||---->V       '              |                 | |
+   | |    ++------++  Ja/?\                    ,',                | |
+   |  ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯\./                  ,'"1"',__\++------++ | |
+   |                  Nej|                   ',ut?,'Ja/|| SUB1 || | |
+   `---------------------'                     ','     ++------++ | |
+                                                |Nej       |      | |
+   /?\ Här ställs frågan om ar-                 V          |      | |
+   \./ betet ska fortsätta med              ++------++     V      | |
+       samma grind.                         || SUB0 ||--->/?\Ja   | |
+                                            ++------++    \./¯¯¯¯¯' |
+  SUB0 Subrutin som skriver "0" på utgången.               |Nej     |
+  SUB1 Subrutin som skriver "1" på utgången.                `--------'
+
+
+För att kunna köra ett program och verkligen veta att det fungerar måste du
+givetvis kunna de logiska grindarnas funktion. Figur 18 ger dig möjlighet
+att repetera de olika kretsarnas funktion. Du avläser tabellerna så att du
+för varje kombination av insignalerna kan se hur utsignalen ska se ut.
+
+
+  +---------+  +---------+  +---------+
+  |   AND   |  |   OR    |  |  NAND   |
+  +-----+---+  +-----+---+  +-----+---+
+  | A B | Q |  | A B | Q |  | A B | Q |
+  +-----+---+  +-----+---+  +-----+---+
+  | 0 0 | 0 |  | 0 0 | 0 |  | 0 0 | 1 |
+  | 0 1 | 0 |  | 0 1 | 1 |  | 0 1 | 1 |
+  | 1 0 | 0 |  | 1 0 | 1 |  | 1 0 | 1 |
+  | 1 1 | 1 |  | 1 1 | 1 |  | 1 1 | 0 |
+  +-----+---+  +-----+---+  +-----+---+
+  
+  +---------+  +---------+
+  |   NOR   |  |  EXOR   |
+  +-----+---+  +-----+---+
+  | A B | Q |  | A B | Q |
+  +-----+---+  +-----+---+
+  | 0 0 | 1 |  | 0 0 | 0 |
+  | 0 1 | 0 |  | 0 1 | 1 |
+  | 1 0 | 0 |  | 1 0 | 1 |
+  | 1 1 | 0 |  | 1 1 | 0 |
+  +-----+---+  +-----+---+
+
+
+  Figur 18 De vanligaste grindarnas funktionstabeller
+
+
+Ett förslag till program hittar du på nästa sida. Det inleds med att sätta
+"rätt stift" till in- respektive ut-gångar. Därefter följer några
+programrader som ger dig möjlighet att välja grindfunktion (raderna 10-60)
+Rad 55 bör du speciellt lägga märke till. Den känner på stift L hos USER
+PORT. OBSERVERA att switchen ansluten till stift L ska vara i öppet läge.
+Annars sker hela tiden återhopp till rad 10
+
+Resten av programmet ligger nu uppbyggt med likadana moduler för varje
+logisk grind. AND-grinden finns på raderna med 100-nummer, OR-grinden på
+raderna med 200-nummer o.s.v.
+
+Rad 105 visar på bildskärmen att det är AND-funktionen som testas. Raderna
+110 och 120 känner på ingångarna och beroende på deras tillstånd sker uthopp
+till någon av de två subrutinerna. Subrutinen på "tusenraderna" ettställer
+utgången och subrutinen på "tvåtusenraderna" nollställer utgången.
+
+Programförslag till test av de logiska funktionerna utan fasta
+elektronikkomponenter:
+
+  [...listning sida 32...]
+
+Några av de "maskningar" som är gjorda i programmet förklaras på nedan.
+
+Det räcker med att studera "maskningarna" i AND-sektionen. De andra är sedan
+utförda på samma sätt. På programrad 110 ställs frågan om PEEK(37136) AND
+3=3. På adress 37136 finns som du vet innehållet från USER PORT. Eftersom
+ingångarna i övningen är valda till bit 0 och bit 1 maskas endast dessa
+bitar från USER PORT enligt:
+
+  Innehåll på 37136   X X X X X X ? ?
+              AND 3   0 0 0 0 0 0 1 1
+              -----------------------
+                      0 0 0 0 0 0 ? ?
+
+För att erhålla binärt 3 från den här OCH-funktionen måste både bit 0 och
+bit 1 vara "1", vilket också är AND-grindens villkor. Om så är fallet så
+sker uthopp till subrutinen på adress 1000. Där ska bit 2 ettställas. Det är
+gjort på ett sådant sätt att endast bit 2 påverkas. Genom att först läsa
+adress 37136 med PEEK och sedan göra en OR-operation med bit 2 förblir de
+andra opåverkade. Antag att läsning av adress 37136 ger följande resultat:
+10110011. En OR-operation enligt subrutin 1000 skulle då bli så här:
+
+  Innehållet på adress 37136   1 0 1 1 0 0 1 1
+                       OR 4    0 0 0 0 0 1 0 0
+                       -----------------------
+                               1 0 1 1 0 1 1 1
+                                         ^
+                         endast bit 2 påverkas
+
+Hade uthopp i stället skett till subrutinen på adress 2000 så skulle bit 2 i
+stället nollställas. Det kan inte ske med OR-funktionen utan det måste bli
+en AND-operation. Ska man fortfarande hålla på regeln att de andra bitarna
+inte ska påverkas måste AND-operationen utföras med dessa bitar ettställda
+enligt exemplet nedan.
+
+Antag att vi har kvar innehållet efter föregående OR-operation i adress
+37136. Då blir ANDoperationen i subrutin 2000 enligt följande:
+
+  Innehållet i adress 37136   1 0 1 1 0 1 1 1
+                    AND 251   1 1 1 1 1 0 1 1
+                    -------------------------
+                              1 0 1 1 0 0 1 1
+                                        ^
+                         endast bit 2 påverkas
+
+
+[1.5] AUTOMATISK TELEFONUPPRINGARE
+
+[Bild på en dator som pratar i telefon]
+
+Det här avsnittet visar ett exempel på hur du praktiskt skulle kunna använda
+din VIC som automatisk telefonuppringare. Det skull gå genom att kombinera
+det som skrivs i det här kapitlet med ett personregister. _Du får dock inte
+med de bestämmelser som finns i dag göra några som helst privata
+uppkopplingar mot televerkets anläggningar._ Av den anledningen kommer det
+här endast att bli simulering med hjälp av lysdiod.
+
+Då du slår en siffra på fingerskivan bryter fingerskivan en strömkrets _en
+gång mer_ än den siffra du slår. Om du exempelvis slår en trea så bryts
+alltså strömkretsen 4 gånger (se figur 19). Pulsförhållande och tider är
+inte så fruktansvärt noga utan håller man sig ungefär till det förhållande
+som figur 19 visar så fungerar det. Spänningen som bryts är på c:a 10 volt.
+
+
+                               <40ms>
+                          <60ms>    |
+  c:a 10 V -----+    +----+    +----+    +----+    +-----
+                |    |    |    |    |    |    |    |
+  avbrott       +----+    +----+    +----+    +----+
+                          <--100ms-->
+
+  Figur 19 Pulståg för trea från fingerskivan
+
+
+Om exempelvis datorn ska ringa till "Fföken Ur" så är numret 90510. Det
+innebär ett totalt pulståg enligt figur 20.
+
+
+  ¯_¯_¯_¯_¯_¯_¯_¯_¯_¯_¯ ... ¯_¯ ... ¯_¯_¯_¯_¯_¯_¯ ... ¯_¯_¯ ... ¯_¯
+           9                 0            5             1        0
+
+  Figur 20 Pulståg för nr 90510
+
+
+För pulsavbrotten kan tidsfördröjning enligt tidigare beskrivning användas.
+Det kan exempelvis göras som en subrutin i maskinkod. För enkelhets skull så
+görs huvudprogrammet i basic. Antag att vi börjar med ett "enkelt" program
+till vilket du får ange ett telefonnummer som sedan ska omvandlas till
+"rätt" pulståg.
+
+Vi kan skriva programmet för att "skicka ut pulståget" till en lysdiod som
+får simulera telenätet enligt figur 21.
+
+
+          USER PORT
+  +--+--+--+--+--+--+--+--+
+  |  |  |  |  |  |  |  | C|
+  +--+--+--+--+--+--+--+--+
+                        _|_
+                        \ /\\
+                        ¯¯¯ >>
+                         |
+                       __|__
+                        ---
+                         ¯ A
+
+  Figur 21 Inkoppling av lysdiod för simulering.
+
+
+För att starta programmeringsarbetet bör vi börja i rätt del, nämligen med
+flödesplanen. Den ser du på nästa sida. I subrutinsrutan där avbrotten ska
+göras skulle vi använda ett maskinkodsprogram. Om vi gör en "tillbakablick"
+till sidan 14 så ser vi att den första inre fördröjningen tar 2,3
+millisekunder. Enligt förklaringen på sidan 15 kan vi gå en medelväg och
+multiplicera med 0,97 så erhålls c:a 2,2 ms. Genom att köra den här
+fördröjningen 18 gånger så erhålls ungefär 40 msek och genom att köra den 27
+gånger erhålls ungefär 60 msek. Vi kan då iordningställa en subrutin enligt:
+
+1B00   LDA #$FF      A9  FF
+1B02   STA $1B10     8D  10  1B
+1B05   DEC $1B10     CE  10  1B
+1B08   BNE $1B05     D0  FB
+1B0A   DEC $1B11     CE  11  1B
+1B0D   BNE $1B00     D0  F1
+1B0F   RTS           60
+
+
+Flödesplan till programmet AUTOMATISK TELEFONUPPRINGARE.
+
+             .-------.
+             | START |
+             `-------'
+   .------------>|
+   |             V
+   |    +----------------+
+   |    | Skriv in       |
+   |    | telefonnummer! |
+   |    +----------------+
+   | .---------->|
+   | |           V
+   | |  +----------------+
+   | |  | Gör om telefon-|
+   | |  | numrets ASCII- |
+   | |  | siffror till   |
+   | |  | siffrans nume- |
+   | |  | riska värde +1.|
+   | |  +----------------+
+   | |           |
+   | |           V
+   | | ++-----------------++
+   | | ||Gör avbrott för  ||
+   | | ||en siffra i taget||
+   | | ||enligt beskriven ||
+   | | ||modell!          ||
+   | | ++-----------------++
+   | |           |
+   | |           V
+   | |          ,',
+   | |        ,'   ',
+   | |  Nej ,' sista ',
+   | `-----', siffran?,'
+   |         ',     ,'
+   |           ', ,'
+   |             |Ja
+   |             V
+   |            ,',
+   |          ,'ska',
+   |    Ja  ,'du ringa,
+   `-------',fler sam-,'
+             ', tal?,'
+               ', ,'
+                 |Nej
+                 V
+             .-------.
+             | STOPP |
+             `-------'
+
+
+Ett komplett program för att utföra den här övningen skulle kunna se ut
+enligt nedanstående lista. Raderna 15 - 150 är maskinkodsprogrammet samt
+inladdnings programmet för det. Programmet enligt flödesplanen på föregående
+sida börjar med rad 160.
+På rad 190 börjar en loop som omkodar ASCII-siffrorna till decimala siffror.
+Om telefonnumret är skrivet med snedstreck eller annat specialtecken mellan
+rikt- och lokalnummer så sorterar rad 210 bort dessa tecken.
+Rad 240 gör ett avbrott på c:a 60 msek och rad 250 ser till att det går c:a
+40 msek mellan avbrotten.
+I och med att längden på tidsfördröjningen laddas in från basicprogrammet
+(POKE 6930) så räcker det med en subrutin i maskinkod.
+
+[ ... listning 37 ... ]
+
+Då programmet körs så kommer lysdioden att indikera telefonnumret. Det kan
+vara lite svårt att sklja på sifrorna då du försöker "avläsa" lysdioden. Av
+den anledningen kan det vara lämpligt att lägga in en extra fördröjning
+mellan varje siffra. Det kan ske med en rad 310 enligt:
+
+310 POKE 6930,255:sys 6912
+
+För att få det här att fungera praktiskt mot telefonnätet (kom ihåg att det
+är förbjudet) används lämpligen ett relä med brytande kontakter som kopplas
+in i serie med fingerskivan eller telefonjacket. Exempel på uppkoppling
+visas i figur 22.
+
+
+              +5 V
+             .--------.
+             |        |
+   --+----+----+----+ |
+  :  |    |  2 |    | |                  |   [nummerskiva]
+  :  |  c |    |    | |                   \            /
+   --+----+----+----+ |                    |\         /
+        |             .                    | ¯|-____-¯
+        |     __ /¯¯¯¯  +------------------'  |
+        |    /  X       |     470 ohm         |
+        +---|-|< |      +-====----+           |
+       BC257 \__X       |  .      =0,1µF      |
+                 \      +-*--*----+--------+  |
+                  |        |               |  |
+                  +------+.|               |  |
+                 _|_       |,              V  V
+                 / \      ,'
+                 ¯|¯       |,
+                  +------+.'
+                  |        |
+               ___|___     |
+                -----
+                 ¯¯¯
+
+  Figur 22 Exempel på koppling mot telenätet
+
+
+Som relä duger här ett billigt som exempelvis Multikomponents 166 400. Får
+man problem med kontaktstuds som inte RC-filtret förmår ta upp så kan
+exempelvis någo Schmittriggerkrets användas.
+Till VIC finns en mängd specialkassetter som tillbehöver. Bland annat
+VIC-REL som går att använda i stället för ovanstående koppling. Kapitel 2
+visar hur VIC-REL fungerar.
+
+
+[2.] VIC-RELÄKASSETT
+
+  MÅLRUTA
+
+  I det här kapitlet ska du få en kort beskrivning av hur VIC-REL fungerar
+  samt något praktiskt exempel på hur du kan använda den.
+
+VIC-REL ser inte ut på samma sätt som de andra plugg-in kassetterna. Det
+beror på att den _inte_ ska pluggas in på samma ställe som de andra
+kassetterna. VIC-REL ska pluggas in på USER PORT och i stället erhåller du 6
+st reläutgångar som kan styras separat. Dessutom far du 2 st OPTO-kopplade
+ingångar.
+
+Figur 23 visar hur VIC-REL:s anslutningar ser ut.
+
+
+      +------------------------+
+      |           .   .      o-|]
+      | RELÄ 1  -/-\-/-\----/  |  Utgång 1
+      |         *   ¯   *    o-|]
+      |           .   .      o-|]
+      | RELÄ 2  -/-\-/-\----/  |  Utgång 2
+      |         *   ¯   *    o-|]
+      |           .   .      o-|]
+      | RELÄ 3  -/-\-/-\----/  |  Utgång 3
+      |         *   ¯   *    o-|]
+      |           .   .      o-|]
+      | RELÄ 4  -/-\-/-\----/  |  Utgång 4
+      |         *   ¯   *    o-|]
+      |           .   .      o-|]
+      | RELÄ 5  -/-\-/-\----/  |  Utgång 5
+      |         *   ¯   *    o-|]
+      |           .   .      o-|]
+      | RELÄ 6  -/-\-/-\----/  |  Utgång 6
+  +-+ |         *   ¯   *    o-|]
+  | |-|                        |X Ej ansluten
+  | |-| Optokopplare 1        +|] 5 volt
+  | |-|   _                   -|]
+  |T|-|    \/¯\        .-------|]
+  |R|-|    (>|-)- <-- _|_      |  Ingång 1
+  |O|-|   _/\_/   <-- / \      |
+  |P|-|               ¯|¯______|]
+  | |-| Optokopplare 1         |
+  |R|-|   _                    |
+  |E|-|    \/¯\        .-------|]
+  |S|-|    (>|-)- <-- _|_      |  Ingång 2
+  |U|-|   _/\_/   <-- / \      |
+  | | |               ¯|¯______|]
+  +-+ +------------------------+
+
+  Figur 23 Anslutningarna på VIC-REL
+
+
+Tidigare har du lärt dig att USER PORT-benen kan bestämmas till in- eller
+ut-gång med hjälp av minnesadress 37138. Ska benet på USER PORT vara utgång
+ska motsvarande bit i adress 37138 ettställas och ska benet vara ingång ska
+motsvarande bit i adress 37138 nollställas.
+
+Anslutningarna till VIC-REL förhåller sig till USER PORT:s ben enligt figur
+24 och för att ställa rätt anslutningar till ut- respektive in-gångar krävs
+att adress 37138 laddas med 63 enligt:
+
+POKE 37138,63
+
+
+  +---+---+---+---+---+---+---+---+---+---+---+---+
+  | 12| 11| 10| 9 | 8 | 7 | 6 | 5 | 4 | 3 | 2 | 1 |
+  | N | M | L | K | J | H | F | E | D | C | B | A |
+  +---+---+---+---+---+---+---+---+---+---+---+---+
+  Adress    |   |   |   |   |   |   |   |
+  37136 BIT |7  |6  |5  |4  |3  |2  |1  |0
+            |   |   |   |   |   |   |   |
+          opto opto ||  ||  ||  ||  ||  ||
+          |  | |  |  \   \   \   \   \   \
+                     |>  |>  |>  |>  |>  |>
+           2    3    /   /   /   /   /   /
+                    <|  <|  <|  <|  <|  <|
+           g    g    \   \   \   \   \   \
+           n    n    |>  |>  |>  |>  |>  |>
+           å    å    /   /   /   /   /   /
+           g    g   *---*---*---*---*---*----.
+           n    n    |   |   |   |   |   | __|__
+           i    i   \|  \|  \|  \|  \|  \|  ---
+                     \   \   \   \   \   \   ¯
+                    * * * * * * * * * * * *
+                    | | | | | | | | | | | |
+
+         Utgång      6   5   4   3   2   1
+
+
+  Figur 24 In- och ut-gångarnas förhållande till adress 37136:s bitar.
+
+
+_OBSERVERA_ att de reläer som finns i VIC-REL endast är avsedda för maximalt
+_24 volt, 10W, samt att ledningarna inte är dimensionerade för strömmar från
+_större motorer och lampor. Ska sådana enheter styras använder man
+_lämpligast ett kraftrelä, vilket i sin tur styrs av relät från VIC-REL.
+
+Dock räcker VIC-REL för exempelvis kopplingen mot telefonnätet. VIC-REL
+kopplas helt simpelt in enligt figur 25.
+
+
+     VIC-REL
+  ---------------+
+                 |]----+
+    Utgång 1     |     |
+                 |]--+ |   |  [nummerskiva]
+                 |   | |    \
+                 |   | +-----\
+                 :   |        ¯---
+                     |          |
+                     +--------+ |
+                              | |
+                              V V
+
+  Figur 25 VIC-REL mot telenätet
+
+
+Om VIC-REL skulle kopplas upp mot telenätet (vilket är förbjudet) så duger
+inte programmet från sidan 37. Det var avsett för simulering, vilket innebär
+att den fördröjning som basicsatserna utgör endast var en fördel för att
+kunna avläsa lysdioden. Vid en praktisk uppkoppling tar dock basicsatserna
+för lång tid och en eventuell uppringning fungerar inte. I dessa fall måste
+hela pulståget för varje siffra göras i maskinkod. Det totala programmet ser
+nu ut enligt nedanstående. Den största ändringen är gjord i
+maskinkodsprogrammet, vilket visas på nästa sida. I rad 5 sluts utgång 1
+vilket är viktigt då inte datorn ringer upp, eftersom det är en normalt
+sluten brytare som ska ligga i en serieslinga (se figur 22). Rad 230 lägger
+över siffran om antal avbrott till maskinkodsprogrammet. Rad 240 är endast
+en fördröjning mellan de olika siffrorna.
+
+
+[ ... listning 41 ... ]
+
+
+För att utföra ett maskinkodsprogram enligt det som ingår i basicprogrammet
+på föregående sida krävs i regel att man utför en flödesplan först. En sådan
+skulle kunna se ut så här:
+
+
+                            _
+                           ( ) Start på
+                            ¯  subrutin
+  .------------------------>|
+  |                         V
+  |                 +---------------+
+  |                 | Nolställ      |
+  |                 | FLAGGA        |
+  |                 +---------------+
+  |                         |
+  |                         V
+  |                 +---------------+
+  |                 | Sätt tidsför- |
+  |                 | dröjning till |
+  |                 | 60 msek.      |
+  |                 +---------------+
+  |                         |
+  |                         V
+  |                 +---------------+
+  |                 | Utför avbrott |
+  |                 +---------------+
+  |       .---------------->|
+  |       |      ^          V
+  |       |      |  +---------------+
+  |       |      |  | Fördröjning   |
+  |       |      |  +---------------+
+  |       |      |          |
+  |       |      |          V
+  |       |      |         ,',
+  |       |      |       ,'Är ',
+  |       |      | Nej ,' för-  ',
+  |       |      `----',dröjning ,'
+  |       |             ',slut ,'
+  |+-------------+        ',?,'
+  ||Sätt tidsför-|          |Ja
+  ||dröjning till|          V
+  ||40 msek      |  +---------------+
+  |+-------------+  | Utför slutning|
+  |       ^         +---------------+
+  |       |                 |
+  |+-------------+          V
+  || Sätt FLAGGA |         ,',
+  |+-------------+  Nej  ,'Är ',
+  |       ^____________,' FLAGGA',
+  |                     ',noll ,'
+  |                       ',?,'
+  |                         |Nej
+  |                         V
+  |                 +---------------+
+  |                 | Räkna ner     |  RÄKNARE innehåller från början 
+  |                 | RÄKNARE       |  siffran från telefonens
+  |                 | med 1         |  nummerkiva + 1
+  |                 +---------------+
+  |                         |
+  |                         V
+  |                        ,',
+  |                 Nej  ,'   ',
+  |____________________,'RÄKNARE',
+                        ', =0? ,'
+                          ', ,'
+                            |
+                            V
+                            _
+                           ( )         Återhopp till huvudprogram.
+                            ¯
+
+
+Studera flödesschemat och se till att du förstår hur det är upplagt. När det
+är genomlöpt en gång ska ett avbrott och en slutning ha utförts. Hur många
+gånger flödesplanen genomlöps beror alltså på vilken siffra som ska
+indikeras.
+
+Som FLAGGA används X-registret i programmet. Det behövs för att programmet
+är utfört i två "faser". En för avbrott och en för slutning.
+
+Programmet i "assemblerform" kan se ut på det här sättet.
+
+ADRESS  INSTRUKTION   MASKINKOD     KOMMENTAR
+1B00    LDX #00       A2 00         FLAGGA=0
+1B02    LDA #00       A9 00         Utför avbrott
+1B04    STA $9110     8D 10 91
+1B07    LDA #$19      A9 19         Grundvärde för 60ms
+1B09    STA $1AFF     8D FF 1A      till adress $1AFF.
+1BOC    LDA #$FF      A9 FF
+1BOE    STA $1AFE     8D FE 1A
+1B11    DEC $1AFE     CE FE 1A
+1B14    BNE $1B11     D0 FB         Fördröjningsloopar
+1B16    DEC $1AFF     CE FF 1A
+1B19    BNE $1BOC     D0 F1
+1B1B    LDA #01       A9 01
+1B1D    STA $9110     8D 10 91      Utför slutnlng
+1B20    CPX #0        E0 00
+1B22    BNE $1B2B     D0 07
+1B24    LDX #01       A2 01         Sätt FLAGGA
+1B26    LDA #$12      A9 12         Grundvärde för 40ms
+1B28    JMP $1B09     4C 09 1B
+1B2B    DEC $1AFD     CE FD 1A      Räknar ner RÄKNARE
+1B2E    BNE $1B00     D0 D0
+1B30    RTS           60
+
+Nu har du sett ett praktiskt exempel kopplat till VIC-REL:s utgångar. Om du
+tycker det är besvärligt att hålla reda på kommandoorden för de olika
+utgångarna så hittar du en sammanfattning på nästa sida.
+
+
+[2.1] SAMMANFATTNING ÖVER POKE FÖR UTGÅNGARNA
+
+Du sätter relä 1-6 som utgångar och optokopplarna som ingångar med POKE
+37138,63.
+
+Du sluter kontakten vid respektive relä med POKE-satser enligt följande
+tabell:
+
+  +------+------------+---------------+
+  | RELÄ | ANSLUTNING | POKE-SATS     |
+  +------+------------+---------------+
+  |  1   |  1 -  2    | POKE 37137,1  |
+  |  2   |  3 -  4    | POKE 37137,2  |
+  |  3   |  5 -  6    | POKE 37137,4  |
+  |  4   |  7 -  8    | POKE 37137,8  |
+  |  5   |  9 - 10    | POKE 37137,16 |
+  |  6   | 11 - 12    | POKE 37137,32 |
+  +------+------------+---------------+
+
+I programexempel tidigare har det framgått att då man vill förändra en bit
+på porten ska det i regel ske utan att de andra bitarna förändras. Detsamma
+gäller givetvis relästyrningen. Ett relä kan påverkas att gå till, med hjälp
+av OR-satser, utan att övriga reläer påverkas.
+
+Ett relä kan påverkas att bryta, med hjälp av AND-satser, om inte de andra
+reläerna ska påverkas.
+
+Exempel:
+
+Om relä 4 ska gå till, men inte de andra.
+
+POKE 37136,(PEEK(37136) OR 8)
+
+Om relä 4 ska "slås från" medan de övriga ej påverkas.
+
+POKE 37136,(PEEK(37136) AND 55)
+
+Vid "maskningen" används OR eller AND enligt följande tabell.
+
+  +------+----------+-----------+
+  | RELÄ | TILLSLAG | FRÅNSLAG  |
+  +------+----------+-----------+
+  |  1   | OR 1     | AND 62    |
+  |  2   | OR 2     | AND 61    |
+  |  3   | OR 4     | AND 59    |
+  |  4   | OR 8     | AND 55    |
+  |  5   | OR 16    | AND 47    |
+  |  6   | OR 32    | AND 31    |
+  +------+----------+-----------+
+
+
+[2.2] INGÅNGARNA PÅ VIC-REL
+
+Den speciella fördelen med ingångarna är att de är optokopplade. Det innebär
+att ingångarna är "frikopplade" fån den övriga elektroniken som finns i VIC.
+Det i sin tur innebär att man kan "tillåtas att göra fel" som kortslutningar
+och för hög spänningsmatning utan att något inne i VIC:en går sönder.
+Ingången ska ha en spänning mellan 5 och 12 volt för att optokopplaren ska
+fungera. Användningen av ingångarna framgår av figur 26.
+
+
+  ------.  .----------------.      5-12 volt
+  DATOR |  | VIC-REL        |         |
+        |  |                |  +----| |-------+
+        |  |                |  |      |       |
+        |  |                |  |              *
+        |  |            +---|--+               \ "slutare" i
+        |  | [optokoppling] |                 *  egen applikation
+        |  |            +---|-----------------+
+        |  |                |
+
+  Figur 26 Ingångarnas funktion
+
+
+Har man en applikation utan matningsspänningar tar man helt enkelt
+matningsspänningen från det 5 volts uttag som finns på VIC-REL. Det är
+viktigt att du kopplar in spänningarna rättvända. Ingångspolerna är märkta
+med plus(+) och minus(-). Används den interna spänningen så kan du använda
+figur 27 som utgångsläge för dina kopplingar.
+
+
+  ------------.
+   VIC-REL    |
+              |
+              |+
+         14 o-|-----------------------------+
+              | 5 volt                      |
+         15 o-|---------+                   *
+              |-        |                    \ "slutare" i egen applikation
+         17   |         |                   *
+       .----o-|---------+                   |
+      (X)     |                             |
+       `----o-|-----------------------------'
+         18   |
+
+  Figur 27 Ingång kopplad till intern spänning
+
+
+Då switchen på ingången är sluten och spänning erhålls in på stiften 17-18
+eller 19-20 känns motsvarande bit på USER PORT låg. Man har alltså nolla in
+på sjunde respektive åttonde biten hos register 37136.
+Bit 6 (sjunde biten) till stift 17-18 kan exempelvis kännas av med en
+IF-sats enligt:
+
+[ ... listning 46 ... ]
+
+Vid komponenttillverkning krävs det att de olika komponenterna testas.
+En diod leder endast åt ena hållet. Symbolen för dioden ser ut så här:
+
+                    .
+                 ---|>|----
+                _   '    _
+            Anod/|      |\Katod
+
+Då dioderna tillverkas kan vi anta att de ska gå igenom en första grovtest.
+Den testen kan bestå av att man kontrollerar att dioden leder åt ena hållet,
+samtidigt som diodens katod ska färgmärkas. Den här testen kan utföras genom
+att dioden placeras in i stället för switchen i figur 27. Råkar man placera
+dioden åt rätt håll så leder den och katoden kan utmärkas med en ring på den
+sidan av dioden som är kopplad mot stift 18 (figur 28a). Därefter vänder man
+på dioden och resultatet ska vara detsamma som om en switch vore öppen.
+Prova uppkopplingen enligt figur 28 med dioden som ingår i komponentsatsen.
+Programmet på nästa hjälper dig att "ta reda på vilken sida som är katod".
+
+
+  -------. LEDANDE DIOD INNEBÄR   --------. EJ LEDANDE DIOD INNEBÄR
+         | ATT BIT 6 PÅ ADRESS            | ATT BIT 6 PÅ ADRESS
+         | 37136 ÄR NOLL.                 | 37136 ÄR ETT-
+         |                                |
+       o-|-----+                        o-|-----+   Katod
+       o-|-+  |¯|                       o-|-+  |=| -'
+         | |  | |                         | |  | |
+       o-|-+  |=| -.                    o-|-+  |_|
+       o-|-----+   Anod                 o-|-----+
+         |                                |
+
+  Figur 28a Ledande diod.                28b Ej ledande diod
+
+
+Program för diodmätningstest:
+
+[ ... listning 47 ... ]
+
+
+[3.] RS 232C-SNITTET
+
+  MÅLRUTA
+
+  Det här kapitlet ska ge dig en kort orientering om hur du ska använda
+  anpassningskassetterna RS 232C.
+
+På de flesta arbetsplatser står någon gammal Teletype eller kanske rent av
+någon modernare skrivare med seriesnittet RS 232. I regel går det också att
+relativt billigt komma över en begagnad Teletype med både remsläsare och
+remsstans inbyggda. Med lagom mängd kunskap klarar du av att ansluta din VIC
+till sådana här skrivare, bildskärmsterminaler och t.o.m. för kommunikation
+med andra datorer.
+
+
+[3.1] ÖVERFÖRING AV DATA MELLAN OLIKA ENHETER
+
+Data som ska överföras består av ett antal bitar, där de olika bitarna kan
+vara "1" eller "0". Om "1" representeras av en spänning och "0" med
+frånvaron av spänning så skulle datat kunna skickas ut med hjälp av två
+ledningar (en där datat skickas som spänningspulser och en som
+jordreferens).
+
+Inne i datorn överförs data i regel parallellt. Alltså 8 bitar eller fler
+samtidigt. Varför gör man då inte likadant mellan olika enheter? Den främsta
+anledningen är att enheterna kan stå långt från varandra och det är då mer
+praktiskt att ha en tvåledare för överföringen.
+
+För att överföringen ska kunna ske mellan olika fabrikat är det viktigt att
+man följer någon form av standard på koderna. Då text och special tecken ska
+skickas används en standardkod som förkortas ASCII (American Standard Code
+for Information Interchange). Det här är en gammal kod som skapades en gång
+för fjärrskriftsöverföring på teletype. Den har accepterats som standardkod
+och används också av ISO (International Standard Organization).
+
+Figur 29 visar de skrivbara tecknens värde enligt denna kod.
+
+
+        +------------------>0   0   0   0   1   1   1   1
+        | +----------------> 0   0   1   1   0   0   1   1
+        | | +-------------->  0   1   0   1   0   1   0   1
+        | | |         Column
+  Bits b7b6b5b4b3b2b1 Row\   0   1   2   3   4   5   6   7
+              0 0 0 0   0   NUL TC7 SP   0   @   P   `   p
+                                DLE
+              0 0 0 1   1   TC1 DC1  !   1   A   Q   a   q
+                            SOH
+              0 0 1 0   2   TC2 DC2  "   2   B   R   b   r
+                            STX
+              0 0 1 1   3   TC3 DC3  #   3   C   S   c   s
+                            ETX
+              0 1 0 0   4   TC4 DC4  ¤   4   D   T   d   t
+                            EOT
+              0 1 0 1   5   TC5 TC8  %   5   E   U   e   u
+                            ENQ NAK
+              0 1 1 0   6   TC6 TC9  &   6   F   V   f   v
+                            ACK SYN
+              0 1 1 1   7   BEL TC10 '   7   G   W   g   w
+                                ETB
+              1 0 0 0   8   FE0 CAN  (   8   H   X   h   x
+                            BS
+              1 0 0 1   9   FE1 EM   )   9   I   Y   i   y
+                            HT
+              1 0 1 0  10   FE2 SUB  *   :   J   Z   j   z
+                            LF
+              1 0 1 1  11   FE3 ESC  +   ;   K   Ä   k   ä
+                            VT
+              1 1 0 0  12   FE4 IS4  /   <   L   Ö   l   ö
+                            FF  FS
+              1 1 0 1  13   FE5 IS3  -   =   M   Å   m   å
+                            CR  GS
+              1 1 1 0  14   SO  IS2  .   >   N   ^   n   ~
+                                RS
+              1 1 1 1  15   SI  IS1  /   ?   O   _   o  DEL
+                                US
+
+  Figur 29 ISO-tabell
+
+
+Tangentbordet avkodas enligt den här koden. Det innebär att om exempelvis en
+tvåa skrivs så kommer det en speciell kombination av ettor och nollor, som
+överensstämmer med tabellen.
+
+Teckengeneratorer i skrivare och bildskärmar arbetar i regel efter den här
+koden och omvandlar i sin tur den här koden till "rätt" tecken. Figur 30 kan
+symbolisera parallellöverföring mellan olika enheter.
+
+
+  [Bild på hur en teckenkod överförs med åtta binära siffror samtidigt]
+
+  Figur 30 Exempel på parallell överföring
+
+
+Då data ska överföras i serieform (vilket det här kapitlet ska handla om)
+krävs det också i regel en del kontrollbitar. I figur 29 ser du att själva
+tecknet är endast uppbyggt kring 7 bitar. Till dessa bitar läggs det till en
+s k paritetsbit, vilken kan användas för en enkel kontroll av att
+överföringen gått bra. Dessutom används en s k startbit för att starta
+överföringen av varje tecken och i slutet av varje tecken läggs det till en
+eller två stoppbitar. Figur 31 kan illustrera den här serieöverföringen.
+
+
+  [Bild på hur en teckenkod överförs en bit i taget, med startbit,
+   stoppbitar, och paritetsbit]
+
+  Figur 31 Överföring av koden A
+
+
+På VIC finns det förberett på USER PORT för att arbeta enligt RS232. Hur
+anslutningarna är och hur de kan användas beskrivs principiellt i
+MIKRODATORNS FUNKTION på sidorna 81-88.
+
+Det här avsnittet är till för att beskriva de kassetter som finns till VIC
+och som är en direkt anpassning mellan USER PORT och en RS 232-enhet. Då du
+anslutit RS 232-interfacet till USER PORT kommer anslutningskontakten i
+stället att vara en 25-polig Cannonkontakt, vilket är standard för RS 232.
+De stift som är inkopplade och kan användas framgår av 32.
+
+   RS232        | INNEBÖRD                 STIFT CANNON
+  --------------+---------------------------------------
+   GND          | Jord                       1
+   S out (TXD)  | Sänd data                  2
+   S in (RXD)   | Mottagen data              3
+   RTS (RQS)    | Kan sändning ske?          4
+   CTS          | Sändning kan ske (svar)    5
+   DSR          | Data mottaget (svar)       6
+   GND          | Signaljord                 7
+   DCD          | Meddelande mottaget        8
+   DTR          | Dataterminal redo         20
+  --------------+----------------------------------------
+
+     .------------------------------------------.
+     \   1  2  3  4  5  6  7  8  9 10 11 12 13  /
+      \  O  O  O  O  O  O  O  O  O  O  O  O  O /
+       \  O  O  O  O  O  O  O  O  O  O  O  O  /
+        \14 15 16 17 18 19 20 21 22 23 24 25 /
+         ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+
+  Figur 32 RS232-signalernas placering
+
+
+Hur arbetet ska ske vid överföringen kan du bestämma själv. Här beskrivs den
+enklaste varianten utan kontrollsignaler. Då räcker det med en
+tretrådsoppkoppling enligt figur 33.
+
+
+  -------------+      +-------------------------
+   VIC    GND  |------|  GND        YTTRE ENHET
+         (jord)|      | (jord)
+               |      |
+         S out |-.  .-| S out
+     (data ut) |  \/  | (data ut)
+               |  /\  |
+         S in  |-'  `-| S in
+     (data in) |      | (data in)
+  -------------+      +--------------------------
+
+  Figur 33 Grundkoppling
+
+
+Ska du använda Teletype ska interfacet "current loop type" användas.
+Teletypen känner inte på spänningsnivåer som de flesta terminaler utan
+principen bygger i stället på en strömslinga som brytes för nolla.
+
+Till de flesta terminaler i övrigt ska interfacet "terminal type" användas.
+Du måste givetvis veta om din terminal är av "current loop"-typ eller ej.
+Vilket av de två interfacen man använder spelar ingen roll programmässigt.
+
+Ska du skicka text "den här vägen" tll en annan enhet skulle programmet
+kunna se ut så här:
+
+
+  10 OPEN 128,2,1,CHR$(138)
+  15 FOR I=1 TO 10
+  20 PRINT#128,"VI TESTAR"
+  25 FOR J=1 TO 50:NEXT J
+  30 NEXT J
+  40 CLOSE 128
+
+
+Vad utför då programmet? Jo det ska skriva ut en text 10 gånger till
+ansluten enhet.
+
+Först måste givetvis en fil öppnas till enheten. Det utförs i sats 10.
+Anledningen till att filnumret valts så högt som 128 är att nummer från
+128-255 ger en radframmatning vid RETURN-kod. Använder du nummer 1-127
+kommer _all text att skrivas på samma rad_ om du inte skickar det till en
+terminal som har automatisk radframmatning.
+_Observera_ att endast en RS232-kanal kan vara öppet i taget och att det
+förutom de register som används går åt 2 st 256-bytes stora buffertar. Ett
+för mottagna data och ett för data som ska sändas. Den bufferten på 512
+bytes läggs i toppen av tillgängligt RAM-minne.
+
+Vad innebär då CHR$(138) i OPEN-satsen. Jo där berättas en del om hur
+överföringen ska ske. Figur 44 visar principen. Du kan själv bestämma om du
+ska ha 1 eller 2 stoppbitar. Det sker med adress 659 ($294):s mest
+signifikanta bit. Nästa två bitar talar om ifall ordlängden är 5, 6, 7 eller
+8 bitar. Som tidigare nämnts är det i regel 8 bitar i datorsammanhang
+(ASCII-kodens 7 bitar plus paritetsbit).
+
+     +-+     +-+-+   +-+    +-+-+-+-+     BITARNA I
+     |7|     |6|5|   |4|    |3|2|1|0|  <- KONTROLLREG.
+     +-+     +-+-+   +-+    +-+-+-+-+     ADRESS $293
+      ^        ^      ^      | | | |
+  Bit 7 anger  |   Oanvänd   | | | |
+  antalet      |   bit.      | | | |
+  stoppbitar   |             | | | |
+  0=1 stoppbit |             | | | |      Bitarna 0-3
+  1=2 stopp-   |             | | | |      bestämmer
+      bitar    |             | | | |      överförings-
+               |             | | | |      hastigheten
+               |             | | | |      (antal bitar
+               |             | | | |      per sekund=baud)
+    Bit 5 och 6 an-          V V V V
+    ger antalet bitar        0 0 0 0 |    EI
+    i "ordet" (tecknet)      0 0 0 1 |    50 BAUD
+    enligt nedanstå-         0 0 1 0 |    75
+    ende tabell              0 0 1 1 |   110
+                             0 1 0 0 |   134.5
+     BIT | DATA              0 1 0 1 |   150
+     6 5 | ORDLÄNGD          0 1 1 0 |   300
+     ----+---------          0 1 1 1 |   600
+     0 0 | 8 bitar           1 0 0 0 |  1200
+     0 1 | 7 bitar           1 0 0 1 |  1800
+     1 0 | 6 bitar           1 0 1 0 |  2400
+     1 1 | 5 bitar           1 0 1 1 |    EI
+                             1 1 0 0 |    EI
+                             1 1 0 1 |    EI
+                             1 1 1 0 |    EI
+                             1 1 1 1 |    EI
+                            EI = Ej Inkopplat på VIC 20
+
+  Figur 44 Kontrollregistrets funktion
+
+Ytterligare förklaringar till programmet:
+
+Som i alla andra sammanhang måste öppnade filer stängas. Problemet här är
+att vid PRINT#-instruktionen slussas datat till en buffert och därifrån
+skickas den sedan till angiven enhet med den hastighet som angetts enligt
+figur 44. Principen beskrivs i fig. 45. Eftersom "påfyllning" av bufferten i
+regel går fortare än "avtappning" kommer det att finnas information kvar i
+bufferten då PRINT#-satserna exekverats färdigt. Om CLOSE-satsen exekveras
+då så kommer all information som är kvar i bufferten att gå förlorad. Av den
+anledningen är det inlagt en fördröjningsloop i programmet på rad 25.
+Längden på den fördröjningen är beroende på vilken överföringshastighet man
+valt samt hur långa meddelanden man fyller bufferten med.
+
+Ett alternativt sätt är att inte lägga in CLOSE i programmet utan att skriva
+det som ett kommando när utskriften är färdig. I manualerna står det ingivet
+att bit 7 på adress 37151 ska indikera när data sänds på RS232-ledningarna.
+Det står också att man då kan använda den som kännare enligt modellen IF
+PEEK(37151) AND 128=128. Den här adressen ändrar sig dock inte vid
+användandet av RS232 varför det här får rekommenderas den förenklade metoden
+enligt det nyss beskrivna programmet.
+
+
+              NMI   6522 KLOCK
+               |      |
+  RS232        V      V
+  |¯\ /|___|¯¯¯¯¯¯¯¯¯¯¯¯¯| /|_______ |¯¯¯¯¯¯¯¯¯|
+  | |<  ___|   Utbuffert |<PRINT#   ||  BASIC  |
+  |_/ \|   |_____________| \|¯¯¯¯¯¯¯'|_________|
+
+     Automatisk
+     överföring
+     med vald
+     hastighet.
+
+  Figur 45 Principen vid sändning på RS232
+
+
+Den beskrivna överföringen är gjord på enklaste sätt med
+tretrådskommunikation. Vill man ha mer avancerad överföring måste även ett
+kommandoregister användas. Principen för det framgår av figur 46 på nästa
+sida.
+
+Om vi måste arbeta med kontrollsignaler också så ska vi ettställa bit 0. För
+"full duplex" ska bit 4 vara noll. Full duplex innebär i princip att det går
+att kommunicera i båda riktningar samtidigt. Dessutom finns det tre bitar
+för att välja hur paritetsbiten ska se ut. Antag att vi ej önska
+paritetsbitskontroll och att paritetsbiten hela tiden ska vara ett. Då ska
+de här bitarna vara 101 och totalt kommer det här registret att se ut så
+här:
+
+  Kommandoregister
+  adress $0294     bit 7 6 5 4 3 2 1 0
+                       1 0 1 0 0 0 0 1
+
+Det här blir 161 decimalt och OPEN-satsen får ändras till OPEN
+128,2,1,CHR$(138)+CHR$(161)
+
+
+   +-+-+-+                   +-+ +-+-+-+ +-+    BITARNA I
+   |7|6|5|                   |4| |3|2|1| |0| <- KOMMANDOREG.
+   +-+-+-+                   +-+ +-+-+-+ +-+    ADRESS $294
+    \_ _/                   /     \_ _/   ^
+      |           Val av över-      ^     |
+      V           föringsmetod      |     |
+  Va av form      0=full duplex     |     |
+  för pari-       1=halv duplex     |     |
+  tetsbiten                         |     |
+                                    |     |
+   7 6 5 | FUNKTION             Användes  |
+  -------+---------------       ej.       |
+       0 | Ingen pari-                    |
+         | tetsbit gene-                  |
+         | reras eller                "Handskakning"
+         | tas emot.                  0= tretråds
+  -------+---------------             1= X-tråds
+   0 0 1 | Udda paritet
+  -------+---------------
+   0 1 1 | Jämn paritet
+  -------+---------------
+   1 0 1 | Ingen pari-
+         | tetskontroll
+         | Paritetsbit
+         | hela tiden=1
+  -------+---------------
+   1 1 1 | Ingen pari-
+         | tetskontroll
+         | Paritetsbit
+         | hela tiden=0
+  -------+---------------
+
+
+  Figur 46 Kommandoregistrets funktion
+
+
+Nu har vi skickat text till en yttre enhet. Är den yttre enheten en skrivare
+så går det utmärkt att lista sina program på den på vanligt sätt.
+Exempelvis:
+
+  OPEN 128,2,1,CHR$(138)
+  CMD 128
+  LIST
+
+Till RS232 finns också ett statusregister, vilket man kan avkänna för att
+förhindra fel som gör att information tappas. Statusregistret finns på
+adress $297 och ska normalt vara noll.
+
+
+[3.2] MOTTAGANDE AV DATA PÅ RS 232
+
+I stort sett går arbetet vid mottagning till på samma sätt som vid sändande.
+Principen framgår av figur 47.
+
+
+              NMI   6522 KLOCK
+               |      |
+  RS232        V      V
+  |¯\___|\ |¯¯¯¯¯¯¯¯¯¯¯¯¯|________|\ |¯¯¯¯¯¯¯¯¯|
+  | |___  >|   Inbuffert | GET#     >|  BASIC  |
+  |_/   |/ |_____________|¯¯¯¯¯¯¯¯|/ |_________|
+
+     Automatisk
+     överföring
+     med vald
+     hastighet.
+
+
+  Figur 47 Principen vid mottaganden på RS232
+
+
+Så fort som filen är öppnad kan VIC ta emot data från den yttre enheten till
+isbufferten. Det kan ske parallellt som VIC utför något annat. Med GET kan
+sedan informationen hämtas från bufferten för behandling.
+
+Ett enkelt demonstrationsprogram kan se ut så här:
+
+  10 OPEN 128,2,0,CHR$(131)
+  20 FOR I=1 TO 10000: NEXT I
+  30 GET#128,A$
+  40 PRINT A$;
+  50 IF A$="" THEN 70
+  60 GOTO 30
+  70 CLOSE 128
+
+Avsikten med rad 20 är att visa att medan basic håller på och exekverar den
+här fördröjningen kan man skriva in data från yttre enhet till isbufferten.
+Då fördröjningen är klar kommer GET#128 att hämta datat från bufferten och
+skriva ut det på VIC. Då bufferten är tom erhålls "tom sträng" från
+bufferten (""), vilket kan användas för att avsluta sekvensen.
+
+Glöm inte att de OPEN-satser som använts i exemplen grundar sig på
+överföringshastigheten 2400 baud och att värdet i CHR$-funktionen måste
+ändras om du har annan överföringshastighet. För 110 baud som är ganska
+vanligt ska det exempelvis stå CHR$(131).
+
+
+[4.] EPROM-PROGRAMMERARE
+
+  MÅLRUTA
+
+  I det här kapitlet får du tillräckligt mycket information för att du ska
+  kunna "tillverka egna ROM-minnen".
+
+Med det här kapitlet avslutas boken. Det här avsnittet är avsett för de
+riktiga entusiasterna. Att kunna tillverka sina egna ROM-minnen blir så
+småningom de flestas dröm.
+
+För att "bränna" egna minnen enligt den här beskrivningen behövs endast en
+VIC, minneskapseln som ska brännas (INTELS EPROM 2716), en 12-bitars
+räknare(4040), ditt kopplingsbeck och ett 25-volts likspänningsaggregat som
+måste kunna ge 30mA (de här komponenterna ingår _inte_ i komponentsatsen).
+
+EPROM beskrevs inte i MIKRODATORNS FUNKTION då minnen beskrevs. Det är ett
+läsminne (ROM=Read Only Memory) som med speciell utrustning både kan
+programmeras (P=Programmable) och raderas (E=Erasable). Figur 48 visar ett
+kretskort med 4 EPROM monterade, samt ett av EPROM:en något uppförstorat.
+
+
+  [Vild på ett EPROM-minne och instickskort]
+
+  Figur 48 EPROM
+
+
+Det här kapitlet ska beskriva programmeringen av minneskapseln. När minnet
+är programmerat kan det raderas om man någon gång skulle vilja ändra
+innehållet i det. Raderingen sker genom belysning med ultraviolett ljus. Det
+är därför det finns ett "fönster" på kapseln (se fig 48).
+
+Belysningen ska ske med ljus som har en kortare våglängd än 4000 Ångström. I
+minnets manual beskrivs det att ljuset ska ha våglängden 2537 Ångström och
+att minnet ska placeras cirka en tum från lampan. Då tar det ungefär 20
+minuter att radera minnet.
+
+VARNING! Solljus och lysrörsbelysningar har en våglängd som ligger i
+intervallet 3000-4000 Ångström. Det innebär att dessa kan radera minnet på
+sikt. För lysrörsbelysningar tar det c:a 3 år men för direkt solbestrålning
+kan minnet raderas på en vecka. Är det risk att minnet utsätts för dessa
+bestrålningar räcker det att tejpa över fönstret som skydd.
+
+Programmeringen av kapseln är ett samspel mellan hårdvarumässig inkoppling
+och programmering. Figur 50 visar hur minneskapseln ska kopplas in för
+programmeringen.
+
+Räknaren i figur 50 används för att räkna upp minnet till "nästa adress"
+innan informationen bränns in. Räknaren i sin tur räknas upp av programmet.
+Räknaren som används är en 12 bitars räknare i CMOS. För de som kan
+digitalteknik och är intresserade har figur 49 tagits med. Det är en
+översiktlig presentation av räknaren där det går att se hur räknaren är
+uppbyggd samt hur benen är anslutna på kapseln. Man behöver inte "förstå"
+figur 49 för att bygga programmerare eftersom figur 50 innehåller
+fullständig inkopplingsbeskrivning.
+
+
+  [Figur borttagen]
+
+  Figur 49 Data på RCA:s 12-bits räknare 4040
+
+
+Både uppkoppling och program till EPROM-programmeraren har konstruerats och
+utprovats av Mats Pettersson och Ulf Windisch från Floda.
+
+NUMMER INTILL KAPSEL = bennummer på kapsel
+                       (samma nummer som ar tryckta inuti kapseln i
+                       figur 51).
+
+NUMMER INOM PARENTES = Anslutning på USER PORT
+
+
+                              ADRESSBUSS
+               +-------+8      /      9+-------+
+               |       |------|-|------|       |
+  5V(2)     24 |       |7     | |     7|       |8
+  --------+----|       |------|-|------|       |-----GND
+          |    |       |6     | |     6|       |     (1)
+          |    |       |------|-|------|       |
+          | 20 | EPROM |5     | |     5|12-bits|
+          +----|       |------|-|------|räknare|
+               | 2716  |4     | |     3| 4040  |11
+               | (2K)  |------|-|------|       |-----JOY2
+  25V       21 |       |3     | |     2|       |     (6)
+  -------------|       |------|-|------|       |     används
+               |       |2     | |     4|       |     som
+               |       |------|-|------|       |     RESET
+  JOY0(4)   18 |       |1     | |    13|       |
+               |       |------|-|------|       |
+               |       |23    | |    12|       |
+               |       |------|-|------|       |
+  GND(1)    12 |       |22    | |    14|       |
+    +----------|       |------|-|------|       |
+    |          |       |19    | |    15|       |10
+  __|__        |       |------|-|------|       |-----JOY1
+   ---         |       |               +-------+     (5)
+    ¯          |       |                   |16       används
+               |       |9  PB0 (C)   \     +--5V(2)  för upp-
+               |       |------------ |               räkning
+               |       |10 PB1 (D)   |
+               |       |------------ |
+               |       |11 PB2 (E)   |
+               |       |------------ |
+               |       |13 PB3 (F)   |
+               |       |------------ |
+               |       |14 PB4 (H)    > DATABUSS
+               |       |------------ |
+               |       |15 PB5 (J)   |
+               |       |------------ |
+               +-------+16 PB6 (K)   |
+                   | +-------------- |
+                   |    17 PB7 (L)   |
+                   +---------------- /
+
+
+  Figur 50 EPROM-programmerare
+
+Figur 51 är utdrag ur EPROM-kapselns datablad (INTEL). Det är som du ser en
+24-bens kapsel. Ben 18 på 2716 heter ~CE, vilket betyder Chip Enable. Den
+måste ligga låg (nolla) för att det ska gå att läsa från minnet. Den ska
+dock läggas hög under den tid som data bränns in i minnet. Det framgår av
+signalschemat i figur 51.
+
+~OE på ben 20 betyder Output Enable. Den signalen måste var. hög vid
+programmering och låg vid användning av programmet som lagrats i EPROM:et.
+
+
+  [Datablad över EPROM 2716]
+
+  Figur 51 Benkonfiguration samt signalschema för EPROM 2716 (Utdrag ur
+           INTEL:s databok).
+
+Nu ska vi också ha ett program för att kunna göra våra minnen. Det
+återfinner du på nästa sida. Programmet startar med hopp för inskrivning av
+ett maskinkodsprogram. Det och basicprogrammet beskrivs utförligt efter
+programlistan.
+
+
+  [... programlistning 60 ...]
+
+
+Allra först laddas alltså maskinkodsprogrammet in. Det kommer att läggas på
+adresserna 6000 -6021 (hexadecimalt 1770-1785).
+
+För att det ska finnas något "bränna in" i ditt EPROM måste du ha data
+inlagrat på lämpligt ställe. Exakt var beror på vilken minneskonfiguration
+du har, samt hur du arbetar med programvaran. Minnesuppbyggnaden beskrivs i
+BYGG UT DIN VIC. Du måste se till att inte ditt program "kolliderar" med
+ovanstående basicprogram eller maskinkodsprogrammet på adresserna 6000-6021.
+
+Med POKE utförs vissa "initieringar" av basic programmet.
+
+POKE 37139,28      37139 är datariktningsregistret för port A. 28 innebär
+                   att bit 2, 3 och 4 på port A (37137) blir utbitar. Bit
+                   2=JOY0, bit 3=JOY1 och bit 4=JOY2.
+
+POKE 37138,255     37138 är datariktningsregistret för port B. Med 255 sätts
+                   alla 8 bitarna hos port B som utbitar. Port B använder vi
+                   som databuss vid programmeringen. Det är alltså den väg
+                   som datat ska "brännas in i EPROM:et" som överförs.
+
+POKE 37137,16+W    Ettställer JOY2 vilket innebär att räknaren nollställs.
+
+POKE 37137,W       Efter en kort tidsfördröjning på rad 60 nollställs JOY2
+                   så att räknaren kan börja räkna. Tidsfördröjningen behövs
+                   för att räknaren ska hinna avkänna den här pulsen.
+
+På rad 80 får du ange var i minnet ditt program som ska "brännas in" ligger.
+
+På rad 100 får du ange var i EPROM:et ditt program ska ligga. 40960 används
+i det här programmet som första adress, även om du sedan inte ska "montera"
+EPROM:et med den startadressen. Rad 100 är till för att du ska kunna
+"bränna" ditt EPROM i flera omgångar. Andra gången är det bara att ange en
+högre adress så räknar rutinen på 2000-202 upp räknaren så att den pekar på
+rätt EPORM-adress innan inskrivningen av programmet börjar.
+
+Loopen 140-180 skickar först ut den första "byten" till EPROM-programmeraren
+(rad 150). Därefter sker hopp till maskinkodsrutinen. I den ettställs JOY0
+så lång tid som krävs för själva inbränningen (enligt figur 51 är det 45
+msek). Innan återgång från maskinkodsrutinen nollställs JOY0 igen.
+
+På rad 170 räknas räknaren upp med 1 och pekar på nästa adress, vilket
+innebär att nästa data kan skickas ut och brännas in och sedan fortsätter
+det på samma sätt till alla data du angivit har brännts in.
+
+På nästa sida hittar du maskinkodsprogrammet med korta förklaringar samt en
+figur på hur det färdiga EPROM:et kan kopplas in till din VIC.
+
+Lycka till!
+
+Maskinkodsprogrammet som ingår i EPROM-programmet.
+
+ADRESS  INSTRUKTION  KOD       KOMMENTAR
+1770    LDY #$04     A0 04     Ettstället JOY0 för
+1772    STY $9111    8C 11 91  inbränning av data.
+1775    LDY #$2B     A0 2B
+1777    DEY          88
+1778    BMI $177F    30 06      Fördröjningsloop
+177A    JSR $EF96    20 96 EF
+177D    JMP $1777    4C 77 17
+1780    LDY #$00     A0 00      Nollställer JOY0
+1782    STY $9111    8C 11 91
+1785    RTS          60
+
+Med programmet liggande i de här adresserna startas programexekveringen med
+SYS 6000, vilket i det här fallet utförs av basic-programmet.
+
+Figur 52 förklarar hur du kan koppla in ditt EPROM. Ytterligare förklaringar
+till inkopplingen finns på nästa sida.
+
+
+     +----------------------------+
+     |  +--+-------------------+  |
+     |  |  |                   |  |
+  +----------+             +---------------
+  | 12 21 24 |             |   21 22
+  |          |             |
+  | EPROM   8|-------------|B  Expansions-
+  | 2716    7|-------------|C  buss på
+  |         6|-------------|D
+  | (2K)    5|-------------|E  VIC
+  |         4|-------------|F
+  |         3|-------------|H
+  |         2|-------------|J
+  |         1|-------------|K
+  |        23|-------------|L
+  |        22|-------------|M
+  |        19|-------------|N
+  |          |             |
+  |         9|-------------|2
+  |        10|-------------|3
+  |        11|-------------|4
+  |        13|-------------|5
+  |        14|-------------|6
+  |        15|-------------|7
+  |        16|-------------|8
+  |        17|-------------|9
+  | 20 18    |             |   13
+  +----------+             +---------------
+     |  |                      |
+     +--+----------------------+
+
+  Figur 52 EPROM-inkoppling.
+
+
+Vid inkoppling av ditt EPROM ska det givetvis ske på expansionsbussen där
+alla andra minneskassetter ansluts. Den innehåller 44 anslutningar (1-22 och
+A-Z) och saluförs som standardkontakt. Via B-M läggs adressen ut till ditt
+EPROM och via 2-9 läses data från ditt EPROM. 18 och 20 är ~CE och ~OE,
+vilka båda ska vara låga vid läsning. Det sker genom att de kopplas till en
+"avkodning av de högsta adresstrådarna", nämligen stift 13 som ger ditt
+EPROM en placering från adress 40690 och framåt. Om de i stället ansluts
+till stift 12 hamnar minnet från adress 24576 och uppåt. Stift 21 från VIC
+är +5V och stift 22 är jord. Kompletta scheman över VIC finns i MIKRODATORNS
+FUNKTION.
+
+*********
+
+End of the International Project 64 etext of Tekniska applikationer på VIC.
+
+*********

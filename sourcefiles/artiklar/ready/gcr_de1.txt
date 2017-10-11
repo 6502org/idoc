@@ -1,0 +1,1125 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore 64
+related documents in electronic text format that might otherwise cease to
+exist with the rapid advancement of computer technology and declining
+interest in 8-bit computers on the part of the general population. If you
+would like to help by converting C64 related hardcopy documents to
+electronic texts please contact the manager of International Project 64,
+Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The first
+characters of the file name are an abbreviation of the original document
+name and the language of the etext. The version number of the etext follows
+next. After that a letter may appear to indicate the particular source of
+the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International Project
+64 make no representations about the accuracy or suitability of this
+material for any purpose. This etext is provided "as-is". Please refer to
+the warranty of the original document, if any, that may included in this
+etext. No other warranties, express or implied, are made to you as to the
+etext or any medium it may be on. Neither the author(s) nor the members of
+International Project 64 will assume liability for damages either from the
+direct or indirect use of this etext or from the distribution of or
+modification to this etext. Therefore if you read this document or use the
+information herein you do so at your own risk.
+
+*********
+
+The International Project 64 etext of the article "Disketten: Klein, stark,
+schwarz", written and donated for IP64 distribution by Nikolaus Heusler
+<nikolaus.heusler@lrz.tu-muenchen.de>.
+
+GCR_DE1.TXT, June 1997, etext #11.
+
+Note from the etexter: 
+
+This is german text.
+
+It's an article written by me which was published in a german C 64-magazine
+in 1994. The article deals with the 1541 disc drive and the way data are
+stored on disc (GCR-coding).
+
+No part of this text may be copied, stored or published in any way without
+prior written permission by the author. It is not allowed to store copies of
+this text or of parts of it on computer-discettes or on computers which can
+be accessed in the public, for example on the internet.
+
+Das Werk einschliesslich aller seiner Teile ist urheberrechtlich geschuetzt.
+Jede Verwertung ausserhalb der engen Grenzen des Urheberrechtsgesetzes ist
+ohne vorherige schriftliche Zustimmung des Verfassers unzulaessig und
+strafbar. Dies gilt insbesondere fuer Vervielfaeltigungen, Uebersetzungen
+und die Verarbeitung in elektronischen Systemen.
+
+Einwilligungen zur Weiterverarbeitung wird der Verfasser im Einzelfall auf
+schriftliche Anfrage gern geben, falls keine kommerziellen Interessen mit
+der Verarbeitung verfolgt werden.
+
+Produkt- und Herstellerangaben in dem Text werden ohne Ruecksicht auf
+eventuellen Patentschutz veroeffentlicht. Warennamen werden ohne Gewaehr-
+leistung der freien Verwendbarkeit benutzt. Die Texte wurden mit groesster
+Sorgfalt zusammengestellt. Trotzdem sind Fehler nicht vollstaendig
+auszuschliessen. Fuer fehlerhafte Angaben und deren Folgen kann der Autor
+weder juristische Verantwortung noch irgendeine Haftung uebernehmen.
+
+Verfasser / Author: Nikolaus Heusler
+                    Zwengauerweg 18
+                    D-81479 Muenchen
+                    Germany
+
+Bei schriftlichen Anfragen bitte Rueckporto beilegen, ich antworte gern.
+
+Bitte die komischen Codes nach dem Klammeraffen @ ignorieren, es handelt sich
+um Steuercodes fuer die Zeitschrift, in der der Text urspruenglich
+erschienen ist.
+
+This version was published in the internet on the project "IP 64" in June
+1997.
+
+*********
+
+   Objekt: 64'er Magazin
+  Ausgabe: ab 02/94
+   Rubrik: Profi-Corner
+   Themen: GCR-Codierung, Aufbau eines Sektors, direkter Schreibzugriff auf
+           1541-Disketten, Kopierschutz
+
+Zu diesem Artikel gehören ein Bild (gezeichnet: Sektor-Aufbau einer
+1541-Diskette) und ein Listing (Basic: GCR-MASTER, auf der beiliegenden
+großen Diskette im C 64-Format)
+
+
+Profi-Corner
+
+Disketten: Klein, stark, schwarz
+
+Diesmal geht es um weitere Geheimnisse des 1541-Laufwerks: GCR-Codierung,
+Aufbau eines Sektors, direkter Schreibzugriff auf 1541-Disketten.
+
+von Nikolaus M. Heusler
+
+Nachdem wir in den letzten Monaten in der Profi-Corner die Jobcodes
+kennengelernt haben, mit deren Hilfe man direkt per Programm im
+Floppyspeicher Sektoren von Diskette lesen kann, und letztes Mal den
+seriellen Bus genauer untersucht haben, gehen wir in dieser Folge noch einen
+Schritt tiefer ins Detail, womit wir an der untersten Ebene ankommen, die
+für die Datenspeicherung zur Verfügung steht. Wir werden die Möglichkeit
+kennenlernen, direkt den Schreib-/Lesekopf im Laufwerk anzusteuern. Was wir
+jetzt auf die Magnetscheibe schreiben, ist nur noch unsere Sache. Auf dieser
+Ebene gibt es keine Format-Vorschriften mehr, die die Kreativität hemmen
+könnten. Dabei stellen wir auch den geheimnisvollen sogenannten »GCR-Code«
+vor, in dem eine 1541 ihre Floppies beschreibt. Dazu gehören natürlich auch
+sehr genaue Informationen, wie denn nun ein Sektor gespeichert wird:
+Unterteilt in »Header« und »Datenblock«. Solche Informationen braucht man
+drigend, wenn man beispielsweise einen Kopierschutz oder Schnell-Lade- oder
+Schnell-Kopierprogramme schreiben möchte.
+
+Zuvor beschäftigen wir uns mit dem Aufzeichnungsformat einer Diskette ganz
+allgemein. Für einen einwandfreien Betrieb der Diskette ist es notwendig,
+daß sich Markierungen auf der Magnetscheibe befinden, mit deren Hilfe das
+Drive bestimmte Daten schnell finden kann. Dafür gibt es grundsätzlich
+prinzipiell zwei Möglichkeiten: Die Hardsektorierung und die
+Softsektorierung.
+
+Hardsektorierte Disketten erkennt man daran, daß sie eine ganze Reihe von
+Indexlöchern besitzen. Damit sind die kleinen Löcher nahe am Innenrand der
+Scheibe gemeint, die mit einer Lichtschranke abgetastet werden, um die
+jeweilige Position der Diskette feststellen zu können. Das Verfahren ist
+zwar relativ teuer, bietet aber den Vorteil, daß sich damit die volle
+Kapazität einer Diskette ausnutzen läßt. Es können so bis zu 5 MByte auf
+eine 5¼ Zoll-Diskette geschrieben werden.
+
+Für preiswerte Laufwerke wie die 1541 geht man einen anderen Weg. Bei der
+Softsektorierung gibt es nur noch ein einziges Indexloch zur Erkennung des
+Track-Beginns, das in unserem Fall sogar noch überflüssig ist: Die
+Markierungen werden bei der Formatierung softwaremäßig geschrieben. Dabei
+geht natürlich wertvoller Speicherplatz verloren: Softsektorierte 5¼
+Zoll-Disketten fassen zur Zeit maximal etwa 1,2 MByte Daten.
+
+Es ist nichts neues für Sie, daß 1541-Disketten in 35 bis 41 konzentrischen
+Kreise (die »Spuren« oder »Tracks«) unterteilt sind, die wiederum jeweils
+eine bestimmte Anzahl (17 bis 21) an Sektoren enthalten. Nun wollen wir
+genauer auf den Aufbau eines Sektors auf der Magnetscheibe eingehen (Bild).
+
+Das ist ein Sektor
+
+Angeführt werden die Sektoren von den bereits erwähnten Markierungen, die
+»SYNC-Marken« (von »Synchronisation«) heißen und aus mehreren 1-Bits
+bestehen. Ein so lange Folge (ca. 40 Stück) von gesetzten Bits kommt in
+einem »normalen« Datensatz nicht vor. Warum? Das erfahren wir später im
+Rahmen der Erklärungen zur GCR-Codierung.
+
+Beim ersten Zugriff auf die rotierende Scheibe »erwischt« das Laufwerk
+zufällig irgend einen Sektor des Tracks, auf den der Tonkopf vom
+Schrittmotor gerade positioniert wurde. Wir brauchen also noch Informationen
+darüber, welcher Sektor es ist. Diese und weitere Informationen sind im
+»Vorspann« oder »Header« des eigentlichen Datenblocks gespeichert, der vor
+jedem Sektor steht.
+
+Die SYNC-Markierungen dienen gewissermaßen als »Landelichter«. Erkennt die
+1541 eine SYNC-Marke, dann »weiß« sie, daß nun entweder ein Datenblock oder
+ein Header folgt. Wir müssen die beiden also noch voneinander unterscheiden
+können. Hierzu dient das nächste Kennzeichen auf Diskette direkt hinter der
+SYNC-Marke, das dem Controller meldet, ob ein Blockheader oder ein
+Datenblock vorliegt. Dieses Kennbyte kann bei einwandfreier Datenspeicherung
+nur die Werte $07 oder $08 annehmen: Hat es den Wert 8, handelt es sich um
+einen Blockheader, bei 7 hingegen wurde ein Datenblock gefunden.
+
+Nehmen wir an, das Kennbyte lautet 8, markiert also den Beginn des Headers.
+Dann folgt als nächstes die Prüfsumme über den Header, die zur Erkennung von
+Lesefehlern dient. Die nächsten zwei Bytes stellen Sektor- und Tracknummer
+dar. Anhand dieser Werte kann das Laufwerk sehr schnell die momentane
+Position des Kopfes ausmachen.
+
+Landelichter
+
+Das fünfte und sechste Byte des Headers gibt je ein Byte der ID an, die beim
+Formatieren festgelegt wurde. Die 1541 liest diese Bytes und bemerkt auf
+diese Weise, daß eine neue Diskette (mit anderer ID) eingelegt wurde, und
+kann entsprechend reagieren (Directory bzw. BAM neu einlesen usw.).
+
+Mit diesen Angaben ist die Behandlung des Headers bereits abgeschlossen. Es
+folgen jetzt noch ein paar Bytes, die ungenutzt sind (»Lücke«). Sie sind
+vorhanden, damit das DOS genügend Zeit hat, die Header-Informationen zu
+verarbeiten und sich auf das Lesen des anschließenden Sektors vorzubereiten.
+
+Mit der nächsten SYNC-Markierung wird der Beginn des eigentlichen
+Datenblocks eingeleitet. Nach der Kennung $07 folgen die berühmten 256 Byte,
+die die eigentlichen Informationen Ihrer Datei speichern und die Sie zum
+Beispiel mit einem Disk-Monitor beeinflussen könnten. Es soll an dieser
+Stelle eindeutig darauf hingewiesen werden, daß all die Eigenarten wie SYNC,
+Header, Kennbyte 7 oder 8, GCR-Codierung (siehe unten) usw. uns nur dann
+beschäftigen müssen, wenn wir direkt auf den Lesekopf zugreifen. Nur die
+eben erwähnten 256 Bytes sind es, auf die Sie Zugriff haben, wenn Sie die
+vor zwei Monaten erläuterte Methode der »Jobcodes«, das Lesen und Schreiben
+mit »U1« und »U2« oder das ganz normale Laden und Speichern anwenden. Aber
+wir wollen uns ja weiterbilden.
+
+Die ersten beiden Bytes der 256 Datenbytes sind uns wohlbekannt: Sie zeigen
+an, auf welchem Track und Sektor die Datei anschließend fortgesetzt wird.
+Man bezeichnet sie deshalb als »Link« oder »Linker« (engl. »to link« =
+verbinden).
+
+SYNC für SYNC
+
+Hinter den 254 Datenbytes steht die Prüfsumme über alle 256 Datenbytes, die
+wiederum der Erkennung von Lesefehlern dient. Werden solche Fehler
+festgestellt, so versucht die Floppy noch mehrere Male, den Sektor zu lesen.
+Erst wenn viele Versuche kein befriedigendes Ergebnis gebracht haben, steigt
+das Laufwerk mit einer Fehlermeldung aus. Zur Bestimmung und Überprüfung der
+Checksumme werden übrigens einfach alle 256 Datenbytes miteinander
+EOR-verknüpft.
+
+Nach der Prüfsumme der Daten folgt wiederum eine Lücke, bevor die nächste
+SYNC-Markierung den Beginn des nächsten Blockheaders ankündigt. Bei der
+Betrachtung dieses Aufbaus wird schnell klar, warum solche softsektorierten
+Disketten eine deutlich verminderte Speicherkapazität gegenüber
+hardsektorierten Disketten aufweisen.
+
+Man erkennt aber auch, daß dieses komplizierte und sehr »bürokratische«
+Aufzeichnungsformat einen sehr guten Schutz gehen Fehler auf der Diskette
+bietet. Es gibt viele Stellen, an denen der »Fehlerteufel« ansetzen könnte.
+Und damit sind nicht nur die beiden erwähnten Prüfsummen gemeint! Mit diesen
+Informationen und der folgenden Tabelle werden Sie jetzt sicherlich auch die
+Fehlermeldungen des DOS besser verstehen und vor allem deuten bzw.
+unterscheiden können:
+
+Fehlernr.  Bedeutung
+20         Header des gewünschten Blocks nach 90 Versuchen nicht gefunden
+           (Lesefehler)
+21         Track enthält keine SYNC-Marke (Lesefehler)
+22         Datenblock nicht gefunden (Lesefehler)
+23         Prüfsumme des Datenblocks falsch (Lesefehler)
+24         evtl.: Fehler bei der GCR-Decodierung (Lesefehler)
+25         Verify Error (Schreibfehler)
+26         Diskette schreibgeschützt (Schreibfehler)
+27         Prüfsumme des Headers falsch (Lesefehler)
+28         Datenblock auf Diskette zu lang (Schreibfehler)
+29         ID im Header stimmt nicht mit Disketten-ID überein (Lesefehler)
+
+Dabei wurde die Bedeutung der Fehlermeldung Nr. 24 der Literatur entnommen.
+Mir hingegen ist es nicht gelunden, im DOS der 1541 eine Stelle zu finden,
+an der diese Meldung wirklich erzeugt wird. Stattdessen wird bei Fehlern bei
+der GCR-Decodierung m.E. ein Fehler Nr. 22 erzeugt. Sollte ein Leser
+hierüber mehr wissen, wären wir für Hinweise sehr dankbar. Der Zweck der
+GCR-Codierung wird weiter unten noch genau erklärt.
+
+Wie schreibt das DOS auf Diskette?
+
+Schon in den letzten Folgen haben wir die Möglichkeit beschrieben,
+Maschinenprogramme in den RAM-Pufferspeicher der 1541 zu übertragen und dort
+auszuführen. Unsere Jobcodes erlauben es außerdem, direkt in den Ablauf
+einzugreifen und die Diskette sozusagen »von Hand« zu manipulieren. Als
+letztes fehlen uns noch Kenntnisse über den direkten Zugriff auf den
+Schreib-/Lesekopf (Tonkopf) der Floppy, so daß wir einzelne Bits ohne Umwege
+und ohne Einschränkung durch die Blockstruktur der Diskette direkt auf die
+Magnetschicht schreiben können. Mit diesem vermeintlichen Problem wollen wir
+uns jetzt beschäftigen.
+
+Dazu vorab einige Bemerkungen zur Organisation der Schreib-/Leseelektronik
+der Floppy 1541. Die Bytes werden zwar auf Diskette in serieller Reihenfolge
+abgelegt, mit diesem Problem brauchen wir uns aber gar nicht zu
+beschäftigen. Der VIA 6522, der die Elektronik steuert, kann nämlich wie
+eine normale Speicherzelle behandelt werden. Jeder Wert, der mit STA hierin
+verewigt wird, schreibt ein Byte auf Diskette, und jeder Lesezugriff auf die
+Zelle ergibt ein von Diskette gelesene Byte.
+
+Das Hauptproblem, das sich bei dieser Angelegenheit stellt, ist das richtige
+Timing. Immerhin benötigt das der Schreib- oder Lesevorgang eine gewisse
+Zeit, das heißt, wenn beispielsweise Daten vom Tonkopf gelesen werden
+sollen, muß uns der Controller erst mitteilen, wann das nächste Byte von
+Platte gelesen wurde und zur Abholung bereitsteht.
+
+Zur Steuerung dieses Timings wird in der 1541 das Overflow-Flag (V-Flag) des
+Prozessors benutzt. Der 6502 hat nämlich gegenüber dem 6510 im C 64 den
+Vorteil, daß über einen Pin (SEV, Pin 38) des ICs extern beeinflußt (nämlich
+gesetzt) werden kann. Der Maschinenprogrammierer kann einerseits mit CLV das
+V-Flag löschen (einen Befehl zum Setzen gibt es nicht), und andererseits mit
+BVC (springt, falls V gelöscht) und BVS (falls gesetzt) bedingt verzweigen.
+Die Regel sieht folgendermaßen aus: Hat die Lese-Elektronik ein Byte
+vollständig gelesen, setzt sie im Prozessor das V-Flag. Genauso verhält es
+sich mit dem Schreiben: Wurden alle acht Bit des aktuelles Bytes komplett
+geschrieben, erfolgt ebenfalls ein Setzen des V-Flags. Das einzige, das der
+Programmierer nie vergessen darf, ist, daß das V-Flag nach einer erkannten
+»Fertig«-Meldung (V gesetzt) immer wieder mit CLV gelöscht werden muß.
+
+Die Rolle des »V-Manns«
+
+Die Speicherzelle, welche für Schreib- und Lesebetrieb zuständig ist, ist
+Port A des Disc-Controllers mit der Adresse $1C01. Weiter müssen wir dem
+Laufwerk mitteilen, ob gelesen oder geschrieben werden soll. Dazu wird
+erstens das Datenrichtungs-Register (DDR) $1C03 auf Ausgang oder Eingang
+geschaltet, und zweitens das Peripheral-Control-Register (PCR) geschaltet.
+Dieses Register bei $1C0C stellt eigentlich den Handshake-Betrieb der Ein-
+bzw. Ausgänge CA1 bis CB2 ein. In der Floppy 1541 wird der Ausgang CA2 dazu
+»mißbraucht«, den eigentlichen Controller UC1 auf Schreiben oder Lesen
+umzuschalten.
+
+Die folgenden beiden Routinen erledigen das für uns:
+
+; 1541 auf Lesen schalten
+LDA 1C0C  ; PCR
+ORA #$E0  ; auf Lesemodus: Bit 5,6,7 setzen
+STA 1C0C
+LDA #0
+STA 1C03  ; DDR Port A auf Eingang
+
+; 1541 auf Schreiben schalten
+LDA 1C0C  ; PCR
+AND #$1F  ; auf Schreibmodus: Bit 5,6,7 löschen
+ORA #$D0  ; Bit 4,6,7 setzen
+STA 1C0C
+LDA #$FF
+STA 1C03  ; DDR Port A auf Ausgang
+
+Die erste Routine, die auf Lesebetrieb schaltet, findet man auch im ROM der
+1541. Sie kann dort mit JSR $FE00 aktiviert werden.
+
+Hier ist eine Beispiel-Routine, mit der der Inhalt eines Puffers von $200
+bis $21F (32 Bytes) auf Diskette geschrieben wird. Bitte probieren Sie diese
+Routine nicht aus, zumindest nicht mit einer wichtigen Diskette! Sie kann
+nämlich Datenverlust bewirken. Grund: Es werden keine sinnvollen Daten
+geschrieben. Der Routine fehlen wichtige Aspekte: Positionieren auf den
+richtigen Track, Suche des Sektors, GCR-Codierung, Header anlegen usw.
+Vorher muß wie oben gesehen auf Schreib-Betrieb umgeschaltet werden.
+
+        LDY #0     ; Zähler
+L1      LDA 200,Y  ; ein Byte laden
+        CLV        ; V-Flag löschen
+        STA 1C01   ; zum Kopf geben
+L2      BVC L2     ; auf Byte-Ready warten
+        INY        ; nächstes Byte
+        CPY #20    ; schon 32 Bytes?
+        BCC L1     ; nein, dann weiter
+
+Danach sollte zur Sicherheit wieder Lesebetrieb gewählt werden. Soll eine
+SYNC-Marke erzeugt werden, schreiben Sie einfach fünfmal das Byte $FF auf
+Diskette:
+
+        LDY #5     ; Zähler
+L1      LDA #$FF   ; acht 1-Bit
+        CLV        ; V-Flag löschen
+        STA 1C01   ; zum Kopf geben
+L2      BVC L2     ; auf Byte-Ready warten
+        DEY        ; nächstes Byte
+        BNE L1     ; schon 5 Bytes?
+
+Jetzt wollen wir 160 Bytes von Diskette nach $200 bis $29F lesen. Um mit
+Sicherheit die ersten 160 Bytes eines Datenblocks zu erwischen, warten wir
+vorher auf die SYNC-Markierung eines Datenblocks. Das geschieht durch die
+DOS-Routine $F50A. Schalten Sie vorher den Lesemodus ein.
+
+        JSR F50A   ; auf Datenblock-SYNC warten
+        LDY #0     ; Zähler nullsetzen
+L1      BVC L1     ; auf Byte-Ready warten
+        CLV        ; V löschen
+        LDA 1C01   ; Datenbyte holen
+        STA 200,Y  ; und im Speicher ablegen
+        INY        ; nächstes Byte
+        CPY #A0    ; schon 160?
+        BCC L1     ; nein, weiter
+
+Damit dürfte das Prinzip klar geworden sein. Es ist wirklich so einfach: Nur
+durch Lesen oder Beschreiben der Speicherzelle $1C01 sprechen wir direkt den
+Tonkopf an.
+
+Eine Sonderstellung nimmt noch die SYNC-Markierung ein. Wir haben gesehen,
+daß sie im Laufwerk durch Schreiben von fünf $FF-Bytes, also 40 Eins-Bit
+erzeugt wird. Die Lese-Elektronik zählt die gelesenen Einsen. Folgen mehr
+als acht »1« unmittelbar aufeinander, wird dies als SYNC gedeutet. Wir
+werden später noch sehen, daß dieser Fall im normalen Datenfluß nicht
+auftreten kann (GCR-Code). Liest der Tonkopf eine SYNC-Marke, wird Bit 7 in
+$1C00 gelöscht. Im DOS existiert ab $F556 eine Routine, die diesen Fall
+prüft.
+
+************ SYNC abwarten
+F556 LDA #$D0  208
+F558 STA $1805 Timer setzen
+F55B LDA #$03  Fehlercode für 21,READ ERROR
+F55D BIT $1805 Timer abgelaufen?
+F560 BPL $F553 ja, dann Fehler 21 erzeugen
+F562 BIT $1C00 SYNC gefunden?
+F565 BMI $F55D nein, weiter warten
+F567 LDA $1C01 Byte lesen
+F56A CLV
+F56B LDY #$00
+F56D RTS
+
+Falls auf einem Track gar keine SYNC vorhanden ist, zum Beispiel weil die
+Diskette nicht formatiert wurde oder weil wir den Track mit dem unten
+vorgestellten Programm gelöscht haben, läuft nach etwa 0,05 Sekunden
+(Timerwert 208) der Timer ab, und die Meldung 21, READ ERROR erscheint.
+Stößt das Programm aber auf eine SYNC, wird augenblicklich das nachfolgende
+Byte (im Allgemeinen ist das das Kennbyte $07 oder $08) gelesen. Die
+Toleranzzeit von 0,05 Sek. ist ausreichend bemessen: Bei einer Drehzahl von
+300 UpM beträgt die Umlaufzeit 0,2 Sekunden. Rechnet man etwa 17 Sektoren
+pro Track, müßte spätestens nach 0,01 Sekunden eine SYNC-Marke zu finden
+sein.
+
+Die Vorgehensweise sieht vollständig so aus: Man warte mit $F556 auf ein
+SYNC-Signal. Danach teste man das nachfolgende Byte. Ist es $08, wurde ein
+Header gefunden. Man überprüfe durch Auslesen, ob es der Header des
+gesuchten Sektors ist (Track- und Sektornummer). Stimmt die Tracknummer
+nicht, muß mit Hilfe des Schrittmotors der Tonkopf neu positioniert werden.
+Stimmt die Sektornummer nicht, muß man weiter warten. Wurde jedoch der
+gewünschte Sektor gefunden, kann er gelesen werden. Dazu wartet man direkt
+auf die nächste SYNC, die den Beginn des eigentlichen Datenblocks ankündigt
+(Kennbyte $07). Diese Schritte führt bis an diese Stelle die DOS-Routine
+$F50A aus. Der Datenblock kann nun gelesen und decodiert werden.
+
+Die Daten müssen noch zum C 64 übertragen werden. Wie das mit Hilfe des
+seriellen Bus funktioniert, haben wir ja schon in der letzten Ausgabe
+beschrieben.
+
+Auf dieser Ebene sind wir nicht mehr dazu genötigt, uns an das oben
+beschriebene Format der Datenblocks zu halten. Sie können beliebig im Header
+oder dem Datenteil »herumpfuschen« und damit Fehlermeldungen provozieren.
+Das Aufbringen von Errors auf Diskette war vor allem früher ein beliebtes
+Kopierschutz-Verfahren. Diese konnten von Kopierprogrammen der ersten
+Generation nicht übernommen werden. Das geschützte Programm braucht also nur
+einen definierten Fehler auf Diskette abzufragen und bei Nichtvorhandesein
+»aussteigen«.
+
+Für unsere Versuchen sollten Sie eine leere, formatierte Diskette anlegen,
+die Sie sich spezielle für solche Experimente aufheben. Keine Angst: Durch
+»kaltes« Formatieren (mit ID) lassen sich alle Manipulationen immer wieder
+rückgängig machen. Die Diskette können Sie auf diese Weise nicht endgültig
+zerstören, nur vorläufig unbrauchbar machen.
+
+Wir wollen uns zunächst einmal den Fehler Nr. 21 ansehen. Er tritt dann auf,
+wenn die Floppy versucht, einen Track zu lesen, auf diesem jedoch keine
+SYNC-Markierungen vorhanden sind. Dies ist zum Beispiel bei einer
+unformatierten oder defekten Disk der Fall. Das folgende Listing werden Sie
+vom Prinzip her schnell durchschauen. Es macht nichts weiter, als einem
+bestimmten Track auf Diskette mit lauter Bytes $55 (binär %01010101) zu
+überschreiben. Dadurch werden alle SYNC-Markierungen und sonstige Daten
+gelöscht, und ein 21, READ ERROR ist bei einem Zugriff die Folge.
+
+; Löschen von Track 1
+0500    JSR $FE0E  ; Track löschen
+0503    JMP $FD9E  ; zur Jobschleife
+0506    LDA #$01   ; Track 1 löschen
+0508    STA $0A    ; Trackspeicher
+050A    LDA #$E0   ; Jobcode
+050C    STA $02    ; übergeben
+050E    LDA $02    ; Rückmeldung
+0510    BMI $050E  ; Ende abwarten
+0512    RTS        ; Programmende
+
+Assemblieren Sie das Programm und legen es ab Adresse $500 im Floppyspeicher
+ab. Der Start erfolgt bei Adresse $506. Der (bisher noch unbekannte) Jobcode
+$E0 bewirkt, daß der Kopf auf dem eingestellten Track (Nr. 1) plaziert und
+das Maschinenprogramm am Anfang des Puffers Nr. 2 (Adresse $500) aufgerufen
+wird. Es geht also weiter bei Adresse $500, wo erst mit der System-Routine
+$FE0E der Track durch Beschreiben mit $55 gelöscht wird. Sodann erfolgt der
+Sprung zurück in die Jobschleife. Wirkung: In Speicherzelle 2 wird die
+Fertig-Meldung übergeben, und der RTS-Befehl beendet das kleine Programm.
+Beachten Sie bei Experimenten im Floppyspeicher übrigens, daß das RAM des
+Laufwerks bei einem Reset gelöscht wird.
+
+Wenn Sie nun versuchen, den Track 1 (beliebiger Sektor) zu lesen, wird sich
+das Laufwerk mit einem 21, READ ERROR dafür bedanken. Wir haben ja oben
+schon bei der Besprechung der DOS-Routine $F556 gesehen, daß in diesem Fall
+ein Timer abläuft, weil keine SYNC-Marke gefunden wurde. Das Resultat ist
+der 21'er-Fehler.
+
+Interessant ist in diesem Zusammenhang die hier verwendete Systemroutine
+$FE0E, die wir hier disassembliert haben:
+
+************** 10240 mal $55 schreiben
+FE0E LDA 1C0C
+FE11 AND #1F
+FE13 ORA #C0       ; PCR auf Schreiben
+FE15 STA 1C0C
+FE18 LDA #FF
+FE1A STA 1C03      ; Port A auf Ausgabe
+FE1D LDA #55       ; binär 01010101
+FE1F STA 1D01      ; auf Port A zum Schreibkopf
+FE22 LDX #28       ; 40 * 256 = 10240
+FE24 LDY #00
+FE26 BVC FE26      ; Byte Ready von Schreibelektronik?
+FE28 CLV           ; nächstes Byte
+FE29 DEY
+FE2A BNE FE26
+FE2C DEX
+FE2D BNE FE26
+FE2F RTS
+
+Wie Sie sehen, ist dieser Fehler Nr. 21 sehr einfach zu erzeugen, da er sich
+über einen gesamten Track erstreckt. Schwieriger wird es bei den anderen
+Fehlern, die beispielsweise nur in einzelnen Blöcken vorkommen. Um solche
+Fehler zu erzeugen, muß der jeweils zu zerstörende Sektor abgetastet werden,
+bis die richtige Stelle für den Eingriff gefunden ist. Damit Sie die
+wichtigen Routinen zur Arbeit innerhalb der Jobschleife ebenfalls aufrufen
+können, sind in der folgenden Tabelle einige wichtige Unterprogramme des DOS
+mit den geforderten Parametern zusammengestellt:
+
+FD9E Rücksprung in die Jobschleife
+F556 SYNC-Signal auf Diskette abwarten
+FE00 PCR auf Lesen umschalten
+FE0E Track mit $55 beschreiben
+FDA3 Track mit SYNC vollschreiben (Killertrack)
+F510 Blockheader lesen (Disk muß initialisiert sein, $32/33 enthält Adresse
+     der Speicherzellen, in denen Track- und Sektornummer abgelegt sind)
+F527 Blockheader lesen (Disk muß initialisiert sein, Track- und Sektornummer
+     in $18 und $19)
+F50A Datenblockanfang suchen (Parameter wie $F510)
+
+Einen Error Nr. 22 beispielsweise würden Sie dadurch herstellen, daß Sie die
+Routine zum Finden des Datenblocks aufrufen. Diese kehrt bei gefundenem
+Datenblock mit RTS zurück. Jetzt schalten Sie auf Schreiben um und bringen
+ein paar Byte ohne Konzept auf die Diskette. Versucht der Controller, diesen
+Sektor zu lesen, so erfolgt ein Fehler 22, da Sie die Kennung $07, die
+direkt hinter der SYNC-Marke steht, zerstört haben.
+
+; Error 22 erzeugen
+0500 LDA $12       ; ID 1 holen
+0502 STA $16
+0504 LDA $13       ; ID 2
+0506 STA $17
+0508 LDA #$23      ; Track 35
+050A STA $18
+050C LDA #1        ; Sektor 1
+050E STA $19
+0510 JSR $F527     ; Blockheader lesen
+0513 JSR $F556     ; SYNC abwarten
+0516 LDA $1C0C
+0519 AND #$1F      ; PCR auf Schreiben schalten
+051B ORA #$C0
+051D STA $1C0C
+0520 LDA #$FF      ; Port A Ausgang
+0522 STA $1C03
+0525 LDA #$55      ; Falschwert
+0527 STA $1C01     ; auf Diskette schreiben
+052A BVC $052A     ; Byte Ready?
+052C CLV
+052D BVC $052D     ; zweites Mal schreiben
+052F CLV
+0530 BVC $0530
+0532 CLV
+0533 JSR $FE00     ; PCR auf Lesen
+0536 JMP $FD9E     ; fertig
+0539 LDA #$23      ; Track 35
+053B STA $0A       ; für Puffer 2 setzen
+053D LDA #$E0      ; Jobcode
+053F STA $02
+0541 LDA $02       ; Rückmeldung
+0543 BMI $0541     ; Ende abwarten
+0545 RTS
+
+Dieses Programm erzeugt einen 22, READ ERROR auf Track 35, Sektor 1. Der
+Start muß bei Adresse $539 erfolgen. Der Programmteil ab $500 wird durch den
+Jobcode $E0 aufgerufen.
+
+Fehler als Kopierschutz
+
+Wollen Sie einen Fehler mit der Nr. 23, dann ist es erforderlich, den Header
+zu überspringen und erst inmitten der gespeicherten Daten einen
+Schreibzugriff durchzuführen. Durch diesen Zugriff, der in der Prüfsumme am
+Ende des Datenblocks nicht verzeichnet wird, folgt die Meldung 23, READ
+ERROR als Zeichen eines Checksummen-Fehlers.
+
+; Error 23 erzeugen
+0500 LDA $12       ; ID 1 holen
+0502 STA $16
+0504 LDA $13       ; ID 2
+0506 STA $17
+0508 LDA #$23      ; Track 35
+050A STA $18
+050C LDA #0        ; Sektor 0
+050E STA $19
+0510 JSR $F527     ; Blockheader lesen
+0513 JSR $F556     ; SYNC abwarten
+0516 LDX #0        ; warten, um in Datenblock zu kommen
+0518 DEX
+0519 BNE $0518
+051B LDA $1C0C
+051E AND #$1F      ; PCR auf Schreiben schalten
+0520 ORA #$C0
+0522 STA $1C0C
+0525 LDA #$FF      ; Port A Ausgang
+0527 STA $1C03     ; DDR
+052A LDA #$55      ; Falschwert
+052C STA $1C01     ; in Datenblock schreiben
+052F BVC $052F     ; einmal
+0531 CLV
+0532 BVC $0532     ; zweimal
+0534 CLV
+0535 BVC 0535      ; dreimal
+0537 CLV
+0538 JSR $FE00     ; auf Lesen schalten
+053B JMP $FD9E
+053E LDA #$23      ; Tracknummer
+0540 STA $0A
+0542 LDA #$E0      ; Jobcode
+0544 STA $02       ; übergeben
+0546 LDA $02       ; Rückmeldung
+0548 BMI $0546     ; Ende abwarten
+054A RTS           ; fertig
+
+Es wird ein 23, READ ERROR auf Track 35, Sektor 0 angelegt. Der Vorteil
+dieses Fehlers ist, daß die Daten beim Lesen in der Regel schon im Puffer
+stehen, bevor die Meldung erzeugt wird. Das heißt, man kann einen Datenblock
+auf Diskette gezielt mit einem Fehler versehen, obwohl er noch lesbare Daten
+enthält.
+
+Bisher waren zur Erzeugung der Fehler Maschinensprache-Kenntnisse vonnöten.
+Der folgende Trick ist vielleicht auf den ersten Blick nicht »high level«
+genug für die Profi-Corner, dennoch möchten wir ihn Ihnen nicht
+vorenthalten. Es gibt nämlich einen genial einfachen Trick, notfalls auch in
+Basic einen äußerst wirkungsvollen Kopierschutz zu erzeugen.
+
+Wir haben oben gesehen, daß nach jeder SYNC-Marke ein Kennbyte folgt, das
+den Beginn eines Headers oder eines Datenblocks ankündigt. Dieses Byte hat
+den Wert $07 oder $08. Diese beiden Werte werden beim Einschalten des
+Laufwerks ab $F294 in die 1541-Speicherzellen $47 (Inhalt: $07, Kennung für
+Datenblock) und $39 (Inhalt: $08, Kennzeichen für Blockheader) geschrieben.
+Änderungen in $39 sind nicht so wirkungsvoll, da das Laufwerk nur beim
+Formatieren die Blockheader schreibt. Diese Speicherzelle könnte man
+höchstens dazu verwenden, auf einer kompletten Diskettenseite ein anderes
+Header-Kennzeichen zu setzen und so eine ganze Diskette gegen Kopieren zu
+schützen.
+
+Viel interessanter ist die Speicherzelle $47, die die Konstante $07 enthält.
+Uns hindert niemand, hier einen anderen Wert einzuschreiben. Das geht sogar
+von Basic aus:
+
+OPEN 15,8,15
+PRINT#15,"M-W" CHR$(71)CHR$(0)CHR$(1)CHR$(X)
+CLOSE 15
+
+Setzen Sie hier für X einen anderen Wert als 7 ein, wird es Ihnen nicht mehr
+gelingen, eine Ihrer »normalen« Disketten zu lesen: Das Drive gibt nur noch
+22, READ ERRORs aus (Datenblock nicht gefunden). Erst wenn Sie wieder die 7
+in die Speicherzelle 71 (dezimal) im RAM der 1541 schreiben, kann wieder
+normal gelesen werden.
+
+Das schöne dabei ist nun, daß eine solche Änderung auch beim Schreiben
+berücksichtigt wird. Übertragen Sie beispielsweise eine 9 in diese Zelle,
+und speichern dann ein Programm (nicht ausprobieren!), wird das Laufwerk bei
+jedem Schreibzugriff auf Diskette die Datenblocks nicht mehr mit 7, sondern
+mit 9 markieren. Würden Sie das Laufwerk jetzt aus- und wieder einschalten,
+stünde wieder die 7 in der Speicherzelle. Ein unerfahrener oder nicht
+privilegierter Anwender könnte das so gespeicherte Programm jetzt nicht mehr
+lesen: Das Laufwerk sucht nach Datenblöcken, die mit 7 markiert sind, auf
+der Diskette steht aber die 9. Erst, wenn wieder die 9 in Speicherzelle $47
+steht, kann das Programm normal geladen werden - im Prinzip. In der Praxis
+gibt es noch einen Pferdefuß (daher bitte nicht ausprobieren): Das Laufwerk
+schreibt ja beim Speichern eines Files auch in das Directory, und verwendet
+dabei die 9. Aus diesem Grund käme es zu Problemen beim Lesen des
+Inhaltsverzeichnisses, da einige Blocks des Directories mit $07 markiert
+sind, andere mit $09. Diese Technik eignet sich daher weniger zum Speichern
+ganzer Files als vielmehr für den Direktzugriff via Jobcodes oder
+Direktzugriff (U1, U2).
+
+Einfach genial
+
+Das Rezept sieht so aus: Bei der Herstellung einer kopiergeschützten
+Diskette wählt man beispielsweise den sonst vielleicht unbenutzten Track 1,
+Sektor 1. In die Floppy-Zelle 71 wird der falsche Wert 9 geschrieben. Sodann
+schreibt man ganz normal mit dem U2-Befehl einige wichtige Daten auf Track
+1, Sektor 1. Das Laufwerk markiert diesen Block mit 9. Das Laufwerk soll
+jetzt wieder zurückgesetzt werden.
+
+Es ist jetzt nicht mehr möglich, diesen Sektor zu lesen, ohne vorher die 9
+in die Speicherzelle 71 geschrieben zu haben. Jeder Lesezugriff würde einen
+22, READ ERROR bewirken. Das Lesen ist nur noch auf besondere Weise möglich:
+
+Der Anwender das geschützte Programm ganz normal. Dieses schreibt die 9 in
+$47, liest Track 1, Sektor 1 und kontrolliert die gelesenen Daten mit dem
+Sollwert. Stimmt etwas nicht, wurde diese Diskette unerlaubt kopiert. Sonst
+sollte der normale Inhalt (7) der Speicherzelle wiederhergestellt werden,
+damit ab jetzt wieder normale Lese- und Schreibzugriffe auf die Scheibe
+möglich sind.
+
+Die Güte eines solchen Schutzes hängt auch wesentlich von der Art der Daten
+ab, die in dem geschützten Sektor stehen. Im einfachsten Fall ein Text wie
+»OKAY, ICH BIN EINE ORIGINALDISKETTE«, der im Programm mit einer IF-Abfrage
+getestet wird. Ein Schurke wird aber diese Abfrage vielleicht finden und
+vernichten. Viel gemeiner ist es daher, wenn man ein kurzes
+Maschinenprogramm oder eine Subroutine oder andere Daten so codiert
+speichert, die für den Betrieb des geschützten Programms unbedingt
+erforderlich sind.
+
+Sie werden kaum ein Kopierprogramm finden, das in der Lage ist, diese auf
+extrem einfache Weise erzeugte Manipulation zu vervielfältigen! (Ausnahme:
+sog. »Nibbler«).
+
+Bei dieser Technik muß nur beachtet werden, daß das High-Nibble der Werte,
+die in die Speicherzellen $47 und notfalls $39 geschrieben werden, Null sein
+muß. Werte über $0F führen zu nicht behebbaren Störungen beim Lesen.
+Außerdem dürfen Sie zum Beispiel Datenblöcke nicht mit $08 markieren, da sie
+dann nicht mehr von Headern unterscheidbar wären. Fatale Störungen wären die
+Folge.
+
+Soweit zu den Fehlern. Haben Sie schon einmal etwas von »Killertracks«
+gehört? Dieses anschauliche Wort steht für die Manipulation einer Spur, die
+sämtliche Sicherheitseinrichtungen des DOS durcheinanderbringt. Vielleicht
+hatten Sie schon einmal eine Diskette in der Hand, die folgendes Phänomen
+aufwies: Wenn Sie versuchten, einen Block auf einer bestimmten Spur zu
+lesen, ist der Lesekopf ornungsgemäß auf dieser positioniert worden. Danach
+hat der Controller mit dem Lesen des gewünschten Sektors begonnen - und
+nicht mehr aufgehört. Mit anderen Worten: Die 1541 las und las und las
+und...
+
+Die Spur, die das gelesen werden sollte, hat offensichtlich dafür gesorgt,
+daß sich die Diskettenstation »aufgehängt« hat. Aber wie stellt man eine
+solche Falle, einen »Killertrack«, her? Was ist mit dem Track passiert, daß
+der Controller vollkommen »aus dem Häuschen« geraten ist?
+
+Killertracks
+
+Das folgende Mini-Programm ist die Lösung:
+
+; Killertrack auf Track 1 anlegen
+0500    JSR $FDA3  ; Track löschen
+0503    JMP $FD9E  ; zur Jobschleife
+0506    LDA #$01   ; Track 1 löschen
+0508    STA $0A    ; Trackspeicher
+050A    LDA #$E0   ; Jobcode
+050C    STA $02    ; übergeben
+050E    LDA $02    ; Rückmeldung
+0510    BMI $050E  ; Ende abwarten
+0512    RTS        ; Programmende
+
+Assemblieren Sie das Programm und legen es ab Adresse $500 im Floppyspeicher
+ab. Der Start erfolgt bei Adresse $506. Des Rätsels Lösung ist eigentlich
+sehr einfach: Die gesamte Spur besteht nur aus einer sehr langen
+SYNC-Markierung. Da diese Marke von der Leseelektronik speziell verarbeitet
+wird, verzögert sich die Arbeit der Station gewaltig, wenn eine solche
+»Dauer-SYNC-Markierung« auftritt. Da das Laufwerk bei Fehlern bis zu über
+200 mal versucht, einen Block zu lesen, dehnt sich der Zeitraum, den sie bei
+Verzögerungen benötigt, stark aus. Bei einem Killertrack braucht die 1541
+pro Leseversuch eine Unmenge an Zeit, was sich auch in dem langsamen
+Blink-Rhythmus der roten LED ausdrückt. Das Programm unterscheidet sich
+übrigens nur in der ersten Zeile von dem Listing, das wir zum Löschen einer
+Spur (Fehler 21) verwendet hatten. Statt der Routine ab $FE0E kommt hier die
+Routine $FDA3 zur Anwendung, die statt $55 diesmal 10240 mal $FF (Code für
+SYNC) auf Diskette schreibt.
+
+Allein schon an den kleinen Anwendungen können Sie erkennen, wie vielseitig
+und vielfältig die Möglichkeiten sind, die einem in der Programmierung
+offenstehen. Wenn Sie intensiv mit der Floppystation arbeiten, werden Sie
+bald schon neue Anwendungsmöglichkeiten kennenlernen. Aus der Floppy 1541
+läßt sich noch eine Menge herausholen, wobei der Kopierschutz sicher nur
+einen kleinen Teil der Möglichkeiten darstellt.
+
+Der GCR-Code
+
+Vielleicht sind Ihnen schon einige Ungereimtheiten aufgefallen, was den
+Direktzugriff auf die Diskette betrifft. Erinnern Sie sich noch, als wir uns
+das erste Mal mit dem Schreiben von Daten auf Diskette beschäftigten? Dort
+wurden unter anderem die SYNC-Markierungen auf der Magnetscheibe besprochen,
+die dem Disc-Controller als Positionszeiger dienen.
+
+Es wurde dabei erwähnt, daß eine SYNC-Markierung bei der Floppy 1541 aus
+mehreren, typisch fünf $FF-Bytes besteht, die hintereinander auf die Floppy
+geschrieben werden. Was ist aber, wenn ein Datenblock geschrieben werden
+soll, der nur aus $FF-Bytes besteht? Eigentlich müßten diese Bytes dann als
+SYNC-Marke wirken und den gesamten Schreib- und Lesebetrieb stören. Wie die
+Praxis zeigt, tritt dieser Fehler nicht auf. Auch bei mehreren Blöcken aus
+$FF-Bytes kommt es zu keinen Komplikationen. Bei der Konstruktion des
+Laufwerks hat man sich nämlich für eine Codierung der Daten entschieden, die
+eine Eindeutigkeit der Daten schafft. Die Codierung heißt »Group Code
+Recording« (GCR), zu deutsch etwa »gruppenweise codierte Aufzeichnung«.
+
+Es stellt sich jetzt die Frage, was bei der GCR-Codierung passiert, damit
+eine Verwechslung zwischen SYNC- und Datenbytes unmöglich wird. Zur
+Beantwortung dieser Fragen muß ein wenig tiefer in das Lesen und Schreiben
+der Station eingedrungen werden.
+
+Das Lesen von Bytes durch den Lesekopf steuert ein Timer des
+Disc-Controllers. Auf der Diskette selbst wird jedes 1-Bit physikalisch
+durch einen Wechsel der Magnetisierungsrichtung dargestellt, 0-Bits sind
+gekennzeichnet durch gleichbleinende Richtung der Magnetisierung. Das
+folgende Schema zeigt, was gemeint ist:
+
+N/N            S/S  N/N       S/S            N/N
+ *              *    *         *              *
+ 1    0    0    1    1    0    1    0    0    1
+
+Dabei symbolisiert der Stern einen Magnetisierungswechsel. Soll ein Byte von
+Diskette gelesen werden, so wartet der Controller einfach die Zeitspanne ab,
+die zum Lesen von acht Bit erforderlich ist. Innerhalb dieser Zeit liest der
+Tonkopf eine gewisse Folge von Magnetisierungswechseln und
+Nicht-Magnetisierungswechseln. Dazu ein Beispiel: Auf der Diskette steht ein
+Byte mit dem Wert $55. Diese Zahl wird binär durch die Codefolge %01010101
+dargestellt. Der Schreib-/Lesekopf stellt also während der Lesezeit die
+folgenden Magnetisierungswechsel fest: Magnetisierung wechselt nicht,
+wechselt, wechselt nicht, wechselt, wechselt nicht, wechselt, wechselt nicht
+und wechselt schließlich nochmal.
+
+Das Erkennen eines Bits geschieht dabei völlig zeitgesteuert. Der
+Disk-Controller »weiß«, daß er zum Lesen eines Bits eine bestimmte Zeit
+warten muß. Danach gilt das Bit als gelesen, und es wird eine »1« oder »0«
+bereitgestellt, je nachdem, ob ein Magnetisierungswechsel stattgefunden hat
+oder nicht.
+
+Praktisch könnte man das folgendermaßen umschreiben: Sie machen mit einem
+Freund eine Zeit von zehn Sekunden aus. Während dieser Zeit hat er dann die
+Aufgabe, entweder zu pfeifen oder nicht. Sie warten die zehn Sekunden ab.
+Hat er während dieser Zeit gepfiffen, dann entspricht das einem
+Magnetisierungswechsel, wenn nicht, dann einer »0«.
+
+Da eine Diskette im Laufwerk nicht absolut gleichmäßig gedreht werden kann,
+sondern Drehzahlschwankungen unterliegt, muß noch für eine Kompensation der
+mechanischen Fehler gesorgt werden. Dazu wird der Timer, der die
+abzuwartende Zeit mißt, bei jedem Magnetisierungswechsel neu getriggert
+(gestellt). Ein »1«-Bit hat also nebem seinem Informationsgehalt noch die
+wichtige Aufgabe, Laufwerksschwankungen auszugleichen, um Lesefehler zu
+verhindern. Aus diesem Grund darf es zum Beispiel nicht passieren, daß
+mehrere Null-Bits hintereinander auf der Diskette stehen, da sonst zu lange
+keine Laufwerkskontrolle mehr stattfinden könnte.
+
+Aber auch zu viele Einsen sind nicht gestattet, da mehr als acht »1«-Bit ein
+SYNC-Signal auslösen.
+
+Zuviel und zuwenig ist ungesund
+
+Aus den genannten Gründen werden alle Daten, die auf die Diskette
+geschrieben werden, vorher GCR-codiert. Mit diesem Verfahren schließt man
+aus, daß mehr als acht »1«-Bit oder mehr als zwei »0«-Bit hintereinander auf
+die Diskette geschrieben werden und so die Schreib- und Leseelektronik
+durcheinanderbringen. Einzig und allein die SYNC-Markierungen (mehr als acht
+Einsen) werden vom DOS uncodiert, also als $FF-Bytes auf die Platte
+geschrieben. Man kann also zwei Schreibarten auf Diskette unterscheiden:
+
+1. Schreiben von Markierungen. Hier werden fünf $FF-Byte direkt nacheinander
+auf die Magnetscheibe geschrieben, um eine SYNC-Markierung zu bilden, die
+der Orientierung dient
+
+2. Schreiben von Daten. In diesem Modus werden Byte-Inhalte softwaremäßig
+codiert, um sich von SYNC-Marken zu unterscheiden.
+
+Sehen Sie sich folgende Tabelle an, die Umwandlungstabelle für die
+Konvertierung Binär nach GCR und umgekehrt.
+
+Hexadezimal  Binär  GCR
+$0           0000   01010
+$1           0001   01011
+$2           0010   10010
+$3           0011   10011
+$4           0100   01110
+$5           0101   01111
+$6           0110   10110
+$7           0111   10111
+$8           1000   01001
+$9           1001   11001
+$A           1010   11010
+$B           1011   11011
+$C           1100   01101
+$D           1101   11101
+$E           1110   11110
+$F           1111   10101
+
+Wie Sie erkennen können, handelt es sich beim GCR-Code um einen 5-Bit-Code.
+Jedes 4-Bit-Nibble (Halbbit), das Sie umwandeln, wird zu einem adjungierten
+5-Bit-GCR-Nibble. Ein Byte, das vorher aus acht Bit bestand, wird also durch
+die Codierung zehn Bit lang. Allgemein nimmt die Länge der codierten Daten
+um den Faktor 5/4 (1,25) zu. Deshalb ist die Handhabung der GCR-Bytes nicht
+ganz trivial. Wandeln Sie doch einmal 2 Byte in den GCR-Code um. Als
+Ergebnis gibt das »zweieinhalb« Bytes, die sicher schwer zu handhaben sind.
+Bei der GCR-Codierung geht man aus diesem Grund einen anderen Weg: Es werden
+immer vier Hex-Bytes in fünf GCR-Bytes gewandelt, und umgekehrt.
+
+Rechnen wir das an einem Beispiel durch: Es sollen vier $FF-Byte verarbeitet
+werden, die also nicht direkt auf Diskette geschrieben werden dürften. $FF
+entspricht den Nibbles %1111 1111. Der Tabelle entnehmen wir das
+GCR-Äquivalent für %1111: Es lautet %10101 (unterste Zeile). Wir kommen zu
+folgendem Ergebnis:
+
+HEX     BINÄR       GCR-Code
+$FF     1111 1111   10101 10101
+$FF     1111 1111   10101 10101
+$FF     1111 1111   10101 10101
+$FF     1111 1111   10101 10101
+
+Den binären GCR-Bitstrom 1010110101101011010110101101011010110101 (40 Bit)
+zerlege man jetzt nur noch in fünf Byte à 8 Bit. Dazu wird der Strom in zehn
+Gruppen zu je vier Bit aufgespalten:
+
+1010 1101 = $AD
+0110 1011 = $6B
+0101 1010 = $5A
+1101 0110 = $D6
+1011 0101 = $B5
+
+Vier $FF-Bytes werden also bei der GCR-Codierung in die fünf Bytes $AD, $6B,
+$5A, $D6 und $B5 gewandelt. Sie können sich davon überzeugen, daß diese fünf
+Bytes für den Controller absolut ungefährlich sind und die »Normen«
+erfüllen: Nicht mehr als zwei »0«-Bit und nicht mehr als acht »1«-Bit.
+
+Um Ihnen die Umwandlung der Bytes zu erleichtern, haben wir ein Programm
+(Listing) geschrieben: Den »GCR-Master«. Geben Sie das Programm mit dem
+Checksummer ein. Gewandelt werden wahlweise vier Hex-Bytes in fünf GCR-Bytes
+oder umgekehrt. Geben Sie die Bytes durch Leerzeichen getrennt hexadezimal
+ein. Kann ein Byte nicht zurückgewandelt werden (beispielsweise fünf
+Nullbytes, es gibt auf der GCR-Seite der Tabelle keinen Eintrag für %00000),
+haben Sie eine unerlaubte GCR-Codefolge, die das Programm zurückweist. Die
+Floppystation hält für diesen Fall übrigens eine Fehlermeldung bereit, wobei
+umstritten ist, ob es der READ ERROR Nr. 22 oder Nr. 24 ist (siehe oben).
+
+Im DOS existieren übrigens die folgenden Routinen zur GCR-Wandlung:
+
+$F6D0: holt 4 Hexbytes aus $52 bis $55 und wandelt sie nach GCR. Die 5
+       entstehenden Bytes landen in dem Puffer, auf den $30/31 zeigt
+       (Pufferzeiger $34).
+$F78F: wandelt einen gesamten Puffer (Adresse in $30/31) in GCR-Werte und
+       speichert diese in den Ausweichpuffer ($1BB bis $1FF) sowie den
+       ursprünglichen Puffer zurück. Der Pufferinhalt vergrößert sich auf
+       das ca. 1,25 fache (von 256 auf 324 Byte).
+$F7E6: Wandelt 5 GCR-Bytes aus dem Puffer, auf den $30/31 zeigt
+       (Pufferzeiger $34) in den Hexcode zurück. Die 4 Hexbytes werden in
+       $52 bis $55 gespeichert.
+$F8E0: Decodiert einen gesamten GCR-Puffer (Adresse $30/31) samt
+       Ausweichpuffer ($1BB bis $1FF). Das Ergebnis wird in den Puffer
+       zurückgeschrieben.
+
+Der ultimative Disk-Monitor
+
+Die Anwendungen dieser Routinen sind äußerst vielfältig. So können Sie diese
+Programme zum Beispiel für einen neuartigen Disk-Monitor verwenden, dessen
+Darstellung umschaltbar ist zwischen GCR-Bytes und normalen Hex-Bytes. Die
+einzigen Änderungen, die Sie dazu machen müssen, bestehen in der Umrechnung
+der Adressen für die Speicherbereiche im Computer und der Angabe neuer
+Parameter als Puffer- und Zeropage-Bereiche. Mit einem solchen
+Spezial-Monitor, den es unseres Wissens noch nicht gibt, könnten Sie Fehler
+und Killertracks selbst anlegen und beseitigen. Ihrer Phantasie, was die
+Möglichkeiten den Monitors angeht, sind außer dem Speicherplatz im Computer
+keine Grenzen gesetzt.
+
+Durch die Verwendung der GCR-Codierung ergeben sich noch Konsequenzen. Wie
+sieht es beispielsweise in den Puffern der Station aus, wenn ein Puffer mit
+einem vollständigen Datenblock (256 Byte) gefüllt wurde und dieser
+aufgezeichnet werden soll? Für dieses Problem hat der Controller einen
+speziellen Ausweichpuffer mit einer Größe von 68 Byte. Er befindet sich an
+den Adressen $1BB bis $1FF. Wird nun beispielsweise der Datenblock in Puffer
+1 ($400 bis $4FF) codiert, so werden die ersten 68 Byte in den
+GCR-Ausweichpuffer übernommen. Die restlichen Bytes stehen in Puffer 1.
+
+Aus den 256 Byte an Informationen macht das DOS durch die Konvertierung 324
+Byte, die inklusive Prüfsumme einen gesamten Datenblock darstellen.
+Natürlich werden auch die Parameter im Blockheader (Track- und Sektornummer,
+ID1 und ID2 sowie Prüfsumme und Kennbyte $08) vor dem Schreiben auf Diskette
+in GCR-Werte gewandelt, wobei der Blockheader dann mit den zwei Lücken-Byte
+auf eine Länge von zehn GCR-Byte anwächst, da der Header aus ursprünglich
+acht Hex-Werten bestand.
+
+Zusammenfassend besteht ein Sektor auf Diskette aus den fünf Byte der ersten
+SYNC-Markierung; danach folgen die zehn Byte des Blockvorspanns. Vor der
+SYNC-Markierung des Datenblocks folgen noch neun $55-Byte, die der GCR-Norm
+entsprechen (%01010101010...) und direkt auf die Diskette geschrieben
+werden. Sie dienen als Pufferlücke, damit dem Disc-Controller Zeit bleibt,
+zwischen Schreiben und Lesen umzuschalten.
+
+Nach den fünf Byte der SYNC-Markierung folgen die 324 Byte des Datenblocks
+inklusive dessen Checksumme und anschließend noch die Lücke zwischen zwei
+Sektoren, die erfahrungsgemäß zwischen acht und zwölf Byte lang ist. Wie Sie
+sehen, hat so ein Sektor also eine Länge von 361 bis 365 Byte auf der
+Platte.
+
+Vielleicht kommt Ihnen auch noch einmal die Herstellung eines Killertracks
+in Erinnerung. Hier wird ein gesamter Track mit $FF vollgeschrieben und
+stellt so eine riesige SYNC-Markierung dar. Da eine solche Bitfolge aber
+unzulässig ist, kommt die Lese- und die Schreibelektronik der Station völlig
+aus dem Konzept; der Controller »stürzt ab«.
+
+Ein wichtiger Hinweis sei an dieser Stelle noch einmal erlaubt: Wenn Sie
+Ihre frisch erworbenen Kenntnisse anwenden wollen, nehmen Sie
+sicherheitshalber eine nie eine wichtige Originaldiskette zum Üben. Wie Sie
+nun wissen, gibt es eine ganze Reihe an Möglichkeiten, den Inhalt einer
+Diskette zu »vergewaltigen«. Da manche Verunstaltung nur schwer rückgängig
+zu machen ist, experimentieren Sie mit einer Übrungsdiskette.
+
+Wir sind nun am Ende unserer kleinen Tauchfahrt durch die Geheimnisse des
+Laufwerks angelangt und hoffen, Sie hatten trotz des nicht ganz leichten
+Stoffes auch ein wenig Spaß. Wenn Sie wollen, können Sie die Reise ja auf
+eigene Faust fortsetzen, denn sicher gibt es noch das eine oder andere
+interessante Detail zu entdecken. Ach ja, und nicht vergessen: Wir warten
+darauf, daß Sie einen Disk-Monitor programmieren, der auch direkt GCR-Code
+anzeigt. Vielleicht haben Sie ja auch erst aufgrund der Lektüre dieses
+Artikels Fragen, die Sie uns gern schreiben können.
+
+(Nikolaus M. Heusler)
+
+Bild. Aufbau eines Sektors einer mit der 1541 formatierten Diskette
+
+Tabelle. Einige wichtige Speicherzellen zurm Hardware-Steuerung in der 1541
+
+$1800    Port B (IEC-Port)
+         Bit 0: Data in
+         Bit 1: Data out
+         Bit 2: Clock in
+         Bit 3: Clock out
+         Bit 4: ATN A (Ausgang)
+         Bit 5,6: Geräteadresse
+         Bit 7: ATN in
+$1801    Port A (unbenutzt, evtl. Parallel-Port)
+$1802    Datenrichtung Port B
+$1803    Datenrichtung Port A
+$1804-07 Timer A, B
+$180D    IRQ-Flag
+$1C00    Port B, Steuerport
+         Bit 0: Schrittmotor Spule 0
+         Bit 1: Schrittmotor Spule 1
+         Bit 2: 1 = Laufwerksmotor an
+         Bit 3: 1 = rote LED an
+         Bit 4: 0 = Diskette schreibgeschützt
+         Bit 5,6: Timersteuerung
+         Bit 7: 0 = SYNC-Signal
+$1C01    Port A: Daten vom/zum Tonkopf
+$1C02    Datenrichtung Port B
+$1C03    Datenrichtung Port A
+$1C0C    PCR
+         Bit 7,6: immer 1
+         Bit 5: 1 = Eingabe (Lesen von Disk)
+                0 = Ausgabe (Schreiben auf Disk)
+
+Tabelle. Nützliche Speicherzellen in der Zeropage der 1541
+
+$00-04  Jobspeicher Puffer 0 bis 4
+$06-0F  Speicher für Track/Sektor Puffer 0 bis 4
+$12-13  ID
+$16-1A  aktueller Blockheader:
+        $16 ID erstes Zeichen
+        $17 ID zweites Zeichen
+        $18 Tracknummer
+        $19 Sektornummer
+        $1A Checksumme
+$1C,1E  Flag für Diskettenwechsel
+$20     Drive-Status
+        Bit 4: 1 = Hauptmotor im Ausschaltmodus
+        Bit 5: 1 = Hauptmotor an
+        Bit 6: 1 = Schrittmotor-Anforderung
+        Bit 7: 0 = Laufwerk bereit
+$23     Flag C 64 (0) oder VC 20 (1)
+$39     Konstante $08 (Blockheader-Kennung)
+$3A     Prüfsumme für Datenblock
+$42     Tracknummer für Kopfpositionierung
+$43     maximale Sektorzahl für diesen Track
+$47     Konstante $07 (Datenblock-Kennung)
+$48     Verzögerungszähler für Hauptmotor ein/aus
+$49     Speicher für Stackpointer
+$4A     Schrittmotor-Anforderung (Anz. Schritte)
+        Bit 7: 0 bewegt nach außen, 1 nach innen
+        Bit 0-6: Anzahl der Halbspuren
+$50     1 = Puffer liegt im GCR-Code vor
+$51     Tracknummer bei Formatierung (FF = Standby)
+$5E-64  Variablen für Schrittmotorsteuerung
+$67     NMI-Flag
+$68     0 = automatische Initialisierung bei 29, DISK ID MISMATCH
+$69     »Interleave-Rate«, Sektorabstand bei Speicherung (normal: bei Dateien
+        10, bei Directory 3)
+$6A     Anzahl Leseversuche eines Sektors (5)
+        Bit 6: 0 = Kopf auf Halbspur
+        Bit 7: 1 = Bump (Rattern bei Lesefehlern) gesperrt
+$77     Gerätenummer +32 (Listen)
+$78     Gerätenummer +64 (Talk)
+$80     aktueller Track
+$81     aktueller Sektor
+$24F    Pufferbelegungstabelle, 1 = Puffer gesperrt
+        Bit 0: Puffer 0
+        ...
+        Bit 4: Puffer 4
+
+Listing. Der GCR-Master
+
+start tok64 gcr-master
+10 rem gcr-master
+20 rem nikolaus heusler, zwengauerweg 18, 81479 solln (11.93)
+25 dimd$(15):fori=0to15:readd$(i):next
+26 data 01010,01011,10010,10011,01110, 01111,10110,10111,01001,11001,11010
+27 data 11011,01101,11101,11110,10101:a$="0123456789abcdef"
+30 print:print:print:print" a - wandeln hex -> gcr"
+40 print" b - wandeln gcr -> hex"
+50 print" c - ende"
+60 getr$:ifr$="c"thenprint:end
+70 ifr$="a"then100
+80 ifr$="b"then200
+90 goto60
+100 wl=8:print:print"bitte vier hexbytes eingeben!"
+110 print"(z.b. ed 34 27 58)":print:input"hex";h$:gosub300
+124 gc$="":forx=1to4:h1$=mid$(x$,x*2-1,1): h2$=mid$(x$,x*2,1)
+128 h1=val(h1$):h2=val(h2$): ifh1=0andh1$<>"0"thenh1=asc(h1$)-55
+130 ifh2=0andh2$<>"0"thenh2=asc(h2$)-55
+131 ifh1>15orh2>15orh1<0orh2<0thenprint:print"falsche eingabe":run
+132 gc$=gc$+d$(h1)+d$(h2):next
+134 forx=1to10:b=0:b$=mid$(gc$,x*4-3,4):fory=0to3
+136 ifmid$(b$,y+1,1)="1"thenb=b+2^(3-y)
+138 next:e$=e$+mid$(a$,b+1,1):ifx/2=int(x/2)thene$=e$+" "
+140 next:print:print"gcr: "e$:run
+200 wl=10:print:print"bitte fuenf gcr-bytes eingeben!"
+210 print"(z.b. f7 66 e9 5d e9)":print
+220 input"gcr";h$:gosub300:gc$="":h$=x$
+222 forx=1to10:x$= mid$(h$,x,1):xx=val(x$): ifxx=0andx$<>"0"thenxx=asc(x$)-55
+224 fory=0to3:yy=int(xx/2^(3-y)):xx=xx-yy*2^(3-y):ifyythengc$=gc$+"1":goto232
+228 gc$=gc$+"0"
+232 nexty,x:hc$="":forx=1to8:x$=mid$(gc$,x*5-4,5): fory=0to15
+234 ifx$<>d$(y)thennexty:print:print"code nicht erlaubt!":run
+236 hc$=hc$+mid$(a$,y+1,1):ifx/2=int(x/2)thenhc$=hc$+" "
+238 nextx:print:print"hex: "hc$:run
+300 x$="":fori=1tolen(h$):ifmid$(h$,i,1)<>" "then x$=x$+mid$(h$,i,1)
+302 next:iflen(x$)<>wl thenprint:print"falsche eingabe":run
+304 return
+stop tok64
+
+*********
+
+End of the International Project 64 etext of the article "Disketten: Klein,
+stark, schwarz".
+
+*********

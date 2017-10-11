@@ -1,0 +1,40 @@
+all;<!-- $Id: people.input,v 1.8 2001/05/25 15:52:54 peter Exp $ -->
+
+all;<div class=left align=center>
+all;<h1 align="center"><img src="../pics/idoccbm.gif" alt="iDOC=" height=150
+all;width=211></h1>
+
+en;<h2 align="center">iDOC= people</h2>
+sv;<h2 align="center">Folket bakom iDOC=</h2>
+de;<h2 align="center">Die Leute hinter iDOC=</h2>
+fi;<h2 align="center">iDOC=:n tekijät</h2>
+es;<h2 align="center">La gente de iDOC=</h2>
+hu;<h2 align="center">Az iDOC= résztvevõi</h2>
+all;</div>
+
+all;<hr noshade class=decorative>
+
+all;<p>
+en;The initiator of iDOC= is
+sv;Initiativtagare till iDOC= är
+de;Initiator des iDOC= ist
+fi;iDOC=:n perustaja on
+es;El iniciador de iDOC= es
+hu;Az iDOC= alapítója:
+
+all;<a href="../">Peter Karlsson</a>
+en;from Oslo in Norway.
+sv;från Oslo i Norge (men jag är svensk).
+de;aus Oslo in Norwegen.
+fi;Oslosta Norjasta.
+es;desde Oslo en Noruega.
+hu;Norvégiából, Oslo-ból.
+all;<p>
+
+en;Here is the list of all who that have contributed to this project:
+sv;Här är listan över alla som har hjälpt till med projektet:
+de;Hier ist die Liste über diejenigen, die zum diesem Projekt beigetragen haben:
+fi;Seuraavat henkilöt ovat auttaneet projektia:
+es;Aquí está la lista de todos lo que han contribuido a este proyecto:
+hu;A projectben részvevõk listája a következ?:
+all;<p>

@@ -1,0 +1,421 @@
+*********
+
+Welcome to iDOC= - the international CBM documentation project!
+
+The goal of iDOC= is to preserve (non-English) Commodore related documents
+in electronic text format that might otherwise cease to exist with the rapid
+advancement of computer technology and declining interest in 8-bit computers
+on the part of the general population. If you would like to help by
+converting Commodore related hardcopy documents to electronic texts please
+contact the manager of iDOC=, Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names consists of a reasonably short unique title, followed by the
+document language. Two optional fields follow; first the document version (0
+for incomplete texts, version 1 is usually unnumbered), and then the
+document source, if there are more than one. Finally, the document is given
+a .txt extension.
+
+The author(s) of the original document and members of iDOC= make no
+representations about the accuracy or suitability of this material for any
+purpose. This etext is provided "as-is". Please refer to the warranty of the
+original document, if any, that may included in this etext. No other
+warranties, express or implied, are made to you as to the etext or any
+medium it may be on. Neither the author(s) nor the members of iDOC= will
+assume liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext. Therefore
+if you read this document or use the information herein you do so at your
+own risk.
+
+*********
+
+The iDOC= etext of the Yuppi's revenge manual, converted to text by
+Christian Janoff <mepk@rbg.informatik.tu-darmstadt.de>
+
+yuppisrevenge_de.txt, January 1999, etext #46.
+
+*********
+
+Text auf der Schachtelrückseite
+
+Yuppi's Revenge
+
+1960: Devisenspekulationen haben den größten amerikanischem Ölkonzern in den
+Konkurs getrieben! Totaler Kurseinbruch bei den Aktien; Börsen und Banken
+werden nervös, und die Auswirkungen auf Wirtschaft und Politik sind schon
+spürbar! Das Votum der Hauptversammlung ist eindeutig. Die gesamte
+Manageretage darf den Hut nehmen. Gleichzeitig wird eine neue Strategie
+beschlossen: Die 4 besten Harvardabsolventen des Jahrgangs sollen je einen
+Teil des Konzerns übernehmen und sanieren.
+
+Das ist Ihre Chance auf dem Weg zum Erfolg! In kurzer Zeit können Sie zu den
+mächtigsten Männern der Welt zählen - wenn es Ihnen gelingt, neue Ölfelder
+zu finden und erfolgreich zu verwalten. Die 3 Mitbewerber sind eine
+ernstzunehmende Konkurrenz! Doch es gibt Wege, sie auszuschalten... Gehen
+Sie auf's Ganze! Gesellschaftliches Ansehen, wirtschaftliche und politische
+Macht sind der Lohn für dieses Risiko.
+Es gibt viel zu tun...
+
+Ein Strategiespiel für 1 - 4 Personen!
+
+Spielidee, Konzept und Programm von Ralf Glau. © 1987 ariolasoft GmbH. Alle
+Rechte vorbehalten. arilasoft Datenträger sind urheberrechtlich geschützt
+und dürfen nur privat genutzt werden. Gewerbliche Nutzung, Verleih und
+Vervielfältigung sind untersagt. Zuwiderhandlungen werden zivil- und
+strafrechtlich verfolgt.
+
+*********
+
+Handbuchtext
+
+                           YUPPI'S REVENGE
+                     hier geht es um Millionen...
+                           von RALF GLAU
+
+
+                          DIE VORGESCHICHTE
+
+12.05.1960
+Mißmanagement bringt den größten amerikanischen Ölkonzern ins Gerede - durch
+Devisenspekulationen sind dem Konzern noch nicht übersehbare Verluste
+entstanden - die Börse reagiert nervös - Kursverlust der Aktie hält sich -
+noch - in Grenzen...
+
+29.05.1960
+Krisensitzung der Konzernleitung - Verluste sind größer als zunächst
+erwartet - Gläubigerbanken erwarten Konsequenzen - Panikverkäufe der Ölaktie
+von Kleinaktionären an der Börse - Kursverfall ist nicht zu stoppen...
+
+03.06.1960
+Entlassungen in der Manageretage gefordert - Banken werden nervös -
+Kursverfall der Aktie übersteigt die 20%-Marke...
+
+26.06.1960
+Totaler Kurseinbruch der Aktie, nachdem die Zahlungsunfähigkeit des Konzerns
+bekannt wird - fast der gesamte Vorstand wird fristlos gefeuert - tägliche
+Krisensitzungen...
+
+27.06.1960
+Abschlußfeier an der Harvard University - einer der besten Jahrgänge der
+wirtschaftswissenschaftlichen Fakultät verläßt die Universität...
+
+05.07.1960
+Zusammenbruch des Ölkonzerns - Konfiszierung aller Ölfelder - Suche nach
+einem Krisenmanager oder Käufer bislang erfolglos...
+
+12.07.1960
+Vorschlag der Hauptversammlung: Teilung des Konzerns in vier gleiche Teile -
+Leitung der Teilfirmen den vier besten Absolventen der
+wirtschaftswissenschaftlichen Fakultät der Harvard Universität übertragen.
+
+DAS ANGEBOT:
+Übernehmen SIE als Absolvent mit Auszeichnung der Harvard University die
+Führung eines dieser vollkommen heruntergewirtschafteten Konzernteile!
+Nutzen Sie Ihre Chance!
+
+01.08.1960
+Sie übernehmen offiziell die Leitung Ihres Konzerns - Konzernvermögen:
+2.000.000$ Kapital; 1 Expeditionsteam; 1 Tankschiff niedriger Kapazität...
+
+                           SPIELANLEITUNG
+
+LADEANWEISUNG UND STEUERUNG:
+
+ATARI ST:
+
+Legen Sie die Programm-Diskette "Yuppi's Revenge" in Laufwerk A ein, öffnen
+Sie das Inhaltsverzeichnis und klicken Sie den Dateinamen YUPPI.PRG zweimal
+schnell hintereinander an.
+
+Die Steuerung erfolgt wahlweise mit der Maus, einem Joystick in Port 2 oder
+den Cursor- und den Ziffern-Tasten. Sie bestätigen Ihre Wahl dementsprechend
+mit der Maustaste, dem Joystick-Knopf oder der Return/Enter-Taste.
+
+MS-DOS:
+
+Booten Sie Ihren Rechner mit Ihrer DOS-Diskette. Achten Sie darauf, daß
+keine speicherresidenten Programme geladen werden. Legen Sie dann die
+Programm-Diskette "Yuppi's Revenge" in Laufwerk A ein. Sie starten das
+Programm von Laufwerk A mit dem Befehl YUPPI.
+
+Die Steuerung erfolgt mittels der Cursor- und der Ziffern-Tasten. Sie
+bestätigen Ihre Wahl mit der Return/Enter-Taste. Es empfiehlt sich, den
+Zehnerblock auf NUM LOCK zu schalten, da Ihnen dann sowohl die
+Cursor-Funktionen als auch die Ziffern des Zehnerblocks zur Verfügung
+stehen.
+
+AMIGA:
+
+Legen Sie die Programm-Diskette "Yuppi's Revenge" in Laufwerk DF0: ein und
+schalten Sie den Rechner ein. Die Amiga 1000 starten Sie bitte wie
+gewöhnlich mit der KICKSTART-Diskette und legen die Programmdiskette ein,
+wenn der Rechner nach der Workbench-Diskette verlangt.
+
+Die Steuerung erfolgt mit der Maus oder den Cursor- und Zifferntasten. Sie
+bestätigen Ihre Wahl mit der Maustaste oder der Return/Enter-Taste.
+
+C64:
+
+Legen Sie die Programm-Diskette in das Laufwerk ein, und starten Sie das
+Programm mit dem Befehl LOAD"*",8,1.
+
+Die Steuerung erfolgt wahlweise mit dem Joystick oder den Cursor-Tasten.
+Zahlen werden mit den Ziffern-Tasten eingegeben.
+
+ALLGEMEINES
+
+Halten Sie eine formatiere Leerdiskette zum Abspeichern der Zwischen- stände
+bereit.
+
+Achten Sie nun auf Ihre Gesundheit, steigern Sie Ihre Beliebtheit, und
+lassen Sie sich nicht durch schlechtes Wetter und ungünstigen Aktienkursen
+aus der Ruhe bringen. Besprechen Sie Ihr Vorgehen mit Ihrem Vorstand, damit
+Sie immer die notwendige Rückendeckung haben. Und bedenken Sie: Auch wenn es
+hier um Millionen geht...
+
+                        DIES IST EIN SPIEL!
+
+SPIELSTART
+
+NEUES SPIEL STARTEN
+
+Beantworten Sie die Frage entsprechend. Geben Sie zunächst die Zahl der
+Mitspieler (1 bis 4) und dann die Namen der Spieler (4 bis 8 Zeichen) ein.
+Die Namen sollten sich in den vier ersten Buchstaben unterscheiden.
+
+ABGESPEICHERTEN SPIELSTAND LADEN
+
+Wenn Sie bei Ihrer letzten "Yuppi-Party" den Spielstand abgespeichert haben,
+können Sie das Spiel hier fortsetzen. Beantworten Sie hierzu die Frage
+entsprechend.
+Legen Sie nun Ihre Diskette mit dem Zwischenstand ein. Bei den Amiga-,
+MS-DOS- und C64-Rechnern geben Sie den Namen des Zwischenstandes ein, bei
+dem Atari ST treffen Sie Ihre Wahl über die Objektauswahl-Box.
+
+DAS HAUPTMENÜ
+
+Das Hauptmenü verzweigt in die folgenden Untermenüs
+
+        (New York/Rotterdam)  (Mexico/Venezuela/Arabien/Sumatra)
+             >TAXI<                       >TAXI<
+             Fracht                       Fracht
+             Ölmarkt                      Ölmarkt
+            Bankdepot                    Bankdepot
+            Zentrale                     Zentrale
+             Werft                      Expedition
+            Sabotage                     Sabotage
+             Daten                        Daten
+
+DAS TAXI-MENÜ
+
+Mit dem Taxi fahren Sie entweder in ein Hotel oder zum Flughafen.
+
+DAS HOTEL-MENÜ
+
+Wählen Sie die Preisklasse des Zimmers, in dem Sie wohnen möchten, und geben
+Sie dann die Dauer Ihres Aufenthaltes an.
+
+DAS FLUGHAFEN-MENÜ
+
+Von hier haben Sie Verbindung zu den wichtigen Ölländern Mexico, Venezuela,
+Arabien, Sumatra und den wichtigsten Ölimport-Häfen New York und Rotterdem.
+Der Preis für Ihr Flugticket wird von Ihrem Konto abgebucht.
+
+DAS FRACHT-KONTOR
+
+Hier, in Ihrem Frachtkontor, geben Sie Ihren Kapitänen die Marschrouten und
+die Fracht - vom Ölland wohl meist mit Öl beladen, vom Ölhafen mit Ballast
+zurück ins Ölland - bekannt. Wählen Sie den Ausgangsort, die Fracht, den
+Zielort und welches Schiff auf Reisen gehen soll.
+
+DER ÖLMARKT
+
+Ist das Öl in New York oder Rotterdam, muß es an den Verbraucher gebracht
+werden. Sie können natürlich auch mit dem Ölpreis spekulieren und so Ihren
+Profit weiter steigern.
+
+DAS BANKDEPOT
+
+Eines Ihrer Ziele ist es, einen möglichst großen Teil Ihrer Firma unter
+Kontrolle zu bekommen. Kaufen Sie also Anteile Ihrer Firma. Wenn Sie
+darüberhinaus mit Aktien spekulieren wollen, können Sie auch die Aktien der
+Konkurrenzfirmen kaufen. Bei Geldbedarf lassen sich natürlich alle Werte
+wieder verkaufen - zum Tageskurs.
+
+Sind alle Quellen versiegt, hilft unter Umständen nur noch ein Wechsel. Aber
+Vorsicht! Ein geplatzter Wechsel richtet großen Schaden in Ihrer Firma an.
+
+DIE ZENTRALE
+
+In der Zentrale rüsten Sie sich mit den notwendigen Gegenständen aus, die
+Sie für eine Expedition brauchen, und Sie setzen die Förderquote für das
+jeweilige Land fest.
+
+Für eine Expedition benötigen Sie Sprengsätze und Bohrtürme. Zur Sicherung
+Ihrer Ölfelder haben sich Hubschrauber bewährt.
+
+DIE WERFT (nur in New York und Rotterdam)
+
+Ihre Schiffe benötigen Wartung. Je länger ein Schiff läuft, desto mehr
+kleine Schäden führen zu immer weniger Kapazität. Also muß jedes Schiff in
+Abständen in das Dock, wo es repariert wird. Unangenehmen
+Sicherheitsüberprüfungen kann man ruhig entgegensehen, wenn der Zustand der
+Tanker nichts zu wünschen übrig läßt.
+
+Ist ein Tanker jedoch soweit heruntergekommen - zum Beispiel im letzten
+Sturm - daß eine Reparatur zu teuer wird, hilft nur noch verschrotten, um
+den Schaden zu minimieren.
+
+Wenn die Fördermengen zunehmen, reicht die Kapazität Ihrer Schiffe wohl kaum
+aus. Ordern Sie neue Tanker, die Ihnen nach kurzer Zeit zur Verfügung
+stehen. Achten Sie jedoch darauf, daß Ihre Förderquoten in richtiger
+Relation zu Ihrer Tankerkapazität steht, da sonst die Aufenthalte in den
+Häfen zu lang werden.
+
+DIE EXPEDITION (nicht in New York und Rotterdam)
+
+Ohne Ölfelder keine Ölförderung... Sie haben Ihre Expedition in der Zentrale
+ausgerüstet und sind nun unterwegs.
+
+Setzen Sie Ihre Sprengsätze und werten Sie die seismologische Kurve aus. Je
+höher die Spitzen, desto mehr Öl im Boden. Nun schnell die Konzession
+gesichert und gleich eine Probebohrung angeordnet. Nach einigen Tagen wird
+vielleicht schon das erste Öl in Ihre Tanks fließen.
+
+Und wenn eine Ölquelle trocken gepumpt ist, sollte man sie stillegen, um
+neue Vorkommen erschließen zu können.
+
+DIE SABOTAGE (C64 eingeschränkt)
+
+Was suchen Sie in diesem finsteren Hafenviertel? Einen Spezialisten, einen
+Abogenten? Ihr Gegner ist Ihnen ein Dorn im Auge, und ein kleiner
+Sabotageakt soll das wieder in Ordnung bringen?
+
+Wählen Sie den Gegner, der Ihnen zu erfolgreich ist, und wählen Sie den Ort
+des Anschlages. Soll es gegen die Konkurrenzschiffe oder gegen die Ölfelder
+gehen?
+
+Für den Erfolg bürgt der Spezialist, nur... Welcher der acht ist der beste?
+
+Planen Sie mit dem Sabogenten den Weg zum Ort des Anschlages, die Lage der
+Sprengbomben und den Rückweg. Bedenken Sie dabei die Hubschrauberstationen
+des Gegners! Wenn der Anschlag daneben geht...
+
+DAS DATEN-MENÜ
+
+TERMINE
+
+Wann ist der Wechsel fällig? Wann finder die nächste Vorstandstagung statt,
+und was war das gesteckte Ziel? Und wann finder der nächste Universitätsball
+statt, auf dem wieder der erfolgreichste Manager gekürt wird? Hier finden
+Sie die Daten.
+
+TANKERPOSITIONEN
+
+Welcher Tanker auf welcher Route mit welcher Ladung unterwegs ist, und in
+welchem Zustand er im Zielhafen ankommt, das sind wichtige Daten für die
+weitere Planung.
+
+ÖLFELDER
+
+Mindestens ebenso wichtig ist es, den Überblick über die Zahl der Ölfelder,
+deren Fördermengen und die Mengen des eingelagerten Öles im Auge zu
+behalten.
+
+ÖLPREISENTWICKLUNG
+
+Wer mit Öl handelt muß die Preise kennen. Und den Kurs der eigenen Aktien...
+
+ABSPEICHERN
+
+Und wenn die Nacht wieder zum Morgen geworden ist und auch die Gesundheit
+des Spielers vor dem Rechner eine Pause fordert, sollte der Zwischenstand
+auf der Datendiskette gesichert werden. Legen Sie gemäß den Anweisungen die
+Datendiskette ein, und geben Sie einen Namen für den Zwischenstand an. Bei
+dem Atari ST läuft die Aktion über eine Fileselect-Box.
+
+EIN PAAR TIPS AM RANDE
+
+Alle Ihre Aktionen haben natürlich das Ziel, Ihre Firma zu der bedeutensten
+Ölkompanie zu machen. Verlieren Sie dabei jedoch nie die beiden Anzeigen für
+Gesundheit und Beliebtheit aus den Augen. Auch der geschickteste
+Geschäftsmann wird nur Verluste erzielen, wenn er mehr Zeit im Krankenbett
+als am Schreibtisch verbringt, mehr Geld in Krankenhausaufenthalte
+investiert, als in neues Gerät.
+
+Und zum erfolgreichsten Absolventen der Harvard University wird nur der
+gekürt werden, der neben guten Ergebnissen im geschäftlichen Bereich auch
+ein hohes Ansehen in der Gesellschaft genießt.
+
+Kleine Aufmerksamkeiten und aufwendige Parties erhöhen Ihr Ansehen in der
+Öffentlichkeit. Auszeichnungen und Ehrungen lassen dann auch nicht lange auf
+sich warten. Achten Sie jedoch auch hierbei auf die Verträglichkeit mit
+Ihrer Gesundheit und Ihrem Geldbeutel.
+
+Der Vorteil, den Sie aus Ihrer Beliebtheit ziehen, macht sich nicht nur
+geschäftlich bemerkbar. Sie sammeln damit auch Punkte, um in der Liste der
+erfolgreichsten Harvard-Absolventen nach oben zu kommen.
+
+Das Fassungsvermögen der Tanker richtet sich nach ihrem Zustand. Ist der
+Zustand eines Tankers bedenklich, müssen Sie damit rechnen, daß er sein Ziel
+nicht mehr erreicht. Mit einer guten Organisation der Öltransporte können
+Sie die anfallenden Lagerkosten für Ihr Öl drastisch verringern und entgehen
+der Gefahr von Sabotageakten gegen Ihre Tanker. Wenn Sie allerdings nicht
+genügend Kapitel haben, um die Frachtkosten zu bezahlen, bleibt der Tanker
+in seinem Hafen liegen.
+
+Ist an einem Ort sehr viel Öl, sinkt auch sein Preis. Spekulationen mit Öl
+sollten Sie nur für kurze Zeiträume ins Auge fassen, da Sie von Ihrem
+eventuellen Spekulationsgewinn die Lagerkosten abrechnen müssen. Falls Sie
+kurzfristig Geld brauchen, können Sie Geld über einen Wechsel leihen. Zu
+einem festgelegten Termin müssen Sie dann die Summe, über die der Wechsel
+läuft, zurückzahlen. Sollten Ihnen dazu die Mittel fehlen, werden Ihre
+Aktien zur Begleichung herangezogen. Wenn Sie auch keine Aktien haben,
+verschulden Sie sich. Die Höhe der Wechselsumme ist abhängig von Ihrem
+'Guten Ruf', und der entspricht Ihrer Beliebtheit.
+
+Die tägliche Ölfördermenge können Sie für jedes Land einzeln bestimmen. Sie
+gilt für jede Ölpumpe, die Sie in dem Land in Betrieb haben. Wenn Sie also
+10 Ölpumpen in einem Land haben und eine Fördermenge von 200t angeben, dann
+werden 2000t Öl pro Tag gefördert. Sie können Ihre Ölförderung soimit dem
+Zustand und den Frachtzeiten Ihrer Tanker anpassen.
+
+Je geringer das Volumen eines Ölfeldes ist, desto tiefer muß gebohrt werden.
+Entsprechend lange dauert dann eine Probebohrung. Maximal können 20
+Konzessionen je Land für Ölfelder gekauft werden. Wird ein Ölfeld
+stillgelegt, dann erlischt auch die Konzession.
+
+Sabotage ist eine sehr unsaubere Methode, die Karriereleiter zu erklimmen,
+und Sie setzen sich einem großen Risiko aus. Da es sich in Ihren Kreisen
+nicht ziemt, persönlich Hand an Ihre Konkurrenten zu legen, beauftragen Sie
+dazu einen Sabotage-Agenten.
+
+Diese "Sabogenten" verlangen dafür natürlich eine angemessene Bezahlung. Das
+"Honorar" ist um so höher, je mehr Erfolge ein Sabogent in seiner Laufbahn
+nachweisen kann.
+
+                         Yuppi's Revenge
+
+       Idee und Programmierung ST, MS-DOS und Amiga: Ralf Glau
+
+                 Konvertierung C64: Zuheir Urwani
+
+                    Graphik: Thomas Heimen
+
+            Produktion und Handbuch: Harald Uenzelmann
+
+                Copyright © 1988: Ariola Soft GmbH
+*********
+
+End of the iDOC= etext of Yuppi's revenge manual.
+
+*********

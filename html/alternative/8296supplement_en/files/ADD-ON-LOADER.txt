@@ -1,0 +1,359 @@
+ADD-ON-L*......PAGE 0001
+
+
+LINE# LOC   CODE        LINE   
+
+00001 0000               ;*****************************************
+00002 0000               ;*                                       *
+00003 0000               ;*  AAA  DDDD  DDDD       OOO  N   N     *
+00004 0000               ;* A   A D   D D   D     O   O NN  N     *    
+00005 0000               ;* A   A D   D D   D *** 0   0 N N N     *
+00006 0000               ;* AAAAA D   D D   D *** O   0 N N N     *
+00007 0000               ;* A   A D   0 D   D     O   0 N  NN     *
+00008 0000               ;* A   A DDOD  DDDD       000  N   N     *
+00009 0000               ;*                                       *
+00010 0000               ;* L      000   AAA  DDDD  EEEEE RRRR    *
+00011 0000               ;* L     0   0 A   A D   D E     R   R   *
+00012 0000               ;* L     0   0 A   A D   D E     R   R   * 
+00013 0000               ;* L     0   0 AAAAA D   D EEEE  RRRR    *
+00014 0000               ;* L     O   O A   A D   D E     R   R   *
+00015 0000               ;* LLLLL  000  A   A DDDD  EEEEE R   R   * 
+00016 0000               ;*                                       *
+00017 0000               ;*****************************************
+
+00019 0000               ;*****************************************
+00020 0000               ;*                                       *
+00021 0000               ;*  64K-ADD-ON LOADER                    *  
+00022 0000               ;*                                       *
+00023 0000               ;*  THIS PROGRAM INPUTS A FILE NAME FROM *  
+00024 0000               ;*  THE KEYBOARD AND ATTEMPTS TO LOAD    *
+00025 0000               ;*  THAT PROGRAM INTO ADD-ON RAM SELECTED*  
+00026 0000               ;*  BY CONTROL REGISTER VALUE %10000000. *  
+00027 0000               ;*  A CBM DISK UNIT #8 IS ASSUMED. AN    *
+00028 0000               ;*  AUTO START IS ATTEMPTED THROUGH      *  
+00029 0000               ;*  ($FFFC).  A NULL FILE NAME TERMINATES*  
+00030 0000               ;*  THIS PROGRAM.                        *
+00031 0000               ;*                                       *
+00032 0000               ;*  2FEB81 RJF         29JULBI RJF       *
+00033 0000               ;*  CBM PART # 118002 REV B              *
+00034 0000               ;*                                       *
+00035 0000               ;*****************************************
+
+
+EQUATES......PAGE 0002
+
+LINE# LOC   CODE        LINE
+
+00037 0000                      * =O 
+00O38 0000               MEMMAP *=*+1           ;C0PY OF ADD-ON REQ    
+
+00040 0001               ;EQUATES FOR BASIC 4.0 
+00041 0001               ; 
+00042 0001               BUF    =$200 
+00043 0001               FNADR  =$DA 
+00044 0001               FNLEN  =$D1 
+00043 0001               STATUS =$96
+00046 0001               FA     =$D4 
+00047 0001               SA     =$D3 
+00040 0001               RCLRCH =$F2A6 
+00049 0001               RLISTN =$F0D5 
+00050 0001               RSECND =$F143 
+00051 0001               RCIOUT =$F19E 
+00052 0001               RUNLSN =$F1B9 
+00053 0001               RTALK  =$F0D2 
+00054 0001               RTKSA  =$F193 
+00053 0001               RACPTR =$F1CO 
+00056 0001               RUNTLK =$F1AE 
+00057 0001               ROPENI =$F4A5
+
+INIT 2-12-81......PAGE 0003
+
+LINE# LOC   CODE        LINE
+
+00059 0001               ;  
+00060 0001                      *=1024  
+00061 0400               SYS    =158            ;BASIC TOKEN VALUE  
+00062 0400               ;
+00063 0400               ;ENTER COMPILED BASIC TEXT 
+00064 0400               ;
+00065 0400 00                   .BYT 0 
+00066 0401 00 04                .WOR INIT-2 
+00067 0403 10 00                .WOR $10 
+00068 0405 9E                   .BYT SYS 
+00069 0406 28 31                .BYT '(1039)',0,0,0 
+00069 040C 00 
+00069 0400 00 
+00069 040E 00 
+00070 040F               ;
+00071 040F               ;SETUPT FILE LOAD PARMS
+00072 040F               ;
+00073 040F A9 BO         INIT   LDA #%10000000
+00074 0411 85 00                STA MEMMAP 
+00075 0413               ;
+00076 0413 AO 17                LDY #MS2-MS1
+00077 0415 20 90 05             JSR MSG         ;TYPE ENTRY MESSAGE  
+00078 0419               ;
+00079 0418 A9 00         INIT10 LDA #<BUF  
+00080 041A 85 DA                STA FNADR  
+00081 041C A9 02                LDA #>BUF  
+00082 04lE 85 DB                STA FNADR+1     ;PLACE FOR FILE NAME 
+00083 0420               ;
+00084 0420 A9 O8                LDA #8  
+00085 0422 05 04                STA FA          ;DEVICE #8  
+00086 0424               ;
+00087 0424               ;INPUT FILE NAME FROM SCREEN TO BUF  
+00088 0424               ;
+0O089 0424 A2 00                LDX #0  
+00090 0426 20 CF FF      INIT20 JSR $FFCF  
+00091 0429 C9 OD                CMP #$D  
+00092 042B FO 06                BEQ INIT30  
+00093 0420 9D 00 02             STA BUF,X  
+20094 0430 E8                   INX  
+20095 0431 DO F3                BNE INIT20  
+00096 0433               ;
+00097 0433 86 DI         INIT30 STX FNLEN  
+00098 0435 A9 OD                LDA #$D
+00099 0437 20 D2 FF             JSR $FFD2       ;ECHO CR  
+00100 043A               ;
+00101 043A A5 Dl                LDA FNLEN  
+00102 043C 00 01                BNE INIT40      ;NAME WAS NOT NULL  
+00103 043E               ;
+00104 043E 60                   RTS  
+00105 043F               ; 
+00106 043F 78            INIT40 SEI             ;PROTECTS ADD-ON  
+00107 0440               ;
+
+
+LOAD 2-12-81......PAGE 0004
+
+LINE# LOC   CODE        LINE
+
+00109 0440               ;
+00110 0440 A9 00         LOAD   LDA #0
+00111 0442 85 96                STA STATUS
+00112 0444               ;
+00113 0444 A9 60                LDA #$60
+20114 0446 95 03                STA SA          ;SPECIAL LOAD COMMAND
+00115 0448               ;
+00116 0445 20 3D 05             JSR OPENI       ;OPEN THE FILE
+00117 0449               ;
+00118 0448 A5 D4                LDA FA
+00119 0440 20 FF 04             JSR TALK        ;ESTABLISH CHANNEL
+00120 0450               ;
+00121 0450 A5 03                LDA SA
+00122 0452 20 OF 05             JSR TKSA        ;TELL IT TO LOAD
+00123 0455               ;
+00124 0455 20 1F 05             JSR ACPTR       ;GET FIRST BYT
+00123 0459 BD 79 04             STA EAL         ;LOAD ADDRESS LOW
+00126 0459               ;
+00127 0458 A5 96                LDA STATUS
+00129 0450 4A                   LSR A
+00129 04SE 4A                   LSR A
+00130 045F BO 41                BCS LD90        ;FILE NOT FOUND
+00131 0461               ;
+00132 0461 20 1F 05             JSR ACPTR
+00133 0464 OD 79 04             STA EAH         ;LOAD ADDRESS HIGH
+00134 0467               ;
+00135 0467 A9 FD         LD40   LDA #$FD        ;MASK OFF TIMEOUT
+00136 0469 25 96                AND STATUS
+00137 046B E35 96               STA STATUS
+00139 0460               ;
+00139 0460 20 1F 05      LD45   JSR ACPTR       ;DATA BYTE
+00140 0470 AA                   TAX
+00141 0471 A5 96                LDA STATUS      ;TIMEOUT?
+00142 0473 4A                   LSR A
+00143 0474 4A                   LSR A
+00144 0475 80 FO                BCS LD40        ;YES...TRY AGAIN
+00145 0477               ;
+00146 0477               EAL    =*+1
+00147 0477               EAH    =*+2
+00149 0477 8E 00 FO             STX $F000       ;OPERAND IS SELF MODIFY
+00149 047A               ;
+00150 047A EE 79 04      LD60   INC EAL         ;INC STORE ADDRESS
+00151 0470 DO 03                BNE LD70
+00152 047F EE 79 04             INC EAH
+00153 0492               ;
+00154 0482 24 96         LD70   BIT STATUS      ;EOI?
+00155 0484 50 E1                BVC LD40        ;NO...
+00156 0436               ;
+00157 0486 20 2F 05             JSR UNTLK       ;CLOSE CHANNEL
+00159 0489               ;
+00159 0489               ;CLOSE FILE
+00160 0499               ;
+00161 0489 A5 04                LDA FA
+00162 0480 20 C1 04             JSR LISTN
+00163 04BE               ;
+
+
+LOAD 2-12-81......PAGE 0005
+
+LINE# LOC   CODE        LINE
+
+00164 04SE A5 D3                LDA SA
+00165 0490 29 EF                AND #$EF  
+00166 0492 09 EO                ORA #$EO  
+00167 0494 20 DI 04             JSR SECND  
+00169 0497               ;
+00169 0497 20 FI 04             JSR UNLSN  
+00170 049A               ;
+00171 049A               ;I/0 PEEK,SCREEN PEEK  
+00172 049A               ;AND WRITE PROTECT BLOCKS  
+00173 049A               ;
+00174 049A A9 E3                LDA #%11100011  
+00175 049C BD FO FF             STA $FFF0  
+00176 049F               ;
+00177 049F 6C FC FF             JMP ($FFFC)  
+00178 04A2               ;
+00179 04A2 20 93 04      LD90   JSR CLRCH  
+0018O 04A5 A9 00                LDA #%00000000  
+00181 04A7 OD FO FF             STA #$FFF0      ;MAP BACK TO ROM  
+00182 04AA               ;
+00183 04AA A0 00                LDY #MS1-MS1  
+00184 04AC 20 90 05             JSR MSG         ;FILE NOT FOUND ERROR
+00185 04AF               ;
+00186 04AF 5a                   CLI  
+00187 04B0 4C 19 04             JMP INIT10      ;RETRY
+
+
+SUBS 2-12-81......PAGE 0006
+LINE# LOC   CODE        LINE
+
+00189 04B3               ;
+00190 0483 A9 00         CLRCH  LDA #0 
+00191 0495 BD FO FF             STA $FFF0 
+00192 0488 20 A6 F2             JSR RCLRCH 
+00193 048B A5 00                LDA MEMMAP 
+30194 04BD BD FO FF             STA $FFF0 
+00195 04C0 60                   RTS
+
+00197 04C1 85 D4         LISTN  STA FA 
+00199 04C3 A9 00                LDA #0 
+00199 04C5 BD FO FF             STA $FFF0 
+00200 04C9 20 D5 FO             JSR RLISTN 
+00201 04CB A5 00                LDA MEMMAP 
+00202 04CD BD FO FF             STA $FFF0 
+00203 04D0 60                   RTS
+
+00205 04D1 48            SECND  PHA 
+00206 0402 A9 00                LDA #0 
+00207 04D4 BD FO FF             STA $FFF0 
+00208 04D7 68                   PLA 
+00209 04D8 20 43 Fl             JSR RSECND 
+00210 04D9 A5 00                LDA MEMMAP 
+00211 04D0 50 FO FF             STA $FFF0 
+00212 04E0 60                   RTS
+
+00214 04E1 49            CIOUT  PHA 
+00215 04E2 A9 00                LDA #0 
+00216 04E4 00 FO FF             STA $FFF0 
+00217 04E7 68                   PLA 
+00218 04E8 20 9E Fl             JSR RCIOUT 
+00219 04EB A5 00                LDA MEMMAP 
+00220 04EU BD FO FF             STA $FFF0 
+00221 04F0 60                   RTS
+
+00223 04F1               UNLSN 
+00224 04F1 A9 00                LDA #0 
+00225 04F3 BD FO FF             STA $FFF0 
+00226 04F6 20 B9 Fl             JSR RUNLSN 
+00227 04F9 A5 00                LDA MEMMAP
+
+
+SUBS 2-12-81......PAGE 0007
+
+LINE# LOC   CODE        LINE
+
+00228 04F9 BD FO FF             STA $FFF0
+00229 04FE 60                   RTS
+
+00231 04FF 95 D4         TALK   STA FA
+00232 0501 A9 00                LDA #0
+00233 0503 BD FO FF             STA $FFF0
+00234 0506 20 D2 FO             JSR RTALK
+00235 0509 A5 00                LDA MEMMAP
+00236 0509 BD FO FF             STA $FFF0
+00237 050E 60                   RTS
+
+00239 050F 49            TKSA   PHA
+00240 0510 A9 00                LDA #0
+00241 0512 BD FO FF             STA $FFF0
+00242 0515 69                   PLA
+00243 0516 20 93 FI             JSR RTKSA
+00244 0519 A5 00                LDA MEMMAP
+00245 0510 BD FO FF             STA $FFF0
+00246 05lE 60                   RTS
+
+00249 o51F               ACPTR  
+00249 051F A9 00                LDA #0
+00250 0521 OD FO FF             STA $FFF0
+00251 0524 20 CO FI             JSR RACPTR
+00252 0527 48                   PHA
+00253 0528 A5 00                LDA MEMMAP
+00254 052A BD FO FF             STA $FFF0
+00255 0520 6B                   PLA
+00256 052E 60                   RTS
+
+0025B 052F               UNTLK
+00259 052F A9 00                LDA #0
+00260 0531 BD FO FF             STA $FFF0
+00261 0534 20 AE FI             JSR RUNTLK
+00262 0537 A5 00                LDA MEMMAP
+00283 0539 8D F0 FF             STA $FFF0
+00284 053C 60                   RTS
+
+
+SUBS 2-12-81......PAGE 0008
+
+LINE# LOC   CODE        LINE
+
+00266 0530 48            OPENI  PHA  
+00267 053E A9 00                LDA #0  
+00268 0540 BD FO FF             STA $FFF0  
+00269 0543 69                   PLA   
+00270 0544 20 A5 F4             JSR ROPENI  
+00271 0547 79                   SEI  
+00272 0548 A5 00                LDA MEMMAP  
+00273 054A 00 FO FF             STA $FFF0  
+00274 0540 60                   RTS
+
+00276 054E 00            MS1    .BYT $D,'?FILE NOT FOUND ERROR',$8D 
+00276 054F 3F 46 
+00276 0564 00 
+00277 0565 00            MS2    .BYT $D,18 
+00277 0566 12 
+00273 0567 36 34                .BYT '64K ADD-ON-LOADER 2-12-81' 
+00279 0580 00                   .BYT $D,$D,$D
+00279 0581 00 
+00279 0592 00 
+00280 0583 53 39                .BYT 'SYSTEM NAME?',$AO 
+00290 059F AO 
+00291 0590 B9 90 05      MSG    LDA MSG,Y 
+00282 0593 08                   PHP 
+00293 0594 29 7F                AND #$7F 
+00294 0596 20 02 FF             JSR #$FFD2 
+00295 0599 C8                   INY 
+00296 059A 29                   PLP 
+00297 059B 10 F3                BPL MSG 
+00298 0590 60                   RTS 
+00299 059E                      .END   
+
+ERRORS = 00000   
+
+SYMBOL TABLE
+
+SYMBOL VALUE  
+ ACPTR     051F    BUF       0200    CIOUT     04E1    CLRCH     04B3  
+ EAH       0479    EAL       0478    FA        00D4    FNADR     OODA  
+ FNLEN     0001    INIT      040F    INIT10    0418    INIT20    0426  
+ INIT30    0433    INIT40    043F    LD40      0467    LD45      046D  
+ LD60      047A    LD70      0482    LD90      04A2    LISTN     04C1  
+ LOAD      0440    MEMMAP    0000    MS1       054E    MS2       0565  
+ MSG       0590    OPENI     053D    RACPTR    F1C0    RCIOUT    F19E  
+ RCLRCH    F2A6    RLISTN    F0D5    ROPENI    F4A5    RSECND    F143  
+ RTALK     F0D2    RTKSA     F193    RUNLSN    F1B9    RUNTLK    F1AE  
+ SA        00D3    SECND     04D1    STATUS    0096    SYS       009E  
+ TALK      04FF    TKSA      050F    UNLSN     04F1    UNTLK     052F
+
+END OF ASSEMBLY
+
+

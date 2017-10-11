@@ -1,0 +1,258 @@
+From harel@free.fr Tue Mar  2 21:24:52 2004
+From: Eric Harel <harel@free.fr>
+To: Peter Karlsson <peter@softwolves.pp.se>, project64@project64.ath.cx
+Date: Tue, 02 Mar 2004 21:18:48 +0100
+Subject: [iDoc64] Article: Extra 6502 Instructions
+X-Bogosity: No, tests=bogofilter, spamicity=0.437425, version=0.14.5.4
+
+Article: Extra 6502 Instructions by Joel C. Shepherd (October 1983)
+         in english (Text ASCII DOS)
+    [ Part 2: "Unknown Document" ]
+
+                              Extra Instructions
+
+                               Joel C. Shepherd
+                                (October 1983)
+
+
+Combining machine language instructions by creating new opcodes can result in 
+more efficient programming in certain situations. Machine language 
+programmers can conserve memory and increase execution time with the methods 
+discussed here. This article explores the unofficial, hidden "commands" you 
+can give the 6502. 
+
+The 6502 microprocessor can execute 151 instructions. There are 56 different 
+types of instructions in its library, and each can he used with at least one 
+of the 13 addressing modes available. Each instruction performs one operation, 
+such as loading a register, setting a flag, or rotating a byte, and d.als 
+with one byte of data or one memory location. The 6502's machine language 
+consists of nothing more than variations on these simple instructions. It is 
+an extremely low-level language which is both a boon and a bane to 
+programmers. While machine language is versatile and applicable to any 
+programming problem, it can also he tedious in a particular sense. It can 
+require programmers to use several instructions of the same type performing 
+similar, yet separate, operations.
+   Consider the LDA and LDX instructions; both load a register and set the 
+same processor status flags. They also share four addressing modes. One, 
+however, loads the accumulator and the other loads the X register. There 
+is no instruction which will load both. The language is so simple that it 
+has no instructions with more than one memory location or register as an 
+operand.
+   There is no reason why the 6502's instruction set cannot be expanded to 
+include more sophisticated instructions. Such expansion, however, would 
+probably also drive up the processor's cost. The designers of the 6502, in an 
+effort to keep its cost low, decided to give it a simple machine language.
+
+
+Creating New Opcodes
+
+A possible solution to the problem would be to "trick" the processor into 
+executing instructions it didn't ''know." Imagine being able to load two 
+registers simultaneously or being able to AND two registers with one 
+instruction. There is a simple way to do just that and more.
+   If you examine a list of 6502 opcodes, you'll notice that none of the 
+codes have the form a7 or aF (a is any hexadecimal digit). Codes of this 
+form are not "official" 6502 opcodes, yet all are executable and potentially 
+useful.
+   An example is opcode AF. Opcodes AD and AE are the LDA $aaaa and LDX $aaaa 
+instructions respectively. Opcode AF combines the two: it loads the 
+accumulator and the X register from the same location. For instance, these 
+two instructions:
+
+AD 00 16  LDA $16O0     ; load accumulator
+AA        TAX           ; and X 
+
+can be replaced by:
+
+AF 00 16  LDAX $1600    ; load A and X 
+
+(LDAX is a new mnemonic. I've included mnemonics to represent the operations 
+performed by the new instructions.) Using LDAX saves one byte and two cycles 
+of execution time. That might not seem like much, but in a loop routine the 
+time savings may be significant. (The execution times given for the routines 
+using the new opcodes are estimates. More on that later.) Additionally, with 
+this instruction, it is possible to load the accumulator from a zeropage 
+location indexed by the Y register; this is not possible with the LDA 
+instruction.
+   Opcode 87 is another example. Opcode 85 is the STA $aa instruction, and 86 
+is the STX $aa instruction. Opcode 87 executes both 85 and 86, but with a 
+twist. It is impossible for a location to contain two different values at 
+one time. Opcode 87 logically ANDs the accumulator with the X register, 
+changing neither, and stores the result in the address specified. In other 
+words, only the bits which are set in both the accumulator and the X register 
+are set in the byte which is stored. So, the routine:
+
+A5 AD     LDA  $AD      ; get char
+87 AD     ANDX $AD      ; mask with X
+
+(ANDX is a mnemonic for 87) loads the accumulator, ANDs it with the X 
+register, and stores the result in location $AD. It occupies four bytes and 
+takes six cycles to execute. Compare that to the following equivalent 
+routine:
+
+8A        TXA           ; X into A
+25 AD     AND $AD       ; AND "X" with $AD
+85 AD     STA $AD       ; store result 
+
+which requires five bytes and eight cycles to execute. One byte and two 
+cycles are saved by using the first routine.
+   Opcode DF is an interesting instruction. Opcode DD compares the 
+accumulator to an X indexed address, and opcode DE decrements the value in an 
+X indexed address by one. Opcode DF first decrements the value in the address 
+given and then compares the result to the accumulator. For example:
+
+A9 A5     LDA  #$A5     ; loop terminator
+DF 00 16  DCMP $1600    ; done?
+DO aa     BNE  $....    ; no, do next 
+
+(DCMP is a mnemonic for DF) loads the accumulator with #$A5, decrements the 
+value in $1600 by one, compares $1600 to the accumulator, and branches if 
+they are not equal. This could be used to control a loop.
+
+
+How The New Opcodes Execute
+
+In the table, I have included ten new instruction types, creating 41 new 
+instructions. The operations performed by the new instructions are 
+combinations of the "original" 6502 instructions There are some general rules 
+for predicting what one of the new opcodes will do.
+   First, all of the new instructions execute the two preceding instructions. 
+Opcode DF executes both DD and DE, for example. The two preceding 
+instructions we'll call the "subinstructions" of the new instructions. So, a5 
+and a6 are subinstructions of a7, and aD and aE are aF's subinstructions.
+   If the sub-instructions are different types of instructions, the 
+sub-instruction with the greatest opcode will be executed first; otherwise 
+the subinstructions will be executed simultaneously. For instance, since LDA 
+and LDX are both load instructions, LDAX will execute them simultaneously. 
+But, since ASL and ORA are different types of instructions, ASL (opcode 06) 
+will be executed first, followed by ORA (05) when opcode 07 is executed. 
+There is a definite inconsistency in-this rule: it implies that the processor 
+examines the current instruction and then decides to execute the 
+sub-instructions either one at a time or simultaneously. The 6502 isn't that 
+sophisticated. The rule, however, is the only one that explains the 
+operations of the new opcodes. The given execution times are based on this 
+rule.
+   Generally, the same operand is used for both sub-instructions. Consider:
+
+07 19     SLOR  $19 
+
+(SLOR is a mnemonic for 07). This ASLs $19 and then ORAs $19 with the 
+accumulator. Location $19 is the operand for both sub-instructions.
+   Opcodes 97, B7, and BF are special cases of the preceding rule. All three 
+have subinstructions which use different addressing modes, X indexed and Y 
+indexed. The operands used by the new instructions are the given addresses 
+indexed by the Y register. For instance, B5 is the LDA $aa,X instruction and 
+B6 is the LDX $aa,Y instruction. Opcode B7, then, is the LDAX $aa,Y 
+instruction.
+
+
+Two Exceptions
+
+There are two additional opcodes which are exceptions to all of the rules 
+discussed: 9E and 9F. Opcode 9E logically ANDs the X register with the value 
+#$04, keeping the X register intact. The result is stored in an absolute 
+memory location. For example:
+
+A6 F6      LDX  $F6
+9E 40 03   TSTX $0340   ; is bit 2 set? 
+
+(TSTX is a mnemonic for 9E) loads the X register, ANDs it with #$04 and 
+stores the result in $0340. The origin of the #$04 is unknown.
+   Opcode 9F is similar to 9E: the accumulator is ANDed with #$04 and the 
+result is stored in an absolute location. So, these instructions:
+
+A9 06      LDA  #S06
+9F 00 00   TSTA $0000 
+
+(TSTA is a mnemonic for 9F) AND the accumulator with #$04 (yielding #$04) and 
+store the result in $0000. The accumulator will contain #$06 when this 
+routine is finished.
+   The execution times of the new instructions in the table are based on 
+whether the subinstructions are of the same type or not.
+
+It seems that one of the major shortcomings of the new instructions is their 
+specialization. For example:
+
+4A aa      LSR  $aa
+45 aa      EOR  $aa
+
+is probably not used in too many programs. The SREO (mnemonic) instruction 
+(which replaces the above instructions) is too specialized to be of much use 
+to anybody.
+   Currently, there are no assemblers which accept the new mnemonics as valid 
+instructions. The opcodes, however, can be POKEd directly into the computer. 
+An interesting, and useful, project would be to write an assembler which 
+could handle the new instructions. It wouldn't be difficult to modify an 
+assembler written in BASIC to recognize these new mnemonics.
+
+
+Summary Of Extra 6502 Instructions
+
+-------------------------------------------------------------------------------------
+Name/Description     Operation             Addressing   Machine     Hex  N   # NZCV
+                                              Mode     Language      Op-
+                                                          Form      Code
+-------------------------------------------------------------------------------------
+ANDX                 A & X -> M            Zero Page   ANDX $aa      87  3   2 ----
+AND A with X                               Zero Page,Y ANDX $aa,Y    97  4   2
+                                           Absolute    ANDX $aaaa    8F  4   3
+-------------------------------------------------------------------------------------
+DCMP                 A-(DEC M)             Zero Page   DCMP $aa      C7  8   2 ???-
+DecrementM,                                Zero Page,X DCMP $aa,X    D7  10  2
+Compare to A                               Absolute    DCMP $aaaa    CF  10  3
+                                           Absolute,X  DCMP $aaaa,X  DF  11* 3
+-------------------------------------------------------------------------------------
+ISBC                 A -(INC M)-C -> A, C  Zero Page   ISBC $aa      E7  8   2 ????
+Increment M,                               zero Page,X ISBC $aa,X    F7  10  2
+Subtract from A                            Absolute    ISBC $aaaa    EF  10  3
+                                           Absolute,X  ISBC $aaaa,X  FF  11* 3
+-------------------------------------------------------------------------------------
+LDAX                 M -> A, M -> X        Zero Page   LDAX $aa      A7  3   2 ??--
+Load A and X                               Zero Page,Y LDAX $aa,Y    B7  4   2
+                                           Absolute    LDAX $aaaa    AF  4   3
+                                           Absolute,Y  LDAX $aaaa,Y  BF  4*  3
+-------------------------------------------------------------------------------------
+RLAN                 (ROLM) & A -> A       Zero Page   RLAN $aa      27  8   2 ???-
+Rotate M left,                             Zero Page,X RLAN $aa,X    37  10  2
+AND with A                                 Absolute    RLAN $aaaa    2F  10  3
+                                           Absolute,X  RLAN $aaaa,X  3F  11* 3
+------------------------------------------------------------------------------------
+RRAD                 (ROR M)+A+C -> A, C   Zero Page   RRAD $aa      67  8   2 ????
+Rotate M right,                            Zero Page,X RRAD $aa,X    77  10  2
+Add with carry                             Absolute    RRAD $aaaa    6F  10  3
+                                           Absolute,X  RRAD $aaaa,X  7F  11* 3
+------------------------------------------------------------------------------------
+SLOR                 (ASL M) V A -> A      Zero Page   SLOR $aa      07  8   2 ???-
+Shift M left,                              Zero Page,X SLOR $aa,X    17  10  2
+OR with A                                  Absolute    SLOR $aaa     OF  10  3
+                                           Absolute,X  SLOR $aaaa,X  1F  11* 3
+-------------------------------------------------------------------------------------
+SREO                 (LSR M) V A -> A      Zero Page   SREO $aa      47  8   2 ???-
+Shift M right,                             Zero Page,X SREO $aa,X    57  10  2
+Exclusive OR with A                        Absolute    SREO $aaaa    4F  10  3
+                                           Absolute,X  SREO $aaaa,X  5F  11* 3
+-------------------------------------------------------------------------------------
+TSTA                 A & #$O4 -> A         Absolute    TSTA $aaaa    9F  4   3 ----
+Test bit 2 in A
+-------------------------------------------------------------------------------------
+TSTX                 X & #$O4 -> A         Absolute    TSTX $aaaa    9E  4   3 ----
+Test bit 2 in X
+-------------------------------------------------------------------------------------
+
+The following notation applies to this summary:
+  A       AccumuIator
+  X,Y     Index Registers
+  M       Memory
+  C       Carry flag
+  ?       Change
+  -       No Change, or Subtract
+  +       Add
+  &       Logical AND
+  V       Logical Exclusive OR
+  ->      Transfer To
+  V       Logical OR
+  $aa     8-bit Zero-Page Address
+  $aaaa   16-bit Absolute Address
+  N       Number Of Clock Cycles
+  #       Number Of Storage Bytes
+  *       Add I if page boundary is crossed

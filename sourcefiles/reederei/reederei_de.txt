@@ -1,0 +1,264 @@
+*********
+
+Welcome to iDOC= - the international CBM documentation project!
+
+The goal of iDOC= is to preserve (non-English) Commodore related documents
+in electronic text format that might otherwise cease to exist with the rapid
+advancement of computer technology and declining interest in 8-bit computers
+on the part of the general population. If you would like to help by
+converting Commodore related hardcopy documents to electronic texts please
+contact the manager of iDOC=, Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names consists of a reasonably short unique title, followed by the
+document language. Two optional fields follow; first the document version (0
+for incomplete texts, version 1 is usually unnumbered), and then the
+document source, if there are more than one. Finally, the document is given
+a .txt extension.
+
+The author(s) of the original document and members of iDOC= make no
+representations about the accuracy or suitability of this material for any
+purpose. This etext is provided "as-is". Please refer to the warranty of the
+original document, if any, that may included in this etext. No other
+warranties, express or implied, are made to you as to the etext or any
+medium it may be on. Neither the author(s) nor the members of iDOC= will
+assume liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext. Therefore
+if you read this document or use the information herein you do so at your
+own risk.
+
+*********
+
+The iDOC= etext of the Reederei manual, converted to text by Christian
+Janoff <mepk@rbg.informatik.tu-darmstadt.de>
+
+reederei_de.txt, February 1999, etext #45.
+
+*********
+
+Text auf der Schachtelrückseite
+
+REEDEREI
+
+Die Romantik, die ein Kapitän in den frühen Seefahrer-Jahren erlebte, ist
+entgültig vorbei. Der aktuelle Manager-Alltag eines Reeders ist knochenhart.
+In dieser Ralf-Glau-Produktion für 1 bis 4 Spieler muß sich der angehende
+Reeder z.B. an den folgenden Herausforderungen messen:
+
+Transportmarkt: Kalkulieren Sie Frachtgeschäfte! Börse: Halten Sie ein gutes
+Portefeuille an Aktien? Werft: Vergrößern Sie Ihre Flotte um neue Schiffe
+oder ersteigern Sie gebrauchte Schiffe per Auktion! Markt: Angebot und
+Nachfrage bestimmen Ihren Gewinn!
+
+Beweisen Sie sich als Reeder, indem Sie immer eine handbreit Wasser unter
+dem Kiel haben!
+
+Copyright by Art Edition 1990. Alle Rechte vorbehalten. Art Edition
+Datenträger sind urheberrechtlich geschützt und dürfen nur privat genutzt
+werden.
+
+Gewerbliche Nutzung, Verleih und Vervielfältigung sind untersagt.
+Zuwiderhandlungen werden zivil- und strafrechtlich verfolgt. Im Vertrieb der
+United Software GmbH.
+
+*********
+
+Handbuchtext
+
+                              REEDEREI
+                           von Martin Wölk
+
+Reederei ist ein Spiel für ein bis vier Spieler. Ziel ist es, die Gegner im
+harten Konkurrenzkampf, der auf den sieben Weltmeeren die Romantik abgelöst
+hat, die Oberhand zu erringen und zu behalten.
+
+Reederei ist ein Gesellschaftsspiel, das schon nach kurzem Spiel den
+erzielten Erfolg zeigt. Ohne großen Aufwand ziehen Sie in das Büro eines
+Reeders in einem der großen Häfen dieser Welt, um von dort den Handel in der
+ganzen Welt zu beeinflussen. Kein Spiel gleicht dem anderen, da neben der
+Konkurrenz der Gegner vor allem auch die Entwicklung des Weltmarktes
+entscheidenden Einfluß auf Ihr Handeln nimmt.
+
+Eine Runder "dauert" drei Monate. Ihre Firma wurde im Januar 1988
+gegründet...
+
+
+LADEANWEISUNG
+
+Atari ST: Legen Sie die Programm-Diskette in Laufwerk A, öffnen Sie das
+          Directory und klicken Sie das Icon REEDEREI.PRG doppelt an.
+          Sie kontrollieren alle Funktionen mit der Mouse, der linke
+          Mouse-Taster bestätigt die Eingabe.
+
+Amiga:    Legen Sie die Programm-Diskette anstatt der Workbench in das
+          Laufwerk DF0.
+          Sie kontrollieren das Spiel mit der Mouse und bestätigen mit dem
+          linken Mouse-Taster.
+
+C64:      Legen Sie die Programm-Diskette in das Laufwerk und starten Sie
+          das Programm mit dem Befehl LOAD"*",8,1 <RETURN>.
+          Alle Funktionen werden mit dem Joystick (Port #2) kontrolliert und
+          mit dem Feuerknopf bestätigt.
+
+
+SPIELSTART
+
+Nachdem das Programm geladen ist, müssen zuerst die Namen der Mitspieler und
+deren Reedereien eingegeben werden. Freie Plätze werden einfach mit Return
+übersprungen.
+
+Danach wählen Sie die gewünschte Spielstufe, die vor allem auch Einfluß auf
+die Qualität Ihres Wirtschaftsberaters hat. Je besser der Kaufmann selber
+ist, desto weniger wird er sich auf - teure - Experten verlassen. Mit
+zunehmender Spielstufe verzichtet der Reeder also auf Aussagen von außen.
+
+
+DAS HAUPTMENü
+
+
+DIE KARTE
+
+Ihr Geschäft ist der Transport. Nachdem Sie Ihre Firma gegründet und sich im
+Markt bekannt gemacht haben, werden Ihnen Frachtgeschäfte angeboten. Nehmen
+Sie sie an?
+
+Sie haben die Fracht übernommen, zur Kontrolle bekommen Sie die Posi-
+tionsliste Ihrer Schiffe angezeigt. Wenn Sie ein Schiff umdirigieren wollen,
+setzen Sie den Zeiger einfach auf den Zielhafen hinter dem Kürzel des
+entsprechenden Schiffes und drücken so oft den Taster, bis der gewünschte
+Zielhafen angezeigt wird.
+
+Folgende Häfen können angelaufen werden:
+
+          Hamburg    New York    Honduras
+          Rio        Accra       Kapstadt
+          Mombasa    Bombay      Kalkutta
+          Perth      Hongkong    Peking
+          Houston    Caracas     Bahrein
+
+Setzen Sie den Zeiger auf die Zeile über den Zielhäfen und drücken Sie
+Return, um ins Hauptmenü zurückzukehren.
+
+
+DIE BÖRSE
+
+In der Börse haben Sie die Möglichkeit, Aktien der eigenen oder der
+Konkurrenzfirmen zu kaufen oder zu verkaufen. Wählen Sie die gewünschte
+Reederei und drücken Sie den Taster. Nachdem Sie sich für Kauf oder Verkauf
+entschieden haben, werden Sie nach der Zahl der Aktien gefragt, die Sie
+erwerben bzw. veräußern wollen. Setzen Sie den Zeiger auf die entsprechende
+Stelle (links/rechts) und äußern Sie dann den Wert (hoch/runter).
+
+
+DIE WERFT
+
+Schon bald werden Sie weitere Schiffe für Ihre Reederei brauchen. Sechs
+verschiedene Schiffstypen stehen zur Auswahl:
+
+      Frachtdampfer           1000-3000t
+      Frachtschiff            4000-6000t
+      Großes Frachtschiff     7000-9000t
+      Kombi-Schiff            6000-8000t     200-400 Kabinen
+      Tankschiff              4000-9000t
+      Passagierschiff                        300-800 Kabinen
+
+Bei der Bestellung müssen 20% des Kaufpreises angezahlt werden, die
+Restsumme wird bei der Übergabe fällig. Der Schiffspreis muß durch Ihr
+Barvermögen (Aktienwerte, Warenwerte und Bargeld) gedeckt sein.
+
+
+PREISE
+
+Folgende Waren werden gehandelt:
+
+             Weizen   [Wei]       Erdöl   [Erd]
+             Kaffee   [Kaf]       Tee     [Tee]
+             Kakao    [Kak]       Reis    [Rei]
+
+Preise und Warenmengen schwanken in den verschiedenen Häfen nach der
+Marktlage. Sie müssen also ein waches Auge auf die Entwicklung haben, wenn
+Sie billig ein- und teuer verkaufen wollen...
+
+
+DER MARKT
+
+Hier kaufen und verkaufen Sie. Von Ihrem Gespür für den Markt hängt es ab,
+ob Sie die richtige Ladung erwischen. Haben Sie für ein günstiges Angebot
+gerade keinen Frachtraum zur Verfügung, können Sie die Waren auch einlagern.
+Doch achten Sie auf die Lagerkosten (10DM/t), die einen hübschen Gewinn
+schnell wieder aufgefressen haben.
+
+
+DIE AKTIENKURSE
+
+Je höher der Balken, desto besser geht es der Firma. Desto teurer sind
+natürlich auch die Aktien. Und eines Ihrer Ziele ist es ja, die
+Aktienmehrheit Ihrer Firma zu erlangen.
+
+
+SCHIFFSAUKTION
+
+Günstiger als ein Neubau ist oft ein gebrauchtes Schiff in gutem Zustand.
+Und ausgediente Schiffe der einen Reederei sind oft die Schiffe, die in
+einer anderen fehlen. Doch nur wer bereits mehr als ein Schiff hat, darf ein
+Schiff in den Auktionen anbieten. Der aktive Spieler bietet ein Schiff an.
+Die passiven Spieler können Gebote machen.
+
+Beim C64 stehen dafür die Tasten <PFEIL LINKS>, <LEERTASTE> und <F7> zur
+Verfügung. Der Verkäufer bestätigt das Angebot mit dem Feuerknopf.
+
+Bei ST und Amiga wird der entsprechende Spieler angeklickt. Der Verkäufer
+sollte also die Kontrolle über die Mouse behalten und die Gebote der anderen
+Spieler entgegennehmen.
+
+
+ZUGENDE
+
+Alles bedacht? Nichts vergessen? Dann übergeben Sie die Kontrolle an den
+nächsten Spieler.
+
+Ab der zweiten Runde wird für jeden Spieler ein genaues Zwischen- ergebnis
+ausgegeben, in der alle Einnahmen und Ausgaben verrechnet werden. Sie werden
+sich schnell an große Zahlen und Summen gewöhnen.
+
+
+EIN PAAR TIPS
+
+Es ist gar nicht so einfach, sich als Reeder zu bewähren. Es ist aber auch
+nicht so schwierig, wie es zu Anfang scheint. Schon nach kurzer Zeit werden
+Sie die Routen sicher setzen.
+
+Lassen Sie - vor allem zu Anfang - keine Frachtangebote aus.
+
+Setzen Sie die Routen möglichst kurz, damit die Kosten für die Fahrt
+möglichst niedrig gehalten werden.
+
+Versuchen Sie die Häfen, die Ihre Konkurrenten anlaufen zu meiden. Bei einem
+Warenüberangebot sinken die Preise.
+
+Vergrößern Sie nur vorsichtig Ihre Flotte. Viele Schiffe bedeuten viel
+gebundenes Kapitel, hohe Kosten für Ladungen und Wartung.
+
+
+                                                              Reederei
+                  Spielidee, Programmierung C64 und Amiga: Martin Wölk
+                                            Konvertierung ST: Uwe Damm
+                                                Graphik: Thomas Heimen
+                                           Handbuch: Harald Uenzelmann
+                              Produktion: Ralf Glau, Harald Uenzelmann
+                                 Copyright © 1990 United Software GmbH
+
+*********
+
+End of the iDOC= etext of the Reederi manual.
+
+*********

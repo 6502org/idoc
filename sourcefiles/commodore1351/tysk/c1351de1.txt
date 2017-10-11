@@ -1,0 +1,753 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore 64
+related documents in electronic text format that might otherwise cease to
+exist with the rapid advancement of computer technology and declining
+interest in 8-bit computers on the part of the general population. If you
+would like to help by converting C64 related hardcopy documents to
+electronic texts please contact the manager of International Project 64,
+Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The first
+characters of the file name are an abbreviation of the original document
+name and the language of the etext. The version number of the etext follows
+next. After that a letter may appear to indicate the particular source of
+the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International Project
+64 make no representations about the accuracy or suitability of this
+material for any purpose. This etext is provided "as-is". Please refer to
+the warranty of the original document, if any, that may included in this
+etext. No other warranties, express or implied, are made to you as to the
+etext or any medium it may be on. Neither the author(s) nor the members of
+International Project 64 will assume liability for damages either from the
+direct or indirect use of this etext or from the distribution of or
+modification to this etext. Therefore if you read this document or use the
+information herein you do so at your own risk.
+
+*********
+
+The International Project 64 etext of the Commodore 1351 Mouse German
+manual, converted to text by Marc-Jano Knopp <mjk@c64.org>
+
+C1351DE1.TXT, January 1998, etext #22.
+
+Das vorliegende Dokument basiert auf dem Original-Handbuch zur Commodore
+1351-Maus. Ich habe versucht, die (offensichtlichen) Fehler des Originals zu
+korrigieren. Wenn ich dabei zu eifrig vorgegangen bin oder Fehler übersehen
+habe, bitte eine Email an mjk@c64.org!
+
+*********
+
+   C= Commodore  1 3 5 1
+               M O U S E
+
+
+           User's manual
+    
+                         .
+                         .
+                        .
+                     ...
+                   ..
+                  .
+                 .
+                 . 
+             *    .
+            *  *  .
+           * /   *
+          * / /    *
+         *   /   /   *
+        *       / / *
+       *         / *
+      *           *
+     *           *
+       *        *
+         *     *
+           *  *
+             *
+
+
+
+
+========== C= Commodore ==
+
+B e n u t z e r h a n d b u c h
+
+             f ü r
+	    
+  C o m m o d o r e - M a u s
+  
+            1 3 5 1
+
+
++--------------------------------------------------------------------+
+| WICHTIG: Dieses Gerät arbeitet mit Hochfrequenz und kann Radio-    |
+| oder Fernsehempfang stören, wenn es nicht strikt nach dieser       |
+| Anleitung installiert und benutzt wird. Es entspricht den          |
+| Vorschriften, die einen störungsfreien Betrieb im häuslichen       |
+| Bereich sichern. Es kann jedoch keine Garantie übernommen werden,  |
+| daß Störungen in bestimmten Konfigurationen auftreten. Wenn        |
+| trotzdem bei Ihnen Radio- oder Fernsehempfang gestört werden,      |
+| stellen Sie zunächst fest, ob es wirklich an diesem Gerät liegt,   |
+| indem Sie es aus- und wieder einschalten und solange die           |
+| Empfangsstörung beobachten. Falls es tatsächlich an diesem Gerät   |
+| liegt, können Sie folgende Abhilfemaßnahmen selbst versuchen:      |
+| Empfangsantenne von Radio/Fernseher exakt ausrichten               |
+| Monitor weiter entfernt vom Empfänger aufstellen                   |
+| Ganze Computeranlage weiter weg vom Empfänger aufstellen           |
+| Geräte an verschiedene Stromkreise anschließen, um Eindringen von  |
+| Störungen über Netzzuleitungen zu erschweren.                      |
++--------------------------------------------------------------------+
+
+Weitere Hilfe können Sie beim Computer-Fachhändler oder im
+Radio/Fernseh-Fachhandel finden.
+
+Erste Auflage, November 1986
+Copyright 1986 by Commodore Büromaschinen GmbH.
+
+Dieses Handbuch enthält nach dem Urheberrecht geschützte
+Informationen, es darf auch auszugsweise nicht kopiert oder in
+irgendeiner Form übertragen werden ohne ausdrückliche Genehmigung
+von Commodore Büromaschinen GmbH.
+
+Commodore-Maus 1351 ist eingetragenes Warenzeichen von Commodore
+Büromaschinen GmbH.
+
+
+Commodore 64 und Commodore 128 sind eingetragene Warenzeichen von
+Commodore Büromaschinen GmbH.
+
+GEOS ist eingetragenes Warenzeichen
+von Berkeley Softworks.
+
+
+ÜBER DIESES HANDBUCH
+
+Dieses Handbuch gliedert sich in zwei Teile. Der erste behandelt
+nach einer Einführung die Reinigung und Pflege der Maus. Dieser Teil
+gilt Benutzern mit schon Maus-kompatibler Software, die die Maus
+einfach anschließen und benutzen wollen. Der zweite Teil des
+Handbuchs enthält Informationen für diejenigen, die Software für die
+Maus entwickeln wollen.
+Die Listings sind hier in der englischen Originalfassung belassen
+worden.
+
+
+ERSTER TEIL
+
+Einführung
+
+Die Commodore-Maus 1351 ist ein Engabegerät, das für den Einsatz am
+Commodore 64 oder Commodore 128 konzipiert ist. Sie bietet zwei
+Tasten auf der Oberseite und eine Kugel auf der Unterseite, die bei
+Bewegung der Maus auf einer ebenen Oberfläche mitrollt und dabei
+richtungsmäßig entsprechende Bildschirmaktivitäten auslösen kann.
+
+Die Maus arbeitet in zwei Betriebsarten: dem Joystickmodus und dem
+Proportionalmodus.
+
+Im Joystickmodus bildet die Maus einen Joystick nach und kann mit
+Joystick-kompatibler Software betrieben werden.
+
+Im Proportionalmodus wird ein neues Übermittlungsverfahren für
+Mausbewegungen an die Steuersoftware verwendet. Das bedingt
+spezielle Software, die die Maus erkennt und deren Impulse korrekt
+verarbeitet. Z.B. kann das GEOS-Betriebssystem Treiber für mehrere
+Eingabegeräte aktivieren. Einer von ihnen ist der
+Commodore-Maus-Treiber, der die 1351 im Proportionalmodus betreibt.
+
+Der Proportionalmodus der 1351 ermöglicht es, einen Mauspfeil
+reaktionsschnell und präzise auf dem Bildschirm zu bewegen. Der
+Joystickmodus bleibt als Reserve für solche Anwendungsprogramme, die
+die aktivierten Eingabe-Treiber nicht verwenden. Damit kann man die
+Maus für ältere Software als Joystick benutzen und kann trotzdem die
+Vorteile des Proportionalmodus bei neuerer Software genießen.
+
+Beim Einschalten des Stroms ist die Maus automatisch im
+Proportionalmodus. Soll sie im Joystickmodus betrieben werden,
+verbinden Sie sie mit dem Computer und halten beim Einschalten die
+rechte Maustaste fest.
+
+
+REINIGUNG DER MAUS
+
+Die Kugel auf der Maus-Unterseite muß frei über die Tisch-Oberfläche
+rollen können, um den Cursor oder Mauspfeil präzise zu steuern. Dazu
+muß sie von Staub und Fusseln befreit werden, wann immer sich
+welcher festgesetzt hat. Dazu drehen Sie die Maus um und schieben
+die Plastik-Abdeckung beiseite, die die Kugel am Herausfallen hindert.
+
+[ Bild: Herausnehmen der Kugel ]
+
+
+Entnehmen Sie die Kugel und wischen Sie sie mit einem weichen,
+fusselfreien Tuch sauber, benutzen Sie keine Flüssigkeit!
+
+[ Bild: Reinigung der Kugel ]
+
+
+In der jetzt freien Kugel-Öffnung des Maus-Gehäuses kann sich auch
+Staub angesetzt haben, pusten Sie ihn kräftig weg. Um die Öffnung
+herum sehen Sie drei kleine Metallrollen. Wischen Sie jede mit einem
+Wattetupfer und etwas Alkohol oder Tonkopfreiniger sauber. Drehen
+Sie dabei die Rollen, um ihre ganze Oberfläche zu reinigen. Legen
+Sie danach die Kugel wieder ein und schließen Sie die Abdeckplatte,
+die deutlich einrasten soll.
+
+BEHANDLUNG DER MAUS
+
+Beachten Sie ganz normale Umgangsregeln mit empfindlichen
+technischen Geräten.
+
+Benutzen Sie die Maus nur auf sauberen, glatten Oberflächen.
+
+Schaffen Sie sich genug Platz auf dem Tisch für die Maus, dann
+müssen Sie sie nicht ständig anheben und neu ansetzen.
+
+Halten Sie die Maus nicht am Kabel fest und lassen Sie sie auch
+nicht am Kabel vom Tisch herunterhängen.
+
+
+ZWEITER TEIL - ENTWICKLERHINWEISE ZUM PROPORTIONALMODUS
+
+Dieser Handbuchteil erklärt die Funktion des Proportionalmodus der
+Commodore-Maus 1351 und schlägt Software-Verfahren zu ihrer
+Ansteuerung vor.
+
+
+EINFÜHRUNG
+
+Die Commodore-Maus 1351 ist zum Gebrauch am Commodore 64/128
+bestimmt, ist mit zwei Drucktasten ausgestattet und kann an eine der
+Joystick-Buchsen des C 64/128 angeschlossen werden.
+
+Die Maus kennt zwei Betriebsarten:
+1) Joystickmodus, 2) Proportionalmodus.
+
+Der Proportionalmodus ist mit dem C 64 und dem C 128 verwendbar und
+braucht ein spezielles Treiberprogramm in Maschinensprache, um die
+volle Leistungsfähigkeit zu entfalten.
+
+Die Betriebsart wird beim Stromeinschalten festgelegt. Wenn der
+Benutzer dabei die rechte Maustaste gedrückt festhält, gelangt die
+Maus in den Joystickmodus. Wird die rechte Maustaste beim
+Einschalten nicht betätigt, gelangt die Maus standardmäßig in den
+Proportionalmodus.
+
+Der Joystickmodus wird als 'Reserve' zur Verfügung gestellt, falls
+die verwendete Software den Proportionalmodus nicht verarbeiten kann.
+
+
+JOYSTICK-MODUS
+
+Im Joystickmodus arbeitet die Maus wie folgt:
+
+1) Bei einer Bewegung der Maus werden die entsprechenden
+   Joystick-Kontakte alle 20 ms betätigt. So entspricht die Bewegung
+   der Maus einem Drücken des Joysticks in die entsprechende
+   Richtung.
+   
+2) Die linke Maustaste fungiert als Feuerknopf des Joysticks.
+
+3) Die rechte Maustaste ist mit dem SID-POTX-Eingang verbunden. Bei
+   Betätigung enthält dieses Register einen Wert von unter $80
+   (0-127), solange die Taste nicht gedrückt ist, einen Wert ab $80
+   (128-255).
+   
+4) Bitte auch Abschnitt SID-REGISTER-HINWEISE beachten.
+
+
+SOFTWARE-SCHNITTSTELLE IM JOYSTICKMODUS
+
+Bei den meisten Anwendungen sollte die Software-Schnittstelle für
+den Joystickmodus wie bei einem normalen Joystick-Treiber beschaffen
+sein und die rechte Maustaste ignorieren.
+
+
+PROPORTIONALMODUS
+
+Im Proportionalmodus arbeitet die Maus wie folgt:
+
+1) Jede Bewegung wird innerhalb der Maus registriert. Die aktuelle
+   Position wird modulo 64 alle 512 Mikrosekunden an die
+   SID-Register POTX und POTY übertragen, ohne daß eine Software
+   dazu nötig ist. Das Register POTX gibt die x-Position und das
+   POTY-Register die y-Position der Maus wieder.
+   
+   Registerbelegung:
+                 +-------------------------------+
+   Bit-Position  | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
+                 +-------------------------------+
+   POT-Register  | X | P5| P4| P3| P2| P1| P0| N |
+                 +-------------------------------+
+   wobei:
+        X ............. nicht verwendetes Bit
+	P5-P0 ......... Mausposition modulo 64
+	N ............. spezielles (Rausch-) Bit (s.u.)
+	
+2) Die linke Maustaste ist wie ein Joystick-Feuerknopf angeschlossen.	
+
+3) Die rechte Maustaste ist am Kontakt für die Aufwärtsrichtung des
+   Joysticks angeschlossen.
+
+
+SOFTWARE-SCHNITTSTELLE IM PRPORTIONALMODUS
+
+1) Da linke und rechte Maustaste wie Joystick-Kontakte funktionieren,
+   erfolgt die Abfrage als einfache 'Polling'-Übung.
+   
+   Beachten Sie, daß wie beim Joystick scheinbar die normale Tastatur
+   betätigt wird. Die Software sollte daher etwas Mühe darauf
+   verwenden, zwischen einem Kurzschluß in der Tastatur-Matrix
+   (gedrückte Taste) und einer komplett geerdeten Matrix-Zeile
+   (Joystick-artiges Signal) zu unterscheiden.
+   
+2) Die Positions-Information ist leicht zu handhaben. Am besten
+   geschieht das in der 50/60-Hz-Interrupt-Routine (vorzugsweise am
+   Anfang, s.u. bei SID-REGISTER-HINWEISE).
+   
+   Man geht wie folgt vor:
+   
+   1) Mausposition modulo 64 auslesen.
+   
+   2) Die Position mit der gespeicherten vorigen vergleichen.
+   
+   3) Wenn die Maus bewegt wurde, ändern Sie ihre Pfeil-Position
+      ensprechend.
+      Die Maus hat einiges damit zu tun, ihre Position in die
+      SID-Register zu übertragen. Leider ist dabei ein Bit unbestimmt
+      (Rauschen). Bespiel: Selbst wenn die Maus ruht, kann das
+      POT-Register zwischen $80 und $7F schwanken. Das würde zu
+      einem Zittern der Maus um eine Punktbreite führen. Es ist daher
+      nötig, das niedrigste Bit der POT-Register zu betrachten, bevor
+      man eine Entscheidung fällt, ob und in welche Richtung sich
+      die Maus bewegt hat.
+      
+      Dies alles können Sie in den folgenden Listings des
+      Maustreiber-Programms berücksichtigt wiederfinden.
+
+
+SID-REGISTER-HINWEISE
+
+Im C 64 und C 128 sind die SID-Potentiometer-Anschlüsse an beide
+Joystick-Buchsen geführt. Ein Analogschalter 4066 schaltet die
+POT-Leitungen zwischen den beiden Buchsen um auf eine der
+Tastatur-Matrix-Leitungen. Dadurch beeinflußt der normale
+Tastatur-Scan-Interrupt zeitweise die Werte der POT-Register. Daher
+müssen im Sinne einer verläßlichen Datenerfassung die POT-Leitungen
+mindestens für 1,6 ms anliegen, bevor die Daten im POT-Register
+gültig werden.
+
+Der beste Weg dies sicherzustellen ist, die Treiber-Software in die
+IRQ-Routine einzuklinken vor der Tastatur-Abfrage. Das sichert mehr
+oder weniger, daß die Tastatur-Matrix-Leitungen einen stabilen
+Zustand angenommen haben, bevor das POT-Register vom Maus-Treiber
+ausgelesen wird.
+
+
+  BASIC AND MACHINE
+  LANGUAGE PROGRAMS
+   FOR 1351 MOUSE
+       AND C64
+
+
+start tok64 64mouse
+100 GOSUB140:GOSUB330
+110 v=13*4096:POKEv+21,1:POKEv+39,1:POKEv+0,100:POKEv+1,100:POKEv+16,0
+120 POKE2040,56:SYS12*4096+256
+130 END
+140 FORx=0TO129:READa$:GOSUB430:POKE49408+x,y:NEXTx:RETURN
+150 DATAad,15,03,c9,c1,f0,19,08
+160 DATA78,ad,14,03,8d,00,c0,ad
+170 DATA15,03,8d,01,c0,a9,21,8d
+180 DATA14,03,a9,c1,8d,15,03,28
+190 DATA60,d8,ad,19,d4,ac,02,c0
+200 DATA20,58,c1,8c,02,c0,18,6d
+210 DATA00,d0,8d,00,d0,8a,69,00
+220 DATA29,01,4d,10,d0,8d,10,d0
+230 DATAad,1a,d4,ac,03,c0,20,58
+240 DATAc1,8c,03,c0,38,49,ff,6d
+250 DATA01,d0,8d,01,d0,6c,00,c0
+260 DATA8c,05,c0,8d.04,c0,a2,00
+270 DATA38,ed,05,c0,29,7f,c9,40
+280 DATAb0,07,4a,f0,12,ac,04,c0
+290 DATA60,09,c0,c9,ff,f0,08,38
+300 DATA6a,a2,ff,ac,04,c0,60,a9
+310 DATA00,60
+320 REM .......................
+330 FORx=0TO63:READa$:GOSUB430:POKE3584+x,y:NEXTx:RETURN
+340 DATAf8,00,00,90,00,00,b8,00
+350 DATA00,dc,00,00,8e,00,00,07
+360 DATA00,00,02,00,00,00,00,00
+370 DATA00,00,00,00,00,00,00,00
+380 DATA00,00,00,00,00,00,00,00
+390 DATA00,00,00,00,00,00,00,00
+400 DATA00,00,00,00,00,00,00,00
+410 DATA00,00,00,00,00,00,00,00
+420 REM .......................
+430 y=1:y1=0
+440 IFLEFT$(a$,1)<>MID$("0123456789abcdef",y,1)THENy=y+1:GOTO440
+450 y1=(y-1)*16:y=1
+460 IFRIGHT$(a$,1)<>MID$("0123456789abcdef",y,1)THENy=y+1:GOTO460
+470 y=y1+y-1:RETURN
+stop tok64
+
+
+;
+;	C64 mouse driver for BASIC 2.0 applications
+;
+
+firq	= $0314
+vic	= $d000
+sid	= $d400
+potx	= sid+$19
+poty	= sid+$1a
+
+vicdata	$d000		;vic registers
+xpos	= vicdata+$00	;low order x position
+ypos	= vicdata+$01	;y position
+xposmsb	= vicdata+$10	;bit 0 is high order x position
+
+	* = $c000
+	
+firq2	* = *+2
+opotx	* = *+1
+opoty	* = *+1
+newvalue	* = *+1
+oldvalue	* = *+1
+
+	* = $c100
+	
+install	lda firq+1
+	cmp #>mirq
+	beq 90$
+	php
+	sei
+	lda firq
+	sta firq2
+	lda firq+1
+	sta firq2+1
+	
+	lda #<mirq
+	sta firq+1
+		
+	plp
+90$	rts	
+
+mirq	cld		;just in case...
+	lda potx	;get delta values for x
+	ldy opotx
+	jsr movchk
+	sty opotx
+	
+	clc		;modify low order x position
+	adc xpos
+	sta xpos
+	txa
+	adc #$00
+	and #%00000001
+	eor xposmsb
+	sta xposmsb
+	
+	lda poty	;get delta value for y
+	ldy opoty
+	jsr movchk
+	sty opoty
+	
+			;modify y position (decrease y
+			;for increase in pot)
+	eor #$ff
+	adc ypos
+	sta ypos
+	
+90$	jmp (iirq2)	;continue w/ irq operation
+
+;movchk
+;	entry	y = old value of pot register
+;		a = current value of pot register
+;	exit	y = value to use for old value
+;		x,a = delta value for position
+
+movchk	sty oldvalue	;save old & new values
+	sta newvalue
+	ldx #0		;preload x w/ 0
+	
+	sec		;a <= a/2
+	sbc oldvalue
+	and #%01111111
+	cmp #%01000000	;if >0
+	bcs 50$
+	lsr a		;<= a/2
+	beq 80$			;	if <> 0
+	ldy newvalue	;		y <= newvalue
+	rts		;		return
+	
+50$	ora #%11000000	;else	or in high order bits
+	cmp #$ff		if <> -1
+	beq 80$
+	sec		;		a <= a/2
+	ror a
+	ldx #$ff	;		x <= -1
+	ldy newvalue	;		y <= newvalue
+	rts		;		return
+	
+80$	lda #0		;a <= 0
+	rts		;return w/ y = old value
+	
+	
+	         * * Cross Reference * *
+		 
+Reference flags (# = Definition, $ = Write, <BLANK> = Read)
+
+Symbol
+
+IIRQ	=0314	5#	26	31	33	27$	39$
+IIRQ2	 C000	18#	32$	345	34$	69
+INSTALL	 C100	26#
+MIRQ	 C121	27	36	38	44#
+MOVCHK	 C158	47	61	77#
+NEWVALUE C004	21#	78$	88	97
+OLDVALUE C005	22#	77$	82
+OPOTX	 C002	19#	46	48$
+OPOTY	 C003	20#	60	62$
+POTX	=D419	8#	45
+POTY	=D41A	9#	59
+SID	=D400	7#	8	9
+VIC	=D000	6#
+VICDATA	=D000	11#	12	13	14
+XPOS	=D000	12#	51	52$
+XPOSMSB	=D010	14#	56	57$
+YPOS	=D001	13#	66	67$
+
+
+  BASIC AND MACHINE
+  LANGUAGE PROGRAMS
+    FOR 1351 MOUSE
+       AND C128
+
+
+start tok128 128mouse
+100 GOSUB230:GOSUB420:SYS6144
+120 ba=DEC("0a04"):POKE va,1ORPEEK(ba)
+130 SPRITE1,1,2:MOVSPR1,100,100
+140 GRAPHIC1,1:CHAR 1,8,1,"1351 mouse paint"
+150 DO:IF(JOY(1)AND128)THEN GOSUB 180
+160 IF (JOY(1) AND 1) THEN GRAPHIC1,1:CHAR1,8,1,"1351 mouse paint"
+170 LOOP
+180 x=RSPOS(1,0)-25:y=RSPOS(1,1)-51:x=-x*(x>0):y=-y*(y>0)
+190 LOCATE x,y:c=1-RDOT(2):DRAW c,x,y
+200 DO:x=RSPOS(1,0)-25:y=RSPOS(1,1)-51:x=-x*(x>0):y=-y*(y>0)
+210 DRAW c TO x, y:LOOP WHILE JOY(1) AND 128:RETURN
+220 REM .....................
+230 FORx=0TO135:READa$:POKE6144+x,DEC(a$):NEXTx:RETURN
+240 DATAad,15,03,c9,18,f0,19,08
+250 DATA78,ad,14,03,8d,f0,18,ad
+260 DATA15,03,8d,f1,18,a9,21,8d
+270 DATA14,03,a9,18,8d,15,03,28
+280 DATA60,d8,ad,7e,11,d0,33,ad
+290 DATA19,d4,ac,f2,18,20,5d,18
+300 DATA8c,f2,18,18,6d,d6,11,8d
+310 DATAd6,11,8a,69,00,29,01,4d
+320 DATAe6,11,8d,e6,11,ad,1a,d4
+330 DATAac,f3,18,20,5d,18,8c,f3
+340 DATA18,38,49,ff,6d,d7,11,8d
+360 DATAd7,11,6c,f0,18,8c,f5,18
+360 DATA8d,f4,18,a2,00,38,ed,f5
+370 DATA18,29,7f,c9,40,b0,07,4a
+380 DATAf0,12,ac,f4,18,60,09,c0
+390 DATAc9,ff,f0,08,38,6a,a2,ff
+400 DATAac,f4,18,60,a9,00,60,00
+410 REM ......................
+420 FORx=0TO63:READa$:POKEDEC("0e00")+x,DEC(a$):NEXTx:RETURN
+430 DATAf8,00,00,90,00,00,b8,00
+440 DATA00,dc,00,00,8e,00,00,07
+450 DATA00,00,02,00,00,00,00,00
+460 DATA00,00,00,00,00,00,00,00
+470 DATA00,00,00,00,00,00,00,00
+480 DATA00,00,00,00,00,00,00,00
+490 DATA00,00,00,00,00,00,00,00
+500 DATA00,00,00,00,00,00,00,00
+stop tok128
+
+
+;
+;	C128 mouse driver for BASIC 7.0 applications
+;
+
+firq	= $0314
+vic	= $d000
+sid	= $d400
+potx	= sid+$19
+poty	= sid+$1a
+
+active	= $117e		;if zero, then move sprite
+
+vicdata	$11d6		;basic's copy of vic register image
+xpos	= vicdata+$00	;basic's copy of vic register image
+ypos	= vicdata+$01	;y position
+xposmsb	= vicdata+$10	;bit 0 is high order x position
+
+	* = $18f0
+	
+firq2	* = *+2
+opotx	* = *+1
+opoty	* = *+1
+newvalue	* = *+1
+oldvalue	* = *+1
+
+	* = $1800
+	
+install	lda firq+1
+	cmp #>mirq
+	beq 90$
+	php
+	sei
+	lda firq
+	sta firq2+1
+	
+	lda #>mirq
+	sta firq
+	lda #>mirq
+	sta firq+1
+	
+	plp
+90$	rts	
+
+mirq	cld		;just in case...
+	lda active	;if basic is moving sprite
+	bne 90$		;   let basic have it (why not?)
+	lda potx	;get delta values for x
+	ldy opotx
+	jsr movchk
+	sty opotx
+	
+	clc		;modify low order x position
+	adc xpos
+	sta xpos
+	txa
+	adc #$00
+	and #%00000001
+	eor xposmsb
+	sta xposmsb
+	
+	lda poty	;get delta value for y
+	ldy opoty
+	jsr movchk
+	sty opoty
+
+	sec		;modify y position (decrease y
+			;for increase in pot)
+	eor #$ff
+	adc ypos
+	sta ypos
+	
+90$	jmp (iirq2)	;continue w/ irq operation
+
+;movchk
+;	entry	y = old value of pot register
+;		a = current value of pot register
+;	exit	y = value to use for old value
+;		x,a = delta value for position
+
+movchk	sty oldvalue	;save old & new values
+	sta newvalue
+	ldx #0		;preload x w/ 0
+	
+	sec		;a <= mod64(new-old)
+	sbc oldvalue
+	and #%01111111
+	cmp #%01000000	;if >0
+	bcs 50$
+	lsr a		;<= a%2
+	beq 80$		;	if <> 0
+	ldy newvalue	;		y <= newvalue
+	rts		;		return
+	
+50$	ora #%11000000	;else	or in high order bits
+	cmp #$ff		if <> -1
+	beq 80$
+	sec		;		a <= a/2
+	ror a
+	ldx #$ff	;		x <= -1
+	ldy newvalue	;		y <= newvalue
+	rts		;		return
+	
+80$	lda #0		;a <= 0
+	rts		;return w/ y = old value
+
+
+	         * * Cross Reference * *
+		 
+Reference flags (# = Definition, $ = Write, <BLANK> = Read)
+
+Symbol
+
+ACTIVE	=117E	11#	47
+IIRQ	=0314	5#	28	33	35	39$	41$
+IIRQ2	 18F0	20#	34$	36$	73
+INSTALL	 1800	28#
+MIRQ	 1821	29	38	40	46#
+MOVCHK	 185D	51	65	81#
+NEWVALUE 18F4	23#	82$	92	101
+OLDVALUE 18F5	24#	81$	86
+OPOTX	 18F2	21#	50	52$
+OPOTY	 18F3	22#	64	66$
+POTX	=D419	8#	49
+POTY	=D41A	9#	63
+SID	=D400	7#	8	9
+VIC	=D000	6#
+VICDATA	=11D6	13#	14	15	16
+XPOS	=11D6	14#	55	56$
+XPOSMSB	=11E6	16#	60	61$
+YPOS	=11D7	15#	70	71$
+
+
+                        1351 MOUSE PIN-OUT
+			
+                  +------------------------------+
+		   \    5    4    3    2    1   /
+		    \  *    *    *    *    *   /
+                     \                        /
+                      \   *    *    *    *   /
+		       \   9    8    7    6 /
+		        +------------------+
+			
+			
+          +---------------------------------------------+
+          |              CONNECTION TABLE               |
+          +---------------------------------------------+
+          |                  FUNCTION                   |
+          +---------+---------------+-------------------+
+          | PIN NO. | JOYSTICK MODE | PROPORTIONAL MODE |
+          +---------+---------------+-------------------+
+          |    1    | UP            | RIGHT BUTTON      |
+          |    2    | DOWN          | UNUSED            |
+          |    3    | LEFT          | UNUSED            |
+          |    4    | RIGHT         | UNUSED            |
+          |    5    | UNUSED        | Y-POSITION        |
+          |    6    | LEFT BUTTON   | LEFT BUTTON       |
+          |    7    | +5V           | +5V               |
+          |    8    | GND           | GND               |
+          |    9    | RIGHT BUTTON  | X-POSITION        |
+          +---------+---------------+-------------------+
+
+*********
+
+End of the International Project 64 etext of the Commodore 1351 Mouse
+German manual.
+
+*********

@@ -1,0 +1,148 @@
+
+
+SWORD OF HONOUR
+
+
+Bet”lt‚si instrukci¢k
+
+Kapcsold ki a sz m¡t¢g‚pet ‚s t vol¡ts el minden b“v¡t“t ‚s cartridge-ot
+a g‚pb“l. Kapcsold be a sz m¡t¢g‚pet ‚s a floppy meghajt¢t. Tedd be az
+1-es lemez els“ oldal t ‚s ¡rd be az utas¡t st: LOAD"*",8,1.
+
+A j t‚k automatikusan bet”lt“dik ‚s elindul. Amikor megjelenik a
+"PASSWORD CHECK" felirat, akkor a megfelel“ sz”veg k‚rt sor nak adott
+szav t kell beg‚pelni. P‚ld ul: "English text line 02, word 03"
+utas¡t sn l az angol sz”veg m sodik sor ban  ll¢ harmadik sz¢t kell
+be¡rni, majd a RETURN-t letni.
+
+
+A t”rt‚net
+
+A Becslet Szably ja, a Sword of Honour ‚vsz zadok ¢ta Yuichiro shogun
+csal di erekly‚je. Az “si jap n trad¡ci¢ szerint a szamur jkard a
+tulajdonos lelk‚t testes¡ti meg, ez‚rt m‚g a k”zel‚be sem
+mer‚szkedhetett senki. H‚t lakat alatt “rizt‚k ‚jjel-nappal,
+illet‚ktelenek m‚g szemmel sem ‚rinthett‚k.
+
+A Yuichiro fam¡lia “si ellens‚ge szak-Jap n teljhatalm£ korm nyz¢ja,
+Toranaga nagy£r hatalomv gya olthatatlan. A d‚li terletekre f j a foga,
+de Yuichiro az £tj ban  ll. Hogy megt”rje az ellen ll st, sz”rny– tervet
+eszel ki...
+
+Egy reggel Yuichiro shogun arra a h¡rre ‚bredt, hogy a dinaszti j nak
+jelk‚pe, a Becslet Szably ja elt–nt. Nem k‚ts‚ges, hogy ki tehette!
+Mivel a kard misztikus jelent“s‚g–, Yuichiro becslet‚n esett folt
+azzal, hogy idegen kez‚be kerlhetett a szablya. Ez n‚pe szem‚ben
+egyenl“ volt a megsz‚gyenl‚ssel, hatalma megingott - ‚s ‚lete is
+vesz‚lybe kerlt. Felb‚relte h t a birodalom legjobb kardforgat¢j t,
+egy mag nyos ninja harcost, T‚ged, hogy a becslet‚n esett csorb t
+kiksz”b”lje ‚s a csal di erekly‚t visszaszerezze.
+
+Kelj h t £tra ‚s juttasd vissza jogos tulajdonos hoz a Becslet
+Szably j t! Ne feledd: A becslet mindenn‚l t”bbet ‚r!
+
+
+A j t‚kmenet
+
+Haladj k‚perny“r“l-k‚perny“re jobbra, balra, fel, le, ki, be, annak
+megfelel“en, hogy melyik ir nyban vannak lehets‚ges kij ratok az adott
+helysz¡nr“l. Keresd a fegyvereket, inform ci¢kat, t rgyakat, haszn ld
+vagy cser‚ld el “ket a cselekm‚ny szerepl“in‚l. Verd vissza a T‚ged ‚rt
+t mad sokat puszta k‚zzel, vagy a helysz¡neken elsz¢rtan tal lhat¢ ninja
+fegyverek (shuriken, szamur jkard, nunchaku) seg¡ts‚g‚vel. De vigy zz!
+A gonosz Yuichiro d‚moni er“kkel sz”vetkezett!
+
+
+Ir ny¡t s
+
+A j t‚k joystickkal ‚s billenty–zettel ir ny¡that¢.
+
+- Joystick funkci¢k t–z megnyom sa n‚lkl:
+
+FEL        - ugr s (fel/ki/be)
+LE         - lehajol s/t rgy felv‚tele
+BALRA      - h tr l s (megfordul s)
+JOBBRA     - el“re men‚s (megfordul s)
+JOBBRA FEL - ugr¢r£g s
+JOBBRA LE  - el“re gurul s
+BALRA FEL  - v‚dekez‚s
+BALRA LE   - h tra gurul s
+
+- Joystick funkci¢k t–z megnyom s val:
+
+Fegyver/karom n‚lkl:
+
+FEL        - rug s/t‚s
+LE         - lehajol s/rug s
+BALRA      - v‚dekez‚s
+JOBBRA     - k”z‚pmagas t‚s
+JOBBRA FEL - magas t‚s
+JOBBRA LE  - lehajol s/t‚s
+BALRA FEL  - magas rug s
+BALRA LE   - k”z‚pmagas rug s
+
+L nccal:
+
+FEL        - ugr s/rug s
+LE         - lehajol s/rug s
+BALRA      - v‚dekez‚s
+JOBBRA     - k”z‚pmagas l nccsap s
+JOBBRA FEL - magas t‚s
+JOBBRA LE  - lehajol s/l nccsap s
+BALRA FEL  - magas rug s
+BALRA LE   - k”z‚pmagas rug s
+
+Karddal:
+
+FEL        - ugr s/rug s
+LE         - lehajol s/rug s
+BALRA      - v‚dekez‚s
+JOBBRA     - sz£r s
+JOBBRA FEL - v g s
+JOBBRA LE  - lehajol s/sz£r s
+BALRA FEL  - magas rug s
+BALRA LE   - k”z‚pmagas rug s
+
+
+Billenty–zet funkci¢k
+
+P             - Sznet
+INS/DEL       - šzenet, sz”veg kiirat sa
+SPACE         - Shuriken dob sa (ha van)
+1-9           - A sz mnak megfelel“ helyen l‚v“ t rgy haszn lata
+SHIFT 1-9     - A sz mnak megfelel“ helyen l‚v“ t rgy  tad sa
+Commodore 1-9 - A sz mnak megfelel“ helyen l‚v“ t rgy eldob sa
+RETURN        - Adott helysz¡n lez r sa (ha van ajt¢ a helysz¡nen)
+F1            - V lt s a sz”vegmez“ ‚s a t rgylista k”z”tt
+
+* A j t‚khoz alapnyelv– angol nyelvismeret aj nlott.
+
+
+Ezt az oldalt haszn ld a k¢d be¡r s hoz
+
+
+English text
+
+With the Sword of Honour
+stolen, Shogun Yuichiro's
+honour has been violated.
+As the toughest ninja
+around it's up to you to
+find the Sword and defeat
+Yuichiro's greatest enemy
+- the evil Toranaga.
+
+The game features lethal
+weapons, vicious hand-to-
+hand combat, and
+awesome gameplay. With
+wicked music, sound
+effects, 90 colours on-
+screen, and 2.5 MB of
+mental graphics this game
+must be one of the most
+realistic martial arts
+games ever!
+
+[Megjegyz‚s: A francia, n‚met ‚s olasz sz”vegeket nem ¡rtam be, tess‚k
+ angolul j tszani! ;-)]

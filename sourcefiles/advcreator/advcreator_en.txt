@@ -1,0 +1,1426 @@
+*********
+
+Welcome to iDOC= - the international CBM documentation project!
+
+The goal of iDOC= is to preserve (non-English) Commodore related documents
+in electronic text format that might otherwise cease to exist with the rapid
+advancement of computer technology and declining interest in 8-bit computers
+on the part of the general population. If you would like to help by
+converting Commodore related hardcopy documents to electronic texts please
+contact the manager of iDOC=, Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names consists of a reasonably short unique title, followed by the
+document language. Two optional fields follow; first the document version (0
+for incomplete texts, version 1 is usually unnumbered), and then the
+document source, if there are more than one. Finally, the document is given
+a .txt extension.
+
+The author(s) of the original document and members of iDOC= make no
+representations about the accuracy or suitability of this material for any
+purpose. This etext is provided "as-is". Please refer to the warranty of the
+original document, if any, that may included in this etext. No other
+warranties, express or implied, are made to you as to the etext or any
+medium it may be on. Neither the author(s) nor the members of iDOC= will
+assume liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext. Therefore
+if you read this document or use the information herein you do so at your
+own risk.
+
+*********
+
+The iDOC= etext of the Graphic Adventure Creator manual, converted to text
+by peter karlsson <pk@abc.se>
+
+advcreator_en.txt, April 2000, etext #64.
+
+*********
+
+          THE GRAPHIC ADVENTURE CREATOR
+          -----------------------------
+
+          For the Commodore 64 Computer
+          ----------------------------
+
+                    CONTENTS :
+    
+                   SECTION ONE
+                   -----------
+
+               1.1     Introduction
+               1.2     Loading Instructions
+
+                   SECTION TWO
+                   -----------
+    
+               2.1     Writing Adventures
+               2.2     Editing Inputs
+               2.3     Verbs
+               2.4     Room Descriptions
+               2.5     Messages
+               2.6     Nouns And Objects
+               2.7     Adverbs
+               2.8     Conditions
+               2.9     Begin Where?
+               2.10    Save and Load
+               2.11    Delete Data
+
+                   SECTION THREE
+                   -------------
+
+               3.1     Graphics
+               3.2     Graphics Commands
+
+                   SECTION FOUR
+                   ------------
+
+               4.1     Test Adventure
+               4.2     Player Commands
+
+                   APPENDIX A
+                   ----------
+
+         Definitions and Conditions for the
+               Demonstration Adventure
+
+                   APPENDIX B
+                   ----------
+                Tables and Charts
+    
+COPYRIGHT 1986 INCENTIVE SOFTWARE LTD - ALL RIGHTS RESERVED
+
+
+(1.1) INTRODUCTION
+==================
+
+Welcome to the GRAPHIC ADVENTURE CREATOR!
+    
+This manual is intended as a simple introduction to writing adventures using
+GAC. The GRAPHIC ADVENTURE CREATOR is best thought of as a small programming
+language specifically designed for writing adventure games. Although it is
+smaller than other programming languages such as Basic or Pascal it can
+perform all of the complex tasks needed to write an adventure program, and
+although the instructions may sees complicated at first, a little time spent
+studying this manual will enable you to write your very own large scale
+adventures, far more easily and efficiently than by using basic or machine
+code.
+
+Any adventures that you write using GAC are your own work, and may be sold
+as such without any prior pernisson being sought or payment to us being
+made. However in this case, you should include with your adventure something
+to the effect that it was written using the GRAPHIC ADVENTURE CREATOR, (C)
+1986 by Sean Ellis/Incentive Software.
+    
+And now on with GAC!
+    
+CREDITS
+-------
+    
+DESIGN          by Sean Ellis
+PROGRAMMED      by The Kid
+RANSOM PICTURES by Pete James
+COVER           by Pete Carter
+
+Thanks also to Lesley, Giles, Dave and John
+    
+COPYRIGHT 1986 INCENTIVE SOFTWARE LTD.
+ZEPHYR ONE, CALLEVA PARK, ALDERMASTON, BERKSHIRE, RG7 4QW.
+    
+All rights of the producer, and of the owner of the work being produced, are
+reserved. Unauthorised copying, hiring, lending, public performance and
+broadcasting of this program is prohibited. The publisher assumes no
+responsibility for errors, nor liability for damage arising from its use.
+
+
+(1.2) LOADING INSTRUCTIONS
+==========================
+
+The Graphic Adventure Creator (GAC) cassette/disc contains four files, these
+are:
+
+1. "GAC"      - The Creator itself
+2. "QS"       - The Quickstart file
+3. "ADVINMAN" - "Adventure in Manual" file
+4. "RANSOM"   - A call Graphic Adventure
+    
+To load GAC from tape, press Shift RUN/STOP, then follow the on-screen
+prompts.
+
+To load GAC from disc, type LOAD "*", 8, 1 <RETURN>.
+    
+Once loaded, the data files QS or ADVINMAN may be loaded by selecting T from
+the main liens.
+
+QS - Quickstart, sets you up with the most commonly used verbs etc and
+common messages. A complete listing of its contents is contained in Appendix
+B. along with several other useful tables and charts. ADVINMAN - Sets up the
+small adventure In the manual to work through and even edit!
+
+The fourth file, RANSOM, in an example of a graphic runnable adventure
+created using GAC and can only be loaded from a reset machine with SHIFT and
+RUN/STOP (tape) or LOAD "RANSOM", 8, 1 (disc)
+
+Write an Adventure in 30 Seconds! (While the kettle's boiling!)
+---------------------------------------------------------------
+    
+First LOAD in GAC
+Then "T" to load in QS (Quickstart)
+
+Press "R"                          -    Start Stopwatch!
+Press "1" (Return)
+Type "A Cave" (Return) (Return) (Return)
+Break "<-"                         -    Stop Stopwatch!
+Press "f1"
+
+The screen will display :
+
+A Cave
+What now?
+
+Try a few inputs
+
+
+Presto! - A VERY simple adventure in 30 seconds?
+
+Well look at it this way - it can only get better!
+
+To get back to the main menu press "<-", "<-", "<-".
+
+This simple example demonstrates how quick and easy GAC is to use. With a
+little tine and imagination you will soon be creating professional Graphic
+Adventures!
+
+Let Your Creation Begin!
+
+
+(2.1) SECTION TWO - WRITING ADVENTURES
+======================================
+
+There are several elements necessary to writing adventures using GAC. These
+are displayed on the Main Menu which is the first thing you will see after
+loading the program.
+
+For convenience the menu is arranged in alphabetical order, which makes it
+easier for you to remember which keys to press in order to call up any part
+of GAC. At the top of the menu screen you will see the display showing
+"FREE:" which shows the memory free.
+
+You may write the elements of your adventure in any order you like, although
+you may find that certain orders may make things easier than others.
+
+What follows is a brief description of what each element of the main menu
+does, together with detailed instructions of how to use each one. They are
+presented in an order which you may find convenient to follow.
+
+
+(2.2) EDITING TEXT AND NUMERIC INPUTS
+=====================================
+
+The text editor behaves in such the same way as the Commodore screen editor,
+with the following additions:
+
+HOME - returns the cursor to the start of the text.
+CLR  - deletes to the right from the current position, keeping the cursor
+       fixed.
+
+Pressing "<-" will escape from the current input or current option.
+
+
+(2.3) VERBS
+===========
+
+Verbs are the words with which you will actually tell the computer what to
+do when you are playing an adventure. For example EAT or DROP. Directions
+such as WEST or UP are also treated as verbs. GAC allows you to enter and
+edit your own verbs when writing an adventure. Some of the most commonly
+used verbs are already in the Quickstart File; however since GAC allows you
+to enter up to 255 verbs, your imagination is the only limit to the commands
+you may incorporate into your adventure.
+
+After pressing V from the Main Hens, you should see a prompt the screen, 
+* EDIT VERBS *, and a Pointer >.
+
+To enter a verb, simply type in a number, then a space followed by your
+verb. When you press RETURN the verb will be entered on the screen in
+alphabetical order.
+
+If two or more verbs have the same meaning and you wish both to be accepted,
+ie., "Get" and "Take", simply allocate to the the same verb number. Try to
+think of as many similar words as you can in this way, since this will make
+your adventure appear more friendly.
+
+EDITING - To edit, scroll the list using the cursor keys until the desired
+-------   verb is adjacent to the pointer. Press Return, edit the word,
+          press Return again.
+DELETE - Position the word to be deleted by the pointer and press Delete.
+------
+RETRIEVE - Home will retrieve the last word deleted.
+--------
+
+There is a brief summary of these instructions at the bottom of the screen.
+
+NOTE: The verbs in the Quickstart File may be edited in exactly the same way
+as any other verbs.
+
+More information about the use of verbs may be found in section (2.8)
+CONDITIONS.
+
+PRESSING "<-" WILL RETURN YOU TO THE MAIN MENU
+
+
+(2.4) ROOM DESCRIPTIONS
+=======================
+
+The term "room" is used to refer to any location in your adventure. For
+example, "a forest", "a car", "a strange alien world" and so on. GAC allows
+you to use up to 9999 of these rooms, memory permitting, and to specify the
+connections to and from each room. You will probably find it easier if you
+have decided in advance what each room is and how the rooms are connected.
+
+On pressing R from the main menu, the prompt "Which room number ? ...."
+should appear. At this point enter a room number n by RETURN which will give
+the prompt "Rock number n is...". You can then enter your description which
+can be up to 255 characters long.
+
+You will then see the prompt Connections are.....?". The connections are
+specified in terms of a VERB, which most be part of the list already
+specified, followed by a space, followed by the room number it connects
+with. For example EAST 20.
+
+You may have as many connections from a single room as you can fit into 255
+characters, followed by RETURN, i.e.
+
+    EAST 20 WEST 18 NORTH 19 SOUTH 21 JUMP 49 (RETURN)
+
+You will then see a prompt asking for a picture number, which links this
+location with the appropriate picture should you wish to have one. In this
+case you should enter a picture number followed by RETURN. If you do not
+want a picture simply press RETURN. This returns you to the prompt "Which
+room number ?.... again.
+
+Any of the above may be edited at any tine by using the cursor keys. "<-" at
+any point will return you to the "Which room number ?..." prompt, and "<-"
+at that point will return you to the Main Menu.
+
+More information about the use of room descriptions can be found in section
+(2.8) CONDITIONS.
+
+    
+(2.5) MESSAGES
+==============
+    
+Messages consist of prompts, descriptions or other comments that appear on
+the screen when you play an adventure, i.e. "What now ?", or "You can't do
+that". Many of the more common system messages are contained in the
+Quickstart file, and are numbered from 240 to 255. GAC allows you to enter
+up to 255 messages which may appear at any point in your adventure.
+
+Pressing 'M' from the main menu will give the prompt "Which message number
+?...". You should then enter a number followed by RETURN, then type in your
+message, which may be up to 255 characters long. Pressing RETURN will enter
+your message and repeat the "Which message number ?..." prompt.
+
+To edit a message once it has been entered, simply recall the message and
+edit it using the cursor keys.
+
+Please note that all messages from 240 to 255 should be defined, since these
+are essential system messages without which your adventure will not run
+correctly. You can edit these messages but you should be careful to preserve
+the meaning. For example, message 242, "Pardon ?" could be changed to "Eh
+?".
+
+Pressing "<-" will return you to the prompt "Which message number ?...." and
+pressing "<-" again will return you to the Main Menu.
+    
+More information about the use of messages can be found in section (2.8)
+CONDITIONS.
+
+    
+(2.6) NOUNS AND OBJECTS
+=======================
+    
+Nouns are the Things that your adventure will recognize. For example, BOOK,
+SWORD and so on.
+
+GAC frequently requires you to define things both as nouns and as objects;
+once as a noun so that the adventure will recognize it, and then as an
+object so that the program can move it around and do things with it. For
+example, SWORD is defined as a noun, but since you may wish to pick it up
+during your adventure, you must also define it as an object. A further
+example makes clear another point; if your adventure requires you to light a
+lamp, LAMP must be defined as a noun, and you must also define two objects,
+AN UNLIT LAMP and A LIT LAMP.
+
+When you press N from the main menu, the prompt * EDIT NOUNS * will appear.
+Apart from this, the procedure for entering and editing nouns is exactly the
+same as that for editing verbs. (2.3)
+
+When you press O from the main menu, the prompt "Which object number ?....."
+will appear.
+
+You should then enter a number n from 1 to 255 followed by RETURN. You will
+then see the prompt "Object number n is...". You may then enter the object
+description consisting of up to 255 characters followed by RETURN. This will
+produce the prompt "Starts in room number...". Enter the number of the room
+you wish this object to start in, or press RETURN. Pressing RETURN will
+assign the object to room zero, a special room which cannot be travelled to,
+and which contains "dead" and "unborn" objects. For example, a piece of cake
+once eaten will be assigned to room zero.
+
+The prompt "and weighs...." will then appear. Enter the weight you wish to
+allocate to this object and press RETURN.
+
+"<-" will return you to the main menu.
+
+More information about the use of nouns and objects can be found in section
+(2.8) CONDITIONS.
+
+
+(2.7) ADVERBS
+=============
+
+In the GAC adverbs are used for two sorts of things; firstly to describe the
+precise way a verb is used, i.e. "move slowly" or "put down gently", and
+secondly they are used to differentiate between similar nouns. For example,
+if your adventure has three differently coloured boxes, the adverbs will
+specify the colours; RED, GREEN, etc.
+
+On pressing A from the asin menu, the prompt * EDIT ADVERBS * will appear.
+Apart from this the procedure for entering and editing adverbs is exactly
+the same as that for editing verbs and nouns.
+
+More information on the use of adverbs can be found in section (2.8)
+CONDITIONS.
+
+
+(2.8) CONDITIONS
+================
+
+When using GAC the conditions form the internal commands that simulate
+decision-making processes within the game. All the tares you have specified
+and the data you have entered is now drawn together to form the structure
+for your adventure.
+
+"Conditions" tell the adventure that if certain things are true, then it is
+to perform some action, i.e., "If x is true then do y", though much more
+complicated conditions may be constructed, i.e.,
+
+   "If x and y are true then do t",
+or "If z and q are true then do y and x", and so on.
+
+The GAC has a special format for writing these conditions. For example, if
+you have defined verb number 16 to mean "Examine", and noun number 2 to mean
+"Room", then a condition using these terms might read;
+
+   "IF ( VERB 16 AND NOUN 2 ) LOOK WAIT END"
+
+Translated this means if "Examine Room" is typed in, describe the current
+room and wait for a new command.
+
+The Conditional list below separates the words used for the "Conditions
+Part", 'If ( Verb 16 and Noun 2 )' and those used for the "Action Part",
+'LOOK WAIT END'. For subscripts used (a, c, m, ms, o, n, r, v, x and y) -
+See Appendix B.
+
+i. CONDITION PART
+   --------------
+
+VERB v     Is verb v typed ? (v is a number)
+           VERB 7 will give a TRUE answer if verb number 7 was typed,
+           otherwise it will give a false answer.
+
+NOUN n     Is noun n typed ? (similar to VERB)
+
+ADVE a     Is adverb a typed ? (similar to VERB)
+
+HERE o     Is object o here ? (i.e. in the same room as you ?)
+
+           If you are in room 3 and object 1 is also in room 3, then HERE 1
+           will give a TRUE answer because object 1 is here.
+
+CARR o     Is object o being carried ? (Similar to HERE).
+
+AVAI o     Is object o available for use ? i.e. here or being carried?
+           (Similar to HERE).
+
+o IN r     Is object o in room r ? If object 1 is in room 3, as above, then
+           1 IN 3 will be TRUE, but 1 IN 4 will be FALSE.
+
+WEIG a     Gets the weight of ob ject a. In our adventure, HEIG 2 would give
+           the value 20, which is the weight of the rat.
+
+SET? m     Is marker m set ?
+
+RES? m     Is marker o reset ?
+           (There are 256 markers, numbered O to 255. They are used to store
+           information that can be in one of two states, like doors which
+           are open or shut, light. which are on or off, etc. There are
+           three which are important for the adventure program:
+           Mkr 0, if set, means that a room has been described since it was
+                  last reset.
+           Mkr 1, if set, means you are in a light room.
+                  Otherwise you are in a dark room.
+           Mkr 2, if set, means you have a lamp or some other 
+                  source of light.
+
+           If markers 1 and 2 are both reset, then the program will refuse
+           to describe rooms, coming up with the "It's dark" message
+           instead, since you are in a dark room without a lamp.
+
+           Mkr 3, if set, disables the scoring mechanism when you exit from
+                  the game.
+
+CTR c      Gives you the value of counter c.
+x EQU? c   Is x equal to the value of counter c ?
+
+           There are 128 counters, numbered from O to 127. They are most
+           frequently used to store the number of moves since a particular
+           event, (e.g., moves in the dark). Counter O holds the score and
+           counters 126 and 127 hold the turns count since the start of the
+           game.
+
+TURN       Gives the number of turns since the start of the game.
+
+ROOM       Gives you the roomnumber of the room you're currently in.
+
+AT r       Gives a TRUE answer if you are in room number r.
+
+condition AND condition
+           will give a TRUE answer if both of the conditions give TRUE
+           answers.
+           e.g. VERB 1 AND NOUN 2 will be TRUE only if verb 1 and noun 2 are
+           both typed.
+	
+condition OR condition
+           will give TRUE if either condition is TRUE, or both.
+
+condition XOR condition
+           will give TRUE if one of the conditions is TRUE and the other
+           FALSE.
+    
+NOT condition
+           will give a TRUE answer if the condition was FALSE, and vice
+           versa.
+           So NOT VERB 1 will be TRUE if verb 1 is NOT typed.
+    
+x < y      Gives TRUE if number x is less that number y.
+
+x > y      Gives TRUE if x is greater than y.
+
+x = y      Gives TRUE if x is equal to y.
+    
+RAND x     Gives a random number between O and (x-1). So RAND 10 will give
+           any number at random in the range O to 9.
+    
+VBNO       Gets the number of the verb in this command.
+
+N01        Gets the number of the first noun in this command, if any.
+    
+N02        Gets the number of the second noun in this command, if any. These
+           are used to check word order, and to GET and DROP objects without
+           having to have a condition for each one.
+
+ii. ACTION PART
+    -----------
+
+LOOK       Describe the room you are in at the moment.
+
+DESC r     Describe room number r.
+    
+PICT       Turns the picture display on.
+
+TEXT       Turns the picture display off, giving a text adventure.
+
+
+GET o      Get object number a. If it isn't here, or you've already got it,
+           or it's too heavy, then the appropriate message is displayed.
+
+DROP o     Drop object nuaber o. If you haven't got it, then the appropriate
+           message is displayed.
+
+x SWAP y   Exchange objects x and y. In our little adventure, 1 SWAP 5 will
+           exchange the lamp with the lit lamp.
+
+OBJ o      Describe object number a.
+
+LIST r     List all the objects in room number r.
+
+LIST WITH  List all the objects carried with you.
+
+o TO r     Move object nuaber o to rooa r. To destroy an object move it to
+           room zero.
+    
+SET m      Set marker m.
+
+RESE m     Reset marker m. See SET? and RES? for an explanation of markers.
+
+x CSET c   Set x to be the value of counter number c.
+
+INCR c     Increase counter c by one. The maximum is 255.
+
+DESC c     Decrease counter c by one. The minimum is 0.
+           Trying to increase past 255 or decrease past 0 is
+           ignored.
+    
+GOTO r     Go to room r and describe the new room.
+    
+CONN v     This checks through the connection table for a connection from
+           the current room using verb v. If one is found, this returns the
+           room number of the room you would cove to if you were to take the
+           connection, otherwise it gives zero. As an example if you were in
+           room 3 in our adventure, CONN 4 would return the value 2, because
+           in the connections from room 3, verb 4 (West) would take you to
+           room 2.
+    
+STRE x     Set the maximum weight you can carry to x. STRE is short for
+           STRENGTH.
+    
+BRIN o     Brings object o here, if it exists.
+    
+FIND o     Find object o and move to it, if it exists. This does not
+           acknowledge any restrictions, (such as connections), so it could
+           be useful in a magic spell.
+    
+SAVE       Saves the current game position to tape or disc.
+    
+LOAD       Loads the current game position from tape or disc.
+           These are useful for continuing a game after tea (or coffee - the
+           kettle's probably boiled by now!)
+    
+WAIT       Waits for a new contend.
+
+OKAY       Prints "Okay" and waits for a new command.
+    
+EXIT       Stops the game. Since the player is NOT asked, this is
+           recommended for use when the player wins or is killed.
+    
+QUIT       The player is first asked if he wants to quit. If he types "Y",
+           the game terminates, otherwise the game continues. On abandoning
+           the game, both the score and the nuaber of moves taken are
+           displayed, assuming this function has not been disabled by
+           setting marker three.
+    
+MESS ms    Print message number ms.
+
+PRIN x     Print number x.
+    
+LF         Prints a Linefeed. Everything from hereon is printer on a new
+           line.
+    
+HOLD x     Halts the game for x fiftieths of a second, or until a key is
+           pressed. For example, to freeze for 10 seconds, do HOLD 500.
+
+x + y      As you say expect, returns the value of x added to y.
+
+x - y      And this gives the value of x - y.
+    
+There are several things to note when writing conditions. Firstly all
+operations are performed strictly from left to right. Secondly, GAC requires
+spaces both inside and outside brackets, and between words such as 'verb'
+and 'noun' and their numbers.
+
+Thirdly, x and y need not be simply numbers, they can be more complex
+expressions. However you should note that since GAC performs all its
+operations from left to right, you should be careful about the order in
+which you enter things. Put any comparisons first, i.e. IF ( VERB > 5 AND
+NOUN 9 ) QUIT END
+
+The conditions are checked by GAC at three different points, and are entered
+as High Priority, Low Priority and Local.
+
+The flow chart at the back of the annual indicates the order in
+which these are actioned.
+
+The GAC checks for HIGH PRIORITY conditions before prompting for a player
+command. It checks for such things as whether you are still "alive", whether
+a light is flashing, etc.
+
+Pressing H from the main menu will return the prompt "Which line number
+?...". You should enter these lines in order, ie. 1, 2, 3 etc.
+
+The GAC will not recognize a line nuaber such as '5' when you have only
+entered two conditions so far, although it will insert a condition earlier
+in your list and remember accordingly. RETURN will give you the prompt "Line
+number n is....", at which point you should enter your condition and press
+RETURN which will give you the "Which Line number ?..." prompt again.
+"<-" returns you to the main menu.
+
+LOCAL CONDITIONS are checked for after the player has entered a command, and
+deal with things local to a particular room, for example, whether a
+particular object is in that room. Alternatively they might execute a player
+command to go to another room, or open a door at that location.
+
+Pressing C from the main menu will give the prompt "Which room number
+?....". Entering a number followed by RETURN will give the prompt "Which
+line number ?....". Thereafter the procedure is exactly the same as for High
+Priority Conditions, except that each Room has it's own set of line numbers,
+(1, 2, 3 etc).
+
+LOW PRIORITY CONDITIONS are also checked for after a single player command
+is entered, but are not associated with any room. For example, they might
+check whether you are carrying a particular object, independent of the
+location. After pressing L from the main menu, the procedure for entering
+and editing Low Priority Conditions is exactly the same as that for High
+Priority Conditions.
+
+Further examples of High, Local and Low Priority Conditions can be found in
+Appendix A.
+
+
+(2.9) BEGIN WHERE?
+==================
+
+The last element of your adventure, at least as far as the text is
+concerned, is to specify which room your adventure starts in.
+
+Pressing B from the main menu will give the prompt to enter the start
+location room number.
+
+Entering a room number followed by RETURN means that your adventure will
+start at this room. To change the start room, simply enter a new number.
+
+"<-" will return you to the main menu.
+
+
+(2.10) SAVE AND LOAD
+====================
+
+SAVING
+------
+After pressing S from the main liens, you will be asked if you wish to save
+a "Data File" or a "Runnable Adventure".
+
+If you press 'D' for 'Data File', the computer will prompt for a file name.
+Enter your file name followed by RETURN. This will save your data which can
+be loaded into GAC at a later date for further development.
+
+Alternatively pressing RETURN without first entering a filename will save
+the file "DUMMY.ADV" to tape, or "@:DUMMY.ADV" to disc. Pressing 'E' will
+prompt for the filename for a runnable adventure. This can no longer be
+loaded into the GAC for editing, but will run on its own.
+
+LOADING
+-------
+
+Pressing T from the main menu then entering a file name will load a data
+file into GAC for editing. Alternatively pressing RETURN without first
+entering a filename will attempt to load the file "DUMMY.ADV" from tape or
+disc.
+
+To load your Runnable Adventure from tape, press SHIFT and RUN/STOP, or from
+disc type LOAD "NAME", 8, 1 after resetting the machine.
+
+NOTE : Do not attempt to load a runnable adventure into GAC. It will run on
+its own !
+
+
+(2.11) DELETE DATA
+==================
+
+Pressing X from the main menu will delete all your data.
+
+N.B. Loading a new data file will have the same effect.
+
+
+(3.1) SECTION THREE - GRAPHICS
+==============================
+
+The Graphics part of GAC will enable you to draw pictures to go with the
+room descriptions in the text part of your adventure.
+
+Press G from the Main Hens to enter the Graphics section. You will see
+displayed a high-resolution Window and a Graphics Menu, together with the
+prompt "Which Picture number ?....".
+
+Enter the number of the picture you wish to design.
+
+The Fill Routine is designed to be fast and it can cope with irregular
+shapes, but you may need to press "F" more than once. If an area is left
+unfilled, then you can just move the cursor into that area and press "F"
+again.
+
+Here is a simple method which will allow you to get the best results from
+your filling. If your shape has a high point, position the cursor directly
+under it. If it has a low point, position your cursor directly over it. Here
+is an example using a triangle...
+
+                   /\           ^
+                  /__\         /|\
+  Only this part /|XXX\       /X|X\      All filled
+  filled        /X+XXXX\     /XX+XX\   + = cursor position
+               /XX|XXXXX\   /XXX|XXX\
+              +----------+ +---------+
+                 CASE A      CASE B
+
+The area filled is worked out by the fill routine checking up and down from
+the cursor position until it encounters a boundary. It is possible to fill
+the same area more than once using shading patterns consisting of different
+colours.
+
+If you should run out of memory in one particular picture, you can get round
+this by moving to an unused picture and merging the full picture into the
+new one before continuing with your drawing.
+
+
+(3.2) GRAPHICS COMMANDS
+=======================
+
+Picture       - Picture Merge - Prompts for a picture number and merges that
+                picture with the one currently displayed without changing
+                the current ink colours.
+
+Change        - Allows you to change any of the 4 ink colours or the colour
+                of the graphics frame.
+
+Shade         - Prompts for 2 inks with which to generate stipple patterns
+                used by the 'Fill' command. There 2 inks cay be the same.
+
+Rect          - The first press of the 'R' key sets the corner of a
+                rectangle, which can then be drawn using the cursor keys.
+                The second press fixes the rectangle.
+
+Ink           - Allows you to change the current pen colour.
+
+DEL           - Deletes the last graphics command.
+
+Ellipse       - The first press of the 'E' key sets the centre of an ellipse
+                which can then be drawn using the cursor keys. The second
+                press fixes the ellipse.
+
+Mirror        - Reflects the picture by copying from top to bottom, or left
+                to right.
+
+Whole         - Draws the whole picture.
+
+Fill          - Fills an area surrounding the current cursor position, this
+                area being bounded by an ink of a different colour to that
+                under the cursor.
+
+Dot           - Places a dot at the current cursor position.
+
+AOT           - (Head over heels) similar to alrror, but inverts the picture
+                either up/down or left/right.
+
+Line (f1 key) - The first press of the f1 key sets one end of a line which
+                can then be drawn using the cursor keys. The second press
+                fixes the line.
+
+Editing pictures
+----------------
+
+,             - Moves back one graphic command.
+
+.             - Moves forward one graphic command.
+
+SHIFT , (<)   - Moves back 8 graphic commands..
+
+SHIFT . (>)   - Moves forward 8 graphic commands.
+
+SHIFT *       - Deletes all picture information held after the edit
+                position.
+
+Z             - Takes you back to the start of the picture.
+
+f7            - Toggles the graphics cursor speed between 1 pixel per
+                keypress (default) and 4 pixels per keypress.
+
+"<-"          - Takes you back to the Main Henu.
+
+Whilst stepping through the graphic commands the last command will be
+highlighted in green. If the last graphic command was a line, "Dot" will be
+highlighted in light blue.
+
+
+(4.1) SECTION FOUR - TEST ADVENTURE
+===================================
+
+To test your adventure, get back to the main menu and simply press "f1" to
+enter the adventure.
+
+When you are testing an adventure, the way to return to the main menu is to
+press "<-" as usual. This gives you the message "Press D for diagnostics or
+"<-" to escape....." If you press the "D" key, then all the markers and
+counters will be displayed on the screen. For the markers, a solid box
+indicates "SET" and an empty one indicates "RESET". The values of the
+counters are given as you would expect. To get back to the game press
+RETURN. If you press "<-" again, then you will get back to the main menu.
+
+The error routine prints out a message indicating the nature of the error,
+plus a line of conditions if the error occurred in one of the condition
+tables.
+
+"Message not found" means you have referred to a message that does not
+exist. If this appears immediately, check that you have included the
+system's special messages, numbers 240 and above.
+
+"Room not found" means you have tried to describe or move to a room that
+doesn't exist.
+
+"Object not found" means you have tried to pick up, drop or describe an
+object that does not exist.
+
+"Marker not found" means you have tried to access a marker which does not
+exist.
+
+"Counter not found" means you have tried to access a counter which does not
+exist.
+
+"Illegal value" means you have tried to look for a verb, noun or adverb with
+a number greater than 255, or you have tried to load a counter with a number
+greater than 255.
+
+Here are a few hints for solving errors :
+
+i.   Suspect typing error. Check that you really mean what you have said.
+
+ii.  Have you forgotten to eater the room/object/message being referred to?
+     If so enter it.
+
+iii. Have you forgotten to delete a condition which you didn't need, having
+     deleted the objects/messages used by it?
+
+(4.2) PLAYER COMMANDS
+=====================
+
+This section deals with the commands a player gives when he plays the
+adventure. It is intended to give an idea of the coaplexity of the commands
+the adventure will understand.
+
+Each command line consists of one or more simple commands, which in turn
+consist of a verb, and maybe an adverb and one or two nouns. Any word which
+the command interpreter does not understand as being a noun, verb or adverb
+is ignored. Let us take a typical line and see how the program looks at it:
+
+Get the gold, examine it, put it in the box then go north
+
+Let us assume that the vocabulary includes :
+
+NOUNS :  3 GOLD   VERBS : 1 NORTH            ADVERBS : 1 IN
+         7 BOX            7 GET
+       255 IT             8 PUT    16 EXAMINE
+
+The command line is split into separate commands by the following : "-",
+".", "!", "?", ":", ";", "and" and "then", so it becomes :
+
+  Get the gold      ","
+  Examine it        ","
+  Put it in the box "then"
+  Go north
+
+
+Each of these is scanned for verbs, adverbs and nouns in that order, and any
+found have their number stored;
+
+                       VERB    ADVE    NOUN1   NOUN2
+  Get the gold          7       0        3       0
+  ---     ----
+  Examine it            16      0       255      0
+  ------- --
+  Put it in the box     8       1       255      7
+  --- -- --     ---
+  Go north              1       0        0       0
+     -----
+
+Then all occurences of noun 255 ("It"), are replaced by the last noun typed
+before that, giving;
+
+                       VERB    ADVE    NOUN1   NOUN2
+  Get the gold          7       0        3       0
+  Examine it            16      0        3       0
+  Put it in the box     8       1        3       7
+  Go north              1       0        0       0
+
+These values are then phased to the connection table, then to the
+conditions. See the diagram in Appendix B.
+
+Note that all the letters in the vocabulary entries are significant - there
+is no truncation to only four or five letters. Thus RIVER and RIVET, TROUT
+and TROUSERS, and others like these are dlfferentiated.
+
+
+APPENDIX A
+==========
+
+Definitions and Conditions for "ADVINMAN"
+
+
+i.NOUNS                 ii.VERBS
+-------                 --------
+1 TORCH     5 SERPENT   1 NORTH    9 LOOK        15 LOAD
+1 LAMP      6 DOOR      2 SOUTH    10 LIST       15 RESTORE
+2 RAT       255 IT      3 EAST     10 INVENTORY  16 EXAMINE
+3 KEY                   4 WEST     11 QUIT       17 LIGHT
+4 GOLD                  5 UP       12 TEXT       17 ON
+4 BAR                   6 DOWN     12 WORDS      18 EXTINGUISH
+4 TREASURE              7 GET      13 PICTURES   18 OFF
+5 SNAKE                 7 TAKE     13 GRAPHICS   19 UNLOCK
+                        8 DROP     14 SAVE       20 SCORE
+                        1 N   2 S  3 E   4 W     21 EAT
+                        5 U   6 D
+
+iii. ROOM DESCRIPTIONS
+----------------------
+Room No. Description (as it would appear)              Connections
+
+1.       You are above the ground. There is a          (press ENTER)
+         cave entrance to the east.
+2.       You are in a large cavern. Passages           E 3
+         lead east, west ant south.
+3.       You are in a cave. A snake is asleep          W 3
+         in a corner ant exits lead east ant west.
+4.       You are by a small lake. The only exit        (press ENTER)
+         is west.
+5.       You are outside a castle. A tunnel leads      (press ENTER)
+         to the north ant a large door can be seen
+         to the east.
+6.       You are in the castle strongroon. A door      W 5
+         stands open to the west.
+
+
+iv. OBJECTS
+-----------
+No.           Description   Starts in room   Weight
+1.            a lamp               1         10
+2.            a dead rat           5         20
+3.            a key                4         1
+4.            a gold bar           6         100
+5.            a lit lamp           0         100
+
+
+v. MESSAGES
+-----------
+   240 What now ?....
+   241 You can't
+   242 Pardon ?
+   243 Press a key for another game....
+   244 Are you sure ( Y or N ) ?
+   245 You've already got that.
+   246 You haven't got that.
+   247 You can't see that.
+   248 You're carrying too such to pick that up.
+   249 Your score was
+   250 and you took
+   251 It's dark. You can't see a thing.
+   252 I can't fled that anywhere.
+   253 You can also see
+   254 Okay
+   255 turns
+
+
+i. Conditions - Local  Don't type in the consents !
+---------------------
+Room 1
+   IF ( VERB 3 ) RESE 1 GOTO 2 WAIT END
+     If you typed "EAST", reset the dark/light marker, goto room 2 and wait
+     for a new command.
+
+Room 2
+   IF ( VERB 4 ) SET 1 GOTO 1 WAIT END
+     If you typed "WEST", set the dark/light marker, goto room 1 and wait
+     for a new command.
+   IF ( VERB 2 ) SET 1 GOTO 5 WAIT END
+     And a similar condition for going south too.
+
+Room 3
+   IF ( VERB 7 AND NOUN 5 ) MESS 14 HOLD 200 EXIT END
+     If you typed "GET SNAKE" then print message fourteen to say how it
+     reacts, freeze for four seconds and end the Base.
+   IF ( VERB 3 ) SET 1 GOTO 4 WAIT END 
+     Again another move-from-dark-room-to-light-room condition, this time
+     east.
+
+Room 4
+   IF ( VERB 4 ) RESE 1 GOTO 3 WAIT END
+     I'll let you work this one out (hints - look at rooms 1, 2, 3)
+   IF ( VERB 7 AND NOUN 3 ) CTR 0 + 20 CSET 0 END
+     If you typed "GET KEY" then add twenty to counter 0 (the score)
+   IF ( VERB 8 AND NOUN 3 ) CTR 0 - 20 CSET 0 END
+     If you typed "DROP KEY" then subtract 20 from ctr 0 (the score)
+
+Room 5
+   IF ( VERB 3 AND SET? 3 ) GOTO 6 WAIT END
+     If you typed "EAST" and marker 3 is set, (i.e. if the door has been
+     opened), goto room 6 and wait for a new command.
+   IF ( VERB 3 ) MESS 7 WAIT END
+     If you typed "EAST" then print message 7 and wait for a new command.
+     Note that the door cannot be opened sincce if it was, the last line
+     would have worked and we would be waiting for a new command by now.
+   IF ( VERB 19 AND NOUN 6 AND CARR 3 ) SET 3 MESS 10 WAIT END
+     If you typed "UNLOCK DOOR" then set marker 3, (mark the door as open),
+     print message 10 and wait for a new command.
+   IF ( VERB 1 ) RESE 1 GOTO 2 WAIT END
+     It is another light-to-dark movement, this time north to room 2
+
+ii. Conditions - Low Priority
+-----------------------------
+Those marked "*" are included in the Quickstart file.
+
+   IF ( VERB 20 ) MESS 249 PRIN CTR 0 MESS 250 PRIN TURN MESS 255 WAIT END
+     If you typed "SCORE", print message 249, your score, message 250, the
+     number of turns you had and message 255. Then wait for a new command.
+   IF ( NO1 = 0 AND VERB 7 ) MESS 19 WAIT END
+     If you typed "GET" by itself or with an unrecognized word, print
+     message 19 "I'm sorry, but I don't know what one of those is..."
+   IF ( NO1 = 0 AND VERB 8 ) MESS 19 WAIT END
+     And similarly for "DROP".
+   IF ( NO1 = 0 AND VERB 16 ) MESS 18 WAIT END
+     And again for "EXAMINE".
+   IF ( VERB 7 AND NOUN 1 AND HERE 5 ) GET 5 OKAY END
+     If you typed "GET LAMP" and there is a lit lamp here, then get it,
+     print "OKAY" and wait for a new command.
+   IF ( NO1 < 5 AND VERB 7 ) GET NO1 OKAY END
+     If you typed "GET" and a noun with a number less than 5, then get the
+     object with that noun's number. This only works because the objects and
+     the nouns which refer to then have the same number. (A very useful
+     trick!)
+   IF ( VERB 8 AND NOUN 1 AND CARR 5 ) DROP 5 OKAY
+     If you typed "DROP LAMP" and you've got a lit lamp, then drop it, print
+     "Okay" and wait for a new command.
+   IF ( NO1 < 5 AND VERB 8 ) DROP NO1 OKAY END
+     If you typed "DROP" and a noun whose number is less than 5, then drop
+     the object with that noun number.
+   IF ( VERB 16 AND NOUN 1 AND AVAI 5 ) MESS 5 WAIT END
+     If you typed "EXAMINE LAMP" and you have a lit lamp available then
+     print out its more detailed description and wait for a new command.
+   IF ( NO1 < 5 AND VERB 16 AND AVAI NO1 ) MESS NO1 WAIT END
+     If you typed "EXAMINE" and a noun whose number is less than 5, then
+     print out the message with that noun number, it being the more detailed
+     description of that object, then wait for a new command.
+ * IF ( VERB 11 ) QUIT END
+     If you typed "QUIT" then quit.
+ * IF ( VERB 9 ) LOOK WAIT END
+     If you typed "LOOK" then describe this room and wait for a new command.
+   IF ( VERB 21 AND NOUN 2 AND CARR 2 ) DROP 2 2 TO 0 MESS 17 WAIT END
+     If you typed "EAT RAT" and you are carrying it. drop it, save to room
+     0, thus destroying it, print message 17 ("yum, yum") and wait for a new
+     command.
+ * IF ( VERB 10 ) MESS 239 LIST WITH END
+     If you typed "INVENTORY then list the objects with you and wait for a
+     new command.
+ * IF ( VERB 13 ) PICT OKAY END
+     If you typed "PICTURES" then turn thee on, print "OKAY" and wait for a
+     new command.
+ * IF ( VERB 12 ) TEXT OKAY END
+     And similarly for "TEXT".
+   IF ( VERB 17 AND NOUN 1 AND AVAI 1 ) 1 SWAP 5 CTR 0 + 20 CSET 0 MESS 15
+   SET 2 WAIT END
+     Type this all on one line. If you typed "LIGHT LAMP" and you have an
+     unlit lamp, then exchange the lit lamp for the unlit one, tell the user
+     that he has lit the lamp, increase the score by 20 and await a new
+     command.
+   IF ( VERB 18 AND NOUN 1 AND AVAI 5 ) 1 SWAP 5 CTR 0 - 20 CSET 0 MESS 16
+   WAIT END
+     And similarly for "LAMP OFF" ("EXTINGUISH LAMP").
+ * IF ( VERB 14 ) SAVE OKAY END
+     If you typed "SAVE" then save the game position to tape or disc.
+ * IF ( VERB 15 ) LOAD LOOK WAIT END
+     If you typed "LOAD" then load in a previously saved game position.
+
+iii. Conditions - High Priority
+_______________________________
+   IF ( RES ? 6 ) SET 6 STRE 111 3 CSET 1 END
+     If marker 6 is reset (if this is the first save) then marker 6 to say
+     that it isn't the first move any more, set strength and counter one to
+     hold value three.
+   IF ( RES ? 1 AND RES ? 2 ) DECR 1 END
+     If you are in total darkness, then decrease counter number
+   IF ( 1 EQU ? 1 AND RES ? 1 AND RES ? 1 ) MESS 20 END
+     If counter one has reached value 1 then print that you can footsteps.
+   IF ( O EQU ? 1 ) MESS 21 EXIT END
+     If counter 1 has reached zero then tell the player he has "got" by the
+     spider, and end the game.
+   IF ( AT 3 AND RES ? 4 AND CARD 2 ) SET 4 MESS 13 DROP 2 2 TO 0 WAIT END
+     If you are in room three with the rat and the snake hasn't been fed
+     yet, mark the snake as fed, print the message to say so, and move the
+     rat to room 0, destroying it.
+   IF ( AT 3 AND RES ? 4 ) MESS 8 EXIT END
+     If you are in room three without the rat and the snake hasn't been fed
+     yet, then say that it kills you and exit from the gene.
+   IF ( AT 1 AND CARE 4 ) NESS 9 EXIT END
+     If you are back at the start carrying the gold then you win !
+
+GET AND DROP
+-----------
+Here is another useful feature! To save putting a Get and Drop condition in
+for each and every object, here are two very useful condition lines that
+will enable you to get and drop any object, (up to No.10 in our example), at
+any location. To do this simply ensure the Noun numbers watch the Object
+numbers. ie.
+
+  NOUN 1 = Hat        OBJECT 1 = a hat
+
+and enter Low Priority Condition lines :
+
+  IF ( NO1 < 10 AND VERB 7 ) GET NO1 OKAY END
+  IF ( NO1 < 10 AND VERB 8 ) DROP NO1 OKAY END
+
+
+APPENDIX B
+==========
+
+Tables and Charts
+
+THE QUICKSTART DATA PILE
+------------------------
+The "Quickstart" data file contains all the system messages, many useful
+verbs, and several of the common low priority conditions associated with
+them. This is to allow you to got straight in to writing the adventure that
+you want to write, without having to worry about things that are included in
+all adventures.
+
+The full contents are :
+
+  VERBS           NOUNS
+  -----           -----
+  6   D           255   IT
+  6   DOWN
+  8   DROP        MESSAGES
+  3   E           --------
+  3   EAST        239   You are carrying
+  16  EXANINE     240   What now ?....
+  7   GET         241   You can't.
+  13  GRAPHICS    242   Pardon?
+  10  INVENTORY   243   Press a key for another game...
+  9   L           244   Are you sure ? (Y/N)...
+  10  LIST        245   You've already got that.
+  15  LOAD        246   You haven't got that.
+  9   LOOK        247   You can't see that.
+  1   N           248   You're carrying too much to pick that up.
+  1   NORTH       249   Your score was
+  13  PICTURES    250    and you took
+  11  QUIT        251   It is dark. You can't see.
+  15  RESTORE     252   I can't find that anywhere.
+  2   S           253   You can also see.
+  14  SAVE        254   Okay
+  2   SOUTH       255    turns
+  7   TAKE
+  12  EXIT
+  5   U
+  5   UP
+  4   W
+  4   WEST
+  12  WORDS
+
+LOW PRIORITY CONDITIONS
+-----------------------
+IF ( VERB 9 ) LOOK WAIT END
+  If you typed "LOOK", redescribe the room you're in and wait for a new
+  command.
+
+IF ( VERB 10 ) MESS 239 LIST WITH VAIT END
+  If you typed INVENTORY then print "You are carrying" and list all the
+  objects that are with you.
+
+IF ( VERB 11 ) QUIT OKAY END
+  If you typed "QUIT" then ask the adventurer if he is cure, and if he
+  responds Y (for YES) then quit, otherwise print OKAY and wait for a new
+  command.
+
+IF ( VERB 12 ) TEXT OKAY END
+  If you typed "TEXT" then turn the pictures off.
+
+IF ( VEBB 13 ) PICT OKAY END
+  If you typed "PICTURES" then turn the pictures on.
+
+IF ( VERB 14 ) SAVE OKAY END
+  If you typed "SAVE" then save the game position to tape or disc.
+
+IF ( VERB 15 ) LOAD LOOK WAIT END
+  If you typed "LOAD" then load a previously saved game position from tape
+  or disc, then describe the room you are in.
+
+i. ACTUAL GRAPHICS COLOURS
+--------------------------
+   CTRL 1   (0)     Black         CBM 1   (8)     Orange
+   CTRL 2   (1)     White         CBM 2   (9)     Brown
+   CTRL 3   (2)     Dark Red      CBM 3   (A)     Light Red
+   CTRL 4   (3)     Cyan          CBM 4   (B)     Dark Grey
+   CTRL 5   (4)     Purple        CBM 5   (C)     Medium Grey
+   CTRL B   (5)     Dark Green    CBM 6   (D)     Light Green
+   CTRL 7   (6)     Dark Blue     CBM 7   (E)     Light Blue
+   CTRL 8   (7)     Yellow        CBM 8   (F)     Light Grey
+
+ii. CONTROL CHARACTERS
+----------------------
+Control B  (colour)   - Change Border Colour
+Control G             - Beep
+Control I  (colour)   - Change Ink Colour
+Control J             - Line Feed (Cursor Down)
+Control K             - Cursor Up
+Control L             - Clear Text Screen
+Control P  (colour)   - Change Paper Colour
+CTRL Beverse on       - Reverse On
+CTRL Reverse off      - Reverse Off
+
+Colours asy be selectod using the standard Commodore notation (CTRL 1-8 or
+CBM 1-8). This will return a text symbol 0-9 or A-F. Alternatively colours
+may be selected by merely pressing 0-9 or A-F.
+
+iii. SUBSCBIPTS USED WITH CONDITION WORDS
+-----------------------------------------
+   a   -  adverb number
+   c   -  counter number
+   a   -  marker number
+   ws  -  message number
+   o   -  object number
+   n   -  noun number
+   r   -  room nunber
+   v   -  verb number
+   x,y -  any number
+
+iv. WOBDS USED IN CONDITIONS
+----------------------------
+  Words     Markers   Counters     Rooms      Commands
+  -----     -------   --------     -----      --------
+  VERB  v   SET  m    CSET    c    GOTO   r   OKAY
+  NOUN  n   RESE m    INCR    c    CONN   r   WAIT
+  ADVE  a   SET? m    DECR    c    ROOM       EXIT
+  NO 1      RES? m    CTR     c    AT     r   QUIT
+  NO 2                x EQU?  c    DESC   r
+  VBNO                TURN         LOOK
+
+  Objects               Decisions    Tape and Disc
+  -------               ---------    -------------
+  GET    o   OBJ   o    IF           SAVE
+  DROP   o   LIST  o    END          LOAD
+  o SWAP o   WEIG  o
+  HERE   o   STRE  o
+  CARR   o   o TO r
+  AVAI   o   BRIN  o
+  o IN r     FIND  o
+
+  Other
+  -----
+  MESS ms                        x = y
+  x + y                          WITH
+  x - y                          PICT
+  condition AND condition        TEXT
+  condition OR condition         RAND x
+  condition XOR condition        PRIN x
+  NOT condition                  HOLD x
+  x > y                          LF
+  x < y
+
+v. COUNTERS AND MARKERS USED BY THE SYSTEM
+------------------------------------------
+Counter    0  - Holds the score
+         126 x 1   } Count the nunber of turns since the beginning
+         127 x 256 } of the game.
+Marker     0  - If set means that a room has been described since last
+                reset.
+           1  - If set, you are in a light room.
+           2  - If set, you have a source of light.
+           3  - If set, disables the scoring mechanism.
+
+vi. RANGES OF NUMBERS
+---------------------
+              No. allowed   No. of character
+
+Rooms         1..9999       255
+Object        1..255        255
+Messages      1..255        255
+Verbs         1..255        34
+Nouns         1..255        34
+Adverbs       1..255        34
+Graphisc      1..9999
+Markers       0..255
+Counters      0..127
+[Which store] 0..255
+
+                           +---------+
+                           |  START  |
+                           +---------+
+                                |----------------<--------------+
+                                v                               |
+                      +------------------+                      |
+                      |      output      |                      |
+                      | ROOM DESCRIPTION |                      |
+                      +------------------+                      |
+                   +------------|------------------------------^^^--+
+                   |            v                               |   |
+                   |      +-----------+                         |   |
+                   |      | TURNS + 1 |                         |   |
+                   |      +-----------+                         |   |
+                   |            |                               |   |
+                   |    +---------------+                       |   |
+                   |    | HIGH PRIORITY |                       |   |
+                   |    |  CONDITIONS   |                       |   |
+                   |    +---------------+                       |   |
+                   |            |                               |   |
+                   |      +-------------+                       |   |
+                   |     /   output    /                        |   |
+240 : "What now?"  |    / MESSAGE 240 /                         ^   |
+                   ^   +-------------+                          |   |
+                   |            |                               |   |
+                   |    +----------------+                      |   |
+                   |   / PLAYER'S INPUT /                       |   |
+                   |  +----------------+                        |   |
+                   |            |                               |   |
+                   |  +------------------+                      |   ^
+                   |  | CHECK CONNECTION |                      |   |
+                   |  |       TABLE      |                      |   |
+                   |  +------------------+                      |   |
+                   |            |                               |   |
+                   |         ,'  ',        Y                    |   |
+                   |       ,'      ',_________\______           |   |
+                   |       ',Valid?,'         / _____|____      |   |
+                   |         ',  ,'            | MOVE TO  |     |   |
+                   |      N    '|              | NEW ROOM |     |   |
+                   |            V              +----------+     |   |
+                   | +------------------+            `------>---+   |
+                   ^ | LOCAL CONDITIONS |<+                     |   |
+                   | +------------------+ |                     |   |
+                   |            |         |        /\           ^   |
+                   |         ,'  ',   Y   |       /  \   Y      |   |
+                   |       ,'      ',_____(___\__/ New\_________|   |
+                   |       ',Valid?,'     |   /  \room?         |   |
+                   |         ',  ,'       |       \  /          |   |
+                   |           '|         |        \/           |   |
+                   |      N     |         |     N  |            |   |
+                   |            |         |        /\           |   |
+                   |            V         |       /  \   Y      |   |
+                   |            |         |      /Wait\________,-.__|
+                   |            |         |      \    /         |   |
+                   |            |         |       \  /          |   |
+                   |            |         |     N  \/           |   |
+                   |   +--------------+   |________|            ^   |
+                   |   | LOW PRIORITY |                         |   |
+                   |   |  CONDITIONS  |-<--+                    |   |
+                   |   +--------------+    |                    |   |
+                   |            |          |                    |   |
+                   |        ,------.   Y   |                    |   |
+                   |       | Valid? |------(-->----.            |   |
+                   |        `------'       |     ,' ',   Y      |   |
+                   |            |          |   ,' New ',___\____|   |
+                   |            |          |   ',room?,'   /        |
+                   |        N   V       N  |     ', ,'              |
+                   |            |          |     N |                |
+                   |            |          |     ,' ',  Y           |
+                   |            |          |___,'Wait?',___\________|
+                   |       ,---------.  Y       ',   ,'    /
+                   |      | VERB = 0? |--->----+  ','
+                   |       `---------'         |
+                   |      N     V              V
+                   |       +----------+     +----------+
+241 : "You can't"  |      / MESS 241 /     / MESS 242 /
+242 : "Pardon?"    |     +----------+     +----------+
+                   |            |              |
+                   +----<-------+-----<--------+
+
+The internal commands QUIT and EXIT return the player to the first room with
+the program initialized. There is no end as such.
+
+*********
+
+End of the iDOC= etext of the Graphic Adventure Creator manual.
+
+*********

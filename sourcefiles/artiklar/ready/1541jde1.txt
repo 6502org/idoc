@@ -1,0 +1,427 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore 64
+related documents in electronic text format that might otherwise cease to
+exist with the rapid advancement of computer technology and declining
+interest in 8-bit computers on the part of the general population. If you
+would like to help by converting C64 related hardcopy documents to
+electronic texts please contact the manager of International Project 64,
+Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The first
+characters of the file name are an abbreviation of the original document
+name and the language of the etext. The version number of the etext follows
+next. After that a letter may appear to indicate the particular source of
+the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International Project
+64 make no representations about the accuracy or suitability of this
+material for any purpose. This etext is provided "as-is". Please refer to
+the warranty of the original document, if any, that may included in this
+etext. No other warranties, express or implied, are made to you as to the
+etext or any medium it may be on. Neither the author(s) nor the members of
+International Project 64 will assume liability for damages either from the
+direct or indirect use of this etext or from the distribution of or
+modification to this etext. Therefore if you read this document or use the
+information herein you do so at your own risk.
+
+*********
+
+The International Project 64 etext of the article "Direkte Programmierung
+der Floppy 1541", written and donated for IP64 distribution by Nikolaus
+Heusler <nikolaus.heusler@lrz.tu-muenchen.de>.
+
+1541JDE1.TXT, June 1997, etext #10.
+
+Note from the etexter: 
+
+This is german text.
+
+It's an article written by me published in 1993 in the 64'er magazine. It
+deals with the internal techniques of the 1541 drive.
+
+No part of this text may be copied, stored or published in any way without
+prior written permission by the author. It is not allowed to store copies of
+this text or of parts of it on computer-discettes or on computers which can
+be accessed in the public, for example on the internet.
+
+Das Werk einschliesslich aller seiner Teile ist urheberrechtlich geschuetzt. 
+Jede Verwertung ausserhalb der engen Grenzen des Urheberrechtsgesetzes ist
+ohne vorherige schriftliche Zustimmung des Verfassers unzulaessig und
+strafbar. Dies gilt insbesondere fuer Vervielfaeltigungen, Uebersetzungen
+und die Verarbeitung in elektronischen Systemen.
+
+Einwilligungen zur Weiterverarbeitung wird der Verfasser im Einzelfall auf
+schriftliche Anfrage gern geben, falls keine kommerziellen Interessen mit
+der Verarbeitung verfolgt werden.
+
+Produkt- und Herstellerangaben in dem Text werden ohne Ruecksicht auf
+eventuellen Patentschutz veroeffentlicht. Warennamen werden ohne Gewaehr-
+leistung der freien Verwendbarkeit benutzt. Die Texte wurden mit groesster
+Sorgfalt zusammengestellt. Trotzdem sind Fehler nicht vollstaendig
+auszuschliessen. Fuer fehlerhafte Angaben und deren Folgen kann der Autor
+weder juristische Verantwortung noch irgendeine Haftung uebernehmen.
+
+Verfasser / Author: Nikolaus Heusler
+                    Zwengauerweg 18
+                    D-81479 Muenchen
+                    Germany
+
+Bei schriftlichen Anfragen bitte Rueckporto beilegen, ich antworte gern.
+
+This version was published in the internet on the project "IP 64" in June
+1997.
+
+*********
+
+   Objekt: 64'er Magazin
+  Ausgabe: 12/1993
+   Rubrik: Profi-Corner
+    Thema: Jobcodeprogrammierung der Floppy, serieller Bus, Floppy als Copper
+
+
+Direkte Programmierung der Floppy 1541
+
+Profi-Corner
+
+Die Commodore-Floppy 1541 ist eine »intelligente« Diskettenstation. Ihr
+Innenleben wird von einem eigenen 6502-Prozessor gesteuert, der sich sogar
+vom C 64 aus programmieren läßt. Ohne die richtigen Kenntnisse allerdings
+geht gar nichts.
+
+von Nikolaus Heusler
+
+Da der Prozessor in der Floppy befehlskompatibel zum 6510 des C 64 ist,
+lassen sich für seine Programmierung die bekannten Assembler und Monitore
+des C 64 einsetzen. Wenn Sie einen Assembler besitzen, der direkt in den
+Speicher der 1541 assembliert, dann kann's jetzt losgehen. Sonst müßten Sie
+Ihr Programm erst zwischenspeichern und dann per »M-W«-Befehl in den
+Floppyspeicher übertragen.
+
+Wir werden uns in dieser Folge ansehen, wie man Sektoren von Diskette liest,
+im Floppyspeicher manipuliert und wieder auf die Platte zurückschreibt. Da
+wir nicht die normalen Lesebefehle des Betriebssystems verwenden, haben wir
+einen viel freieren Zugriff auf die Magnetscheibe. Defekte Sektoren oder
+Bereiche der Tracks 36 bis 42, die das Laufwerk sonst notorisch ablehnt,
+stellen so kein Problem dar. Stichwort: »Jobcodes«.
+
+Vorher sind allerdings einige Vorüberlegungen erforderlich. Ein großes
+Problem bei der Diskettenprogrammierung ist, daß der Prozessor 6502 zwar
+auch 64 KByte Speicher adressieren kann. Nun ist das Laufwerk aber nicht
+eben großzügig mit RAM gesegnet: Gerade mal 2 KByte sind mit RAM bestückt -
+mehr ist auch mit Tricks nicht drin. Von diesen 2 KByte, im Speicher von
+Adresse $0000 bis $07ff, können wir etwa die Hälfte frei nutzen. Der Rest
+ist reserviert beispielsweise für die Zeropage. Die folgende Tabelle gibt
+einen groben Überblick:
+
+Bereich         Verwendung
+$000-$2ff       reserviert (Zeropage)
+$300-$3ff       Puffer 0
+$400-$4ff       Puffer 1
+$500-$5ff       Puffer 2
+$600-$6ff       Puffer 3
+$700-$7ff       Puffer 4
+
+Im Bereich $1800 bis $180f ist der I/O-Baustein zu finden, der den seriellen
+Bus bedient, von $1c00 bis $1c0f findet die Kommunikation mit der
+Laufwerksmechanik statt. Das DOS befindet sich im ROM von $c000 bis $ffff.
+Die restlichen Bereiche sind elektronisch nicht vorhanden.
+
+Das RAM der 1541
+
+Zur Erklärung des Begriffs »Puffer« sollten Sie sich im Moment damit
+begnügen, daß man damit einen größeren zusammenhängenden Bereich im Speicher
+bezeichnet. Jeder Puffer ist 256 Byte lang und kann genau einen Sektor der
+Diskette aufnehmen - oder ein Maschinenprogramm. Puffer 1 enthält ab $400
+den aktuellen Teil des Directories und sollte nicht genutzt werden, er ist
+für das System reserviert. Für eigene Experimente hat es sich als sehr
+vorteilhaft erwiesen, beispielsweise den Puffer Nr. 2 ab $500 als Speicher
+für das Maschinenprogramm zu verwenden und in Puffer Nr. 0 ab $300 Sektoren
+der Diskette zu bearbeiten. Damit das DOS in Kenntnis darüber gesetzt wird,
+daß Puffer 2 nun für uns reserviert ist, sollte in Speicherzelle $24f im
+Floppy-RAM das Bit 2 gesetzt werden. Dies erledigt entweder ein Teil des
+Assemblerprogramms, das im Floppy-RAM liegt:
+
+LDA $24F
+ORA #4
+STA $24F
+
+oder noch besser von Basic aus per M-R und M-W der C 64. In dieser
+Speicherzelle hat jeder der fünf Puffer ein Bit. Ist es gesetzt, ist der
+entsprechende Puffer belegt und wird vom DOS nicht mehr als Zwischenspeicher
+verwendet (Ausnahme: falls gar kein Puffer mehr frei ist, dann wählt
+(»stiehlt«) das DOS zufällig einen Puffer aus).
+
+Nun wollen wir uns daran machen, mit einem Maschinenprogramm im
+Floppyspeicher einen Block der Diskette in den Puffer Nr. 0 zu lesen.
+Betrachten Sie dazu folgende Tabelle, die die Funktion der Speicherzellen 0
+bis $f dokumentiert:
+
+$00: Jobcode/Meldung für Puffer 0
+$01: Jobcode/Meldung für Puffer 1
+$02: Jobcode/Meldung für Puffer 2
+$03: Jobcode/Meldung für Puffer 3
+$04: Jobcode/Meldung für Puffer 4
+$06, 07: Track und Sektor für Puffer 0
+$08, 09: Track und Sektor für Puffer 1
+$0a, 0b: Track und Sektor für Puffer 2
+$0c, 0d: Track und Sektor für Puffer 3
+$0e, 0f: Track und Sektor für Puffer 4
+
+Da es einen Puffer 5 nicht gibt, sind die Speicherzellen 5 und $10 bis $11
+ohne Bedeutung. Doch kommen wir zum zentralen Punkt dieses Artikels: Was ist
+ein »Jobcode«?
+
+Auf Jobsuche
+
+Bei der Floppy 1541 handelt es sich um ein Gerät, das stark nach dem
+Multitasking-Verfahren arbeitet. Ähnlich wie es beim C 64 eine
+Interrupt-Routine gibt, arbeiten hier praktisch drei Tasks parallel: Der
+erste steuert das Lesen und Schreiben von Sektoren auf der Magnetscheibe und
+kontrolliert die Mechanik (Motoren, LEDs). Der zweite Task ist für den
+seriellen Bus und damit für den Datenaustausch zuständig. Beide werden im
+Interrupt abgearbeitet, während Task 3 als Hauptprogramm läuft. Er stützt
+sich auf die beiden anderen Tasks, verwaltet sie. Dieser dritte Task
+verwaltet die File-Struktur, sorgt für die Realisierung von »Directory«, den
+verschiedenen Dateitypen, erzeugt die Disk-Fehlermeldungen (»26,WRITE
+PROTECT ON«) und führt beispielsweise auch die Befehle des C 64 (»M-W«,
+»OPEN« und so weiter aus). Das Maschinenprogramm, das wir gerade selbst
+entwickeln, ersetzt diesen dritten Task, soll aber auch insbesondere auf
+Task 1 zurückgreifen können, wenn Sektoren gelesen oder geschrieben werden
+sollen.
+
+Wir haben eben gehört, daß Task 1 im Interrupt läuft. Daher muß es gemeinsam
+genutzte Speicherzellen geben, die die Kommunikation der einzelnen Programme
+unterstützen. Diese Speicherzellen sind die Adressen 0 bis 15 nach obiger
+Tabelle.
+
+Jetzt kann auch erklärt werden, was es mit den Jobcodes auf sich hat. Möchte
+Task 3 zum Beispiel, daß die Floppy einen Sektor von Diskette in einen der
+Puffer liest, gibt es dem Task 1 einen entsprechenden Auftrag, indem ein
+bestimmter Code, der »Jobcode«, in eine der Speicherzellen 0 bis 4 (je
+nachdem, in welchem Puffer der gewünschte Sektor landen soll) geschrieben
+wird. Für die Jobs gibt es nur eine Handvoll an Möglichkeiten:
+
+Jobcode Bedeutung
+$80     Sektor von Diskette in Puffer lesen
+$90     Sektor aus Puffer auf Diskette schreiben
+$A0     Sektor von Disk mit Pufferinhalt vergleichen
+$B0     Sektor auf Disk suchen, nicht laden
+$C0     Kopf anschlagen (Bump)
+$D0     Programm im Puffer ausführen
+$E0     wie $D0, vorher Laufwerk hochfahren
+
+Wir werden bei unserer Arbeit nur die Jobs $80 bis $A0 brauchen, vielleicht
+manchmal auch $C0. Die ersten drei sind mit den Begriffen LOAD, SAVE und
+VERIFY zu umschreiben.
+
+Schreiben wir beispielsweise in Speicherzelle 2 die Zahl $80, so liest das
+Laufwerk einen Sektor in Puffer 2, also in den Speicherbereich ab $500. Nun
+muß Task 3 natürlich auch wissen, welcher Sektor gemeint ist. Deshalb muß
+vor Einschreiben des Jobcodes in Speicherzelle erst noch diese Angabe in den
+Speicherzellen $A und $B gemacht werden. Vorher! Denn wenn Task 3 den Code
+$80 in Adresse 2 findet, wird sofort mit dem Lesen begonnen, auch wenn die
+Sektorangabe vielleicht noch fehlt. Dann wird eben ein mehr oder weniger
+zufälliger Sektor gelesen. Das ist sicher nicht erwünscht.
+
+Bitte melde Dich!
+
+Die Speicherzellen $0 bis $4 erfüllen aber noch eine zweite wichtige
+Funktion. Woher soll Task 3 wissen, daß Task 0 den Sektor komplett
+eingelesen hat? Außerdem könnte auch ein Fehler aufgetreten sein, wenn
+beispielsweise keine Diskette im Laufwerk liegt. Wir brauchen also eine
+Rückmeldung. Alle möglichen Rückmeldungen finden Sie hier:
+
+Rückmeldung  Bedeutung
+$0           es liegt kein Auftrag vor
+$1           fehlerfrei, Task 3 ist fertig
+$2           Blockheader nicht gefunden
+$3           SYNC nicht gefunden
+$4           Datenblock nicht gefunden
+$5           Datenprüfsumme falsch
+$6           GCR-Datenfehler, Prüfsumme falsch
+$7           Verify Error
+$8           Diskette schreibgeschützt
+$9           Headerprüfsumme falsch
+$A           Datenblock zu lang
+$B           falsche ID
+$F           keine Diskette im Laufwerk
+$10          Fehler bei Decodierung
+
+Erst einmal sollten Sie keine Panik aufkommen lassen, wenn Ihnen die
+Bedeutung der Fehlertexte (zum Beispiel »GCR«) unklar sind. Das Verständnis
+ist für unsere Zwecke gar nicht notwendig. Interessant sind in diesem
+Zusammenhang nur zwei Dinge: Falls nach der Ausführung eines Jobs etwas
+anderes als 0 oder 1 als Rückmeldung erfolgt, ist ein Fehler aufgetreten.
+Dann sollte der Benutzer informiert oder der Vorgang wiederholt werden.
+Bemerkenswert ist auch, daß die Rückmeldungen $2 bis $B den
+Disk-Fehlermeldungen Nr. 20 bis Nr. 29 entsprechen. Addieren Sie zur
+Rückmeldung den Wert 18 (dezimal), und Sie erhalten die Floppy-Fehlernummer.
+Aus $B wird so beispielsweise der bekannte 29,DISK ID MISMATCH. $8 führt auf
+26,WRITE PROTECT ON.
+
+Task 3 wartet also, bis Task 1 den Job erledigt hat. Fall dem Puffer 2 ein
+Befehl gegeben wurde, muß dazu nur ständig Speicherzelle 2 ausgelesen
+werden, bis der darin stehende Wert (Rückmeldung) kleiner als $80 ist: Die
+Jobs sind alle größer oder gleich $80. Zur Prüfung bietet sich daher der
+BMI-Befehl an.
+
+Lesen kann er auch
+
+Wir erklären diesen Vorgang, der sich wirklich nur auf den ersten Blick
+kompliziert anhört, an einem Beispiel. Da ein Programm den Disketten-Namen
+wissen möchte, soll Track 18, Sektor 0 in den Bereich ab $500 (Puffer 2)
+geladen werden.
+
+        LDA #$12  ; Track 18
+        STA $0A   ; als Track für Puffer 2
+        LDA #$00  ; Sektor 0
+        STA $0B   ; als Sektor für Puffer 2
+        LDA #$80  ; Jobcode für Block lesen
+        STA $02   ; an Puffer 2
+        CLI       ; Task 3 einschalten
+WARTE   LDA $02   ; Rückmeldung lesen
+        BMI WARTE ; falls noch nicht fertig
+        CMP #$02  ; kleiner als 2?
+        BCC OK    ; ja, dann fehlerfrei
+        JMP ERROR ; sonst Fehlerbehandlung
+
+Assemblieren Sie dieses Programm nach $600, da nach $500 ja der Sektor 18/0
+gelesen wird. Der Befehl bei dem Label WARTE liest ständig die
+Job-Speicherzelle und wartet so lange, bis darin nicht mehr der Jobcode $80,
+sondern die Rückmeldung steht. Der CLI-Befehl, der den Interrupt
+einschaltet, wurde nur zur Sicherheit eingefügt.
+
+Der Diskettenname befindet sich auf dem gelesenen Sektor ab Byte Nr. 144, er
+ist im Speicher also jetzt von $590 bis $59F zu finden.
+
+Vielleicht haben Sie schon einmal davon gehört, daß die Daten gar nicht so
+auf der Diskette stehen, wie man sie beispielsweise mit dem Diskettenmonitor
+sieht, sondern nach einem speziellen Verfahren (»Group Code Recording«, GCR)
+verschlüsselt. Um diese Codierung braucht man sich aber auch bei Verwendung
+der Jobcodes keine Gedanken zu machen: Dies wird vollständig von Task 1
+erledigt. Man könnte noch eine Ebene tiefer einsteigen und direkt auf den
+Schreib/Lesekopf, der die Magnetdaten liest, zugreifen. Dann müßte dieses
+Programm auch die Codierung vornehmen. Die genauen Zusammenhänge
+dokumentiert auch das Bild. Komponenten, die hier dick umrandet sind, sind
+tatsächlich hardwaremäßig als Baustein vorhanden, die anderen werden durch
+das DOS simuliert bzw. realisiert. Auch sonstige Arbeiten wie Motor und rote
+LED einschalten, Sektor suchen und so weiter werden automatisch erledigt.
+
+Nichts Verbotenes: Illegale Tracks
+
+Auf etwas anderes sollten Sie aber achten: In dieser Stufe findet kein Test
+mehr statt, ob die gewählten Tracks und Sektoren plausibel sind. Wenn Sie
+den Befehl geben, Track 100, Sektor 20 zu lesen, so wird Task 1 das brav
+versuchen. Der Lesearm wird dann in Richtung Track 100 bewegt, wobei er
+irgendwann an einer mechanischen Begrenzung ankommt. Das ist gar nicht
+gesund für das Laufwerk. Wir empfehlen Ihnen überhaupt, bei der Entwicklung
+solcher Projekte stets mit geöffneter Floppy 1541 zu arbeiten. Dann können
+Sie alle Bewegungen, die der Lesekopf macht, genau beobachten. Die Tracks
+mit niedriger Nummer befinden sich auf der Magnetscheibe in Richtung Mitte,
+ganz außen befindet sich Track 42. Normalerweise kann das DOS nur Tracks von
+1 bis 35 lesen und schreiben, obwohl es physikalisch sogar bis ca. 41 gehen
+müßte. Wenn Sie ein Programm besitzen, mit dem man so hohe Tracknummern
+formatieren kann, können Sie mit der beschriebenen Technik ohne weiteres
+auch auf höhere Tracks als 35 zugreifen. Die Tracks 36 bis 41 (»illegale
+Tracks«) verfügen über je 17 Sektoren, das macht einen Gewinn von 26112
+Bytes je Diskette. Bezahlen müssen Sie dafür keinen Pfennig.
+
+Jetzt sehen wir uns noch an, wie ein Sektor auf Diskette geschrieben wird.
+Wir wählen wieder Sektor 0 von Spur 18, den wir eben gelesen haben. In
+diesem Sektor findet sich in Bytes 162 und 163 auch die ID der Diskette, die
+wir mit einem kleinen Programm in »64« verändern möchten. Bitte hängen Sie
+das kleine Programm an das Lesebeispiel von oben an:
+
+OK      LDA #$36   ; Code für »6«
+        STA $5A2   ; erstes Zeichend der ID
+        LDA #$34   ; »4«
+        STA $5A3   ; zweites Zeichen
+        LDA #$12   ; Track 18
+        STA $0A    ; als Track für Puffer 2
+        LDA #$00   ; Sektor 0
+        STA $0B    ; als Sektor für Puffer 2
+        LDA #$90   ; Jobcode Block schreiben
+        STA $02    ; an Puffer 2
+        CLI        ; Task 3 einschalten
+WARTE2  LDA $02    ; Rückmeldung lesen
+        BMI WARTE2 ; falls nicht fertig
+        CMP #$02   ; kleiner als 2?
+        BCC FERTIG ; ja, dann fehlerfrei
+        JMP ERROR  ; sonst Fehlerbehandlung
+
+Bei diesem Beispiel könnte als Rückmeldung beispielsweise der Code 8
+auftreten, wenn auf eine schreibgeschützte Diskette geschrieben werden soll.
+Den Schreibschutz kann man auch in dieser Ebene nicht umgehen, er greift
+direkt in die Hardware der Diskettenstation ein.
+
+Der Bump
+
+Zum Abschluß des kleinen Kurses soll noch der Jobcode $C0 etwas genauer
+beleuchtet werden. Das folgende Listing zeigt eine mögliche Anwendung:
+
+STOER   LDA #$10   ; Track 16
+        STA $0E    ; als Track für Puffer 4
+        LDA #$00   ; Sektor 0
+        STA $0F    ; als Sektor für Puffer 4
+        LDA #$C0   ; Bump-Jobcode
+        STA $04    ; an Puffer 4
+        CLI        ; Task 3 einschalten
+LAEUFT  LDA $04    ; Rückmeldung lesen
+        BMI LAEUFT ; falls nicht fertig
+        CMP #$02   ; kleiner als 2?
+        BCC DONE   ; ja, dann fehlerfrei
+        JMP STOER  ; sonst Fehlerbehandlung
+DONE    RTS        ; fertig
+
+Dieser Jobcode bewirkt, daß das Laufwerk den Lesekopf erst nach »ganz unten«
+in Richtung Track 0 bewegt, und zwar über eine Distanz von etwa 48 Tracks.
+Das ist natürlich viel zu weit, wo sich der Kopf vorher auch befunden hat.
+Dadurch schlägt er an eine mechanische Sperre an, das bekannte »Rattern«
+(engl. »Bump«) ertönt. Der Vorteil: Jetzt weiß das Laufwerk sicher, daß der
+Kopf auf Track 1 steht. Der Kopf wird anschließend auf den angegebenen Track
+(in unserem Fall Track 16) bewegt. Aber wie gesagt: Die Mechanik der 1541
+liebt das Rattern gar nicht. Es kann daher durch Setzen von Bit 7 der
+Speicherzelle $6A (im Floppy-RAM) verhindert werden. Die unteren sechs Bit
+(Nr. 0 bis 5) dieser Speicherzelle geben die Anzahl der Versuche an, die das
+Laufwerk bei nicht einwandfreiem Lesen eines Sektors durchführen soll, bis
+dann aufgegeben und eine Fehler-Rückmeldung erzeugt wird.
+
+Damit hätten wir unseren Streifzug durch die weite Welt der Jobcodes vorerst
+beendet. Es gäbe noch sehr viel dazu zu sagen, leider ist der Platz hier
+begrenzt. Daher möchten wir Sie dringend zu eigenen Experimenten auf diesem
+Gebiet anregen. Verwenden Sie aber nur Disketten, auf denen sich keine
+wichtigen Daten befinden. In einer der nächsten Ausgaben gehen wir noch
+etwas tiefer in die Feinheiten dieser Technik. Man kann so nämlich
+beispielsweise auch Fehler auf Disketten zu Kopierschutzzwecken absichtlich
+erzeugen. Diese Floppies lassen sich dann auf herkömmlichen Wege nicht mehr
+vervielfältigen. Auch könnten Erklärungen, wie der serielle Bus funktioniert
+und vor allem wie man ihn in eigenen Programmen nutzt von Interesse sein.
+Bitte schreiben Sie mir doch, inwieweit Sie daran interessiert sind!
+
+(pk)
+
+
+Bild: Das Zusammenwirken der einzelnen Instanzen (Komponenten) in der Floppy
+1541. Die dick umrandeten Teile sind physikalisch als elektronische
+Bausteine vorhanden, der Rest wird von der Software realisiert.
+
+*********
+
+End of the International Project 64 etext of the article "Direkte
+Programmierung der Floppy 1541".
+
+*********

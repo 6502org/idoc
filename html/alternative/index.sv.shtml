@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html dir="LTR" lang=sv>
+<head>
+ <title>iDOC= | icke-textformat</title>
+ <link rev="made" href="m&#65;ilto:peter&#64;softwolves.pp&#46;se">
+ <link rel="stylesheet" href="../idoc.css">
+ <meta name="author" content="Peter Karlsson">
+ <meta name="description" content="Commodore eight-bit-related documentation in non-textonly format.">
+ <!-- $Id: index.sv.shtml,v 1.25 2004/05/02 19:25:19 peter Exp $ -->
+</head>
+
+<body bgcolor="#ffffcc" text="#000000" link="#0000cc" alink="#880000"
+      vlink="#000088">
+
+<div class=left align=center>
+<h1 align=center>
+ <img src="../../pics/idoccbm.gif" width=211 height=150 alt="iDOC=">
+</h1>
+
+<h2 align="center">
+ Alternativa format
+</h2>
+</div>
+
+<hr noshade class=decorative>
+
+<h2>iDOCs alternativa format</h2>
+
+<ul>
+ <li><strong>[Svenska]</strong>
+     Commodore 64 användarmanual
+     <a href="c64_sv/">[HTML]</a>
+     <a href="../download/c64_sv.zip">[text]</a>
+
+ <li><strong>[Tyska]</strong>
+     Commodore 64 Bedienungshandbuch
+     <a href="http://home.datacomm.ch/fmeyer/c64/c64ug.html">[homepage]</a>
+     <a href="c64_de/c64_de.pdf">[PDF]</a>
+     <a href="c64_de/c64_de.ps.gz">[PostScript]</a>
+     <a href="../download/c64_de3.zip">[text]</a>
+
+ <li><strong>[Tyska]</strong>
+     VC 1541 Bedienungshandbuch
+     <a href="vc1541_de/">[HTML]</a>
+     <a href="../download/vc1541_de.zip">[text]</a>
+
+ <li><strong>[Engelska]</strong>
+     CBM 500/600/700 series user's guide
+     <a href="cbm500_en/">[JPEGs]</a>
+
+ <li><strong>[Engelska]</strong>
+     CBM 8296 supplement to the 8032 manual
+     <a href="8296supplement_en/">[HTML]</a>
+     <a href="../download/8296supplement_en.zip">[text]</a>
+
+ <li><strong>[Tyska]</strong>
+     LOS-96 Handbuch
+     <a href="los96_de/">[HTML]</a>
+     <a href="los96_de/Los96-de.ps.gz">[PostScript]</a>
+     <a href="../download/los96_de.zip">[text]</a>
+
+ <li><strong>[Tyska]</strong>
+     LOS-KIT Handbuch
+     <a href="loskit_de/">[HTML]</a>
+     <a href="loskit_de/LosKit-de.ps.gz">[PostScript]</a>
+     <a href="../download/loskit_de.zip">[text]</a>
+
+ <li><strong>[Engelska]</strong>
+     Commodore 128 User's Manual
+     <a href="c128_en/c128_en.pdf">[PDF]</a>
+     <a href="c128_en/c128_en.ps.gz">[PostScript]</a>
+     <a href="http://members.tripod.com/~rvbelzen/c128sg/">[HTML]</a>
+     <a href="../download/c128_en02.zip">[text]</a>
+</ul>
+
+<h2>Dokument på andra platser</h2>
+
+<ul>
+ <li><strong>[Engelska]</strong>
+     Commodore 64 Programmer's Reference Guide
+     <a href="http://www.devili.iki.fi/Computers/Commodore/C64/Programmers_Reference/front_cover.html">[HTML]</a>
+</ul>
+
+<hr noshade class=decorative>
+
+  <a href="../main">Återgå till iDOC=</a>
+| <a href="../../cbm/">Återgå till Softwolves CBM-sida</a>
+| <a href="../../">Peters hemsida</a>
+
+<hr noshade class=clear>
+
+<a href="http://validator.w3.org/check?uri=http://www.softwolves.pp.se/idoc/alternative/index.sv.shtml">
+ <img src="../../pics/vh401.gif" width=88 height=31 border=0
+  alt="[HTML 4.01]"></a>
+
+<a href="http://jigsaw.w3.org/css-validator/validator?uri=http://www.softwolves.pp.se/idoc/idoc.css">
+ <img src="../../pics/vcss.gif" width=88 height=31 border=0 alt="[CSS 2]"></a>
+
+<address>
+ <a href="../../">Peter Karlsson</a> /
+ $Date: 2004/05/02 19:25:19 $ /
+ <a href="m&#65;ilto:peter&#64;softwolves.pp&#46;se">peter&#64;softwolves.pp&#46;se</a>
+</address>
+</body>
+</html>

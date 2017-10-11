@@ -1,0 +1,140 @@
+
+
+BBURAGO RALLY
+
+
+HASZNLATI UTASTS
+
+
+A j t‚k bet”l‚se
+
+Helyezzk be a lemezmeghajt¢ba az A oldalt, majd LOAD"*",8,1. A j t‚k
+a RUN parancssz¢val indul, ut na minden t”lt‚s automatikus. A program
+ ltal k‚rt sz msort a k¢dt bl zatb¢l a 2-es portra kapcsolt joystickkal
+ ll¡tsuk be, majd t–zgombra indul a j t‚k.
+
+
+Kezel‚s
+
+A j t‚kot a 2-es bemenetre csatlakoztatott joystickkal ir ny¡thatjuk.
+Gyors¡t s: t–zgomb; lass¡t s/f‚kez‚s: joystick le; ir ny¡t s: joystick
+balra/jobbra.
+A j t‚k 4x6 p ly b¢l  ll. A p ly nk‚nt teljes¡tend“ k”r”k sz m t a
+k‚perny“ bal als¢ sark ban l thatjuk. Menet k”zben gyelni kell arra,
+hogy a p ly n maradjunk ‚s kerljk az ellenfelnkh”z val¢ tk”z‚st is.
+A p ly kon elsz¢rtan kl”nb”z“ terept rgyak ‚s b¢nuszok tal lhat¢k:
+
+Els“seg‚ly: 1 egys‚gnyit azonnal jav¡t az aut¢ rong l¢d sain.
+
+Doll r: v‚letlenszer– p‚nzegys‚get kapunk jutalmul, ha  thaladunk rajta
+(minimum 15 doll rt). A p lya v‚gi v s rl shoz j¢l j”n (£j aut¢
+v s rl sa vagy a r‚gi jav¡t sa c‚lj b¢l).
+
+Turb¢: a kocsi sebess‚ge az adott t¡pushoz tartoz¢ maxim lis sebess‚get
+eggyel meghalad¢ ‚rt‚kre ugrik ‚s ezt egy m sik aut¢val vagy a p lya
+sz‚l‚vel t”rt‚n“ els“ tk”z‚sig megtartja. Ha turb¢nk van, a lass¡t¢
+terept rgyak nem cs”kkentik a sebess‚get.
+
+Lass¡t¢ terept rgyak: f–csom¢k (folyamatos sebess‚gcs”kken‚s, am¡g az
+akad lyon haladsz; gyors¡tani rajta nem lehet), olaj-, illetve j‚gfolt
+(v‚letlenszer– ir nyba ‚s m‚rt‚kben megcs£szik az aut¢nk).
+
+
+A futam v‚get ‚rhet:
+a., Gy“zelem eset‚n (felvillan¢ c‚lfot¢ is jelzi);
+b., Ha az ellenfelnk nyer (a versenyt az ellenf‚l befut sa ellen‚re
+    is be kell fejezni);
+c., Ha a s‚rl‚sek m‚rt‚ke meghaladja a megengedett maximumot.
+
+
+Futam v‚gi v s rl s:
+Futamgy“zelem ut n a verseny k”zben ”sszeszedett $-ok‚rt, illetve a
+futamgy“zelem‚rt kapott p‚nzd¡j ellen‚ben s‚rl‚seinket lehet jav¡tani
+vagy £j, er“sebb ‚s gyorsabb aut¢t v s rolhatunk. A joystick
+haszn lat val tudjuk a k¡v nt opci¢kat be ll¡tani, az ‚rt‚keket
+v ltoztatni.
+
+
+FIGYELEM!
+
+A 24. futam megnyer‚se ut n megtekinthetjk a gy“zelmi k‚perny“t ‚s a
+gratul l¢ sz”veget. Ut¢bbit olvassuk el figyelmesen, mivel a sz”vegben
+ki¡rt k¢dsort (aut¢m rk kat ‚s a hozz juk tartoz¢ sz mjegyeket) a
+megadott hat rid“ig bekld“k k”z”tt 50 darab aut¢modellt sorsolunk ki.
+
+
+TRKPEK
+
+
+SIVATAG
+
+[Ide j”nne a 6 darab sivatagi p lya t‚rk‚pe; a k‚pal ¡r sok:]
+
+- Bemeleg¡t‚snek n‚h ny egyenes.
+- Kacskaring¢ nyakra-f“re.
+- Haz rdj t‚kosok kedvence.
+- Egy tucat kanyar egy rak son.
+- A kicsiny kincses sziget.
+- Az egyszer–s‚g jegy‚ben.
+
+
+K§RENGETEG
+
+[Ide j”nne a 6 darab k”ves p lya t‚rk‚pe; a k‚pal ¡r sok:]
+
+- Kop r t jba v jt siv r p lya.
+- Itt nem csoda, ha "pip s" leszel.
+- Jobbkanyar, vissza kettes.
+- Megbicsaklott a teremt“ keze.
+- Kincset rejt a p lya h ts¢ fert lya.
+- Semmi cic¢, n lam van a slukker...!
+
+
+ERD§SG
+
+[Ide j”nne a 6 darab erd“s p lya t‚rk‚pe; a k‚pal ¡r sok:]
+
+- Egyszer–, mint az egyszeregy.
+- Szerpentin m‚zeskal csh zzal.
+- Egyenesek, kanyarok ‚s koccan sok.
+- Vesz‚lyes £tkanyarulat jobbra-balra!
+- T¡z kanyar, majdnem egy tucat...
+- A sebess‚g helytelen megv laszt sa...
+
+
+JGMEZ§
+
+[Ide j”nne a 6 darab jeges p lya t‚rk‚pe; a k‚pal ¡r sok:]
+
+- Vigy zz az  tszalad¢ korcsoly z¢kra!
+- L sd erd“s‚g 1. p lya - csak h¢es‚s ut n.
+- Id ig m r £gysem jutsz el...
+- Fel is £t, le is £t.
+- Itt nem j”n be az "arany k”z‚p£t".
+- Nem minden kanyar, ami annak l tszik.
+
+
+A KPERNY§ FELPTSE
+
+[Itt egy k‚p van a k‚zik”nyvben]
+
+[A sz”veg saj t "k”lt‚s", ui. k‚p n‚lkl nem sokra menn‚l a szavakkal :-)]
+
+Lent:
+- Bal als¢ sarok: H tral‚v“ k”r”k sz ma
+- Damage: S‚rl‚sjelz“
+- Speed: Sebess‚gm‚r“
+- Turbo: Turb¢ visszajelz“
+- Jobb als¢ sarok: P‚nzsz ml l¢
+
+A p ly n:
+"$" jel: P‚nz
+Kavicsok, egyebek: Lass¡t¢ terept rgy
+Els“seg‚ly doboz: S‚rl‚scs”kkent“
+K”rszer– dolog: Turb¢felt”lt“
+Olajfolt ‚s j‚gfolt: Olaj-, illetve j‚gfolt
+
+
+K•DTBLZAT
+
+[Sajnos ezt nem lehet reproduk lni ASCII karakterekkel sem...]

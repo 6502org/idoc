@@ -1,0 +1,255 @@
+#;German: mepk@rbg.informatik.th-darmstadt.de
+
+all;<!-- $Id: main.input,v 1.28 2004/03/22 20:40:09 peter Exp $ -->
+all;<div class=left align=center>
+all;<h1 align="center"><img src="../pics/idoccbm.gif" height=150
+all;alt="iDOC=" width=211></h1>
+
+all;<p align="center">
+en;(English)
+sv;(svenska)
+de;(deutsch)
+fi;(suomeksi)
+es;(Español)
+hu;(Magyar)
+all;</p>
+
+de;<p align="center"><small>Übersetzung:
+de;<a href="http://www.student.informatik.tu-darmstadt.de/~mepk/">Christian
+de;Janoff</a></small></p>
+fi;<p align="center"><small>Käännös:
+fi;<a href="http://www.hut.fi/home/msmakela/">Marko Mäkelä</a></small></p>
+es;<p align="center"><small>Traducción:
+es;Rodolfo Leal</small></p>
+hu;<p align="center"><small>Fordítás:
+hu;Varga Viktor</small></p>
+
+all;</div>
+
+all;<div class=right>
+all;<h2 align="center">
+en;Welcome to iDOC=!</h2>
+sv;Välkommen till iDOC=!</h2>
+de;Willkommen bei iDOC=!</h2>
+fi;Tervetuloa iDOC=:n sivuille!</h2>
+es;Bienvenido a iDOC=!</h2>
+hu;Üdvözöljük az iDOC-nál!</h2>
+
+all;<p align="center">
+en;<small>Copyright © 1997-2003 Peter Karlsson</small>
+sv;<small>Upphovsrättsskyddat © 1997-2003 Peter Karlsson</small>
+de;<small>Copyright © 1997-2003 Peter Karlsson</small>
+fi;<small>Copyright © 1997-2003 Peter Karlsson</small>
+es;<small>Copyright © 1997-2003 Peter Karlsson</small>
+hu;<small>Copyright &copy; 1997-2003 Peter Karlsson</small>
+all;</p>
+all;<p align="center"><big>
+en;Dedicated to preserving Commodore eight-bit documentation in
+en;electronic text format
+sv;Dedikerad till att bevara Commodore åttabitars-dokumentation
+sv;som elektronisk text
+de;Gewidmet der Erhaltung von Dokumentation für acht-Bit-Commodore-Computer
+de;in elektronischer Form
+fi;Omistautunut säilyttämään Commodoren 8-bittisiin koneisiin liittyviä
+fi;ohjeita sähköisessä muodossa
+es;Dedicado a la preservación de la documentación de Commodore de 8-bits
+es;en formato de texto electrónico
+hu;A Commodore 8-bites gépekhez tartozó nem angol nyelv? dokumentációk 
+hu;elektronikus formában történõ megõrzésért.
+all;</big><!--htdig_noindex--><p align=center>
+all;[ <a href="index.en.shtml">English</a>
+all;| <a href="index.sv.shtml">svenska</a>
+all;| <a href="index.de.shtml">deutsch</a>
+all;| <a href="index.fi.shtml">suomeksi</a>
+all;| <a href="index.es.shtml">Espa&ntilde;ol</a>
+all;| <a href="index.hu.shtml">Magyar</a>
+all;]</p><!--/htdig_noindex--><p align=center>
+
+en;Please also visit <em><a href="http://project64.c64.org/">Project
+en;64</a></em>.
+
+sv;Se även <em><a href="http://project64.c64.org/">Project
+sv;64</a></em>.
+
+de;Besuchen sie bitte auch <em><a href="http://project64.c64.org/">Project
+de;64</a></em>.
+
+fi;Vieraile myös <em><a href="http://project64.c64.org/">Project
+fi;64</a>:n</em> sivuilla.
+
+es;Por favor, visite también <em><a href="http://project64.c64.org/">Project
+es;64</a></em>.
+
+hu;Látogasd meg a <em><a href="http://project64.c64.org/">Project
+hu;64</a></em> oldalát is.
+
+all;</p>
+
+all;</div>
+all;<hr noshade class=decorative>
+
+all;<div align="center" class="clear"><div align="center" class=visitors>
+
+en;Last updated on
+sv;Senast uppdaterad den
+de;Aktualisiert am
+fi;Päivitetty
+es;Última actualización el
+hu;Utolsó frissítés:
+
+filedate;/home/mnaberezny/6502.org/cbm.6502.org/html/data/main.input
+all;</div></div><hr noshade class=decorative>
+
+all;<h2 class=main>
+en;Information on iDOC=</h2>
+sv;Information om iDOC=</h2>
+de;Informationen zu iDOC=</h2>
+fi;Lisätietoja iDOC=:sta</h2>
+es;Información sobre iDOC=</h2>
+hu;Információk az iDOC=-ról</h2>
+
+all;<ul>
+
+all;<li><a href="intro">
+en;Introduction to iDOC=</a> (updated:
+sv;Introduktion till iDOC=</a> (uppdaterad:
+de;Einführung in iDOC=</a> (aktualisiert am:
+fi;iDOC=:n esittely</a> (päivitetty
+es;Introducción a iDOC=</a> (actualizado el:
+hu;Bevezetés az iDOC=-hoz</a> (frissítve:
+filedate;/home/mnaberezny/6502.org/cbm.6502.org/html/data/intro.input
+all;)
+
+all;<li><a href="policy">
+en;iDOC= policy</a> (updated:
+sv;Riktlinjer för iDOC=</a> (uppdaterad:
+de;Richtlinien von iDOC=</a> (aktualisiert am:
+fi;iDOC=:n suuntaviivat</a> (päivitetty
+es;Políticas sobre iDOC=</a> (actualizado el:
+hu;Az iDOC= szabályzata</a> (frissítve:
+filedate;/home/mnaberezny/6502.org/cbm.6502.org/html/data/policy.input
+all;)
+
+all;<li><a href="people">
+en;The people of iDOC=</a> (updated:
+sv;Folket bakom iDOC=</a> (uppdaterad:
+de;Die Leute hinter iDOC=</a> (aktualisiert am:
+fi;iDOC=:n tekijät</a> (päivitetty
+es;La gente de iDOC=</a> (actualizado el:
+hu;Az iDOC= résztvevõi</a> (frissítve:
+filedate;/home/mnaberezny/6502.org/cbm.6502.org/html/data/people.list
+all;)
+
+all;<li>
+en;<a href="http://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
+sv;<a href="http://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
+de;<a href="http://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
+fi;<a href="http://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext-työkalu</a>
+es;<a href="http://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
+hu;<a href="http://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
+
+all;</ul>
+
+all;<h2 class=main>
+en;Documents</h2>
+sv;Dokument</h2>
+de;Dokumente</h2>
+fi;Dokumentit</h2>
+es;Documentos</h2>
+hu;Dokumentumok</h2>
+
+en;Last updated on
+sv;Senast uppdaterad den
+de;Aktualisiert am
+fi;Päivitetty
+es;Última actualización el
+hu;Utolsó frissítés:
+filedate;/home/mnaberezny/6502.org/cbm.6502.org/html/data/etexts.list
+all;
+
+all;<ul>
+all;<li><a href="etexts-gm-name">
+en;Game related</a>
+sv;Spelrelaterat</a>
+de;Spielebezogen</a>
+fi;Peleihin liittyvää</a>
+es;Relacionado con juegos</a>
+hu;Játékokkal kacsolatos anyagok</a>
+
+all;<li><a href="etexts-hw-name">
+en;Hardware/firmware related</a>
+sv;Maskinvaru-/fastprogramrelaterat</a>
+de;Hardware-/Firmwarebezogen</a>
+fi;Kovoon tai valmoon liittyvää</a>
+es;Relacionado con Hardware/Firmware</a>
+hu;Hardware/firmware anyagok</a>
+
+all;<li><a href="etexts-pr-name">
+en;Programming related</a>
+sv;Programmeringsrelaterat</a>
+de;Programmierung</a>
+fi;Ohjelmointiin liittyvää</a>
+es;Relacionado con programación</a>
+hu;Programozással kapcsolatos anyagok</a>
+
+all;<li><a href="etexts-vc-name">
+en;VIC 20</a>
+sv;VIC 20</a>
+de;VC 20</a>
+fi;VIC 20</a>
+es;VIC 20</a>
+hu;VIC 20</a>
+
+all;<li><a href="etexts-c2-name">Commodore 128/128D</a>
+
+all;<li><a href="etexts-ms-name">
+en;Miscellaneous</a>
+sv;Blandat</a>
+de;Gemischtes</a>
+fi;Sekalaista</a>
+es;Varios</a>
+hu;Mindenféle más</a>
+
+all;<li><a href="etexts-langsv-name">
+en;Documents in Swedish</a>
+sv;Svenskspråkiga dokument</a>
+de;Schwedischsprachige</a>
+fi;Ruotsinkieliset dokumentit</a>
+es;Documentos en Sueco</a>
+hu;Svéd nyelvû anyagok</a>
+
+all;<li><a href="etexts-langde-name">
+en;Documents in German</a>
+sv;Tyskspråkiga dokument</a>
+de;Deutschsprachige</a>
+fi;Saksankieliset dokumentit</a>
+es;Documentos en Alemán</a>
+hu;Német nyelvû anyagok</a>
+
+all;<li><a href="etexts-langhu-name">
+en;Documents in Hungarian</a>
+sv;Ungerskspråkiga dokument</a>
+de;Ungarischsprachige</a>
+fi;Unkarinkieliset dokumentit</a>
+es;Documentos en Húngaro</a>
+hu;Magyar nyelvû anyagok</a>
+
+all;<li><a href="etexts-all-name">
+en;All documents</a>
+de;Alle Dokumente</a>
+sv;Samtliga dokument</a>
+fi;Kaikki dokumentit</a>
+es;Todos los documentos</a>
+hu;Az összes dokumentum</a>
+
+all;<li>
+en;<a href="alternative/">Other formats</a> (updated:
+sv;<a href="alternative/">Andra format</a> (uppdaterad:
+de;<a href="alternative/">Andere Formate</a> (aktualisiert am:
+fi;<a href="alternative/">Muut kuin tekstimuotoiset dokumentit</a> (päivitetty
+es;<a href="alternative/">Otros formatos</a> (actualizado el:
+hu;<a href="alternative/">Más formátumú anyagok</a> (frissítve:
+filedate;/home/mnaberezny/6502.org/cbm.6502.org/html/alternative/index.sv.shtml
+all;)
+
+all;</ul>

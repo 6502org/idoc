@@ -1,0 +1,1329 @@
+*********
+
+Welcome to iDOC= - the international CBM documentation project!
+
+The goal of iDOC= is to preserve (non-English) Commodore related documents
+in electronic text format that might otherwise cease to exist with the rapid
+advancement of computer technology and declining interest in 8-bit computers
+on the part of the general population. If you would like to help by
+converting Commodore related hardcopy documents to electronic texts please
+contact the manager of iDOC=, Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names consists of a reasonably short unique title, followed by the
+document language. Two optional fields follow; first the document version (0
+for incomplete texts, version 1 is usually unnumbered), and then the
+document source, if there are more than one. Finally, the document is given
+a .txt extension.
+
+The author(s) of the original document and members of iDOC= make no
+representations about the accuracy or suitability of this material for any
+purpose. This etext is provided "as-is". Please refer to the warranty of the
+original document, if any, that may included in this etext. No other
+warranties, express or implied, are made to you as to the etext or any
+medium it may be on. Neither the author(s) nor the members of iDOC= will
+assume liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext. Therefore
+if you read this document or use the information herein you do so at your
+own risk.
+
+*********
+
+The iDOC= etext of the user manual for "Programmer's Aid", Swedish version.
+Converted to text by Anders Carlsson <dal95acn@mds.mdh.se>. This release of
+the manual was part of a Swedish VIC magazine called VIC=news, nr 1/1983.
+
+progaid_sv.txt, August 1999, etext #55.
+
+*********
+
+Notes and corrections from the etexter (in Swedish):
+
+En del stav- och tryckfel rättade, dock är den emellanåt klumpiga menings-
+byggnaden, som även innebär ofullständiga meningar, intakt. Alla förekomster
+av Programmeringshjälpmedlet är oförändrade, men alla förekomster av ordet
+Hjälpmedlet är skrivna med liten bokstav.
+
+I den långa listningen i del 3, på rad 1300 fanns i originalet en ensam
+"FOR FF=1", som inte beskrevs som ett fel i den omgivande texten. I brist
+på engelsk förlaga att kontrollera emot, har det ersatts med en komplett
+loop, "FOR FF=1 TO 250:NEXT FF" i samband med att dokumentet läggs upp på
+iDOC=. I samma listning fanns även ett antal andra mindre fel, som ett par
+kolon och citationstecken som saknades.
+
+------------------------------------------------------------------------
+
+PROGRAMMERINGSHJÄLPKASSETTEN
+
+Mer än 20 nya kommandon för att underlätta skrivning, sökning, omnumrering 
+och editering av Basic program.
+
+(omslag : en man med blyertspenna bakom örat, en VIC-20 framför honom,
+          en leende ande omgiven av stjärnglitter som svävar upp ur VIC-20)
+
+------------------------------------------------------------------------
+
+PROGRAMMERINGSHJÄLPMEDEL HANDBOK
+    
+INNEHÅLLSFÖRTECKNING
+    
+Del 1 - Introduktion till VIC 20 kassetten: Programmeringshjälpmedel
+    
+    Introduktion .................................. 1.1
+    Programmeringshjälphandboken .................. 1.2
+    Start av Programmeringshjälpmedel ............. 1.3
+    Kommandon ..................................... 1.4 
+    Kommandogivning ............................... 1.5
+    Felmeddelande ................................. 1.6
+    
+Del 2 - Kommandon
+    
+    Introduktion .................................. 2.1
+    Funktionstangenter ............................ 2.2
+    Program och editeringsmod ..................... 2.3
+    Programmod (PROGRAM) .......................... 2.3.1
+    Editeringsmod (EDIT) .......................... 2.3.2
+    Hjälpkommandon ................................ 2.4
+    Konventioner .................................. 2.4.1
+    AUTO .......................................... 2.4.2
+    RENUMBER (Omnumrering) ........................ 2.4.3
+    DELETE (Radera) ............................... 2.4.4
+    FIND (Sök) .................................... 2.4.5
+    CHANGE (Ändra) ................................ 2.4.6
+    EDIT (Editera) ................................ 2.4.7
+    KEY (Tangent) ................................. 2.4.8
+    Inbyggt RETURN ................................ 2.4.9
+    HELP (Hjälp) .................................. 2.4.10
+    DUMP .......................................... 2.4.11
+    TRACE (Spåra) ................................. 2.4.12
+    STEP (Stega) .................................. 2.4.13
+    OFF ........................................... 2.4.14
+    PROG .......................................... 2.4.15
+    MERGE (Förena) ................................ 2.4.16
+    KILL (döda) ................................... 2.4.17
+    Speciella editeringsfunktioner ................ 2.5
+    
+Del 3 - Att använda Programmeringshjälpmedlet som verktyg
+    
+    Introduktion .................................. 3.1
+    Basicprogrammet ............................... 3.2
+    Start ......................................... 3.3
+    Inmatning av program .......................... 3.4
+    Felsökning .................................... 3.5
+    Sammanfattning ................................ 3.6
+    
+FIGURFÖRTECKNING
+               
+    Titel					    Figure
+    Visar skärmen vid TRACE ....................... 2-1
+    Visar skärmen vid Single-step ................. 2-2
+    Första felet .................................. 3-1
+    Första felet i detalj ......................... 3-2
+    Visar dump av variabler ....................... 3-3
+    
+SAMMANFATTNING AV PROGRAMMERINGSHJÄLPSKOMMANDONA
+    
+    Kommandoformat:					Alternativ:
+    AUTO (sln),(intervall)				AUTO
+    RENUMBER (sln),(intervall) 
+    DELETE (sln),(fln)					eller som i LIST
+    FIND (tecken),(sln),(fln)				eller som i LIST
+    CHANGE (urspr.tecken),(nytt tecken),(sln)-(fln)	eller som i LIST
+    EDIT
+    KEY							KEY nummer, "sats"
+    HELP
+    DUMP
+    TRACE
+    STEP
+    OFF
+    PROG
+    MERGE "(program namn)",(enhetsnummer)
+    KILL
+    
+    Kommandona utförs då RETURN trycks ner.
+    
+    (sln)    indikerar startradnumret. 
+    (fln)    indikerar slutradnumret.
+    (tecken) indikerar ett tecken, Basic-ord eller teckensträng.
+
+    TILLDELNING AV FUNKTIONSTANGENTERNA
+    
+    PROGRAM-mode		EDIT-mode
+
+    Key 1,  "LIST"		"LIST"
+    Key 2,  "MID$("		"AUTO"
+    Key 3,  "RUN(RETURN)"	"RUN(RETURN)"
+    Key 4,  "LEFT$("		"DELETE"
+    Key 5,  "GOTO"		"FIND"
+    Key 6,  "RIGHT$("		"CHANGE"
+    Key 7,  "INPUT"		"TRACE(RETURN)"
+    Key 8,  "CHR$("		"STEP(RETURN)"
+    Key 9,  "EDIT(RETURN)"	"PROG(RETURN)"
+    Key 10, "GOSUB"		"RENUMBER"
+    Key 11, "RETURN(RETURN)"	"MERGE"
+    Key 12, "STR$("		"OFF(RETURN)"
+    
+    SPECIELLA EDITERINGSKOMMANDON
+    
+    CTRL A Scrollar programlistan uppåt.
+    CTRL E Raderar citationstecken i "insert mode". 
+    CTRL L Raderar alla tecken efter markören på raden. 
+    CTRL N Raderar alla tecken i programmet, efter markören. 
+    CTRL Q Scrollar programlistan nedåt. 
+    CTRL U Raderar alla tecken på raden där markören står.
+    
+    Starta Programmeringshjälpmedlet genom att skriva: 
+    SYS 28681 eller SYS 7*4096+9 och tryck på RETURN-tangenten.
+    
+                                   C=commodore
+                                     COMPUTER
+
+------------------------------------------------------------------------
+
+DEL 1 : INTRODUKTION TILL VIC 20 PROGRAMMERINGSHJÄLPMEDELS KASSETTEN
+    
+1.1 Introduktion
+    
+Programmeringshjälpkassetten till VIC-20 är utvecklad för att hjälpa både
+nybörjare och erfarna Basicprogrammerare att skriva, editera och felsöka
+program, snabbt och lätt. Detta görs möjligt med hjälpkommandon, som laddas
+automatiskt in i VlC's operativsystem då kassetten ansluts.
+    
+Hjälpkassetten tillskriver också hjälpkommandon och Basic-ord till
+funktionstangenterna och på så sätt ger programmeraren ett kortfattat
+skrivsätt vid programmering. Detta tillsammans med möjligheten för
+programmeraren att tillskriva sina egna funktioner till dessa tangenter, 
+gör detta programmeringsverktyg till ett oundbärligt tillbehör.
+    
+Denna handbok är ej avsedd att lära Basicprogrammering på VIC. Om Du 
+inte kan programmera i Basic, rekommenderas följande handböcker:
+    
+VIC 20 Användare handbok (följer med VIC).
+    
+Introduktion till Basic, del 1 och del 2, författad av Andrew Colin 
+(ingår i VlC's utbildningspaket).
+    
+1.2 Handboken: Programmeringshjälpmedel
+    
+Denna handbok är indelad i tre delar enligt nedan:
+
+Del 1 - Introduktion till Programmeringsverktyget
+    Denna sektion beskriver Programmeringsverktyget kortfattat och hur man
+installerar och startar hjälpmedlet. Här beskrivs även reglerna som 
+används i denna handbok, för att förklara formen för varje kommando.
+
+Del 2 - Programmeringsverktygets kommandon
+    I denna sektion förklaras hjälpkommandonas form, deras syfte och exempel
+belyser hur att använda den. Kommandona är beskrivna i logisk ordning, dvs i
+den ordning de ofta används vid Basicprogrammering, ett exempel ges i Del 3 i
+denna handbok.
+
+Del 3 - Att använda Programhjälpmedlet som verktyg
+    Denna sektion visar snabbheten och effektiviteten genom att använda
+Programmeringsverktyget vid Basicprogrammering på VIC. Här demonstreras hur
+ett enkelt program kan skrivas, editeras och felsökas med hjälp av kassetten.
+    
+1.3 Starta Programmeringshjälpmedlet
+    
+Kassetten med Programmeringsverktyget skall alltid insättas eller borttagas då
+spänningen till VIC är avslagen. Kassetten installeras på expansionskontakten
+på VIC, med etiketten uppåt, (se VIC 20 Användare Handbok). Om VIC 1010
+Minnesexpansionskort används, måste spänningen på denna också slås ifrån.
+    
+VIC 20 Programmeringshjälpmedel kan användas tillsammans med VIC 1212, VIC
+Maskinkodmonitor och/eller VIC 1211A Superexpansionskassett. Den kan också
+användas tillsammans med expansions-Ram i VIC 1010 Minnesexpansionskort. 
+Observera dock att en del operationer kan komma ur funktioner då man byter
+frön en kassett till en annan. Därför rekommenderas att VIC slås ifrån vid
+ett byte. 
+
+För att starta Programmeringshjälpmedlet skriv:
+
+SYS 28681 eller SYS 7*4096+9 och tryck på RETURN.
+    
+VIC kommer dö att visa:
+    
+ - PROGRAMMER'S AID -
+    
+READY.
+    
+Alla Programmeringsverktyg finns nu inkluderade i VlC's operativsystem och kan
+användas när som helst, liksom alla Basickommandon. Då Programmeringshjälpen
+är startad, kommer VIC automatiskt i Programmeringsmod, vilket innebör att de
+fyra funktionstangenterna på högersidan tillskrivs kommandon såsom GOTO, CHR$
+och GOSUB (se sektion 2.3.1). Förutom Programmeringsmod kan VIC köras i 
+Editeringsmod, vilket medför att editeringskommandon tillskrivs
+funktionstangenterna (se sektion 2.3.2).
+    
+Det finns tolv hjälpkommandon i varje mod. Varje funktionstangent kan
+nedtryckas med eller utan att SHIFT, eller CTRL tangenten hålls nere
+samtidigt. När tangenten trycks ned, kommer en av de tolv funktionerna att
+visas på skärmen. Sektion 2.3.1 och 2 beskriver funktionstangenterna och de
+två moderna i Programmeringsverktyget mer i detalj.
+    
+Programmeraren kan själv tillskriva sina egna värden till dessa tangenter, dvs
+andra än de som genereras av Programverktygskassetten (se sektion 2.4.8).
+    
+1.4 Programmeringshjälpkommandon
+    
+Följande kommandon inkluderas till VlC's operativsystem med
+Programmeringsverktyget:
+
+Kommandon för att skriva/editera program: 
+AUTO, RENUMBER, DELETE, FIND, CHANGE, MERGE
+
+Kommandon för felsökning och exekvering av program: 
+HELP, TRACE, STEP, OFF, DUMP
+
+Kommandon för att tillskriva funktionstangenterna: 
+KEY, EDIT, PROG, KILL
+    
+Dessa kommandon kan endast ges till VIC i DlREKT-mod, dvs de kan ej ingå i
+själva programmet.
+    
+Programmeringshjälpmedlet har även sex speciella programediteringsfunktioner
+som kan nås genom att hålla CTRL tangenten nere och samtidigt trycka på en
+tangent på tangentbordet. CTRL och U medför t.ex. att alla karaktärer på raden
+där markören står raderas. De sex speciella programediteringsfunktionerna
+finns beskrivna i detalj i sektion  2.5.
+    
+1.5 Skriva kommandon
+    
+Alla kommandon i Programverktyget exekveras genom att först skriva kommandot
+och därefter trycka ned RETURN. Basickommandon som är tillskrivna
+funktionstangenterna har ett inbyggt RETURN, kommandat utförs då direkt. Dessa
+kommandon är RUN, EDIT, RETURN, TRACE, STEP och PROG (se sektion 2.3.1 och
+2.3.2).
+    
+1.6 Felindikering
+    
+Om ett hjälpkommando är felstavat, kommer felmeddelandet 'SYNTAX ERROR' att
+visas på skärmen. Kommandot måste då skrivas om igen.
+    
+------------------------------------------------------------------------
+
+DEL 2 : PROGRAMMERINGSHJÄLPENS KOMMANDON
+    
+2.1 Introduktion
+    
+I del två beskrivs de två moderna i Programmeringsverktyget. hjälpkommandona
+beskrivs i den ordning de ofta används vid Basicprogrammering, som t.ex. i
+Del 3. Användningen av funktionstangenterna beskrivs i detalj, även ges
+instruktioner hur programmeraren själv kan tillskriva funktioner till dessa
+tangenter.
+    
+2.2 Funktionstangenterna
+    
+I hjälpverktyget används funktionstangenterna i stor utsträckning. Det finns
+endast fyra funktiontangenter på tangentbordet, men det finns många fler
+funktioner än tangenter.
+    
+Normalt då man trycker på dessa tangenter, utförs funktionerna F1, F3, F5,
+F7. Trycks samma tangenter ned tillsammans med SHIFT, fås funktionerna F2, f4,
+F6, F8. Genom att hylla nere CTRL tangenten och samtidigt trycka på 
+funktionstangenterna, fås funktionerna F9, F10, F11, F12 (observera att denna
+grupp ej finns angiven på tangenterna).
+    
+2.3 Program- och Editeringsmod
+    
+Programmeringshjälpmedlet har två operationsmoder, vilka tillskriver olika
+kommandon till funktionstangenterna på höger sida av VlC's tangentbord. När
+Programmeringsverktyget startats, är VIC automatiskt i PROGRAM-mod.
+
+2.3.1 PROGRAMMOD
+   
+I denna mod kommer följande Basicord att tillskrivas funktionstangenterna:
+
+Observera, (RETURN) nedan kommer att synas på skärmen såsom en vänsterpil i
+omvänd video, efter sista tecknet innanfor citationstecknet.
+    
+Key 1,  "LIST"
+Key 2,  "MID$("
+Key 3,  "RUN(RETURN)"
+Key 4,  "LEFT$("
+Key 5,  "GOTO"
+Key 6,  "RIGHT$("
+Key 7,  "INPUT"
+Key 8,  "CHR$("
+Key 9,  "EDIT(RETURN)"
+Key 10, "GOSUB"
+Key 11, "RETURN(RETURN)"
+Key 12, "STR$("
+    
+Om CTRL och F1-tangenten trycks ned samtidigt, eller genom att skriva EDIT och
+därefter trycka på RETURN, byter man till EDIT-mod.
+
+2.3.2 EDITERINGSMOD
+    
+Följande editeringskommandon tillskrivs funktionstangenterna:
+    
+Key 1,  "LIST"           
+Key 2,  "AUTO"           
+Key 3,  "RUN(RETURN)"    
+Key 4,  "DELETE"         
+Key 5,  "FIND"           
+Key 6,  "CHANGE"         
+Key 7,  "TRACE(RETURN)" 
+Key 8,  "STEP(RETURN)"   
+Key 9,  "PROG(RETURN)"   
+Key 10, "RENUMBER"       
+Key 11, "MERGE "        
+Key 12, "OFF(RETURN)"    
+    
+Observera: Kommandon i en mod kan skrivas, under det att man befinner sig i
+den andra moden, dvs moderna begränsar inte tillgängligheten på kommandona,
+utan gör endast användningen mer kortfattad och enkel.
+    
+Här följer några punkter att lägga på minnet vid användningen av PROGRAM och
+EDlT-mod:
+
+1. Fördelen med PROGRAM och EDIT-moderna är att man kan tillskriva speciella
+   kommandon till VlC's funktionstangenter och därmed kan program skrivas,
+   editeras och rättas snabbt och enkelt.
+    
+2. Man kan skriva kommandona i endera moden när som helst.
+    
+3. Efter start av Programmeringshjälpmedlet, är VIC automatiskt i PROGRAM-mod.
+    
+4. Att skifta från en mod till en annan, tryck på CTRL och F1 samtidigt. Man 
+   kan även skriva PROG eller EDIT och därefter trycka på RETURN.
+    
+2.4 Hjälpkommandon
+
+2.4.1 KONVENTIONER
+
+Formen för varje hjälpkommondo i denna handbok är enligt följande:
+
+1. Tecken skrivna som versaler, skall skrivas exakt som visas. SHIFT behöver
+   ej användas för att få versaler.
+
+2. Tecken innanför parenteser indikerar ett användarespecificerat fält, har
+   anges involverade programrader eller teckensträngar. Parenteserna används
+   bara för att förtydliga instruktionen, de skall därför ej skrivas ut.
+
+3. Andra symboler såsom citationstecken och komma, skall skrivas exakt som de 
+   står. 
+
+4. Returntangenten anges som (RETURN).
+
+5. Startradnumret för ett kommando anges som (sln).
+
+6. Slutradnumret för ett kommando anges som (fln)
+
+
+2.4.2 AUTO
+
+Format: AUTO (sln),(intervallet mellan raderna) eller AUTO
+Syfte : Inkrementera och visa programradnummer automatiskt.
+
+Vid användning av AUTO, efter start av Programmeringsverktyget, utan att ange
+varken startradnumret eller radintervallet, kommer automatiskt radnummer 100
+visas.  For varje gång man skrivit en Basic-sats och tryckt på RETURN, kommer
+radnumret att ökas med 10. Alternativt kan man använda AUTO för att
+specificera startradnummer och inkrement.
+
+AUTO visor radnumret som följer efter senaste inmatningen, oberoende av om
+programrader raderades från minnet under editeringen eller ej. Man kan använda
+AUTO för att hoppa över programrader (ange nästa sekvensiella radnummer i
+programmet som startradnummer). Man kan också använda RENUMBER kommandot (se
+sektion 2.4.3) för att få en sekvensiell programutskrift.
+
+Om RETURN trycks ned direkt efter ett radnummer, upphör AUTO-kommandot.
+
+Observera, om NEW används för att radera ett program från minnet, måste 
+startradnumret specificeras igen med ett AUTO kommando.
+
+Exempel : Att vid start av VIC, med Programmeringshjälpkassetten installerad,
+          visa programradnummer automatiskt, med början vid rad 100 och med
+          intervallet 10:
+
+Kommando: AUTO (RETURN)
+Visar   : 100
+Skriv   : PRINT (RETURN)
+Visar   : 100 PRINT
+	  110 
+Resultat: För varje Basic-sats som avslutas med RETURN, kommer nästa rad att
+          visas med ett radnummer som ökats med 10 från föregående. 
+
+Exempel : Visa radnummer automatiskt, med början vid rad 50 och med
+          radintervallet 5 
+
+Kommando: AUTO 50,5 (RETURN)
+Visar   : 50
+Skriv   : PRINT (RETURN)
+Resultat: 50 PRINT
+	  55
+
+2.4.3 RENUMBER (Omnumrering)
+
+Format: RENUMBER (sln), (radintervall)
+Syfte : Automatiskt omnumrering av alla programradnummer och alla GOTO och
+        GOSUB-satser. 
+
+RENUMBER kommer automatiskt att ändra alla radnummer i programmet, så att
+listning av programmet vid det radnummer som specificerats. Alla efterföljande
+radnummer kommer att inkrementeras enligt det satta intervallet.
+
+RENUMBER kommer också att ändra alla lägesradnummer för GOTO och GOSUB-satser
+så att de stämmer med den nya radnumreringen.
+
+Detta kommando är speciellt lämpat då man vill skapa mer utrymme mellan
+programrader för att där kunna skjuta in fler Basic-satser. 
+
+Exempel: Omnumrering av alla rader och GOTO-satser i följande program:
+
+100 REM RENUMBER COMMAND
+110 PRINT "HELLO I'M VIC"
+120 FOR L=1 TO 1000
+121 NEXT
+130 PRINT "(SHIFT/CLR/HOME)":GOTO 110
+
+Kommando: RENUMBER 200,3 (RETURN)
+Skriv   : LIST (RETURN)
+Visar   : 200 REM RENUMBER COMMAND
+          203 PRINT "HELLO I'M VIC"
+          206 FOR L=1 TO 1000
+          209 NEXT
+          212 PRINT "(SHIFT/CLR/HOME)":GOTO 203
+
+2.4.4 DELETE (Radera)
+
+Format: (sln)-(fln)
+Syfte : Radera programrader från VlC's minne.
+
+DELETE opererar på ett antal rader på liknande sätt som LIST kommandot. De
+olika skrivsätten för DELETE anges nedan:
+
+DELETE (In)		Raderar en rad (In).
+DELETE (sln)-(fln)	Raderar alla rader mellan (sln) och (fln).
+DELETE -(fln)		Raderar alla rader från början av programmet till rad
+			(fln).
+DELETE (sln)-		Raderar alla rader fr.o.m. (sln) till slutet av
+			programmet.
+
+Exempel: Raderar de två första raderna i programmet:
+
+10 REM DELETE COMMAND
+20 REM ONE OF THE MANY
+30 REM USEFUL VIC 20
+40 REM PROGRAMMER'S AID
+50 REM COMMANDS
+
+Kommando: DELETE -20 (RETURN)
+Skriv   : LIST (RETURN)
+Visar   : 30 REM USEFUL VIC 20
+	  40 REM PROGRAMMER'S AID
+	  50 REM COMMANDS
+Resultat: Raderna 10 och 20 raderades.
+
+Exempel : Att radera raderna 30 och 40 i programmet
+Komanndo: DELETE 30 - 40 (RETURN)
+Skriv   : LIST (RETURN)
+Visar   : 50 REM COMMANDS
+Resultat: Raderna 30 och 40 är raderade.
+
+2.4.5 FIND {Sök)
+
+Format: FIND (Basic-ord), (sln)-(fln)
+eller   FIND "(teckensträng)", (sln)-(fln)
+eller   FIND (tecken),(sln)-(fln)
+
+Syfte : Söker efter angiven Basic-sats eller teckensträng och visar på vilken
+        rad(-er) den hittades
+
+FIND opererar på ett antal rader, på liknande sätt som LlST-kommandot. De
+olika skrivsätten är enligt nedan:
+
+FIND (teck), -(fln)	Söker från början av programmet t.o.m. rad (fln)
+FIND (teck),(sln)-	Söker från rad (sln) till slutet av programmet.
+FIND (teck),(sln)-(fln) Söker mellan raderna (sln) och (fln).
+
+(teck) indikerar Basic-ord, tecken eller teckensträngar som söks.
+
+FIND söker efter de angivna Basic-ord eller tecken i programmet och visar alla
+rader där de förekommer, dock ej de rader där satsen eller tecknen är omslutna
+med citationstecken. Detta inkluderar alla REM-satser. Om man inte vill söka
+i REM-satser, kan citationstecken användas t.ex. REM "kommentar". På detta
+sätt kommer sökning av REM-satser endast göras då man sätter citationstecken
+kring sökordet, som i en teckensträng.
+
+Om man söker efter en teckensträng, kommer FIND att visa alla rader där
+teckensträngen förekom, innesluten av citationstecken.
+
+Genom att hålla nere CTRL-tangenten kommer raderna att visas på skärmen i
+långsammare takt. STOP-tangenten avbryter FlND-kommandot. 
+
+Exempel: Sök tecknet C i följonde program:
+
+10 REM FIND COMMAND
+20 PRINT "ABCDEFGH VERTICALLY"
+30 A$="ABCDEFGH"
+40 FOR C=1 TO 8
+50 PRINT MID$(A$,C,1)
+60 PRINT "---------"
+70 NEXT C
+80 REM "CONTINUE
+
+Kommando: FIND C (RETURN)
+Visar   : 10 REM FIND COMMAND
+	  40 FOR C=1 TO 8
+	  50 PRINT MID$(A$,C,1)
+	  70 NEXT C
+Resultat: Alla rader som har ett C kommer att visas på skärmen.
+
+Exempel : Sök teckensträngen "ABCD" i programmet ovan 
+Kommando: FIND "ABCD" (RETURN)
+Visar   : 20 PRINT"ABCDEFGH VERTICALLY"
+	  30 A$="ABCDEFGH"
+Resultat: Alla rader som innehåller teckensträngen "ABCD" visas på skärmen.
+
+2.4.6 CHANGE (Ändra)
+
+Format: CHANGE (gammal sats),(ny sats),(sln),(fln)
+eller   CHANGE (gammal sträng),(ny sträng),(sln),(fln)
+
+Syfte : Letar efter en befintlig Basicsats eller teckensträng och ersätter den
+	med en ny Basicsats eller teckensträng.
+
+Om den nya teckensträngen är omsluten av citationstecken kommer CHANGE endast
+att ändra de teckensträngar i programmet som också är omslutna av
+citationstecken. Observera att REM-satser, Basic-satser utan citationstecken,
+t.ex. 10 REM PRINT, ändras ej med kommandot CHANGE PRINT,PRINT#, 1000 - 2000.
+
+CHANGE påminner om LlST-kommandot och de olika kommandoformerna är enligt
+nedan:
+
+CHANGE (oc),(nc), -(fln)	Sök från början av programmet t.o.m. rad (fln),
+				ersätt (oc) med (nc).
+CHANGE (oc),(nc),(sln)-		Sök från rad (sln) till slutet av programmet,
+				ersätt (oc) med (nc).
+CHANGE (oc),(nc),(sln)-(fln)	Söker fr.o.m. (sln) t.o.m. (fln), ersätter
+				(oc) med (nc).
+
+dör (oc) motsvarar den gamla Basic-satsen eller teckensträngen och (nc) 
+motsvarar den nya Basic-satsen eller teckensträngen.
+
+Exempel : Ändra teckensträngen "ABCEFGH" till "12345678" i föregående program.
+Kommando: CHANGE "ABCDEFGH","12345678" (RETURN)
+Visar   : 20 PRINT "12345678 VERTICALLY"
+	  30 A$="12345678"
+Resultat: Alla teckensträngar med "ABCDEFGH" ändras till "12345678" och alla
+	  rader som ändrades visas på skärmen.
+
+2.4.7 EDIT (redigering)
+
+Format: EDIT
+Syfte : Ändra mod från PROGRAM till EDIT-mod.
+
+EDIT-kommandot ger direkt tillgång till alla tolv programediteringskommandon,
+som automatiskt tillskrivs funktionstangenterna då kassetten installeras i VIC
+(se sektion 2.3.2).
+
+Man skriver EDIT eller trycker ned CTRL och F1-tangenten för att komma i
+EDIT-mod. Funktionstangenterna är därefter tillskrivna följande kommandon:
+
+Observera: (RETURN) är inbyggt efter kommandot. Detta syns på skärmen som en
+vänsterpil i omvänd video (se sektion 2.4.9, inbyggt RETURN).
+
+Key 1,  "LIST"
+Key 2,  "AUTO"
+Key 3,  "RUN(RETURN)
+Key 4,  "DELETE"
+Key 5,  "FIND"
+Key 6,  "CHANGE"
+Key 7,  "TRACE(RETURN)"
+Key 8,  "STEP(RETURN)"
+Key 9,  "PROG(RETURN)"
+Key 10, "RENUMBER"
+Key 11, "MERGE"
+Key 12, "OFF(RETURN)"
+
+Exempel : Ändra till EDIT-mod från PROGRAM-mod.
+Kommando: EDIT (RETURN)
+Visar   : EDIT
+Resultat: Funktionstangenterna är nu i Programediteringsmod.
+
+2.4.8 KEY (Funktionsitangenterna)
+
+Format: KEY
+eller   KEY nummer,"kod"
+
+Syfte : Lista kommandona som är tillskrivna funktionstangenterna, som sedan
+	kan ändras till andra funktioner.
+
+KEY ger information om vad som är tillskrivet funktionstangenterna, som
+därefter kan ändras. Funktionstangenterna kan representera vilka funktioner
+som helst, för programskrivning, t.ex. Basic-ord, en grafisk symbol, ett tal,
+en teckensträng etc. eller en kombination av dessa. Enda restriktionen är att
+funktionen som tillskrivs en tangent måste vara 10 tecken eller kortare. Genom
+att använda förkortat skrivsätt för Basic-ord t.ex. ? istället för PRINT, kan
+den tillskrivna funktionen göras längre.
+
+Efter det att man skrivit KEY och kommandona till de tolv funktionstangenterna
+visats på skärmen, kan funktionstangenterna omdefinieras genom att skriva CLR,
+följt av (RETURN) (överge till funktionsbytesmod).  Sedan flyttas markören
+till tangenten som skall ändras, där man skriver över det nuvarande kommandot
+och trycker på (RETURN).
+
+Programmeringsverktyget skriver automatiskt ett citationstecken efter sista
+tecknet vid inmatningen. Varje gång tangenten därefter trycks ner, kommer det
+nya kommandot att automatiskt synas på skärmen.
+
+Observera: Om det nya kommandot är kortare än det förra, använd blanksteg för
+att radera överskottstecknen och tryck därefter på (RETURN).
+
+För att ändra en annan tangent, rensa skärmen och använd KEY-kommandot igen
+upprepa därefter ovanstående procedur.
+
+Alternativt kan man skriva KEY, följt av numret på den tangent som skall
+ändras, ett komma och därefter det nya kommandot inom citationstecken. Tryck
+på RETURN för att avsluta satsen. Om efter KEY-definitionen, felmeddelandet
+"ILLEGAL QUANTITY ERROR" visas, är längden på kommandot mer än 10 tecken. Om
+funktionen inte kan göras kortare genom förkortat skrivsätt, tillskriv en del
+av kommandot en annan funktionstangent.
+
+En vänsterpil i omvänd video efter en del KEY-kommandon indikerar att (RETURN)
+exekveras automatiskt då kommandot används.
+
+Varning: Nya kommandon på funktionstangenterna kommer ej att finnas kvar vid
+byte till annan mod. Om kommandon tillskrivs funktionstangenterna i
+PROGRAM-mod och därefter övergår man till EDlT-mod. Då ändring till
+PROGRAM-mod åter sker kommer de ursprungliga funktionerna åter gälla.
+
+Exempel : Tillskriv Basic-ordet PRINT till funktionstangenten F1:
+Kommando: KEY 1,"PRINT" (RETURN)
+Resultat: PRINT kan nu skrivas på skärmen, genom att helt enkelt trycka ner
+	  tangenten F1. 
+
+2.4.9 Inbyggt RETURN
+
+För att slippa trycka på RETURN efter ett funktionstangentkommando, kan RETURN
+adderas till kommandot.
+
+Använd en av de ovan beskrivna metoderna för att ändra KEY-kommandona och lägg
+endera till:
+
+	+CHR$13
+
+efter det sista citationstecknet och tryck därefter på RETURN. Eller utför
+följande instruktioner före sista citationstecknet:
+
+a) Håll ner CTRL-tangenten och tryck på RVS ON-tangenten (övergång till
+   omvänd video).
+b) Skriv en vänsterpil (finns överst till vänster på tangentbordet).
+c) Skriv det avslutande citationstecknet (") och tryck på RETURN.
+
+När denna funktionstangent används kommer RETURN att automatiskt genereras
+efter kommandot.
+
+2.4.10 HELP (Hjälp)
+
+Format: HELP
+Syfte : Visa raden som orsakat fel vid exekveringen och utpekar felpositionen
+	med omvänd video. 
+
+HELP fungerar endast då kommandot ges direkt efter det att ett fel detekterats
+av Basicinterpretatorn och felmeddelandet syns på skärmen. Om STOP-tangenten
+används under programexekvering, kommer HELP endast att indikera den senaste
+raden som exekverades före STOP-kommandot.
+
+Observera: Beroende på arbetssättet hos Basic-interpretatorn, kommer det
+exakta felet inte alltid att visas. Det kommer i alla fall att ligga mycket
+nära det utpekade fältet.
+
+Exempel: Hitta felet i programmet nedan:
+10 FOR CO=1 TO 10
+20 PRINT C0+2*3.142
+30 NEXT C
+
+Skriv:    RUN (RETURN)
+Visar:    7.284
+          ?NEXT WITHOUT FOR 
+           ERROR IN 30
+          READY.
+
+Kommando: HELP (RETURN)
+Visar   : 30 NEXT C (bokstaven "C" visas i omvänd video)
+
+2.4.11 DUMP
+
+Format: DUMP
+Syfte : Visar alla variablers värden, utom de i matriser. Variablerna skrivs
+	ut i den ordning de definierades i programmet och i följande form:
+	
+	Variabelns namn = värde
+
+En variabels värde kan ändras genom föra markören över det gamla värdet och
+där istället skriva det nya. Därefter omexekveras programmet fr.o.m. raden
+efter den ursprungliga variabeldefinitionen. Om det finns mänga variabler, kan
+de visas i långsammare takt: håll nere SHIFT eller CTRL. Tryck på STOP och
+DUMP upphör.
+ 
+Exempel: Visa värdena av alla variabler i följande program:
+
+10 A$="RANDOM NUMBERS"
+20 PRINT A$
+30 X=INT(RND(8)*15)+1
+40 Y=INT(RND(8)*7)+1
+50 R=X*16+8+Y
+60 POKE 36879,R
+70 FOR CO=1 TO 1000: NEXT CO
+80 GOTO 20
+
+Skriv   : RUN (RETURN)
+Utför   : Tryck på STOP-tangenten efter ett par sekunder.
+Visar   : READY.
+Kommando: DUMP (RETURN)
+Visar   : A$="RANDOM NUMBERS"
+	  X = 5
+	  Y = 6
+	  R = 94
+	  CO = 995
+
+2.4.12 TRACE (Spåra) 
+Format: TRACE
+Syfte : Visar den vid tillfället exekverade programraden.
+
+TRACE-kommandot ges före exekveringen av ett program. Ett "fönster" kommer att
+uppträda i övre högra hörnet av VlC's bildskärm. Fönstret visar de program-
+radnummer som nu exekveras. Totalt kan sex radnummer visas samtidigt och i
+följande form #(radnummer). Raderna i fönstret kommer att flyttas uppåt, så
+att den senaste raden i programmet som exekveras är längst ner.
+
+Observera: Fönstret skriver över allt som är skrivet i dess plats på skärmen.
+Vid en INPUT-sats skall därför inmatningen göras nedanför fönstret.
+
+TRACE bromsar exekveringshastigheten, dock kan radnumren ända synas för snabbt
+för att man skall hinna följa med. Håll då nere CTRL eller SHIFT-tangenten,
+för att kontrollera i vilken takt radnumren skall synas på VlC's skärm. Cirka
+två linjer per sekund kommer att visas. Hur TRACE avbryts, se sektion 2.4.14.
+
+Exempel : Att visa programradnumren då ett program exekveras:
+Kommando: TRACE (RETURN)
+Skriv   : RUN (RETURN) och håll nere SHIFT-tangenten.
+Visar   : Se figur 2-1.
+
+ _________________________
+|      VIC DICE GA | #50  |
+| PRESS P TO PROCE | #75  |
+|		   | #100 |
+|		   | #125 |
+|		   | #150 |
+|		   `------|
+|_________________________|
+
+Figur 2-1. Bildskörmen vid TRACE.
+
+2.4.13 STEP (Stag)
+
+Format: STEP
+Syfte : Avbryter programmet efter varje instruktion och visar första radnumret
+	i nästa instruktion.
+
+Om STEP-kommandot exekveras innan programmet körs, kommer varje
+programmeringsinstruktion att exekveras individuellt. Ett fönster på skärmen
+kommer att visa programraderna som hör ihop med den instruktionen (maximalt
+sex rader) och första raden i nästa instruktion. Tryck på SHIFT eller CTRL och
+nästa instruktion utförs och efterföljande instruktions radnummer visas.
+Hålls någon av dessa tangenter nere kommer programmet exekveras kontinuerligt.
+
+Tryck på STOP-tangenten och exekveringen avbryts. För att avsluta
+STEP-kommondot, se sektion 2.4.14.
+
+Exempel : Exekvera ett program, ett steg i taget
+Kommando: STEP (RETURN)
+Skriv   : RUN (RETURN)
+Resultat: Ett fönster uppträder i övre högra hörnet på skärmen, visande första
+	  radnumret i första instruktionen föregått av tecknet #. Observera
+	  att denna rad ej har blivit exekverad (se figur 2-2). 
+Utför   : Tryck på SHIFT.
+Resultat: Första instruktionen i programmet exekveras och första radnumret i
+	  nästa instruktion visas i fönstret.
+
+ _________________________
+| YOU HAVE 50 POUN | #300 |
+|                  | #325 |
+| THE OBJECT IS TO | #350 |
+| GUESS A NUMBER   | #375 |
+| VIC THROWS	   | #400 |
+|		   | #425 |
+|		   `------|
+| THE MINIMUM BET IS      |
+| TEN POUNDS              |
+|                         |
+| PRESS C TO CONTINUE     |
+|_________________________|
+
+Figur 2-2. Skärmen vid "Single-step"
+
+2.4.14 OFF
+
+Format: OFF
+Syfte : Avbryta TRACE och STEP-funktionerna.
+
+OFF avbryter kommandona TRACE och STEP. Fönstret försvinner från skärmen och
+programmet kommer att exekveras med normal hastighet.
+
+Exempel : Återgå till normal exekvering, efter STEP-kommando enligt ovan.
+Kommando: OFF (RETURN)
+Skriv   : RUN
+Resultat: Fönstret är borta och programmet exekveras som vanligt.
+
+2.4.15 PROG
+
+Format: PROG
+Syfte : Byta från EDIT-mod till PROGRAM-mod.
+
+PROG-kommandot ger tiligding till tolv kommandon, som automatiskt tillskrivs
+funktionstangenterna, då kassetten är istucken i VIC (se sektion 2.2.2).
+
+Då Programmeringshjälpen startas, är man i PROGRAM-mod. Om man är i EDIT-mod
+och vill återvända till denna mod, skriv PROG eller tryck på CTRL och F1-
+tangenterna.
+
+Funktionstangenterna motsvarar följande kommandon:
+
+Key 1,  "LIST"
+Key 2,  "MID$("
+Key 3,  "RUN(RETURN)"
+KEY 4,  "LEFT$("
+Key 5,  "GOTO"
+Key 6,  "RIGHT$("
+Key 7,  "INPUT"
+Key 8,  "CHR$("
+Key 9,  "EDIT(RETURN)"
+Key 10, "GOSUB"
+Key 11, "RETURN(RETURN)"
+Key 12, "STR$("
+
+Observera (RETURN) indikerar ett inbyggt RETURN, efter varje kommando. Detta
+syns på skärmen sam en vänsterpil i omvänd video (se sektion 2.4.9, att lägga
+till ett inbyggt RETURN).
+
+Exempel : Överge från EDIT-mod till PROGRAM-mod 
+Kommando: PROG (RETURN)
+Visar   : PROG 
+	  READY.
+
+2,4,16 MERGE (Förena)
+
+Format: MERGE"(Programnamn)",(Enhetsnummer)
+Syfte : Ladda ett tidigare lagrat program eller subrutin och inkoperera det i
+	befintligt program i VlC's minne.
+
+Enhetsnumret refererar till numret på kringutrustningen på vilken programmet
+eller subrutinen som skall förenas finns lagrad.  Kassettbandspelaren har
+enhetsnumret 1 och flexskivenheten har nummer 8. Om detta ej specificerats,
+underförstås enhetsnummer 1, dvs kassettbandspelaren. Programmet specificeras
+på samma sätt som vid Basic-kommandot LOAD. Om ett programnamn ej
+specificerats, kommer nästföljande program på kassetten eller första
+programmet på disketten att förenas med programmet i minnet vid MERGE.
+
+Observera: Ifall det finns radnummer sam är lika i båda programmen, kommer de
+följa efter varandra, dvs programraderna kommer att bli utspridda. Om detta
+sannolikt är fallet, använd RENUMBER-kommandot (se sektion 2.4.3) för att
+omnumrera programmet som befinner sig i minnet och därefter göra ett lyckat
+MERGE.
+
+Exempel : Förena med hjälp av MERGE, programmet med namnet "VIC 1" på
+	  kassettbandspelaren, med programmet i VlC's minne
+Kommando: MERGE "VIC 1",1 (RETURN)
+Visar   : PRESS PLAY ON TAPE
+Utför   : Tryck på PLAY-tangenten på bandspelaren.
+Visar   : LOADING VIC 1
+	  READY.
+Resultat: De två programmen är nu förenade.
+
+2.4.17 KILL (Döda) 
+
+Format: KILL 
+Syfte : Avbryta Programmeringshjälpmedlet.
+
+Då kommandot KILL exekveras, avbryts funktionen av Programmeringsverktyget,
+dvs VIC fungerar som om kassetten ej var installerad. Programmeringshjälpen
+gör exekveringen något långsammare, beroende på bl.a. att exekverings-
+positionen måste memoreras för HELP-kommandot. Det rekommenderas att KILL
+används då programmet är helt färdigt och saknar fel.
+
+Observera: KlLL-kommandot lämnar de tillskrivna funktionstangenterna
+opåverkade, dvs funktionstangenterna kan fartfarande användas som förut.
+
+För att återgå till Programmeringsverktyget, se instruktionerna i sektion
+1.3 i denna handbok.
+
+Exampel : Avbryt Programmeringshjälpen
+Kommando: KILL (RETURN)
+Resultat: Programmeringshjälpen avbruten.
+
+2.5 Speciella editeringsfunktioner
+
+Programmeringsverktyget tillhandahåller sex speciella programediterings-
+funktioner.  Dessa kan användas genom att hålla nere CTRL-tangenten och trycka
+på en bokstav på tangenibardet. De hor följande funktion:
+
+CTRL A	Scrollar (matar fram) programlistan uppåt.  
+CTRL E	Tar bort citationstecknet i 'insert'- mod.  
+CTRL L	Stryker tecknen till höger om markören på raden.
+CTRL N	Stryker från skärmen alla tecken i programmet efter markören.
+CTRL Q	Scrollar proggramlistan nedåt.
+CTRL U	Stryker raden som markören befinner sig på.
+
+De är alla självförklarande, utom kanske CTRL E. Detta kommando är praktiskt
+då man fyller i information mellan citationstecken på en programrad. CTRL E
+tillåter att man kan flytta markören, utan att markörtecknet syns.
+
+Observera: Om de speciella editeringsfunktionerna används för att radera
+tecken, kommer de endast försvinna från skärmen. De ändrar ej programraderna
+i VlC's minne. För att ändra i minnet, skrivs de nya tecknen och därefter
+trycker man på RETURN.
+
+Exempel : Radera alla tecken på raden:
+ 	  100 REM THIS IS SUPERFLUOUS
+	  då markören står på raden:
+Kommando: CTRL U
+Visar   : En tom rad.
+Resultat: Rad 100 är raderad från skärmen, men den finns fortfarande i minnet.
+
+------------------------------------------------------------------------
+
+DEL 3 : Att använda Programmeringshjälpen som verktyg
+
+3.1 Introduktion
+
+Detta kapitel visar hur man skriver ett komplett Basic-program med hjälp av
+Programmeringshjälpen. Ett programmeringsexempel med instruktioner och figurer
+demonstrerar fördelarna med hjälpmedlet vid programskrivning, editering och
+felsökning.
+
+3.2 Basic-programmet
+
+Det program som illustrerar funktionerna, är ett enkelt slumptals- eller
+"tärnings"-spel. Spelaren ges först en startinsats, han skall sedan gissa på
+ett nummer mellan 1 och 6. Färg och ljudfunktionerna i VIC utnyttjas endast i
+begränsad omfattning för att inte göra det för komplicerat för en mindre
+erfaren VlC-programmerare.
+
+3.3 Tillvägagångssättet
+
+Sätt in kassetten i expansionsporten på VIC, med strömmen avslagen. Slå på
+strömmen och skriv:
+
+SYS 28681 (RETURN)
+
+VIC är nu i PROGRAM-mod. Utför instruktionerna nedan för utskrift och
+omdefiniera kommandona som automatiskt tillskrivs funktionstangenterna. Skriv:
+
+KEY (RETURN)
+
+Skriv nu följande:
+
+CLR (RETURN)
+
+Omdefiniera funktonerna så att de motsvarar listan nedan, flytta markören
+till rätt rad och skriv där de nya tecknen, tryck därefter på RETURN. För
+att ändra nästa kommando, töm skärmen och gör om proceduren (se sektion
+2.4.8).
+
+Key 1,  "LIST"
+Key 2,  "FOR"
+Key 3,  "RUN"
+Key 4,  "NEXT"
+Key 5,  "GOTO"
+Key 6,  "G-A$:IFA$="
+Key 7,  "INPUT"
+Key 8,  "PRINT"
+Key 9,  "IFA$"
+Key 10, "GOSUB"
+Key 11, "RETURN"
+Key 12, "POKE"
+
+Observera: G- (skriv G, håll SHIFT nere och skriv E), motsvarar den förkortade
+formen av Basic-ordet "GET". I appendix D i "VIC 20 Användarehandbok" finns
+alla förkortade skrivsätt för Basic-orden.
+
+Varning: Ändra ej till EDIT-mod efter omdefinitionen av funktionstangenterna.
+Funktionstangenterna kommer då att tillskrivas de ursprungliga funktionerna
+från kassetten. Alla editeringskommandon som behövs kan skrivas ut helt.
+
+3.4 Mata in programmet
+
+Starta med att numrera programraderna med början vid rad 50 och inkrementera
+med 25 rader, genom följande kommando:
+
+AUTO 50,25 (RETURN)
+
+VIC visar därefter radnummer 50 och väntar på inmatning (se sektion 2.2.2).
+Tryck på RETURN vid slutet av varje rad, nästa rad visas då på skärmen.
+
+Skriv in programmet nedan genom att använda funktionstangenterna. De
+symboliseras med vinkelparenteser t.ex. <F4>. När hela programmet är skrivet,
+tryck på RETURN direkt efter det att nästa radnummer automatiskt visas. Detta
+avslutar AUTO-kommandot.
+
+  50 <F12> 36879,30
+  75 N=50
+ 100 <F8> "(SHIFT/CLR HOME)":<F8> TAB(5)"VIC DICE GAME"
+ 125 <F8> "PRESS P TO PROCEED"
+ 150 <F6> " " THEN 150
+ 175 <F9> "P" THEN 250
+ 200 <F5> 150
+ 225 REM ** GAME RULES
+ 250 <F8> "(SHIFT/CLR HOME)YOU HAVE "N" POUNDS":<F8>:<F8>
+ 275 <F8> "THE OBJEKT IS TO"
+ 300 <F8> "GUESS A NUMBER"
+ 325 <F8> "VIC THROWS"
+ 350 <F8> "(2 CRSR DOWN)THE MINIMUM BET IS"
+ 375 <F8> "TEN POUNDS"
+ 400 <F8>:<F8> "PRESS C TO CONTINUE"
+ 425 <F6> " " THEN 425
+ 450 <F9> "C" THEN 525
+ 475 <F5> 425
+ 500 REM ** RANDOM NUMBER
+ 525 <F8> "(SHIFT/CLR HOME)":A%=RND(1)*6+1
+ 550 <F7> "WHAT IS YOUR BET";B
+ 575 IF B<10 OR B>N THEN <F10> 925:<F5> 525
+ 600 <F8> "(2 CRSR DOWN)PLEASE SELECT NUMBER"
+ 625 <F8> "1-6"
+ 650 <F6> " " THE 650
+ 675 IF VAL(A$)<1 OR VAL(A$)>5 THEN <F8> "(6 SHIFT/CRSR DOWN)":<F5> 600
+ 700 X=VAL(A$):<F8> "(2 CRSR DOWN)YOUR NUMBER WAS "X
+ 725 <F2> Q=1 TO 1000:<F4>
+ 750 <F8> "(2 CRSR DOWN)VIC'S NUMBER WAS "A%
+ 775 IF X=A% THEN N=N+B*2:<F8> "(2 CRSR DOWN)YOU WIN":<F10> 1250:<F5> 825
+ 800 <F8> "(2 CRSR DOWN)VIC WINS":<F2> Q=1 TO 2500:<F4>
+ 825 N=N-B
+ 850 IF N<10 THEN 1050
+ 875 IF N>100 THEN 1200
+ 900 <F5> 1050
+ 925 <F8> "(SHIFT/CLR HOME)"
+ 950 <F8> "(CLR HOME)NUMBER OUT OF RANGE"
+ 975 <F2> Z=1 TO 1000:<F4> Z:<F5> 525
+1000 REM ** ERROR ROUTINE
+1025 <F11>
+1050 REM ** GAME OVER
+1075 REM ** ROUTINE
+1100 <F8> "(SHIFT/CLR HOME)"
+1125 <F2> S=1 TO 5:<F8> "(CLR HOME/2 CRSR DOWN)YOU'RE BROKE!!":
+     <F2> Q=1 TO 500:<F4> Q
+1150 <F8> "(CLR HOME/2 CRSR DOWN/CTRL RVS ON)YOU'RE BROKE!!":
+     <F2> Q=1 TO 150:<F4> Q,S:RUN
+1175 <F8> "(SHIFT/CLR HOME)"
+1200 <F2> S=1 TO 10:<F8> "(CLR HOME/2 CRSR DOWN)VIC'S BROKE!!":
+     <F2> Q=1 TO 2500:<F4> Q:RUN
+1225 REM ** COLOUR AND
+1250 REM ** SOUND ROUTINES
+1275 <F12> 36878,15:<F2> L=148 TO 220 STEP .7:<F12> 36876,L:<F4> L
+1300 <F2> W=1 TO 5:<F12> 36879,26:<F2> FF=1 TO 250:<F4> FF
+1325 <F12> 36879.30:<F2> FF=1 TO 250:<F4> FF,W
+1350 <F2> L=200 TO 128 STEP -1:<F12> 36876,L:<F4> L
+1375 <F12> 36878,0:<F12> 36876,0
+1400 <F11>
+
+För att köra programmet, skriv:
+
+<F3> (RETURN)
+
+Om programmet skrivet som ovan, skall skärmen se ut som i figur 3-1.
+
+ _______________________
+| WHAT IS YOUR BET? 10  |
+|		        |
+| PLEASE SELECT NUMBER  |
+| 1-6			|
+|			|
+| ?SYNTAX		|
+|  ERROR IN 650		|
+| READY.		|
+|_______________________|
+
+Figur 3-1. Första felet
+
+3.5 Felsökning
+
+Något har blivit fel i programmet. För att lokalisera felet, skriv:
+
+HELP (RETURN)
+
+Skärmen kommer då att se ut som i figur 3-2.
+
+ _______________________
+| WHAT IS YOUR BET? 10  |
+|		        |
+| PLEASE SELECT NUMBER  |
+| 1-6			|
+|			|
+| ?SYNTAX		|
+|  ERROR IN 650		|
+| READY.		|
+| HELP			|
+| 650 GETA$:IF A$="~THE	|	~ indikerar "-tecken i reverserad video
+| 650			|
+|			|
+| READY.		|
+|_______________________|
+
+Figur 3-2. Första felet utpekat
+
+Citationstecknet i rad 650 utpekas med omvänd video. Denna position ligger
+alldeles intill felet, som utan tvekan är "THE" som skulle ha varit
+Basic-ordet THEN. Korrigera felet och kör programmet igen.
+
+Nu uppstår ett annat problem. Spelaren blir utan pengar för fort. För att
+undersöka hur mycket pengar han verkligen har, tryck på STOP-tangenten efter
+BROKE-meddelandet blinkat några ganger, skriv sedan:
+
+DUMP (RETURN)
+
+Figur 3-3 visar skärmens utseende.
+
+ _______________________
+| YOU'RE BROKE		|
+|			|
+| BREAK IN 1150		|
+| READY.		|
+| DUMP			|
+| N= 50			|
+| A$="1"		|
+| A%= 5			|
+| B= 10			|
+| X= 1			|
+| Q= 2843		|
+| S= 6			|
+|			|
+| READY.		|
+|_______________________|
+
+Figur 3-3. Variabeldump
+
+Programmet fungerar uppenbarligen inte.  Man kan använda STEP-kommandot för
+att se vad som gått fel (se sektion 2.4.12). Eftersom INPUT används högt upp
+på skärmen i programmet, måste rad 550 ändras till:
+
+550 <F8> "(SHIFT/CLR HOME/9 CRSR DOWN):<F7> "WHAT IS YOUR BET";B
+
+Programmet är fortfarande inte korrekt, ty spelaren blir utan pengar även då
+han bjuder försiktigt. För att hitta orsaken, skriv:
+
+STEP (RETURN)
+RUN (RETURN)
+
+Då instruktionen som talar om ifall VIC eller spelaren vinner syns, notera
+radnumret Iängst ner i fönstret. Förutsatt att budet ej översteg 40 pund skall
+under första körningen, nästa radnummer peka på omstart av spelet, dvs rad
+250. Istället visas rad 1050 i fönstret. Felet ligger i rad 900, som säger
+GOTO 1075. Där skall stå GOTO 250. Ändra satsen och programmet skall fungera.
+
+STEP- och TRACE-kommandona gör programexekveringen långsammare (se sektion
+2.4.12 och 2.4.13). Om något av dessa kommandon använts, skriv OFF (se sektion
+2.14.14) och exekveringshostigheten blir åter normal. Kommandot KILL avslutar
+Programmeringsverktyget och medför också normal exekveringshastighet (se
+sektion 2.4.17).
+
+3.6 Sammanfattaing
+
+Här följer en sammanfattning på arbetsstegen vid användning av
+Programmeringshjälpen:
+
+ 1. Starta Programmeringshjälpen.
+
+ 2. Tilldela funktionstangenterna nya kommandon med KEY, ifall de som
+    automatiskt träder i funktion ej passar.
+
+ 3. Använd AUTO-kommandot för automatisk radnumrering.
+
+ 4. Mata in programmet.
+
+ 5. Om en subrutin eller ett annat program, som tidigare finns lagrad, skall
+    länkas ihop med det nya programmet, använd MERGE-kommandot.
+
+ 6. DELETE-kommandot kan användas vid behov, för att radera programrader från
+    minnet.
+
+ 7. Använd RENUMBER för att omnumrera programradnumren, så att de kommer i
+    jämn ordning.
+
+ 8. Exekvera programmet med RUN.
+
+ 9. Vid fel, skriv HELP och raden med felet visas.
+
+10. Rätta felet och exekvera programmet igen.
+
+11. Vid behov kan alla variabler, som icke är matriser, skrivas ut med
+    DUMP-kommandot.
+
+12. Om man vill se var i programmet ett speciellt tecken, teckensträng eller
+    Basic-ord finns, använd FIND.
+
+13. CHANGE-kommandot används ifall satser måste ändras.
+
+14. Felaktiga GOTO eller GOSUB-satser kan följas vid exekvering med STEP eller
+    TRACE-kommondot.
+
+15. Rätta eventuella fel och avbryt STEP eller TRACE med OFF.
+
+16. När allt fungerar, skriv KILL vilket avbryter Programmeringshjälpen.
+
+17. Glöm ej att spara programmet.
+
+------------------------------------------------------------------------
+INDEX
+
+Avsluta Programmeringshjälpen
+AUTO-kommandot
+Automatisk radnumrering
+CHANGE-kommandot
+CHR$(13)
+Citationstecken
+DELETE-kommandot
+DUMP-kommandot
+Dumpa variabler
+EDIT-kommandot
+Editeringsmod
+Editeringsfunktioner, specialprogram
+Felindikering
+Fellokalisering
+FIND-kommandot
+Funktionstangenterna, tilldelade kommandon
+Funktionstangenterna, omdefiniering av komanndon
+HELP-kommandot
+Inbyggt RETURN
+Kassettinstallation och start
+KEY-funktionen
+KEY-kommando
+KlLL-kommandot
+Konventioner, format
+Länkning av program och subrutiner
+MERGE-kommandot
+Minnesexpansionskort, tillsammans med Programmeringshjälpen
+OFF-kommandot
+PROG-kommandot
+Programinmatning
+Programmeringsmod
+Programmeringsverktyget, start av
+Rader, omnumrering
+Rader, radering av
+RENUMBER-kommandot
+Start av kassetten
+STEP-kommandot
+TRACE-kommandot
+Variabler, utskrift av (dumpning)
+Vänsterpil, omvänd video
+
+				C=commodore
+				  COMPUTER
+
+
+*********
+
+End of the iDOC= etext of the Programmer's Aid manual.
+
+*********

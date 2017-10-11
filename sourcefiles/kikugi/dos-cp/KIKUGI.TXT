@@ -1,0 +1,33 @@
+
+
+KIKUGI
+[Instrukci¢k az 576 KByte j t‚k hoz]
+
+Kezel‚s: - Joystick 1-es csatlakoz¢ illetve billenty–zet.
+
+Ir ny¡t s:
+Joy jobbra-balra,
+fel-le illetve
+b rmely  tl¢s ir nyba - Kezel“ny¡l vagy k“ elmozgat sa a j t‚kt‚ren
+                        bell a k¡v nt poz¡ci¢ra.
+T–zgomb               - K¡v nt k“ felv‚tele vagy lerak sa
+Visszany¡l billenty–  - Utols¢ 1 l‚p‚s visszav‚tele.
+
+Szab lyok: - A t–zgombbal felvett k“vel a nyolc lehets‚ges ir ny
+             egyik‚ben egy m sik szomsz‚dos mez“n tal lhat¢ k“ ugorhat¢
+              t £gy, hogy szabad mez“re ‚rkezznk. Sikeres l‚p‚s eset‚n
+             az  tugrott k“ elt–nik. Szab lytalan l‚p‚st a j t‚k nem
+             enged meg, ha nincs t”bb szab lyos l‚p‚s, vagy letelt a
+             maxim lis 6 perc j t‚kid“, azt a g‚p jelzi.
+
+C‚l: - A lehet“ legr”videbb id“ alatt a legt”bb k”vet leszedni.
+       T”k‚letes a megold s, ha 1 k“ marad a t bl n, de m‚g akkor is
+       marad egy feladat: a megold si id“ minimumra cs”kkent‚se.
+
+A j t‚kban lehet“s‚gnk van a legjobbak k”z‚ nevnket a cs£cslist ra
+fel¡rni. Ez joystickkal t”rt‚nik a k”vetkez“ m¢don:
+A joystick fel-le mozgat s val v laszthatunk a villog¢ pont poz¡ci¢j n
+az ABC bet–i k”zl, jobbra-balra pedig a be¡rand¢ bet– poz¡ci¢j t
+tudjuk kiv lasztani.
+Ha minden k‚sz, a t–zgombbal tudjuk v‚gleges¡teni a m¢dos¡t st, £jabb
+t–zre pedig visszat‚rhetnk a j t‚kba.

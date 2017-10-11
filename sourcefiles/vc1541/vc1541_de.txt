@@ -1,0 +1,2833 @@
+*********
+
+Welcome to iDOC= - the international CBM documentation project!
+
+The goal of iDOC= is to preserve (non-English) Commodore related documents
+in electronic text format that might otherwise cease to exist with the rapid
+advancement of computer technology and declining interest in 8-bit computers
+on the part of the general population. If you would like to help by
+converting Commodore related hardcopy documents to electronic texts please
+contact the manager of iDOC=, Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names consists of a reasonably short unique title, followed by the
+document language. Two optional fields follow; first the document version (0
+for incomplete texts, version 1 is usually unnumbered), and then the
+document source, if there are more than one. Finally, the document is given
+a .txt extension.
+
+The author(s) of the original document and members of iDOC= make no
+representations about the accuracy or suitability of this material for any
+purpose. This etext is provided "as-is". Please refer to the warranty of the
+original document, if any, that may included in this etext. No other
+warranties, express or implied, are made to you as to the etext or any
+medium it may be on. Neither the author(s) nor the members of iDOC= will
+assume liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext. Therefore
+if you read this document or use the information herein you do so at your
+own risk.
+
+*********
+
+The iDOC= etext of the German VC1541 manual, converted to text by Andre
+Fachat <a.fachat@physik.tu-chemnitz.de>
+
+vc1541_de.txt, June 1999, etext #49.
+
+Note from the etexter: 
+
+This is the German "VC1541 Floppy Disk Bedienungshandbuch" I got with
+my first VC1541. It basically is a VC1540 manual, with a new cover
+and an additional page explaining the UI+/- commands.
+It has been scanned, OCRd and post-edited by yours truely 
+in June 1999.
+
+The file "handbuch.txt" is a plain text version. Some figures 
+had to be left out because ASCII-graphics was not appropriate.
+The file "handbook.html" is an html version, with inline graphics
+(from the imgs subdirectory") and links to the test files (in 
+the files subdirectory) as listed in the manual. Those programs 
+should be run on a VIC-20, not on a C64.
+
+Andre Fachat
+
+Note from the iDOC= maintainer:
+
+The HTML version is not included in this archive, but can be found
+at the iDOC= website.
+
+*********
+
+   Dieses Handbuch habe ich ca. 1983/84 mit meiner VC1541 bekommen. Die
+   VC541 hat ein weißes Gehäuse wie der VC-20. Ich habe is 1999 gescannt
+   und elektronisch aufbereitet.
+   
+   An manchen Stellen fehlt der Klammeraffe. Im Original ist der
+   Klammeraffe von Hand geschrieben und wurde dort offensichtlich
+   vergessen. Ich habe versucht, das Format so weit wie möglich
+   wiederzugeben. Der Normale Text ist im Blocksatz gesetzt. Teile, die
+   in dieser HTML-Datei als code erscheinen, sind CBM Drucker-Ausgabe.
+   
+   Die Programmlistings sind nicht gescannt, stattdessen habe ich die
+   Test/Demo Programme von der Demodiskette genommen, das Programm dem
+   Listing angepasst, und dann mit Hilfe des petcat Utilities
+   ausgedruckt. Als Basis habe ich 1541-demo.1540024-02.d64.gz von
+   ftp.funet.fi/pub/cbm benutzt. Meistens bestanden die Änderungen aus
+   Farbcodes, die in diesen Listings drin sind, in dem Archiv aber nicht.
+   Die Farbcodes wurden wohl entfernt, da sie die Zeichenfarbe auf
+   dunkelblau setzen - was auf dem VC-20 geht, auf dem C64 nicht, da
+   dessen Hintergrund auch dunkelblau ist. Auch einige Zahlen in der
+   Routine am Ende von RANDOM FILE sind anders.
+   
+   Chemnitz, den 5.6.1999, A. Fachat
+     _________________________________________________________________
+   
+                    VC 1541 Floppy Disk Bedienungshandbuch
+                                       
+   [1]Frontcover 
+     _________________________________________________________________
+   
+
+VC-1541 Floppy Disk
+Bedienungshandbuch
+
+Commodore Computer
+     _________________________________________________________________
+   
+VC-1540/VC-1541
+
+Die Bedienung der Floppy VC-1541 stimmt mit derjenigen der
+VC-1540 in allen Punkten überein. Das Betriebssystem der
+VC-1541 enthält jedoch zwei zusätzliche Befehle, mit denen die
+Datenübertragungsrate verändert werden kann. In diesem Punkt
+unterscheidet sich nämlich der VC-20 vom C-64. Mit Hilfe der
+neuen Befehle ist es möglich, die Floppy wahlweise an einen der
+beiden Rechner anzupassen. Nach dem Einschalten ist die Floppy
+im "C-64-Modus". Um sie auf den VC-20 umzustellen, geben Sie
+bitte folgende Zeile ein (und drücken dann die RETURN-Taste):
+
+OPEN 15,8,15, "UI-": CLOSE 15
+
+Um den"C-64-Modus" wiederherzustellen benutzen Sie folgende
+Sequenz:
+
+OPEN 15,8,15, "UI+": CLOSE 15
+     _________________________________________________________________
+   
+
+I N H A L T S V E R Z E I C H N I S
+
+                                                                      SEITE
+KAPITEL 1
+Einleitung                                                            1
+Allgemeine Informationen                                              1
+Gerätebeschreibung                                                    1
+      Frontplatte                                                     1
+      Rückseite                                                       1
+      Die Diskette                                                    1
+      Aufstellungsort                                                 1
+      Diskettenbehandlung                                             4
+      Auspacken der Floppy VC-1540                                    4
+
+KAPITEL 2
+Inbetriebnahme                                                        5
+Anschluß der Floppy                                                   5
+Einschalttest                                                         5
+Das Einlegen der Diskette                                             7
+Funktionstest                                                         7
+
+KAPITEL 3
+Arbeiten mit dem Diskettenlaufwerk                                    10
+Die Block-Availability-Map (BAM)                                      10
+Das Disk-Operating-System (DOS)                                       10
+Floppy System-Befehle                                                 11
+                          NEW                                         11
+                          INITIALIZE                                  12
+                          Die Directory                               13
+                          VALIDATE                                    13
+                          COPY                                        14
+                          RENAME                                      15
+                          SCRATCH                                     15
+
+KAPITEL 4
+Das Abspeichern und Laden von Programmen und Daten                    16
+                          SAVE                                        16
+                          VERIFY                                      16
+                          LOAD                                        17
+                          OPEN                                        17
+                          CLOSE                                       18
+                          PRINT#                                      18
+                          INPUT#                                      19
+                          GET#                                        19
+
+KAPITEL 5
+Fortgeschrittenes Programmieren mit der Floppy                        21
+Das COMMODORE-Disk-Operating-System (DOS)                             21
+Die Direkt-Zugriffs-Befehle                                           21
+                          BLOCK-READ                                  22
+                          BLOCK-WRITE                                 22
+                          BLOCK-EXECUTE                               23
+                          BUFFER-POINTER                              23
+                          BLOCK-ALLOCATE                              23
+                          BLOCK-FREE                                  24
+     _________________________________________________________________
+   
+
+                          "MEMORY"-Befehle                            24
+                          Memory-Write                                24
+                          Memory-Read                                 24
+                          Memory-Execute                              24
+                          USER                                        25
+Die Datenstruktur auf der Diskette                                    26
+
+KAPITEL 6
+Sequentielle Files                                                    29
+Programmbeispiel: Sequentielle Files,                                 30
+
+KAPITEL 7
+Der Direkt-Zugriff                                                    32
+Progrann-Beispiel: Direkt-Zugriffs-Datei                              33
+
+KAPITEL 8
+Fehlermeldungen-Der "Joker"                                           36
+Lesen des Fehlerkanals                                                36
+Liste der Bedeutungen der Fehlernummern                               36
+Liste der Fehlermeldungen und Beschreibung                            37
+Der "Joker"                                                           39
+
+ANHANG                                                                41
+Gelistete Programme : DIR                                             42
+                      VIEW BAM                                        43
+                      DISPLAY T&S                                     44
+                      CHECK DISK                                      46
+                      PERFORMANCE TEST                                47
+
+ABBILDUNGEN
+
+Abb.1 Frontplatte                                                     2
+Abb.2 Rückseite                                                       2
+Abb.3 Anschlußschema der Floppy 1540 an den VC-20
+      und den Drucker VC-1515                                         6
+Abb.4 Einlegen der Diskette                                           6
+Abb.5 Aufbau eines Diskettensektors                                   28
+Abb.6 Datenfluß zwischen Rechner, Puffer
+      und Floppy bei Direktzugriff                                    32
+
+TABELLEN
+Tab.1  Technische Daten                                               3
+Tab.2  Sprungtabelle                                                  25
+Tab.3  Belegung der Spuren mit Sektoren                               26
+Tab.4  Format der VC-1540-BAM                                         26
+Tab.5  Vorspann (Header) der Directory                                26
+Tab.6  Format der Directory                                           27
+Tab.7  Format eines Directory-Eintrags                                27
+Tab.8  Format eines sequentiellen Files                               27
+Tab.9  Format. eines Pogrammfiles                                     27
+Tab.10 Zuordnung der Recordnmmern zu den
+       Diskettenspuren                                                33
+     _________________________________________________________________
+   
+
+KAPITEL 1 : E I N L E I T U N G
+
+
+
+ALLGEMEINE INFORMATION
+
+Durch den Erwerb der VC-1540 Single-Floppy haben Sie die Leistungs-
+fähigkeit   Ihres VC-Systems wesentlich erhöht. Um dieses System
+voll ausnutzen zu können, sollten Sie die Programmiersprache BASIC
+hinreichend beherrschen  und  mit  der  Bedienung  der  VC-20-
+Zentraleinheit vertraut sein.
+
+
+GERÄTEBESCHREIBUNG
+
+Die VC-1540 ist ein intelligentes Einzeldiskettenlaufwerk, das zum
+Abspeichern großer Datenmengen geeignet ist. Es besteht zur
+Hauptsache aus einem elektronisch geregelten Antrieb, Schreib-
+Lesekopf mit Steuerung und der Elektronik, die die Schreib- und
+Leseroutinen überwacht. Das Laufwerk wird an den seriellen Bus des
+VC-20 angeschlossen, der auch vom Drucker VC-1515 benutzt wird. Da
+es sich bei der VC-1540 um ein "intelligentes " Peripheriegerät
+handelt, wird beim Betrieb der Floppy kein Arbeitsspeicher in der
+VC-20-Zentraleinheit belegt.
+
+
+F r o n t p l a t t e
+
+Auf der Frontplatte des Geräts befindet sich ein Schlitz, in den
+die Diskette eingeführt wird.  Durch das Herunterdrücken der am
+Schlitz angebrachten Klappe wird die Diskette an die Laufwerksachse
+angekoppelt.
+Weiterhin sind zwei LEDS (LED = Light-Emitting-Diode = Leuchtdiode)
+auf der Prontplatte angebracht.  Die grüne LED auf der linken Seite
+zeigt an, daß das Gerät eingeschaltet ist. Die rote LED unter dem
+Diskettenschlitz leuchtet kontinuierlich, wenn die Floppy aktiv ist
+und blinkt bei Fehlfunktion.
+
+
+R ü c k s e i t e
+
+Auf der Rückseite der Floppy befinden sich zwei parallel geschal-
+tete serielle Ein/Ausgänge. Weiterhin ist dort der Netzschalter und
+die Sicherung angebracht.
+
+
+D i e  D i s k e t t e
+
+Als Diskette (auch. Floppy Disk o.ä.) wird die Standard 5-1/4-Inch
+Diskette verwendet. Es müssen Disketten verwendet werden, die das
+SOFT-SEKTOR-FORMAT aufweisen.
+
+
+A u f s t e l l u n g s o r t
+
+Das Diskettenlaufwerk sollte auf einer flachen vibrationsfreien
+Unterlage aufgestellt werden. Wichtig ist weiterhin eine staubfreie
+Umgebung, da eine Ansammlung von Staubpartikeln die Funktion des
+Geräts empfindlich stören kann.
+
+
+
+                                  1
+     _________________________________________________________________
+   
+
+[2] Frontplatte 
+[3] Rückseite 
+
+                                  2
+     _________________________________________________________________
+   
+
+TABELLE 1. Technische Daten der VC-1540 Single Floppy
+
+
+SPEICHERUNG
+
+Totale Speicherkapazität            174848 Bytes pro Diskette
+Sequentielle Files                  168656 Bytes pro Diskette
+Relative Files (*)                  167132 Bytes pro Diskette
+                                    65535 Records pro File
+Einträge in die Directory           144 pro Diskette
+Sektoren pro Spur                   17 bis 21
+Bytes pro Sektor                    256
+Spuren                              35
+Blöcke                              683 (664 Blöcke frei)
+
+
+IC's:
+
+6502                                Mikroprozessor
+6522 (2)                            I/O, Timer
+Puffer :  2114 (4)                  2K RAM
+
+
+ABMESSUNGEN
+
+Höhe                                 97 mm
+Breite                              200 mm
+Tiefe                               374 mm
+
+
+STROMVERSORGUNG
+
+Spannung                            100,120,220 oder 240 V
+Frequenz                            50 oder 60 Hz
+Leistungsaufnahme                   25 Watt
+
+
+SPEICHERMEDIUM
+
+Disketten                           Standard 5-1/4", einfache Schreib-
+                                    dichte
+
+
+
+(*) Obwohl die VC-1540 relative Files verwalten kann, ist dies im
+    Zusammenhang mit der VC-20-Zentraleinheit nicht ohne weiteres
+    möglich.
+
+                                  3
+     _________________________________________________________________
+   
+
+B e h a n d l u n g  d e r  D i s k e t t e n
+
+
+Gehen Sie mit den Disketten vorsichtig um. Wenn Sie die nachstehend
+aufgeführten Regeln befolgen, schonen Sie Ihre Disketten und können
+sich jederseits auf Ihre gespeicherten Daten verlassen :
+
+1.  Stecken Sie die Diskette nach der Entnahme aus dem Laufwerk
+    sofort in die Papierhülle.
+
+2.  Bringen Sie die Diskette nicht in die Nähe starker magnetischer
+    Felder, da hierdurch die Daten zerstört werden können.
+
+3.  Lassen Sie nie eine Diskette auf der Floppy oder auf Ihrem Com-
+    puter liegen.
+
+4.  Benützen    Sie   zum   Ausfüllen    des   Etiketts    auf    der
+    Diskettenschutzhülle keinen Bleistift oder Kugelschreiber,
+    sondern einen Filzschreiber.
+
+5.  Setzen Sie die Disketten nie hohen Temperaturen oder der Sonne
+    aus.
+
+6.  Berühren Sie keinesfalls die Diskettenoberfläche und versuchen
+    Sie diese auch nicht zu reinigen. Schon der Verlust kleinster
+    Oberflächenpartikel kann zm Verlust von Daten führen.
+
+7.  Vergewissern Sie sich beim Ein- und Ausschalten der Floppy, daß
+    sich keine Diskette im Laufwerk befindet.
+
+
+D a s  A u s p a c k e n  d e r  V C - 1 5 4 0
+
+Überprüfen Sie beim Auspacken des Geräts, ob die folgenden Teile in
+der Verpackung enthalten sind.
+                  1. VC-1540 Single Floppy
+                  2. TEST/DEMO-Diskette
+                  3. Garantiekarte
+Sollten Sie ein Teil vermissen, so verständigen Sie bitte unverzüg-
+lich Ihren COMMODORE-Fachhändler.
+
+                                  4
+     _________________________________________________________________
+   
+
+KAPITEL 2 : I N B E T R I E B N A H M E
+
+
+Bevor Sie mit der Floppy zu arbeiten affangen, sollten Sie sich
+vergewissern, daß sich diese in einem einwandfreien Zustand
+befindet. Dazu muß nach dem Initialisieren der Funktionstest mit
+der beigefügten TEST/DEMO-Diskette durchgeführt werden.
+
+
+A n s c h l u ß  d e r  F l o p p y  a n  d e n  V C - 2 0
+
+
+Das Kabel mit dem die Floppy an den VC-20 angeschlossen wird, ist
+dem Diskettenlaufwerk beigelegt.
+
+BEMERKUNG: Werden an den seriellen Bus des VC-20 durch "Verkettung"
+mehrere Geräte angeschlossen, so sollte die Floppy das erste Gerät
+hinter dem Computer sein.
+
+Befolgen Sie beim Anschluß der Floppy an den Computer bitte Schritt
+für Schritt die folgenden Anordnungen :
+
+1. SCHRITT    Schalten Sie Thren Computer (und gegebenenfalls Ihre
+              Modulbox) AUS.
+2. SCHRITT    Stellen Sie das Diskettenlaufwerk möglichst nahe am
+              Computer auf. Schließen Sie die Floppy NOCH NICHT an
+              das Netz an.
+3. SCHRITT    Verbinden Sie den seriellen Ausgang am VC-20 und einen
+              Ein/Ausgang der VC-1540 durch das beiliegende Kabel.
+4. SCHRITT    Schließen Sie Ihre Floppy an das Netz an, aber schal-
+              ten
+              Sie NOCH NICHT ein.
+
+
+E i n s c h a l t t e s t
+
+
+1. SCHRITT    Öffnen Sie die Klappe des Diskettenlaufwerks und ver-
+              gewissern Sie sich daß keine Diskette darin ist.
+2. SCHRITT    Schalten Sie die Mgdulbox EIN.
+3. SCHRITT    Schalten Sie den VC-20 EIN.
+4. SCHRITT    Schalten Sie die VC-1540 EIN. Zuerst werden beide LEDs
+              auf der Frontplatte aufleuchten. Nach etwa 1 sec
+              sollte die rote LED an der Verschlußklappe ausgehen,
+              während die grüne LFD weiterhin leuchtet und damit
+              anzeigt, daß die Floppy betriebsbereit ist. Sollte die
+              rote LED blinken, so schalten Sie bitte das Gerät aus,
+              warten etwa eine Minute und schalten wieder ein. Wenn
+              sich auch daraufhin nicht der Nomalzustand  (rote
+              LED: AUS ; grüne LED: AN) einstellt, wenden Sie sich
+              bitte an Ihren COMMODORE--Händler.
+
+BEMERKUNG. Un auszuschließen, daß die Fehlfunktion der Floppy auf
+eine Wechselwirkung mit anderen Geräten zurückzuführen ist, die
+ebenfalls an den seriellen Bus angeschlossen sind (z.B. der Drucker
+VC-1515), schließen Sie bitte diese Geräte während des Tests nicht
+an.
+
+                                  5
+     _________________________________________________________________
+   
+
+[4] Abb. 3 
+[5] Abb. 4 
+
+                                  6
+     _________________________________________________________________
+   
+
+D a s  E i n l e g e n  d e r  D i s k e t t e
+
+VORSICHT : SCHALTEN SIE DAS DISKETTENLAUFWERK NIE EIN (ODER AUS),
+           WENN SICH EINE DISKETTE DARIN BEFINDET.
+
+1. SCHRITT :  Halten Sie die Diskette so, daß sich der Schreibschutz
+              (siehe Abb.4) auf der linken Seite befindet und schie-
+              ben Sie sie in dieser Orientierung in den Schlitz des
+              Laufwerks.
+2. SCHRITT :  Schieben Sie solange weiter, bis Sie einen deutlichen
+              Widerstand spüren und die Diskette einen festen Sitz
+              hat.
+3. SCHRITT :  Drücken Sie nun die Klappe an der Laufwerksöffnung
+              nach unten, bis sie mit einem hörbaren Klicken
+              einrastet. Die Diskette ist nun fest an das Laufwerk
+              angekoppelt.
+4. SCHRITT :  Um die Diskette wieder zu entnehmen, drücken Sie die
+              Klappe leicht nach hinten (Richtung Laufwerk) und
+              schieben sie gleichzeitig nach oben. Die Diskette wird
+              dann automatisch aus dem Laufwerk herausgeschoben, so
+              daß Sie sie leicht entnehmen können.
+
+
+
+F u n k t i o n s t e s t
+
+
+Wenn sich beim Einschalttest keine Fehler gezeigt haben, so können
+Sie jetzt mit dem Funktionstest weitermachen. Die Befehle die in
+diesem Abschnitt benutzt werden, werden später detailliert erklärt.
+Alle Befehle müssen durch ein RETURN (Drücken der RFTURN-TASTE) ab-
+geschlossen werden.
+
+BEMERKUNG: Die Befehle müssen genau in der Form eingetippt werden,
+in der sie unten aufgeführt sind. Ein "Space" ( = Leertaste ) zu-
+viel oder zuwenig kann dazu führen, daß ein Befehl nicht interpre-
+tiert werden kann. Wenn durch Blinken der roten LED ein Fehler an-
+gezeigt wird, tippen Sie den letzten Befehl noch einmal ein. Wenn
+die LED daraufhin erlischt, haben Sie den Fehler erfolgreich korri-
+giert und können im Test fortfahren.
+
+1. SCHRITT :  Schieben Sie die DEMO-Diskette wie oben beschrieben in
+              das Laufwerk ein.
+2. SCHRITT :  Tippen Sie ein : LOAD"PERFORMANCE TEST",8
+              (dann RETURN-Taste)
+
+              Auf dem Bildschirm erscheint daraufhin-
+
+
+              SEARCHING FOR PERFORMANCE TEST
+              LOADING
+              READY.
+
+                                  7
+     _________________________________________________________________
+   
+
+
+3. SCHRITT : Tippen Sie ein : RUN (dann RETURN-Taste)
+
+Auf dem Bildschirm erscheint daraufhin:
+
+
+----------------------
+   PERFORMANCE TEST
+----------------------
+ INSERT SCRATCH
+
+   DISKETTE IN DRIVE
+
+   PRESS {REV}RETURN{RVO}
+          WHEN READY
+
+   DISK NEW COMMAND
+ WAIT ABOUT 80 SECONDS
+
+
+Die Floppy fordert Sie auf, eine andere Diskette in das Laufwerk
+einzuschieben. Benutzen Sie eine neue Diskette, bzw. eine, die
+keine für Sie wertvollen Informationen enthält, da sie durch das
+Funktionstest-Programm "reformatiert" wird. Alle Daten, die auf
+einer Diskette gespeichert sind gehen durch einen solchen Prozeß
+verloren. Das Funktionstest-Programm gibt der Diskette den Namen
+"TEST DISK". Sie karm mit Programmen oder Daten beschrieben werden.
+
+Sie legen also die neue Diskette in das Laufwerk ein und drücken
+die RETURN-Taste. Als erstes wird die Diskette "formatiert". Eine
+fehlerfreie Durchführung der Formatierung wird angezeigt durch:
+
+
+                  0 OK 0 0
+
+    DRIVE PASS
+            MECANICAL TEST
+
+
+Der Test wird nun automatisch weiter durchgeführt und der
+fehlerfreie Verlauf wird an ezeigt durch:
+
+
+                 0 OK 0 0
+    WRITING DATA
+                 0 OK 0 0
+    CLOSE WRITE DATA
+                 0 OK 0 0
+    OPEN READ FILE
+                 0 OK 0 0
+    READING DATA
+                 0 OK 0 0
+    SCRATCH FILE
+                 1 FILE S
+    CRATCHED 1 0
+
+    WRITE TRACK 35
+                 0 OK 0 0
+
+
+                                  8
+     _________________________________________________________________
+   
+
+    WRITE TRACK 1
+                 0 OK 0 0
+    READ TRACK 35
+                 0 OK 0 0
+    READ TRACK 1
+                 O OK 0 0
+    UNIT HAS PASSED
+        PEFORMANCE TEST!
+
+    PULL DISKETTE FROM
+
+     DRIVE BEFORE TURNING
+
+      POWER OFF
+
+
+
+4. SCHRITT : Entnehmen Sie nun die Diskette und stecken Sie sie zu-
+             rück in die Staubschutzhülle.
+
+5. SCHRITT : Wenn in der letzten Phase des Tests irgendwelche
+             Probleme aufgetreten sind, so gehen Sie zurück zum
+             1.Schritt und wiederholen den gesamten Vorgang.
+             Sollten mehrere Versuche nicht zum Erfolg führen, so
+             setzen Sie sich bitte mit Ihrem COMMODORE-Händler in
+             Verbindung.
+
+                                  9
+     _________________________________________________________________
+   
+
+KAPITEL 3 : ARBEITEN MIT DEM DISKETTENLAUFWERK
+
+
+
+Die Steuerung der Floppy erfolgt Über den VC-20 in folgender Weise:
+
+* BASIC-Kommandos von der Tastatur des VC-20
+* BASIC-Kommandos in Programmen
+* Spezielle Disketten-Kommandos
+
+Alle drei Methoden sollen in diesem Kapitel beschrieben werden.
+
+Zun besseren Verständnis dieses Kapitels sollten Sie über folgende
+Punkte Bescheid wissen:
+          1. Bedienung der VC-20-Zentraleinheit
+          2. Elementares Programmieren in BASIC
+          3. Öffnen und schließen von Files
+
+Als erstes sollen zwei Begriffe erläutert werden, die wichtig für
+das Verständnis der Methode sind, mit der von Commodore-Disketten-
+laufwerke Daten verwalten. Es handelt sich hierbei un die "Block-
+Availability-Map" (BAM = Verzeichnis der verfügbaren Blöcke) und
+das "Disk Operating System" (DOS = Betriebssystem).
+
+
+D i e  B l o c k  A v a i l a b i l i t y  M a p  ( B A M )
+
+Die BAM enthält ein Verzeichnis des freien und belegten Speicher-
+platzes der Diskette. Wenn das System Information auf einer Dis-
+kette speichern will, so wird automatisch die BAM vom DOS
+abgefragt, ob und wieviel Speicherplatz noch frei ist. Im Falle
+einer Speicherung wird die BAM anhand der neuen Werte korrigiert,
+d.h. der von den neuen Daten benötigte Speicherplatz wird als
+belegt gekennzeichnet. Wird jedoch bei der Abfrage festgestellt,
+daß die zur Speicherung vorgesehene      Datenmenge zu groß ist, so
+wird eine Fehlermeldung ausgegeben.
+
+Die BAM wird beim Formatieren einer Diskette erstellt und beim
+Initialisieren der Diskette in den DOS-Speicher geschrieben. Die
+BAM ist auf der Diskette auf Spur 18, Sektor 0 gespeichert und
+belegt einen Speicherplatz von 128 Bytes. Alle die BAM betreffenden
+Änderungen  werden  zuerst  im  DOS-Speicher  (in, der  Floppy)
+registriert und beim SAVEen (Abspeichern) eines Programms bzw. beim
+CLOSEn (Schließen) eines SEQentiellen Files auf die Disketten-BAM
+geschrieben.
+
+
+D a s D i s k 0 p e r a t i n g S y s t e m ( D 0 S
+
+Das DOS verwaltet den Austausch von Informationen zwischen den
+Kontrollorganen der Floppy und dem Computer.
+
+So wählt das DOS z.B. die Kanäle bei Ein/Ausgabeoperationen, sucht
+auf den entsprecheneden Befehl hin die Directory (das "Inhaltsver-
+zeichnis" der Diskette), löscht und kopiert Files.
+
+                                 10
+     _________________________________________________________________
+   
+
+F l o p p y  S y s t e m b e f e h l e
+
+Die folgenden Befehle werden beim File-"Handling" und der
+Verwaltung der Diskette verwendet
+
+                   BEFEHL             FUNKTION
+
+
+                   NEW                Formatiert die Diskette
+
+                   INITIALIZE         Initialisiert die Diskette
+Disketten-Ebene
+                   LOAD"$"            Liest die Directory
+
+                   VALIDATE           Rekonstruiert die BAM
+
+
+                   COPY               Kopiert  Files (ermöglicht
+                                      auch das Verknüpfen von
+                                      Files)
+
+File-Ebene         RENAME             Umbenennung eines Files
+
+                   SCRATCH            Löschen eines Files
+
+
+N E W
+
+Bevor Sie mit einer neuen Diskette arbeiten können, müssen Sie sie
+erst mit NEW formatieren. Dazu wird die Struktur, in der die Daten
+auf die Diskette gespeichert werden, sowie der Name und der ID-
+Code, mit dem die Diskette von der Floppy identifiziert wird, auf
+die Diskette geschrieben. NEW organisiert die Diskette in Spuren
+(Tracks) und Sektoren und legt die BAM an. Der Befehl NEW kann
+durch N abgekürzt werden.
+
+BEMERKUNG: Alle in diesem Kapitel behandelten Befehle werden der
+Floppy unter Verwendung eines PRINT#-Befehls übermittelt. Vor der
+Ausgabe dieses Befehls muß mit OPEN1,8,15 ein File (in diesem Fall
+das File Nr.1) eröffnet werden. Sie können dann mit
+
+PRINT#1,"Befehlsstring"
+
+den Systembefehl an die Floppy übermitteln  (   1: logische
+Filenummer, die innerhalb der Grenzen 1 bis 127 frei gewählt werden
+kann, 8: Geräteadresse der Floppy, 15: Sekundäradresse). Sollte
+beim Öffnen des Files die Fehlermeldung  ? FILE OPEN ERROR
+erscheinen, so wurde vorher das File Numer 1 nicht ordnungsgemäß
+geschlossen, was durch die Eingabe CLOSE 1 nachgeholt werden muß.
+
+Der  NEW-Befehl  hat  das  Format:         PRINT#lfn,"N:dn,xx"
+
+                 lfn   Logische Filenummer
+                 dn    Name der Diskette (max. 16 Zeichen)
+                 xx    Ein zwei Zeichen langes Identifizierungs-
+                       merkmal (ID)
+
+                                 11
+     _________________________________________________________________
+   
+
+
+Der NEW-Befehl (mit ID) wird bei neuen Disketten, oder solchen, die
+reformatiert werden sollen, angewendet. Bei bereits formatierten
+Disketten kann der NEW-Befehl ohne ID angewendet werden. Hierbei
+wird nur die Directory gelöscht und in der BAM alle Blocks als
+nicht belegt gekennzeichnet. Der NEW-Befehl ohne ID braucht
+erheblich weniger Zeit als der mit Angabe der ID.
+
+1. BEISPIEL : OPEN15,8,15
+              PRINT#15,"N:TESTDISK, 88"
+
+Diese Befehle öffnen mit der Sekundäradresse 15 den Befehls- und
+Fehlerkanal zum Diskettenlaufwerk. Eine Diskette wird formatiert,
+und mit dem Namen TESTDISK und der Identifikation 88 versehen. Man
+kann die beiden Befehle auch in einem zusamenfassen :
+
+2. BEISPIEL : OPEN15,8,15,"N:TESTDISK,88"
+
+Soll beim reformatieren einer Diskette nur der Name, nicht aber die
+ID geändert werden, so läßt man die die ID einfach weg:
+
+3. BEISPIEL : OPEN15,8,15,"N:NEUE TESTDISK"
+
+Die Diskette bekommt den Namen NEUE TESTDISK zugeordnet und die
+Directory und die BAM werden gelöscht. Dieses abgekürzte Verfahren
+funktioniert jedoch nur bei einer bereits formatierten Diskette.
+
+
+
+I N I T I A L I Z E
+
+
+Bei der Initialisierung wird die Disketten-BAM in den Speicher des
+Diskettenlaufwerks geschrieben. Eine fehlerhafte Initialisierung
+führt zu der Fehlermeldung DISK ID MISMATCH ERROR und unter Umstän-
+den zu Datenverlust.
+
+Die Floppy initialisiert die neu eingelegte Diskette selbsttätig,
+wenn  sie sich in der ID von der vor-
+hergehenden Diskette unterscheidet,
+da die Disketten an Hand der ID von der Floppy identifiziert wer-
+den. Wenn alle Disketten eine unterschiedliche ID besitzen brau-
+chen Sie also nie "von Hand" zu initialisieren.
+Der Befehl INITIALIZE kann durch I abgekürzt werden.
+
+Das Format des Initialisierungbefehls ist
+
+             PRINT#lfn,"INITIALIZE"
+
+             lfn : logische Filenummer
+
+BEISPIEL :   OPEN15,8,15
+             PRINT15,"I"
+
+Sie können beide Befehle zu einem zusammenfassen:
+
+             OPEN15,8,15, "I"
+
+                                 12
+     _________________________________________________________________
+   
+
+D i e  D i r e c t o r y
+
+Die Directory einer Diskette enthält folgende Informationen-
+
+1.) Diskettennamen       2.) Disketten ID        3.) Nr. der DOS Version
+4.) Belegte Blocks      5.) Filenamen          6.) Filetyp
+7.) Freie Blocks
+
+Das Laden der Directory in den Rechner geschieht durch die Eingabe
+von
+
+LOAD"$",8
+
+mit nachfolgendem (RETURN). Beachten Sie bitte, daß hierdurch ein im
+Rechnerspeicher befindliches Programm zerstört wird. Der Inhalt der
+Directory wird nach Eingabe des Befehls
+
+LIST
+
+mit nachfolgendem (RETURN) auf dem Bildschirm sichtbar gemacht.
+
+Es ist sinnvoll, die Diskette zusammen mit der ausgedruckten
+Directory aufzubewahren. Die Ausgabe der Directory auf einen
+Drucker geschieht am bequemsten mit der untenstehenden Befehls-
+folge:
+
+LOAD"$",8                  Die Directory wird in den Arbeitsspeicher
+                           des Rechners geladen
+
+OPEN4,4                    Ein File mit der Filenummer 4 wird eröffnet
+                           und der Gerätenumer 4 zugeordnet (in den
+                           meisten Fällen besitzt der Drucker diese
+                           Gerätenumer)
+
+CMD4                       Alle Daten, die normalerweise auf den Bild-
+                           schirm ausgegeben werden, werden nun auf
+                           das Peripheriegerät umgelenkt, das der
+                           Filenummer 4 zugeordnet ist (in unserem
+                           Fall also auf den Drucker)
+
+LIST                       Die Directory wird ausgedruckt
+
+PRINT#4                    Der CMD-Befehl wird aufgehoben
+
+CLOSE4                     Das File 4 wird geschlossen
+
+
+
+V A L I D A T E
+
+
+Bei der Ausführung des VALIDATE-Befehls werden die Inhalte aller
+auf einer Diskette gespeicherten Files Block für Block gelesen.
+Blocks, die als belegt gekennzeichnet, aber nicht mit einem
+Filenamen verknüpft sind, werden für das Abspeichern neuer Daten
+freigegeben. Weiterhin werden Files, die nicht ordnungsgemäß
+geschlossen wurden aus der Directory gelöscht.
+Wird der VALIDATE-Befehl ordnungsgemäß durchgeführt, so wird eine
+
+                                 13
+     _________________________________________________________________
+   
+
+
+neue BAM erzeugt und auf der Diskette abgespeichert. Bei Anzeige
+eines  READ  ERROR  wird  der Vorgang abgebrochen und  die
+Diskettebleibt unverändert. Wird in einem solchen Fall mit der
+Diskette weitergearbeitet, so muß sie neu initialisiert werden.
+
+Der VALIDATE-Befehl hat das Format:
+
+                        PRINT#fn,"VALIDATE"
+
+Bemerkung: VALIDATE kann durch V abgekürzt werden.
+
+              BEISPIEL: OPEN1,8,15
+                        PRINT#1, "V"
+
+Sie können die beiden Befehle zu einem zusammenfassen und verkürzt
+schreiben:
+                        OPEN1,8,15,"V"
+
+
+
+C O P Y
+
+
+Mit Hilfe des COPY-Befehls können Sie ein File (unter einem belie-
+bigen Nanen) innerhalb einer Diskette kopieren. Sie können den Be-
+fehl auch benutzen, un aus mehreren sequentiellen Datenfiles (maxi-
+male Anzahl: 4) ein neues zu erzeugen. Der COPY-Befehl kann durch C
+abgekürzt werden.
+Das Format des COPY-Befehls lautet beim kopieren eines Files:
+
+                        PRINT#lfn, "C:nfn=afn"
+
+Möchte man mehrere Files zu einem zusammenfassen, so benutzt man
+das Format
+                        PRINT#lfn,"C:nfn=afn1,afn2,..."
+
+                        lfn    logische Filenumer
+                        nfn    neuer Filename
+                        afn    alter Filename
+                        afn1, afn2 .... : alte Filenamen
+
+BEISPIEL :  PRINT#1,"C:NEUFILE=ALTFILE"
+
+BEISPIEL :  PRINT#1,"C:SUMMENFILE=FILE1,FILE2,FILE3"
+
+Hat man vor, mehrere Filles zu einem zusamenzufassen, so muß man
+kurze Filenamen wählen, da ein Befehlsstring maximal  40 Zeichen
+lang sein darf.
+
+                                 14
+     _________________________________________________________________
+   
+
+R E N A M E
+
+
+Der RENAME-Befehl belegt ein bereits existierendes File mit einem
+neuen Namen. RENAME kann im Befehlsstring durch R abgekürzt werden.
+Der Befehl hat das Format:
+
+                        PRINT#lfn,"R:nfn=afn"
+
+                        lfn  : logische Filenummer
+                        nfn : neuer Filename
+                        fn : alter Filename
+
+Bemerkung: Ein File, das mit dem RENAME-Befehl umbenannt wird, muß
+vorher mit dem CLOSE-Befehl geschlossen werden.
+
+
+
+S C R A T C H
+
+Mit dem SCRATCH-Befehl lassen sich Files löschen. Man kann
+einzelne, einige, oder alle Files einer Diskette in einem
+Arbeitsgang löschen. Die Abkürzung von SCRATCH ist S.
+
+Der Befehl hat das Format:
+
+                        PRINT#lfn,"S:fn1,fn2,..."
+
+                        lfn : logische Filenumer
+                        fn1,fn2,... : Namen der zu löschenden Files
+
+BEISPIEL: PRINT#1,"S:FILE1,FILE2,FILE3"
+
+Die 3 Files: FILE1, FILE2 und FILE3 werden gelöscht. Sie können
+dasselbe erreichen, wenn Sie eingeben:
+
+BEISPIEL: PRINT#1,"S:FILE*"
+
+Wenn Sie alle Files einer Diskette löschen wollen, so müssen Sie
+folgenden Befehlsstring verwenden:
+
+BEISPIEL: PRINT#1,"S:*"
+
+
+Bemerkung: Näheres über die Verwendung des Zeichens "*" des soge-
+nannten "Jokers" erfahren Sie im Kapitel 8.
+
+                                 15
+     _________________________________________________________________
+   
+
+4.KAPITEL : DAS ABSPEICHERN UND LADEN VON PROGRAMMEN UND DATEN
+
+Folgende BASIC-Befehle sind wichtig für den Austausch von Pro-
+grammen und Daten zwischen dem VC-20 und der Floppy:
+
+          OPENlfn, 8, sa, "fn,ft,mode"      VERIFY"fn",8
+          CLOSElfn                          PRINTlfn
+          LOAD"fn",8                        GET#lfn
+          SAVE"fn",8                        INPUT#lfn
+
+          lfn : logische Filenumner (Zahl zwischen 1 und 255) (*)
+          fn  : Filename (maximal 16 Zeichen lang)
+          8   : Geräteadresse der Floppy (**)
+          sa  : Sekundäradresse
+          ft  : Filetyp ( SEQ, USR oder PRG )
+          mode: READ (Abk.:R) Lesen ; WRITE (Abk.:W) Schreiben
+                APPEND (Abk.:A) Anhängen
+
+(*) : Bei der Anwendung des PRINT#-Befehls ist darauf zu achten,
+      ob die  logische Filenummer größer oder kleiner als 128 ist.
+      Siehe dazu den Abschnitt über den PRINT#-Befehl.
+(**): Die Geräteadresse der Floppy wurde werksseitig auf 8 einge-
+      stellt; sie kann durch Ihren COMMODORE-Vertragshändler in 9,
+      10 oder 11 umgeändert werden.
+
+
+S A V E
+
+
+Anwendung: Abspeichern (Saven) eines Programms vom Arbeitsspeicher
+des Rechners auf die Diskette.
+
+BEISPIEL : SAVE"TESTPROGRAMM",8
+
+Das im Arbeitsspeicher des Rechners stehende Programm wird unter
+dem Namen TESTPROGRAMM auf die Diskette geschrieben.
+
+Haben Sie ein Programm abgeändert und wollen das alte Programm
+unter Beibehaltung des Namens überschreiben, so müssen Sie vor den
+Filenamen das Zeichen "@" ( engl. "at sign" aber auch "Klammeraffe"
+genannt) setzen.
+
+BEISPIEL : SAVE"@:TESTPROGRAMM",8
+
+
+
+V E R I F Y
+
+
+Anwendung: Das im Arbeitsspeicher des Rechners stehende Programm
+           wird Byte für Byte mit dem im VERIFY-Befehl angeführten
+           Progrmmfile verglichen. Jedesmal nach dem Abspeichern
+           eines Programms sollte ein VERIFY durchgeführt werden.
+
+BEISPIEL : VFRIFY"TESTPROGRAMM",8
+
+                                 16
+     _________________________________________________________________
+   
+
+Geben Sie statt des Filenamens das Zeichen "*" ein, so wird das zu-
+letzt abgespeicherte Programm überprüft.
+
+
+LOAD
+
+Mit dem LOAD-Befehl kann man Programme von der Diskette in den
+Rechnerspeicher laden.
+Der LOAD-Befehl hat das Format:
+
+           LOAD"fn",8
+
+           fn : Filename
+           8  : Geräteadresse
+
+BEISPIEL : LOAD"TESTPROGRAMM",8
+
+
+
+OPEN
+
+
+Sie haben im letzten Kapitel den OPEN-Befehl schon im Zusammenhang
+mit anderen Anweisungen kennengelernt, die insbesondere der Behand-
+lung von Programmfiles dienen. Im vorliegenden Abschnitt geht es in
+der Hauptsache un Datenfiles, d.h. an das Schreiben von Daten auf
+Diskette und das Wiedereinlesen in den Rechnerspeicher.
+
+Der OPEN-Befehl stellt den Zusammenhang zwischen einer logischen
+Filenummer und einer Geräteadresse her. Weiterhin werden Sekundär-
+adressen spezifiziert und Filenamen, Filetyp und Modus (Schreiben
+oder Lesen) festgelegt.
+
+Der OPEN-Befehl hat das Format:
+
+           OPENlfn,8,sa,"fn,ft,modus"
+
+           lfn : Logische Filenammer
+           8   : Geräteadresse
+           sa  : Sekundäradresse (eine Zahl zwischen 2 und 14) (*)
+           fn  : Filename
+           ft  : Filetyp SEQ bzw.S (Sequentiell); USR bzw.U-(User)
+           mode: READ bzw. R (lesen) ; WRITE bzw. W (schreiben)
+                APPEND bzw. A (anhängen von Daten)
+
+
+(*)  Die Sekundäradresse 15 öffnet den Befehls- und Fehlerkanal.
+     Das führt dazu, daß der String, der einem solchen OPEN-Befehl
+     folgt, bzw. dem zugehörigen PRINT#-Befehl, als Befehl inter-
+     pretiert wird. Die Sekundäradressen 0 und 1 sind für das Laden
+     (LOAD) und Speichern (SAVE) von Programmen bestimmt.
+
+BEISPIELE : OPEN2,8,2,"TEXTFILE,S,W"
+
+            OPEN2,8,6,"DATEN,S,A"
+
+            OPEN3,8,5,"DATENFILE,U,R"
+
+                                 17
+     _________________________________________________________________
+   
+
+Wollen Sie den Inhalt eines Files überschreiben, den Filenamen
+jedoch beibehalten, so müssen Sie den "Klammeraffen" ( ) verwenden:
+
+BEISPIEL : OPEN4,8,7," :NEUFILE,S,R"
+
+Es kann manchmal von Vorteil sein, den Stringausdruck im OPEN-
+Befehl bzw. Teile davon durch eine Stringvariable darzustellen.
+
+BEISPIELE : BS$="MESSDATEN,S,W"
+            OPEN,1,8,14,BS$
+
+            BS$="MITGLIEDER"
+            OPEN,3,8,9,BS$+",S,R"
+
+
+
+CLOSE
+
+
+Der CLOSE-Befehl schließt Files, die mit OPEN geöffnet wurden. Sein
+Format ist:
+
+            CLOSElfn
+
+            lfn : Logische Filenummer
+
+Um Datenverlust zu vermeiden, und um stets die größtmögliche Anzahl
+von Files zur Verfügung zu haben (max. 10 Files dürfen gleichzeitig
+geöffnet sein), sollte man Files schließen, nachdem sie nicht mehr-
+benötigt werden.
+
+Bemerkung : Eine spezielle Bedeutung hat das Schließen eines mit
+            der Sekundäradresse 15 eröffneten Files. Hierdurch
+            werden nämlich alle Datenkanäle einer Floppy auf einen
+            Schlag geschlossen.
+
+
+
+PRINT#
+
+
+Mit dem PRINT#-Befehl lassen sich Daten (siehe auch den Abschnitt
+über SEQuentielle Files) oder Systembefehle übermitteln. Der
+PRINT#-Befehl hat das Format:
+
+            PRINT#lfn, "Daten"
+
+            lfn : logische Filenunner (*)
+            Daten : Befehle, Variablen (numerisch oder Strings)
+
+(*)  Bei Verwendung des PRINF#-Befehls zur Datenübertragung ist zu
+     berücksichtigen, daß bei Verwendung einer logischen File-
+     nummer zwischen 1 und 127 ein "carriage return" (CR) und bei
+     Verwendung einer Filenunmer zwischen 128 und 255 ein CR zu-
+     sammen mit einem "line feed" (LF) gesendet wird. Da bereits
+     ein CR als Beendigung des PRINT#-Befehls interpretiert wird,
+     wird das LF fälschlicherweise in den nächsten Datensatz über-
+     nommen.Abhilfe läßt sich dadurch schaffen, daß man den Befehl
+     mit einem Semikolon (;) abschließt, dadurch das CRLF unter-
+
+                                 18
+     _________________________________________________________________
+   
+
+     drückt und in Form eines CHR$(13) ein "künstliches" CR hin-
+     terherschickt.
+
+     BEISPIEL : PRINT#137,"PER ASPERA AD ASTRA";CHR$(13);
+
+
+
+INPUT#
+
+
+Mit dem INPUP#-Befehl läßt sich Information von einem Peripherie-
+gerät, wie z.B. der Floppy in den Speicher des Rechners über-
+mitteln. Er ist nur im Rahmen eines Programms (nicht im Direkt-
+Modus) verwendbar. Der INPUT#-Befehl hat das Format:
+
+            INPUT#lfn,A$ oder      INPUT#lfn,A
+
+            lfn  : logische Filenumer
+            A$   : Stringvariable
+            A    : numerische Variable
+
+Mit dem INPUT#-Befehl können auch mehrere Variable zugleich in den
+Rechnerspeicher eingelesen werden:
+
+            INPUT#Ifn,A$,B$,...,A,B,..
+
+Strings bzw. numerische Variable, die mit Hilfe dieses Befehls von
+der Floppy gelesen werden, können nur dann als getrennt erkannt
+werden, wenn sie auf der Floppy durch "carriage returns" getrennt
+sind.
+
+BEISPIEL : 50 INPUT#2,A
+           Liest das nächste Datum (das numerisch sein muß) und
+           ordnet es der Variablen A zu.
+
+BEISPIEL : 10 INPUT#7,A$
+           Liest das nächste Datum und ordnet es der String-
+           variablen A$ zu
+
+BEISPIEL : 40 INPUT#3,B,C$
+           Liest die nächsten beiden Daten und ordnet sie der nu-
+           merischen   Variablen B und dem String C$ zu.
+
+Der INPUT-Befehl akzeptiert nur Strings, die eine Länge von maximal
+88 Zeichen aufweisen. Im Falle längerer Strings muß der GET#-Befehl
+angewendet werden.
+
+
+
+
+GET#
+
+
+Der GET#-Befehl dient dazu, Strings Byte für Byte von einem Peri-
+pheriegerät wie z.B. der Floppy in den Rechnerspeicher einzulegen.
+GET# kann nur im Rahmen eines Programms angewendet werden. Der
+Befehl hat das Format:
+
+                                 19
+     _________________________________________________________________
+   
+
+           GET#lfn,A$
+
+           GET#Ifn,A
+
+           lfn : logische Filenunner
+           A$  : Stringvariable
+           A   : numerische Variable
+
+GET# kann benutzt werden, um Strings, die längerals 88 Zeichen und
+damit zu lang für den INPUF#-Befehl sind, einzulesen. Der folgende
+Programteil ist ein Beispiel für eine Unterroutine, mit der es
+möglich ist, einen String mit einer Länge von 254 Zeichen in den
+Rechnerspeicher   einzulegen,   wo   er der    Stringvariablen     AA$
+zugeordnet wird:
+
+
+           10 OPEN1,8,5, "FILE,S,R"
+           20 AA$=""
+           30 FORI=1to254
+           40 GET#1,A$:IFA$=""THENA$=CMR$(0)
+           50 AA$=AA$+A$
+           60 NEXT
+           70 CWSE1
+
+                                 20
+     _________________________________________________________________
+   
+
+KAPITEL 5 : FORTGESCHRITTENES PROGRAMMIEREN MIT DER FLOPPY
+
+
+D a s  C O M M O D O R E  D i s k  O p e r a t i n g  S y s t e m
+
+( D O S )
+
+Das File-System wird durch Kanäle organisiert, die mit Hilfe des
+OPEN-Statements geöffnet werden. Das DOS reserviert je nach Filetyp
+ein oder zwei Pufferspeicher für jeden Kanal. Steht kein Pufferbe-
+reich mehr zur Verfügung, so wird die Fehlermeldung: NO CHANNEL
+ausgegeben. Drei der acht Pufferspeicher werden vom DOS von vorn-
+herein belegt für die Block Availability Map (BAM), die Befehls-
+kanal Ein/Ausgabe und die "Job-Schlange" des Disk-Controllers, die
+für eine optimale Abwicklung der verschiedenen Ein/Ausgabeopera-
+tionen sorgt. Die im OPEN-Befehl angegebene Sekundäradresse wird
+vom DOS zur Kennzeichnung der Kanäle verwendet. Die Größe der Se-
+kundäradresse wird jedoch nur als Identifizierungsmerkmal eines be-
+stimmten Kanals verwendet und muß nicht mit der internen Kanal-
+nummer identisch sein. Bei Eingabe des LOAD- bzw. SAVE-Befehls wer-
+den als Sekundäradressen automatisch 0 bzw. 1 gewählt. Die verblei-
+benden Sekundäradressen 2 bis 14 können dazu verwendet werden, bis
+zu 5 weitere Datenkanäle zu öffnen.
+
+
+D i e  D i r e k t - Z u g r i f f s - B e f e h l e
+
+Bei den nun folgenden Befehlen wird die Organisation der Daten auf
+der Diskette nicht vom DOS übernamen, sondern kann vom Anwender
+selbst bestimmt werden. Voraussetzung für eine sachgemäße Anwendung
+dieser Befehle ist die Kenntnis des Diskettenaufbaus, der am Ende
+dieses Kapitels detailliert besprochen wird.
+
+Alle nachstehend aufgeführten Befehle werden nach Eröffnung eines
+Files mit der Sekundäradresse 15 durch einen PRINT#-Befehl über-
+mittelt:
+
+Befehl                     Abkürzung            Format
+
+BLOCK-READ                 B-R                  "B-R:"ch,0,t,s
+BLOCK-WRITE                B-W                  "B-W:"ch,0,t,s
+BLOCK-EXECUIE              B-E                  "B-E:"ch,0,t,s
+BUFFER-POINTER             B-P                  "B-P:"ch,p
+BLOCK-ALLOCATE             B-A                  "B-A:"0,t,s
+BLOCK-FREE                 B-F                  "B-F:"0,t,s
+memory-Write  (*)          M-W                  "M-W"adl/adh/nc/data
+memory-read   (*)          M-R                  'M-R"adl/adh
+memory-execute(*)          M-E                  "M-E"adl/adh
+USER                       U                    "Ui:param"
+
+(*): Während die  drei 'memory"-Befehle n u r in der abgekürzten
+     Form verwendet werden dürfen, kann man bei allen anderen Be-
+     fehlen sowohl die abgekürzte wie auch die in der Spalte "Be-
+     fehl" angegebene ausgeschriebene Form verwenden.
+
+                                 21
+     _________________________________________________________________
+   
+
+Die Parameter in den Formatanweisungen haben folgende Bedeutungen:
+
+              ch   : Kanalnummer im DOS, die identisch mit der
+                     Sekundäradresse im OPEN-Befehl ist
+              0    : Nummer des Floppy-Laufwerks
+              t    : Nummer der Spur ("track") auf der Diskette
+                     (eine Zahl zwischen 1 und 35)
+              s    : Nummer des Sektors auf der Diskette (je nach
+                     Spur eine Zahl zwischen 0 und 20; siehe dazu
+                     Tabelle 4)
+              p    : Position des Buffer-Pointers
+              adl  : Low Byte der Adresse
+              adh  : High Byte der Adresse
+              nc   : Anzahl der Zeichen (zwischen 1 und 34)
+              data : Daten in hexadezimaler Darstellung. Die
+                     Daten werden byteweise mit Hilfe der CHR$-
+                     Funktion dargestellt, d.h.mit CHR$(160) wird
+                     hexadezimal AO übermittelt.
+              i    : Index der User-Sprung-Tabelle
+              param: Parameter, die mit dem USER-Befehl verknüpft
+                     sind.
+
+Die Parameter können wahlweise durch ein Komma (,) oder ein Semi-
+kolon (;) getrennt werden. In den nachfolgenden Beispielen wird das
+Semikolon benutzt.
+
+
+BLOCK-READ
+
+Dieser Befehl erlaubt direkten Zugriff zu jedem Datenblock auf der
+Diskette. Zusammen mit anderen Direkt-Zugriffs-Befehlen kam so ein
+File-System aufgebaut werden, in dem jeder beliebige Block direkt
+angesprochen wird. Der B-R-Befehl liest einen Zeiger (Pointer), der
+in der 0-Position eines jeden Blocks steht und der auf das letzte
+zu lesende Zeichen zeigt. Nachdem der Block bis zu dieser Position
+(durch einen GET#- oder INPUT#-Befehl) gelesen wurde, wird ein
+"End-Or-Identify" (EOI) an den Rechner gesendet. Hierdurch wird der
+INPUT#-Befehl abgeschlossen und die Status-Variable auf 64 gesetzt.
+
+BEISPIEL :   "B-R: "5;0;18;0
+
+             Der Datenblock von Spur 18, Sektor 0 wird in den zu
+             Kanal 5 gehörenden Puffer eingelesen. Eröffnet man nun
+             ein File unter Verwendung der Sekundäradresse 5, so
+             kann man die Daten mit GET# oder INPUT# in den Rechner-
+             speicher einlesen.
+
+
+BLOCK-WRITE
+
+Bei der Ausführung dieses Befehls wird der momentane Puffer-Zeiger
+(Buffer-Pointer) als Zeiger auf das letzte Zeichen interpretiert
+und in die 0-Position des Puffers geschrieben. Daraufhin wird der
+Pufferinhalt in den spezifizierten Block auf die Diskette geschrie-
+ben. Der Puffer-Zeiger zeigt nach Ausführung des Befehls wieder auf
+die Position 1.
+
+                                 22
+     _________________________________________________________________
+   
+
+BEISPIEL :  "B-W:"7;0;35;10
+            Der Inhalt des zu Kanal 7 gehörenden Pufferspeichers
+            wird in den Block von Spur 35, Sektor 10 geschrieben.
+
+
+BLOCK-EXECUTE
+
+Dieser Befehl lädt Programm-Routinen von der Diskette in den
+Floppy-Speicher und führt sie nach Abschluß des Ladens aus. Das
+Programm muß mit einer RTS-Anweisung (Return-From-Subroutine)
+abgeschlossen werden.
+
+BEISPIEL : "B-E:"6;0;1;10
+
+           Lädt den Datenblock von Spur 1, Sektor 10 in den zu
+           Kanal 6 gehörenden Puffer und führt die in den Daten
+           enthaltenen Anweisungen aus.
+
+
+BUFFER-POINTER
+
+Mit diesem Befehl lässt sich der Wert des Puffer-Zeigers (Buffer-
+Pointers) verändern. Auf diese Weise ist es möglich, einen Block in
+Bereiche zu unterteilen, auf die beliebig zugegriffen werden kann.
+
+BEISPIEL : "B-P-"2,1
+
+            Der Zeiger des zu Kanal 2 gehörenden Puffers wird auf
+            den Beginn des Speicherbereichs gesetzt.
+
+
+BLOCK-ALLOCATE
+
+Mit diesem Befehl können in der BAM (im DOS-Speicher) Blocks als
+belegt gekennzeichnet werden. Beim Schließen eines Schreib-Files
+wird dieser Eintrag in die Disketten-BAM übernommen.
+
+BEISPIEL :  "B-A:"0;10;0
+
+            Der Block auf Spur 10, Sektor 0 soll als belegt gekenn-
+            zeichnet werden.
+
+Wenn ein Block markiert werden soll, der schon vorher als belegt
+gekennzeichnet wurde, so wird durch Erhöhen von Spur- und Sektor-
+nummer der nächste freie Block aufgesucht. Die Position des so ge-
+fundenen Blocks kann zusammen mit der Fehlermeldung: NO BLOCK über
+den Fehlerkanal 15 ausgelesen werden. Zu diesem Zweck muß bei An-
+wendung des B-A-Befehls stets ein File mit der Sekundäradresse 15
+geöffnet werden. Mit
+
+            INPUT#lfn,FN,FM$,FT,FS
+
+können dann Spur (FT) und Sektor (FS) des nächsten frei verfügbaren
+Blocks ausgelesen werden. Ist kein freier Block mehr verfügbar, so
+werden FT, FS als 0,0 ausgegeben.
+
+                                 23
+     _________________________________________________________________
+   
+
+BLOCK-FREE
+
+Dieser Befehl hat den entgegengesetzten Effekt wie der B-A-Befehl.
+Ein vorher in der BAM als belegt gekennzeichneter Block wird frei-
+gegeben.
+
+BEISPIEL :  "B-F:"0;9;20
+
+            Der Block in Spur 9, Sektor 20 wird als frei gekenn-
+            zeichnet.
+
+
+"MEMORY"-Befehle
+
+Die drei MEMORY-Befehle arbeiten byte-orientiert, so daß man sie im
+Zusammenhang mit Maschinenprogrammen verwenden kann. Wenn man im
+Rahmen eines BASIC-Prograuns mit den MEMORY-Befehlen arbeiten will,
+muß man die einzelnen Bytes mit Hilfe der CHR$-Funktion übertragen.
+Es dürfen nur die Abkürzungen M-R, M-W und M-E benutzt werden; we-
+der das Ausschreiben der Befehlsnamen noch die Verwendung des Dop-
+pelpunkts (:) ist zugelassen.
+
+
+Memory-Write
+
+Der M-W-Befehl erlaubt direkten Zugriff zum DOS-Speicher. Programm-
+Routinen können geladen und mit dem M-E oder dem USER-Befehl ge-
+startet werden. Bei jeder Anwendung des Befehl können bis zu 34
+Bytes übertragen werden.
+
+BEISPIEL :  "M-W"CHR$(00)CHR$(7)CHR$(3)CHR$(32)CHR$(0)CHR$(17)
+
+            Drei Bytes werden in die Speicheradressen   $0700,
+            $0701, $0702 (hexadezimal) (dezimal 1792, 1793, 1794)
+            geschrieben.
+
+
+Memory-Read
+
+Mit diesem Befehl kann das Byte gelesen werden, dessen Adresse im
+Befehlsstring steht. Es können sowohl Variable aus dem DOS, wie
+auch aus den Puffern ausgelesen werden. Der M-R-Befehl ändert den
+Inhalt des Fehlerkanals, da er diesen benutzt, um Information an
+den Rechner zu übermitteln. Der nachste GET#-Befehl, der den
+Fehlerkanal anspricht (Sekundäradresse 15) liest das Byte aus.
+
+BEISPIEL : "M-R"CHR$(128);CHR$(0)
+
+           Liest das Byte, das unter der Adresse $0080 (dezimal:
+           128) gespeichert ist.
+
+
+Memory-Execute
+
+Startet die Ausführung einer Subroutine im DOS-Speicher. Die Sub-
+routine muß mit RTS ($60) abgeschlossen werden.
+
+                                 24
+     _________________________________________________________________
+   
+
+BEISPIEL : "M-E"CHR$(128);CHR$(49)
+
+           Startet    die     Programmausführung     bei     $3180
+           (dezimal :12672)
+
+
+USER
+
+Mit dieser Befehlsgruppe kann man unter Benutzung einer Sprungta-
+belle (Tabelle 3) die Verbindung zur Maschinensprache des 6502 her-
+stellen. Der Index n im Befehl Un definiert nach Tabelle 3 die
+Sprungadresse. Statt der Zahlen 1 bis 9 und dem Doppelpunkt
+können auch die Buchstaben A bis J als Indizes benutzt werden.
+
+Die Bef ehle Ul und U2 sind nahezu identisch (*) mit den B-R und B-
+W-Befehlen und haben deshalb auch das gleiche Format:
+
+           "Ul:"ch;dr;t;s
+           "U2:"ch;dr;tr;s
+
+Über die Befehle U1 bis U9 kann vom Anwender frei verfügt werden.
+
+(*) U1 setzt den Pufferzeiger auf 255 und liest stets den gesamten
+    Block in den Speicher ein.
+    U2 schreibt den Speicherinhalt in einen Block, ohne den Wert
+    des Bytes in Position 0 zu ändern.
+
+
+Tabelle 2 : Sprungtabelle
+
+1.BEZEICHNUNG     2.BEZEICHNUNG          FUNKTION
+
+U1                UA                     Ersatz  für BLOCK-READ
+U2                UB                     Ersatz  für BLOCK-WRITE
+U3                UC                     Sprung  nach    $0500
+U4                UD                     Sprung  nach    $0503
+U5                UE                     Sprung  nach    $0506
+U6                UF                     Sprung  nach    $0509
+U7                UG                     Sprung  nach    $050C
+U8                UH                     Sprung  nach    $050F
+U9                UI                     Sprung  nach    $FFFA
+
+U:                UJ                     Power-up Vektor
+
+                                 25
+     _________________________________________________________________
+   
+
+DIE DATENSTRUKTUR AUF DER DISKETTE
+
+Die einzelnen Datenblocks der Diskette können mit Hilfe des Pro-
+gramms. "DISPLAY T&S" ( = Anzeige von Spur Sektor), das sich auf
+der TEST/DEMO-Diskette befindet, gelesen werden. Die Tabelle 4
+zeigt Anzahl und Nummerierung der Sektoren (Blocks) auf den
+verschiedenen Spuren.
+
+Tabelle 3   Die Belegung der Spuren mit Sektoren
+
+SPUR              SEKTORNUMMER          ANZAHL DER SEKTOREN
+1 bis 17          0 bis  20             21
+18 bis 24         0 bis  18             19
+25 bis 30         0 bis  17             18
+31 bis 35         0 bis  16             17
+
+
+Tabelle 4   Format der  VC-1540-BAM
+
+Gespeichert auf : Spur   18; Sektor 0
+
+BYTE   INHALT     BEDEUTUNG
+
+0,1    18,01      Spur und Sektor des ersten Blocks der Directory
+2      65         ASCII-Zeichen "A"; zeigt 1540-Fonnat an
+3      0          0-Flag
+4-143             Bitmuster der belegten bzw. nicht belegten Blocks
+                  (0: belegt; 1: nicht belegt)
+
+
+
+
+Tabelle 5 : Vorspann (Header) der Directory
+
+Gespeichert auf   : Spur 18; Sektor 0
+
+BYTE     INHALT   BEDEUTUNG
+
+144-161           Name der Diskette (ergänzt mit"geshifteten Spaces")
+162,163           ID-Kennzeichnung der Diskette
+164      160      "Geshifteter Space"
+
+165,166  50,65    ASCII-Darstellung von 2A
+                  (gibt DOS-Version und Format an)
+166,167  160      "Geshiftete Spaces"
+177-255  0        Nicht benutzt, aufgefüllt mit Nullen
+
+Bem: Die Positionen 180 bis 191 können mit ASCII-Zeichen belegt
+     sein.
+
+                                 26
+     _________________________________________________________________
+   
+
+Tabelle 6 : Format der Directory
+
+Gespeichert auf : Spur 18, Sektor 1
+
+BYIE      INHALT
+
+0,1       Spur und Sektor des nächsten Blocks der Directory
+2-31      Eintrag  des  1. Files
+34-63     Eintrag  des  2. Files
+66-95     Eintrag  des  3. Files
+98-128    Eintrag  des  4. Files
+130-159   Eintrag  des  5. Files
+162-191   Eintrag  des  6. Files
+194-223   Eintrag  des  7. Files
+226-255   Eintrag  des  8. Files
+
+
+
+Tabelle 7 : Format eines Directory-Eintrags
+
+BYTE      INHALT
+
+0         Filetyp (*) oder-verknüpft ("geort") mit $80
+1,2       Spur und Sektor des ersten Datenblocks
+3-18      Filename (ergänzt mit "geshifteten Spaces")
+19,20     Nur bei relativen Files benutzt
+21        Nur bei relativen Files benutzt
+22-25     Nicht benutzt
+26,27     Spur und Sektor des neuen Files  beim  Oberschreiben mit
+          dem (@) ("Klarmeraffe")
+28,29     Anzahl der Blocks im File (Low Byte,  High Byte)
+
+(*) Filetypen : 0 = DELeted
+                1 = SEQuential
+                2 = PROGram
+                3 = USeR
+                4 = RELative
+
+
+Tabelle 8 : Format eines sequentiellen Files
+
+BYTE      INHALT
+
+0,1       Spur und Sektor des nächsten sequentiellen Datenblocks
+2-255     254 Bytes Daten
+
+
+Tabelle 9  Format eines Programmfiles
+
+BYIE      INHALT
+
+0,1       Spur und Sektor des nächsten Programmblocks
+2-255     254 Bytes Program im VC-Speicherformat (BASIC-Befehle
+          als "Tokens"). Das Fileende ist durch 3 Nullen markiert.
+
+                                 27
+     _________________________________________________________________
+   
+
+Abb.5 zeigt den Aufbau eines Sektors auf einer Diskette, die für
+die VC-1540 formatiert wurde. Jeder Sektor enthält einen Datenblock
+von 254 Zeichen Daten bzw. Program. Zwei zusätzliche Bytes bilden
+einen Zeiger zum nächsten Block; dadurch wird es möglich, mit Files
+zu arbeiten, die länger als ein Block sind. Dieser Aufbau ist bei
+PRG, SEQ und USER-Files der gleiche.
+Ein Datenblock wird durch die Angabe von Block und Sektor adres-
+siert. Eine VC-1540-Diskette enthält 35 Spuren (Ringe), die von 1
+bis 35 durchnummeriert sind. Da die Spuren verschieden lang sind,
+enthalten sie eine verschiedene Anzahl von Sektoren (Tabelle 4.).
+Die Gesamtheit der Daten, die in einem Sektor enthalten sind, zeigt
+die Abb.5.
+
+[6] Abb. 5 
+
+                                 28
+     _________________________________________________________________
+   
+
+KAPITEL 6 : SEQUENTIELLE FILES
+
+Die Daten, aus denen ein sequentielles File auf gebaut ist, können
+nur in der Reihenfolge gelesen werden, in der sie geschrieben wur-
+den. Ein sequentielles File kann nicht teilweise abgeändert werden,
+es besteht lediglich die Möglichkeit (durch Wahl des "modes" A)
+neue Daten an das Fileende anzuhängen.
+
+Anlegen und  lasen eines sequentiellen Files (Siehe dazu auch die
+Beschreibung  des OPEN- und des PRINT#-Befehls in Kapitel 4)
+
+1. SCHRITT :  Eröffnen eines Schreibfiles
+
+              OPEN2,8,2,"DATEN,S,W"
+
+              DATEN : Filename
+              S     : Sequentiell
+              W     : Schreiben (Virite)
+
+2. SCHRITT    Schreiben in das File
+
+              PRINT#2,A$,B$,C$
+
+              Die Inhalte der drei Stringvariablen werden in das
+              File geschrieben
+
+3. SCHRITT    Das File wird geschlossen
+
+              CLOSE2
+
+4. SCHRITT    Das File mit dem Namen DATEN wird geöffnet
+
+              OPEN2,8,2,"DATEN,S,R"
+
+              R     : Lesen (Read)
+
+5. Schritt    Die Daten werden in den Rechnerspeicher eingelesen
+
+              INPUT#2,X$,Y$,Z$
+
+              Die Werte von A$, B$ und C$ werden jetzt den Variablen
+              X$, Y$ und Z$ zugeordnet.
+
+6. SCHRITT    Die Statusvariable, die am Fileende den Wert 64 an-
+              nimmt,wird abgefragt.
+
+              IF ST=64 THEN CLOSE2
+
+                                 29
+     _________________________________________________________________
+   
+
+Beispiel eines Programs, das mit sequentiellen Files arbeitet
+
+Dieses Programm befindet sich unter dem Namen "SEQUENTIAL FILE" auf
+der TEST/DEMO-Diskette.
+
+
+    1 REM ***************
+    2 REM *   EXAMPLE
+    3 REM * READ & WRITE
+    4 REM * A SEQUENTIAL
+    5 REM * DATA FILE
+    6 REM ***************
+   10 PRINT"(CLR)(DOWN)(DOWN)(RGHT)(RGHT)(RGHT)INITIALIZE DISK"
+   20 DIMA$(25)
+   30 DIMB(25)
+   40 OPEN15,8,15,"I0"
+   60 GOSUB 1000
+   70 CR$=CHR$(13)
+   80 PRINT
+   90 PRINT" (DOWN)(GRN)WRITE SEQ TEST FILE(BLU)"
+   95 PRINT
+  100 REM *************
+  101 REM *
+  102 REM *  WRITE SEQ
+  103 REM *  TEST FILE
+  104 REM *
+  105 REM *************
+  110 OPEN2,8,2,"@0:SEQ TEST FILE ,S,W"
+  115 GOSUB 1000
+  120 INPUT"A$,B";A$,B
+  130 IFA$="END"THEN 160
+  140 PRINT#2,A$","STR$(B)CR$;
+  145 GOSUB 1000
+  150 GOTO 120
+  160 CLOSE 2
+  200 REM *************
+  201 REM *
+  202 REM *  READ SEQ
+  203 REM *  TEST FILE
+  204 REM *
+  205 REM *************
+  206 PRINT
+  207 PRINT"  (GRN)READ SEQ TEST FILE(BLU)"
+  208 PRINT
+  210 OPEN2,8,2,"0:SEQ TEST FILE ,S,R"
+  215 GOSUB 1000
+  220 INPUT#2,A$(I),B(I)
+  224 RS=ST
+  225 GOSUB 1000
+  230 PRINTA$(I),B(I)
+  240 IFR S=64 THEN 300
+  250 IF RS&LT;&GT;0 THEN 400
+  260 I=I+1
+  270 GOTO 220
+  300 CLOSE 2
+  310 END
+
+                                 29
+     _________________________________________________________________
+   
+
+  400 PRINT"(PUR)BAD(RGHT)DISK(RGHT)STATUS(RGHT)IS(RGHT)"RS"(BLU)"
+  410 CLOSE 2
+  420 END
+ 1000 REM ************
+ 1001 REM *
+ 1002 REM *  READ
+ 1003 REM * THE ERROR
+ 1004 REM *  CHANNEL
+ 1005 REM *
+ 1006 REM ************
+ 1010 INPUT#15,EN,EM$,ET,ES
+ 1020 IF EN=0 THEN RETURN
+ 1030 PRINT"(RGHT)(RGHT)(RGHT)(RGHT)ERROR ON DISK"
+ 1040 PRINTEN;EM$;ET;ES
+ 1050 CLOSE 2
+ 1060 END
+
+                                 31
+     _________________________________________________________________
+   
+
+KAPITEL 7 : DER DIREKT-ZUGRIFF
+
+Ein Direkt-Zugriffs-File wird mit Hilfe der in Kapitel 5 besproche-
+nen BLOCK- und USER-Befehle angelegt. Um diese Befehle richtig an-
+wenden zu können, ist es wichtig, den Datenfluß zwischen Rechner,
+Pufferspeicher und Diskette zu verstehen. In Abbildung 6. werden
+diese Zusammenhänge illustriert:
+
+KANAL 5                                       KANAL 3
+
+OPEN5,8,15                                    OPEN4,8,3,
+
+PRINT#5, "B-W";3;0;6;4   PRINT#5,"B-P"3;1     PRINT#4,A$;CHR$(13);I
+
+Datentransfer            Pufferzeiger wird    Schreibt Daten vom Rech-
+Puffer - Diskette        gesetzt              ner in den Puffer
+
+------------           ------------          ------------
+I          I  <------  I          I  <-----  I          I
+I DISKETTE I           I  PUFFER  I          I  RECHNER I
+I          I  ------>  I          I  ----->  I          I
+------------           ------------          ------------
+
+PRINT#5,"B-R";3;0;6;4    PRINT#5,"B-P"3;1     INPUT#4,A$,I
+
+Datentransfer            Pufferzeiger         Einlesen der Daten vom
+Diskette - Puffer        wird gesetzt         Puffer in den Rechner
+
+[7]Abb. 6. Datenfluß zwischen Rechner, Puffer und Diskette
+
+                                 32
+     _________________________________________________________________
+   
+
+Programmbeispiel : Fileverwaltung mit Direkt-Zugriffs-Befehlen
+
+
+Das folgende Programm verwaltet Files mit Hilfe von "Block"- und
+"USER"-Befehlen und kann z.B. zum Aufbau einer Adress-Datei ver-
+wendet werden. Unter dem Namen "RANDOM FILE" ist dieses Programm
+auf der TFST/DEMO-Diskette gespeichert. Die verschiedenen Programm-
+teile und ihre Funktion sind der folgenden Aufstellung zu ennehmen
+(ZN = Zeilennummer)
+
+ZN    50-    76 Menu
+ZN   100-   190 Erzeugen  eines Files
+ZN   200-   280 Löschen eines Files
+ZN   300-   390 Suchroutine
+ZN  5100-  5190 Dateneingabe
+ZN  5200-  5260 Datenausgabe
+ZN  5260-  5320 Fehlerausgabe
+ZN  5322-  5390 Umrechnung der Recordnumer in Spur und Sektor
+
+Un die Handhabung der Datenblocks zu vereinfachen, wurde das Kon-
+zept der Record-Nummer eingeführt. Aus dieser Nummer errechnet der
+letzte Programmteil (ab ZN 5322) Spur und Sektor des gesuchten
+Datensatzes. Die Spur 18 wird bei dieser Progrmnroutine automa-
+tisch ausgespart, so daß die an dieser Stelle abgespeicherte
+Directory nicht überschrieben werden kann. Die Aufteilung der
+Record-Nummern auf die Spuren der Diskette zeigt Tabelle 11.
+
+
+Tabelle 10 :  Zuordnung der Record-Nummern zu den Diskettenspuren
+             (Program : RANDOM FILE)
+
+SPUR         SEKTOR          SEKTOREN       RECORD
+                             PRO SPUR       NUMMERN
+
+ 1 bis 17    0 bis 20        21                1-357
+18 bis 24    0 bis 18        19              358-471
+25 bis 30    0 bis 17        18              478-579
+31 bis 35    0 bis 16        16              586-664
+
+
+
+   10 REM ***********************
+   12 REM * RANDOM FILE EXAMPLE *
+   14 REM ***********************
+   16 DIMI$(664):FD=0:FX=5:CH=2:FP=1
+   18 PRINT"(CLR)(DOWN)(DOWN)ffffffffffffffffffffff"
+   20 PRINT"  (GRN)INSERT DATA SHEET(BLU)"
+   22 PRINT"ddddddddddddddddddddd"
+   24 PRINT"(DOWN)(DOWN)    START PRESS (PUR)'S'(BLU)"
+   26 GETP$:IFP$&LT;&GT;"S"THEN26
+   28 OPEN15,8,15,"I0":OPEN2,8,2,"#"
+   30 PRINT"(CLR)(DOWN)ffffffffffffffffffffff"
+   32 PRINT"INDEX FILE OPERATION"
+   34 PRINT"dddddddddddddddddddddd"
+   36 INPUT"(DOWN)     (GRN)NEW SHEET? N(LEFT)(LEFT)(LEFT)";O$:PRINT"(BLU)"
+   38 IFO$="N"THEN46
+   40 IFO$&LT;&GT;"Y"THEN36
+   42 PRINT:PRINT"    WAIT!":FORI=1TO664
+
+                                 33
+     _________________________________________________________________
+   
+
+
+   44 PRINT"(HOME)(RGHT)(RGHT)(RGHT)(RGHT)(RGHT)(RGHT)(RGHT)(RGHT)(RGHT)(RGHT)(
+DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)    (LEFT)(LEFT)(LEFT)(LEF
+T)(LEFT)"I;:I$(I)="/"
+   45 PRINTI$(I):NEXT:GOTO50
+   46 OPEN5,8,5,"0:INDEX,S,R"
+   47 FORI=1TO664:INPUT#5,I$(I)
+   48 PRINT"(HOME)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(RGHT)(RGHT)(
+RGHT)(RGHT)(RGHT)(RGHT)WAIT!     (LEFT)(LEFT)(LEFT)(LEFT)(LEFT)"I;I$(I)
+   49 NEXTI:CLOSE5
+   50 PRINT"(CLR)(DOWN)ffffffffffffffffffffff"
+   52 PRINT"     JOB MENU        "
+   54 PRINT"dddddddddddddddddddddd"
+   56 PRINT
+   58 PRINT"     1=CREATE"
+   60 PRINT"     2=DELETE"
+   62 PRINT"     3=SEARCH"
+   64 PRINT"     0=END"
+   65 PRINT
+   66 INPUT"1 , 2 , 3 , 0   1(LEFT)(LEFT)(LEFT)";O$
+   68 IFO$="0"THENCLOSE15:CLOSE5:CLOSE2:END
+   70 IFO$="1"THEN104
+   72 IFO$="3"THEN300
+   74 IFO$&LT;&GT;2"THEN50
+   76 GOTO200
+  100 REM ***********************
+  102 REM * MASTER FILE CREATE  *
+  103 REM ***********************
+  104 PRINT"(CLR)(DOWN)(DOWN)ffffffffffffffffffffff"
+  105 PRINT" ($A0)MASTER FILE CREATE"
+  106 PRINT"dddddddddddddddddddddd"
+  107 INPUT"(GRN)RECORD NO. = 0(LEFT)(LEFT)(LEFT)(BLU)";F
+  109 IF F=0THEN170
+  110 INPUT"NAME     =.(LEFT)(LEFT)(LEFT)";FB$(1)
+  120 INPUT"ADDRESS  =.(LEFT)(LEFT)(LEFT)";FB$(2)
+  130 INPUT"ZIP      =.(LEFT)(LEFT)(LEFT)";FB$(3)
+  132 INPUT"TEL      =.(LEFT)(LEFT)(LEFT)";FB$(4)
+  134 INPUT"COMMENT  =.(LEFT)(LEFT)(LEFT)";FB$(5)
+  140 GOSUB5200
+  150 I$(F)="1"
+  160 GOTO104
+  170 OPEN5,8,5,"@0:INDEX,S,W"
+  175 FORI=1TO664:PRINT#5,I$(I);CHR$(13);
+  180 PRINT"(HOME)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(RGHT)(RGHT)(
+RGHT)(RGHT)(RGHT)(RGHT)WAIT!     (LEFT)(LEFT)(LEFT)(LEFT)(LEFT)"I;I$(I)
+  185 NEXT:CLOSE5
+  190 GOTO74
+  200 REM ***********************
+  201 REM *  MASTER FILE DELETE *
+  202 REM ***********************
+  210 PRINT"(CLR)(DOWN)(DOWN)ffffffffffffffffffffff"
+  212 PRINT"  MASTER FILE DELETE"
+  214 PRINT"dddddddddddddddddddddd":PRINT
+  220 INPUT"(GRN)RECORD NO. = 0(LEFT)(LEFT)(LEFT)(BLU)";F
+  230 IFF=0THEN260
+  235 IFI$(F)&LT;&GT;1"THEN220
+  240 I$(F)="/":PRINT"(DOWN)(PUR)RECORD NO."F;"DELETE(BLU)"
+  250 GOTO220
+  260 OPEN5,8,5,"`0:INDEX,S,W"
+  265 FORI=1TO664:PRINT#5,I$(I);CHR$(13);
+  270 PRINT"(HOME)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(RGHT)(RGHT)(RGHT)(RGHT)(
+RGHT)(RGHT)WAIT!     (LEFT)(LEFT)(LEFT)(LEFT)(LEFT)"I;I$(I)
+  275 NEXT:CLOSE5
+  280 GOTO50
+
+                                 34
+     _________________________________________________________________
+   
+
+
+  300 REM ***********************
+  301 REM *  FILE SEARCH        *
+  302 REM ***********************
+  310 PRINT"(CLR)(DOWN)(DOWN)ffffffffffffffffffffff"
+  312 PRINT"       SEARCH       "
+  314 PRINT"dddddddddddddddddddddd":PRINT
+  320 INPUT"(GRN)RECORD NO. = 0(LEFT)(LEFT)(LEFT)(BLU)";F
+  321 IFF=0THEN50
+  322 IFI$(F)&LT;&GT;1"THEN320
+  325 GOSUB5100
+  360 PRINT"NAME  ($A0)($A0) = ";FB$(1)
+  370 PRINT"ADDRESS  = ";FB$(2)
+  380 PRINT"ZIP   ($A0)($A0) = ";FB$(3)
+  382 PRINT"TEL   ($A0)($A0) = ";FB$(4)
+  383 PRINT"COMMENT($A0) = ";FB$(5)
+  385 PRINT"---------------------"
+  390 GOTO320
+ 5100 REM ***********************
+ 5105 REM * FDD BLOCK READ      *
+ 5108 REM ***********************
+ 5110 GOSUB5330
+ 5120 PRINT#15,"U1:";CH;FD;FT;FS
+ 5130 PRINT#15,"B-P:";CH;FP
+ 5140 GOSUB5270
+ 5150 FORFI=1TOFX
+ 5160 INPUT#CH,FB$(FI):
+ 5180 NEXT
+ 5190 RETURN
+ 5200 REM ***********************
+ 5201 REM * FDD BLOCK WRITE     *
+ 5202 REM ***********************
+ 5210 GOSUB5330
+ 5220 PRINT#15,"B-P:";CH;FP
+ 5230 FORFI=1TOFX:PRINT#CH,FB$(FI);CHR$(13);:NEXT
+ 5240 PRINT#15,"U2:";CH;FD;FT;FS
+ 5250 GOSUB5270
+ 5260 RETURN
+ 5270 REM ***********************
+ 5275 REM *  ERROR CHECK        *
+ 5278 REM ***********************
+ 5280 INPUT#15,EN,EM$,ET,ES
+ 5290 IFEN=0THENRETURN
+ 5300 PRINT"ERROR STATUS:";EN;EM$;ET;ES
+ 5310 INPUT"CONTINUE?";Y$:IFY$="Y"THENRETURN
+ 5320 STOP
+ 5322 REM ***********************
+ 5324 REM * SET TRACK & SECTOR  *
+ 5326 REM ***********************
+ 5330 IFF&LT;358THENF1=0:F2=22:F3=1:GOTO5370
+ 5340 IFF&GT;357ANDF&LT;471THENF1=357:F2=20:F3=19:GOTO5370
+ 5350 IFF&GT;471ANDF&LT;580THENF1=471:F2=19:F3=25:GOTO5370
+ 5360 IFF&GT;580THENF1=580:F2=18:F3=31
+ 5370 FT=INT(((F-F1)-1)/(F2-1))+F3
+ 5380 FS=F-F1-(FT-F3)*F2+(FT-F3-1)
+ 5390 RETURN
+
+                                 35
+     _________________________________________________________________
+   
+
+KAPITEL 8 - FEHLERMELDUNGEN - DER "JOKER"
+
+LESEN DES FEHLERKANALS
+
+Das Blinken der roten LED der Floppy zeigt das Auftreten eines Feh-
+lers an. Mit Hilfe des folgenden kleinen Programms können sie er-
+mitteln, an welchen Fehler es sich handelt, und, wenn dies nach Art
+des Fehlers möglich ist, wo er lokalisiert ist.
+
+            10 OPEN1,8,15
+            20 INPUF#1,A,B$,C,D
+            30 PRINTA,B$,C,D
+
+            A  : Numer des Fehlers
+            B$ : F;ehlerbezeichnung im    artext
+            C  : Spur
+            D  : Sektor
+
+
+LISTE DER BEDEUTUNGEN DER FEHLERMELDUNGEN
+
+ 0 : Kein Fehler
+ 1 : Rückmeldung für Filelöschung (keine Fehlermeldung)
+20 : Block-Header nicht gefunden
+21 : SYNC-Zeichen nicht gefunden
+22 : Datenblock nicht vorhanden
+23 : Fehler in der Prüfsumme
+24 : Byte falsch decodiert
+25 : Fehlerhaftes Verify beim Schreiben
+26 : Schreibversuch auf Diskette mit Schreibschutz
+27 : Prüfsummenfehler im Header
+28 : Datenblock ist zu lang
+29 : ID der Diskette fehlerhaft
+30 : Allgemeiner Syntax-Fehler
+31 : Ungültiger Befehl
+32 : Befehl ist zu lang
+33 : Ungültiger Filename
+34 : File existiert nicht
+39 : Befehl kann nicht interpretiert werden
+50 : Record existiert nicht
+51 : Recordlänge zu klein
+52 : Recordnumer ist zu hoch
+60 : File bereits zum Schreiben geöffnet
+61 : File nicht offen
+62 : File nicht gefunden
+63 : File existiert bereits
+64 : Falscher Filetyp
+65 : Kein Block mehr frei
+66 : Falsche Spur- oder Sektornummer
+67 : Falsche Spur- oder Sektornumer
+70 : Kein Kanal mehr frei
+71 : Fehler in der BAM
+72 : Diskette oder Directory voll
+73 : Angabe der DOS-Version
+74 : Keine Diskette im Laufwerk
+
+                                 36
+     _________________________________________________________________
+   
+
+LISTE DER FEHLERMELDUNGEN UND BESCHREIBUNG
+
+20 : READ ERROR
+     Header des gesuchten Datenblocks wird nicht gefunden.
+
+21 : READ ERROR
+     SYNC-Markierung wird nicht gefunden. Gründe dafür können
+     schlechte Justierung des Schreib/Lesekopfes, nicht forma-
+     tierte Disketten oder schlechter Sitz der Diskette sein. Kann
+     auch Hardware-Defekt anzeigen.
+
+22 : READ ERROR
+     Dieser Fehler tritt im Zusammenhang mit den BLOCK-Befehlen
+     auf und zeigt an, daß ein Block gelesen oder geprüft (veri-
+     fied) werden sollte, der nicht ordnungsgemäß geschrieben
+     wurde.
+
+23 : READ ERROR
+     Die Daten, die in den DOS-Speicher geschrieben wurden ent-
+     halten einen Prüfsumenfehler, d.h. ein Datenbyte oder mehre-
+     re sind fehlerhaft. Dieser Fehler kann auch Erdungsprobleme
+     anzeigen.
+
+24 : READ ERROR
+     Die Daten oder der Header wurden in den DOS-Speicher einge-
+     lesen, aber in den Datenbytes existieren fehlerhafte Bit-
+     muster. Dieser Fehler kann auch Erdungsproblem anzeigen.
+
+25 : WRITE ERROR
+     Fehlende Übereinstimmung zwischen den Daten im DOS-Memory und
+     den Daten auf der Diskette.
+
+26 : WRITE PROTECT ON
+     Es wird versucht, auf eine    Diskette zu schreiben, die mit
+     einem Schreibschutz versehen  ist.
+
+27 : READ ERROR
+     Es liegt ein Fehler im Header des zu lesenden Datenblocks vor
+     (Prüfsume stimmt nicht). Dieser Fehler kann auch Erdungs-
+     probleme anzeigen.
+
+28 : WRITE ERROR
+     Nach dem schreiben eines Datenblocks sucht der Controller die
+     SYNC-Zeichenfolge des nächsten Datenblocks. Wenn er diese
+     Synchronisationsmarkierung nicht innerhalb eines bestimmtem
+     Zeitraums findet, wird diese Fehlermeldung ausgegeben. Grund
+     dafür kann z.B.  ein zu langer Datenblock oder ein
+     Hardwarefehler sein.
+
+29 : DISK ID MISMATCH
+     Die im DOS-Speicher vorhandene ID stimmt nicht mit der ID auf
+     der Diskette überein. Die Diskette wurde nicht initialisiert,
+     oder der Header ist fehlerhaft.
+
+30 : SYNTAX ERROR
+     Das DOS kann den über den Befehlskanal geschickten Befehl
+     nicht interpretieren.
+
+                                 37
+     _________________________________________________________________
+   
+
+31 : SYNTAX ERROR
+     Befehl wird nicht erkannt.
+
+32 : SYNTAX ERROR
+     Befehl ist länger als 58 Zeichen.
+
+33 : SYNTAX ERROR
+     Falsche Verwendung des "Jokers" in OPEN- oder SAVE-Befehl.
+
+34 : SYNTAY ERROR
+     Filename fehlt, oder kann vom DOS nicht erkannt werden.
+     Typischer Fehler: Ein Doppelpunkt (:) fehlt.
+
+39 : SYNTAX ERROR
+     Befehl wird nicht erkannt.
+
+50 : RECORD NOT PRESENT
+     Die Fehlermeldung wird ausgegeben, wenn versucht wird, nach
+     den letzten aufgezeichneten Daten mit INPUT# oder GET# wei-
+     ter zu lesen.
+
+51 : OVERFLOW IN RECORD
+     Die Anzahl der Zeichen (inklusive CR) ist größer als die vor-
+     gegebene Recordlänge
+
+52 : FILE TOO LARGE
+     Recordnummer (in einem relativen File) ist zu groß; das
+     Fassungsvemögen der Diskette wird überschritten.
+
+60 : WRITE FILE OPEN
+     Ein Schreibfile, das nicht geschlossen wurde, soll geöffnet
+     werden.
+
+61 : FILE NOT OPEN
+     Es soll ein File angesprochen werden, das nicht geöffnet
+     wurde.
+
+62 : FILE NOT FOUND
+     File existiert nicht.
+
+63 : FILE EXISTS
+     Ein File soll einen Namen erhalten, der bereits auf der Dis-
+     kette existiert.
+
+64 : FILE TYPE MISMATCH
+     File-Typ stimmt nicht mit Directory-Eintrag überein
+
+65 : NO BLOCK
+     Diese Fehlermeldung steht im Zusammenhang mit dem B-A-Befehl.
+     Der Block, der als belegt gekennzeichnet werden soll, ist be-
+     reits belegt. Die PA@rameter die ausgegeben werden, geben Spur
+     und Sektor des nächsten frei verfügbaren Blocks an. Werden
+     zwei Nullen ausgegeben, so sind alle Blocks mit höheren
+     Nummern belegt.
+
+66 : ILLEGAL TRACK AND SECTOR
+     Das DOS findet nicht den Zeiger zum nächsten Block
+
+                                 38
+     _________________________________________________________________
+   
+
+67 : ILLEGAL T OR S
+     Ungültige Spur- oder Sektornummer
+
+70 : NO CHANNEL AVAILABLE
+     Ein direkt angesprochener Kanal ist bereits belegt oder
+     (falls kein bestimmter Kanal angesprochen wurde) kein Kanal
+     ist mehr frei.
+
+71 : DIR ERROR
+     Die BAM kann nicht gelesen werden, was eventuell seinen Grund
+     darin haben kann, daß sie im DOS-Speicher überschrieben wur-
+     de. Ein Reinitialisieren der Diskette kam diesen Fehler in
+     manchen Fällen beheben.
+
+72 : DISK FULL
+     Alle 664 Blocks der Diskette sind belegt, oder die Directory
+     hat die maximale Anzahl von 144 Einträgen.
+
+73 : CBM DOS V2.6 V170
+     Diese Meldung erscheint direkt nach dem Einschalten bzw.
+     dann, wenn sie mit der VC-1540 auf eine Diskette schreiben
+     wollen, die mit einer anderen DOS-Version formatiert wurde.
+     Auf COMMODORE-Rechnern existieren vier verschiedene DOS-
+     Versionen: DOS 1.0 : CBM 2040/3040
+                DOS 2.0 : CBM 4040
+                DOS 2.5 : CBM 8050
+                DOS 2.6 : CBM 1540
+     Voll kompatibel sind die Versionen 2.0 und 2.6. Mit DOS 1.0
+     und 2.0 bzw. 1.0 und 2.6 formatierte Disketten können wech-
+     selseitig gelesen, aber nicht beschrieben werden. Bei einem
+     Schreibversuch erscheint die obige Fehlermeldung. Die DOS-
+     Version 2.5 ist mit allen anderen Versionen weder schreib-
+     noch lesekcmpatibel.
+
+74 : DRIVE NOT READY
+     Es wurde versucht die Floppy anzusprechen, ohne eine Diskette
+     in das Laufwerk einzulegen.
+
+
+DER JOKER
+
+Jokerzeichen werden benutzt, um bei einigen Floppy-Befehlen den
+Filenamen in verkürzter Form einzugeben. Man gibt nur den Teil des
+Namens ein, in dem er sich von den anderen Filenamen auf der Dis-
+kette unterscheidet. Der Rest wird durch einen Stern (*) oder ein
+Fragezeichen (?) ersetzt.
+
+Der Stern wird benutzt, un nichtsignifikante Zeichen a m E n d e
+des Filenamens zu ersetzen.
+
+BEISPIEL : DAT*       kann für folgende Filenamen stehen :
+
+           DATEI
+           DATUM
+           DATENFILE
+
+           d.h., für alle Filenamen, die mit den Buchstabe DAT be-
+           ginnen
+
+                                 39
+     _________________________________________________________________
+   
+
+Das Fragezeichen wird benutzt, um e i n  Z e i c h e n  an einer
+bestimmten Stelle zu ersetzen.
+
+BEISPIEL : ????FILE     kann stehen für
+
+           TESTFILE
+           DIAGFILE
+           DATAFILE
+
+           aber n i c h t für
+
+           ABFILE oder FILEPROG
+
+Kombinationen von Stern und Fragezeichen müssen mit Vorsicht ge-
+handhabt werden. So ist z.B. die Kombination
+
+           *ABC???? identisch mit *
+
+Der Grund dafür ist, daß alle Stellen hinter dem Stern als nicht
+signifikant angesehen werden. Ein Stern kann aber für jeden belie-
+bigen Filenamen stehen, so daß z.B. bei Verwendung dieser Joker-
+kombination in Verbindung mit dem SCRATCH-Befehl alle auf der Dis-
+kette befindlichen Files gelöscht würden.
+
+Eine sinnvolle Kombination von Stern und Fragezeichen wäre z.B..
+
+           A?????DAT* , die stehen kann für
+
+           ADRESSDATEN
+           ALTERSDATEI
+           ABCDE DATEIEN  (ein Leerzeichen ist auch ein Zeichen)
+
+Bei den einzelnen Floppy-Befehlen wirkt sich das Arbeiten mit den
+Joker-Symbolen verschieden aus. Der SCRATCH-Befehl löscht alle
+Namen, die durch die eingegebe Joker-Kombination abgedeckt werden.
+Bei Ausführung des LOAD-Befehls wird das erste File mit "passendem"
+Namen geladen. Dasselbe gilt für den OPEN-Befehl; hier kann jedoch
+nur ein File mit bereits existierendem Namen eröffnet werden. Die
+Befehle RENAME, SAVE oder COPY dürfen prinzipiell nicht in Verbin-
+dung mit Jokersymbolen verwendet werden.
+
+                                 40
+     _________________________________________________________________
+   
+
+ANHANG
+
+Folgende Programme sind auf der beigelegten TEST/DEMO-Diskette
+enthalten. Das "Listing" dieser Programme ist auf den nächsten
+Seiten abgedruckt.
+
+
+                  0 "1540TEST/DEMO   " ZZ 2A
+                  4    "DIR"                PRG
+                  6    "VIEW BAM"           PRG
+                  14   "DISPLAY T&S"        PRG
+                  4    "CHECK DISK"         PRG
+                  9    "PERFORMANCE TEST"   PRG
+                  13   "SEQUENTIAL FILE"    PRG
+                  13   "RANDOM FILE"        PRG
+                  609 BLOCKS FREE.
+
+
+
+DIR
+
+Vereinfacht einige Floppyoperationen, wie z.B. das Anzeigen der
+Directory.
+
+VIEW BAM
+
+Liest die BAM von der Diskette und zeigt sie auf dem Bildschirm an.
+Hier bei werden die Sektornummern vertikal und die Spurnummern
+horizontal gezählt. Die leeren Blocks erscheinen hell und die be-
+legten Blocks dunkel.
+
+DISPLAY T&S
+
+Gibt den Inhalt jedes gewünschten Blocks (einschließlich BAM und
+Directory ) auf den Bildschirm oder den Drucker aus. Die Daten wer-
+den im ASCII-Code oder als Hexadezimalzahlen dargestellt.
+
+CHECK DISK
+
+Führt den Befehl VALIDATE aus und gibt an, welche Blocks nicht ge-
+lesen werden können. Erlaubt festustellen, inwieweit eine Diskette
+zerstört ist.
+
+PERFORMANCE TEST
+
+Allgemeiner Floppy-Punktionstest.
+
+SEQUENTIAL FILE
+
+Programbeispiel, an dem das Schreiben und Lesen  eines
+sequentiellen Files gezeigt wird.
+
+RANDOM FILE
+
+Programmbeispiel, an dem das Schreiben und Lesen von Files mit
+Direkt-Zugriffs-Befehlen (BLOCK und USER-Befehle) gezeigt wird.
+
+                                 41
+     _________________________________________________________________
+   
+
+D I R
+
+
+    4 OPEN2,8,15
+    5 PRINT"(CLR)(BLU)":GOTO 10000
+   10 OPEN1,8,0,"$0"
+   20 GET#1,A$,B$
+   30 GET#1,A$,B$
+   40 GET#1,A$,B$
+   50 C=0
+   60 IF A$&LT;&GT;"" THEN C=ASC(A$)
+   70 IF B$&LT;&GT;"" THEN C=C+ASC(B$)*256
+   80 PRINT"(RED)(RVON)"MID$(STR$(C),2);TAB(3);"(RVOF)(BLU)";
+   90 GET#1,B$:IF ST&LT;&GT;0 THEN 1000
+  100 IF B$&LT;&GT;CHR$(34) THEN 90
+  110 GET#1,B$:IF B$&LT;&GT;CHR$(34)THEN PRINTB$;:GOTO110
+  120 GET#1,B$:IF B$=CHR$(32) THEN 120
+  130 PRINT TAB(18);:C$=""
+  140 C$=C$+B$:GET#1,B$:IF B$&LT;&GT;""  THEN 140
+  150 PRINT"(GRN)(RVON)"LEFT$(C$,3)
+  160 GET T$:IF T$&LT;&GT;"" THEN GOSUB 2000
+  170 IF ST=0 THEN 30
+ 1000 PRINT" BLOCKS FREE(BLU)"
+ 1010 CLOSE1:GOTO 10000
+ 2000 IF T$="Q" THEN CLOSE1:END
+ 2010 GET T$:IF T$="" THEN 2000
+ 2020 RETURN
+ 4000 REM DISK COMMAND
+ 4010 C$="":PRINT"&GT;";
+ 4011 GETB$:IFB$="" THEN4011
+ 4012 PRINTB$;:IF B$=CHR$(13) THEN 4020
+ 4013 C$=C$+B$:GOTO 4011
+ 4020 PRINT#2,C$
+ 5000 PRINT"(RVON)";
+ 5010 GET#2,A$:PRINTA$;:IF A$&LT;&GT;CHR$(13)GOTO5010
+ 5020 PRINT"(RVOF)"
+ 10000 PRINT "D-DIRECTORY"
+ 10010 PRINT "&GT;-DISK COMMAND"
+ 10020 PRINT "Q-QUIT PROGRAM"
+ 10030 PRINT "S-DISK STATUS "
+ 10100 GETA$:IFA$=""THEN10100
+ 10200 IF A$="D" THEN 10
+ 10300 IF A$="." OR A$="&GT;" OR A$="&GT;" THEN 4000
+ 10310 IF A$="Q" THEN END
+ 10320 IF A$="S" THEN 5000
+ 10999 GOTO 10100
+
+
+                                 42
+     _________________________________________________________________
+   
+
+V I E W  B A M
+
+
+  100 REM ***************************
+  101 REM *  VIEW BAM FOR VIC-1540  *
+  102 REM ***************************
+  105 OPEN15,8,15
+  110 PRINT#15,"I0":NU$="N/A N/A N/A N/A N/A":Z4=1
+  120 OPEN2,8,2,"#"
+  130 Y$="(HOME)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(DO
+WN)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)(DOW
+N)"
+  140 X$="(RGHT)(RGHT)(RGHT)(RGHT)(RGHT)(RGHT)(RGHT)(RGHT)(RGHT)(RGHT)(RGHT)(RG
+HT)(RGHT)(RGHT)(RGHT)(RGHT)(RGHT)(RGHT)(RGHT)(RGHT)(RGHT)(RGHT)(RGHT)"
+  150 DEF FNS(Z) = 2^(S-INT(S/8)*8) AND (SB(INT(S/8)))
+  160 PRINT#15,"U1:";2;0;18;0
+  170 PRINT#15,"B-P";2;1
+  180 PRINT"(CLR)";
+  190 Y=22:X=1:GOSUB430
+  200 FORI=0TO20:PRINT:PRINT"(UP)(UP)"RIGHT$(STR$(I)+" ",3);:NEXT
+  210 GET#2,A$
+  220 GET#2,A$
+  230 GET#2,A$
+  240 TS=0
+  250 FORT=1TO17:GOSUB450
+  260 Y=22:X=T+4:GOSUB430:GOSUB540:NEXT
+  270 FORI=1TO2000:NEXT:PRINT"(CLR)"
+  280 Y=22:X=1:GOSUB430
+  290 FORI=0TO20:PRINT:PRINT"(UP)(UP)"RIGHT$(STR$(I)+" ",3);:NEXT
+  300 FORT=18TO35
+  310 GOSUB450
+  320 Y=22:X=T-13:GOSUB430:GOSUB540:NEXT
+  330 FORI=1TO1000:NEXT
+  340 PRINT"(CLR)(DOWN)(DOWN)(DOWN)(DOWN)(DOWN)"
+  350 PRINT#15,"B-P";2;144
+  360 N$="":FORI=1TO20:GET#2,A$:N$=N$+A$:NEXT
+  370 PRINT" "N$" "TS-17;"BLOCKS FREE"
+  380 FORI=1TO4000:NEXT
+  390 PRINT"(CLR)"
+  400 INPUT"(DOWN)(DOWN)(DOWN)(RGHT)(RGHT)(GRN)ANOTHER DISKETTE N(LEFT)(LEFT)(L
+EFT)(BLU)";A$
+  410 IFA$="Y"THENRUN
+  420 IFA$&LT;&GT;"Y"THENEND
+  430 PRINTLEFT$(Y$,Y)LEFT$(X$,X)"(LEFT)";
+  440 RETURN
+  450 GET#2,SC$:SC=ASC(RIGHT$(CHR$(0)+SC$,1))
+  460 TS=TS+SC
+  470 GET#2,A$:IFA$=""THENA$=CHR$(0)
+  480 SB(0)=ASC(A$)
+  490 GET#2,A$:IFA$=""THENA$=CHR$(0)
+  500 SB(1)=ASC(A$)
+  510 GET#2,A$:IFA$=""THENA$=CHR$(0)
+  520 SB(2)=ASC(A$)
+  530 RETURN
+  540 PRINT"(DOWN)(LEFT)"RIGHT$(STR$(T),1);"(LEFT)(UP)(UP)";
+  550 REM  PRINTT"   "SC"  "SB(0)" "SB(1)" "SB(2)=CHR$(0)
+  560 IFT&GT;24ANDS=18THEN:PRINTMID$(NU$,Z4,1);:GOTO660
+  570 FORS=0TO20
+  580 IFT&LT;18THEN620
+  590 IFT&GT;30ANDS=17THEN:PRINTMID$(NU$,Z4,1);:GOTO660
+  600 IFT&GT;24ANDS=18THEN:PRINTMID$(NU$,Z4,1);:GOTO660
+  610 IFT&GT;24ANDS=19THENPRINTMID$(NU$,Z4,1);:GOTO660
+  620 IFT&GT;17ANDS=20THENPRINTMID$(NU$,Z4,1);:Z4=Z4+1:GOTO660
+  630 PRINT"(RVON)";
+  640 IF FNS(S)=0 THEN PRINT"[";:GOTO660
+  650 PRINT"(RVOF)[";:REMRIGHT$(STR$(S),1);Z4,1);:GOTO72
+  660 PRINT"(UP)(LEFT)(RVOF)";
+  670 NEXT
+  680 RETURN
+
+                                 43
+     _________________________________________________________________
+   
+
+D I S P L A Y  T & S
+
+
+  100 REM******************************
+  110 REM* DISPLAY ANY TRACK $ SECTOR *
+  120 REM* ON THE VIC TO THE SCREEN   *
+  130 REM* OR THE VIC PRINTER         *
+  140 REM******************************
+  150 PRINT"(CLR)(DOWN)(DOWN)rrrrrrrrrrrrrrrrrrrrrr"
+  160 PRINT"DISPLAY BLOCK CONTENTS"
+  165 PRINT"eeeeeeeeeeeeeeeeeeeeee":
+  170 REM******************************
+  180 REM* SET PROGRAM CONSTANT       *
+  190 REM******************************
+  200 SP$=" ":NL$=CHR$(0):HX$="0123456789ABCDEF"
+  210 FS$="":FORI=64 TO 95:FS$=FS$+"(RVON)"+CHR$(I)+"(RVOF)":NEXT I
+  220 SS$="  ":FOR I=192 TO 223:SS$=SS$+"(RVON)"+CHR$(I)+"(RVOF)":NEXT I
+  240 DIM A$(15),NB(2)
+  251 D$="0"
+  253 PRINT"        (RVON)S(RVOF)CREEN(DOWN)(LEFT)(LEFT)(LEFT)(LEFT)(LEFT)(LEFT
+)(LEFT)(LEFT)OR (DOWN)(LEFT)(RVON)P(RVOF)RINTER"
+  254 GETJJ$:IF JJ$="" THEN254
+  255 IF JJ$="S"THENPRINT"        (DOWN)(RVON)(GRN)SCREEN(RVOF)(BLU)"
+  256 IF JJ$="P"THENPRINT"        (DOWN)(RVON)(GRN)PRINTER(RVOF)(BLU)"
+  260 OPEN15,8,15,"I"+D$:GOSUB 650
+  265 OPEN4,4
+  270 OPEN 2,8,2,"#":GOSUB 650
+  280 REM******************************
+  290 REM* LOAD TRACK AND SECTOR      *
+  300 REM* INTO DISK BUFFER           *
+  310 REM******************************
+  320 INPUT"(DOWN)(RGHT)(RGHT)TRACK, SECTOR";T,S
+  330 IF T=0 OR T&GT;35 THEN PRINT#15,"I"D$:CLOSE2:CLOSE4:CLOSE15:PRINT"END":EN
+D
+  340 IF JJ$="S" THEN PRINT"(DOWN)(RGHT)(RGHT)TRACK"T" SECTOR"S"(DOWN)"
+  341 IF JJ$="P" THEN PRINT#4:PRINT#4,"TRACK"T" SECTOR"S:PRINT#4
+  350 PRINT#15,"U1:2,"D$;T;S:GOSUB650
+  360 REM******************************
+  370 REM* READ BYTE 0 OF DISK BUFFER *
+  390 REM******************************
+  400 PRINT#15,"B-P:2,1"
+  410 PRINT#15,"M-R"CHR$(0)CHR$(5)
+  420 GET#15,A$(0):IFA$(0)=""THENA$(0)=NL$
+  428 IF JJ$="S"THEN430
+  430 IF JJ$="P"THEN460
+  431 REM******************************
+  432 REM* READ & CRT DISPLAY         *
+  433 REM* REST OF THE DISK BUFFER    *
+  434 REM******************************
+  436 K=1:NB(1)=ASC(A$(0))
+  438 FOR J=0 TO 63:IF J=32 THEN GOSUB 710:IF Z$="N"THEN J=80:GOTO 458
+  440 FOR I=K TO 3
+  442 GET#2,A$(I):IF A$(I)="" THEN A$(I)=NL$
+  444 IF K=1 AND I&LT;2 THEN NB(2)=ASC(A$(I))
+  446 NEXT I:K=0
+  448 A$="":B$=":":N=J*4:GOSUB 790:A$=A$+":"
+  450 FOR I=0 TO 3:N=ASC(A$(I)):GOSUB 790
+  452 C$=A$(I):GOSUB 850:B$=B$+C$
+  454 NEXT I:IF JJ$="S" THEN PRINTA$B$
+  458 NEXT J:GOTO571
+
+                                 44
+     _________________________________________________________________
+   
+
+
+  460 REM******************************
+  462 REM* READ & PRINTER DISPLAY     *
+  464 REM******************************
+  466 K=1:NB(1)=ASC(A$(0))
+  468 FOR J=0 TO 15
+  470 FOR I=K TO 15
+  472 GET#2,A$(I):IF A$(I)="" THEN A$(I)=NL$
+  474 IF K=1 AND I&LT;2 THEN NB(2)=ASC(A$(I))
+  476 NEXT I:K=0
+  478 A$="":B$=":":N=J*16:GOSUB 790:A$=A$+":"
+  480 FOR I=0 TO 15:N=ASC(A$(I)):GOSUB 790:IF Z$="N"THEN J=40:GOTO 571
+  482 C$=A$(I):GOSUB 850:B$=B$+C$
+  484 NEXT I
+  486 IF JJ$="P" THEN PRINT#4,A$B$
+  488 NEXT J:GOTO571
+  571 REM******************************
+  572 REM* NEXT TRACK AND SECTOR      *
+  573 REM******************************
+  575 PRINT"NEXT TRACK AND SECTOR"NB(1)NB(2) "(DOWN)"
+  580 PRINT"DO YOU WANT NEXT TRACK AND SECTOR"
+  590 GET Z$:IF Z$="" THEN590
+  600 IF Z$="Y" THEN T=NB(1):S=NB(2):GOTO330
+  610 IF Z$="N" THEN 320
+  620 GOTO 590
+  630 REM******************************
+  640 REM* SUBROUTINES                *
+  650 REM******************************
+  660 REM* ERROR ROUTINE              *
+  670 REM******************************
+  680 INPUT#15,EN,EM$,ET,ES:IF EN=0 THEN RETURN
+  690 PRINT"(RVON)DISK ERROR(RVOF)"EN,EM$,ET,ES
+  700 END
+  710 REM******************************
+  720 REM* SCREEN CONTINUE MSSG       *
+  730 REM******************************
+  740 PRINT"(DOWN)(RGHT)(RGHT)(RGHT)(RGHT)(GRN)CONTINUE(Y/N)(BLU)"
+  750 GETZ$:IF Z$="" THEN 750
+  760 IF Z$="N" THEN RETURN
+  770 IF Z$&LT;&GT;"Y" THEN 750
+  780 PRINT"(CLR)TRACK" T " SECTOR"S "(CLR)":RETURN
+  790 REM******************************
+  800 REM* DISK BYTE TO HEX PRINT     *
+  810 REM******************************
+  820 A1=INT(N/16):A$=A$+MID$(HX$,A1+1,1)
+  830 A2=INT(N-16*A1):A$=A$+MID$(HX$,A2+1,1)
+  840 A$=A$+SP$:RETURN
+  850 REM******************************
+  860 REM* DISK BYTE TO ASC DISPLAY   *
+  870 REM* CHARACTER                  *
+  880 REM******************************
+  890 IF ASC(C$)&LT;32 THEN C$=" ":RETURN
+  910 IF ASC(C$)&LT;128 OR ASC(C$)&GT;159 THEN RETURN
+  920 C$=MID$(SS$,3*(ASC(C$)-127),3):RETURN
+
+                                 45
+     _________________________________________________________________
+   
+
+C H E C K D I S K
+
+
+    1 REM CHECK DISK -- VER 1.4
+    2 DN=8:REM FLOPPY DEVICE NUMBER
+    5 DIMT(100):DIMS(100):REM BAD TRACK, SECTOR ARRAY
+    9 PRINT"(CLR)(DOWN)(DOWN)(DOWN)fffffffffffffffffffff"
+   10 PRINT" CHECK DISK PROGRAM"
+   12 PRINT"ddddddddddddddddddddd"
+   20 D$="0"
+   30 OPEN15,DN,15
+   35 PRINT#15,"V"D$
+   45 N%=RND(TI)*255
+   50 A$="":FORI=1TO255:A$=A$+CHR$(255AND(I+N%)):NEXT
+   60 GOSUB900
+   70 OPEN2,DN,2,"#"
+   80 PRINT:PRINT#2,A$;
+   85 T=1:S=0
+   90 PRINT#15,"B-A:"D$;T;S
+  100 INPUT#15,EN,EM$,ET,ES
+  110 IFEN=0THEN130
+  115 IFET=0THEN200:REM END
+  120 PRINT#15,"B-A:"D$;ET;ES:T=ET:S=ES
+  130 PRINT#15,"U2:2,"D$;T;S
+  134 NB=NB+1:PRINT" CHECKED  BLOCKS"NB
+  135 PRINT" TRACK    (LEFT)(LEFT)(LEFT)(LEFT)"T;" SECTOR    (LEFT)(LEFT)(LEFT)
+(LEFT)"S"(UP)(UP)"
+  140 INPUT#15,EN,EM$,ES,ET
+  150 IF EN=0THEN85
+  160 T(J)=T:S(J)=S:J=J+1
+  165 PRINT"(DOWN)(DOWN)(PUR)BAD BLOCK:(LEFT)(LEFT)",T;S"(BLU)"
+  170 GOTO85
+  200 PRINT#15,"I"D$
+  210 GOSUB900
+  212 CLOSE2
+  215 IFJ=0THENPRINT"(DOWN)(DOWN)(DOWN)(RGHT)(RGHT)(RGHT)NO BAD BLOCKS!":END
+  217 OPEN2,DN,2,"#"
+  218 PRINT"(DOWN)(DOWN)(PUR)BAD BLOCKS","TRACK","SECTOR(BLU)"
+  220 FORI=0TOJ-1
+  230 PRINT#15,"B-A:";D$,T(I);S(I)
+  240 PRINT,,T(I),S(I)
+  250 NEXT
+  260 PRINT"(DOWN)"J"BAD BLOCKS HAVE BEEN ALLOCATED"
+  270 CLOSE2:END
+  900 INPUT#15,EN,EM$,ET,ES
+  910 IF EN=0 THEN RETURN
+  920 PRINT"(DOWN)(DOWN)(PUR)ERROR #"EN,EM$;ET;ES"(BLU)"
+  930 PRINT#15,"I"D$
+
+                                 46
+     _________________________________________________________________
+   
+
+P E R F O R M A N C E  T E S T
+
+
+ 1000 REM  PERFORMANCE TEST  1.1
+ 1010 :
+ 1020 REM  VIC-1540 SINGLE FLOPPY DRIVE
+ 1030 :
+ 1040 :
+ 1050 OPEN 1,8,15:OPEN15,8,15
+ 1060 LT=35
+ 1070 LT$=STR$(LT)
+ 1080 NT=30
+ 1090 PRINT"(CLR)(DOWN)ffffffffffffffffffffff"
+ 1100 PRINT"   PERFORMANCE TEST"
+ 1110 PRINT"dddddddddddddddddddddd"
+ 1120 PRINT
+ 1130 PRINT"  (PUR)INSERT SCRATCH"
+ 1140 PRINT
+ 1150 PRINT"    DISKETTE IN DRIVE"
+ 1160 PRINT
+ 1170 PRINT"(DOWN)   PRESS (RVON)RETURN(RVOF)"
+ 1180 PRINT
+ 1190 PRINT"          WHEN READY(DOWN)"
+ 1200 FOR I=0 TO 50:GET A$:NEXT
+ 1210 GET A$:IF A$&LT;&GT;CHR$(13) THEN 1210
+ 1220 :
+ 1230 :
+ 1240 TI$="000000"
+ 1250 TT=18
+ 1260 PRINT#1,"N0:TEST DISK,00"
+ 1270 C1$="(GRN)   DISK NEW COMMAND   "+CHR$(13)
+ 1280 C2$="(BLU)(DOWN) WAIT ABOUT 80 SECONDS"
+ 1290 CC$=C1$+C2$:GOSUB 1840
+ 1300 IF TI&LT;NTTHEN1370
+ 1310 PRINT"(DOWN)SYSTEM IS"
+ 1320 PRINT"(DOWN)        NOT RESPONDING"
+ 1330 PRINT" CORRECTLY TO COMMANDS"
+ 1340 GOSUB 1880
+ 1350 :
+ 1360 :
+ 1370 PRINT"(DOWN)DRIVE PASS"
+ 1380 PRINT"       MECHANICAL TEST(DOWN)"
+ 1390 TT=21
+ 1400 OPEN 2,8,2,"0:TEST FILE,S,W"
+ 1410 CC$="OPEN WRITE FILE"       :GOSUB 1840
+ 1420 CH=2:CC$="WRITE DATA"       :GOSUB 1930
+ 1430 CC$="CLOSE "+CC$            :GOSUB 1840
+ 1440 OPEN 2,8,2,"0:TEST FILE,S,R"
+ 1450 CC$="OPEN READ FILE"        :GOSUB 1840
+ 1460 CH=2:GOSUB 1990
+ 1470 PRINT#1,"S0:TEST FILE"
+ 1480 CC$="SCRATCH FILE(DOWN)":TT=1    :GOSUB 1840
+ 1490 :
+ 1500 :
+
+                                 47
+     _________________________________________________________________
+   
+
+
+ 1510 TT=21
+ 1520 OPEN 4,8,4,"#"
+ 1530 NN%=(1+RND(TI)*254+NN%)AND255:PRINT#1,"B-P";4;NN%
+ 1540 NN$="":FOR I=1 TO 255:NN$=NN$+CHR$(I):NEXT
+ 1550 PRINT# 4,NN$;
+ 1560 PRINT# 1,"U2:";4;0;LT;0
+ 1570 CC$="WRITE TRACK"+LT$:GOSUB 1840
+ 1580 PRINT#1,"U2:";4;0;1;0
+ 1590 CC$="WRITE TRACK 1"         :GOSUB 1840
+ 1600 PRINT#1,"U1:";4;0;LT;0
+ 1610 CC$="READ TRACK"+LT$        :GOSUB 1840
+ 1620 PRINT#1,"U1:";4;0;1;0
+ 1630 CC$="READ TRACK 1"          :GOSUB 1840
+ 1640 CLOSE 4
+ 1650 :
+ 1660 :
+ 1670 PRINT"(DOWN)(GRN) UNIT HAS PASSED"
+ 1680 PRINT"     PERFORMANCE TEST!"
+ 1690 PRINT"(DOWN) PULL DISKETTE FROM"
+ 1700 PRINT"(DOWN)  DRIVE BEFORE TURNING"
+ 1710 PRINT"   POWER OFF."
+ 1720 END
+ 1730 :
+ 1740 :
+ 1750 PRINT"   (DOWN)(GRN)CONTINUE (Y/N)?(BLU)";
+ 1760 FOR I=0 TO 50:GET A$:NEXT
+ 1770 GET A$:IF A$="" THEN 1770
+ 1780 PRINT A$"(DOWN)"
+ 1790 IF A$="N" THEN END
+ 1800 IF A$="Y" THEN RETURN
+ 1810 GOTO 1760
+ 1820 :
+ 1830 :
+ 1840 PRINT CC$
+ 1850 INPUT# 1,EN,EM$,ET,ES
+ 1860 PRINTTAB(12)"(PUR)"EN;EM$;ET;ES;"(BLU)"
+ 1870 IF EN&LT;2 THEN RETURN
+ 1880 PRINT"(DOWN) UNIT IS FAILING"
+ 1890 PRINT"(DOWN)   PERFORMANCE TEST"
+ 1900 TM$=TI$:GOSUB 1750:TI$=TM$:RETURN
+ 1910 :
+ 1920 :
+ 1930 PRINT"WRITING DATA"
+ 1940 FOR I=1000 TO 2000:PRINT#CH,I:NEXT
+ 1950 GOSUB1850
+ 1960 CLOSE CH:RETURN
+ 1970 :
+ 1980 :
+ 1990 PRINT"READING DATA"
+ 2000 GETA$
+ 2010 FOR I=1000 TO 2000
+ 2020 INPUT# CH,J
+ 2030 IF J&LT;&GT;I THEN PRINT"(RVON)READ ERROR:(RVOF)":GOSUB 1850
+ 2040 NEXT
+ 2050 GOSUB 1850
+ 2060 CLOSE CH:RETURN
+
+                                 48
+     _________________________________________________________________
+   
+     _________________________________________________________________
+   
+
+Nachdruck, auch auszugsweise, nur mit schriftlicher Genehmigung von Commodore.
+
+Commodore GmbH            Commodore AG           Commodore GmbH
+Lyoner Straße 38          Aeschenvorstadt 57     Fleschgasse 2
+D-6000 Frankfurt/M. 71    CH-4010 Basel          A-1130 Wien
+
+Änderungen vorbehalten                                     Stand Juni 1983
+
+[8]Artikel-Nr. 580041/6-83
+
+*********
+
+End of the iDOC= etext of the German VC1541 manual.
+
+*********

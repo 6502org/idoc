@@ -1,0 +1,801 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore 64
+related documents in electronic text format that might otherwise cease to
+exist with the rapid advancement of computer technology and declining
+interest in 8-bit computers on the part of the general population. If you
+would like to help by converting C64 related hardcopy documents to
+electronic texts please contact the manager of International Project 64,
+Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The first
+characters of the file name are an abbreviation of the original document
+name and the language of the etext. The version number of the etext follows
+next. After that a letter may appear to indicate the particular source of
+the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International Project
+64 make no representations about the accuracy or suitability of this
+material for any purpose. This etext is provided "as-is". Please refer to
+the warranty of the original document, if any, that may included in this
+etext. No other warranties, express or implied, are made to you as to the
+etext or any medium it may be on. Neither the author(s) nor the members of
+International Project 64 will assume liability for damages either from the
+direct or indirect use of this etext or from the distribution of or
+modification to this etext. Therefore if you read this document or use the
+information herein you do so at your own risk.
+
+*********
+
+The International Project 64 etext of the A Kastély manual, converted to
+text by Adam Dohos <hosza@szabinet.hu>
+
+KASTHU1.TXT, May 1998, etext #33.
+
+*********
+
+[FONTOS!!! Minden sort megszámoztam, mert meg kellett ôriznem a
+ kézikönyv eredeti formáját a kódkérés miatt (pl.: a 3. oldal/11. sor/
+ 5. szava az "itt" lesz). Amint sikerül szereznem egy feltört magyar
+ verziót, az egész szöveget újra fogom tördelni. Egyébként nekem mindig
+ a 11. oldal 10. sorának 15. szavát kérdezte, ami a "béreslegény".]
+
+
+[A kézikönyv borítója:]
+
+A KASTÉLY
+
+[a háttérben egy tök jó kis sárkány rajza]
+
+
+[2. oldal:]
+
+TARTALOM
+
+Story.........3. oldal
+Tudnivalók...13. oldal
+Stáblista....15. oldal
+
+
+[3. oldal:]
+
+[1]  I. FEJEZET: A komor várkastély méltóságteljesen trónolt a kopár
+     hegytetôn, uralva az egész tájat, ameddig a szem ellátott.
+[2]  Ez volt az Ördög-orom, melyet ôsidôktôl fogva rettegve került el
+     minden élôlény, legyen az ember, állat vagy madár.
+[3]  Növényzet is csak itt-ott maradt meg a meredek sziklafalon - jobbára
+     csak fû és szívós cserjék. A fehér sziklatömbök
+[4]  között keskeny ösvény vezetett a vártól az alant lévô völgyben
+     elterülô kicsiny faluba. Prellananos csöndesen és
+[5]  szerényen húzódott meg a kastély fenyegetô árnyékában, nehogy a
+     kelleténél jobban felhívja magára a közeli sötét erôk
+[6]  figyelmét. A falu lakói egyszerû földmûvesek voltak, akikenek kemény
+     munkával kellett megtermelni a betevô falatot a
+[7]  sovány talajon. A környékbéli erdôkben élô vadak és más, különös
+     lények állandó rettegésben tartották a az itt élôket.
+     [A kézikönyvben is így volt!]
+[8]  Åm ez mind semmiség volt a Tralinen-dinasztia várkastélyából áradó
+     gonosz erôkhöz képest, mely nem engedte
+[9]  szabadulni az eleveneket, s talán a holtakat sem. Prellananos
+     lakóinak itt kellett élniük és viselni sorsukat. Az egyetlen
+[10] örömüket a fôtéren álló kocsma jelentette. Maguk között csak
+     Ördögûzônek nevezték, mivel a nép körében uralkodó
+[11] babonaság miatt azt hitték, itt biztonságban érezhetik magukat a
+     sötét hatalmakkal szemben. Az igazság az volt, hogy az
+[12] elfogyasztott rengeteg jóféle barnasörtôl az emberek elfeledték
+     nehéz sorsukat, s legalább pár óráig bátrak lettek.
+[13] Azonban tény, hogy az Ördögûzôben mérték a környék legjobb sörét,
+     igaz hetven mérföldes körzetben nem akadt más
+[14] kocsma. Éppen ezért ünnepnek számított, ha a faluba idegenek
+     érkeztek. A kalandorokat rögtön hatalmas érdeklôdô
+[15] embergyûrû vette körül, akik csak úgy szívták magukba a távoli
+     tájakról, hôsökrôl szóló legendákat. És eközben minde-
+[16] gyikük szívében élt a remény, hogy egy szép napon jön egy hôs, aki
+     véget vet állandó rettegésüknek.
+
+[17] II. FEJEZET: Telihold éjjelén komor sötétség ülte meg a tájat. A
+     csillagok a felhô mögé rejtôztek, akár maga a máskor oly
+[18] fényes holdkorong. Az Ördög-orom bérecit felfalta a feketeség,
+     akárcsak a vár falait. A kastély egyik emeleti ablakában
+[19] apró fénypont csillant. A kicsiny világosság azonban ahelyett, hogy
+     hívogató lett volna, inkább óvatosságra intett. A nyitott
+[20] ablakon át a friss levegô szabadon áramlott a szobába, meglibbentve
+     a gyertyák fáradt lángját. Az öt gyertyából már csak
+[21] kettô égett, a többibôl már csak olvadozó viaszcsonk maradt. A fény
+     azért még elegendô világosságot nyújtott ahhoz,
+[22] hogy a szobában ülô alak olvasni tudjon. Egy idôs férfi volt, aki
+     egy vastag bôrkötésû könyv lapjait forgatta. Láthatóan
+[23] keresett valamit.
+[24] - "Å, ez lesz az!" - suttogta, mikor végre meglelte. Lerakta a
+     kötetet, s az asztal fiókjából papírt, íróeszközt vett elô. Ráncos,
+[25] megviselt arcán a fáradtság jelei tükrözôdtek, az öregember azonban
+     rendületlenül dolgozott. Egy különös, ôsi nyelven írt
+[26] szöveget másolt ki a könyvbôl a papírtekercsre, gondosan ügyelve a
+     furcsa, bonyolult ábrákra, melyeket lassan vigyázva
+[27] vetett papírra, mintha egyetlen kis hibával szörnyûséges bûnt
+     követne el. A sötét szobában a toll sercegésén és az öreg
+[28] nehézkes légzésén kívûl más hang nem hallatszott. Amikor a férfi
+     befejezte a másolást, egy nagy sóhajjal letette tollát és
+[29] lehunyta fáradt szemét. Pár pillanatig úgy tûnt elaludt, ám 
+     hirtelen kinyitotta a szemeit, s nehézkesen felkelt a székébôl.
+[30] Becsukta a könyvet, összehajtogatta a papírtekercset, majd az
+     ablakhoz lépett. Egy pillanatig kibámult a fekete, csillagta-
+[31] lan éjbe, azután elhúzta a sötétkék függönyt. Magához vette a
+     gyertyát és a tekercset, hóna alá kapta a könyvet és elhagy-
+[32] ta a szobát.
+
+
+[4. oldal:]
+
+[1]  III. FEJEZET: Az öregember megállt a súlyos tölgyfaajtó elôtt és
+     kotorászni kezdett köpönyege egyik mély zsebében. Egy
+[2]  jókora vaskulcsot vett elô, mely kiterjesztett szárnyú varjat
+     formázott. òvatosan beillesztette a kulcslyukba, majd nehézke-
+[3]  sen elfordította. Kinyitotta az ajtót, majd besétált a feltáruló
+     helyiségbe. Odalépett egy szép faragással díszített asztalhoz, s
+[4]  letette rá a gyertyát. A vastag könyvet felrakta a könyvespolcra a
+     többi közé, s odament a sarokban terpeszkedô 
+[5]  faládához. Felnyitotta a fedelét, fölé hajolt, s egy összehajtogatott
+     kelmét vett ki belôle. ùjból kutatni kezdett a ládában,
+[6]  ezúttal két nehéz fémhengert halászott elô. Lecsukta a fedelet, s
+     újból az asztalhoz lépett. Az egyik rekeszbôl elôvett pár
+[7]  szál gyertyát és egy marék krétát, majd meghúzta az ajtó mellett
+     rejtôzô falikart. A férfi magához vette a gyertyatartót a
+[8]  már épp csak pislákoló gyertyákkal és kilépett az ajtón.
+
+[9]  IV. FEJEZET: A terem félhomályba burkolódzott, hiszen csak öt szál
+     gyertya égett benne. Ezek fénye csak arra volt elég,
+[10] hogy halványan megvilágítsa azt a sovány alakot, aki a helyiség
+     közepén törökülésben ült. Az itteni sötétség nem pusztán
+[11] az éjszaka miatt volt - ezen a helyen a sötét erôk uralkodtak.
+     Lehetett volna több száz gyertya, sôt lámpás elhelyezve,
+[12] akkor is megmaradt volna a félhomály. A bajlós érzését erôsítette
+     még az a néhány csúf szobrocska, faragás, amelyek a
+[13] termet díszítették. A padlóra egy óriási méretû pentagram volt
+     felrajzolva, csúcsain az öt gyertya állt, középen pedig a
+[14] kámzsás figura ült, aki eddig mozdulatlanul meditált. Azonban
+     egyszerre megmozdult, s karjaival furcsa jeleket kezdett a
+[15] levegôbe rajzolni. Közben hangos ám monoton hangon kántálni
+     kezdett. Torkából elôtörô furcsa "ének" visszhangzott a
+[16] teremben...
+
+[17] V. FEJEZET: A kastély fôépületének tetején egy nagy, szürke
+     tollruhás bagoly ült. Hatalmas sárga szemeit a várudvarra
+[18] szegezte. Tekintetével lassan végigpásztázta a talajt, mígnem
+     észrevett egy apró egeret, mely a fal mellett óvatosan mo-
+[19] toszkált.
+[20] A bagoly meredten figyelte a mit sem sejtô állatot, melynek sorsa
+     ezzel megpecsételôdött...
+[21] Az éji vadász kitárta hatalmas szárnyait, levetette magát a
+     mélységbe. Az egérnek esélye sem volt a menekülésre - a gyors
+[22] és kíméletlen halál oly váratlanul csapott le rá, hogy még egy
+     utolsó, kétségbeesett cincogásra sem maradt ideje. A
+[23] könyörtelen madár ugyanolyan könnyedén, ahogyan lecsapott már fel
+     is röppent a levegôbe, hogy a karmai között
+[24] szorongatott zsákmányával nesztelenül eltûnjön a hûvös éjszakába...
+
+[25] VI. FEJEZET: A hosszú folyosón halálos csen honolt. A szûnyegeken
+     régóta nem járt senki, s a falidíszeket sem szemlélték
+[26] már ki tudja mióta. A falidíszek, amelyek mind a Tralinen-dinasztia
+     hagyatékához tartoztak. a vázák, melyeket a mûvészetked-
+[27] velô Ryg dan Tralinen gróf hozatott ide, a fegyverek és zászlók,
+     amelyek a hadjáratokat viselô Incel dan Tralinen, a Hódító
+[28] szerzett - akinek uralkodása idején a legnagyobb volt a család
+     birtoka. És persze a szobrok és festmények, melyek magukat a
+[29] kastély lakóit ábrázolták. E képek közül kitûnt - elsôsorban
+     nagyságában - az a festmény, amely a kastély leghírhedtebb urát,
+[30] Kran Trudys dan Tralinent, vagy ahogy emberei hívták, Ördögi Krant
+     ábrázolta, a narligókkal vívott diadal után.
+
+
+[5. oldal:]
+
+[1]  VII. FEJEZET: A csata a végéhez közeledett. A domboldal letaposott
+     füvében halottak, sebesültek, szanaszét heverô
+[2]  pajzsok, vértek, földbe szúrt lándzsák látszottak, egészen a völgy
+     vonaláig, ahol még folyt az ütközet. a néhány meg-
+[3]  maradt narligói vitézül hadakozott a túlerôben lévô tralineni
+     katonák gyûrûjében, ám a csata kimenetele nem volt két-
+[4]  séges. Az ezüstbe öltözött bátor férfiak eredetileg a dombvidéktôl
+     kétszáz mérföldnyire lévô Narligó nevû békés
+[5]  kereskedôváros helyôrségének katonái. Szinte sohasem folytattak
+     háborút szomszédaikkal, mivel a város áruforgalmából a
+[6]  környezô tartományok is hasznot húzhattak. Åm az utóbbi idôben
+     nyoma veszett néhány karavánnak, melyek a Tralinen-
+[7]  uradalom barátságtalan dombjai között akartak átkelni. Ezért Grala
+     Dreno a narligói herceg követeket küldött Kran Trudys
+[8]  dan Tralinen grófhoz azzal a kéréssel, hogy megfelelô vám ellenében
+     engedje át a birtokán a kereskedôket. a követeknek
+[9]  csak a levágott feje érkezett vissza... Ekkor végre rászánta magát
+     a herceg a hadjáratra. Kétszázötven állig felfegyverzett
+[10] katonával indult el, hog legyôzze Tralinen urát. A dombság
+     kezdeténél már várta ôket egy kicsiny, alig hetven fôbôl álló
+[11] sereg. A barna bôrû narligóiak könnyû gyôzelemre számítva rontottak
+     rá a fekete páncélos tralineni csapatra. A védôk
+[12] azonban emberfeletti erôvel rendelkeztek - gyorsaságuk,
+     állóképességük megzavarta az ezüstpáncélosokat. És ráadásul
+[13] sebezhetetlennek tûntek... Nem beszélve azokról a relytélyes
+     robbanásokról, fel-feltámadó tüzekrôl, amelyek megma-
+[14] gyarázhatatlan módon mindig azokban a gócpontokban keletkeztek,
+     ahol a narligóiak álltak gyózelemre. A támadók
+[15] egyre fogytak, s végül menekülôre fogták a dolgot. A tralineni
+     csapat azonban beszorította ôket egy kis völgybe, ahol
+[16] aztán körülzárták a megfélemlített ezüstszín katonákat. Azok
+     elkeseredetten folytatták az egyre inkább hiábavaló küzdel-
+[17] met, de tudták, egyikük sem fogja túlélni a harcot...
+
+[18] VIII. FEJEZET: A dombtetôn eközben különös párbaj játszódott le.
+     Egy ezüstpáncélos, fehér köpenyes barna bôrû fiatal
+[19] vitéz, egyik kezében enyhén ívelt vékony szablyával, a másikban
+     hosszú, hegyes tôrrel óvatosan kerülgetett egy óriási ter-
+[20] metû éjfekete vértezetû, torzonborz férfit, aki egy hatalmas
+     pallost fogott kétmarokra. Grala Dreno, a narligók vezére meg-
+[21] próbált kitérni Tralinen gróf elôl - jól tudta ugyanis, hogy annak
+     egyetlen kardcsapása a halálát jelenetné. A herceg tôrt
+[22] tartó baljával az óriás oldala felé bökött, majd mikor az a
+     figyelmét e manôverre irányította, hirtelen elôrelépett és
+[23] szablyájával jókora csapást mért ellenfele nyakára. A gróf azonban
+     az utolsó pillanatban felfigyelt a mozdulatra és
+[24] páncélozott karjával kivédte az ütést. A váratlan fordulattól a
+     barna bôrû férfi megtántorodott, s a fekete vértû vitéz azon-
+[25] nal ellentámadást intézett felé. Meglendítette pallosát és egyetlen
+     erôteljes csapással lemetszette a herceg fejét. A véres fô
+[26] leesett és gurulni kezdett a domboldalon lefelé. Miközben a csonka
+     test összerogyott, az óriás hátracsapta sisakrostélyát és
+[27] égzengetô hahotázásba kezdett. Iszonyatos nevetése még sokáig
+     visszhangzott a dombok között.
+
+[28] IX. FEJEZET: - "Még!" - mennydörgô hang kiáltott rá a szolgára -
+     "Még!" - és a gróf lecsapta boroskupáját az asztalra. A
+[29] riadt szolga sûrû pislogások közepette sietve negyedszer is
+     teletöltötte a rubinokkal díszített aranykupát a jóféle tralineni
+[30] vörösborral. A fejedelem megtörölte száját, egyetlen mozdulattal
+     félresöpörte a szolgálót és lehajtotta az italt. Miközben
+[31] kortyolt, szemét lehunyta, s hosszú fekete szakállán végigcsorgott
+     a vörösbor. Mikor megitta, a kupát maga mögé dobta.
+
+
+[6. oldal:]
+
+[1]  Az asztal másik végén egy vörös köpenyes férfi emelkedett fel, s
+     dôlöngélve tett néhány lépést a gróf felé. Poharát magas-
+[2]  ra emelte, s így kiáltott.
+[3]  - "Éljen a mi urunk, Ördögi Kran, aki a sárba tiporta a mocskos
+     natdigókat!"
+[4]  Az asztal körül ülô díszes ruhás nemesek, fekete vértû hadvezérek
+     egyetértôen felkiáltottak, kupáikat a magasba emelve
+[5]  éltették Tralinen grófot. Az hirtelen felállt és odafordult
+     legközelebb álló katonájához:
+[6]  - "Elvonulok a lakosztályomba. Senki ne zavarjon reggelig!"
+[7]  Ezzel megfordult és dörgô léptekkel kisietett az ebédlôterembôl.
+
+[8]  X. FEJEZET: A teremben félhomály volt. Fényt csak az a kis lámpás
+     szolgáltatott, melyik a helyiség egyik végében álló
+[9]  kôoltáron állt. Az oltáron egy zavarbaejtôen élethû szobor foglalt
+     helyet egy részisztô démon képmása, gránitból kifarag-
+[10] va. Az oltár elôtt a gróf térdelt, kezét hatalmas pallosán
+     nyugtatva. Hosszú, félig lehajtott üstöke arcát félig eltakarta,
+[11] miközben halkan beszélt félig magához, félig a szoborhoz intézve
+     szavait:
+[12] - "Köszönöm uram, hogy démoni erôddel segítettél minket, hogy
+     legyôzzük a narligói kutyákat! ìgéretemhez híven most
+[13] is meg fogod kapni, amit kértél tôlem cserébe a segítségért."
+[14] Ezzel maga mellé nyúlt, s elôvett egy tömör, súlyos tárgyat, amit
+     az oltárra helyezett... Grala Dreno feje volt az.
+
+[15] XI. FEJEZET: A fal szilárdan állt hosszú-hosszú esztendôk óta,
+     eltorlaszolva a nyirkos folyosót, mely mögötte húzódott,
+[16] sötét, relytélyes dolgokat bújtatva. E dolgok idônként megpróbáltak
+     kitörni börtönükbôl, hogy ismét megkaparintsák hatal-
+[17] mukat, mely egykoron létezett, de eddig nem sikerült kitörniük. A
+     falat pont azért emelték, hogy ellenálljon ezen kísér-
+[18] teteknek, s ezt a célját maradéktalnul el is végezte. Azok, amiknek
+     a túlsó oldalon kellett maradniuk, dühükben szörnyû
+[19] hangokat keltve, mégis tehetetlenül vergôdtek.
+[20] Mindezidáig...
+
+[21] XII. FEJEZET: A sötét felhôk hirtelen, látszólag a semmibôl jöttek,
+     eltakarva a teliholdat és a csillagokat, fekete éjszakába
+[22] burkolva ezzel a várat. Sebesen gomolyogtak, egyre jobban beterítve
+     az égboltot a kastély felett. Majd egyszerre villámlani
+[23] kezdett, s iszonyú erejû mennydörgés törte meg az éj csendjét. Nem
+     vihar volt, hisz egy csepp esô sem esett. Csak a vil-
+[24] lámok cikáztak egyre sûrûbben, s gyakran belecsaptak a kastélyba
+     is, ám furcsamód semmi sem gyulladt ki, csupán az
+[25] épületben aludt ki minden világosság. És egyszercsak ahogy
+     elkezdôdött, hirtelen véget is ért az égiháború. A fekete fel-
+[26] legek sebesen szétoszlottak, a csillagok ismét felragyogtak, s a
+     hold újból megvilágította a kastélyt, melynek ablakai
+[27] fokozatosan megint kivilágosodtak.
+
+[28] XIII. FEJEZET: - "Kezd hûvös lenni" - morfondírozott magában az ôr.
+     - "Még az is lehet, hogy elered az esô, jobb lesz, ha
+[29] bemegyek és felhozok egy fáklyát."
+
+
+[7. oldal:]
+
+[1]  Megigazította fején a sisakját, megdörgölte karikás szemeit, és
+     feltápászkodott ültébôl. Megmarkolta lándzsáját és a lépcsô
+[2]  felé indult, majd elmosolyodott:
+[3]  - "Nem kell fegyver, hiszen csak pár lépcsôrôl van szó. Ha meg jön
+     valaki, úgyis idejében meghallom..." - ezzel visszarak-
+[4]  ta a hosszú nyelû lándzsát a fal mellé. Leballagott a lépcsôn - ám
+     még félútig sem jutott, mikor megtorpant. Megpillantott
+[5]  valamit. Valamit, amitôl kiverte a hideg veríték. Aztán meglátta a
+     vörösen izzó szempárt.
+[6]  - "ùristen! Miféle lény lehet ez?" - suttogta maga elé. A sötétben
+     parázsló két vörös szem lassan közeledett felfelé a lép-
+[7]  csôn. Az ôr felordított, s rohanni kezdett visszafelé. Amikor
+     felért, megragadta lándzsáját, és megperdült. Épp idejében - a
+[8]  sötét teremtmény már rá is vetette magát. Egy ütéssel könnyedén
+     kettétörte a súlyos fanyelet, mintha csak egy vékony
+[9]  pálca lett volna. Az ôr kétségbeesetten felkapta a pajzsát, s
+     védekezôen maga elé tartotta - ám a szörnyeteg egy iszonyatos
+[10] erejû csapással ezt is porrá zúzta. A férfi felordított, de mást
+     már nem is tehetett. Hasába hegyes karmok fúródtak, s a
+[11] hatalmas, nyáladzó állkapocs lassan kitárult. Egy éles roppanás, és
+     az ôr teste lélektelenül zuhant a földre, akár egy rongy-
+[12] baba...
+
+[13] XIV. FEJEZET: - "Fogják meg! Tolvaj!" - csattant fel hirtelen egy
+     éles hang a háta mögött, mire Vale Bogentaro megsza-
+[14] porázta lépteit.
+[15] - "Az áldóját! Hová tûntek a bôrszíjak, amiket attól a sharfeni
+     kalmártól vettem alig két napja? Egy vagyont fizettem értük!"
+[16] - méltatlankodott most már a lassú felfogású Bailer, az öreg
+     ötvösmester is.
+[17] Bogentaro hátrapillantott bal válla felett, s magában felnevetett:
+     - "ùgy látszik, eme rézveretes bôrholmik nagyon a
+[18] szívéhez nôttek szegénynek. De sajnos ilyen az élet, barátom:
+     egyszer neked," - s jobbjával zubbonya zsebére csapott, -
+[19] "egyszer pedig nekem".
+[20] Ekkor egy páncélinges, fényes sisakos férfi tûnt fel, alig két
+     lépésnyire Bogentarotól.
+[21] ùjból a pecsenyés sivító hangja hallatszott: - "Poroszló uram,
+     fogja el a tolvajt!" Az ôr elôkapta szablyáját, és rákiáltott
+[22] Bogentarora: - "Megvagy, te gazfickó!"
+[23] A mestertolvaj azonban, mint mindig, most is feltalálta magát:
+     - "Nem én vagyok az, drága jó poroszló úr" - hadarta elvál-
+[24] toztatott hangon - "hanem az ott, ni!" - s rámutatott egy vele
+     egymagasságú, szintén sötétszürke köpenyt viselô vándor-
+[25] szerzetesre, aki csuklyáját fejére húzva szaporán lépkedett, hogy
+     miharabb odaérjen a templomozhoz, amely Ligur Foll
+[26] hatalmas fôterének ellenkezô végében állt.
+[27] A poroszló rávetette magát a meglepett szerzetesre, s a földre 
+     teperte. Mire rájött a tévedésére, és sûrû bocsánatkérések
+[28] közepette felsegítette szerencsétlen áldozatát, Bogentaro már a
+     városkapunál járt. - "Na, még pár lépés, és kint vagyok.
+[29] Akkor aztán bottal üthetik a nyomomat"
+[30] A kapunál nem tudott kimenni, mert épp egy limeradói karaván kért
+     bebocsátást a városba, és az ôröknek nyelvi
+[31] nehézségei támadtak a vörös hajú idegenekkel. A tolvaj várakozott,
+     és közben az aznapi "termést" számolgatta magában.
+[32] - "Három üveg erôsítôital a vándor gyógyító zsebébôl, kilenc
+     aranytallér meg egy ékköves gyûrû egy kalmár jóvoltából, és
+
+
+[8. oldal:]
+
+[1]  persze a bôrszíjak..."
+[2]  Itt tartott gondolatban, amikor egy erôs marok ragadta meg a
+     vállát. - "Megvagy, te bitang!" - Bogentaro felnézett. A
+[3]  poroszló volt az, akit az imént lóvá tett, s mögötte még három
+     társa, kezükben nehéz alabárdokkal.
+[4]  A mestertolvaj nem tétovázott. Öklével a poroszló arcába sújtott,
+     aki erre azon nyomban eleresztette ôt. Bogentaro körül-
+[5]  nézett, majd odarohant a limeradói karavánhoz, amelyet éppen akkor
+     engedtek be a kapun. A hátul haladó vörös hajú
+[6]  kalmárt a lábánál fogva lerántotta a hátaslóról, s macskaügyességgel
+     felpattant a lóra. Addigra azonban odaértek a porosz-
+[7]  lók is. A tolvaj elôrántott egy kicsi, ám roppant hegyes tôrt és
+     megcélozta vele a legelöl haladó poroszlót. Az elhajított
+[8]  fegyver a férfi torkába fúródott, aki hörögve esett össze. Testében
+     megbotlott és elvágódott a mögötte loholó poroszló. A
+[9]  harmadik kikerülte két földön fekvô társát, azonban így is elkésett
+     - Bogentaro épp ekkor vágtatott ki a kapun. Utoljára
+[10] még hátrafordult nyergében, s gúnyosan rávigyorgott az átkokat
+     szóró, ámde tehetetlen poroszlóra...
+
+[11] XV. FEJEZET: - "...szerencsétlen flótás már egyáltalán nem tudott
+     magáról. Minden cselekedetét, mozdulatát az a démon
+[12] irányította. Végül le kellett kötözni az ágyára, mert leütötte
+     tulajdon fiát. Amikor én odaérkeztem, már a háza elôtt várt a
+[13] helyi lelkész. Örömmel fogadott, és közölte velem, hogy ô mindent
+     megpróbált, de nem tudott segíteni Fellor gazdán.
+[14] Ezért is küldetett értem, mivel én vagyok az egyetlen, aki
+     megmentheti a szegény párát. Ez persze nem igaz, hiszen vannak
+[15] nálam jobb ördögûzôk is. Én csak egy egyszerû lelkipásztor vagyok,
+     aki ha tud, segít a rászorultakon." - mondta nyájasan
+[16] Flavius atya, s egy jót húzott sörébôl.
+[17] - "Szóval kiküldtem mindenkit a szobából, mert csak akkor hatásos
+     az ördögûzés, ha a betegen kívûl csak a szertartást
+[18] végzô személy van jelen. Nekikezdtem a ceremóniának és másfél órás
+     küzdelem - persze mentális küzdelem - árán sike-
+[19] rült visszakergetnem a démont a poklok lángoló bugyraiba és Fellor
+     gazda lelke így megmenekülhetett. Persze néhány
+[20] napig nyomta még az ágyat, de utána teljesen rendbejött, és
+     szerencsére nem is emlékezett semmire a történtekbôl." -
+[21] fejezte be elbeszélését a lelkész.
+[22] - "Derék dolog volt, atyám, hogy így segítettél rajta!" - szólt
+     Krandek mester, a fazekas. Az asztaltársaság egyhangúlag
+[23] helyeselt, s áldomást ittak a papra.
+[24] Flavius atya csak átutazóban szállt meg itt, Drondes Kralban. Éppen
+     Beloriába tartott a püspök meghívására, aki egy
+[25] tanácskozást hívott össze, melyre a ryndriai lelkész is hivatalos
+     volt. Ugyanis a téma épp az ördögûzés és a
+[26] boszorkányság, valamint egyéb démoni cselszövések elleni védekezés
+     volt. Flavius atya igen jó hírnévnek örvendett
+[27] egész Lyndriában, fôleg azért, mert nem az a fajta pap volt, aki a
+     néptôl elzártan, kolostorban élt és állandóan csak
+[28] prédikált. Nem, ô nagyon is világi életével keltett feltûnést,
+     hiszen nem vetette meg a jóféle itókát, sôt a verekedést sem,
+[29] ha úgy adódott. Azonban a mértéket sosem vétette el, s ha kiosztott
+     is néhány pofont, csakis akkor, ha úgy érezte, meg
+[30] kell védelmeznie a gyengébbet. Persze ezzel a viselkedésével
+     kihívta maga ellen számos lyndriai pap rosszallását, nem is
+[31] beszélve a minden faluban megtalálható nagyszájú legényekrôl, akik
+     gyakran megismerkedhettek a lelkész kemény
+[32] ökleivel. Azonban a nép kedvelte a tagbaszakadt papot, így a püspök
+     nem váltotta le hivatalából.
+
+
+[9. oldal:]
+
+[1]  Flavius atya lassan feltápászkodott az asztal mellôl, és odafordult
+     a kocsmároshoz: "És most, jó uram, úgy vélem ideje
+[2]  nyugovóra térnem. Késôre jár és holnap napkeltekor indulok tovább
+     Beloriába."
+[3]  A kocsmáros meggyújtott egy gyertyát, és elvezette az ásítozó
+     lelkészt a számára elôkészített kényelmes vendégszobába. 
+
+[4]  XVI. FEJEZET: - "A pokolba! Ez nem lehet igaz!" - káromkodta el
+     magát az alacsony, borzas hajú figura, aki idegesen
+[5]  járkált fel-alá a félhomályos, bizarr tárgyakkal telezsúfolt
+     kicsiny szobában.
+[6]  - "Pont most kellett kifogynia ennek a nyavalyás káliasziromnak. A
+     rokarfüvet még csak pótolni tudnám, hiszen a zentoni
+[7]  kuruzslónál olcsón vásárolhatok. De a káliavirág nem terem
+     mindenütt, csak hûvös déli dombságokon. Mi mást tehetnék,
+[8]  kénytelen leszek magam elmenni és beszerezni. 'A démonok szarvába!"
+     - Ezzel a fekete köpenyt viselô kis ember átvihar-
+[9]  zott a szobán és eltûnt az ajtó mögött. Lerohant a kôlépcsôn és
+     kilépett lakótornyából. A hûvös éjszakában egy pillanatra
+[10] megtorpant, aztán a tornyot megkerülve belépett egy kisebb, romos
+     épületbe. Odabent a tûzhelyben vidáman táncoltak a
+[11] lángok, melegítve azt az olajzöld zekét viselô ifjút, aki egy
+     széken szendergett. Laxamyri mester belépve a szobába rákiál-
+[12] tott a fiúra, mire az tüstént felpattant, s ijedten pislogott az
+     apró, ám roppant haragos férfira.
+[13] - "Tonsiro, már megint alszol ahelyett, hogy a feladott leckével
+     fohóglalkoznál?! ìgy sohasem lesz belôled varázsló!"
+[14] A fiú csak hebegni tudott, ám Laxamyri nem is hagyta volna szóhoz
+     jutni:
+[15] - "Jól figyelj rám, fiam! Most elmegyek, mégpedig olyan útra, amely
+     várhatóan heteket vesz majd igénybe. Meg kell
+[16] szereznem egy igazán fontos növényt, amely nélkül képtelen vagyok
+     folytatni a kísérleteimet. Míg távol vagyok, te felelsz
+[17] a toronyért, tehát igyekezz mindent rendben tartani. Most még
+     visszamegyek, és összekészítek magamnak pár holmit, te
+[18] pedig addig csomagolj nekem elemózsiát az útra, és nyergeld fel a
+     Szürkét."
+[19] Azzal magára hagyta az inasát, aki gyorsan kidörgölte az álmot a
+     szemébôl és nekilátott a kiadott feladatok elvégzéséhez.
+[20] Fél óra múlva Laxamyri varázslómester szürke hátasán kilovagolt
+     birtokáról, s elindult útjára, a déli dombok felé.
+
+[21] XVII. FEJEZET: - "Aaaarrrggh!" - bugyogott elô a támadó száját a
+     halálhörgés. A magas, szakállas férfi kirántotta hasából
+[22] a kardját, és újabb ellenfél után nézett. Amaz már felé is
+     suhintott fegyevrével, Martes Tragopan alig tudott félreugrani
+[23] elôle. A másik újból meglendítette kardját, amit a szakállas katona
+     ezúttal könnyedén hárított. Támadója ekkor csellel
+[24] próbálkozott: felkapott a földrôl egy elgurult sisakot és Tragopan
+     felé hajította. A sisak kis híján telibe találta, de Martes
+[25] kapitány ismét idôben félrekapta a fejét, s egybôl ellentámadásba
+     lendült. Egyenes kardjával szívendöfte támadóját, aki
+[26] nyomban összerogyott. Martes Tragopan gyorsan körülnézett, s
+     megállapította, hogy mindhárom támadója halott. Ekkor
+[27] leeresztette kardját, s megtörölte izzadt homlokát.
+[28] A kapitány valamikor kiváló hadvezér, Javelin király vazallusa
+     volt, a deargok elleni összecsapás óta az ország ünnepelt
+[29] hôse. A kétszínû uralkodó azonban aljas módon megpróbálta
+     merénylettel kioltani életét. Tegnap, a vacsoránál már
+[30] gyanakodni kezdett, hogy az a habzó zöld ital, amit a király kitûnô
+     alsewyni specialitásnak nevezett, és feltétlenül vele
+[31] akart megpróbáltatni elôször, mérgezett volt. òvatosan úgy tett,
+     mintha meginná, ám közben a padlóra ürítette a serleg
+
+
+[10. oldal:]
+
+[1]  tartalmát, amit az egyik ott lebzselô vadászeb nyomban
+     fellefetyelt. Késôbb megtudta, hogy a kutya kimúlt - ekkor
+[2]  elhatározta, hogy hajnalban útnak indul, elhagyja a várost. Arra
+     azonban nem számított, hogy még az éjjel rátámadnak. Ez
+[3]  adta meg a végsô jelet az indulásra. Kardját hüvelyébe dugta, a
+     brokátfüggöny mögül elôvette azt a kis csomag élelmet,
+[4]  amit elôreláthatóan már az este odakészített, és csendesen elindult
+     a várudvar felé. Az istállóból kivezette lovát, amely min-
+[5]  den csatájában hûen szolgálta, s felült rá. Még egy búcsúpillantást
+     vetett a még békésen álmodó palotára, s fehér paripájá-
+[6]  val belelovagolt a sötét éjszakába. Remélte, hogy nem mernek
+     utánajönni. Még nem tudta, hogy hová tartson. A lényeg,
+[7]  hogy minél messzebb kerüljön innen, ahol álnok királya az életére
+     tört.
+
+[8]  XVIII. FEJEZET: A keresztút mindig is fontos találkozóhelynek
+     számított, hiszen nem kevesebb, mint öt kitaposott,
+[9]  patanyomokkal teli út futott itt össze. Az utak találkozásánál egy
+     hosszú pózna volt a földbe szúrva, melyre négy, sötétre
+[10] pácolt, nyíl alakú deszkalapot szögeztek, amelyek az utak ellenkezô
+     végét voltak hivatottak jelezni. Északról jött a legfor-
+[11] galmasabb, mely a narligói kereskedôket hozta magával, s tartott
+     tovább keletre, Drondes Kral felé. A délnyugati út
+[12] kevesebb vándort szállított, elsôsorban a Lingur Follból érkezô
+     karavánok használták ezt az ösvényt. Az északnyugati
+[13] irányból elsôsorban a sharfeni kikötôben lerakott árukat szállító
+     öszvérkaravánok érkeztek, s mentek tovább a másik
+[14] három út valamelyikén. Az ötödik, délre vezetô nyomvonalon alig
+     látszott, hogy használták - valóban kevesen jártak rajta.
+[15] Ez az út vezetett át a titokzatos Szürke Dombokon, amely a
+     Tralinenek birtoka volt évszázadokon át...
+[16] A délnyugati úton egy magányos lovas közeledett. A magas, szürke
+     köpenyes férfi kényelmes tempóban poroszkált -
+[17] szemmel láthatólag nem sietett. Feje tar volt, bal szemét egy
+     bôrpánt takarta. Vale Bogentaro volt az. Amikor a
+[18] keresztúthoz ért, megállította lovát és leszáltt róla. Hátasát
+     kipányvázta, majd letelepedett a fûbe. Motyójából elemózsiát
+[19] vett elô, és ebédelni kezdett, miközben a többi utat szemlélte.
+     Nemsokára két apró pontot vett észre kelet felé. Közelebb
+[20] érve látta, hogy két lovas az, az egyik nagydarab, talárt viselô
+     férfi, társa pedig egy alacsony, torzonborz figura,
+[21] lobogó fekete köpenyben. A tolvaj nyugodtan folytatta megkezdett
+     ebédjét. Amikor a két idegen a keresztúthoz ért, 
+[22] megálltak. Bogentaro ekkor megszólította ôket: - "Adj Isten! Hová
+     tartanak az urak?"
+[23] A kisebbik férfi szúrós pillantást vetett rá, de tagbaszakadt társa
+     nyájasan felé fordult: - "Üdvözöllek barátom! A nevem
+[24] Flavius, jámbor lelkész vagyok, útban Beloria felé. Ez pedig itt"
+     - csapott a pap a másik lovas vállára - "Laxamyri mester,
+[25] híres varázsló, akivel a Nagyerdô szélén futottam össze. Mivel ô
+     is azonos irányba tart, úgy gondoltuk, együtt megyünk
+[26] tovább."
+[27] Bogentaro szétvetette lábait, karját csípôre tette, úgy, hogy
+     köpenye ne takarja el övébe dugott rövid kardját és tôreit.
+[28] - "Aztán tudjátok-e, hogy a környéken útonállók is garázdálkodnak?"
+     - kérdezte.
+[29] A pap mosolya még nyájasabbá vált: "Kedvesem, engem már
+     megpróbáltak utam során kirabolni. Nem is egyszer.
+[30] Azonban én mégis itt vagyok, ellentétben a haramiákkal, akik azóta
+     alulról szagolják az ibolyát..."
+[31] Bogentaro arcáról lefagyott a fölényes mosoly. Elállt eredeti
+     szándékától, s így szólt: "Csak nem képzelted, atyám, hogy én
+[32] is bandita vagyok? ò, távol álljon tôlem az ilyesmi! Egyszerû
+     vándor vagyok, aki éppen új kihívást keres. Én úgy látom,
+
+
+[11. oldal:]
+
+[1]  most megtaláltam. Ha nincs ellenetekre, örömest elkísérlek
+     benneteket Beloriába. A Szürke Dombok veszélyes vidék,
+[2]  három férfiú mégiscsak könnyebben elbánik bármiféle ellenféllel."
+[3]  A pap bólintott, s a varázsló is megkönnyebbült. Bogentaro csomagolni
+     kezdett, és közben tovább beszélt: "Az én nevem
+[4]  Vale Bogentaro. Messzi földrôl jöttem, sokmindent kipróbáltam már.
+     Voltam katona, matróz, de leginkább magányos
+[5]  kalandor." Eloldozta lovát, és felült rá. Ekkor lódobogás
+     hallatszott. Mindnyájan észak felé fordultak, s megláttak egy
+[6]  páncélos férfit, aki hófehér lován sebesen vágtatott feléjük.
+     Martes Tragopan még mindig királya elôl menekült. A
+[7]  keresztútnál megállt, s illendôen bemutatkozott a társaságnak, majd
+     megkérdezte, nem tarthat-e velük. Azok beleegyeztek,
+[8]  s a kis csapat hamarosan elindult a déli úton a Szürke Dombok felé...
+
+[9]  XIX. FEJEZET: Prellananos népe összesereglett a fôtéren.
+     Csodálkozó, rémült arcok fordultak a tér közepán álló régi,
+[10] sárkányfaragásokkal díszített kút felé, amely mellett néhány alak
+     állt. A kovács és egy izmos béreslegény tartottak erôs
+[11] markukkal egy fiatal nôt, aki eszelôsen sikoltozott. Jyn Gradash, a
+     falubeli csendôr megpróbálta lecsitítani a lányt, hogy
+[12] választ kaphasson kérdéseire. Ez azonban meglehetôsen reménytelen
+     kísérletnek tûnt. Klaren Cyntua Tralinen gróf
+[13] cselédlánya volt. Fent lakott a várban, s csak nagyritkán lehetett
+     Prellananosban látni; kizárólag olyankor, mikor Iank
+[14] Logry-val, a gróf egyik szolgálójával lejöttek a Kastélyból, hogy
+     az élelmiszerkészleteiket feltöltsék. És most itt áll ez a csi-
+[15] nos leány, kék szemei zavarodottan bámulnak a távolba, ruhája csupa
+     szakadás, és több sebbôl vérzik. És képtelen
+[16] elmondani, mi történt vele.
+[17] Merthogy valami különös, sôt borzalmas dolog történt tegnap az
+     Ördög-orom csúcsán. Gradash tisztában volt ezzel,
+[18] hiszen a többi falubelihez hasonlóan ô is kiszaladt a falu szélére
+     az éjjel, és onnét nézte azt a fenséges, de ugyanakkor
+[19] rémisztô látványt, amit a vár feletti vihar nyújtott. Lenyûgözték a
+     kékes színû villámok, de akkor még nem gondolt semmi
+[20] rosszra, hiszen a gróf nagy kísérletezô hírében állott. Az éjféli
+     tüzijátékot is úgy könyvelte el magában, mint egy újabb si-
+[21] keres varázslat eredményét. Mikor azonban Klaren sikoltozva, véres
+     ruhában futott le az oromról vezetô ösvényen, egybôl
+[22] rájött, hogy ez valami más. Mégpedig valami igen nagy baj történt.
+[23] Mikor a lány kissé lenyugodott, Gradash kikérdezte, ám nem sokkal
+     lett okosabb. Klaren folyton csak valami "visszatérés-
+[24] rôl", meg "démonról" hebegett, s nem tudott felelni arra a
+     kérdésre, hogy mi lett a vár urával és a személyzettel. ìgy
+[25] Gradash otthagyta a fôteret, s a polgármesterrel tanácskozva
+     elvonult. Két óra múlva bejelentették, hogy Jyn Gradash utá-
+[26] najár a kastélybeli eseményeknek. Nagy tömeg kísérte el ôt a falu
+     széléig, az Ördög-oromra vezetô ösvényhez. Gradash
+[27] még utoljára visszanézett, majd nekivágott a meredek útnak...
+
+[28] XX. FEJEZET: - "És ennek már két napja. Az út a várig nem több,
+     mint három óra gyalog. Ha pedig em tudott volna
+[29] valami elôre nem látható ok miatt visszatérni, küldött volna
+     fényjeleket, vagy valahogy üzent volna. De semmi! És az itte-
+[30] niek babonásak... Nem is csoda. Amilyen kegyetlen dolgok történtek
+     itt egykoron... Na, de hagyjuk a múltat. A feladat
+[31] tehát az, hogy kiderítsük, mi történt Zandir dan Tralinen gróffal,
+     a személyzetével és... a csendôrrel."
+
+
+[12. oldal:]
+
+[1]  A polgármester nagyot sóhajtott és kérdôn nézett az elôtte ülô négy
+     idegenre. A tolvaj, a pap, a varázsló és a katona két
+[2]  napja indultak el a keresztúttól, s az imént érkeztek meg
+     Prellananosba. Egybôl érezték, hogy valami rendkívüli dolog
+[3]  történt a városban. Bogentaro javaslatára tüstént az "Ördögûzôbe"
+     mentek, ahol egy kiadós reggeli közben elbeszélgettek
+[4]  a kocsmárossal. Mikor megtudták, hogy mi történt, jelentkeztek a
+     polgármesternél, hogy többet is megtudjanak a történ-
+[5]  tekrôl. Most - ahogyan eddig is - a csavaros eszû Flavius atya
+     nyitotta szóra a száját: "Polgármester uram, nagy örömünkre
+[6]  szolgál, hogy Prellananos segítségére lehetünk. Mi négyen
+     vállaljuk, hogy kiderítjük a Kastély titkát."
+[7]  A többiek helyeslôen bólogattak, a polgármester azonban
+     megköszörülte a torkát és így szólt: "Khm... Ez nagyon szép
+[8]  tôletek, kedves barátaim, azonban... nos... Prellananos szegény
+     település, és... khm... csak 500 asynt tudunk fizetni annak,
+[9]  aki sikeresen végrehajtja a küldetést."
+[10] A varázsló és a tolvaj egybôl összevonta a szemöldökét a vérdíj
+     hallatán, és a kapitány is habozni látszott. Csak Flavius
+[11] atya mosolygott rendületlenül: "Kedves jó polgármesterem, csak nem
+     képzeled, hogy én elfogadnék pénzt ennek fejében?
+[12] Én csak a kastélybéli népek lelki üdvéért teszem."
+[13] A kapityány hirtelen közbevágott: "Igen atyám, csakhogy neked nincs
+     szükséged semmire, a híveid ellátnak
+[14] adományokkal. Én viszont csak magamra számíthatok, így természetes,
+     hogy elfogadom a pénzt, amit felajánlottak.
+[15] Viszont úgy gondolom, hogy 500 asyn tényleg kevés négy embernek, de
+     még kettônek is. Egynek azonban elegendô
+[16] fizetség, úgyhogy üdvösebb lenne, ha közülünk csak egy, a
+     legrátermettebb menne!" - mondta, s kérdôen körbepillantott
+[17] társain.
+[18] A varázsló bólintott, a tolvaj pedig felkiáltott: "ùgy van! Menjen
+     közülünk a legrátermettebb!"
+
+
+[Itt egy kép van a játékból]
+
+
+[13. oldal:]
+
+[Megjegyzés: Nem hinném, hogy innen már kérdezne a gép kódot, úgyhogy 
+ írom, ahogy van]
+
+1. A képernyô felépítése:
+
+A képernyô felsô részén látható az aktuális helyszín rajza. Alatta kapott
+helyet az irányító panel, ahonnan a játékot kezelhetjük. A kezelôpanel
+felsô részén olvasható az aktuális helyszín leírása. Középen a játék
+üzenetsora található (itt olvashatóak a kiadott parancsok, a tárgyak
+leírása, stb...). A képernyô legalján az ikonok láthatóak. Közöttük a
+mutogató kéz rajzával válogathatunk. Egy-egy ikonnak több funkciója is
+lehet.
+
+2. Az ikonok jelentése (balról-jobbra):
+
+- négyágú nyíl: ez az ikon szolgál a helyszínek közötti mozgásra. A
+  megfelelô irány (észak, északkelet, kelet, stb...) kiválasztása után
+  töltôdik a megfelelô helyszín rajza. Ha egy adott irányba nem
+  haladhatunk, azt a gép egy "nem lehet" felirattal jelzi az üzenet
+  sorban.
+
+- szem: tárgyak megvizsgálására szolgál. Az ikon nevének megjelenése után
+  a helyszínen, vagy a nálunk levô tárgyak közül válogathatunk.
+
+- zsák felfelé mutató nyíllal: a helyszínen lévô tárgyak felvételére
+  szolgál.
+
+- zsák lefelé mutató nyíllal: a nálunk lévô tárgyak közül
+  kiválaszthatjuk a leteendô tárgyat. A gép jelzi, ha az adott
+  helyszínen nem lehet több tárgyat letenni. Az ikon másik funkciója az
+  "adni" parancs, mellyel tárgyakat adhatunk át bizonyos személyeknek.
+
+
+[Itt ismét egy kép a játékból, mellette az ikonok jelentésével]
+
+
+[14. oldal:]
+
+- kulcs: tárgyak használatára, mûködtetésére szolgáló ikon. Ha két
+  tárgyat jelölünk ki, akkor az elsôt "használjuk" a másodikként
+  kijelölttel. Egy tárgy kijelölése esetén a tárgyat "mûködtetjük"
+  (például kar meghúzása). A nálunk és a helyszínen lévô tárgyak közül
+  szelektálhatunk. A "használ" ikont tudjuk még varázslásra is
+  használni. A mágia csak a papnál és a varázslónál jöhet szóba. Ki kell
+  választanunk, hogy melyik varázslatot akarjuk alkalmazni, és azt, hogy
+  ki lesz a varázs célontja. A sorrend felcserélhetô.
+
+- kard: támdásra használható ikon. Elôször a megtámadandó célpontot kell
+  kijelölni, utána azt a tárgyat, vagy varázslatot, amivel támadni
+  szeretnénk.
+
+- száj: a helyszínen lévô ellenfelekkel esetleg "barátokkal"
+  cseveghetünk. Tíz témakörbôl választhatunk.
+
+- ellentétesen mutató nyilak: a függôleges irányú mozgásra való ikon.
+  Ennek segítségével közlekedhetünk a lépcsôkön.
+
+- tekercs: ez is egy többfunkciós ikon, amellyel információkat kérhetünk
+  le, például térkép, helyszínen lévô tárgyak, stb.
+
+- lemez: a játék állásának kimentésére, betöltésére, illetve a játék
+  feladására szolgál.
+
+3. A billentyûzet vagy a joystick használatáról
+
+Billentyûzet: a kiválasztást a "jobbra" illetve "balra"
+kurzorbillentyûkkel, parancsunk véglegesítését pedig a RETURN
+billentyûvel tehetjük meg. Ha a szövegablakban a szöveg a hosszúsága
+miatt nem fér el, akkor annak további részleteit a "felfelé"
+kurzorbillentyûvel hívhatjuk elô. A SPACE megnyomásával a kéz-sprite
+mozgása ki/bekapcsolható.
+
+Joystick: a kiválasztást a jobbra, vagy balra mozgatással, a
+véglegesítést pedig a tûzgombbal tehetjük meg. A szöveg görgetését
+a joystick felfelé mozgatásával érhetjük el.
+
+
+[Itt egy kép a játékból]
+
+
+Mindenkinek sok sikert és eredményekben gazdag kalandozást kíván az
+alkotógárda (Mantis Software) és a kiadó (576 KByte).
+
+
+STÅBLISTA
+
+Programozta: Koltai Gábor és Miklósi Attila
+Rajzolta: Herédi Attila és Gáspár Olivér
+Zenéjét szerezte: Gáspár Olivér
+Alaptörténetét és a novellát írta: Herédi Attila
+
+Kiadja az 576 KByte
+1389 Budapest, Postafiók 132.
+
+(c) Comgame Gmk
+
+A programot és a kézikönyvet a szerzôi jog védi. A programnak és a
+kézikönyvnek, avagy bármely részüknek engedély nélküli lemásolása vagy
+továbbadása vádemelést von maga után, és a jog keretei között lehetséges
+maximális polgári és bûntetôjogi következményekkel jár.
+
+*********
+
+End of the International Project 64 etext of the A Kastély manual.
+
+*********

@@ -1,0 +1,1606 @@
+*********
+
+Welcome to Project Commodore!
+
+The goal of most document pages on the internet is to preserve documents 
+that might otherwise cease to exist with the rapid advancement of
+technology.
+
+Certain portions, such as diagrams, program listings, and indexes may have
+been either altered or sacrificed due to the limitations of the text mode
+used.  Diagrams may have been eliminated where ASCII-art was not feasible. 
+Program listings may be missing display codes where substitutions were not
+possible.  Tables of contents and indexes may have been changed from page 
+number references to section number references. Please accept our apologies
+for these limitations, alterations, and possible omissions.
+
+If you have any document/manuals that could be of use to the C= community
+please help them by converting it to ASCII text and e-mailing it to the
+PROJECT COMMODORE manager at deanthom@t130.aone.net.au
+
+The PROJECT COMMODORE web page is currently at:
+http://members.xoom.com/advc/pcbm/
+
+Neither the author(s) nor the members of Project Commodore will assume
+liability for damages either from the direct or indirect use of this text
+or from the distribution of or modification to this text. Please leave this
+header on this document when distributing it.
+
+NOTE: NUMBERS THAT MAY SEEM OUT OF PLACE ARE PROBABLY PAGE NUMBERS!
+e.g.:
+        -14-
+Would mean the end of page 14.
+
+The MPS-801 Printer Manual was converted to ASCII text by DEAN THOMPSON
+                                                  (deanthom@t130.aone.net.au)
+*********
+   _____
+  /  ___Ý___
+ Ý  /   |__/  c o m m o d o r e
+ Ý  \___|__\  C O M P U T E R
+  \_____Ý
+
+COMMODORE MPS-801 DOT MATRIX PRINTER USER'S GUIDE
+
+
+USER'S GUIDE STATEMENT
+
+"This equipment generates and uses radio frequency energy If it is not pro-
+perly installed and used in strict accordance with the manufacturers instruc-
+tions, this equipment may interfere with radio and television reception. This
+machine has teen tested and found to comply with the limits for a Class B
+computing device peripheral in accordance with the specifications in Subpart
+15 of FCC Rules, which are designed to provide reasonable protection against
+such interference in a residential installation. If you suspect interference
+you can test this equipment by turning if off and on. If you determine that
+there is interference with radio or television reception, try one or more of
+the following measures to correct it:
+
+* reorient the receiving antenna
+* move the computer away from the receiver
+* change the relative positions of the computer equipment and the receiver
+* plug the computer into a different outlet so that the computer and the
+  receiver are on different branch circuits.
+
+If necessary consult your Commodore dealer or an experienced radio/televi-
+sion technician for additional suggestions. You may also wish to consult the
+following booklet, which was prepared by the Federal Communications Com-
+mission:
+
+"How to identify and Resolve Radio-TV Interference Problems" This booklet
+is available from the U.S. Government Printing Office, Washington, D.C. 20402,
+Stock No. 004-000-00345-4"
+
+FOR USERS IN THE UK
+
+WARNING:  THIS APPARATUS MUST BE EARTHED
+
+IMPORTANT! The wires in the mains lead are coloured in accordance with the 
+following code:
+
+              Green-and-yellow      : Earth
+              Blue                  : Neutral
+              Brown                 : Live
+
+As the colours of the wires in the mains lead of this apparatus may not cor-
+respond with the coloured marking identifying the terminals in your plug
+proceed as follows:
+
+The wire which is coloured green-and-yellow must be connected to the termi-
+nal in the plug which is marked by the letter E or by the safety earth symbol
+---, Or coloured green or green-and-yellow.
+ ~
+The wire which is coloured blue must be connected to the terminal which is
+marked with the letter N or coloured black.
+
+The wire which is coloured brown must be connected to the terminal which is
+marked with the letter L or coloured red.
+
+COMMODORE MPS-801 DOT MATRIX PRINTER USER'S GUIDE
+
+A Friendly introduction to Your MPS-801 Dot Matrix Printer
+
+
+
+The information in this manual has been reviewed and is believed to be entirely
+reliable No responsibility, however, is assumed for inaccuracies. The material in
+this manual is for information purposes only, and is subject to change without
+notice.
+
+This manual is copyrighted and contains proprietary information. Not part of
+this publication may be reproduced, stored in a retrieval system, or transmitted
+in any form or by any means, electronic, mechanical, photo-copying, recording
+or otherwise, without the prior written permission of COMMODORE BUSINESS
+MACHINES, lnc.
+
+Copyright c 1983 by Commodore Business Machines, Inc
+All rights reserved.
+
+TABLE OF CONTENTS
+
+Section 1: GENERAL INFORMATION
+
+1.    External Appearance and Names of Parts ...............2
+2.    Operating your Printer ...............................3
+3.    Interface ............................................4
+      3.1 Connector ........................................4
+      3.2 Interface ........................................4
+
+Section 2: PREPARING TO USE YOUR PRINTER
+1.    Installation .........................................5
+2.    Installing and Removing the Ribbon Cassette ..........5-8
+      2.1 Installing the Ribbon Cassette ...................5-8
+      2.2 Removing the Ribbon Cassette .....................8
+3.    Paper Instruction ....................................8-11
+      3.1 Paper Loading Instruction ........................8-11
+      3.2 Printing Pressure Adjustment .....................11
+4.    Connecting the Printer to Your Computer ..............11-12
+5.    Performing the Printer Power-ON Test .................12
+6.    Performing the Print Head Test .......................12-13
+7.    Maintenance ..........................................14
+8.    Cautions .............................................15
+
+Section 3: USING YOUR PRINTER
+      Introduction .........................................16
+1.    Special Printer-Associated Commands ..................16-18
+      The OPEN Command .....................................16-17
+      The CMD Command ......................................17
+      The PRINT# Command ...................................17-18
+      The CLOSE Command ....................................18
+2.    Printing in the Direct Mode ..........................19
+3.    Printing Under Program Control .......................20
+4.    Secondary Address ....................................20-22
+5.    Printing Modes and Control Codes .....................22-23
+      5.1   Standard Character Mode ........................23
+      5.2   Double Width Character Mode ....................23
+      5.3   Bit Image Mode .................................23-25
+      5.4   Print Position Determination ...................25-26
+      5.5   Print Start Position-Dot Address ...............26-29
+      5.6   Repetition of Bit Image Data ...................30
+      5.7   Graphic Mode in Local ..........................30-31
+      5.8   Business Mode in Local .........................31
+      5.9   Reverse Field Mode .............................31-32
+      5.10  Reset Reverse Field Mode .......................32
+      5.11 Mixture of Various Print Mode ...................32
+      5.12 Line Feed Spacing ...............................33
+      5.13 Data Buffer Size ................................33
+6. Automatic Printing ......................................34
+
+APPENDICES
+APPENDIX A: SPECIFICATIONS .................................35
+      1. General Specifications ............................35
+      2. Operating Environment .............................35
+APPENDIX B: Hard Copy of the Text Screen ...................36
+APPENDIX C: PRINTER Code Table .............................37-38
+      1. GRAPHIC MODE Code & Font Table ....................37
+      2. BUSINESS MODE Code & Font Table ...................38
+
+INDEX ......................................................39-40
+
+
+Section 1: GENERAL INFORMATION
+
+Welcome to a new dimension in computing. Because you bought the Commodore
+MPS-801 printer, you've added a great deal of versatility and convenience to
+the use of your Commodore computer. This manual contains all the information
+you need to check out, hook up, and operate your printer, but in order to get
+the most out of your computer system you should continue to look at both
+your computer's User's Guide and Programmer's Reference Manual.
+
+Your MPS-801 printer is designed to operate through software control. That
+means you have to make the printer's operation part of a program. For example
+the VIC-20 has a TYPEWRITER cartridge that comes in the VIC SIX-PACK.
+
+The MPS-801 Printer prints both capital and small letters, numbers, and all the
+graphic characters available on your computer. It will even print custom made
+graphics and charts that you design on your VIC-20 or Commodore 64. In
+addition your printer has a variety of built-in functions of its own. This is
+because your printer has its own computer inside.
+
+The advantages of this internal computer are 1) it automatically resets all its
+switches to the starting sequence every time you turn the printer on: 2) it
+contains its own internal memory which means that you can store information
+to be printed directly in the printer without using up your computer's memory.
+
+Your printer is designed to connect directly into your computer through the
+Serial Port (6-pins). However, you can connect your printer to as many as 4
+1541 disk drives by chaining. Chaining means connecting 1 peripheral to your
+computer and any additional peripherals plug into the Serial Port of the last
+item connected.
+
+              -1-
+
+1. External Appearance and Names of Parts
+
+Picture illustrating printer parts omitted (1.1 - Front View)
+Paper advance switch
+Power indicator
+Upper Housing
+Paper Cover
+Paper feed know
+Lower Housing
+
+Picture illustrating printer parts omitted (1.2 - Rear View)
+Paper Shelf
+I/O Connector
+Device Address/Test Switch
+Power Cord
+
+        -2-
+
+2. Operating your Printer
+
+PART                       OPERATION & FUNCTION
+
+a. Power Switch:           Turns printer on and off
+
+b. Power Indicator:        Lights up when printer is turned on 
+
+c. Self-Diagnostic Switch: Select printer device number, "4" is the normal
+                           position for one printer. "5" is the position to
+                           use with your second printer. "T" is the self-
+                           diagnostic test position.
+
+d. Printer Cover:          Use your cover to protect your printer from dust
+                           and to reduce the noise level while the printer is
+                           in operation.
+
+e. Tractor Mechanism:      After loading your paper properly (see Section
+                           2, part 3) the Tractor Mechanism should be snapped
+                           close to hold the paper in place. Tractor holes on
+                           the edges of the paper must line up with the pins
+                           of the Tractor Mechanism.
+
+f. Paper Feed Knob:        Once you have properly threaded your paper, you
+                           can use the Paper Feed Knob to move the paper.
+
+g. Paper Advance Switch:   Use this switch to move the paper ahead, 1 line
+                           at time in the forward direction only!
+ 
+              -3-
+              
+3. Interface
+
+3.1 Interface Connector
+
+     ©ª  
+ *5     *1   
+*4   *6  *2
+     *3
+  Figure 1.4
+
+Pin No.   Signal
+   1      SERIAL SRQ
+   2      G N D
+   3      SERIAL ATN
+   4      SERIAL CLK
+   5      SERIAL DATA
+   6      RESET
+      Figure 1.5
+
+a. Use the enclosed connecting cable to connect the printer to your
+   computer. Plug one end of the 6-pin connect cable to the 6-hole
+   Serial Port on your computer. Plug the other end of the 6-pin
+   connector into the hole connector of your printer. If you are
+   facing the back of the printer, the connector hole is in the lower
+   left (see figure 1.2).
+
+b. Select the device number.
+ÚÄÄÄÄÄ¿
+³T 5 4³
+³  Û  ³
+ÀÄÄÄÄÄÙ
+Figure 1.6 Device Selector Switch
+
+c. Just as your computer has different character modes, so does
+   your printer. To choose either the GRAPHIC (upper case/graphic)
+   mode, or BUSINESS (lower/upper case) mode, you must assign
+   a SECONDARY ADDRESS (SA) so that the printer prints
+   in the same mode that you've chosen for your computer. The
+   secondary address can either be 0 or 7.
+
+   SA = O: "GRAPH IC" (upper case/graphic) Mode
+   SA = 7: "BUSINESS" (lower/upper case) Mode
+
+d. If there is an error in your program that pertains to printer
+   operation, your printer will stop printing and the appropriate
+   error message will appear on the screen of your computer.
+
+     -4-
+
+Section 2: PREPARING TO USE YOUR PRINTER
+
+1. Installation
+
+Please follow the precautions listed below when setting up your printer.
+These measures are designed to help you keep your printer functioning at
+its best.
+
+* Place your printer on a flat and level surface.
+* Avoid placing your printer in rooms with high humidity.
+* Keep your printer as dust-free as possible.
+* Keep your printer out of direct sunlight.
+* Avoid placing your printer through extreme temperature changes.
+
+2. Installing and Removing the Ribbon Cassette
+
+2.1 Installing the Ribbon Cassette
+
+a.  Locate the packet that contains the ribbon cassette. You should
+    have received this packet in the same box that your printer came in.
+
+Figure 2.1 - Picture of printer ribbon - omitted
+Claws
+Ribbon Advance Knob
+Ribbon
+
+b.  Remove the ribbon cassette from the packet and place it carefully in
+    front of you.
+
+        -5-
+
+c. Look at the cassette. You will notice that one side has a ribbon
+   advance knob.
+
+d. Rotate ribbon advance knob in the direction of the arrow until all
+   the slack is taken out of the ribbon. (See 2.2)
+
+Figure 2.2 - Picture illustrating turning the advance knob, omitted
+
+e. Pull the paper thickness adjusting lever toward the front of the
+   printer until it stops. (Pull it while pushing outward.) (See 2.12)
+
+f. Place the ribbon cassette on the carrier until. Be sore that the ribbon
+   is between the print head and the platen. (See 2.3)
+
+g. Push down the left wide of the ribbon cassette with your finger. Be
+   sure that the left claw snaps into the cassette supporter of the carrier
+   unit. (See 2.3)
+
+        -6-
+        
+Figure 2.3 - Picture illustrating parts of printer, omitted
+Cassette Supporter
+Carrier Unit
+Printing Head
+Platen
+Paper thickness Adjusting Lever
+
+h. Push down the right side of the cassette while turning the cassette
+   knob clockwise, (See 2.4) Be sure that right claw snaps into the
+   cassette supporter of the carrier unit. After fitting, add more tension
+   to the ribbon by again turning the cassette knob in the direction
+   shown by the arrow.
+
+
+
+Figure 2.4 - picture showing how to insert ribbon, omitted
+
+i. Return the paper adjusting lever to the original position.
+
+        -7-      
+
+Caution
+ DO NOT TRY TO MOVE THE CARRIER UNIT (INCLUDING THE
+ PRINTING HEAD) MANUALLY FORCING THE CARRIER UNIT MAY
+ CAUSE DAMAGE TO THE PRINTER.
+
+2.2 Removing the Ribbon Cassette (See 2.5)
+
+a. Pull the paper thickness adjusting lever toward you until it stops.
+
+b. Release the right cassette supporter by pressing outward with your
+   right thumb, And at the same time push up the bottom of the cas-
+   sette with your right middle finger. (Completed)
+
+Figure 2.5 - showing person removing ribbon, omitted
+
+3. Paper Instructions
+
+3.1 Paper Loading Instructions (See Appendix A for Paper Specification)
+
+a. Make sure that the power on your printer is turned OFF before load-
+   ing the paper.
+
+b. Remove the printer cover by holding the rear of cover and lifting it
+   up. (See 2.6)
+
+Figure 2.6 - picture of someone removing paper cover, omitted
+
+c. Pull the paper thickness adjusting lever toward the front of the
+   printer until it stops. Open the right and left tractor covers,
+
+Figure 2.6 - person unclipping tractor cover clips, omitted
+Tractor Cover (left)
+Tractor Cover (right)
+Tractor Cover (close up diagram)
+
+d. Insert paper between the paper shelf and the lower frame using both
+   hands. (See 2.8)
+
+        -9-
+
+e. Feed the paper until comes out between the printing bead and the
+   platen.
+
+Figure 2.8 - picture showing person inserting paper, omitted
+
+f. Adjust the paper on to the feed pins of the tractor on sides. Then
+   close the tractor covers. (See 2.9) If the holes and the width of the
+   pear and not aligned, shift the paper sideways until the spacing is
+   correct. Then pull the paper from behind the printer to remove any
+   slack. Return the paper thickness adjusting lever to the original
+   position.
+
+
+Figure 2.9 - picture showing paper cover off, with paper inserted, omitted
+
+g. Replace the printer cover. (See 2.10) Adjust printing position by
+   turning the paper feed knob.
+
+              -10-
+
+3.2 Printing Pressure Adjustment
+
+Figure 2.10 - picture showing printer with paper cover on, omitted.
+
+You may adjust the printer pressure of the print head according to the
+thickness of the paper. If smudging occurs or if printing is too dark, move
+this lever one click hold towards the front of the printer at a time until
+you are satisfied with the printing quality; if printing is too light, move it
+towards the rear printer. When adjusting the lever, make sure that it is
+placed directly in the hole, not "in between" them.
+
+Figure 2. 11 Diagram showing inside left of the printer (paper thickness
+             adjustment lever), omitted
+Paper Thickness Adjusting Lever
+Leg of Thickness Adjusting Lever
+Click Hole
+
+At the time of shipment, the lever's leg is at the position 3. Please the
+set the lever at the position 8 when fitting and removing a ribbon cassette.
+
+4. Connecting the Printer to Your Computer
+
+To connect your printer to your Commodore computer, please follow the in-
+structions in the order listed below
+
+        -11-
+
+a. Make sure that both your computer and printer have their power turned
+   OFF.
+
+b. Connect one end of the 6-pin DIN cable to the connector holes located in
+   the back of your printer at the lower left. This cable is "keyed" so that
+   you cannot plug the cable in the wrong way. This means that the pins
+   should be positioned so that a slight pressure will seat the cable properly.
+   Do not force these pins in, doing so could damage your cable.
+
+c. Connect the other end of the cable to your computer in the Serial Port
+   Connector located in the back of your computer. Make sure that you are
+   "keying" the pins properly into the connector with 6 holes.
+
+d. Now plug the printer's power cord into a standard AC wall outlet. How-
+   ever, please do NOT turn the equipment on yet.
+
+5. Performing the Printer Power-On Test
+
+Please do NOT turn on your computer until after have completed the next
+two sections.
+
+a. Turn on your printer. The print head should move to the center of the
+   carriage automatically and then return to the original position. If this
+   doesn't happen, go to step "b".
+
+b. If the print head does not move as described above, check to see if the
+   connecting cable is properly plugged in. After checking all connections
+   turn your printer on and try the test again.
+
+6. Performing the Print Head Test
+
+You can test the print head and ribbon. ONLY AFTER INSERTING PAPER.
+DO NOT PRINT WITHOUT PAPER; it could easily damage your print head.
+To perform the test, simply switch the self-diagnostic switch to "T" (shown
+in Fig. 2.12). The printer will continue to print all the characters
+available until 1 ) the printer is turned off; or 2) the self-diagnostic
+switch is "flipped" to position 4 or 5. When the printing is finished,
+remove the paper from the machine and examine it for defects. Please
+report any problems immediately to your local Commodore dealer so that
+your printer can be properly serviced. A typical printout is shown below.
+
+        -12-
+ÚÄÄÄÄÄ¿
+³T 5 4³
+³Û    ³
+ÀÄÄÄÄÄÙ
+Figure 2.12 Test Position Selected
+
+Figure 2.13 Sample Printout, omitted
+
+-13-
+
+7. Maintenance
+
+We hope you don't have problems but just in case . . . see if you can solve
+them using the table below. If you can't, then try to determine which
+component in your system is at fault, and bring it into a store for repair.
+
+----------------------------------------------------------------------
+Problems                Probable Causes/Solutions
+----------------------------------------------------------------------
+Printer won't print,     1) Printer power is 'OFF'. 
+Power Indicator 'OFF'.   Check the connection and the power switch.
+                         2) Fuse may be blown.
+                         Replace only with a fuse of the same rating.
+----------------------------------------------------------------------
+Printer won't print.     1) Improper connection.
+Power Indicator 'ON'.    Check all the cable connections.
+                         2) Improper ribbon setting.
+                         Re-adjust the ribbon.
+----------------------------------------------------------------------
+Printer okay, but the    Paper is jammed.
+paper won't advance.     Remove and reload the paper.
+----------------------------------------------------------------------
+Printed characters are   1)  Improper printing pressure.
+too light or smudging    Adjust the lever's position on the left inside.
+                         2) Wrong ribbon setting.
+                         Re-adjust the ribbon
+                         3) Old or worn-out ribbon.
+                         Replace the ribbon.
+        -14-
+
+8. Cautions
+
+* Wait at least two seconds to turn on the power after it is turned off,
+  otherwise the Printer will not be initialised properly.
+
+* Never place the Printer where it is exposed to direct sunlight.
+
+* Never apply power while you are plugging in or unplugging an input
+  connector.
+
+* Never turn off the power while the Printer is in motion.
+
+* Never try to move the print head manually, whether the power is on
+  or off.
+
+* Do not stop the print head motion while it is printing.
+
+* Do not print without paper and/or ribbon because the print head might
+  be damaged.
+
+* Turn off the power quickly and remove a foreign object, if you drop it
+  into the Printer.
+
+*   Do not subject the Printer to temperatures below 5øC or above 35øC
+    during operations, or to a sudden change in temperature.
+
+* Regarding printing duty:
+  In graphic mode, using patterns with too much dot density will wear
+  out the print head faster. We recommend that you use patterns whose
+  dot density is equal to that of ordinary alphanumerics. The continuous
+  printing of high dot density patterns may adversely affect the longevity
+  of the print head.
+
+* Unplug the power cord before trying to take off the outer casing.
+
+        -15-
+
+
+
+Section 3: USING YOUR PRINTER
+
+Introduction
+
+Now that you've learned how to insert the ribbon and paper into your printer,
+connect the printer to your computer, and how to test your printer for
+problems, you're ready for the next step: putting the printer to work for
+you.
+
+Your printer does a lot more than give a clean, fast printing of your work.
+It has own internal microprocessor (computing system) which makes it both
+versatile and practical. In addition, it doesn't need to use up precious
+memory space in your computer because it stores everything you want to print
+in its own memory.
+
+In this section we will show you how to use your printer to print listings,
+program results, and graphic displays. You will also see how to make double
+width characters and even how to create a few custom designed graphics. But
+before you go any farther in this manual, make sure that you are able to do
+the following:
+
+  1. Operate your Commodore computer.
+  2. Write elementary programs in BASIC,
+  3. Read and write files to and from a peripheral device, like a tape
+     cassette recorder or disk drive.
+  4. Open and close files.
+
+If you are not familiar with any of the above procedures, check your
+computer's User's Manual for the information you need.
+
+1. Special Printer-Associated Commands
+
+When you want to print something on your printer, essentially what you are
+doing is transferring the video screen function to the printer. A few special
+BASIC commands allow you to make this transfer. Most of the other rules and
+syntax of BASIC remain the same. Don't forget to type the RETURN key after
+each line of information.
+
+The OPEN Command
+
+This command creates a correspondence between a file number and a physical
+device. The logical file number (lfn) may be any number from 1 to 255. It
+doesn't matter which number you choose, as long as you keep the same number
+throughout your set of commands.
+
+        -16-
+
+The device number (dn) refers to the device to which you send the file.
+The first device number is also known as the primary address. If you are
+using a MPS-801 printer, the dn (device number) is usually 4. Check the
+test switch on your printer to see what dn to choose.
+
+The secondary address (sa) is an optional and unique printer concept.
+Secondary address on this printer provides the following printer options.
+
+         sa = 0: Print data in graphic (upper case/graphic) mode
+         sa = 7: Print data in business (upper/lower case) mode
+
+The SYNTAX for the OPEN Command is:
+
+         OPEN lfn, dn                  or             OPEN lfn, dn, sa
+         OPEN 99,4                     or             OPEN 1,4,0
+         OPEN 2, 4                     or             OPEN 26, 4, 7
+
+The CMD Command
+
+The CMD command transfers control from the computer to the printer. The
+lfn (logical file number) must be the same as the one you chose for the OPEN
+command. If you are using more than 1 OPEN command, each CMD command
+must have the same number as the corresponding OPEN command. Unlike a
+PRINT# command (which is discussed next), the line to the receiving device
+(in this case your printer) is left open. The device given the CMD command is
+said to be "listening." That means that once you give the CMD command, your
+printer will print READY and it will then be open and waiting for further
+instructions. At this point, any PRINT or LIST command will go directly to
+the printer as output.
+
+The SYNTAX for the CMD Command is:
+
+       CMD lfn
+       CMD 99
+       CMD 2
+       (notice that the CMD logical file numbers correspond
+       to the OPEN lfn's)
+
+The PRINT# Command
+The PRINT# command works just like the BASIC command PRINT except
+that it directs the output to the printer instead of to the video screen.
+After the data you have sent to the printer is finished, the lfn is
+automatically closed. This is called "unlistening" and it means that in order to PRINT# more data,
+you must re-open the file by using another CMD command. By the way, please
+notice that you can NOT leave a space between PRINT and # or the command
+will not work.
+
+        -17-
+
+  NOTE: In Commodore BASIC, the PRINT command can be abbreviated by using
+  a "? ". You can NOT do this with PRINT#. You must always type PRINT# in full
+
+SYNTAX for the PRINT# Command is
+
+     PRINT# lfn, data
+     PRINT# 99, "HELLO VIC"
+     PRINT# 2, CHR$(124), 123, 63, 76
+
+The CLOSE Command
+
+The CLOSE command is a very important command to use efficiently. You could
+always CLOSE a file after you've printed from it. The reason is that you
+can only have a maximum of 10 files open at anytime. Therefore, if you make a
+habit of closing files when you've finished with them, you will always have
+the maximum number of files available.
+
+ NOTE: Since the CMD command does not close the line to the
+ printer, you must always follow a PRINT# command with the
+ CLOSE command in order to properly close a file.
+
+The SYNTAX for the CLOSE Command is:
+
+     CLOSE lfn
+     CLOSE 99
+     CLOSE 2
+
+SAMPLES Using all commands correctly:
+
+     OPEN 99, 4
+     PRINT#99, "HELLOVIC"
+     CLOSE 99
+
+     OPEN 99, 4
+     CMD 99, "HELLO VIC"
+     PRINT#99: CLOSE 99
+
+     OPEN 2, 4
+     PRINT#2, CHR$(124), 123, 63, 76
+     CMD2
+     PRINT#2
+     CLOSE 2
+
+        -18-
+
+2. Printing in the Direct Mode
+
+Now that you have gone through the various printing commands and what they
+do, let's put them to use in practical applications The DIRECT mode allows you
+to communicate with your printer by entering printing commands Directly
+from the keyboard of your computer.
+
+The following example illustrates the entire DIRECT mode listing process in a
+short BASIC program. In this example, a file containing a single BASIC state-
+ment is typed into the computer's memory. The file is then OPENed. The out-
+put channel to the printer is opened and the printer is "listening" using the
+CMD command. The file is LISTed. The output channel is closed using the
+PRINT# command. Finally the file is CLOSEd. The printer is now out of use
+and the computer is ready to accept new commands.
+
+You type:     ³  The screen displays:  ³  The printer prints:
+1. 10?"TEST"  ³  10?"TEST"             ³
+2. OPEN 3,4   ³  OPEN 3,4              ³
+              ³  READY.                ³
+3. CMD3       ³  CMD 3                 ³  READY.
+4. LIST       ³  LIST                  ³  10 PRINT"TEST"
+              ³                        ³  READY.
+5. PRINT#3    ³  PRINT#3               ³
+6. CLOSE3     ³  CLOSE3                ³
+              ³  READY.                ³
+                                        
+                        Table 3.1
+
+Explanation of above program:
+
+(1) Data placed in the computer's memory.
+(2) You OPEN a file and give it a logical file number (Lfn) of 3. The 4
+    (follow-ing the comma) makes the file available to the printer.
+(3) The printer is "listening."
+(4) The program is LISTed onto the printer. The printer is still "listening."
+(5) Use the PRINT# command to "unlisten" the printer.
+(6) You CLOSE the file so that the lfn 3 can be used for something else.
+
+        -19-
+
+3.    Printing Under Program Control
+
+Now that you have seen how to control the printer directly from the keyboard,
+it's time to control the printer from within a BASIC program. The short BASIC
+sample below would already be in the computers memory It could have been
+placed there from the keyboard, a cassette tape, or a floppy disk.
+
+10 OPEN 3,4
+70 CMD3
+30 PRINT"PROGRRM CONTROL"
+40 LIST
+        Figure 3.2
+
+The RUN command is given and the resulting printout is shown here:
+
+PROGRAM CONTROL
+
+10 OPEN 3,4
+20 CMD3
+30 PRINT" PROGRAM CONTROL"
+40 LIST
+
+READY.
+        Figure 3.3
+
+REMEMBER THIS! When using the LIST command within a program execution,
+you must type the PRINT# command to close the channel. Then type the
+CLOSE command to close the file after you have finished RUNning the file.
+Although this works, it is NOT good programming practice. It is suggested
+that you only use the CMD command and DIRECT mode.
+
+4. Secondary Address
+
+This printer has 2 secondary address (sa). They are used to the character
+front table.
+
+       sa = 0: graphic mode.. . (default)
+       sa = 7: business mode
+
+The following example tells you how to use secondary address.
+
+100 OPEN4,4
+110 PRINT#4,"              ASCII CODE TABLE"
+120 PRINT#4
+130 A$= "012345678ABCDEF"
+140 PRINT#4," | ";
+150 FOR I=1 TO 16:PRINT#4,MID$(a$, I, 1)" "; :NEXT
+160 PRINT#4
+170 PRINT#4,"-+";
+180 FOR I = 1 TO 16: PRINT#4, "--" : NEXT
+190 PRINT#4
+200 FOR I=1 TO 16
+210 PRINT#4, MID$(A$, I, 1 ) " | ";
+220 FOR J=I-1 TO 255 STEP 16
+230 IF J<32 THEN GOSUB330: GOTO260
+240 IF J> 127 AND J<16O THEN GOSUB330: GOTO260
+250 PRINT#4 CHR$(J)" ";
+260 NEXT J
+270 PRINT#4
+280 NEXT I
+290 PRINT#4 :PRINT#4
+300 CLOSE4
+310 END
+320 :
+330 PRINT#4,"  ";
+340 RETURN
+
+        Figure 3.4
+The above program makes graphic mode code table.
+
+Figure 3.5 - Output of the above program, omitted
+
+        -20-
+
+If you change the above program in line 100
+
+100 OPEN4,4,7
+
+The new Program makes business mode code table
+
+Figure 3.6 - Output of the modified program, business mode. Omitted
+
+5. Printing Modes and Control Codes
+
+You can also use your printer and the PRINT#, CMD and PRINT commands
+in conjunction with CHR$ codes to do the following:
+
+DESCRIPTION                             INPUT CODE
+
+Enter Bit Image Mode ...................CHR$(8)
+Line Feed After Printing ...............CHR$(10)
+Carriage Return ........................CHR$(13)
+Enter Double Width Character Mode ......CHR$(14)
+Enter Standard Character Mode ..........CHR$(15)
+Tab Setting the Print Head .............CHR$(16)
+Enter Business Mode in Local ...........CHR$(17)
+
+        -22-
+
+Start Reverse Field ...................................CHR$(18)
+Repeat Bit Image Selected .............................CHR$(26)
+Specify Dot Address (must follow Print Head Tab Code)..CHR$(27)
+Enter Graphic Mode in Local ...........................CHR$(145)
+Turn Off Reverse Field ................................CHR$(146)
+
+5.1 Standard Character Mode
+
+When the printer is turned on, it is set to start in the STANDARD CHARAC-
+TER mode. But once you select different character modes the printer will
+remain in that mode until a different one is chosen using the CHR$ code. For
+the example below, we started in double width mode "CHR$(14)" for the title
+and then went to the stand character mode "CHR$(15)" to list the program.
+
+M P S - 8 0 1   P R I N T E R (in double width)
+
+10 OPEN 1,4
+20 PRIHT#1,CHR$(14)"MPS-801 PRINTER"
+30 PRINT#1,CHR$(15)
+40 CMD 1: LIST
+
+READY.
+Figure 3.7
+
+5.2 Double Width Character Mode
+
+To print in the DOUBLE WIDTH CHARACTER mode, use the CHR$(14)
+code and follow the example below.
+
+10 OPEN2,4
+20 PRINT#2, CHR$(14) "MPS-801 PRINTER"
+30 CLOSE2
+
+RUN
+
+M P S - 8 0 1   P R I N T E R (in double width)
+
+5.3 Bit Image Mode
+
+By using CHR$(8) you enter the bit image mode This allows you to design
+
+        -23-
+
+and print bit image graphics by inputting data. Each DATA statement is made
+of numbers that represent a row of dots which, when READ all together, will
+make up your bit image graphic. To design your bit image graphic, follow the
+example below. You should notice that each number in the DATA statement
+corresponds to 1 row in your bit image graphic. To design a bit image graphic,
+follow these steps:
+
+ 1. Get a separate piece of paper to design your picture,
+
+ 2. Number 7 consecutive rows like this:
+
+       1
+       2
+       4
+       8
+       16
+       32
+       64
+
+ 3. Now design your bit image graphic in dot form (see the example below).
+
+ 4. Add together all the numbers from the column on the left, only whenever
+    you have placed a dot in a row. In our example, the first column has 3
+    dots located in rows 4, 8, 16. Added together they equal 28.
+
+ 5. Now add 128 to the total you had for each column in step 4. In our
+    example we add 128 to 28 for a total of 156.
+
+ 6. Put your final total for each column into a data statement in column order.
+
+  1 . . * * . . .
+  2 . * . . * * .
+  4 * . . . * . .
+  8 * . . . . . .    (Direction of print head movement)
+ 16 * . . . * . .
+ 32 . * . . * * .
+ 64 . . * * . . .
+128
+ 156 162 193 182 162
+
+The DATA statement in your program will read:
+
+      DATA 156,162,193,182,162
+
+The following program will print COMMODORE with its logo 4 times.
+
+10 DATA 156,162,193,193,182,162
+20 FOR I = 1 TO 6
+30 READ A
+40 A$=A$+CHR$(A)
+
+        -24-
+
+50 NEXT I
+60 OPEN3,4
+70 FOR I=1TO4
+80 PRINT#3,CHR$(8)A$;
+90 PRINT#3,CHR$(15)" COMMODORE"
+100 NEXT I
+110 CLOSE3
+
+After typing RUN, you get this result:
+
+C= COMMODORE
+C= COMMODORE
+C= COMMODORE
+C= COMMODORE
+Figure 3.9
+
+5.4 Print Position Determination
+
+With the CHR$(16) code you can determine the print start position. This is
+done by assigning a 2-digit number following the CHR$(16) (see the examples
+below).
+
+Example 1
+
+10 OPEN4,4
+20 FOR I = 1 TO 4
+30 PRINT#4,"0123456789";
+40 NEXT I
+50 PRINT#4, CHR$(10);
+60 PRINT#4,CHR$(16)CHR$(48)CHR$(56)"MPS-801";
+70 PRINT#4,CHR$(16)CHR$(51)CHR$(48)"PRINTER"
+80 CLOSE4
+
+RUN
+
+0123456789012345678901234567890123456789
+       MPS-801                PRINTER
+
+Figure 3.10
+
+-25-
+
+Example
+
+10 OPEN4, 4
+30 FOR I = 1 TO4
+30 PRINT#4,"0133456789";
+40 NEXT I
+50 PRINT#4, CHR$(10);
+60 PRINT#4, CHR$(16)"08MPS-801" ;
+70 PRINT#4, CHR$(16)"30PRINTER"
+80 CLOSE4
+
+RUN
+
+0123456789013345678901334567890123456789
+        MPS-801               PRINTER
+
+Figure 3.11
+
+The 2-digit numbers following the CHR$(16) code are the print start position
+of your standard character. This can be proven using the following example.
+
+10 OPEN4, 4
+20 FOR I = 1 TO4
+30 PRINT#4, "0123456789" ;
+40 NEXT I
+50 PRINT#4, CHR$ (10);
+55 PRINT#4, CHR$ (14);
+60 PRINT#4, CHR$ (16)"08MPS-801" ;
+70 PRINT#4, CHR$ (16)"30PRINTER"
+80 CLOSE4
+
+RUN
+
+0123456789013345678901334567890123456789
+        M P S - 8 0 1         P R I N T E R  (double width)
+
+Figure 3.12
+
+5.5 Print Start Position-Dot Address
+
+Using the CHR$(27), the absolute address (dot units) can be specified via the
+following format.
+
+CHR$(27)   CHR$(16)     CHR$(HP)     CHR$(LP)
+
+Figure 3.13
+
+        -26-
+
+The 2 bytes that follow CHR$(27) and CHR$(16) are binary data used to
+indicate the absolute address away from the home position (dot units).
+
+NOTE FOR THESE NEXT TWO TABLES (fig 3.14, 3.15)  THE LETTER P OR D FOLLOWED
+BY A NUMBER MEANS THE LETTER TO THE POWER OF THE NUMBER. EG  D6 = D TO THE
+POWER OF 6. THIS IMPROVISATION IS CAUSE BY THE USE OF PLAIN ASCII.
+(DEAN THOMPSON)
+
+          D7 D6 D5 D4 D3 D2 D1 D0
+1st byte  0  0  0  0  0  0  0  0     Higher 1 bit (HP)
+2nd byte  P7 P6 P5 P4 P3 P2 P1 P0    Lower 8 bits (LP)
+
+        Figure 3.14
+
+The above 2 bytes are used to indicate the staring print position and are
+treated as a single 9 bit binary notation data inside the Printer.
+
+P8 P7 P6 P5 P4 P3 P2 P1 P0
+        Figure 3.15
+
+For example the dot address 15 can be determined by HP=CHR$(0),
+LP=CHR$(15).
+
+dot address
+|                                                     |     |                |
+|0  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17|     |476 477 478 479 | 
+|o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  *  o |     | o   o   o   o  |
+|o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  *  o |     | o   o   o   o  |
+|o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  *  o |.....| o   o   o   o  |
+|o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  *  o |     | o   o   o   o  |
+|o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  *  o |     | o   o   o   o  |
+|o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  *  o |     | o   o   o   o  |
+|o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  *  o |     | o   o   o   o  |
+|                  |                 |                |     |                |
+00                 01                02                    79
+|
+character address
+
+        Figure 3.16
+
+The following program will print COMMODORE and its logo from the 100th
+dot position (16 charades plus 5 dots).
+
+10 DATA8,27,16,0,100
+20 DATA156, 162,193,193,182,162,15
+30 FOR I=1TO12
+40 READ A
+
+        -27-
+
+50 R$=R$+CHR$(8)
+60 NEXT I
+70 OPEN5, 4
+80 PRINT#5,85" COMMODORE"
+90 CLOSE5
+
+RUN
+
+                C= COMMODORE
+
+        Figure 3.17
+
+Using to change a print start position-dot address, try to make sine curve.
+following is a sample program.
+
+100 OPEN4,4:CMD4
+110 SO$=CHR$(14): SI$=CHR$(15)
+115 PO$=CHR$(16): ESC$=CHR$(27)
+120 CN=23:AM=16:OF=4
+130 A$="-":FOR I=0TOCN+AM:A$=A$+"-":NEXT
+140 SP$="        "
+150 PRINTSO$"            SIN CURVE"
+160 PRINTSI$
+170 PRINTLEFT$(SP$, OF-1)+"X";
+180 PRINTSPC(CN-AM-OF-1)"-1";
+190 PRINTSPC(AM-1)"0";
+200 PRINTSPC(AM-1)"1"
+210 PRINTA$
+220 FOR I =0 TO 360 STEP 10
+230 I$=RIGHT$(SP$+STR$(I), OF)
+240 YO=CN*6+AM*6*SIN(I*3.14/180)
+250 YH=INT(YO/256): YL=YO-YH*256
+270 PRINT I$ESC$PO$CHR$(YH)CHR$(YL)"*"
+280 NEXT
+290 PRINT#4: CLOSE4
+
+        -28-
+
+Sample printout of the above sin curve program, omitted
+
+        -29-
+
+5.6 Repetition of Bit Image Data
+
+By using CHR$(26) you can repeat bit image data where you wish
+ÚÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄ¿
+³CHR$(8) ³ .......  ³ CHR$(26) ³ NUMBER OF REPETITION ³ DATA ³
+ÀÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÙ
+        Figure 3.19
+
+What is actually repeatable is just 1 column of bit image information. The
+following example uses a CHR$(26) code to draw the histogram
+
+1978  þþþþþþþþ  34
+1979  þþþþþþþþþþþþþþþþþ  57
+1980  þþþþþþþþþþþþþþþþþþþþþþþþ  75
+1981  þþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþ  88
+1982  þþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþ  123
+1983  þþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþþ  186
+
+10 OPEN6,4
+20 FOR I = 1 TO 6: READA: A$=A$+CHR$(A): NEXT
+30 FOR J = 1 T0 4: READB: B$=B$+CHRS(B):NEXT
+40 FOR K = 1 TO 6: READC: C$=CHR$(C): NEXT
+50 D$=STR$(1977+K)
+60 PRINT#6,CHR$(15)D$A$C$B$C$
+70 NEXT
+80 CMD6: LIST
+90 DATA 8,27,16,0,53,26
+100 DATA 255,59, 15,32
+110 DATA 34,57,75,88,123,186
+
+READY.
+
+Figure 3.20
+
+5.7 Graphic Mode in Local
+
+By sending the cursor up code [CHR$(145)] to your printer, folowing charac-
+ters will be printed in cursor up (graphic) mode until either a carriage
+return or cursor down code [CHR$(17)] is detected.
+
+Example
+18 0PEN7,4,7:CU$=CHR$(145):CD$=CHR$(17)
+20 PRINT#7,CU$"[shitf+a]      "CD$"SPADE"
+
+        -30-
+
+30 PRINT#7,CU$"[shift+s]      "CD$"HEART"
+40 PRINT#7,CU$"[shift+z]      "CD$"DIAMOND"
+50 PRINT#7,CU$"[shift+x]      "CD$"CLUB"
+6O CLOSE7
+
+RUN
+
+       spade
+       heart
+       diamond
+       club
+
+        Figure 3.21
+
+5.8 Business Mode in Local
+
+By sending the cursor down code [CHR$(145)] to your printer, following
+characters will be printed in business mode until either a carriage return or
+cursor up code [CHR$(145)] is detected.
+
+Example
+
+10 OPEN8, 4:CU$=CHR$(145) :CD$=CHR$(17)
+20 PRINT#8, CD$"SPADE                "CU$"[shift+a]"
+30 PRINT#8, CD$"HEART                "CU$"[shift+s]"
+40 PRINT#8, CD$"DIAMOND              "CU$"[shift+z]"
+50 PRINT#8, CD$"CLUB                 "CU$"[shift+x]"
+60 CLOSE8
+
+spade       
+heart     
+diamond   
+club      
+
+        Figure 3.22
+
+5.9 Reverse Field Mode
+
+By selecting the CHR$(18) you have turned on a REVERSE FIELD mode. This
+prints white letters on a black background.
+
+Personal Computer    (in reverse mode)
+Dot Matrix Printer   (in reverse mode)
+
+10 open9,4,7
+20 print#9,chr$(18)" Personal Computer "
+
+        -31-
+
+30 print#9, chr$(18)" Dot Matrix Printer "
+40 cmd9:list
+
+ready.
+
+Figure 3.23
+
+5.10 Reset Reverse Field Mode
+
+When you use CHR$(146) you turn OFF the REVERSE FIELD mode that you
+selected by using the CHR$ in chapter 4.9.
+
+Personal Computer   (in reverse mode)
+Dot Matrix Printer  (in normal mode)
+
+10 open10,4,7
+20 print#10,chr$(18)" Personal Computer "
+30 print#10, chr$(146)" Dot Matrix Printer "
+40 cmd10:list
+
+ready.
+        Figure 3.24
+
+5.11 Mixture of Various Print Mode
+
+You can use the following example to get an idea as to how to combine more
+than 1 print mode, even in one line.
+
+C= COMMODORE (in double width)
+
+10 DATA 8,27,16,0,36
+20 DRTR 156,162,193,193,182,162
+30 FOR I=1TO5:READA:A$=A$+CHR$(A):NEXT I
+40 FOR J= 1 TO 6
+45 READB: B$=B$+CHR$(B)+CHR$(B)
+50 NEXT J
+60 OPEN 11,4
+70 PRINT#11, A$B$CHR$(14)" COMMOBORE"
+80 PRINT#11, CHR$(15)
+90 CMD11 :LIST
+
+READY.
+        Figure 3.25
+
+        -32-
+
+5.12 Line Feed Spacing
+
+Linefeeds are executed in accordance with the print mode in effect just prior to
+the execution of a print command.
+
+* Character and double width character modes ...........6 LPI*
+* Bit image mode .............................. ........6 LPI*
+                                                  (*LPI = Line Per Inch)
+Example
+
+10 OPEN 12, 4: SI$=CHR$(15):BS$=CHR$(8)
+20 PRINT#12,SI$"ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿"BS$
+30 PRIHT#12,SI$"³              ³               ³"BS$
+40 PRINT#12,SI$"ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´"BS$
+50 PRINT#12,SI$"³              ³               ³"BS$
+60 PRIHT#12,SI$"ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ"BS$
+70 CLOSE4
+
+RUN
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³              ³               ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³              ³               ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+        Figure 3.26
+
+5.13 Data Buffer Size
+
+Your printer's printÄline buffer can contain up to 90 byes of data. At least
+1 byte will be used for the CHARACTER mode. But . . . since your printer
+provides you with automatic printing, you are guaranted that no loss of data
+due to overflow will occur. This means that you really don't have to worry
+about buffer size. In addition to the print data, the following will also be
+included in your buffer:
+
+        Input Code                                  Bytes                                                                      Byes
+        CHR$(8) ......................................1
+        CHR$(10) .....................................1
+        CHR$(13) .....................................1
+        CHR$(14) .....................................1
+        CHR$(15) .....................................1
+        CHR$(16)/CHR$(HP)/CHR$(LP) ...................3
+        CHR$(17) .....................................1
+        CHR$(18) .....................................1
+        CHR$(26)/number of repetitions/bit image data.3
+        CHR$(27)/CHR(16)/CHR$(HP)/CHR$(LP)............3
+        CHR$(145) ....................................1
+        CHR$(146) ....................................1
+
+        -33-
+
+
+
+6. Automatic Printing
+
+Automatic printing will occur under 3 conditions. In order to understand ex-
+actly what's happening, you have to have a little knowledge about how your
+printer works. First, each printed character is made from 6 rows of dots. Next,
+you can have up to 80 characters per printed line (spaces count as 6 dot
+positions just like letters and numbers). This means that there are a total
+of 480 dots per line. Now you're ready for the 3 conditions.
+
+a.   When the buffer fills up during the input of data.
+
+b.   When your printer "sees" that you have used up more than the 480 dots
+     per line that was described above.
+
+c.   When both a and b happen at the same time.
+
+What will happen when these conditions occur?
+
+a. When the buffer fills during printing, it prints out everything is has been
+   storing onto your paper. But . . . it remembers where it stopped printing
+   so that it can continue from that point, when and if you want to. Or it
+   will print again when you fill the buffer again.
+
+b. When the printer uses up more than 480 dots, then it prints out the line
+   and then stops and tells you that it's READY for more information.
+
+c. When both a and b occur, your printer will "dump" only the first 80
+   characters and print them. Then it will move to the next line. At this
+   point, the printer will do 2 things: 1 ) It will hold any characters that
+   have been left in the buffer and add to them; 2) It will give you a READY
+   for more information statement.
+
+        -34-
+
+       APPENDICES
+
+APPENDIX A: SPECIFICATIONS
+
+1. General specifications
+
+A.    Print method ...........Impact dot matrix print (uni-hammer
+                              method)
+B.    Character Matrix .......7 x 6 dot matrix
+C.    Characters .............Upper/lower case characters, numerals,
+                              symbols, and PET graphic characters
+D.    Bit Image Graphics .....Dot addressable. 7 vertical dots per
+                              column, max 480 columns.
+E.    Character codes ........CBM ASCII CODE
+F.    Character size .........Height: 7 dots (2.82 mm)
+                              Width: 6 dots (2.53 mm)
+G.    Print speed .............50 characters/sec (left to right, uni-
+                              directional)
+H.    Max. number of columns .80 columns
+I.    Character spacing ......10 characters/inch
+J.    Linefeed spacing .......6 lines/inch .......Character mode
+                              9 lines/inch .......Bit image mode
+K.    Linefeed speed .........10 linefeeds/sec ...Character mode
+                              15 linefeeds/sec ...Bit image mode
+L.    Paper feed .............Pin feed
+M.    Paper width ............4.5 to 10" width (including tractor
+                               feed holes)
+                               8.5" width (after tractor hole removed)
+N.    Multiple copies ........ 2 copies including original
+O.    Inked ribbon ............Single color, inked roller built-in cas-
+                               sette type
+P.    External dimensions .....237(D) x 438(W) x 115(H) mm
+Q.    Weight ..................Approximately 4.8 kg
+
+2. Operating Environment
+
+A.    Power consumption .......120V (USA), 220 - 240V (Europe)
+                               AC ñ 10%, 50/60 Hz
+B.    Power consumption .......25 watts max. (character printing)
+                               8 watts (idling)
+C.    Temperature .............5øC - 35øC
+D.    Humidity ................20% - 80% (no condensation)
+
+        -35-
+
+APPENDIX B: Hard Copy of the Text Screen
+
+The following sample program can be used to get a hard printed copy of a
+program you have on your text screen. The Program is made to be used as a sub-
+routine. That means that when you use it, you must have a "GOSUB 60000"
+in your program where appropriate.
+
+60000 REM SCREEN COPY
+60010 SI$=CHR$(15):BS$=CHR$(8):PO$=CHR$(16)
+60020 RV$=CHR$(18):RO$=CHR$(146):QT$=CHR$(34)
+60030 MF$=CHR$(145):VR=PEEK(648)*256
+60040 OPEN4,4:PRINT#4
+60050 FORCL=0TO22:QF=0:AS$=MF$:FORRO=0TO21
+60060 SC=PEEK(VR+22*CL+RO)
+60070 IFSC=34THENQF=1-QF
+60080 IFSC<>162THEN60110
+60090 QF=1-QF:IFQF=1THENAS$=AS$+RV$+QT$:GOTO60170
+60100 AS$=AS$+QT$+RO$:GOTO60170:GOTO60130
+60110 IFQF=1AND(SC>=128)THENSC=SC-128:GOTO60130
+60120 IFSC>=128THENSC=SC-128:RF=1:AS$=AS$+RV$
+60130 IFSC<32ORSC>95THENAS=SC+64:GOTO60160
+60140 IFSC>31ANDSC<64THENAS=SC:GOTO60160
+60150 IFSC>63ANDSC<96THENAS=SC+32:GOTO60160
+60160 AS$=AS$+CHR$(AS)
+60170 IFRF=1THENAS$=AS$+RO$:RF=0
+60180 NEXTRO
+60190 IFQF=0THENPRINT#4,SI$PO$"20"AS$:GOTO60210
+60200 PRINT#4,SI$;PO$;"20";AS$;QT$
+60210 NEXTCL:CLOSE4:RETURN
+        Figure B.1
+
+This program is made for the GRAPHIC mode. If you wish to write the program
+in the BUSINESS mode, you must change MF$=CFR$(145) to MF$=CHR$(18)
+in line 60030.
+
+This program is also made for VIC-20. If you wish to use this program to Com-
+modore 64, you should change line 60050, 60060.
+
+60050 FORCL=OTO24:QF=0:AS$=MF$:FORRO=0T039
+60060 SC=PEEK(VR+40*CL+RO)
+
+Note: This program can't print the characters following the reverse quote.
+
+        -36-
+
+APPENDIX C: PRINTER Code Table
+
+1. GRAPHIC MODE Code & Front Table, OMITTED
+
+Note:
+When an old number of CHR$(34) is detected in a line, the control
+codes $00-$1F and $80-$9F will be made visible by printing a
+reverse character for each of these controls. This will continue until
+an even number of quotes [CHR$(34)] has been received or until
+end of this line.
+
+        -37-
+2. BUSINESS MODE Code & Font Table, OMITTED     
+
+Note:
+When an old number of CHR$(34) is detected in a line, the control
+codes $00-$1F and $80-$9F will be made visible by printing a
+reverse character for each of these controls. This will continue until
+an even number of quotes [CHR$(34)] has been received or until
+end of this line.
+
+        -38-
+
+INDEX
+
+ASCII code table 37, 38
+automatic printing 33, 34
+bit image printing 23, 33
+BS code  CHR$(8)
+business mode 20, 22, 30, 31,38
+carriage return 22
+cautions 15
+CHR$(8) 22, 23, 30, 33
+CHR$(10) 22,33
+CHR$(13) 22,33
+CHR$(14) 22, 23
+CHR$(15) 22,23
+CHR$(16) 22, 25, 26
+CHR$(17) 22,30,31
+CHR$(18) 23, 31
+CHR$(26) 23, 30
+CHR$(27) 23, 26
+CHR$(34) 37, 38
+CHR$(145) 23, 30
+CHR$(146) 23, 32
+CLOSE command 18
+CMD command 17
+CR code  CHR$(13)
+connector 4
+connecting 11
+control character 22
+cursor down  CHR$(17)
+cursor up  CHR$(145)
+data buffer 33
+device number 4, 17
+device selector switch 4
+direct mode 19
+dot address determination 26
+EN ON code  CHR$(14)
+EN OFF code  CHR$(15)
+ESC code  CHR$(27)
+external appearance 2
+font table 37, 38
+graphic mode 4, 20, 30, 37
+hardcopy of text screen 36
+interface 4
+LF code  CHR$(10)
+
+        -38-
+
+line feed spacing 33
+loading the paper 8
+logical file number 16
+lower/upper case mode  business mode
+maintenance 14
+OPEN command 16
+POS code  CHR$(16)
+precaution 18
+PRINT# command 17
+print position determination 25
+print power-on test 12
+print head test 12
+printing pressure adjustment 11
+program listing 19
+repeat bit image data 30
+reverse field mode 31,32
+RVS ON code  CHR$(18)
+RVS OFF code  CHR$(146)
+ribbon cassette 5
+secondary address 4, 17, 20
+  SA0 4, 17, 20
+  SA7 4, 17, 22
+specification 35
+SUB code  CHR$(26)
+
+        -40-
+
+COMMODORE SALES CENTERS
+
+Commodore Business Machines, Inc.
+1200 Wilson Drive
+West Chester, PA 19380, U.S.A.
+
+Commodore Business Machines Limited
+3370 Pharmacy Avenue, Agincourt
+Ontario, M1W 2K4, Canada
+
+Commodore Business Machines (UK) Ltd.
+1, Hunters Road, Weldon
+Corby, Northants, NN17 1QX, England
+
+Commodore Bueromaschinen GmbH
+PO BOX 710126, Lyonerstrasse 38
+6000 Frankfult 71, West Germany
+
+Commodore Italiana S.P.A.
+Via Fratelli Gracchi 48
+20092 Cinisello Balsamo, Milano, Italy
+
+Commodore Business Machines Pty Ltd.
+5 Orion Road
+Lane Cove, NSW 2066, Australia
+
+Commodore Computer B.V.
+Marksingel 2e, 4811 NV BREDA
+Postbus 720, 4803 AS BREDA, Netherlands
+
+Commodore AG(Scheweiz)
+Aeschenvorstadt 57
+Cd-4010 Base;, Switzerland
+
+Commodore Computer NV-SA
+Europalaan 74
+1940 ST-STEVENS-WOLUWE, Belgium
+
+Commodore Data AS
+Bjerrevej 67
+Horsens, Denmark
+

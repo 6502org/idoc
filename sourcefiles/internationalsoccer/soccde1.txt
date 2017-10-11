@@ -1,0 +1,154 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore 64
+related documents in electronic text format that might otherwise cease to
+exist with the rapid advancement of computer technology and declining
+interest in 8-bit computers on the part of the general population. If you
+would like to help by converting C64 related hardcopy documents to
+electronic texts please contact the manager of International Project 64,
+Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The first
+characters of the file name are an abbreviation of the original document
+name and the language of the etext. The version number of the etext follows
+next. After that a letter may appear to indicate the particular source of
+the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International Project
+64 make no representations about the accuracy or suitability of this
+material for any purpose. This etext is provided "as-is". Please refer to
+the warranty of the original document, if any, that may included in this
+etext. No other warranties, express or implied, are made to you as to the
+etext or any medium it may be on. Neither the author(s) nor the members of
+International Project 64 will assume liability for damages either from the
+direct or indirect use of this etext or from the distribution of or
+modification to this etext. Therefore if you read this document or use the
+information herein you do so at your own risk.
+
+*********
+
+The International Project 64 etext of the International Soccer German
+manual, converted to text by Christian Janoff
+<mepk@rbg.informatik.tu-darmstadt.de>
+
+SOCCDE1.TXT, July 1998, etext #42.
+
+Note from the etexer:
+
+Hinweis zur Spielanleitung:
+Das Spiel wird hier ausschließlich "SOCCER" genannt. Der korrekte Name
+lautet jedoch "INTERNATIONAL SOCCER". Bitte nicht verwirren lassen...
+
+*********
+
+=========================================================================
+Spielanleitung
+SOCCER (FUSSBALL)
+-------------------------------------------------------------------------
+Kann nur mit Joystick gespielt werden.
+
+
+Programmstart
+
+Das SOCCER-Modul darf nur in ausgeschaltetem Zustand Ihres COMMODORE 64
+aufgesteckt bzw. herausgezogen werden!
+
+Zum Start des Programmes schalten Sie also vorher Ihren Rechner aus und
+stecken Sie erst jetzt das Modul mit der Aufschrift nach oben auf den
+Modulsteckplatz auf der Rückseite Ihres COMMODORE 64). Schalten Sie nun
+Ihren COMMODORE 64 ein, so wird SOCCER automatisch gestartet und Ihnen auf
+Ihrem Bildschirm das Titelbild gezeigt.
+
+Zum Spiel benötigen Sie nun noch ein oder zwei Joysticks, je nachdem, ob Sie
+gegen den COMMODORE 64 oder einen Mitspieler antreten wollen. Im Falle, daß
+Sie gegen Ihren Rechner spielen wollen, schließen Sie den Joystick an Port 2
+Ihres COMMODORE 64 an.
+
+
+Spielvorbereitung
+
+Zu Beginn werden Ihnen zwei Spieler als Repräsentanten der zwei Mannschaften
+gezeigt. Mit Hilfe der Funktionstasten können Sie die Trikotfarben nun an
+Ihre Wünsche anpassen, und zwar mit der f1-Taste die Farben der linken
+Mannschaft und mit der f3-Taste die Farben der rechten Mannschaft.
+
+Sofern Sie keinen Farbfernseher zum Spiel benutzen, können Sie durch
+Betätigung der f7-Taste den Kontrast optimal einstellen.
+
+Wollen Sie gegen einen Mitspieler direkt antreten, so betätigen Sie nun
+einfach den Feuerknopf Ihres Joysticks. Um gegen den Rechner anzutreten,
+müssen Sie durch ein- oder mehrmalige Betätigung der f5-Taste die
+Spielstärke des Rechners, also Ihres Spielpartners einstellen. Die
+Spielstärke reicht von 1 (leicht) bis 9 (sehr stark) und wird Ihnen anstelle
+des rechten Spielers in großen Ziffern angezeigt. Nachdem Sie die
+Spielstärke gewählt haben, betätigen Sie auch hier den Feuerknopf zum
+Spielbeginn.
+
+
+Wie Sie SOCCER spielen
+
+Jede Mannschaft besteht aus 6 Feldspielern und einem Torwart. Nach dem
+Einlauf der beiden Mannschaften zur ersten Halbzeit erfolgt der Anpfiff des
+Schiedsrichters, wodurch das Spiel eröffnet ist. Jeweils ein Spieler der
+Mannschaft (die, die etwas heller auf dem Bildschirm dargestellt sind)
+unterliegt nun Ihrer Kontrolle über die Joysticks. Sie folgen direkt Ihren
+Befehlen über den Joystick, d.h., sie bewegen sich in einer der vier
+Richtungen oder diagonal, und Sie können mittels des Feuerknopfes in die
+Richtung, in die Ihr Spieler läuft, schießen.
+
+Das SOCCER-Spiel ist so ausgelegt, daß einer Ihrer Spieler so lange wie
+möglich unter Ihrer Kontrolle bleibt. Erst wenn einer Ihrer anderen Spieler
+dem Ball näher ist und der Ball von Ihrem Gegner geführt wird, geht die
+Kontrolle auf diesen Spieler über.
+
+Im Falle eines gegnerischen Angriffes innerhalb Ihres eigenen Torraumes geht
+die Kontrolle an Ihren Torwart über. Durch Betätigung des Feuerknopfes im
+richtigen Moment können Sie ihn so zu einer Glanzparade veranlassen.
+
+Verläßt der Ball während des Spieles das Spielfeld, so bekommt ihn die
+gegnerische Mannschaft zugesprochen. Den Einwurf, Torabschlag oder die Ecke
+führt nicht der kontrollierte Spieler, sondern ein anderer Spieler Ihrer
+Mannschaft aus. Er erfolgt nach einer gewissen Zeit automatisch, kann von
+Ihnen aber durch den Feuerknopf beschleunigt werden. Da SOCCER ein faires
+Spiel sein sollte, gibt es in diesem Spiel keine Fouls, also auch keinen
+Elfmeter.
+
+
+Sonstiges zum Spiel
+
+Ein Spieldurchgang dauert zwei Halbzeiten zu je 200 Einheiten (annähernd
+Sekunden). In der Halbzeit laufen beide Mannschaften in die Kabine und
+anschließend zur zweiten Halbzeit wieder auf den Platz. Ein Seitenwechsel
+erfolgt in der Halbzeitpause.
+
+Spielstand und verbleibende Zeit werden auf zwei Anzeigetafeln rechts und
+links vom Anstoßkreis stets angezeigt. Der Spielstand ist in den
+Trikotfarben dargestellt und verdeutlicht dadurch die Seiten der
+Mannschaften.
+
+Neustart des Spieles  Zum erneuten Beginn eines Spieles betätigen Sie bitte
+die Tasten RUN/STOP und RESTORE gleichzeitig. Es erscheint wieder das
+Titelbild.
+
+Wollen Sie das SOCCER-Modul aus Ihrem COMMODORE 64 entfernen, so denken Sie
+bitte daran, Ihren Rechner vorher auszuschalten.
+
+*********
+
+End of the International Project 64 etext of the International Soccer German
+manual.
+
+*********

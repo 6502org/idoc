@@ -1,0 +1,145 @@
+*********
+
+Welcome to iDOC= - the international CBM documentation project!
+
+The goal of iDOC= is to preserve (non-English) Commodore related documents
+in electronic text format that might otherwise cease to exist with the rapid
+advancement of computer technology and declining interest in 8-bit computers
+on the part of the general population. If you would like to help by
+converting Commodore related hardcopy documents to electronic texts please
+contact the manager of iDOC=, Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names consists of a reasonably short unique title, followed by the
+document language. Two optional fields follow; first the document version (0
+for incomplete texts, version 1 is usually unnumbered), and then the
+document source, if there are more than one. Finally, the document is given
+a .txt extension.
+
+The author(s) of the original document and members of iDOC= make no
+representations about the accuracy or suitability of this material for any
+purpose. This etext is provided "as-is". Please refer to the warranty of the
+original document, if any, that may included in this etext. No other
+warranties, express or implied, are made to you as to the etext or any
+medium it may be on. Neither the author(s) nor the members of iDOC= will
+assume liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext. Therefore
+if you read this document or use the information herein you do so at your
+own risk.
+
+*********
+
+The iDOC= etext of the Dophin DOS 3.0 manual quick reference, converted to
+text by Nicolas Welte <welte@chemie.uni-konstanz.de>
+
+dolphindos3_de0.txt, October 25th, etext #66.
+
+Note from the etexter: 
+
+Here is the command summary plus some additions by me that were missing in
+the original version. Now let's hope that I once get around to etexting the
+rest of the manual :-)
+
+*********
+
+Anhang D: Kurzreferenz
+
+Tastaturfunktionen
+
+(ctrl)-      (@)     Floppystatus abfragen
+             (*)     Textbildschirmhardcopy auf Drucker ausgeben.
+             (a)     Wiederholungsfunktion für alle Tasten an/aus
+             (b)     Cursor an den Anfang der letzten Zeile
+             (d)     Directory einlesen
+             (g)     Cursor 20 Spalten nach rechts
+             (k)     Rest der Zeile hinter Cursor löschen
+             (l)     Anfang der Zeile vor Cursor löschen
+             (v)     Standard-Bildschirmfarben, Textmodus etc. wiederherstellen
+             (x)     F-Tasten und Zusatzfunktionen abschalten
+                     Wiedereinschalten durch &(cr)
+             (cr)    Programm anhalten, bis (ctrl) wieder losgelassen wird
+             (c=)    Bildschirmscrolling einfrieren. Mit (c=) wieder freigeben.
+                     Mit (ctrl) allein wird scrollen vorübergehend angehalten.
+             (del)   löscht Zeichen in einen Zwischenspeicher, von wo sie
+                     mittels (c=)-(del) wieder hervorgeholt werden können
+(shift)-     (stop)  Laden und Starten eines Basic- oder Maschinenprogramms
+                     auch aus dem Directory heraus
+nur          (stop)  Gänsefüßchenmodus löschen
+
+Floppybedienung
+
+@                    holt den Floppystatus
+@befehl              sendet Floppybefehle
+@x                   holt erweiterten Status (02,R+:F+:V+:P+:,35,08)
+@xl:file             schützt file vor dem Gelöschtwerden
+@xu:file             gibt file wieder zum Löschen frei
+@xr-(+)              schaltet Betrieb über RAM aus (ein)
+@xf-(+)              kompatibles Laden (wie ,8,2) dauerhaft ein(aus)schalten
+@xv-(+)              schaltet Verifizieren nach Schreiben aus (ein)
+@xp-(+)              schaltet Parallelübertragung aus (ein)
+@xt-(+)              fixiert 35 (40) Spuren
+@xt                  schaltet die automatische Formaterkennung wieder ein
+@x-(+)               schaltet das RAM und die Parallelübertragung ab, fixiert
+                     35 Spuren (schaltet alles wieder auf Einschaltwerte)
+                        
+Reset- und Restore-Erweiterungen
+
+Reset -      (stop)  Warmstart wie bei (run/stop)-Restore
+             (space) mit diesem Reset kommt man aus jedem Programm
+             (1 +<-) löscht das RAM (füllt es mit $00)
+             (q)     Warmstart, erhält zusätzlich die Hardwarevektoren
+             (ctrl)  Sprung in den aktiven Monitor
+Restore -    (stop)  Die Restore-Kombinationen entsprechen
+             (space) in ihrer Wirkung den Reset-Kombinationen,
+             (1 +<-) funktionieren aber nicht mit allen
+             (q)     Programmen. Nach Restore - (ctrl) ist die
+             (ctrl)  PC-Anzeige im Monitor im Gegensatz zu
+                     Reset-(ctrl) korrekt
+                        
+Funktionstastenbelegung
+
+F1 (clr)lI(cr)       F7 @$(cr)
+F2 sY$0(left)        F8 @x(cr)
+F3 (clr)rU(cr)       F9 oP4,4:cM4:lI
+F4 vE(cr)            Fa (ctrl-k)(ctrl-l)(shift-space)(cr)
+F5 loA(cr)           Fb (ctrl-k)(ctrl-l)(cr)
+F6 saV"@:            Fc loA(20right),8,2(left)
+
+
+Ergänzungen vom e-texter 
+
+zusätzliche Basic-Befehle
+
+&*                   old
+&"filename"          lädt neue Funktionstastenbelegung (siehe FTAID)
+&                    stellt normale Funktionstastenbelegung wieder her
+&zahl                rechnet Hex- und Dezimalzahlen ineinander um, z.B.
+                     &$c000 oder &2049
+
+nicht aufgeführte Befehle
+
+@zahl                schaltet auf Laufwerk zahl (8 oder 9) um
+@xneu",alt           schaltet Gerät Nr. alt auf Adresse neu um
+@n:name,id+          formatiert Diskette mit 40 Spuren
+
+Die 1570/71/71cr versteht zusätzlich einige Befehle:
+
+@x                   holt erweiterten Status (02,R+:F+:V+:P+:,0,35,08)
+@xm-(+)              schaltet den zweiseitigen Modus aus (ein)
+@x-(+)               Wie 1541, schaltet aber auf 1MHz (2MHz) und verbietet 
+                     (erlaubt) Befehle außer @x und @x+
+
+*********
+
+End of the iDOC= etext of the Dophin DOS 3.0 manual quick reference.
+
+*********

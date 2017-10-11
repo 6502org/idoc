@@ -1,0 +1,108 @@
+*********
+
+Welcome to iDOC= - the international CBM documentation project!
+
+The goal of iDOC= is to preserve (non-English) Commodore related documents
+in electronic text format that might otherwise cease to exist with the rapid
+advancement of computer technology and declining interest in 8-bit computers
+on the part of the general population. If you would like to help by
+converting Commodore related hardcopy documents to electronic texts please
+contact the manager of iDOC=, Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names consists of a reasonably short unique title, followed by the
+document language. Two optional fields follow; first the document version (0
+for incomplete texts, version 1 is usually unnumbered), and then the
+document source, if there are more than one. Finally, the document is given
+a .txt extension.
+
+The author(s) of the original document and members of iDOC= make no
+representations about the accuracy or suitability of this material for any
+purpose. This etext is provided "as-is". Please refer to the warranty of the
+original document, if any, that may included in this etext. No other
+warranties, express or implied, are made to you as to the etext or any
+medium it may be on. Neither the author(s) nor the members of iDOC= will
+assume liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext. Therefore
+if you read this document or use the information herein you do so at your
+own risk.
+
+*********
+
+The iDOC= etext of the Robin Of The Wood manual (non-original), written by
+Björn Graas <graas@gmx.de>
+
+robinofwood_de.txt, February 2000, etext #60.
+
+*********
+
+Anleitung zum Spiel "Robin Of The Wood"
+----------------------------------------
+
+Vorwort: Dies ist nicht die Original-Anleitung. Der folgende Text basiert
+stattdessen auf einigen Beiträgen, die ich im englischsprachigen Usenet
+gefunden habe. Ich habe die Texte ins Deutsche übersetzt und inhaltlich
+zusammengefasst. Falls tatsächlich noch irgend jemand die deutsche
+Original-Anleitung besitzen sollte, würde ich mich über eine Mitteilung sehr
+freuen.
+
+Spielsteuerung (C64): Joystick in Port 2 oder per Tastatur.
+
+Das Ziel des Spiels ist es, an einem Turnier im Bogenschießen teilzunehmen.
+Um dies zu erreichen, musst Du durch den Wald wandern und Sachen einsammeln.
+Es gibt ein Schwert, einen Bogen, Pfeile, verschiedene Blumenarten und Säcke
+mit Geld. Der Wald ist recht groß. Um nicht den Überblick zu verlieren, ist
+es ratsam, sich eine Landkarte zu zeichnen.
+
+Im Verlauf des Spiels werden Dir verschiedene Leute begegnen:
+
+Es gibt einen Bischof, der durch die Gegend wandert und Dich attakieren
+kann. Wenn Du seine beiden Wächter überfallen hast, wird der Bischof zwei
+Säcke mit Geld verlieren. Diese solltest Du dann mitnehmen.
+
+Wenn Du die "Mistress of March" siehst, kannst Du die eingesammelten Blumen
+benutzen, um Dich an andere Stellen im Wald transportieren zu lassen. Man
+muss sich das etwa wie einen Teleporter vorstellen.
+
+Bitte sei vorsichtig, wenn Du einen Igel triffst. Er raubt Dir Deine Kraft.
+Ebenso solltest Du aufpassen, dass Du nicht von irgendwelchen Soldaten
+angeschossen wirst. Irgendwo im Wald ist allerdings auch ein alter Mann, der
+Deine Wunden heilen kann. Wenn Du aber einen Soldaten in seiner Nähe getötet
+hast, wird er nicht gerade gut gelaunt sein.
+
+Falls der Sheriff dich trifft, wirst Du auf der Stelle ins Gefängnis
+verbracht.
+
+Mit dem eingesammelten Geld kannst Du Waffen kaufen. Die Waffen gibt es bei
+einem speziellen Baum, der irgendwo im Wald versteckt ist und ein lachendes
+Gesicht hat ("Ent"). Man kann dort folgende Sachen kaufen: Ein Schwert,
+einen Bogen und 3 Pfeile. Die einzelnen Gegenstände kosten jeweils 3
+Geldsäcke. Um alle 5 Gegenstände zu kaufen muss man also insgesamt 15
+Geldsäcke eingesammelt haben. Wenn Du den Bogen und die Pfeile gekauft hast,
+musst Du zum Schloss des Sheriffs gehen. Dort solltest Du dann immer den
+Pfeilen nachgehen, die auf den Steinen zu sehen sind. Schaue Dich im Schloss
+ein wenig um und du findest den Raum, wo das Turnier stattfinden wird.
+
+Du musst keinen einzigen Pfeil abschießen, wenn Du dort angekommen bist. Es
+ist nicht nötig, irgendetwas an dieser Stelle anzuschießen. Das Spiel wird
+einfach beendet, indem Du durch die Tür gehst. Das ist alles.
+
+---
+
+(C)opyright Björn Graas. Dieser Text darf auf nichtkommerzieller Ebene
+jederzeit kopiert werden. Andere Nutzungsarten nur mit meiner Erlaubnis.
+
+*********
+
+End of the iDOC= etext of the Robin Of The Wood manual.
+
+*********

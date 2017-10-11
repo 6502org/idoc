@@ -1,0 +1,726 @@
+*********
+
+Welcome to iDOC= - the international CBM documentation project!
+
+The goal of iDOC= is to preserve (non-English) Commodore related documents
+in electronic text format that might otherwise cease to exist with the rapid
+advancement of computer technology and declining interest in 8-bit computers
+on the part of the general population. If you would like to help by
+converting Commodore related hardcopy documents to electronic texts please
+contact the manager of iDOC=, Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names consists of a reasonably short unique title, followed by the
+document language. Two optional fields follow; first the document version (0
+for incomplete texts, version 1 is usually unnumbered), and then the
+document source, if there are more than one. Finally, the document is given
+a .txt extension.
+
+The author(s) of the original document and members of iDOC= make no
+representations about the accuracy or suitability of this material for any
+purpose. This etext is provided "as-is". Please refer to the warranty of the
+original document, if any, that may included in this etext. No other
+warranties, express or implied, are made to you as to the etext or any
+medium it may be on. Neither the author(s) nor the members of iDOC= will
+assume liability for damages either from the direct or indirect use of this
+etext or from the distribution of or modification to this etext. Therefore
+if you read this document or use the information herein you do so at your
+own risk.
+
+*********
+
+The iDOC= etext of the Airline manual, converted to text by an anonymous
+contributor.
+
+airline_de.txt, September 2003, etext #77.
+
+Note from the etexter: 
+
+This is a German only game, so there is no English manual.
+
+Komplettes Handbuch für Airline, (c) 1986 Ariolasoft
+
+Wirklich wichtig sind aus dem Dokument nur die Übersichten auf
+der letzten Seite.
+Offensichtlicher Unsinn in der Anleitung wurde korrigiert.
+
+*********
+
+
+
+[Bild eines abhebenden Flugzeugs]
+
+AIRLINE
+
+
+im Vertrieb der
+
+ariolasoft
+Ein Unternehmen der Bertelsmann AG
+
+ariolasoft GmbH
+Postfach 1350 * Carl-Bertelsmann-Str. 161
+4830 Gütersloh 1
+
+/\=============================[ Seite  1 ]=============================/\
+
+
+Holger Cordes & Hans Jürgen Richstein   Für Tests, Tips und Mithilfe danken wir
+
+(c) 1986 Ariolasoft                     Manfred Ackermann (C-64 Version)
+Alle Rechte vorbehalten                 Michael Barkhoff (Titelgrafik)
+                                        Guido Hennings
+                                        Udo Bartels
+
+
+Inhalt
+~~~~~~
+Über Airline .......................................................    3
+Starten des Programms ..............................................    3
+Allgemeine Bedienungshinweise ......................................    4
+Flugplanung ........................................................    6
+Personalplanung ....................................................    7
+Service ............................................................    7
+Flugpreise .........................................................    8
+Frachtkosten .......................................................    8
+Flugzeugkauf .......................................................    8
+Flugzeugverkauf ....................................................   10
+Arbeitsmarkt .......................................................   11
+Wartung ............................................................   12
+Bilanz .............................................................   13
+Abspeichern des Spielstandes .......................................   14
+Weitergabe an den nächsten Spieler .................................   14
+Auwertung ..........................................................   15
+Kurzfassung der wichtigsten Informationen ..........................   16
+Daten sämtlicher Flugzeugtypen .....................................   16
+
+/\=============================[ Seite  2 ]=============================/\
+
+
+Über Airline...
+~~~~~~~~~~~~~~~
+"Airline" ist die Simulation des Wettbewerbs zwischen Fluggesellschaften, die 
+durch ständige Erweiterung ihres Flugzielangebots, durch Verbesserung des 
+Services und knappe Preiskalkulation versuchen, die Gunst der Fluggäste zu 
+erringen und sich so auf dem Markt zu behaupten.
+
+Zwei bis vier Spieler planen hier stellvertretend für ebensoviele 
+Fluggesellschaften den kompletten monatlichen Aufwand an Flugzeugen, 
+Serviceleistungen und Personal, kümmern sich um die Wartung der eingesetzten 
+Flugzeuge und kalkulieren Flug- und Frachtpreise an den Rand des Machbaren. 
+Flugzeuganschaffungen und die damit verbundenen Kreditaufnahmen erfordern 
+vorausschauende Gewinnabschätzungen. Plötzlich auftretende Konkurrenz 
+verlangt nach Anpassung oder Verbesserung des Preis-Leistungsverhältnisses 
+einzelner Flüge, damit die Fluggäste nicht zur Konkurrenz abwandern.
+
+Die Leistungsfähigkeit jeder Fluggesellschaft wird über einen monatlich neu 
+berechneten Bilanzindex ausgedrückt, der von 0 bis 100 eine Übersicht über 
+alle wichtigen Eckdaten der Firma gibt. Aufbauend auf ein Grundkapital von 
+zwei Millionen DM, zwei Flugzeugen und etwas Personal gilt es, einen 
+Bilanzindex von 100 zu erreichen, denn das bedeutet eine unumstößliche 
+Position im Kampf um Fluggäste und monatliche Millionengewinne.
+
+
+Starten des Programms
+~~~~~~~~~~~~~~~~~~~~~
+Diskette:
+Atari:  Zum Starten des Programms wird zunächst die Diskette in das Laufwerk 
+        gelegt und der Rechner eingeschaltet. Das eingebaute Basic wird
+        automatisch abgeschaltet, sodaß die "OPTION"-Taste nicht gedrückt
+        werden muss.
+C-64:   Nach Einlegen der Diskette und Einschalten des Rechners geben Sie
+        "Load AIRLINE",8,1 ein.
+
+Cassette:
+Commodore: Drücken Sie SHIFT und RUN/STOP gleichzeitig. Nach Meldung auf dem 
+        Bildschirm PLAY auf dem Datenrecorder drücken.
+
+/\=============================[ Seite  3 ]=============================/\
+
+
+Atari:  START und OPTION Taste beim Einschalten des Computers gedrückt 
+        halten. Dann PLAY-Taste auf dem Datenrecorder drücken. Danach
+        RETURN auf dem Computer.
+
+Nach kurzer Zeit erscheint eine Titelgrafik und Musik ertönt. Durch Drücken 
+von "START" beim Atari bzw. "F1" beim C-64 wird dann das restliche Programm 
+geladen und gestartet.
+
+Hat man vorher bereits einen Spielstand abgespeichert, so hat man die
+Möglichkeit, an derselben Stelle das alte Spiel wieder aufzunehmen. 
+Ansonsten können zwei bis vier Spieler ihren Namen und den der 
+Fluggesellschaften eingeben, danach den für den jeweiligen Spieler 
+gewünschten Joystick durch die Tasten "1" bzw. "2". Bei vier Spielern 
+teilen sich also je zwei Spieler einen Joystick. Nachdem mindestens zwei 
+Spieler eine Eingabe gemacht haben, kann beim nächsten Spielernamen durch
+"RETURN" abgebrochen werden. Nach Bestätigen durch "J" wird dann das 
+Programm gestartet.
+
+
+Allgemeine Bedienungshinweise
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Jeder Spieler hat monatlich die Gelegenheit, neue Fluglinien einzurichten,
+Personal einzustellen bzw. zu entlassen und es auf bestimmten Flügen 
+einzusetzen, die Serviceleistungen auf den einzelnen Flügen neu festzusetzen, 
+die Flug- und Frachtpreise zu verändern sowie Flugzeuge zu kaufen oder 
+zu verkaufen. Außerdem muß er sich um die Wartung seiner Flugzeuge kümmern, 
+da nicht rechtzeitig gewartete Maschinen nicht starten dürfen und am Boden 
+stehend Verluste in ansehnlicher Höhe produzieren. Jeden Monat kann man 
+anhand der Bilanz die Entwicklung der eigenen Firma in den jeweils letzten 
+12 Monaten in einem Balkendiagramm verfolgen. Ein weiterer Menüpunkt bietet 
+die Möglichkeit, den Spielstand abzuspeichern, um später an derselben Stelle 
+fortzufahren.
+
+Für den ersten Monat steht jedem Spieler ein gewisses Grundkapital in Form von 
+Geld, Flugzeugen und Personal zur Verfügung. Zwei Flugzeuge (737 und 727) mit 
+der jeweils kleinsten Ausstattung sind vorhanden, ein Airbus A 310 ist 
+bestellt und bezahlt. Seine Auslieferung erfolgt im Sommer 1986. Das 
+vorhandene Personal reicht aus, um täglich eine Maschine fliegen zu lassen, 
+sodaß für die erste Runde noch kein Personal eingestellt werden muß.
+
+/\=============================[ Seite  4 ]=============================/\
+
+
+Die Reihenfolge der Spieler in einem Monat richtet sich nach dem Bilanzindex. 
+Der Spieler mit dem höchsten Wert beginnt, sodaß die anderen Spieler die 
+Möglichkeit haben, sich den Veränderungen der sowieso schon vorne liegenden 
+Fluggesellschaft anzupassen. Wenn ein neuer Spieler dran ist, so wird ihm zu 
+Beginn im linken Display der aktuelle Monat und das Jahr angezeigt. Weiterhin 
+erfährt er seinen Saldo und die Gesamthöhe der maximal drei Kredite. Durch 
+Drücken des ihm zugeteilten Joysticks beginnt seine Runde. Die Zeit läuft!
+
+Nun hat er zwei Minuten Zeit für die monatlichen Planungen und Änderungen der 
+einzelnen Fluglinien, wobei jeder Menüpunkt nur einmal angewählt werden kann. 
+Ein oranger (C-64: roter...) Rahmen um den jeweiligen Menüpunkt zeigt, daß er 
+schon einmal angewählt wurde oder daß das Zeitlimit abgelaufen ist, sodaß 
+eine Auswahl nicht mehr erfolgen kann. Wenn man am Anfang die Bedienung der 
+Menüpunkte noch nicht richtig beherrscht, sollte man erst nur einen Flug 
+einrichten und mit dem Nötigsten ausstatten. In den weiteren Runden kann man 
+dann den restlichen Service verbessern und sich so langsam an die Handhabung 
+gewöhnen. Mit der Zeit wird man virtuos durch die Menüs gehen und für einen 
+geübten Spieler ist es kein Problem, in den zwei Minuten alle erforderlichen 
+Einstellungen für zwei bis drei Fluglinien vorzunehmen.
+
+Ausgenommen von der Zeitbegrenzung sind nur die letzten vier Menüpunkte
+"Wartung", "Bilanz", "Speichern" und "Weiter", sodaß diese erst zum Schluß 
+ausgewählt werden sollten.
+
+Oberhalb des Bildschirms befinden sich ständig zwei Anzeigeteile, die 
+Zusatzinformationen liefern. Das linke Display zeigt nahezu immer den 
+Namen der Fluggesellschaft, die gerade ihre Einstellungen vornimmt, sowie die 
+noch verbleibende Zeit zur Hauptmenüauswahl. In der rechten Anzeige 
+erscheinen Zusatzinformationen aller Art, beispielsweise die Bedeutung des
+ausgewählten Symbols im Monatsmenü oder die angeflogene Stadt bei der 
+Flugplanung.
+
+Die gesamten Einstellungen erfolgen mit dem von dem jeweiligen Spieler 
+ausgewählten Joystick. Sofern in der folgenden Beschreibung der Menüpunkte 
+nichts anderes angegeben ist, bedeutet die Auswahl von "Ende" oder "Zurück" 
+den Rücksprung in das vorhergehende Menü, also in der Regel zum Hauptmenü. 
+Dabei werden alle vorgenommenen Einstellungen des Spielers übernommen und 
+zur monatlichen Abrechnung herangezogen. Screens oder Fenster, die keine 
+Einstellungen erfordern, können nach Kenntnisnahme durch Knopfdruck wieder 
+verlassen werden.
+
+/\=============================[ Seite  5 ]=============================/\
+
+
+Menüpunkte, die die Auswahl einer Flug- oder Flugzeugnummer erfordern, können 
+in der Regel schneller verlassen werden, wenn man beim Überfahren der nicht 
+benutzten Nummern den Knopf drückt. Der Cursor bewegt sich dann nicht mehr 
+ruckartig über die einzelnen Nummern, sondern gleitet schnell zum Ende der 
+Liste.
+
+Anschließend werden die Bedienung und der Zweck der 12 Menüpunkte der 
+Monatsplanung ausführlich besprochen. Sollten zwischen der Atari- und der 
+C-64-Version Unterschiede bestehen, was wohl größtenteils die Farbgebung 
+betrifft, so ist für die C-64-Version das in Klammern stehende maßgeblich.
+
+
+Flugplanung
+~~~~~~~~~~~
+Der erste Menüpunkt dient zum Planen der Flugrouten. Es erscheint eine 
+Europakarte, auf der 25 Städte markiert sind. Am Rand der Karte befinden sich 
+noch sechs Langstreckenziele, die auf der Karte normalerweise nicht mehr zu 
+sehen wären. Auf dem Ausgangsflughafen Frankfurt befindet sich ein schwarzes 
+Flugzeugsymbol, das nun mithilfe des Joysticks bewegt werden kann. Befindet 
+es sich nicht über einer Stadt, so führt ein Knopfdruck zurück zum Hauptmenü. 
+Wenn das rechte Display eine Stadt anzeigt, so kann man diese durch 
+Knopfdruck anwählen. Es erscheint dann ein Fenster mit den Kosten, die ein 
+Anfliegen verursacht. Ein weiterer Knopfdruck öffnet zwei weitere Fenster, 
+von denen das eine die Nummern der für diesen Flug verfügbaren Flugzeuge 
+rot (weiß) anzeigt und das andere den Flugzeugtyp und die freien Tage der 
+jeweils ausgewählten Flugzeugnummer weiß darstellt. Nachdem man mit dem 
+Joystick ein Flugzeug ausgewählt hat, muß man sich für die Tage entscheiden, 
+an denen die ausgewählte Stadt angeflogen werden soll. Zurück geht es dann 
+über "OK" und Bestätigung der eingegebenen Daten.
+
+Städte, die bereits angeflogen werden, sind mit einem weißen Flugzeugsymbol 
+gekennzeichnet. Wählt man solch eine Stadt aus, so kann man sich alle Daten 
+über diesen Flug ansehen und ihn evtl. löschen.
+
+Langstreckenziele können nur mit geeigneten Maschinen (747 oder DC 10) und 
+Langstreckenpiloten angeflogen werden. Man sollte deshalb ersteinmal ein 
+innereuropäisches Netz aufbauen, damit die Piloten die nötige Flugerfahrung 
+von 5000 Flugstunden erlangen, um Langstreckenpilot werden zu können.
+
+/\=============================[ Seite  6 ]=============================/\
+
+
+Personalplanung
+~~~~~~~~~~~~~~~
+Um Personal auf die Flüge zu verteilen, wird zunächst eine Flugnummer 
+ausgewählt. Durch Knopfdruck gelangt man in die Spalte mit der Anzahl des 
+bereits eingeplanten Personals für diesen Flug. Unten stehen fettgedruckt 
+die Flugtage und darunter die Anzahl des an den Tagen noch freien Personals 
+für die jeweils ausgewählte Berufsgruppe. Während man den Feuerknopf gedrückt 
+hält und den Joystick rauf bzw. runter bewegt kann man nun Personal auf den 
+Flügen einsetzen oder wieder streichen. Durch Drücken des Sticks nach rechts 
+gelangt man zurück zur Flugnummernauswahl.
+
+Pro Flug benötigt man eine gewisse Mindestanzahl an Personal, da die Maschine 
+sonst wegen Personalmangel nicht starten kann. Zunächst braucht man 
+selbstverständlich einen Piloten und einen Copiloten (oder einen zweiten 
+Piloten), bei Langstreckenflügen einen Langstreckenpiloten und einen Piloten. 
+Desweiteren wird jeder Flug von einem Flugingenieur begleitet, nur der Airbus 
+A 310 kann dank moderner Technik darauf verzichten. Nun fehlen noch 
+Stewardessen, von denen pro 50 Sitze der Maschine eine benötigt wird. Für
+eine 130-sitzige 727 müssen also mindestens 3 Stewardessen eingeplant werden. 
+Alle weiteren Berufsgruppen sind nicht unbedingt erforderlich, können aber 
+zu einer Verbesserung der Auslastung führen. Das einzuplanende Bodenpersonal 
+wird beim Menüpunkt "Arbeitsmarkt" erklärt.
+
+
+Service
+~~~~~~~
+Die Auswahl der gewünschten Flugnummer im Menüpunkt "Service" geschieht wie 
+bei der Personalplanung. Nachdem man in die Spalte zur Auswahl der 
+Serviceleistungen gelangt ist, kann man dort durch Knopfdruck den 
+gewünschten Punkt auswählen oder wieder löschen.
+
+Es gibt drei Kategorien von Servicepunkten, die durch drei Farben in der 
+Liste gekennzeichnet sind. Die erste Gruppe sind Verbrauchswaren, die pro 
+Flug und tatsächlich mitgeflogenen Fluggästen berechnet werden. Die zweite 
+Gruppe beinhaltet Waren und Leistungen, die pauschal pro Sitz der jeweiligen 
+Maschine jeden Monat einmal abgerechnet werden. Die dritte Kategorie, 
+Musikanlage und Bordkino, ist ein nicht an die Flugnummer gebundenes Extra. 
+Einmal in der betreffenden Maschine installiert, sind sie auf allen Flügen 
+mit diesem Flugzeug vorhanden. Durch Auswählen einer dieser Anlagen wird 
+diese zunächst nur bestellt. Ein inverses Häkchen zeigt, daß die Anlage 
+
+/\=============================[ Seite  7 ]=============================/\
+
+
+noch nicht eingebaut, aber geordert ist. Erst beim nächsten D-Check (siehe
+"Wartung") wird die bestellte Anlage dann montiert. Die Kosten einer Anlage 
+richten sich nach der Sitzanzahl des Flugzeuges. Multipliziert mit dem in 
+der Liste angegebenen Preis ergibt sich der Kaufpreis, der jedoch nur einmal 
+zu zahlen ist, und zwar erst dann, wenn die Anlage installiert wird.
+
+
+Flugpreis
+~~~~~~~~~
+Nachdem man die gewünschte Flugnummer ausgewählt hat, kann man den bereits 
+vorgegebenen Flugpreis verändern. Dazu drückt man den Knopf und hält ihn 
+gedrückt. Durch Bewegen des Sticks nach vorne oder hinten verändern sich 
+nun die Flugpreise aller drei Klassen. Ein Business-Class Ticket kostet 30%
+mehr als ein Tourist-Class Platz. Wer First-Class fliegen möchte, zahlt 40% 
+mehr als Passagiere der einfachen Klasse. Eine Veränderung der Preise kann 
+großen Einfluß auf die Gunst der Passagiere haben, besonders, wenn zwei 
+Spieler dieselbe Stadt anfliegen.
+
+
+Fracht
+~~~~~~
+Das Festlegen der Kosten für ein Kilo Fracht geschieht genauso wie die 
+Einstellung der Flugpreise. Es gibt allerdings keinen vorgegebenen Preis, 
+sodaß zunächst also keine Fracht transportiert wird. Erst durch Vorgabe eines 
+konkurrenzfähigen Preises steigt das Interesse, dem Flugzeug Fracht mit auf 
+den Weg zu geben. Frachtpreise richten sich nach der Flugzeit. Auf einem 
+Flug Frankfurt-Rom wären z. B. 12 DM für ein Kilo Fracht angemessen. Der 
+optimale Marktpreis auf den einzelnen Flügen muss durch Variieren ausprobiert 
+werden. Schon wenige DM Veränderung für ein Kilo Fracht kann beträchtliche 
+Summen in der monatlichen Abrechnung ausmachen.
+
+
+Flugzeugkauf
+~~~~~~~~~~~~
+Flugzeuge kauft man natürlich nicht wie Erbsen in einem Supermarkt. Man muß 
+mit mehreren Monaten Lieferzeit rechnen, die durch verschiedene Ausstattungen 
+auch beim gleichen Flugzeugtyp noch stark variieren kann. Auch sollte man 
+angesichts 8-9 stelliger Kaufpreise sichere monatliche Gewinne vorweisen 
+können, da sich die Zahlungen über viele Monate in schwindelerregender Höhe 
+hinziehen können. 
+
+/\=============================[ Seite  8 ]=============================/\
+
+
+Hat man sich für einen Flugzeugtyp entschieden, erhält man durch Knopfdruck 
+ein Auswahlmenü für die Ausstattung mit Sitzen in den verschiedenen Klassen. 
+Die Angaben für Lieferfrist und Preise sind getrennt nach rohem Flugzeug und 
+einer Ausstattung dafür. Im Anhang dieses Heftes befindet sich eine 
+Kurzfassung der wichtigsten Informationen, in der u. a. auch eine Tabelle 
+mit allen lieferbaren Flugzeugtypen und den Gesamtpreisen und der gesamten 
+Lieferdauer zu finden ist. Die Gesamtpreise werden sich in der Regel durch 
+lange Kreditlaufzeiten noch etwas erhöhen.
+
+Hat man sich nun für eine bestimmte Maschine entschieden, so kommt der 
+finanzielle Teil. In diesem Fenster kann man sich außer über die 
+Gesamtlieferfrist auch über die auf einen zukommenden Kosten informieren. 
+Zunächst gibt es einen sofort zu zahlenden Betrag, sozusagen eine Anzahlung. 
+Über die restlichen Raten kann man dann selber entscheiden. Die linke Zahl 
+gibt die Anzahl der Monate und die rechte die Höhe der monatlichen Raten. 
+Längere Ratenzahlungen ziehen natürlich höhere Kosten nach sich, da die 
+kreditgewährende Bank ja schließlich von den Zinsen lebt. Durch Drücken des 
+Joysticks nach vorne oder hinten kann man die verschiedenen Zahlungsmöglich-
+keiten aussuchen. Eine 737 mit kleinster Ausstattung erfordert beispielsweise 
+eine Anzahlung von 1 Mio DM. Diese Anzahlung wird beim Kauf sofort vom 
+Kapital abgezogen und erscheint bei der Monatsauswertung nicht mehr unter 
+den Ausgaben. Die erste Rate wird in dem gleichen Monat zusätzlich noch 
+fällig, erscheint jedoch bei der Auswertung unter "Sonstige Kosten".
+
+Nun kann man zwischen 9 Raten und 6 Mio DM (Kaufpreis = 55 Mio) oder bis zu 
+58 Raten zu je 1 Mio wählen (Kaufpreis = 59 Mio). Man sollte bei so langen 
+Kreditlaufzeiten jedoch bedenken, daß man bei laufenden Krediten keinen 
+Bilanzindex von 100 erreichen und somit auch nicht gewinnen kann. 
+Andererseits hat man bei überraschendem Geldsegen natürlich auch die 
+Möglichkeit, die restlichen Schulden oder größere Teile davon (jeweils in 
+Vielfachen einer Rate) auf einmal am Ende jeder Runde nach erfolgter 
+Auswertung zu tilgen, sofern es der Kontostand zuläßt.
+
+Hat man sich für eine Zahlungsart entschlossen, dann drückt man den Knopf des 
+Joysticks. Für Unentschlossene bietet sich jetzt noch die Möglichkeit, durch 
+Drücken des Sticks nach rechts oder links zwischen "Kaufen" und "Nicht 
+Kaufen" zu wählen. Hat man sich zum Kauf entschlossen, dann geht's mit 
+Knopfdruck zurück zum Monatsmenü. Es kann allerdings passieren, daß man 
+keinen Kredit in der gewünschten Höhe bekommen kann, weil man nicht genügend 
+Sicherheiten zu bieten hat. Das kann beispielsweise passieren, wenn man 
+versucht, sich gleich zu Beginn mit dem Grundkapital eine 747 zu leisten. 
+Da streikt jede Bank, und man muß sich dann wohl mit einem kleineren 
+
+/\=============================[ Seite  9 ]=============================/\
+
+
+Flugzeug begnügen oder erstmal etwas mehr Geld verdienen. Da anfangs kaum 
+Sicherheiten in Form von Flugzeugen oder Gewinnen durch viele Fluglinien 
+vorzuweisen sind, muß man sich ein gewisses Barvermögen erarbeiten, um die 
+Damen und Herren der Banken milde zu stimmen. Der Bilanzindex ist ein ganz 
+guter Anhaltspunkt für die eigene Kreditwürdigkeit.
+
+Nach Ablauf der Lieferzeit bekommt man mitgeteilt, daß das bestellte Flugzeug 
+eingetroffen ist und man es nun also einsetzen kann. Die Lieferung kann sich 
+aber auch um einige Monate verzögern. Dies wird dem Spieler zum Auslieferungs-
+termin natürlich mitgeteilt. Man darf beim Eintreffen der Maschine allerdings 
+nicht versäumen, neues Bodenpersonal einzustellen, um so die vorgeschriebene 
+Anzahl Bodentechniker und Wartungsingenieure zu beschäftigen (siehe auch 
+"Arbeitsmarkt"). Andernfalls würden sämtliche Flüge ausfallen.
+
+
+Flugzeugverkauf
+~~~~~~~~~~~~~~~
+Hat man sich mit dem Kauf eines Flugzeuges etwas übernommen oder Flugzeuge, 
+die man gar nicht braucht, so kann man versuchen, diese an die Mitspieler 
+oder evtl. an Firmen unbekannter Herkunft zu verkaufen.
+
+Zunächst wählt man ein Flugzeug über die entsprechende Nummer aus. Die 
+jeweiligen Flugzeugdaten und der Wert werden in der unteren Tabelle 
+angezeigt. Hat man sich für eine Maschine entschieden, drückt man den Knopf. 
+Nun werden den anderen Fluggesellschaften Tasten auf der Tastatur zugeteilt, 
+mit denen sie das Flugzeug kaufen können. Wenn alle bereit sind, kann der 
+Verkauf beginnen. Dazu drückt der Verkäufer den Knopf. Das obere rechte 
+Display gibt die nötigen Anweisungen. Bei "Los geht's" kann nun jeder Spieler 
+durch Tastendruck die Maschine kaufen.
+
+Wenn sich zu diesem Preis noch keiner zum Kauf entscheidet, so kann der 
+verkaufende Spieler den Preis mit dem Stick senken. Wird ihm der Preis für 
+die Maschine zu billig, so kann er den Verkauf jederzeit durch Knopfdruck 
+abbrechen. Wenn keiner der anderen Spieler das Flugzeug haben will, so kann 
+es passieren, daß eine ungenannte Firma das Flugzeug ersteht. Drückt jedoch 
+ein Spieler eine Taste, erhält er den Zuschlag zum angezeigten Preis. Diese 
+Kosten werden in voller Höhe sofort vom Saldo abgezogen, man bekommt also 
+keinen langfristigen Kredit. Dem Verkäufer wird die Kaufsumme sofort 
+gutgeschrieben. Diese Ausgaben und Einnahmen werden in der Endabrechnung 
+nicht extra aufgeführt, sondern sie machen sich nur im veränderten Saldo 
+bemerkbar. Eventuell noch zu zahlende Kredite für die Maschinen hat der 
+Verkäufer selbstverständlich weiterhin abzuzahlen.
+
+/\=============================[ Seite 10 ]=============================/\
+
+
+Arbeitsmarkt
+~~~~~~~~~~~~
+In diesem Menüpunkt kann Personal eingestellt oder entlassen werden. Man 
+wählt einfach die gewünschte Berufsgruppe aus, hält den Knopf gedrückt und 
+stellt die gewünschte Anzahl mit dem Joystick ein. Da man Langstreckenpiloten 
+automatisch bekommt, wenn die beschäftigten Piloten eine gewisse 
+Flugerfahrung nachweisen können, kann man diese selbstverständlich nur 
+entlassen. Hat man einen Langstreckenpiloten bekommen, so wird gleichzeitig 
+ein Copilot zum Piloten befördert. Falls gerade alle Piloten auf Flüge 
+verteilt waren, wird die entsprechende Anzahl zur Beförderung von den Flügen 
+abgezogen. Die zum Piloten beförderten Copiloten tun weiterhin ihren Dienst 
+auf den Maschinen, auf denen sie eingesetzt waren. Ihnen muß jetzt nur noch 
+ein neuer Copilot zugeteilt werden, damit die Maschine nicht wegen 
+Personalmangel am Boden bleibt.
+
+Versucht man, über das ungenutzte Personal hinaus Leute zu entlassen, die an 
+irgendwelchen Tagen bereits eingeplant sind, so bekommt man einen Hinweis, 
+daß weitere Entlassungen Personalabzug aus bestimmten Flügen nach sich zieht. 
+Wenn man den Hinweis zur Kenntnis genommen hat, kann man den Knopf drücken 
+und trotzdem weiteres Personal entlassen. Man muß sich nur im Klaren sein, 
+daß dann Flüge evtl. unterbesetzt sind und wegen Personalmangel ausfallen.
+
+Neben dem Personal, das auf die einzelnen Flüge verteilt wird, gibt es auch 
+noch fünf Berufsgruppen (in der Liste die letzten fünf Berufe), die ihren 
+Dienst unabhängig von bestimmten Flügen tun und den allgemeinen Betrieb 
+aufrecht erhalten. Die benötigte Anzahl richtet sich nach der Anzahl der 
+vorhandenen Flugzeuge und der Anzahl der zu verwaltenden Flüge. Die 
+Mindestzahl berechnet sich wie folgt:
+  - Bodentechniker: Doppelte Anzahl der Flugzeuge plus eins
+  - Wartungsingenieure: Anzahl der Flugzeuge plus eins
+  - Sekretärinnen: Doppelte Anzahl der Flugnummern plus eins
+  - Sachbearbeiter: Anzahl der Flugnummern plus eins
+  - Flugkoordinatoren: Halbe Anzahl der Flugnummern plus eins
+Hat man nicht genügend Bodenpersonal eingestellt, so müssen aus Sicherheits-
+gründen sämtliche Flüge ausfallen. Die Fluggesellschaft liegt dann praktisch 
+einen Monat lahm. Man sollte die Auswahl des Bodenpersonals deshalb sehr 
+sorgfältig vornehmen. Besonders bei Ankunft bestellter Flugzeuge wird oft 
+vergessen, die Anzahl von Bodentechnikern und Wartungsingenieuren auf die 
+nun erforderliche Anzahl für ein weiteres Flugzeug zu erhöhen.
+
+/\=============================[ Seite 11 ]=============================/\
+
+
+Wartung
+~~~~~~~
+Je nach Flugstundenleistungen erfordern die Flugzeuge verschiedene 
+Wartungsmaßnahmen, die mit dem Buchstaben A bis D gekennzeichnet sind. Hat 
+ein Flugzeug eine bestimmte Stundenleistung erreicht, so fallen die Flüge 
+dieser Maschine soviele Tage aus, bis die entsprechende Wartung durchgeführt 
+wird. Da pro Tag nur eine Maschine gewartet werden kann, muß man die 
+Wartungstermine so verteilen, daß die Ausfälle durch Wartezeiten möglichst 
+gering bleiben. Die Wartungsarten und Intervalle im Einzelnen:
+
+  A-Check: Allgemeine Kontrollen außen und innen. Nachfüllen von 
+           Betriebsstoffen. Behebung zurückgestellter Schäden. Nach 
+           100 Flugstunden fällig. Dauer: 1 Tag.
+  B-Check: Kontrollen innen und außen. Struktur- und Funktionskontrollen. 
+           Schließt A-Check ein. Nach 750 Flugstunden fällig. Dauer: 2 Tage.
+  C-Check: Verstärkte Kontrollen am Flugzeugrumpf. Kabinenauffrischung. 
+           Farbausbesserungen außen. Nach 2000 Flugstunden fällig. Dauer:
+           3 Tage.
+  D-Check: Überholung aller Systeme. Wechsel von Großbauteilen. Einbau 
+           technischer Neuerungen. Kompletter Neuanstrich. Nach 6000 
+           Flugstunden oder zum Einbau von Musikanlage oder Bordkino fällig.
+           Dauer: 7 Tage.
+
+Die Berechnung der erforderlichen Wartungstage richtet sich nach den 
+tatsächlich geflogenen Flugstunden. Die Dauer eines bestimmten Fluges beträgt 
+natürlich das Doppelte des angegebenen Wertes, da die Maschine ja auch 
+jeweils nach Frankfurt zurück fliegt.
+
+Hat man sich für ein bestimmtes Flugzeug entschieden, so erscheint auf 
+Knopfdruck ein Kalender des momentanen Monats, auf dem die bereits mit einer 
+Wartung belegten Tage dunkel markiert sind. Durch Bewegen des Sticks nach 
+links oder rechts kann man nun verschiedene Funktionen auswählen. Über 
+"Zurück" kommt man wieder zur Flugzeugauswahl und mit "Löschen" kann man 
+bereits eingestellte Wartungen wieder rückgängig machen. Die restlichen 
+Punkte sind die verschiedenen Wartungsarten. Zusätzlich werden zu jeder 
+Wartungsart noch die Tage, an denen der jeweilige Check rein rechnerisch 
+durchgeführt werden müßte, angezeigt.
+
+Ist der vorgeschlagene Termin bereits belegt, so kann das Flugzeug bis zum 
+nächsten möglichen Wartungstermin nicht starten. Wird in der untersten Zeile 
+
+/\=============================[ Seite 12 ]=============================/\
+
+
+bei keinem Check ein Vorschlag gemacht, so braucht die Maschine in dem Monat 
+nicht gewartet zu werden. Bei vornehmlich auf Kurzstrecken eingesetzten 
+Flugzeugen kann dies mitunter mehrere Monate passieren.
+
+Zum Einstellen eines ausgewählten Checks drückt man den Knopf und bewegt dann 
+den Cursor im Kalender auf den gewünschten Termin. Bei mehrtägigen Wartungen 
+ist zu bedenken, daß auch die zum Check gehörenden folgenden Tage nicht 
+belegt sein dürfen oder über das Monatsende hinausreichen. Ein D-Check kann 
+also nie am 27. eines Monats beginnen, da er bei 7-tägiger Dauer in den 
+nächsten Monat hineinreichen würde.
+
+Manchmal kann es passieren, daß in einem Monat gleichzeitig beispielsweise 
+A-, B- und C-Checks auftauchen, obwohl auf demselben Flug die A-Checks sonst 
+viel seltener nötig waren. Das passiert, wenn einer der aufgeführten Checks 
+vorher einmal früher als nötig durchgeführt wurde und sich nun nicht mehr 
+genau in die 100 Stunden Reihenfolge einreiht. Am Besten macht man dann nur 
+den höchsten Check, da er die kleineren jeweils mit einschließt. Zu früh wird 
+ein Check meistens durchgeführt, wenn zwar laut Vorausberechnung eine Wartung 
+nötig gewesen wäre, aber irgendwelche besonderen Ereignisse dann zu 
+Ausfalltagen geführt haben. Dann hat das Flugzeug am Wartungstag natürlich 
+noch nicht die Flugstundenleistung erbracht.
+
+
+Bilanz
+~~~~~~
+Dieser Menüpunkt führt dem Jungmanager die Entwicklung des Bilanzindex seiner 
+Fluggesellschaft in den jeweils letzten 12 Monaten grafisch vor Augen. Dabei 
+stellt die obere gelbe Linie die anzustrebende Indexzahl von 100 dar.
+
+Der Index stellt eine komplex berechnete Zahl dar, die die Leistungsfähigkeit 
+des Unternehmens widerspiegelt. Hierbei ist nicht unbedingt der 
+millionenschwere Saldo das wichtigste Kriterium. Entscheidend ist eine 
+gefestigte Position am Markt, die auch auf gute Erfolge in den jeweils 
+zurückliegenden Monaten zurückblicken kann. Möglicherweise haben große 
+Veränderungen in einem Flug weniger positiven Einfluß auf die Bilanz als 
+es die Auswertung zunächst vermuten läßt. Hingegen können Planungen, die 
+langfristig die Firma stärken, den Index in die Höhe treiben, obwohl die 
+Auswertung keine überwältigenden Mehreinnahmen anzeigt. Durch ständige 
+Erweiterung und Verbesserung des Flugnetzes und Investitionen in 
+Serviceleistungen und Flugzeuge kann man das Ziel am ehesten erreichen.
+
+/\=============================[ Seite 13 ]=============================/\
+
+
+Speichern
+~~~~~~~~~
+Möchte man das Spiel unterbrechen und zu einem späteren Zeitpunkt 
+weiterspielen, so kann man den momentanen Stand auf der Programmdiskette 
+abspeichern. Später geht es dann an derselben Stelle weiter.
+
+
+Weiter
+~~~~~~
+Nach Auswahl dieses Symbols gibt man an den nächsten Spieler weiter. Haben 
+alle Spieler ihre monatlichen Planungen vorgenommen, hüllt sich der Rechner 
+für ca. 20 - 40 sek. in tiefes Schweigen. In dieser Zeit werden alle Daten 
+ausgewertet und zur Darstellung aufbereitet.
+
+
+Auswertung
+~~~~~~~~~~
+Nun endlich erfahren die Spieler, ob ihre Monatsplanung fruchtbar war. Für 
+jede Fluggesellschaft erscheint eine Abrechnung, die mehrere Daten darstellen 
+kann. Zunächst sieht man für jeden Flug einen Balken, der die durchschnitt-
+liche Auslastung des Fluges in Prozent darstellt. Dahinter steht der 
+Buchstabe "W" für Wartung und eine Zahl. Das ist die Anzahl der Tage, an 
+denen der Flug nicht stattfinden konnte, weil das Flugzeug gewartet wurde 
+oder auf einen Check warten mußte. Steht hier eine Null, obwohl gecheckt 
+wurde, so war man wohl in der glücklichen Lage, an dem Wartungstag sowieso 
+keinen Flug mit der Maschine gehabt zu haben. Dann hatte man natürlich auch 
+keinen Ausfalltag.
+
+Weiterhin gibt es noch Ereignisse, die den normalen Flugverkehr an manchen 
+Tagen beeinträchtigen können. Wird beispielsweise ein Zielflughafen 
+umgerüstet, kann er einige Tage wegen Umbauarbeiten nicht angeflogen werden. 
+Da diese Ereignisse an festgelegten Tagen des Monats stattfinden, kann es 
+passieren, daß zwei Spieler verschieden viele Ausfalltage wegen desselben 
+Ereignisses haben, wenn beide dieselbe Stadt anfliegen, aber an verschiedenen 
+Tagen.
+
+Trifft einen der Flüge solch ein Ereignis, so steht hinter der Wartungsinfor-
+mation noch eine Abkürzung, die das Ereignis angibt, sowie die Anzahl der 
+Tage, an denen der Flug deswegen ausfallen mußte. Die Ereignisse im Einzelnen 
+sind:
+
+  - PM: Personalmangel
+  - WV: Winterliche Verhältnisse
+  - UA: Umbauarbeiten
+  - FS: Fluglotsenstreik
+  - LV: Landeverbot
+
+/\=============================[ Seite 14 ]=============================/\
+
+
+PM für Personalmangel bedeutet in diesem Fall, daß irgendwelches Personal, 
+sei es eigenes oder das eines Zielflughafens, beispielsweise krankheitshalber 
+einige Tage ausgefallen ist. Hingegen bedeutet "Personalmangel" hinter einer 
+Flugnummer, daß der Flug den ganzen Monat ausgefallen ist, weil das 
+eingesetzte Personal nicht den Mindestanforderungen genügte (siehe auch 
+Menüpunkte "Personalplanung" und "Arbeitsmarkt").
+
+Unterhalb der Flugnummernliste stehen sich Ausgaben und Einnahmen gegenüber. 
+Wenn das rechte obere Display "Gesamtkosten" anzeigt, dann stehen links die 
+gesamten monatlich angefallenen Flughafengebühren und die Treibstoffkosten. 
+"Sonstige" Kosten sind die Gehälter für das Personal, Ausgaben für den 
+angebotenen Service, monatlich zu zahlende Raten für laufende Kredite sowie 
+die Kosten für durchgeführte Wartungen. Rechts neben diesen Angaben stehen 
+die Gesamteinnahmen durch den Verkauf von Tickets und den Transport von 
+Fracht. Unten links kann man sich die Differenz von Einnahmen und Ausgaben 
+des letzten Monats ansehen und rechts daneben steht der sich daraus ergebende 
+neue Saldo.
+
+Möchte man nun feststellen, ob ein Flug rentabel ist oder nicht, so bewegt 
+man den Cursor auf die gewünschte Flugnummer. In der rechten Anzeigebox 
+erscheint der Name des jeweiligen Zielflughafens. Drückt man nun den Knopf, 
+so ändern sich die Einnahmen- und Ausgabenanzeigen. Nun werden nur die 
+Treibstoffkosten und Flughafengebühren, Personal- und Servicekosten 
+angezeigt, die anteilmäßig auf diesen FLug entfallen. Dementsprechend geben 
+"Tickets" und "Fracht" die auf dieser Route erzielten Einnahmen wieder. Da 
+die Kosten für durchgeführte Wartungen nun nicht mit aufgeführt werden, 
+liegen die monatlichen Gesamtgewinne in der Regel unter der Summe der 
+einzelnen Überschüsse auf den Flügen.
+
+Nachdem man sich über seine Einnahmen und Ausgaben informiert hat und über 
+"Ende" die Auswertung verlassen hat, besteht bei genügend großem Saldo die 
+Möglichkeit, den jeweils höchsten von maximal drei Krediten um ein 
+einstellbares Vielfaches der monatlichen Raten zu tilgen.
+
+Nun wird man auch über Beförderungen von Piloten zu Langstreckenpiloten 
+informiert oder über ankommende bestellte Flugzeuge bzw. eventuelle 
+Lieferverzögerungen in Kenntnis gesetzt. 
+
+/\=============================[ Seite 15 ]=============================/\
+
+
+Kurzfassung der wichtigsten Informationen
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mindestpersonal:                                 Ereignisse:
+  Je Flug:
+  - 1 Pilot (Langstrecke: 1 Langstreckenpilot)   PM - Personalmangel
+  - 1 Copilot (Langstrecke: 1 Pilot)             UA - Umbauarbeiten
+  - 1 Flugingenieur (außer A 310)                LV - Landeverbot
+  - 1 Stewardess je 50 Sitze der Maschine        FS - Fluglotsenstreik
+                                                 WV - Winterliche Verhältnisse
+  Bodenpersonal:
+  - Bodentechniker:       Anz. Flgz. * 2 + 1
+  - Wartungsingenieure:   Anz. Flgz. + 1
+  - Sekretärinnen:        Anz. Flgnr. * 2 + 1
+  - Sachbearbeiterinnen:  Anz. Flgnr. + 1
+  - Flugkoordinatoren:    Anz. Flgnr. / 2 + 1
+
+
+Daten sämtlicher Flugzeugtypen
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Typ     Sitze (T:B:F)   Gesamtpreis (Mio)   Gesamtlieferfrist (Mon)
+-------------------------------------------------------------------
+737        90:0:10            55                     9
+           98:0:8             57                     8
+          115:0:7             61                     6
+727       120:0:10            67                    11
+          138:0:8             71                    10
+          150:0:6             73                     9
+A 310     174:0:25            85                    14
+          189:0:18            86                    17
+          202:0:15            91                    15
+747       180:70:50          149                    21
+          212:108:35         155                    17
+          225:112:27         154                    19
+DC 10     110:70:30          121                    17
+          137:76:24          122                    20
+          160:84:15          128                    18
+
+/\=============================[ Seite 16 ]=============================/\
+
+Ende.
+
+*********
+
+End of the iDOC= etext of the Airline manual.
+
+*********

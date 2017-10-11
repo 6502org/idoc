@@ -1,0 +1,1381 @@
+*********
+
+Welcome to International Project 64!
+
+The goal of International Project 64 is to preserve non-English Commodore 64
+related documents in electronic text format that might otherwise cease to
+exist with the rapid advancement of computer technology and declining
+interest in 8-bit computers on the part of the general population. If you
+would like to help by converting C64 related hardcopy documents to
+electronic texts please contact the manager of International Project 64,
+Peter Karlsson, at pk@abc.se.
+
+Extensive efforts were made to preserve the contents of the original
+document. However, certain portions, such as diagrams, program listings, and
+indexes may have been either altered or sacrificed due to the limitations of
+plain vanilla text. Diagrams may have been eliminated where ASCII-art was
+not feasible. Program listings may be missing display codes where
+substitutions were not possible. Tables of contents and indexes may have
+been changed from page number references to section number references.
+Please accept our apologies for these limitations, alterations, and possible
+omissions.
+
+Document names are limited to the 8.3 file convention of DOS. The first
+characters of the file name are an abbreviation of the original document
+name and the language of the etext. The version number of the etext follows
+next. After that a letter may appear to indicate the particular source of
+the document. Finally, the document is given a
+.TXT extension.
+
+The author(s) of the original document and members of International Project
+64 make no representations about the accuracy or suitability of this
+material for any purpose. This etext is provided "as-is". Please refer to
+the warranty of the original document, if any, that may included in this
+etext. No other warranties, express or implied, are made to you as to the
+etext or any medium it may be on. Neither the author(s) nor the members of
+International Project 64 will assume liability for damages either from the
+direct or indirect use of this etext or from the distribution of or
+modification to this etext. Therefore if you read this document or use the
+information herein you do so at your own risk.
+
+*********
+
+The International Project 64 etext of the The Final Cartridge III Swedish
+manual, converted to text by Peter Karlsson <pk@abc.se>
+
+TFC3SE1A.TXT, January 1998, etext #21.
+
+Note from the etexter: 
+
+En stor del skriven med bara stora bokstäver -- detta har ändrats.
+En hel del sär skriv ning ar, stavfel och interpunktionsfel har rättats.
+
+Det finns ytterligare en version (som jag känner till) av denna manual. Den
+manualen är mer omfattande, men min kopia saknar ett antal sidor.
+
+*********
+
+The Final Cartridge 3
+
+Copyright
+
+The Final Cartridge 3 är en Riska B.V Home and Personal Computers-produkt.
+Copyright: E. Th. van de Enden
+
+Informationen i denna manual har blivit genomgången och tros vara pålitlig.
+Inget ansvar tas för fel begångna med TFC3.
+
+Idé och realisation:    Wil Sparrebom
+Desktop och menyer:     Gerard van Assem
+                        Mark Derksen
+Software:               Uwe Stahl
+                        Wil Sparrebom
+Hardware:               Ton Peters
+                        Jacques van Shajik
+Manual:                 Patrik Wast
+
+***
+
+The Final Cartridge 3 erbjuder dig förutom Desktop även:
+
+1  Många användbara toolkitkommandon
+2  Lättanvända diskkommandon
+3  23 Kbyte extra minne i BASIC
+4  En bandturbo som laddar och sparar tio gånger snabbare
+5  En diskturbo som laddar femton gånger snabbare och sparar sju gånger
+   snabbare
+6  Inbyggd maskinkodsmonitor
+7  Diskmonitor
+8  Centronicsprinterinterface
+9  Inbyggd spritedödare <sic!>
+10 En resetfunktion som gör att gamla BASIC-program kan tas tillbaka
+11 Frysfunktion
+12 Inbyggd notepad, en liten ordbehandlare.
+
+
+OBS LÄS FÖLJANDE NOGGRANNT !!!!!!!!!!!!
+
+Inkoppling av cartridgen
+
+Slå alltid av datorn när du kopplar in eller ut cartridgen
+
+VIC-64:
+Plugga in cartridgen i cartridgeporten med etiketten uppåt.
+
+C-128:
+Samma som ovan.
+
+Om du slår på datorn med cartridgen i så startar den i desktopen. Om du vill
+starta BASIC, håll då ner RUN/STOP när du slår på. Om inget händer när du
+slår på tryck på reset, händer fortfarande inget då är cartridgen inte
+riktigt inkopplad.
+
+OBS !!!!!
+På vissa äldre 64:or är det ibland nödvändigt att trycka reset efter det att
+du slagit på datorn för att starta cartridgen.
+
+
+FÖNSTER OCH MENYER
+
+Introduktion
+
+Det mesta i TFC3 styrs med hjälp av fönster och menyer. Eftersom inte alla
+vet hur detta fungerar ger vi en snabb förklaring.
+
+Hur du använder pekaren
+
+Du använder perkaren för att välja saker på skärmen. Du flyttar den genom
+att flytta joysticken eller genom följande tangenter:
+F1=upp F3=ner F5=vänster F7=höger COMMODORE=skjut
+
+Menyer
+
+På toppen av skärmen syns ett menyfält. I detta fält syns olika menyer. På
+menyerna håller du ner skjutknappen och flyttar pekaren längs menyfältet. I
+vissa menyer kan inte alla funktioner väljas, därför visas dessa skuggade.
+
+För att välja en funktion pekar du på den med knappen intryckt. Då tänds
+funktionen och du kan släppa knappen.
+
+
+FÖNSTER
+
+Introduktion
+
+Ett fönster är en liten skärm som visas inom den stora skärmen. Du kan till
+och med öppna flera fönster, men endast ett fönster i taget kan ta emot
+information från dig, detta kallas det valda fönstret. För att välja ett
+fönster pekar du i det och trycker på knappen.
+
+Fönsterkommando (i fortsättningen gadget)
+
+Du flyttar fönstret, stänger fönstret, osv. med gadgets. Du väljer gadget
+genom att peka på den och klicka.
+
+Fönsterhantering
+
+Du flyttar ett fönster genom att peka längst upp på fönstrets menystreck.
+Håll nere skjutknappen, flytta till önskad position och släpp knappen. Om du
+flyttar ett fönster framför ett annat så är alltid det sist använda fönstret
+valt.
+
+För att byta plats på två fönster som är över varandra, klicka på den övre
+högra gadgeten.
+
+För att stänga ett fönster väljer du den övre vänstra gadgeten.
+
+
+DESKTOP
+
+Introduktion
+
+Desktopen är det som kommer in när du slår på datorn.
+
+Desktopmenyer:
+
+INFO
+Här finns information om TFC3
+
+DESKTOP:    Här öppnas ett fönster som visar skaparna av TFC3
+VERSION:    Här visas vilken version av TFC3 du har
+
+SYSTEM
+I denna menyn finns systemkommandon
+
+BASIC:      Detta kommando återgår till BASIC
+FINAL KILL: Detta kommando stänger av TFC3
+FREEZER:    Detta kommando aktiverar frysaren. Du kan lämna frysaren genom
+            att välja Exit-Run
+REDRAW:     Detta kommando ritar om skärmen så att du kan se alla fönster
+            som visas
+
+PROJECT
+Här finns projekt du kan starta
+
+NOTEPAD:    Öppnar notepad som är en liten ordbehandlare
+DLINK:      Laddar framtida kommando från disk
+TLINK:      Laddar in framtida kommando från band
+
+CLOCK
+Här finns alla kommandon som styr klockan
+
+TIME:       Detta kommando visar tiden på menyfältet
+ALARM:      Detta kommando stänger av och sätter på alarmet
+SETTINGS:   Här kan du ställa klockan och larmet.
+            Du ändrar tid och alarm genom att välja siffror och trycka på
+            USE.
+
+TOOLS
+I denna del kommer vi diskutera följande delar:
+CALCULATOR
+PREFERENCES
+DISK OPERATIONS
+TAPE OPERATIONS
+BASIC PREFERENCES
+PRINTER SETTINGS
+NOTEPAD
+
+CALCULATOR:
+Detta är en standard fyrfunktionsminiräknare som kan addera, subtrahera,
+multiplicera och dividera. Man använder den som en helt vanlig miniräknare,
+klicka på önskad funktion eller siffra.
+
+Författarna av den svenska manualen förutsätter grundläggande kunskaper om
+miniräknare och kommer därför inte gå in på hur en miniräknare fungerar.
+
+PREFERENCES:
+Med preferences kan du ändra din TFC3 hur du vill.
+
+Du kan ställa in:
+Skärmfärger, pekarens färg, pekarens hastighet, pekarens acceleration,
+drivport, drivare.
+
+POINTER:      Du kan ändra färg genom att välja upp- eller nergadgeten för
+              Color1 eller Color2
+SCREEN:       Du kan ändra skärmfärgen på samma sätt som ovan. Color1 är
+              förgrundsfärg, Color2 är bakgrunden.
+DRIVER:       Du kan ändra joystickport genom att klicka på motsvarande
+              gadget, sama sak gäller val av mus eller joystick.
+VELOCITY:     Här finns de tre olika hastigheterna du kan ändra pekarens
+              hastighet på
+ACCELERATION: Samma sak som ovan, fast accelerationen
+DEFAULT:      Här kan du se grundinställningarna
+VIEW:         För att undersöka dina inställningar väljs View
+OK:           Om du gillar dina inställningar, välj Ok
+CANCEL:       Om du vill ha tillbaka de gamla inställningarna välj då Cancel
+
+DISK OPERATIONS:
+Här kan du välja mellan olika diskkommandon som t.ex. ta bort filer eller
+att ge dem nya namn osv.
+
+Dessa funktioner är tillgängliga:
+Ändra namn på fil, starta ett program, ändra namn på en disk, snabbformatera
+en disk, tömma en disk, initiera en disk, omorganisera en disk, ta bort en
+fil och titta på biblioteket.
+
+Öppna ett bibliotek:
+Du kan titta på ett bibliotek genom att välja en av dirgadgetarna. Om du har
+en drive välj endast åttan. Ett biblioteksfönster öpnpnas och du kan se
+filerna på disken.
+
+Du väljer ett program genom att peka på det och klicka. Detta program skall
+i så fall tändas.
+
+RUN:         Efter det att du valt ett program kan det köras med
+             Run-kommandot
+VALIDATE:    Om du väljer detta kommando görs en validate på disken. Se din
+             diskmanual för närmare information.
+SCRATCH:     Efter du valt ett program och väljer scratch tas den filen bort
+             från disken
+INITIALIZE:  Om du väljer detta kommando initieras disken. Se
+             diskdrivemanualen för mer information
+FAST FORMAT: Med detta kommando görs en snabbformatering av din disk och
+             allt rensas bort. Var försiktig...
+EMPTY:       Detta kommando tömmer disken.
+RENAME:      Detta kommano ändrar namn på det valda programmet. I det andra
+             fältet väljs sedan det nya namnet
+
+TAPE:
+Här väljs sakta(slow) eller snabb(fast) bandhantering.
+
+BASIC PREFERENCES:
+Här ändras inställningar i BASICen
+
+KEYBOARD CLICK: När denna är vald kommer det att höras ett klick varje gång
+                en knapp trycks ner. Precis som på de eminenta
+                Ataridatorerna
+KEY REPEAT:     Denna funktion ger repeterande tangenter
+CURSOR BLINK:   Denna funktion gör att markören slutar blinka
+DEFAULT DEVICE: Här väljs vilken periferienhet som skall vara gällande som
+                grundinställning
+BORDER COLOR:   Här väljer du skärmkantens färg
+NUMERIC PAD:    Här stängs det numeriska tangentbordet på C-128:an av
+
+PRINTER:
+Här ändras printerinställningarna
+
+Interface:
+Det finns tre gadgets.
+Commodore  = Skärmdump till serieporten,
+Centronics = Skärmdump med parallellkabel till centronicsprinter,
+RS-232     = Skärmdump med parallellkabel till en seriell printer
+(e-textarens not: ja, det _står_ så)
+
+Type:
+Även här tre gadgets.
+CBM compatible   = Skärmdump med Commodorekontrollkoder 
+Epson compatible = Skärmdump med Epsonkontrollkoder
+NEC P            = Skärmdump med NEC-kontrollkoder
+
+Picture:
+Genom att välja inverse kan du få en inverterad skärmdump
+
+Colors:
+Här väljer du svart/vit- eller färgprinter
+
+Printing:
+Här kan du välja normal eller sidvägs utskrift
+
+Horizontal/Vertical size:
+Här kan du välja utskriftsstorleken. Väljer du 1 istället för 2 bli det
+dubbelt så stort.
+
+Graphics modes 8/24 pin:
+Här ställer du inantal nålar på printern osv.
+
+Konsultera din printermanual vid inställningarna
+
+TFC3 stöder följande:
+60dpi 8/24pin, 120dpi 8/24pin, 180 dpi 24pin, 240dpi 8pin, highspeed 120dpi
+8/24pin, 80dpi 8pin, 90dpi 24pin
+
+EXIT:  Här lämnare du fönstret och går till desktop
+PRINT: Här skriver du med dina inställningar. Du kan avbryta med
+       RUN/STOP-tangenten
+
+Följande printrar har testats:
+Star NL-10
+Epson EX-800
+Brother M-1509
+Brother M-1709
+NEC P6
+Olivetti DM 105
+Panasonic X-P1081
+
+
+NOTEPAD
+
+Med notepad skapar du små dokument som kan sparas, laddas och skrivas ut på
+skrivaren.
+
+PROJECT
+NEW:   Detta tömmer notepad
+LOAD:  Här laddar du ett tidigare sparat dokument, ange namn
+TLOAD: Laddar från band, ange namn
+SAVE:  Sparar ditt dokument, ange namn
+TSAVE: Sparar på band, ange namn
+PRINT: Utskrift av dokument
+QUIT:  Avslutar notepad och återgår till desktop
+
+FILE
+TOP OF FILE: Går till början av ditt dokument
+REDRAW:      Detta återritar skärmen
+FREEZER:     Detta kommando aktiverar frysaren
+SCREEN:      Här ändras hur texten visas
+WORDWRAP:    Denna funktionen medger att hela ordet följer med vid linjebyte
+BOLD:        Detta ger fet stil på texten
+
+LINE
+SPACEx:      Detta ger olika avstånd mellan linjerna
+CHARACTER:   Ger olika avstånd mellan tecknen
+
+OBS !!! Du kan flytta markören med pekaren..
+
+
+BASIC
+
+Dessa extra möjligheter finns med TFC3:
+1 Scrolla BASIC-program
+2 Ett printerinterface
+3 Skärmdump
+4 Band-/diskturbo
+5 Menyer
+6 Nästan 30 extra BASIC-kommandon
+
+Du kan gå in i BASIC genom att:
+1 Håll ner RUN/STOP när du gör reset
+2 Välj BASIC i systemmenyn
+3 Välj BASIC från frysaren
+
+Du kan gå ut ur BASIC genom att:
+1 Välj desktop i systemmenyn
+2 Skriv DESKTOP
+3 Reseta med Commodoretangenten nedtryckt
+4 Tryck på freezerknappen
+5 Välj Final Kill och återgå till normal 64-mode
+
+Scrolling:
+Precis som i monitorn kan du scrolla dina BASIC-program med
+markörtangenterna
+
+Editeringsfunktioner:
+CTRL och CLR/HOME flyttar markören till nedre vänstra hörnet
+CTRL och DEL tar bort tecknet efter markören
+Commodoreknappen fryser utskriften till skärmen
+
+Skärmdump:
+CTRL och Return gör en dumpning av skärmen till printern
+
+Menyer:
+I BASIC finns också menyer. För att använda dem, tryck på skjutknappen
+
+
+BASICKOMMANDON
+
+Här följer en lista över kommandon i BASIC.
+Först några förklarade tecken:
+[ ] avskiljer olika delar av kommandot, skriv ej dessa tecken
+< > innehåller information som måste skrivas, t.ex programnamn, skriv ej
+    tecknen
+/   detta anger olika val. Skriv ej tecknet
+
+
+APPEND
+Syntax:   APPEND ["<FILNAMN>"] [,<ENHET>]
+
+Detta kommando erbjuder dig att addera en fil med subrutiner till ett
+program i minnet. Förkortningen är aP.
+
+Exempel:  APPEND "JERK" (för band)
+          APPEND "JERK" (för disk) <sic! ska vara: APPEND "JERK",8>
+
+Kommentar: Tänk på att radnummer inte får vara lkadana
+
+
+ARRAY
+Syntax:   ARRAY
+
+Detta kommando listar innehållet i en sträng. Förkotningen är aR.
+
+Exempel:  ARRAY
+
+Skärmen visar dåex.: A$(1)="ABU NIDAL"
+
+
+AUTO
+Syntax:   AUTO [<RADNUMMER>] [,<STEGNING>]
+
+Detta kommando gör automatisk radnumrering, förkortning: aU.
+
+Exempel:  AUTO 10,5 (radnumret startar med 10 och ökar med 5)
+
+
+BAR
+Syntax:   BAR [OFF]
+
+Detta kommando tillåter eller stänger av möjligheten att använda menyer.
+Förkortnigen är bA
+
+Exempel:  BAR (tillåter menyer)
+          BAR OFF (stänger av menyer)
+
+
+DAPPEND
+Syntax:   DAPPEND ["<FILNAMN>"]
+
+Samma som APPEND "FILNAMN",8
+
+
+DEL
+Syntax:   DEL [<FÖRSTA RADEN>]-[<SISTA RADEN>]
+
+Tar bort delar av ditt program. Förkortningen är dE.
+
+Exempel:  DEL 100-200
+          DEL 250-
+          DEL -100
+
+
+DESKTOP
+Syntax:   DESKTOP
+
+Lämnar BASICen. Förkortningen är deS.
+
+Exempel:  DESKTOP (svara sedan Y för ja och N för nej)
+
+
+DLOAD
+Syntax:   DLOAD ["<FILNAMN>"]
+
+Laddar ett program från disk med turbo. Förkortning: dL.
+
+Exempel:  DLOAD "YEEAH"
+
+
+DOS
+Syntax:   DOS"[<DISKKOMMANDO>]/[<ENHET>]
+
+Istället för OPEN 1,8,15," osv. Förkortning: dO.
+
+Exempel:  DOS"               Läser ERROR-kanalen
+          DOS"$              Visar diskettens bibliotek
+          DOS"N0:name,id     Formaterar en disk
+          DOS"V              Validerar en disk
+          DOS"9              Nu kommer alla diskkommandon gå till driven som
+                             använder devicenummer 9
+
+
+<e-textarens not: Här byter beskrivningen helt plötsligt format, den övergår
+ bl.a från enbart stora bokstäver till kombination stora/små>
+
+
+DOS"$
+Syntax:       DOS"$
+              dO   <sic! ska vara dO"$>
+
+Detta kommando kommer att visa ett bibliotek av en diskett på skärmen UTAN
+att radera befintligt program i minnet.
+
+Exempel:      DOS"$    Detta visar innehållet av din diskett
+
+Anmärkningar: Om du ej använder detta kommando i ett program, så kan du
+              också trycka (F7), som har samma effekt. Genom användning av
+              funktionstangenten (F7) rensar du först skärmen.
+
+
+DSAVE
+Syntax:       DSAVE "(filnamn)"
+              dS "(filnamn)"
+
+Detta kommando sparar ett program på disk, använt av den inbyggda turbon. På
+detta sätt sparas program 7 ggr. snabbare ännormalt.
+
+Exempel:      DSAVE "test" skriver programmet "test" på disk.
+
+
+DUMP
+Syntax:       DUMP
+              dU
+
+Detta kommando visar en lista över alla normala variabler och deras
+nuvarande värde.
+
+Exempel:      DUMP  dumpar alla normala variabler
+
+Anmärkningar: För att dumpa strängarna, använd kommandot ARRAY.
+
+
+DVERIFY
+Syntax:       DVERIFY *"(filnamn)"*
+              dV *"(filnamn)"*
+
+Detta kommando jämför programmet på disk med namnet "filnamn" med programmet
+i minnet. Om två program är likadana så lämnar datorn den vanliga
+"READY"-prompten, men om det är skillnad på programmen så visas istället
+"VERIFY ERROR".
+
+Exempel:      DVERIFY "test" jämför progarmmet "test" på disk med programmet
+                             i minnet
+              DVERIFY        jämför första programmet på disk med programmet
+                             i minnet
+
+FIND
+Syntax:       FIND *"(text)"*/*(BASIC-kommando)*/*(variabel)*
+              fI   *"(text)"*/*(BASIC-kommando)*/*(variabel)*
+
+Detta kommando letar igenom hela progarmmet efter en sträng, ord eller
+kommando och listar varenda radnummer det finns på.
+
+Exempel:      FIND "test"      Listar varje rad med strängen "test"
+              FIND POKE 53280  Listar varje rad med kommandot POKE 53280
+              FIND Z           Listar varje rad som innehåller variablerna
+                               Z, Z%, Z$, indexerade eller inte
+              FIND Z$          Listar varje rad med variabeln Z$, indexerad
+                               eller ej
+
+
+<e-textarens not: Detta kommando saknas i min manual:
+
+HELP
+Syntax:       HELP
+
+Visar den rad på vilket felmeddelande vid körning uppstod på>
+
+
+<e-textarens not: Här byter beskrivningen helt plötsligt format, IGEN>
+
+KILL
+Syntax:       KILL
+              kI
+
+              Detta kommando tar bort Final Cartridge III, endast "freezern"
+              fungerar fortfarande. Men du kommer att komma tillbaka till
+              standard Commodore 64 om du ej lämnar "freezern" via monitorn.
+
+
+LIST
+Syntax:       LIST ((första raden)-(sista raden))
+              lI ((första raden)-(sista raden))
+
+              Detta kommando kommer att lista ditt BASIC-program, men har
+              blivit modifierat så att vilket listskydd som helst i ett
+              BASIC-program blir överkört.
+
+
+MEM
+Syntax:       MEM
+              mE
+
+              Detta kommando visar de olika minneskategorierna av
+              BASIC-programmet.
+
+Exempel:      MEM  Listar minneskategorierna
+
+Skärmen:      MEM
+              BASIC     38911 BYTES
+              PROGRAM   2     BYTES
+              VARIABLES 0     BYTES
+              ARRAYS    0     BYTES
+              STRINGS   0     BYTES
+              FREE      38909 BYTES
+
+
+MON
+Syntax:       MON
+              mO
+
+              Detta kommando aktiver maskinspråksmonitorn som sitter inbyggd
+              i Final Cartridge III. Fulla detaljer om denna superba finess
+              finns i kapitlet MONITOR.
+
+
+MREAD
+Syntax:       MREAD (minnesplats)
+              mR (minnesplats)
+
+              Detta kommando läser 192 bytes minne från den angivna platsen
+              och framåt. Med användning av kommandot MWRITE kan du flytta
+              dessa bytes till 24K RAM som normalt ligger under ROM.
+
+Exempel:      FOR I = 0 TO 4
+              MREAD  $0400 + I * 192
+              MWRITE $A000 + I * 192
+              NEXT I
+              Detta överför skärmen till extra RAMet.
+
+Kommentar:    Det är möjligt att överföra till alla minnesplaceringar, men
+              dessa kommandon är gjorda för att använda 24K RAMet som
+              normalt ligger under ROMen. Detta extraminne kan användas som
+              lagringsplats för stora mängder av information, som variabler,
+              text och grafik, referenslistor etc.
+              Extramnnet på 24K RAM finns placerat:
+              $A000-$BFFF = 8K BASIC-tolk
+              $C000-$CFFF = 4K Ledigt RAM
+              $D000-$DFFF = VIC, SID och I/O
+              $E000-$FFFF = 8K Kernel
+              För att överföra de 192 bytes använder TFC3 tapebufferten.
+
+
+MWRITE
+Syntax:       MWRITE (minnesplats)
+              mW (minnesplats)
+
+              Detta kommando skriver de 192 bytes du läste med
+              MREAD-kommandot på den givna platsen.
+
+Exempel:      FOR I = 0 TO 4
+              MREAD  $A000 + I * 192
+              MWRITE $0400 + I * 192
+              NEXT I
+              Detta återhämtar skärmen.
+
+
+OLD
+Syntax:       OLD
+              oL
+
+              Detta kommando återhämtar ett BASIC-program efter en reset,
+              eller efter NEW avänts.
+              OBS. Detta funkar så länge som du ej skrivit/laddat något
+              nytt.
+
+
+OPEN
+Syntax:       OPEN (filnummer), (device), (adress)
+              oP (filnummer), (device), (adress)
+
+              Detta kommando öppnar en kanal för inmatning och/eller
+              utmatning till exempelvis en printer.
+
+Exempel:      OPEN 1,4,2  Denna andra adress låter dig använda normala
+                          ASCII-koder.
+              OPEN 1,4,3  Denna adress låter dig anvädna alla ASCII-koder +
+                          kontrollkoder som exempelivs används av din
+                          printer.
+              OPEN 1,4,9  Denna adress låter dig använda alla Commodores
+                          grafik- och kontrollkoder.
+              OPEN 1,4,10 Samma som föregående men i reverserat läge.
+
+Kommentar:    För listning av program till pritner, kan du skriva:
+              OPEN 1,4,9: CMD 1: LIST (efter printning bör du stänga av
+              printerkanalen igen med: PRINT#1: CLOSE1) Du kan också använda
+              kommandot PLIST.
+
+<e-textarens not: Vad de nog egentligen menade att säga här var att TFC3 gör
+det möjligt att via ett vanligt OPEN-kommando skriva till en
+centronicsskrivare ansluten till parallellporten. Dessutom (vilket är
+standard-BASIC), om filnumret är 128 eller högre, kommer automatiskt LF att
+läggas till efter CR>
+
+
+ORDER
+Syntax:       ORDER
+              oR
+
+              Detta kommando ger order till ditt BASIC-program. Det är
+              möjligt efterom (D)APPEND-kommandot att radnumreringen ej är
+              korrekt. Med användning av detta kommando blir alla rader
+              insatta på sina rätta ställen.
+
+
+PACK
+Syntax:       PACK
+              pA
+
+              Detta kommando packar programmet i minnet. Efter packningen
+              kan du spara det. Du kan köra ett packat program som normalt.
+
+Kommentar:    Programmet du skall packa skall starta på 0801 (Hex). En del
+              program är redan packade, så om du använder det på sådana
+              program blir de bara större. Se också UNPACK.
+
+
+PDIR
+Syntax:       PDIR
+              pD
+
+              Detta kommando printar directoryt. <e-textarens not: eller
+              "skriver ut katalogen", som vi svenskar säger>
+
+
+PLIST
+Syntax:       PLIST
+              pL
+
+              Detta kommando listar programmet på printern.
+
+
+RENUM
+Syntax:       RENUM (radnummer), (mellanskillnad)
+              rE    (radnummer), (mellanskillnad)
+
+              Detta kommando renumrerar raderna i ett BASIC-program. Med
+              användning av detta kommando kan du skapa plats för insättning
+              av rader, eller så kan du renumrera ditt program efter
+              APPEND-kommandot använts.
+
+Exempel:      RENUM 10,5 Renumrerar ett program, startar med rad 10, och 5
+                         raders mellanskillnad.
+              RENUM      Är lika med RENUM 100,10
+              RENUM 300  Är lika med RENUM 300,10
+
+
+<e-textarens not: Detta kommando saknas i min manual:
+
+REPLACE
+Syntax:       REPLACE (söksträng), (ersättning)
+              rE      (söksträng), (ersättning)
+
+              Detta kommando ersätter en sträng/ett kommando med ett annat.
+
+Exempel:      REPLACE "1","2"  Ersätter alla "1" mot "2">
+
+
+TRACE
+Syntax:       TRACE (OFF)
+              tR    (OFF)
+
+              Detta kommando visar varje rad av ditt BASIC-program på samma
+              gång som det exekveras när du kör programmet. Det kommer att
+              fortsätta traceas tills du skriver TRACE OFF.
+
+
+UNPACK
+Syntax:       UNPACK
+              uN
+
+              Detta kommando packar upp ett program som dessförinnan packats
+              med TFC3.
+
+
+$
+Syntax:       $ (Hexadecimalt nummer)
+
+              Detta kommando låter dig använda hexadecimala nummer i dina
+              program, precis som om du anvädne decimala nummer. För att
+              tala om för datorn att ett nummer är i hex, skall det föregås
+              av ett $-tecken.
+
+Exempel:      A=$0F         Variabeln A får värdet 15
+              POKE $D020,A  Ramen blir grå
+              SYS $FCE2     Detta nollställer datorn.
+
+
+FREEZER
+
+Introduktion
+
+Den vänstra knappen på TFC3 är FREEZE-knappen. Vid tryck på denna knapp så
+fryses alla program. Efter du tryckt kommer TFC3 att erbjuda dig flera
+specialfunktioner som exempelvis att göra en backupkopia på kassett eller
+diskett.
+
+Du kommer in i FREEZERn genom att:
+1. Välja den från desktopens systemmeny.
+2. Välja den från BASICens systemmeny.
+3. Genom tryck på knappen på TFC3.
+
+Du lämnar FREEZERn genom att:
+1. Välja ett av EXIT-kommandona.
+2. Välja ett av RESET-kommandona.
+
+Dessa funktioner finns i FREEZERn:
+BackUp Disk
+BackUp Tape
+BackUp FDisk
+BackUp FTape
+Game Sprite I
+Game Sprite II
+Game Joyswap
+Game Autofire
+Colors BackGnd
+Colors ForeGnd
+Colors Border
+Print Settings
+Print View
+Print View Border
+Print View ForeGround
+Print View BColor0
+Print View BColor1
+Print View BColor2
+Print View BColor3
+Print View Exit
+Print Set
+Reset Kill
+Reset Zero Fill
+Reset CBM64
+Exit Run
+Exit Monitor
+Exit Desktop
+
+BACKUP
+
+TFC3 har denna funktion som låter dig göra en backup på disk eller kassett.
+
+Game Sprite I
+
+Detta kommando tar bort sprite-till-sprite-detektionen. Vissa spel använder
+inte standardregistrena, och då kommer du fortsätta att dö.
+
+Game Sprite II
+
+Detta kommando tar bort sprite-bakgrunds-detektionen.
+
+Game Joyswap
+
+Detta kommando går över till andra joystickporten.
+
+Game Autofire
+
+Detta kommando låter dig vila när du spelar ett spel som man måste skjuta i
+hela tiden. Du håller bara ner knappen och fortsätter att ha den nedtryckt
+så skjuts det hela tiden.
+
+Colors
+
+Detta kommando låter dig ändra färger på skärmen.
+
+  Colors BackGnd
+  Detta kommando ändrar bakgrundsfärgen
+
+  Colors ForeGnd
+  Detta kommando ändrar förgrundsfärgen
+
+  Colors Border
+  Detta kommando ändrar ramfärgen
+
+Print
+
+Denna meny är inbyggd för skärmdumpningar.
+
+  Print Settings
+  Detta kommando öppnar fönstret och möjliggör en skärmdumpning.
+
+  Print View
+  Lätder dig se bilden som är på väg att dumpas + att du kan scrolla upp &
+  ner med joystick eller cursortangenterna och ändra färg på bilden.
+
+Reset
+
+Denna meny ger dig följande funktioner:
+
+  Reset Kill
+  Detta kommando nollställer datorn och startar upp den som en standard
+  Commodore. (Lämnar TFC3)
+
+  Reset Zero Fill
+  Detta kommando nollställer datorn och rensar minnet innan den startar upp.
+  (Lämnar TFC3 aktiv) Vid användning av start up sparar minne i en backup.
+
+  Reset CBM64
+  Detta kommando nollställer datorn och startar den som en standard
+  Commodore. (Lämnar TFC3 aktiv)
+
+Exit
+
+Denna meny är till för att gå ur FREEZERn
+
+  Exit Run
+  Detta kommando förtsätter att exekvera det frysta programmet.
+
+  Exit Monitor
+  Detta kommando startar monitorn.
+
+  Exit Desktop
+  Lämnar FREEZERn och startar desktop.
+
+
+MONITORN
+
+Monitorn i TFC3 är ganska unik. Den innehåller nämligen en
+maskinspråksmonitor, diskmonitor, teckenmonitor & en spritemonitor.
+
+För att starta monitorn:
+1. I BASIC - Skriv MON.
+2. I BASIC - Tryck F2 (SHIFT+F1).
+3. I BASIC - Välj från systemmenyn.
+4. I FREEZERn - VäljMONITOR
+
+Du kan lämna monitorn genom att skriva X och trycka RETURN.
+
+Prompt
+
+Monitorn använder en prompt. Prompten är punkten på skärmen efter vilket du
+kan skriva dina kommandon.
+
+Minnesrepresentation
+
+Minnet kan fyllas med olika data. Datan kan vara nummer, text, program,
+tecken & sprites. TFC3 ger dig möjligheten att se minnet på olika sätt;
+
+.:2000 48 41 4C 4C 4F 20 44 49 HALLO DI  Värderepresentation
+.[2000 HALLO DIT IS EEN TEST V/D FC III  Textrepresentation
+.)2000 .*..*....*.....*.*..**..          Spriterepresentation
+.(2000 .*..*...                          Teckenrepresentation
+.,2000 48      PHA                       Programrepresentation
+
+Scrollning
+
+I varje representation har du möjligheten att scrolla upp och ner med
+funktionstangenterna:
+F3 = Scrolla uppåt
+F5 = Scrolla neråt
+F7 = Visa directory
+
+Ändring
+
+Med TFC3 är det enkelt att ändra data i minnet. Du behöver endast skriva in
+ny data över den redan existerande datan, och efter du tryckt RETURN är den
+nya datan accepterad.
+
+Bankswitchning
+
+I din Commodore finns flera olika ROMar. Med kommandot O kan du sätta på &
+stänga av ROMarna. Dett kalla bank switchning. Se O-kommandot.
+
+Lägen
+
+Om du har en diskdrive, kan du använda 2 sorters minne: Minnet i din dator,
+minnet i din diskdrive.
+
+Monitorkommandon:
+A  Assemblera
+C  Jämför minne
+D  Disassemblera
+EC Ändra tecken
+ES Ändra sprites
+F  Fyll minne
+G  Exekvera
+H  Jaga minne
+I  Frågande
+L  Ladda
+M  Minnesvisning
+O  Bankswitchning
+OD Diskmonitor
+P  Printa minne
+R  Registervisning
+S  Spara minne
+T  Flytta minne
+X  Gå ur monitorn
+#
+$
+@  Diskkommandon
+*R Läs block
+*W Skriv block
+
+Innan vi går in lite djupare i funktionerna i monitorn skall det nämnas att
+denna manual ENDAST täcker funktionerna i TFC3 och lär inte ut hur
+processorn i din Commodore programmeras, eller hur man programmerar den i
+maskinspråk, samma sak gäller även diskdriven.
+
+
+A
+
+Syntax:       Axxxx mnemo (Operation)
+              xxxx    = Startadress
+              mnemo   = Maskinspråksinstruktionen
+              operand = Operationen för instruktionen
+
+Detta kommando låter dig skriva dina egna maskinspråksprogram.
+
+Exempel:      AC000 LDA #$00
+              Detta lägger instruktionen i minnespalts C000
+
+
+C
+
+Syntax:       C xxxx yyyy zzzz
+              xxxx = Startadressen på första blocket
+              yyyy = Slutadressen på första blocket
+              zzzz = Startadressen andra blocket
+
+Detta kommando jämför två block och talar om skillnaden om det existerar
+någon. Numren som visas är adresser som ej är likadana, så om det ej finns
+någon skillnad visas inte någonting.
+
+Exempel:      C 1000 1FFF 4000
+              Jämför block som startar på 1000 och slutar på 1FFF med
+              blocket som börjar på 4000 och slutar följaktligen på 4FFF.
+
+
+D
+
+Syntax:       D xxxx yyyy
+              xxxx = Startadress
+              yyyy = Slutadress
+
+Exempel:      D 3000 300A
+              Disassemblerar ett program som startar på minnesplats 3000 och
+              slutar på 300A
+
+
+EC
+
+Syntax:       EC xxxx yyyy
+              xxxx = Startadress
+              yyyy = Slutadress
+
+Detta kommando visar minne i form av ett tecken. Du har då möjligheten att
+ändra tecknet genom att trycka * om du vill sätta en bit, eller . om du vill
+rensa en bit.
+
+
+ES
+
+Syntax:       ES xxxx yyyy
+              xxxx = Startadress
+              yyyy = Slutadress
+
+Detta kommando visar minnet som en sprite. Samma sätt för att ändra som
+föregående kommando.
+
+
+F
+
+Syntax:       F xxxx yyyy zz
+              xxxx = Startadress
+              yyyy = Slutadress
+              zz   = Värdet du vill fylla minnet med
+
+Exempel:      F 3000 4000 00
+              Fyller minnet med värdet 00
+
+
+G
+
+Syntax:       G xxxx
+              xxxx = Startadress
+
+Detta kommando exekverar ett maskinspråksprogram från den angivna
+startadressen.
+
+Exempel:      G 3000
+              Startar programmet som startar på 3000
+
+
+H
+
+Syntax:       H xxxx yyyy z1 z2 z3/"(Text)"
+              xxxx = Startadress
+              yyyy = Slutadress
+              zn   = Värdet som det ska letas efter
+              text = Strängen som det ska letas efter
+
+Exempel:      H 1000 8000 A9 00  Letar efter värdena A9 00
+              H 2000 F000 "JERK" Letar efter strängen "JERK"
+
+
+I
+
+Syntax:       I xxxx yyyy
+              xxxx = Startadress
+              yyyy = Slutadress
+
+Detta kommando visar minnet som text. Nu kan du också ändra minnet genom att
+skriva den text du vill.
+
+Exempel:      I 2000 203F
+              Visar i text.
+
+
+L
+
+Syntax:       L "Filnamn",xx(,yyyy)
+              x    = Devicenummer (01=Kassett, 08=Disk)
+              yyyy = Startadress
+
+Exempel:      L "Text",08,2000
+              Laddar "Test" från disk och lägger det på minnesplats 2000.
+
+
+M
+
+Syntax:       M xxxx yyyy
+              xxxx = Startadress
+              yyyy = Slutadress
+
+Detta kommando visar upp minnet i form av hexadecimala värden och om möjligt
+som ett tecken.
+
+
+O
+
+Syntax:       Ox (Tecknet O följt av ett värde)
+              x = Är ett värde mellan 1 <sic!> till 7
+
+Hexadecimala minnesplatser:
+Va 0000-7FFF 8000-9FFF A000-BFFF C000-CFFF D000-DFFF E000-FFFF
+-----------------------------------------------------------------
+00 RAM       RAM       RAM       RAM       RAM       RAM
+01 RAM       RAM       RAM       RAM       RAM       RAM
+02 RAM       RAM       BASIC     RAM       CHAR-ROM  KERNEL
+03 RAM       RAM       BASIC     RAM       CHAR-ROM  KERNEL
+04 RAM       RAM       RAM       RAM       RAM       RAM
+05 RAM       RAM       RAM       RAM       I/O REG   RAM
+06 RAM       RAM       BASIC     RAM       I/O REG   KERNEL
+07 RAM       RAM       BASIC     RAM       I/O REG   KERNEL
+-----------------------------------------------------------------
+
+Förklaringar:
+
+CHAR-ROM = Tecken-ROM
+I/O REG  = Input-/outputregister & timer (CIA#1 och CIA#2)
+KERNEL   = Operativsystemet
+
+
+OD
+
+Syntax:       OD
+
+Detta kommando går över till diskmonitorn. Alla kommandon som använder
+minne, använder nu diskdrivens minne.
+
+
+P
+
+Syntax:       P
+
+Detta kommando aktiverar printern, skriv P för normalt läge.
+
+
+R
+
+Syntax:       R
+
+Dettak ommando visar registrena.
+
+Registrena är:
+PC  = Programpekare
+IRQ = Interrupt REQuest
+BK  = Aktiv bank
+AC  = Ackumulatorn
+XR  = X-registret
+YR  = Y-registret
+SP  = Stackpekare
+N   = Negativflagga i statusregistret
+V   = Överflödesflagga i statusregistret
+#   = (Ej använd)
+B   = Breakkommandoflagga i statusregistret
+D   = Decimallägesflagga i statusregistret
+I   = Interruptavstäningsflagga i statusregistret
+Z   = Zeroflaggan i statusregistret
+C   = Carryflaggan i statusregistret
+
+Om du skriver dina egna interruptrutiner, så behöver du bara ändra adressen
+för den för tillfället existerande interruptrutinen i registerdisplayen. PÅ
+detta sätt slrover du skriva en egen rutin för att ändra interruptvektorn.
+
+
+S
+
+Syntax:       S "Filnamn",xx,yyyy,zzzz
+              xx   = Devicenummer
+              yyyy = Startadress
+              zzzz = Slutadress+1
+
+Detta kommando sparar ditt program
+
+
+T
+
+Syntax:       T xxxx yyyy zzzz
+              xxxx = Startadress
+              yyyy = Slutadress
+              zzzz = Måladress
+
+Detta kommando kopierar ett block till ett annat angivet block
+
+Exempel:      T 2000 3000 9000
+              Kopierar blocket med start på 2000 och slut på 3000 till 9000
+
+
+X
+
+Syntax:       X
+
+Detta kommando lämnar monitorn.
+
+
+#
+
+Syntax:       # (Nummer)
+              Nummer = det decimala nummer du vill konvertera
+
+Exempel:      # 53281
+              Konverterar 53281 till $D021
+
+
+$
+
+Syntax:       $ (Nummer)
+              Nummer = Det hexadecimala nummer du vill konvertera.
+
+Fungerar som föregående kommando.
+
+
+@
+
+Syntax:       @(Diskkommando)
+
+Detta kommando visar ERROR-kanalen, eller ger ett diskkommando.
+
+Exempel:      @          Detta läser ERROR-kanalen
+              @$         Visar diskens directory
+              @N:Namn,id Formaterar en disk
+
+Detta kommando gör samma som BASICens kommando DOS".
+
+
+*R
+
+Syntax:       *R xx yy zz
+              xx = Spår
+              yy = Sektor
+              zz = Plats i minnet där blocket skall starta (zz r lika med
+                   zz00)
+
+Detta kommando läser ett block på disken och placerar det på angiven
+minnesplats i datorn.
+
+Exempel:      *R 12 00 CE Läser och placerar det på minnesplats CE00
+              *R 12 00    Läser block och placerar det på standaradressen
+                          CF00m (#52992).
+
+
+*W
+
+Syntax:       *W <sic! ska vara: *W xx yy zz>
+
+Detta kommando fungerar precis som ovanstående, men med skillnaden att det
+skriver istället för att läsa.
+
+
+ANMÄRKNINGAR
+
+Vi skall nu beskriva varför vissa saker inte alltid fungerar så du som
+användare av TFC3 får en bättre överblick över detta ultimala verktyg till
+din Commodore 64/128 !!!
+
+FREEZERn
+
+Ibland kan det ta lite tid innan FREEZERns display visas.
+
+Aktivera aldrig FREEZERn när diskdriven är igång.
+
+Så långt vi vet så kan FREEZERn göra backupkopior av vilket program som
+helst, men med nya kopieringsskydd som med tiden dyker upp så kan vi ej
+garantera att det går.
+
+  BACKUP
+  Starta alltid med en "ren" maskin, iochmed att program är sparade i en
+  packad form och detta ser till att inget onödigt är sparat. Använd Reset
+  Zero Fill från FREEZERn innan du laddar program du vill backupkopiera.
+
+  Frysta program sparas automatiskt alltid i två delar med namnen FC och -FC
+  (för att vara kompatibla med TFC2). Du kan givetvis döpa om dem, men båda
+  delarna måste ha samma namn, och den andra delen måste ha ett - framför
+  sig.
+
+  Backupkopior av TFC3 fungerar ej.
+
+  Kassettbackuper måste laddas med den inbyggda turbon, eller en liknande
+  turbo för att kunna laddas utan TFC3.
+
+  För att försäkra sig om att backupkopior också fungerar utan TFC3, så är
+  det rekommenderat att frysa dessa program med TFC3 avstängd (Via
+  Kill-kommandot).
+
+  Ibland är det nödvändigt att nollställa diskdriven innan en backupkopia
+  görs.
+
+  GANE
+  Tyvärr hade vi ej möjligheten att ha med alla rasterinterrupts, så
+  möjligheten finns att vissa bilder ej blir printade helt korrekt.
+
+  GAME
+  Om du aktiverat autofire och du fryser igen, kan du bara lämna via
+  autofire, och inte Exit Run.
+
+ANMÄRKNINGAR PÅ DESKTOP
+
+TFC3 använder ej datorns minne, men det gör däremot desktop. Därför är du
+varnad innan du lämnar desktop.
+
+ANMÄRKNINGAR PÅ RESET
+
+Resetknappen ger dig möjligheten att få kontrollen över din dator när som
+helst.
+Om du trycker Commodoreknappen när du gör reset så hamnar du i desktop.
+Om du trycker RUN/STOP-knappen när du gör reset så hamnar du i BASIC.
+
+ANMÄRKNINGAR PÅ BASIC
+
+  PACKER
+  En hel del program är redan packade, så om du använder det på dem så blir
+  de bara större.
+
+ANMÄRKNINGAR PÅ MUS
+
+Tyvärr kan vi ej göra något åt att vissa musar låser tangentbordet (Det är
+ett hårdvarufel i musen), så ibland är det nödvändigt att koppla bort musen.
+Vi rekommenderar om möjligt att du använder musen i joystickläge. En mus
+fungerar ej i FREEZERn.
+
+ANMÄRKNINGAR PÅ DISKTURBON
+
+För att undvika porblem med äldre modeller av diskdrives och disketter av
+dålig kvalitet, reducerade vi diskturbon till 15 gånger den normala farten.
+Skillnaden är minimal, och det förhindrar en hel del problem.
+
+Många av marknadens diskbaserade program är skyddade och har speciella
+laddningsrutiner. Det är omöjligt att skippa dessa laddningsrutiner, och
+därför försöker inte TFC3 göra det. Detta betyder att TFC3 laddar så mycket
+som möjligt med 15 gånger normalfarten, och då låta programmets egna rutiner
+ta över. Hur som helst så kan detta fixas genom att spara programmet med
+FREEZER-funktionen.
+*********
+
+End of the International Project 64 etext of The Final Cartridge III Swedish
+manual.
+
+*********

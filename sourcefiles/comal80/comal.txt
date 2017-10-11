@@ -1,0 +1,1905 @@
+0010 // uppmottak
+0020 // ---------
+0030 //
+0040 dim figur$ of 64
+0050 trap esc-
+0060 hamta'sprite
+0070 while true do
+0080  rita'sprite
+0090  rita'tak
+0100  anvand'sprite
+0110 endwhile
+0120 //
+0130 proc hamta'sprite
+0140  open file 2,"ballong",read
+0150  read file 2: figur$
+0160  close
+0170 endproc hamta'sprite
+0180 //
+0190 proc rita'sprite
+0200  define 45,figur$
+0210  spritesize 2,1,1
+0220  background 8
+0230  border 2
+0240  spritecolor 2,11
+0250  setgraphic 0
+0260  identify 2,45
+0270 endproc rita'sprite
+0280 //
+0290 proc anvand'sprite
+0300  uppmot'tak:=false
+0310  for x:=0 to 319 do
+0320   y:=2/3*x
+0330   spritepos 2,x,y
+0340   x1:=x
+0350   uppmot'tak:=datacollision(2,true)
+0360   if uppmot'tak then ned'igen
+0370  endfor x
+0380 endproc anvand'sprite
+0390 //
+0400 proc stoppa'sprite
+0410  pencolor 8
+0420  border 8
+0430  background 11
+0440  settext
+0450  trap esc+
+0460  print chr$(14),chr$(147)
+0470  stop
+0480 endproc stoppa'sprite
+0490 //
+0500 proc rita'tak
+0510  pencolor 11
+0520  moveto 0,180
+0530  drawto 319,180
+0540 endproc rita'tak
+0550 //
+0560 proc ned'igen
+0570  for x:=x1 to 0 step -1 do
+0580   y:=2/3*x
+0590   spritepos 2,x,y
+0600  endfor x
+0610  if esc then stoppa'sprite
+0620 endproc ned'igen
+0630 //
+
+0010 // kollision
+0020 // ---------
+0030 //
+0040 dim figur$ of 64
+0050 trap esc-
+0060 //
+0070 hamta'sprite
+0080 definera'sprite
+0090 while true do spriteshow
+0100 //
+0110 proc hamta'sprite
+0120  open file 2,"ballong",read
+0130  read file 2: figur$
+0140  close
+0150 endproc hamta'sprite
+0160 //
+0170 proc definera'sprite
+0180  background 8
+0190  border 2
+0200  pencolor 7
+0210  setgraphic 0
+0220  define 45,figur$
+0230  identify 2,45
+0240  identify 3,45
+0250  spritesize 2,1,1
+0260  spritesize 3,1,1
+0270  spritecolor 2,11
+0280  spritecolor 3,11
+0290 endproc definera'sprite
+0300 //
+0310 proc spriteshow
+0320  for x:=-20 to 200 do
+0330   x0:=x
+0340   spritepos 2,x,100
+0350   spritepos 3,270-x,100
+0360   mote:=spritecollision(2,true)
+0370   for t:=1 to 5 do null
+0380   if mote then tillbaka
+0390  endfor x
+0400 endproc spriteshow
+0410 //
+0420 proc tillbaka
+0430  for x:=x0 to -20 step -1 do
+0440   spritepos 2,x,100
+0450   spritepos 3,270-x,100
+0460   for t:=1 to 5 do null
+0470  endfor x
+0480  if esc then stopshow
+0490 endproc tillbaka
+0500 //
+0510 proc stopshow
+0520  border 10
+0530  background 11
+0540  pencolor 8
+0550  settext
+0560  print chr$(147),chr$(14)
+0570  trap esc+
+0580  stop
+0590 endproc stopshow
+0600 //
+
+0010 // paddle.l
+0020 // --------
+0030 //
+0040 proc paddle(pair,ref x,ref y) closed
+0050  cia:=13*4096+12*256
+0060  sid:=13*4096+4*256
+0070  poke cia+13,1 //stäng av timer a avbrott
+0080  ddra:=peek(cia+2)
+0090  poke cia+2,12*16
+0100  poke cia,4*16*pair
+0110  x:=peek(sid+25); y:=peek(sid+26)
+0120  poke cia+2,ddra
+0130  poke cia+13,128+1 // sätt på timer
+0140 endproc paddle
+0150 //
+0160 repeat
+0170  paddle(1,x,y)
+0180  print x;y
+0190 until false
+
+0010 // joystick.l
+0020 // ----------
+0030 //
+0040 proc joystick(no,ref direction$)
+0050  j:=peek(no+56319)
+0060  i:=15-j mod 16
+0070  case i of
+0080  when 1
+0090   direction$:="upp"
+0100  when 2
+0110   direction$:="ner"
+0120  when 4
+0130   direction$:="vänster"
+0140  when 5
+0150   direction$:="upp vänster"
+0160  when 6
+0170   direction$:="ner vänster"
+0180  when 8
+0190   direction$:="höger"
+0200  when 9
+0210   direction$:="upp höger"
+0220  when 10
+0230   direction$:="ner höger"
+0240  otherwise
+0250   direction$:="ingen"
+0260  endcase
+0270  if j div 16 mod 2=0 then direction$:=direction$+" eld!"
+0280 endproc joystick
+0290 dim a$ of 100
+0300 print chr$(147) // rensa skärmen
+0310 repeat
+0320  joystick(2,a$)
+0330  print "{home}",a$,"         "
+0340 until false
+
+0005 // kartotek2
+0006 //
+0007 //
+0010 //Litet adresskartotek
+0020 //skrivet av chris jorge
+0030 //version 02: 28. maj 1983
+0040 //cbm comal-80
+0050 //
+0060 maxant:=40; maxfält:=5
+0070 //
+0080 dim efternamn$ of 20
+0090 dim förnamn$ of 20
+0100 dim gatuadr$ of 20, stad$ of 20
+0110 dim annat$ of 20
+0120 dim enhet$ of 1, svar$ of 1
+0130 dim job$ of 1
+0140 dim text$(1:maxfält) of 15
+0150 dim f$(1:maxant,maxfält) of 20
+0160 dim namn$ of 40, f12$ of 40
+0170 //
+0180 max:=0; post:=0
+0190 text$(1):="1. Efternamn"
+0200 text$(2):="2. Förnamn"
+0210 text$(3):="3. Gata husnr."
+0220 text$(4):="4. Postnr. stad"
+0230 text$(5):="5. Andre uppl."
+0240 //
+0250 hämta'adresser
+0260 meny
+0270 spara'adresser
+0280 //
+0290 proc meny
+0300  while true do //forever
+0310   rensa'skärmen
+0320   skriv'från(5,1)
+0330   print "1 = Inskrivning"
+0340   print "2 = Utskrivning"
+0350   print "3 = Rättelser"
+0360   print "4 = Ta bort post"
+0370   print "5 = Avsluta"
+0380   print
+0390   input "Välj job: ": job$
+0400   case job$ of
+0410   when "1"
+0420    inskrivning
+0430   when "2"
+0440    utskrivning
+0450   when "3"
+0460    rättelser
+0470   when "4"
+0480    ta'bort
+0490   when "5"
+0500    return
+0510   otherwise
+0520    null //inget
+0530   endcase
+0540  endwhile
+0550 endproc meny
+0560 //
+0570 proc inskrivning
+0580  repeat
+0590   rensa'skärmen
+0600   for fält:=1 to maxfält do hämta(fält)
+0610   hämta'svar("Rättelser (j/<ret>)?",svar$)
+0620   if svar$<>"" then rätta'post
+0630   hämta'svar("Insätt (n/<ret>)? ",svar$)
+0640   if svar$="" then sätt'upp
+0650   hämta'svar("Flera (n/<ret>)? ",svar$)
+0660  until svar$="n"
+0670 endproc inskrivning
+0680 //
+0690 proc hämta(fält)
+0700  case fält of
+0710  when 1
+0720   slå'in(text$(1),efternamn$)
+0730  when 2
+0740   slå'in(text$(2),förnamn$)
+0750  when 3
+0760   slå'in(text$(3),gatuadr$)
+0770  when 4
+0780   slå'in(text$(4),stad$)
+0790  when 5
+0800   slå'in(text$(5),annat$)
+0810  otherwise
+0820   null //anullera processen
+0830  endcase
+0840 endproc hämta
+0850 //
+0860 proc slå'in(ledtext$,ref buf$)
+0870  skriv'från(2*fält+3,1)
+0880  print ledtext$,":"
+0890  rensa'infält(fält)
+0900  skriv'från(2*fält+3,20)
+0910  input "": buf$
+0920 endproc slå'in
+0930 //
+0940 proc rätta'post
+0950  repeat
+0960   rensa'rad(20)
+0970   input "Ange fält nummer: ": fält
+0980   hämta(fält)
+0990   rensa'rad(20)
+1000   hämta'svar("Flera rättelser (j/<ret>)? ",svar$)
+1010  until svar$=""
+1020 endproc rätta'post
+1030 //
+1040 proc sätt'upp
+1050  namn$:=efternamn$+förnamn$
+1060  binsök(namn$)
+1070  //
+1080  for j:=max to post step -1 do
+1090   for fält:=1 to maxfält do
+1100    f$(j+1,fält):=f$(j,fält)
+1110   endfor fält
+1120  endfor j
+1130  sätt'in(post)
+1140  max:=max+1
+1150 endproc sätt'upp
+1160 //
+1170 proc sätt'in(post)
+1180  f$(post,1):=efternamn$
+1190  f$(post,2):=förnamn$
+1200  f$(post,3):=gatuadr$
+1210  f$(post,4):=stad$
+1220  f$(post,5):=annat$
+1230 endproc sätt'in
+1240 //
+1250 proc binsök(n$)
+1260  v:=1; h:=max
+1270  while v<=h do
+1280   m:=(v+h) div 2
+1290   f12$:=f$(m,1)+f$(m,2)
+1300   if n$<f12$ then
+1310    h:=m-1
+1320   else
+1330    v:=m+1
+1340   endif
+1350  endwhile
+1360  post:=v
+1370 endproc binsök
+1380 //
+1390 proc utskrivning
+1400  repeat
+1410   ok:=true
+1420   rensa'skärmen
+1430   skriv'från(10,1)
+1440   print "1 = En enkel adress"
+1450   print "2 = Lista över samtliga"
+1460   print
+1470   input "Ange jobb:  ": job$
+1480   print
+1490   print "1 = Utskrift pa skärm"
+1500   print "2 = Utskrift pa printer"
+1510   print
+1520   input "Ange enhet:": enhet$
+1530   if enhet$="2" then select output "lp"
+1540   case job$ of
+1550   when "1"
+1560    for fält:=1 to 2 do hämta(fält)
+1570    finn(efternamn$,förnamn$)
+1580    if funnet then skriv'ut(post)
+1590   when "2"
+1600    for post:=1 to max do skriv'ut(post)
+1610   otherwise
+1620    ok:=false
+1630   endcase
+1640  until ok
+1650 endproc utskrivning
+1660 //
+1670 proc finn(en$,fn$)
+1680  if max=0 then
+1690   rensa'skärmen
+1700   skriv'från(10,10)
+1710   print "Kartoteket är tomt!"
+1720   funnet:=false
+1730   vänta(2)
+1740   return
+1750  endif
+1760  namn$:=en$+fn$
+1770  bin'finn(namn$)
+1780 endproc finn
+1790 //
+1800 proc bin'finn(n$)
+1810  v:=1; h:=max
+1820  funnet:=false
+1830  while not (funnet or h<v) do
+1840   m:=(v+h) div 2
+1850   f12$:=f$(m,1)+f$(m,2)
+1860   funnet:=(n$=f12$)
+1870   if n$<f12$ then
+1880    h:=m-1
+1890   else
+1900    v:=m+1
+1910   endif
+1920  endwhile
+1930  if funnet then post:=m
+1940 endproc bin'finn
+1950 //
+1960 proc skriv'ut(n)
+1970  if enhet$<>"2" then
+1980   rensa'skärmen
+1990   skriv'från(10,1)
+2000  endif
+2010  print f$(n,2);f$(n,1),","
+2020  print f$(n,3),","
+2030  print f$(n,4)
+2035  print f$(n,5)
+2040  if enhet$<>"2" then
+2050   hämta'svar("Tryck på <return>: ",svar$)
+2060  else
+2070   ryck'fram
+2080  endif
+2090 endproc skriv'ut
+2100 //
+2110 proc rättelser
+2120  rensa'skärmen
+2130  skriv'från(10,1)
+2140  for fält:=1 to 2 do hämta(fält)
+2150  finn(efternamn$,förnamn$)
+2160  if funnet then
+2170   rensa'skärmen
+2180   for fält:=1 to maxfält do
+2190    skriv'från(2*fält+3,1)
+2200    print text$(fält)
+2210    skriv'från(2*fält+3,20)
+2220    print f$(post,fält)
+2230   endfor fält
+2240   rätta'post
+2250   sätt'in(post)
+2260  endif
+2270 endproc rättelser
+2280 //
+2290 proc ta'bort
+2300  rensa'skärmen
+2310  for fält:=1 to 2 do hämta(fält)
+2320  finn(efternamn$,förnamn$)
+2330  if funnet then
+2340   skriv'ut(post)
+2350   skriv'från(20,1)
+2360   hämta'svar("Skall denna post raderas (j/<ret>)? ",svar$)
+2370   if svar$="j" then stryk'post
+2380  endif
+2390 endproc ta'bort
+2400 //
+2410 proc stryk'post
+2420  for i':=post to max do
+2430   for fält:=1 to maxfält do
+2440    f$(i',fält):=f$(i'+1,fält)
+2450   endfor fält
+2460  endfor i'
+2470  max:=max-1
+2480 endproc stryk'post
+2490 //
+2500 proc hämta'adresser
+2510  klargör
+2520  open file 5,"adrlista",read
+2530  read file 5: max
+2540  for n:=1 to max do
+2550   for fält:=1 to maxfält do
+2560    read file 5: f$(n,fält)
+2570   endfor fält
+2580  endfor n
+2590  close file 5
+2600 endproc hämta'adresser
+2610 //
+2620 proc spara'adresser
+2630  klargör
+2635  pass "s0:adrlista" // ta bort gammal adresslista ( mogf 12/83 )
+2640  open file 5,"adrlista",write
+2650  write file 5: max
+2660  for n:=1 to max do
+2670   for fält:=1 to maxfält do
+2680    write file 5: f$(n,fält)
+2690   endfor fält
+2700  endfor n
+2710  close file 5
+2720 endproc spara'adresser
+2730 //
+2740 proc hämta'svar(ledtext$,ref svar$)
+2750  rensa'rad(20)
+2760  print chr$(18),ledtext$,
+2770  input "": svar$
+2780 endproc hämta'svar
+2790 //
+2800 proc rensa'skärmen
+2810  print chr$(147),
+2820 endproc rensa'skärmen
+2830 //
+2840 proc rensa'infält(fält)
+2850  skriv'från(2*fält+3,20)
+2860  for p:=1 to 19 do print " ",
+2870 endproc rensa'infält
+2880 //
+2890 proc skriv'från(x,y)
+2900  print chr$(19),
+2910  for p:=1 to x-1 do print
+2920  for p:=1 to y-1 do print chr$(29),
+2930 endproc skriv'från
+2940 //
+2950 proc vänta(t)
+2960  for p:=1 to t*750 do null
+2970 endproc vänta
+2980 //
+2990 proc rensa'rad(ln)
+3000  skriv'från(ln,1)
+3010  for p:=1 to 39 do print " ",
+3020  skriv'från(ln,1)
+3030 endproc rensa'rad
+3040 //
+3050 proc klargör
+3060  rensa'skärmen
+3070  hämta'svar("Klargör diskett och tryck <ret>",svar$)
+3080 endproc klargör
+3090 //
+
+0005 // småtext
+0006 // -------
+0007 //
+0010 initialisering
+0020 småtext'monitor
+0030 //
+0040 proc initialisering
+0050  dim text$ of 1000, tecken$ of 1
+0060  dim t$ of 1, avb$ of 10
+0070  dim clr$ of 1, stryk$ of 1
+0080  dim bak$ of 1, fram$ of 1
+0090  dim bort$ of 1, ned$ of 1
+0100  dim streck$ of 1, noll$ of 1
+0110  dim enh$ of 1, inskjut$ of 1
+0120  dim mark$ of 1, upp$ of 1
+0130  dim hem$ of 1, retur$ of 1
+0140  dim revon$ of 1, revoff$ of 1
+0150  dim job$ of 1, spcs$ of 20
+0160  dim rad$ of 40, sök$ of 40
+0170  dim nedåt$ of 24, bortåt$ of 40
+0180  dim filnamn$ of 15
+0190  //
+0200  bak$:=chr$(157) //crsr back
+0210  fram$:=chr$(29) //crsr right
+0220  stryk$:=chr$(20) //delete
+0230  streck$:=chr$(164) //markering
+0240  noll$:=chr$(0) //ASCII null
+0250  clr$:=chr$(147) //clear screen
+0260  ned$:=chr$(17) //crsr down
+0270  upp$:=chr$(145) //crsr up
+0280  inskjut$:=chr$(148) //insert
+0290  hem$:=chr$(19) //crsr home
+0300  retur$:=chr$(13) //return
+0310  revon$:=chr$(18) //reverse on
+0320  revoff$:=chr$(146) //reverse off
+0330  //
+0340  for i:=1 to 40 do
+0350   bortåt$(i:i):=fram$
+0360  endfor i
+0370  //
+0380  for i:=1 to 24 do
+0390   nedåt$(i:i):=ned$
+0400  endfor i
+0410  //
+0420  spcs$(1:20):="" //mellanrum
+0430  bredd:=39; max:=0
+0440  köerna'skall'in:=false
+0450 endproc initialisering
+0460 //
+0470 proc småtext'monitor
+0480  repeat
+0490   repeat
+0500    rensa'skärmen
+0510    visa'text
+0520    ok:=true; pil:=0
+0530    ange'jobb
+0540    case job$ of
+0550    when "n"
+0560     skriv'ny'text
+0570    when "j"
+0580     förändra'text
+0590    when "u"
+0600     skriv'ut'texten
+0610    when "s"
+0620     spara'texten
+0630    when "l"
+0640     hämta'texten
+0650    when "a"
+0660     köerna'skall'in:=true
+0670    otherwise
+0680     ok:=false
+0690    endcase
+0700   until ok
+0710  until köerna'skall'in
+0720 endproc småtext'monitor
+0730 //
+0740 proc ange'jobb
+0750  skriv'från(1,1)
+0760  print "Ange jobb:     n j u s l a"
+0770  hämta(job$,1,12)
+0780 endproc ange'jobb
+0790 //
+0800 proc skriv'ny'text
+0810  avb$:=upp$+ned$+bak$+fram$
+0820  avb$:=avb$+inskjut$+clr$+hem$
+0830  rensa'skärmen
+0840  visa'jobb("n")
+0850  max:=1; pil:=1; text$:=" "
+0860  sätt'av:=3
+0870  hämta'text(text$,max,pil)
+0880  max:=max-1
+0890  text$:=text$(1:max)
+0900 endproc skriv'ny'text
+0910 //
+0920 proc visa'jobb(job$)
+0930  skriv'från(1,1)
+0940  print "               n j u s l a"
+0950  p:=job$ in "n j u s l a"
+0960  skriv'från(1,p+15)
+0970  rev'on
+0980  print job$,
+0990  rev'off
+1000 endproc visa'jobb
+1010 //
+1020 proc hämta(ref tecken$,x,y)
+1030  tecken$:=""; t$:=noll$
+1040  tid:=0
+1050  while t$=noll$ do
+1060   t$:=key$
+1070   tid:=tid+1
+1080   if job$="j" then
+1090    markera(5,20)
+1100   else
+1110    markera(x,y)
+1120   endif
+1130  endwhile
+1140  kolla'tecken:=(t$ in avb$)
+1150  if kolla'tecken then return
+1160  if t$=retur$ then t$:="^"
+1170  print t$,
+1180  tecken$:=t$
+1190 endproc hämta
+1200 //
+1210 proc markera(x,y)
+1220  hämta'märke
+1230  skriv'från(x,y)
+1240  if tid mod 8<4 then
+1250   print mark$,
+1260  else
+1270   print streck$,
+1280  endif
+1290  print bak$,
+1300 endproc markera
+1310 //
+1320 proc förändra'text
+1330  avb$:=upp$+ned$+inskjut$+clr$+hem$
+1340  visa'text
+1350  visa'jobb("j")
+1360  hämta'söktext
+1370  finn(pil)
+1380  if not funnet then return
+1390  rensa'skärmen
+1400  visa'jobb("j")
+1410  fönster
+1420  sätt'av:=3
+1430  hämta'text(text$,max,pil)
+1440 endproc förändra'text
+1450 //
+1460 proc hämta'söktext
+1470  skriv'från(1,1)
+1480  print "söker:"
+1490  sätt'av:=1
+1500  job$:="a"
+1510  m:=1; p:=1; sök$:=" "
+1520  hämta'text(sök$,m,p)
+1530  job$:="j"
+1540  sök$:=sök$(1:m-1)
+1550 endproc hämta'söktext
+1560 //
+1570 proc hämta'text(ref text$,ref max,ref pil)
+1580  hämta(tecken$,x(pil),y(pil))
+1590  while not tecken$="@" do
+1600   if not kolla'tecken then
+1610    case tecken$ of
+1620    when stryk$
+1630     stryk'tecken
+1640    when bak$
+1650     if pil>1 then pil:=pil-1
+1660    when fram$
+1670     if pil<max then pil:=pil+1
+1680    otherwise
+1690     sätt'in'tecken
+1700    endcase
+1710    if job$="j" then fönster
+1720   endif
+1730   hämta(tecken$,x(pil),y(pil))
+1740  endwhile
+1750 endproc hämta'text
+1760 //
+1770 proc sätt'in'tecken
+1780  text$(pil+1:max+1):=text$(pil:max)
+1790  text$(pil):=tecken$
+1800  pil:=pil+1; max:=max+1
+1810 endproc sätt'in'tecken
+1820 //
+1830 proc stryk'tecken
+1840  if pil=1 then return //do nothing
+1850  if pil=2 then
+1860   text$:=text$(2:max)
+1870  else
+1880   text$:=text$(1:pil-2)+text$(pil:max)
+1890  endif
+1900  pil:=pil-1
+1910  max:=max-1
+1920 endproc stryk'tecken
+1930 //
+1940 proc visa'text
+1950  rensa'skärmen
+1960  skriv'från(4,1)
+1970  print text$
+1980 endproc visa'text
+1990 //
+2000 proc finn(ref p)
+2010  funnet:=sök$ in text$
+2020  p:=funnet
+2030 endproc finn
+2040 //
+2050 proc skriv'ut'texten
+2060  välj'enhet
+2070  rensa'skärmen
+2080  visa'jobb("u")
+2090  skriv'från(4,1)
+2100  lt:=0; ln:=0; rad$:=""
+2110  if enh$="p" then select output "lp"
+2120  for tt:=1 to max do
+2130   if text$(tt:tt)="^" then
+2140    print rad$
+2150    rad$:=""; lt:=0; ln:+1
+2160   else
+2170    rad$:=rad$+text$(tt:tt)
+2180    lt:=lt+1
+2190    if text$(tt)=" " then mp:=tt
+2200    if lt=bredd then
+2210     if text$(tt+1)=" " then
+2220     lt:=bredd; tt:=tt+1
+2230    else
+2240     margin:=tt-mp
+2250     tt:=mp
+2260     lt:=bredd-margin
+2270    endif
+2280    print rad$(1:lt)
+2290    rad$:=""
+2300    lt:=0; ln:+1
+2310    endif
+2320   endif
+2330  endfor tt
+2340  print rad$
+2350  if enh$="p" then
+2360   select output "ds"
+2370  else
+2380   vänta
+2390  endif
+2400 endproc skriv'ut'texten
+2410 //
+2420 proc välj'enhet
+2430  rensa'skärmen
+2440  visa'jobb("u")
+2450  skriv'från(5,1)
+2460  print "s = utskrift på skärm"
+2470  print
+2480  print "p = utskrift på printer"
+2490  print
+2500  print "Ange enhet:"
+2510  repeat
+2520   hämta(enh$,9,14)
+2530  until enh$ in "sp"
+2540 endproc välj'enhet
+2550 //
+2560 proc spara'texten
+2570  visa'jobb("s")
+2580  skriv'från(24,1)
+2590  print "Filnamn",
+2600  input filnamn$
+2610  filnamn$:="@0:"+filnamn$
+2620  open file 2,filnamn$,write
+2630  write file 2: text$
+2640  close
+2650 endproc spara'texten
+2660 //
+2670 proc hämta'texten
+2680  visa'jobb("l")
+2690  skriv'från(24,1)
+2700  print "Filnamn",
+2710  input filnamn$
+2720  open file 2,filnamn$,read
+2730  read file 2: text$
+2740  close
+2745  max:=len(text$)
+2750 endproc hämta'texten
+2760 //
+2770 func x(p)
+2780  if p mod 40=0 then
+2790   return p div 40+sätt'av
+2800  else
+2810   return p div 40+sätt'av+1
+2820  endif
+2830 endfunc x
+2840 //
+2850 func y(p)
+2860  if p mod 40=0 then
+2870   return 40
+2880  else
+2890   return p mod 40
+2900  endif
+2910 endfunc y
+2920 //
+2930 proc vänta
+2940  skriv'från(1,1)
+2950  rev'on
+2960  print "Tryck på Return-tangenten: ",
+2970  input "": t$
+2980  rev'off
+2990 endproc vänta
+3000 //
+3010 proc hämta'märke
+3020  if 0<pil and pil<=max then
+3030   mark$:=text$(pil)
+3040  else
+3050   mark$:=" "
+3060  endif
+3070 endproc hämta'märke
+3080 //
+3090 proc fönster
+3100  skriv'från(5,1)
+3110  if pil<=20 then
+3120   print spcs$(1:20-pil),
+3130   print text$(1:pil),
+3140  else
+3150   print text$(pil-19:pil),
+3160  endif
+3170  if max-20<=pil then
+3180   if pil+1<=max then
+3190    print text$(pil+1:max),
+3200    print spcs$(1:20-(max-pil))
+3210   endif
+3220  else
+3230   print text$(pil+1:pil+20)
+3240  endif
+3250 endproc fönster
+3260 //
+3270 proc rev'on
+3280  print revon$,
+3290 endproc rev'on
+3300 //
+3310 proc rev'off
+3320  print revoff$,
+3330 endproc rev'off
+3340 //
+3350 proc skriv'från(rad,tecken)
+3360  markör'hem
+3370  markör'ner'till(rad)
+3380  markör'bort'till(tecken)
+3390 endproc skriv'från
+3400 //
+3410 proc markör'hem
+3420  print hem$,
+3430 endproc markör'hem
+3440 //
+3450 proc markör'ner'till(ln)
+3460  print nedåt$(1:ln-1),
+3470 endproc markör'ner'till
+3480 //
+3490 proc markör'bort'till(pl)
+3500  print bortåt$(1:pl-1),
+3510 endproc markör'bort'till
+3520 //
+3530 proc rensa'skärmen
+3540  print clr$,
+3550 endproc rensa'skärmen
+3560 //
+
+0005 // rita'sprites (tegnnisse)
+0010 dim mobs$ of 64, ch$ of 1, tal$ of 4
+0020 open file 2,"0:sprites",read
+0030 read file 2: mobs$
+0040 define 0,mobs$
+0050 read file 2: mobs$
+0060 define 1,mobs$
+0070 read file 2: mobs$
+0080 define 2,mobs$
+0090 close file 2
+0100 background 2
+0110 border 2
+0112 instruktion
+0120 setgraphic 0
+0130 turtlestate false
+0140 init'nöt
+0150 spritecolor 0,1
+0160 spritecolor 1,1
+0170 spritecolor 2,0
+0180 spritecolor 3,0
+0190 spritesize 0,1,1
+0200 spritesize 1,1,1
+0210 spritesize 2,1,1
+0220 spritesize 3,1,1
+0230 identify 0,0
+0240 identify 2,0
+0250 identify 1,1
+0260 identify 3,1
+0270 d:=7.5; delta1:=d; delta2:=d
+0280 upp:=64; ned:=114
+0290 x1:=120; x2:=120
+0300 y1:=upp; y2:=ned
+0310 repeat
+0320  x1:+delta1; x2:+delta2
+0330  if x1<1 then x1:=1; delta1:=0
+0340  if x2<1 then x2:=1; delta2:=0
+0350  if x1>270 then x1:=270; delta1:=0
+0360  if x2>270 then x2:=270; delta2:=0
+0370  if delta1>=0 then
+0380   spritepos 0,x1,y1
+0390   spritepos 1,x1,y1
+0400  else
+0410   spritepos 1,x1,y1
+0420   spritepos 0,x1,y1
+0430  endif
+0440  if delta2>=0 then
+0450   spritepos 2,x2,y2
+0460   spritepos 3,x2,y2
+0470  else
+0480   spritepos 3,x2,y2
+0490   spritepos 2,x2,y2
+0500  endif
+0510  ch$:=key$
+0520  if ch$<>chr$(0) then
+0530   if ch$="a" then delta1:=-d
+0540   if ch$="d" then delta1:=d
+0550   if ch$="s" then delta1:=0
+0560   if ch$="j" then delta2:=-d
+0570   if ch$="l" then delta2:=d
+0580   if ch$="k" then delta2:=0
+0590   if ch$=" " then i:=y1; y1:=y2; y2:=i
+0600  endif
+0610  if spritecollision(1,true) or spritecollision(3,false) then collision
+0620  flytta'nöt
+0630 until ch$="q"
+0640 settext
+0650 proc init'nöt
+0660  nnöt:=2
+0670  dim nötter(nnöt,2)
+0680  ny'nöt
+0690  for i:=4 to nnöt+3 do
+0700   spritecolor i,8
+0710   identify i,2
+0720   spritesize i,0,0
+0730  endfor i
+0740  spritecolor 5,7
+0750  pencolor 8
+0760  rita'nöt
+0770  moveto 0,20
+0780  drawto 0,199
+0790  drawto 319,199
+0800  drawto 319,20
+0810  drawto 0,20
+0820  svart:=0; vit:=0
+0830  point
+0840  i:=spritecollision(1,true)
+0850 endproc init'nöt
+0860 //
+0870 proc flytta'nöt
+0880  flytta
+0890  rita'nöt
+0900 endproc flytta'nöt
+0910 //
+0920 proc rita'nöt
+0930  for i:=1 to nnöt do spritepos i+3,nötter(i,1),nötter(i,2)
+0940 endproc rita'nöt
+0950 //
+0960 proc flytta
+0970  for i:=1 to nnöt do
+0980   nötter(i,2):-i*4
+0990   if nötter(i,2)<40 then nötter(i,2):=200; nötter(i,1):=rnd(1,270)
+1000  endfor i
+1010 endproc flytta
+1020 //
+1030 proc collision
+1040  vit:+spritecollision(1,false)
+1050  svart:+spritecollision(3,false)
+1060  byt'om
+1070  for i:=1 to nnöt do
+1080   if spritecollision(i+3,false) then
+1090    nötter(i,1):=rnd(1,270)
+1100    nötter(i,2):=200
+1110   endif
+1120  endfor i
+1130  point
+1140  rita'nöt
+1150  i:=spritecollision(1,true)
+1160 endproc collision
+1170 //
+1180 proc point
+1190  pencolor 1
+1200  str(vit,tal$)
+1210  plottext 40,8,"white: "+tal$
+1220  pencolor 0
+1230  str(svart,tal$)
+1240  plottext 200,8,"black:  "+tal$
+1250 endproc point
+1260 //
+1270 proc str(i,ref tal$) closed
+1280  tal$:="    "; j:=1000
+1290  for k:=1 to 4 do
+1300   tal$(k):=chr$(48+i div j)
+1310   i:=i mod j; j:=j/10
+1320  endfor k
+1330 endproc str
+1340 proc ny'nöt
+1350  for i:=1 to nnöt do
+1360   nötter(i,1):=rnd(8,280)
+1370   nötter(i,2):=rnd(10,80)
+1380  endfor i
+1390 endproc ny'nöt
+1400 //
+1410 proc byt'om
+1420  if vit<=svart then
+1430   y1:=upp; y2:=ned
+1440  else
+1450   y1:=ned; y2:=upp
+1460  endif
+1470 endproc byt'om
+1480 //
+1500 proc instruktion
+1510  print "{clear}"
+1520  print "figurerna flyttas som anges här :"
+1530  print
+1540  print
+1550  print "  den vita spelaren:"
+1560  print
+1570  print "a   flytta åt vänster"
+1580  print "s   sluta flytta"
+1590  print "d   flytta åt höger"
+1600  print
+1610  print "  den svarta spelaren:"
+1620  print
+1630  print "j   flytta åt vänster"
+1640  print "k   sluta flytta"
+1650  print "l   flytta åt höger"
+1660  print
+1670  print " starta med någon tangent:"
+1680  repeat
+1690  until key$<>chr$(0)
+1700 endproc instruktion
+
+0001 //
+0010 proc soundinit(volume)
+0020  sid:=13.25*4096
+0030  dim thisnote$ of 3
+0040  poke sid+24,volume
+0050  for i:=2 to 16 step 7 do poke sid+i,0
+0060  for i:=3 to 17 step 7 do poke sid+i,8
+0070  for i:=5 to 19 step 7 do poke sid+i,6*16+12
+0080  for i:=6 to 20 step 7 do poke sid+i,0
+0090  for i:=4 to 18 step 7 do poke sid+i,0
+0100  dim notes$ of 3*96, values(0:95,2)
+0110  for i:=0 to 95 do
+0120   read notes$(i*3+1:i*3+3),values(i,1),values(i,2)
+0130  endfor i
+0140  data "c0 ",1,18
+0150  data "c0#",1,35
+0160  data "d0 ",1,52
+0170  data "d0#",1,70
+0180  data "e0 ",1,90
+0190  data "f0 ",1,110
+0200  data "f0#",1,132
+0210  data "g0 ",1,155
+0220  data "g0#",1,179
+0230  data "a0 ",1,205
+0240  data "b0 ",1,233
+0250  data "h0 ",2,6
+0260  data "c1 ",2,37
+0270  data "c1#",2,69
+0280  data "d1 ",2,104
+0290  data "d1#",2,140
+0300  data "e1 ",2,179
+0310  data "f1 ",2,220
+0320  data "f1#",3,8
+0330  data "g1 ",3,54
+0340  data "g1#",3,103
+0350  data "a1 ",3,155
+0360  data "b1 ",3,210
+0370  data "h1 ",4,12
+0380  data "c2 ",4,73
+0390  data "c2#",4,139
+0400  data "d2 ",4,208
+0410  data "d2#",5,25
+0420  data "e2 ",5,103
+0430  data "f2 ",5,185
+0440  data "f2#",6,16
+0450  data "g2 ",6,108
+0460  data "g2#",6,206
+0470  data "a2 ",7,53
+0480  data "b2 ",7,163
+0490  data "h2 ",8,23
+0500  data "c3 ",8,147
+0510  data "c3#",9,21
+0520  data "d3 ",9,159
+0530  data "d3#",10,50
+0540  data "e3 ",10,205
+0550  data "f3 ",11,114
+0560  data "f3#",12,32
+0570  data "g3 ",12,216
+0580  data "g3#",13,156
+0590  data "a3 ",14,107
+0600  data "b3 ",15,70
+0610  data "h3 ",16,47
+0620  data "c4 ",17,37
+0630  data "c4#",18,42
+0640  data "d4 ",19,63
+0650  data "d4#",20,100
+0660  data "e4 ",21,154
+0670  data "f4 ",22,227
+0680  data "f4#",24,63
+0690  data "g4 ",25,177
+0700  data "g4#",27,56
+0710  data "a4 ",28,214
+0720  data "b4 ",30,141
+0730  data "h4 ",32,94
+0740  data "c5 ",34,75
+0750  data "c5#",36,85
+0760  data "d5 ",38,126
+0770  data "d5#",40,200
+0780  data "e5 ",43,52
+0790  data "f5 ",45,198
+0800  data "f5#",48,127
+0810  data "g5 ",51,97
+0820  data "g5#",54,111
+0830  data "a5 ",57,172
+0840  data "b5 ",61,26
+0850  data "h5 ",64,188
+0860  data "c6 ",68,149
+0870  data "c6#",72,169
+0880  data "d6 ",76,252
+0890  data "d6#",81,143
+0900  data "e6 ",86,105
+0910  data "f6 ",91,140
+0920  data "f6#",96,254
+0930  data "g6 ",102,194
+0940  data "g6#",108,223
+0950  data "a6 ",115,88
+0960  data "b6 ",122,52
+0970  data "h6 ",129,120
+0980  data "c7 ",137,43
+0990  data "c7#",145,83
+1000  data "d7 ",153,247
+1010  data "d7#",163,31
+1020  data "e7 ",172,210
+1030  data "f7 ",183,25
+1040  data "f7#",193,252
+1050  data "g7 ",205,133
+1060  data "g7#",217,189
+1070  data "a7 ",230,176
+1080  data "b7 ",244,103
+1090  data "z  ",0,0
+1100 endproc soundinit
+1110 proc adsr(voice,attack,decay,sustain,release)
+1120  j:=sid+(voice-1)*7
+1130  poke j+5,attack*16+decay
+1140  poke j+6,sustain*16+release
+1150 endproc adsr
+1160 data "a1",2,"z",2,"c2",2,"a1",2,"e1",2,"z",2,"a1",2,"e1",2
+1170 data "c1",2,"z",2,"e1",2,"c1",2,"a0",6,"z",2,"e0",2,"a0",2
+1180 data "c1",2,"a0",2,"h0",2,"a0",2,"h0",2,"a0",2,"g0#",2,"h0",2,"d1",2
+1190 data "h0",2,"c1",2,"z",2,"a0",2,"z",2,"a1",2,"z",2,"c2",2,"a1",2,"e1",2
+1200 data "z",2,"a1",2,"e1",2,"c1",2,"z",2,"e1",2,"c1",2,"a0",6
+1210 data "z",2,"c1",2,"z",2,"c1",2,"z",2,"c1",2,"z",2,"c1",2
+1220 data "z",2,"a1",2,"z",2,"c1",2,"z",2,"c1",4,"h0",2,"z",2
+1230 data "e1",2,"z",2,"e1",2,"z",2,"e1",2,"z",2,"e1",2,"z",2
+1240 data "c2",2,"z",2,"e1",2,"z",2,"e1",4,"d1#",2,"z",2,"h0",2
+1250 data "e1",2,"g1",2,"e1",2,"f1#",2,"e1",2,"f1#",2,"e1",2,"d1#",2
+1260 data "f1#",2,"a1",2,"f1#",2,"g1",2,"f1#",2,"g1",2,"f1#",2,"e1",2
+1270 data "g1",2,"e1",2,"d1#",2,"e1",2,"a1",2,"e1",2,"d1#",2,"e1",2
+1280 data "h1",2,"e1",2,"d1#",2,"e1",2,"c2",2,"e1",2,"d1#",2,"e1",2
+1290 data "c2",2,"h1",2,"a1",2,"h1",2,"g1",2,"f1#",2,"e1",2,"g1",2
+1300 data "z",2,"g1",.7,"f1#",.7,"g1",.7,"f1#",2,"e1",6,"z",2,"e1",2
+1310 data "z",2,"g1",2,"e1",2,"h0",2,"z",2,"e1",2,"h0",2,"g0",2
+1320 data "z",2,"h0",2,"g0",2,"e0",6,"z",2,"b0",4,"a0",2,"z",2
+1330 data "d1",4,"c1#",2,"d1",2,"g1",4,"f1",2,"e1",2,"f1",2,"z",2
+1340 data "d1",2,"z",2,"f1",2,"z",2,"a1",2,"e1",2,"d1",2,"z",2
+1350 data "f1",2,"d1",2,"h0",2,"z",2,"d1",2,"h0",2,"g0",6,"z",2
+1360 data "g0",2,"c1",2,"e1",2,"c1",2,"d1",2,"c1",2,"d1",2,"c1",2
+1370 data "h0",2,"d1",2,"f1",2,"d1",2,"e1",2,"d1",2,"e1",2,"d1",2
+1380 data "c1",2,"e1",2,"c1",2,"h0",2,"c1",2,"f1",2,"c1",2,"h0",2
+1390 data "c1",2,"g1",2,"c1",2,"h0",2,"c1",2,"a1",2,"c1",2,"h0",2
+1400 data "c1",2,"a1",2,"g1",2,"f1",2,"g1",2,"e1",2,"d1",2,"c1",2
+1410 data "e1",2,"z",2,"d1",.7,"e1",.7,"d1",.7,"e1",.7,"d1",.7,"c1",6
+1420 data "z",2,"e1",2,"z",2,"e1",2,"z",2,"e1",2,"z",2,"e1",2
+1430 data "z",2,"c2",2,"z",2,"e1",2,"z",2,"e1",4,"d1",2,"z",2
+1440 data "d1",2,"z",2,"d1",2,"z",2,"d1",2,"z",2,"d1",2,"z",2
+1450 data "h1",2,"z",2,"d1",2,"z",2,"d1",4,"c1",2,"z",2,"a1",4
+1460 data "c2",2,"a1",2,"g1",4,"f1",8,"a1",.7,"g1",.7,"f1",.7,"e1",.7
+1470 data "d1",12,"f1",.7,"e1",.7,"d1",.7,"c1",.7,"b0",2,"d1",2,"f1",2
+1480 data "d1",2,"b0",2,"a0",2,"b0",2,"a0",2,"g0#",2,"z",2,"e0",2
+1490 data "z",2,"f0",4,"e0",2,"z",2,"a0",4,"g0#",2,"h0",2,"d1",4
+1500 data "c1",2,"h0",2,"c1",4,"a0",.7,"h0",.7,"c1",.7,"d1",.7,"e1",4
+1510 data "c1",2,"e1",2,"a1",2.5,"z",3,"e1",3,"z",2,"d1",3,"c1",3.5
+1520 data "h0",3.7,"c1",4,"h0",9,"a0",14,"z",30,"xx",0
+1530 soundinit(15)
+1540 dim n$ of 3, n1$ of 1, n3$ of 1
+1550 s:=sid
+1560 for ii:=1 to 3 do
+1570  adsr(ii,0,4,12,10)
+1580 endfor ii
+1590 control:=32
+1600 repeat
+1610  n$:="   "
+1620  read n$(1:3),lng
+1630  if n$<>"xx " then
+1640  if n$<>"z  " then
+1650   n$(2):=chr$(ord(n$(2))+4)
+1660   i:=((n$ in notes$)-1)/3
+1670   poke s,values(i,2)
+1680   poke s+1,values(i,1)
+1690   poke s+4,control+1
+1700  else
+1710   poke s+4,control
+1720   for ii:=1 to 20 do
+1730   endfor ii
+1740  endif
+1750  for ii:=1 to lng*30 do
+1760  endfor ii
+1770  poke s+4,control
+1780  s:+7
+1790  if s=sid+3*7 then s:=sid
+1800  endif
+1810 until eod
+1820 poke sid+24,0
+1830 proc k
+1840  poke sid+24,0
+1850 endproc k
+
+0005 // grafik.01
+0010 pencolor 0
+0020 background 10
+0030 border 11
+0040 setgraphic 0
+0050 turtlestate false
+0055 axlar
+0060 //
+0070 flytta'till(0,-5)
+0080 rita'till(5,0)
+0090 rita'till(-5,5)
+0100 rita'till(0,-5)
+0110 //
+0120 //
+0130 fyll'i(1,1)
+0140 while key$=chr$(0) do null
+0150 settext
+0160 print chr$(14),
+0170 pencolor 8
+0180 background 11
+0190 border 10
+0200 //
+0210 proc flytta'till(x,y)
+0220  x:=160+x*16
+0230  y:=100+y*10
+0240  moveto x,y
+0250 endproc flytta'till
+0260 //
+0270 proc rita'till(x,y)
+0280  x:=160+x*16
+0290  y:=100+y*10
+0300  drawto x,y
+0310 endproc rita'till
+0320 //
+0330 proc fyll'i(x,y)
+0340  x:=160+x*16
+0350  y:=100+y*10
+0360  fill x,y
+0370 endproc fyll'i
+0380 //
+5000 proc axlar
+5010  dx:=2; dy:=2
+5020  moveto 0,100
+5030  drawto 320,100
+5040  moveto 160,0
+5050  drawto 160,200
+5060  rita'skala
+5070  moveto 160,100
+5080 endproc axlar
+5090 //
+5100 proc rita'skala
+5110  moveto 0,100
+5120  for m:=0 to 319 step 16 do
+5130   lodrätt'markering(m,100)
+5140  endfor m
+5150  for m:=0 to 199 step 10 do
+5160   vågrätt'markering(160,m)
+5170  endfor m
+5180 endproc rita'skala
+5190 //
+5200 proc lodrätt'markering(x,y)
+5210  moveto m,y+dy
+5220  drawto m,y-dy
+5230 endproc lodrätt'markering
+5240 //
+5250 proc vågrätt'markering(x,y)
+5260  moveto x+dx,y
+5270  drawto x-dx,y
+5280 endproc vågrätt'markering
+5290 //
+
+0010 grafik'start
+0020 trekant
+0030 grafik'stopp
+0040 //
+0050 proc grafik'start
+0060  pencolor 0
+0070  background 10
+0080  border 11
+0090  setgraphic 0
+0100  turtlestate false
+0110  axlar
+0120 endproc grafik'start
+0130 //
+0140 proc trekant
+0150  flytta'till(0,0)
+0160  rita'till(7,7)
+0170  rita'till(5,-3)
+0180  rita'till(0,0)
+0190 endproc trekant
+0200 //
+0210 proc grafik'stopp
+0220  while key$=chr$(0) do null
+0230  settext
+0240  print chr$(14),
+0250  pencolor 8
+0260  background 11
+0270  border 10
+0280 endproc grafik'stopp
+0290 //
+0300 proc flytta'till(x,y)
+0310  x:=160+x*16
+0320  y:=100+y*10
+0330  moveto x,y
+0340 endproc flytta'till
+0350 //
+0360 proc rita'till(x,y)
+0370  x:=160+x*16
+0380  y:=100+y*10
+0390  drawto x,y
+0400 endproc rita'till
+0410 //
+0420 proc fyll'i(x,y)
+0430  x:=160+x*16
+0440  y:=100+y*10
+0450  fill x,y
+0460 endproc fyll'i
+0470 //
+0480 proc axlar
+0490  dx:=2; dy:=2
+0500  moveto 0,100
+0510  drawto 320,100
+0520  moveto 160,0
+0530  drawto 160,200
+0540  rita'skala
+0550  moveto 160,100
+0560 endproc axlar
+0570 //
+0580 proc rita'skala
+0590  moveto 0,100
+0600  for m:=0 to 319 step 16 do
+0610   lodrätt'markering(m,100)
+0620  endfor m
+0630  for m:=0 to 199 step 10 do
+0640   vågrätt'markering(160,m)
+0650  endfor m
+0660 endproc rita'skala
+0670 //
+0680 proc lodrätt'markering(x,y)
+0690  moveto m,y+dy
+0700  drawto m,y-dy
+0710 endproc lodrätt'markering
+0720 //
+0730 proc vågrätt'markering(x,y)
+0740  moveto x+dx,y
+0750  drawto x-dx,y
+0760 endproc vågrätt'markering
+0770 //
+
+0005 // grafik.03
+0010 grafik'start
+0020 triangel'med'skugga
+0030 grafik'stopp
+0040 //
+0050 proc triangel'med'skugga
+0060  flytta'till(0,0)
+0070  rita'till(7,7)
+0080  rita'till(5,-3)
+0090  rita'till(0,0)
+0100  fyll'i(2,1)
+0110 endproc triangel'med'skugga
+0120 //
+5000 proc grafik'start
+5010  pencolor 0
+5020  background 10
+5030  border 11
+5040  setgraphic 0
+5050  turtlestate false
+5060  axlar
+5070 endproc grafik'start
+5080 //
+5090 proc grafik'stopp
+5100  while key$=chr$(0) do null
+5110  settext
+5120  print chr$(14),
+5130  pencolor 8
+5140  background 11
+5150  border 10
+5160 endproc grafik'stopp
+5170 //
+5180 proc flytta'till(x,y)
+5190  x:=160+x*16
+5200  y:=100+y*10
+5210  moveto x,y
+5220 endproc flytta'till
+5230 //
+5240 proc rita'till(x,y)
+5250  x:=160+x*16
+5260  y:=100+y*10
+5270  drawto x,y
+5280 endproc rita'till
+5290 //
+5300 proc fyll'i(x,y)
+5310  x:=160+x*16
+5320  y:=100+y*10
+5330  fill x,y
+5340 endproc fyll'i
+5350 //
+5360 proc axlar
+5370  dx:=2; dy:=2
+5380  moveto 0,100
+5390  drawto 320,100
+5400  moveto 160,0
+5410  drawto 160,200
+5420  rita'skala
+5430  moveto 160,100
+5440 endproc axlar
+5450 //
+5460 proc rita'skala
+5470  moveto 0,100
+5480  for m:=0 to 319 step 16 do
+5490   lodrätt'markering(m,100)
+5500  endfor m
+5510  for m:=0 to 199 step 10 do
+5520   vågrätt'markering(160,m)
+5530  endfor m
+5540 endproc rita'skala
+5550 //
+5560 proc lodrätt'markering(x,y)
+5570  moveto m,y+dy
+5580  drawto m,y-dy
+5590 endproc lodrätt'markering
+5600 //
+5610 proc vågrätt'markering(x,y)
+5620  moveto x+dx,y
+5630  drawto x-dx,y
+5640 endproc vågrätt'markering
+5650 //
+
+0010 graf'start
+0020 segla'i'solen
+0025 fyll'upp
+0030 graf'stop
+0040 //
+0050 proc segla'i'solen
+0070  for a:=0 to 360 step 60 do
+0080   t:=a/180*3.14159
+0090   x:=2*sin(t)-4; y:=2*cos(t)
+0100   trekant(x,y)
+0110  endfor a
+0120 endproc segla'i'solen
+0130 //
+0140 proc trekant(x,y)
+0150  flytta'till(x,y)
+0160  x:=x+7; y:=y+7
+0170  rita'till(x,y)
+0180  x:=x-2; y:=y-10
+0190  rita'till(x,y)
+0200  x:=x-5; y:=y+3
+0210  rita'till(x,y)
+0220 endproc trekant
+0230 //
+0240 proc fyll'upp
+0250  for r:=2 to 3 do
+0260   for a:=0 to 360 step 30 do
+0270    t:=a/180*3.14159
+0280    x:=r*cos(t); y:=r*sin(t)
+0290    fyll(x,y)
+0300   endfor a
+0310  endfor r
+0320 endproc fyll'upp
+0330 //
+5000 proc graf'start
+5010  pencolor 0
+5020  background 10
+5030  border 11
+5040  setgraphic 0
+5050  turtlestate false
+5060  axlar
+5070 endproc graf'start
+5080 //
+5090 proc graf'stop
+5100  while key$=chr$(0) do null
+5110  settext
+5120  print chr$(14),
+5130  pencolor 8
+5140  background 11
+5150  border 10
+5160 endproc graf'stop
+5170 //
+5180 proc flytta'till(x,y)
+5190  x:=160+x*16
+5200  y:=100+y*10
+5210  moveto x,y
+5220 endproc flytta'till
+5230 //
+5240 proc rita'till(x,y)
+5250  x:=160+x*16
+5260  y:=100+y*10
+5270  drawto x,y
+5280 endproc rita'till
+5290 //
+5300 proc fyll(x,y)
+5310  x:=160+x*16
+5320  y:=100+y*10
+5330  fill x,y
+5340 endproc fyll
+5350 //
+5360 proc axlar
+5370  dx:=2; dy:=2
+5380  moveto 0,100
+5390  drawto 320,100
+5400  moveto 160,0
+5410  drawto 160,200
+5420  rita'skala
+5430  moveto 160,100
+5440 endproc axlar
+5450 //
+5460 proc rita'skala
+5470  moveto 0,100
+5480  for m:=0 to 319 step 16 do
+5490   lodrätt'markering(m,100)
+5500  endfor m
+5510  for m:=0 to 199 step 10 do
+5520   vågrätt'markering(160,m)
+5530  endfor m
+5540 endproc rita'skala
+5550 //
+5560 proc lodrätt'markering(x,y)
+5570  moveto m,y+dy
+5580  drawto m,y-dy
+5590 endproc lodrätt'markering
+5600 //
+5610 proc vågrätt'markering(x,y)
+5620  moveto x+dx,y
+5630  drawto x-dx,y
+5640 endproc vågrätt'markering
+5650 //
+
+0010 graf'start
+0020 cirkel
+0030 graf'stop
+0040 //
+0050 proc cirkel
+0060  markering(1,-2)
+0070  flytta'till(5,-2)
+0080  for a:=0 to 360 step 10 do
+0090   t:=a/180*3.14159
+0100   x:=4*cos(t)+1
+0110   y:=4*sin(t)-2
+0120   rita'till(x,y)
+0130  endfor a
+0140 endproc cirkel
+0150 //
+0160 proc markering(x,y)
+0170  flytta'till(x-2/16,y)
+0180  rita'till(x+2/16,y)
+0190  flytta'till(x,y-2/15)
+0200  rita'till(x,y+2/15)
+0210 endproc markering
+0220 //
+0230 proc graf'start
+0240  pencolor 0
+0250  background 10
+0260  border 11
+0270  setgraphic 0
+0280  turtlestate false
+0290  axlar
+0300 endproc graf'start
+0310 //
+0320 proc graf'stop
+0330  while key$=chr$(0) do null
+0340  settext
+0350  print chr$(14),
+0360  pencolor 8
+0370  background 11
+0380  border 10
+0390 endproc graf'stop
+0400 //
+0410 proc flytta'till(x,y)
+0420  x:=160+x*16
+0430  y:=100+y*15
+0440  moveto x,y
+0450 endproc flytta'till
+0460 //
+0470 proc rita'till(x,y)
+0480  x:=160+x*16
+0490  y:=100+y*15
+0500  drawto x,y
+0510 endproc rita'till
+0520 //
+0530 proc fyll(x,y)
+0540  x:=160+x*16
+0550  y:=100+y*15
+0560  fill x,y
+0570 endproc fyll
+0580 //
+0590 proc axlar
+0600  dx:=2; dy:=2
+0610  moveto 0,100
+0620  drawto 320,100
+0630  moveto 160,0
+0640  drawto 160,200
+0650  rita'skala
+0660  moveto 160,100
+0670 endproc axlar
+0680 //
+0690 proc rita'skala
+0700  moveto 0,100
+0710  for m:=0 to 319 step 16 do
+0720   lodrätt'markering(m,100)
+0730  endfor m
+0740  for m:=10 to 209 step 15 do
+0750   vågrätt'markering(160,m)
+0760  endfor m
+0770 endproc rita'skala
+0780 //
+0790 proc lodrätt'markering(x,y)
+0800  moveto m,y+dy
+0810  drawto m,y-dy
+0820 endproc lodrätt'markering
+0830 //
+0840 proc vågrätt'markering(x,y)
+0850  moveto x+dx,y
+0860  drawto x-dx,y
+0870 endproc vågrätt'markering
+0880 //
+
+0010 graf'start
+0020 rita'graf
+0030 graf'stop
+0040 //
+0050 proc rita'graf
+0060  flytta'till(-10,f(-10))
+0070  for x:=-10 to 10 step .2 do
+0090   rita'till(x,f(x))
+0100  endfor x
+0110 endproc rita'graf
+0120 //
+0130 func f(x)
+0140  return 2*exp(x/10)*sin(x)
+0150 endfunc f
+0160 //
+5000 proc markering(x,y)
+5010  flytta'till(x-2/16,y)
+5020  rita'till(x+2/16,y)
+5030  flytta'till(x,y-2/15)
+5040  rita'till(x,y+2/15)
+5050 endproc markering
+5060 //
+5070 proc graf'start
+5080  pencolor 0
+5090  background 10
+5100  border 11
+5110  setgraphic 0
+5120  turtlestate false
+5130  axlar
+5140 endproc graf'start
+5150 //
+5160 proc graf'stop
+5170  while key$=chr$(0) do null
+5180  settext
+5190  print chr$(14),
+5200  pencolor 8
+5210  background 11
+5220  border 10
+5230 endproc graf'stop
+5240 //
+5250 proc flytta'till(x,y)
+5260  x:=160+x*16
+5270  y:=100+y*15
+5280  moveto x,y
+5290 endproc flytta'till
+5300 //
+5310 proc rita'till(x,y)
+5320  x:=160+x*16
+5330  y:=100+y*15
+5340  drawto x,y
+5350 endproc rita'till
+5360 //
+5370 proc fyll(x,y)
+5380  x:=160+x*16
+5390  y:=100+y*15
+5400  fill x,y
+5410 endproc fyll
+5420 //
+5430 proc axlar
+5440  dx:=2; dy:=2
+5450  moveto 0,100
+5460  drawto 320,100
+5470  moveto 160,0
+5480  drawto 160,200
+5490  rita'skala
+5500  moveto 160,100
+5510 endproc axlar
+5520 //
+5530 proc rita'skala
+5540  moveto 0,100
+5550  for m:=0 to 319 step 16 do
+5560   lodrätt'markering(m,100)
+5570  endfor m
+5580  for m:=10 to 209 step 15 do
+5590   vågrätt'markering(160,m)
+5600  endfor m
+5610 endproc rita'skala
+5620 //
+5630 proc lodrätt'markering(x,y)
+5640  moveto m,y+dy
+5650  drawto m,y-dy
+5660 endproc lodrätt'markering
+5670 //
+5680 proc vågrätt'markering(x,y)
+5690  moveto x+dx,y
+5700  drawto x-dx,y
+5710 endproc vågrätt'markering
+5720 //
+
+0010 start'robert
+0020 flytta'till(0,-3)
+0030 riktning(0)
+0040 framåt(7)
+0050 vänster(90)
+0060 framåt(7)
+0070 vänster(90)
+0080 framåt(7)
+0090 vänster(90)
+0100 framåt(7)
+0110 vänster(90)
+0120 stop'robert
+0130 //
+0140 proc start'robert
+0150  pencolor 0
+0160  background 10
+0170  border 11
+0180  setgraphic 0
+0190  turtlestate true
+0200  endproc start'robert
+0210 //
+0220 proc stop'robert
+0230  while key$=chr$(0) do null
+0240  settext
+0250  print chr$(14),
+0260  pencolor 8
+0270  background 11
+0280  border 10
+0290 endproc stop'robert
+0300 //
+0310 proc framåt(x)
+0320  forward x*10
+0330 endproc framåt
+0340 //
+0350 proc vänster(v)
+0360  nu:=(nu+v) mod 180
+0370  left v
+0380 endproc vänster
+0390 //
+0400 proc riktning(v)
+0410  nu:=v
+0420  setheading v
+0430 endproc riktning
+0440 //
+0450 proc flytta'till(x,y)
+0460  moveto x*16+160,y*10+100
+0470 endproc flytta'till
+0480 //
+0490 proc robert'hem
+0500  flytta'till(0,0)
+0510  riktning(0)
+0520 endproc robert'hem
+0530 //
+
+0010 start'robert
+0020 cirkel'kvadrater
+0030 stop'robert
+0040 //
+0050 proc cirkel'kvadrater
+0060  flytta'till(0,0)
+0070  for vinkel:=0 to 360 step 10 do
+0080   kvadrat(0,0,vinkel,5)
+0090  endfor vinkel
+0100 endproc cirkel'kvadrater
+0110 //
+0120 proc kvadrat(x,y,v,s)
+0130  flytta'till(x,y)
+0140  riktning(v)
+0150  for k:=1 to 4 do
+0160   framåt(s)
+0170   vänster(90)
+0180  endfor k
+0190 endproc kvadrat
+0200 //
+5000 proc start'robert
+5010  pencolor 0
+5020  background 10
+5030  border 11
+5040  setgraphic 0
+5050  turtlestate true
+5060 endproc start'robert
+5070 //
+5080 proc stop'robert
+5090  while key$=chr$(0) do null
+5100  settext
+5110  print chr$(14),
+5120  pencolor 8
+5130  background 11
+5140  border 10
+5150 endproc stop'robert
+5160 //
+5170 proc framåt(x)
+5180  forward x*10
+5190 endproc framåt
+5200 //
+5210 proc vänster(v)
+5220  nu:=(nu+v) mod 180
+5230  left v
+5240 endproc vänster
+5250 //
+5260 proc riktning(v)
+5270  nu:=v
+5280  setheading v
+5290 endproc riktning
+5300 //
+5310 proc flytta'till(x,y)
+5320  moveto x*16+160,y*10+100
+5330 endproc flytta'till
+5340 //
+5350 proc robert'hem
+5360  flytta'till(0,0)
+5370  riktning(0)
+5380 endproc robert'hem
+5390 //
+
+0010 start'robert
+0020 stor'konst
+0025 plottext 200,10,"poul papkasse"
+0030 stop'robert
+0040 //
+0050 proc stor'konst
+0060  for b:=1 to 40 do
+0070   x:=rnd(-8,3); y:=rnd(-8,3)
+0080   sida:=rnd(1,5)
+0090   kvadrat(x,y,0,sida)
+0100   fyll(x+sida/2,y+sida/2)
+0110  endfor b
+0120 endproc stor'konst
+0130 //
+0140 proc kvadrat(x,y,v,s)
+0150  flytta'till(x,y)
+0160  riktning(v)
+0170  for k:=1 to 4 do
+0180   framåt(s)
+0190   vänster(90)
+0200  endfor k
+0210 endproc kvadrat
+0220 //
+0230 proc start'robert
+0240  pencolor 0
+0250  background 10
+0260  border 11
+0270  setgraphic 0
+0280  turtlestate true
+0290 endproc start'robert
+0300 //
+0310 proc stop'robert
+0320  while key$=chr$(0) do null
+0330  settext
+0340  print chr$(14),
+0350  pencolor 8
+0360  background 11
+0370  border 10
+0380 endproc stop'robert
+0390 //
+0400 proc framåt(x)
+0410  forward x*10
+0420 endproc framåt
+0430 //
+0440 proc vänster(v)
+0450  nu:=(nu+v) mod 180
+0460  left v
+0470 endproc vänster
+0480 //
+0490 proc riktning(v)
+0500  nu:=v
+0510  setheading v
+0520 endproc riktning
+0530 //
+0540 proc flytta'till(x,y)
+0550  moveto x*16+160,y*10+100
+0560 endproc flytta'till
+0570 //
+0580 proc robert'hem
+0590  flytta'till(0,0)
+0600  riktning(0)
+0610 endproc robert'hem
+0620 //
+0630 proc fyll(x,y)
+0640  x:=16*x+160; y:=10*y+100
+0650  fill x,y
+0660 endproc fyll
+0670 //
