@@ -6,7 +6,7 @@
 #¤vc = VIC20
 #¤c2 = C128
 #¤
-#¤fält: lista, filnamn, beskrivning, etextnummer, språk, datum
+#¤fields: list, file name, description, etext number, language, date
 #¤
 gm¤01¤crimetime_de.zip¤Crime Time¤de+uk¤19970319
 hw¤02¤quickbyte2_de.zip¤ProLogic QuickByte 2 EPROMmer¤de¤19970320
