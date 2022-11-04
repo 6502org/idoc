@@ -30,11 +30,7 @@ LanguagePriority sv no en de fi es hu nb
 
 RewriteEngine on
 
-# TODO - Read is disabled
-RewriteRule ^read/(.*) - [R=404,L]
-
 # Handle calls to the virtual "unpack directory"
-RewriteRule ^read/(.*)          /lookat.cgi?$1      [L]
 RewriteRule ^download/(.*)      /docs/$1 [L]
 
 # The index page was previously called "main"
