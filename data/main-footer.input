@@ -1,0 +1,121 @@
+all;<hr noshade>
+
+en;<h2>The small print</h2>
+sv;<h2>Det finstilta</h2>
+de;<h2>The small print</h2>
+fi;<h2>The small print</h2>
+es;<h2>The small print</h2>
+hu;<h2>The small print</h2>
+
+all;<p>
+
+en;These pages are copyrighted by
+en;<a href="../">Peter Krefting.</a>
+en;The logotype was drawn by
+en;<a href="http://hem.passagen.se/ash/">Andreas Henriksson</a>.
+en;The small flags were drawn by
+en;<a href="http://www.mds.mdh.se/~dal95acn/">Anders Carlsson</a>.
+en;The documents contained herein are <em>not</em> copyrighted by Peter
+en;Karlsson, and the copyright claims of these documents are honoured.
+en;But because the documents pertains to titles that are no longer available,
+en;except in second-hand markets, and could be labeled as "obsolete",
+en;they are believed to be free to spread for non-profit use.
+en;If you want to object to the inclusion on a document, please look at the
+en;<a href="policy">policy page</a> for information.
+en;Valid requests for taking documents down will certainly be honoured.
+
+sv;Dessa sidor är upphovsrättsskyddade av
+sv;<a href="../">Peter Krefting.</a>
+sv;Logotypen ritades av
+sv;<a href="http://hem.passagen.se/ash/">Andreas Henriksson</a>.
+sv;De små flaggorna ritades av
+sv;<a href="http://www.mds.mdh.se/~dal95acn/">Anders Carlsson</a>.
+sv;De dokument som finns här är <em>inte</em> upphovsrättsskyddade av Peter
+sv;Karlsson, och upphovsrätten till dessa dokument erkänns.
+sv;Då dokumenten gäller titlar som inte längre är tillgängliga förutom på
+sv;andrahandsmarknaden och kan anses vara "utgångna",
+sv;antas de vara fria att sprida på ideell basis.
+sv;Om du vill protestera mot att ett dokument finns med, se
+sv;<a href="policy">iDOC=s riktlinjer</a> för information.
+sv;Giltiga önskemål om att ta bort dokument kommer självklart att följas.
+
+de;These pages are copyrighted by
+de;<a href="../">Peter Krefting.</a>
+de;The logotype was drawn by
+de;<a href="http://hem.passagen.se/ash/">Andreas Henriksson</a>.
+de;The small flags were drawn by
+de;<a href="http://www.mds.mdh.se/~dal95acn/">Anders Carlsson</a>.
+de;The documents contained herein are <em>not</em> copyrighted by Peter
+de;Karlsson, and the copyright claims of these documents are honoured.
+de;But because the documents pertains to titles that are no longer available,
+de;except in second-hand markets, and could be labeled as "obsolete",
+de;they are believed to be free to spread for non-profit use.
+de;If you want to object to the inclusion on a document, please look at the
+de;<a href="policy">policy page</a> for information.
+de;Valid requests for taking documents down will certainly be honoured.
+
+fi;These pages are copyrighted by
+fi;<a href="../">Peter Krefting.</a>
+fi;The logotype was drawn by
+fi;<a href="http://hem.passagen.se/ash/">Andreas Henriksson</a>.
+fi;The small flags were drawn by
+fi;<a href="http://www.mds.mdh.se/~dal95acn/">Anders Carlsson</a>.
+fi;The documents contained herein are <em>not</em> copyrighted by Peter
+fi;Karlsson, and the copyright claims of these documents are honoured.
+fi;But because the documents pertains to titles that are no longer available,
+fi;except in second-hand markets, and could be labeled as "obsolete",
+fi;they are believed to be free to spread for non-profit use.
+fi;If you want to object to the inclusion on a document, please look at the
+fi;<a href="policy">policy page</a> for information.
+fi;Valid requests for taking documents down will certainly be honoured.
+
+es;These pages are copyrighted by
+es;<a href="../">Peter Krefting.</a>
+es;The logotype was drawn by
+es;<a href="http://hem.passagen.se/ash/">Andreas Henriksson</a>.
+es;The small flags were drawn by
+es;<a href="http://www.mds.mdh.se/~dal95acn/">Anders Carlsson</a>.
+es;The documents contained herein are <em>not</em> copyrighted by Peter
+es;Karlsson, and the copyright claims of these documents are honoured.
+es;But because the documents pertains to titles that are no longer available,
+es;except in second-hand markets, and could be labeled as "obsolete",
+es;they are believed to be free to spread for non-profit use.
+es;If you want to object to the inclusion on a document, please look at the
+es;<a href="policy">policy page</a> for information.
+es;Valid requests for taking documents down will certainly be honoured.
+
+hu;These pages are copyrighted by
+hu;<a href="../">Peter Krefting.</a>
+hu;The logotype was drawn by
+hu;<a href="http://hem.passagen.se/ash/">Andreas Henriksson</a>.
+hu;The small flags were drawn by
+hu;<a href="http://www.mds.mdh.se/~dal95acn/">Anders Carlsson</a>.
+hu;The documents contained herein are <em>not</em> copyrighted by Peter
+hu;Karlsson, and the copyright claims of these documents are honoured.
+hu;But because the documents pertains to titles that are no longer available,
+hu;except in second-hand markets, and could be labeled as "obsolete",
+hu;they are believed to be free to spread for non-profit use.
+hu;If you want to object to the inclusion on a document, please look at the
+hu;<a href="policy">policy page</a> for information.
+hu;Valid requests for taking documents down will certainly be honoured.
+
+all;</p>
+
+en;<h2>Translation credits</h2>
+sv;<h2>Översättningstack</h2>
+de;<h2>Translation credits</h2>
+fi;<h2>Translation credits</h2>
+es;<h2>Translation credits</h2>
+hu;<h2>Translation credits</h2>
+
+all;<ul>
+all; <li>English, svenska: <a href="../">Peter Krefting</a>
+all; <li>Deutsche Übersetzung:
+all;  <a href="http://www.student.informatik.tu-darmstadt.de/~mepk/">Christian Janoff</a>
+all; <li>Suomennos:
+all;  <a href="http://www.hut.fi/~msmakela/">Marko Mäkelä</a>
+all; <li>Traducción en Español:
+all;  Rodolfo Leal
+all; <li>Hungarian translation:
+all;  Varga Viktor
+all;</ul>

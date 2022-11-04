@@ -1,0 +1,309 @@
+
+all;<div class=left align=center>
+all;<h1 align="center"><img src="../pics/idoccbm.gif" alt="iDOC=" height=150
+all;width=211></h1>
+en;<h2 align="center">iDOC= policy</h2>
+sv;<h2 align="center">Riktlinjer för iDOC=</h2>
+de;<h2 align="center">Die iDOC= Richtlinien</h2>
+fi;<h2 align="center">iDOC=:n suuntaviivat</h2>
+es;<h2 align="center">Políticas sobre iDOC=</h2>
+hu;<h2 align="center">Az iDOC= szabályzata</h2>
+all;</div>
+all;<hr noshade class=decorative>
+all;<p>
+
+all;<ol><li>
+en;Docs only related to Commodore eight-bit computers. We accept docs from
+en;other platforms as long as they parallel stuff that was made for
+en;Commodore eight-bit computers.
+en;If the only version of the docs that are available are for
+en;non-Commodore machines, then those can be entered here, but will
+en;be removed when the originals for Commodore computers are available.
+
+sv;Enbart dokumentation relaterad till Commodores åttabitarsdatorer.
+sv;Vi accepterar dokumentationer från andra plattformar så länge de
+sv;speglar saker som gjorts för Commodores åttabitarsdatorerdatorer.
+sv;Om den enda dokumentation som finns tillgänglig är för andra maskiner,
+sv;så kan de läggas in här, men de kommer att tas bort när originalen
+sv;för Commodoredatorer blir tillgängliga.
+
+de;Nur Dokumente für Commodore-8-Bitter.
+de;Wir akzeptieren Dokumente von anderen Plattformen, solange sie
+de;Sachen betreffen, die für 8-Bit-Commodore-Computer gemacht wurden.
+de;Wenn die einzige Version dieser Dokumente nur für nicht-Commodore-Maschinen
+de;verfügbar ist, kann diese hier hinterlegt werden. Sie wird jedoch
+de;wieder entfernt, sobald das Original für Commodore-Computer verfügbar ist.
+
+fi;Vain Commodoren 8-bittisiin tietokoneisiin liittyviä ohjeita.
+fi;Hyväksymme muille koneille tehtyjen tuotteiden ohjeita vain, jos sama
+fi;tuote on julkaistu jollekin Commodoren 8-bittiselle koneelle.
+fi;Muille koneille tarkoitetut ohjeet korvataan
+fi;Commodore-version ohjeilla heti, kun se on mahdollista.
+
+es;Documentos relacionados únicamente con las computadoras Commodore de 8-bits.
+es;Aceptamos documentos de otras plataformas, en tanto sean similares a material
+es;hecho para las computadoras Commodore de 8-bits.
+es;Si la única versión disponible de los documentos pertenece a computadoras
+es;diferentes a la Commodore, entonces pueden introducirse aquí, pero
+es;serán removidas cuando los originales para computadoras Commodore
+es;estén disponibles.
+
+hu;Csak Commodore 8-bites számítógépes anyagokat gyûjtünk. Elfogadunk azonban 
+hu;más számítógépekhez kapcsolodó anyagokat is, amennyiben az Commodore géphez 
+hu;készült anyaghoz is használható, de csak olyan mértékben, amennyiben az kapcsolódik. 
+hu;Amennyiben a dokumentumnak csak nem-Commodore verziója elérhetõ, akkor bekerülhet, 
+hu;de törlésre kerül amennyiben az eredeti dokumentum elérhetõvé válik.
+
+all;<li>
+en;The primary format for iDOC= documentation is raw text, which means
+en;that graphics need to be converted to ascii-art or descriptions to
+en;convey <em>information</em> or maybe even feelings.
+en;If images are needed, other formats for publication may be necessary,
+en;please contact
+en;<a href="../">Mike Naberezny</a> at
+en;<a href="m&#65;ilto:mike&#64;naberezny&#46;com">mike&#64;naberezny&#46;com</a>
+en;for more information.
+
+sv;Det primära formatet för iDOC=-dokumentation är råtext, vilket betyder
+sv;att grafik måste konverteras till ASCII-konst eller beskrivningar som
+sv;<em>information</em>, eller kanske t.o.m känslor.
+sv;Om grafik krävs, kan andra publiceringsformat vara nödvändiga, vänligen
+sv;<a href="../">Mike Naberezny</a> på
+sv;<a href="m&#65;ilto:mike&#64;naberezny&#46;com">mike&#64;naberezny&#46;com</a>
+sv;för mer information.
+
+de;Das primäre Format für iDOC= Dokumente ist roher Text, d.h.
+de;daß Grafiken in ASCII-"Kunst" umgewandelt werden, oder in
+de;Beschreibungen, die dieselbe Information, vielleicht sogar Gefühle,
+de;übermitteln.
+de;Wenn Bilder gebraucht werden mögen andere Formate für eine
+de;Veröffentlichung vonnöten sein, bitte kontaktieren sie
+de;<a href="../">Mike Naberezny</a> über
+de;<a href="m&#65;ilto:mike&#64;naberezny&#46;com">mike&#64;naberezny&#46;com</a>
+de;für mehr Informationen.
+
+fi;Ensisijainen tallennusmuoto iDOC=:ssa on teksti.
+fi;Kuvat on muunnettava joko ASCII-kaavioiksi tai kuvauksiksi, jotka
+fi;välittävät niiden sisältämän <em>tiedon</em>, mahdollisesti jopa
+fi;tunteet.
+fi;Jos kuvia todella tarvitaan, kysy lisäohjeita
+fi;<a href="../">Mike Naberezny</a>ilta
+fi;(<a href="m&#65;ilto:mike&#64;naberezny&#46;com">mike&#64;naberezny&#46;com</a>)
+
+es;El formato básico para la documentación en iDOC= es texto simple, lo
+es;cual significa que los gráficos tendrán que convertirse a arte ASCII o
+es;a descripciones que ofrezcan <em>información</em> o quizá incluso sentimientos.
+es;Si se necesitan imágenes, otros formatos para la publicación pueden
+es;requerirse. Por favor, contacte a
+es;<a href="../">Mike Naberezny</a> en
+es;<a href="m&#65;ilto:mike&#64;naberezny&#46;com">mike&#64;naberezny&#46;com</a>
+es;para mayor información.
+
+hu;Az elsõdleges formátum az iDOC= dokumentációknál a sima szöveg, a grafikák 
+hu;ascii-art-ba konvertálva, vagy leírva, az információk megértéséhez. Amennyiben 
+hu;más formátum szükséges a publikációhoz, kérjük a további információkért vedd 
+hu;fel a kapcsolatot a managerrel: <a href="../">Mike Naberezny</a> -nal,
+hu;<a href="m&#65;ilto:mike&#64;naberezny&#46;com">mike&#64;naberezny&#46;com</a>. 
+
+all;<li>
+en;Preferably non-English documents only. Since there already <em>is</em> the
+en;original <a
+sv;Främst enbart icke-engelska dokument. Eftersom det ursprungliga <a
+de;Vorzugsweise nicht-englische Dokumente. Da es bereits das Original-<a
+fi;Mieluiten ei englanninkielisiä dokumentteja. Koska alkuperäinen <a
+es;Preferentemente documentos en idiomas diferentes al inglés, puesto que
+es;que el original ya <em>está</em> en dicho idioma. <a
+hu;Elsõsorban nem-angol dokumentumokat várunk, hiszen az angol nyelvûek többnyire 
+hu;megtalálhatóak a <a
+
+all;href="http://project64.c64.org/">Project 64</a>
+
+en;for English docs, I see no reason to include them here as well.
+en;Some English translations of the docs might be included, though,
+en;and English documents for machines not covered by Project 64.
+
+sv;redan <em>finns</em> för engelska dokumentationer, ser jag ingen
+sv;anledning att inkludera dem även här. Vissa engelska översättningar
+sv;kan dock inkluderas, och engelska dokument för maskiner som inte
+sv;Project 64 täcker.
+
+de;für englische Dokumente <em>gibt</em>, sehe ich keinen Grund, sie
+de;zusätzlich hier bereitzustellen. Einige Übersetzungen der Dokumente
+de;ins Englische können jedoch eingefügt werden, und englische Dokumente
+de;für Maschinen, die nicht von Project 64 abgedeckt werden.
+
+fi;säilöö englanninkieliset dokumentit, niitä ei ole mitään syytä ottaa
+fi;tähänkin kokoelmaan mukaan. Tosin joitakin ohjeiden englanninnoksia
+fi;voidaan ottaa vastaan, samaten englanninkielisiä ohjeita koneille,
+fi;jotka jäävät Project 64:n ulkopuolelle.
+
+es;no veo la razón para incluir documentos en inglés aquí también.
+es;No obstante, algunas traducciones de documentos en inglés pueden incluirse
+es;así como documentos en inglés para máquinas no cubiertas por el Proyecto 64.
+
+hu;oldalain, és nem találjuk semmi értelmét itt is elhelyezni õket. Néhány angol
+hu;dokumentum azért elhelyezésre került, mert nem találhatóak meg a Project 64
+hu;oldalain.
+
+all;<li>
+en;"Hacker docs" are tolerated. Nth generation etexts of unknown
+en;origin are included within the project but are likely to replaced
+en;with etexts of known originals when available.
+
+sv;"Hacker-dokumentationer" tolereras. N:te generationens etexter från
+sv;okänt ursprung inkluderas inom projektet, men kommer troligen att
+sv;ersättas med etexter från kända original när de blir tillgängliga.
+
+de;"Hacker-Dokumente" werden toleriert. Die N-te Generation von E-Texten
+de;unbekannter Herkunft werden innerhalb des Projektes eingefügt, werden
+de;aber wahrscheinlich durch E-Texte der bekannten Originale ersetzt, sobald
+de;sie verfügbar sind.
+
+fi;"Hakkeri-ohjeita" siedetään. N:nnen sukupolven tekstejä, joiden alkuperä
+fi;ei ole tiedossa, otetaan vastaan, mutta ne todennäköisesti korvataan
+fi;alkuperäisillä dokumenteilla, kun ne tulevat saataville.
+
+es;"Documentos de Hacker" son tolerados. Se incluyen textos electrónicos de
+es;n-sima generación de origen desconocido dentro del proyecto, pero es posible
+es;que se sustituyan por las versiones originales de texto electrónico cuando
+es;se encuentren.
+
+hu;"Hacker dokumentumok" szívesen fogadottak. Sokadik generációs ismeretlen 
+hu;eredetû e-szövegek is bekerülnek a projectbe, de kívánatos a cseréjük az 
+hu;eredeti verzióval.
+
+all;<li>
+en;<em>iDOC=</em> does not distribute games or other
+en;software, just documentation.
+en;Most of the software mentioned here probably exists on
+en;somebody's web page or at
+en;<a href="ftp://arnold.c64.org/">Arnold</a> or somewhere else.
+
+sv;<em>iDOC=</em> distribuerar inte spel eller
+sv;annan programvara, enbart dokumentation.
+sv;Merparten av den programvara som omnämns här finns
+sv;troligen redan på någons vävsida, på
+sv;<a href="ftp://arnold.c64.org/">Arnold</a> eller någon annanstans.
+
+de;<em>iDOC=</em> verbreitet keine Spiele oder andere
+de;Software, sondern ausschließlich Dokumentationen.
+de;Die meiste Software, die hier erwähnt wird, gibt es möglicherweise auf
+de;jemandes Webpage oder bei
+de;<a href="ftp://arnold.c64.org/">Arnold</a> oder irgendwo anders.
+
+fi;<em>iDOC=</em> ei levitä pelejä eikä muita ohjelmia
+fi;vaan vain ohjeita.
+fi;Suurin osa täällä mainituista peleistä on todennäköisesti saatavilla
+fi;jonkun kotisivulta,
+fi;<a href="ftp://arnold.c64.org/">Arnoldista</a> tai jostain muualta.
+
+es;<em>iDOC=</em> no distribuye juegos u otro tipo de software,
+es;sino sólo documentación.
+es;La mayoría del software mencionado aquí probablemente existe en la
+es;página web de alguien o en
+es;<a href="ftp://arnold.c64.org/">Arnold</a> o en algún otro lado.
+
+hu;<em>iDOC=</em> nem terjeszt játékokat és egyéb szoftvereket,
+hu;csak dokumentációkat. 
+hu;A programok többsége elérhetõ valaki weboldalán, vagy 
+hu;<a href="ftp://arnold.c64.org/">Arnold</a>-nál
+hu;vagy valahol máshol. 
+
+all;<li>
+en;<em>iDOC=</em> honours the original copyrights of the
+en;included documentations. Since most Commodore eight-bit stuff is
+en;no longer manufactured
+en;or sold, we don't believe that there is any clash of interests in
+en;this free distribution of documents.
+en;If, however, you have something to object to this distribution, please
+en;contact
+en;<a href="../">Mike Naberezny</a> at
+
+sv;<em>iDOC=</em> erkänner dokumentationernas upphovsrätt.
+sv;Eftersom de flesta Commodore åttabitars-saker inte längre tillverkas
+sb;eller säljs, så
+sv;tror vi inte att det ligger någon intressekonflikt i denna fria
+sv;distribution av dokument. Om du, trots allt, skulle ha någonting att
+sv;protestera mot denna distribution, var vänlig kontakta
+sv;<a href="../">Mike Naberezny</a> på
+
+de;iDOC= respektiert die Original-Copyrights der bereitgestellten
+de;Dokumentationen. Da die meisten Sachen für Commodore-8-Bitter nicht länger
+de;produziert oder verkauft werden, glauben wir nicht, daß ein
+de;Interessenskonflikt in der freien Verbreitung der Dokumente besteht.
+de;Falls Sie jedoch etwas an dieser Verbreitung auszusetzen haben, kontaktieren
+de;Sie bitte
+de;<a href="../">Mike Naberezny</a> über
+
+fi;<em>iDOC=</em> kunnioittaa ohjeiden tekijänoikeuksia.
+fi;Koska useimpia Commodoren 8-bittisiiin koneisiin liittyviä tuotteita
+fi;ei enää valmisteta eikä myydä, emme usko,
+fi;että näiden ohjeiden vapaa levittäminen on kenenkään etujen vastaista.
+fi;Jos kuitenkin olet levittämistä vastaan, ota yhteyttä
+fi;<a href="../">Mike Nabereznyiin</a> kirjoittamalla osoitteeseen
+
+es;<em>iDOC=</em> da crédito de los derechos reservados originales de los
+es;documentos incluidos. Puesto que la mayor parte del material de Commodore de 8-bits
+es;ya no es fabricado o vendido, no creemos que haya ningún conflicto de intereses
+es;en la distribución gratuita de los documentos.
+es;Sin embargo, si usted tiene algo que objetar con respecto a esta distribución,
+es;por favor, contacte a
+es;<a href="../">Mike Naberezny</a> en
+
+hu;Az <em>iDOC=</em> tiszteletben tartja az eredeti copyright jogokat, és 
+hu;elhelyezi azokat a dokumentációkban. Mivel a Commodore 8-bit anyagok
+hu;többnyire már nem állnak gyártás alatt, vagy nincsennek már forgalomban,
+hu;ezért nem hisszük, hogy valakinek anyagi kárt okoznánk a dokumentációk
+hu;ingyenes disztibuciójával. Amennyiben valamilyen problémád van ezzel a 
+hu;disztribucióval kérlek vedd fel a kapcsolatot a managerrel: 
+hu;<a href="../">Mike Naberezny</a>-nal, 
+
+all;<a href="m&#65;ilto:mike&#64;naberezny&#46;com">mike&#64;naberezny&#46;com</a>,
+
+en;so that we can sort it out. If you are the copyright holder of a
+en;featured documentation and do not want it distributed here, we
+en;will of course withdraw it as soon as possible.
+
+sv;så att vi kan få rätsida på det hela. Om du är upphovsrättsinnehavare
+sv;för någon av de tillgängliga dokumentationerna och inte vill att det
+sv;ska distribueras här, så kommer vi naturligtvis att ta bort det
+sv;så snart som möjligt.
+
+de;damit wir es aussortieren können.
+de;Wenn Sie Inhaber von Rechten an einer zur Verfügung stehenden
+de;Dokumentation sind und nicht möchten, daß sie hier verbreitet wird, werden
+de;wir sie selbstverständlich sofort zurückziehen.
+
+fi;jotta voimme korjata asian. Jos olet joidenkin levittämiemme
+fi;dokumenttien tekijänoikeuden haltija etkä halua, että levitämme niitä,
+fi;poistamme ne luonnollisesti mahdollisimman nopeasti saatavilta.
+
+es;para que podamos arreglarlo. Si usted es el beneficiario de los derechos 
+es;reservados de alguno de los documentos presentados y no quiere
+es;que se distribuyan aquí, desde luego que nosotros lo retiraremos
+es;tan pronto como sea posible.
+
+hu;és kérésedre eltávolíthatjuk azt. Amennyiben copyright jog tulajdonosa vagy
+hu;a dokumentációnak, és nem kívánod itt nyilvánosságra hozni, természetesen 
+hu;tudomásul vesszük azt, és szintén eltávolítjuk weboldalunkról.
+
+all;<li>
+en;<em>iDOC=</em> is a non-profit project.
+sv;<em>iDOC=</em> är ett ideellt projekt.
+de;<em>iDOC=</em> ist ein nicht-profitorientiertes Projekt.
+fi;<em>iDOC=</em> on voittoa tuottamaton hanke.
+es;<em>iDOC=</em> es un proyecto no lucrativo.
+hu;Az <em>iDOC=</em> egy a non-profit project.
+
+all;</ol>
+
+all;<div class=clear><p>
+en;<small>Last updated on
+sv;<small>Senast uppdaterad den
+de;<small>Aktualisiert am
+fi;<small>Päivitetty
+es;<small>Última actualización el
+hu;<small>Utolsó frissítés:
+filedate;../data/policy.input
+all;</small>
+all;</p></div>
