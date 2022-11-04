@@ -28,13 +28,13 @@ for language in sv en de fi es hu; do
 done
 
 echo -n "links: "
-ln -sf index.en.html ../html/${version}/index.html
+ln -sfv index.en.html ../html/${version}/index.html
 for page in people intro policy search; do
-  ln -sf ${page}.en.html ../html/${version}/${page}.html
+  ln -sfv ${page}.en.html ../html/${version}/${page}.html
 done
 for table in gm hw pr vc c2 ms langsv langde langhu langfr all; do
   for sorting in none file name; do
-    ln -sf etexts-${table}-${sorting}.en.html ../html/${version}/etexts-${table}-${sorting}.html
+    ln -sfv etexts-${table}-${sorting}.en.html ../html/${version}/etexts-${table}-${sorting}.html
   done
 done
 echo
