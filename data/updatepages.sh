@@ -2,6 +2,7 @@
 # Update iDOC='s web pages
 # © 1999-2003 Peter Krefting <peter@softwolves.pp.se>
 # Update iDOC='s web pages
+set -e
 
 unset LANG LC_ALL
 
@@ -26,18 +27,6 @@ for language in sv en de fi es hu; do
   done
   echo
 done
-
-echo -n "links: "
-ln -sfv index.en.html ../html/${version}/index.html
-for page in people intro policy search; do
-  ln -sfv ${page}.en.html ../html/${version}/${page}.html
-done
-for table in gm hw pr vc c2 ms langsv langde langhu langfr all; do
-  for sorting in none file name; do
-    ln -sfv etexts-${table}-${sorting}.en.html ../html/${version}/etexts-${table}-${sorting}.html
-  done
-done
-echo
 
 echo Done
 exit 0
