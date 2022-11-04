@@ -12,19 +12,9 @@ for language in sv en de fi es hu; do
   echo -n "${language}: "
   echo -n "index "
   ./main.pl ${language}  > ../html/index.${language}.html
-  if [ $language = hu ]; then
-    echo 'Content-Type: text/html;charset=iso-8859-2' > ../html/index.${language}.html.meta
-  else
-    echo 'Content-Type: text/html;charset=iso-8859-1' > ../html/index.${language}.html.meta
-  fi
   for page in people intro policy; do
     echo -n "${page} "
     ./${page}.pl ${language}  > ../html/${page}.${language}.html
-    if [ $language = hu ]; then
-      echo 'Content-Type: text/html;charset=iso-8859-2' > ../html/${page}.${language}.html.meta
-    else
-      echo 'Content-Type: text/html;charset=iso-8859-1' > ../html/${page}.${language}.html.meta
-    fi
   done
   echo
   echo -n "  etexts:"
@@ -32,11 +22,6 @@ for language in sv en de fi es hu; do
     echo -n " ${table}"
     for sorting in none file name; do
       ./etexts.pl ${language} ${table} ${sorting}  > ../html/etexts-${table}-${sorting}.${language}.html
-      if [ $language = hu ]; then
-        echo 'Content-Type: text/html;charset=iso-8859-2' > ../html/etexts-${table}-${sorting}.${language}.html.meta
-      else
-        echo 'Content-Type: text/html;charset=iso-8859-1' > ../html/etexts-${table}-${sorting}.${language}.html.meta
-      fi
     done
   done
   echo
