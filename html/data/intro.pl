@@ -61,9 +61,6 @@ page($language, $dateformats{$language}, "intro", "intro.input");
 # Link back
 page($language, $dateformats{$language}, "intro", "backtohome.input");
 
-# Google Analytics
-page($language, $dateformats{$language}, "intro", "google-analytics.input");
-
 # Trailer
 print <<"EOM";
 <hr noshade>

@@ -70,9 +70,6 @@ print "</small></p>\n";
 # Link back
 page($language, $dateformats{$language}, "people", "backtohome.input");
 
-# Google Analytics
-page($language, $dateformats{$language}, "people", "google-analytics.input");
-
 # Trailer
 print <<"EOM";
 <hr noshade>

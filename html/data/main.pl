@@ -101,9 +101,6 @@ printlist($language,
 # Document footer
 page($language, $dateformats{$language}, "index", "main-footer.input");
 
-# Google Analytics
-page($language, $dateformats{$language}, "index", "google-analytics.input");
-
 # Trailer
 print <<"EOM";
 <hr noshade class=decorative>

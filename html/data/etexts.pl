@@ -381,11 +381,7 @@ print "<p>\n<small>$lastupdated{$language} $update</small>\n";
 # Link back
 page($language, $dateformats{$language}, "etexts-$list-$sorting",
      "backtohome.input");
-
-# Google Analytics
-page($language, $dateformats{$language}, "etexts-$list-$sorting",
-     "google-analytics.input");
-     
+  
 # Trailer
 print <<"EOM";
 <hr noshade>
