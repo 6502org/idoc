@@ -2,6 +2,8 @@
 # iDOC= people page
 
 # Imports
+use File::Basename;
+use lib dirname (__FILE__);
 use idoc;
 
 # Retrieve parameters
@@ -46,7 +48,7 @@ EOM
 print <<"EOM";
  <link rel="search" href="search">
  <link rel="top" href="./">
- <meta name="author" content="Peter Karlsson">
+ <meta name="author" content="Peter Krefting">
  <meta name="keywords" content="cbm, c64, documentation, international, project, project 64, commodore 64, eight-bit, svenska, deutsch, english, hungarian, magyar">
 </head>
 

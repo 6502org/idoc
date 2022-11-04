@@ -1,6 +1,5 @@
 #;German: mepk@rbg.informatik.th-darmstadt.de
 
-all;<!-- $Id: main.input,v 1.28 2004/03/22 20:40:09 peter Exp $ -->
 all;<div class=left align=center>
 all;<h1 align="center"><img src="../pics/idoccbm.gif" height=150
 all;alt="iDOC=" width=211></h1>
@@ -36,12 +35,12 @@ es;Bienvenido a iDOC=!</h2>
 hu;Üdvözöljük az iDOC-nál!</h2>
 
 all;<p align="center">
-en;<small>Copyright © 1997-2003 Peter Karlsson</small>
-sv;<small>Upphovsrättsskyddat © 1997-2003 Peter Karlsson</small>
-de;<small>Copyright © 1997-2003 Peter Karlsson</small>
-fi;<small>Copyright © 1997-2003 Peter Karlsson</small>
-es;<small>Copyright © 1997-2003 Peter Karlsson</small>
-hu;<small>Copyright &copy; 1997-2003 Peter Karlsson</small>
+en;<small>Copyright © 1997-2003 Peter Krefting</small>
+sv;<small>Upphovsrättsskyddat © 1997-2003 Peter Krefting</small>
+de;<small>Copyright © 1997-2003 Peter Krefting</small>
+fi;<small>Copyright © 1997-2003 Peter Krefting</small>
+es;<small>Copyright © 1997-2003 Peter Krefting</small>
+hu;<small>Copyright &copy; 1997-2003 Peter Krefting</small>
 all;</p>
 all;<p align="center"><big>
 en;Dedicated to preserving Commodore eight-bit documentation in
@@ -57,12 +56,12 @@ es;en formato de texto electrónico
 hu;A Commodore 8-bites gépekhez tartozó nem angol nyelv? dokumentációk 
 hu;elektronikus formában történõ megõrzésért.
 all;</big><!--htdig_noindex--><p align=center>
-all;[ <a href="index.en.shtml">English</a>
-all;| <a href="index.sv.shtml">svenska</a>
-all;| <a href="index.de.shtml">deutsch</a>
-all;| <a href="index.fi.shtml">suomeksi</a>
-all;| <a href="index.es.shtml">Espa&ntilde;ol</a>
-all;| <a href="index.hu.shtml">Magyar</a>
+all;[ <a href="index.en.html">English</a>
+all;| <a href="index.sv.html">svenska</a>
+all;| <a href="index.de.html">deutsch</a>
+all;| <a href="index.fi.html">suomeksi</a>
+all;| <a href="index.es.html">Espa&ntilde;ol</a>
+all;| <a href="index.hu.html">Magyar</a>
 all;]</p><!--/htdig_noindex--><p align=center>
 
 en;Please also visit <em><a href="http://project64.c64.org/">Project
@@ -97,7 +96,7 @@ fi;Päivitetty
 es;Última actualización el
 hu;Utolsó frissítés:
 
-filedate;/home/mnaberezny/6502.org/cbm.6502.org/html/data/main.input
+filedate;../data/main.input
 all;</div></div><hr noshade class=decorative>
 
 all;<h2 class=main>
@@ -117,7 +116,7 @@ de;Einführung in iDOC=</a> (aktualisiert am:
 fi;iDOC=:n esittely</a> (päivitetty
 es;Introducción a iDOC=</a> (actualizado el:
 hu;Bevezetés az iDOC=-hoz</a> (frissítve:
-filedate;/home/mnaberezny/6502.org/cbm.6502.org/html/data/intro.input
+filedate;../data/intro.input
 all;)
 
 all;<li><a href="policy">
@@ -127,7 +126,7 @@ de;Richtlinien von iDOC=</a> (aktualisiert am:
 fi;iDOC=:n suuntaviivat</a> (päivitetty
 es;Políticas sobre iDOC=</a> (actualizado el:
 hu;Az iDOC= szabályzata</a> (frissítve:
-filedate;/home/mnaberezny/6502.org/cbm.6502.org/html/data/policy.input
+filedate;../data/policy.input
 all;)
 
 all;<li><a href="people">
@@ -137,7 +136,7 @@ de;Die Leute hinter iDOC=</a> (aktualisiert am:
 fi;iDOC=:n tekijät</a> (päivitetty
 es;La gente de iDOC=</a> (actualizado el:
 hu;Az iDOC= résztvevõi</a> (frissítve:
-filedate;/home/mnaberezny/6502.org/cbm.6502.org/html/data/people.list
+filedate;../data/people.list
 all;)
 
 all;<li>
@@ -164,7 +163,7 @@ de;Aktualisiert am
 fi;Päivitetty
 es;Última actualización el
 hu;Utolsó frissítés:
-filedate;/home/mnaberezny/6502.org/cbm.6502.org/html/data/etexts.list
+filedate;../data/etexts.list
 all;
 
 all;<ul>
@@ -249,7 +248,7 @@ de;<a href="alternative/">Andere Formate</a> (aktualisiert am:
 fi;<a href="alternative/">Muut kuin tekstimuotoiset dokumentit</a> (päivitetty
 es;<a href="alternative/">Otros formatos</a> (actualizado el:
 hu;<a href="alternative/">Más formátumú anyagok</a> (frissítve:
-filedate;/home/mnaberezny/6502.org/cbm.6502.org/html/alternative/index.sv.shtml
+filedate;../alternative/index.sv.html
 all;)
 
 all;</ul>

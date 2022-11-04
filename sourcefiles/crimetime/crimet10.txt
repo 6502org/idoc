@@ -40,7 +40,7 @@ use the information herein you do so at your own risk.
 *********
 
 The Project 64 etext of the Crime Time manual and map, converted to
-text by Peter Karlsson <dat95pkn@idt.mdh.se>, map courtesy of Andreas
+text by Peter Krefting <peter@softwolves.pp.se>, map courtesy of Andreas
 Henriksson <ash@lindesberg.mail.telia.com>.
 
 CRIMET10.TXT, March 1997, etext #179.

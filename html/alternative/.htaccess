@@ -1,7 +1,6 @@
 # Implementera automatiskt språkstöd
 # ----------------------------------
 
-# $Id: .htaccess,v 1.2 2002/05/22 06:58:15 peter Exp $
 
 # Först stänger vi av omskrivningsmotorn så vi inte får rekursion
 RewriteEngine off

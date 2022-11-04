@@ -1,21 +1,21 @@
 #!/bin/bash
-# Uppdatera iDOC=s webbsidor
-# © 1999-2003 Peter Karlsson <peter@softwolves.pp.se>
-# Uppdtera iDOC=s webbsidor
-# $Id: updatepages.sh,v 1.18 2003/02/01 21:12:04 peter Exp $
+# Update iDOC='s web pages
+# © 1999-2003 Peter Krefting <peter@softwolves.pp.se>
+# Update iDOC='s web pages
 
 unset LANG LC_ALL
 
-# cd /home/peter/public_html/idoc/data
+HERE=$(dirname $0)
+cd "$HERE"
 
 for language in sv en de fi es hu; do
   echo -n "${language}: "
   echo -n "index "
-  ./main.pl ${language}  > ../index.${language}.shtml
+  ./main.pl ${language}  > ../index.${language}.html
   if [ $language = hu ]; then
-    echo 'Content-Type: text/html;charset=iso-8859-2' > ../index.${language}.shtml.meta
+    echo 'Content-Type: text/html;charset=iso-8859-2' > ../index.${language}.html.meta
   else
-    echo 'Content-Type: text/html;charset=iso-8859-1' > ../index.${language}.shtml.meta
+    echo 'Content-Type: text/html;charset=iso-8859-1' > ../index.${language}.html.meta
   fi
   for page in people intro policy; do
     echo -n "${page} "
@@ -42,8 +42,8 @@ for language in sv en de fi es hu; do
   echo
 done
 
-echo -n "länkar: "
-ln -sf index.en.shtml ../${version}/index.shtml
+echo -n "links: "
+ln -sf index.en.html ../${version}/index.html
 for page in people intro policy search; do
   ln -sf ${page}.en.html ../${version}/${page}.html
 done
@@ -54,5 +54,5 @@ for table in gm hw pr vc c2 ms langsv langde langhu langfr all; do
 done
 echo
 
-echo Klar
+echo Done
 exit 0

@@ -121,7 +121,6 @@ sub page
 	my ($lang,  $dateformat, $me, $filename) = @_;
 	my ($llang, $ltable, $data);
 
-	print '<!-- $Id: idoc.pm,v 1.15 2003/09/27 20:11:57 peter Exp $ -->', "\n";
 
 	open INPUT, $filename or die "Unable to open input: $!";
 	LINE: while (<INPUT>)
@@ -139,7 +138,7 @@ sub page
 		# Link?
 		if ($llang eq 'link3')
 		{
-			printf $data,$me, "\n";
+			printf "$data\n", $me;
 		}
 
 		# Date of file
@@ -147,14 +146,6 @@ sub page
 		{
 			chomp $data;
 			filedate($data, $dateformat);
-		}
-
-		# Visitor counter
-		if ($llang eq 'visitors')
-		{
-            # Commenting out; script does not exist in tree
-            # printf $data,
-			# 	   "<!--#exec cmd=\"/home/peter/public_html/cgi/counter 1\" -->"
 		}
 	}
 	close INPUT;

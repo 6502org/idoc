@@ -7,7 +7,7 @@ in electronic text format that might otherwise cease to exist with the rapid
 advancement of computer technology and declining interest in 8-bit computers
 on the part of the general population. If you would like to help by
 converting Commodore related hardcopy documents to electronic texts please
-contact the manager of iDOC=, Peter Karlsson, at pk@abc.se.
+contact the manager of iDOC=, Peter Krefting, at peter@softwolves.pp.se.
 
 Extensive efforts were made to preserve the contents of the original
 document. However, certain portions, such as diagrams, program listings, and
@@ -39,7 +39,7 @@ own risk.
 *********
 
 The iDOC= etext of SAMS' The official book for the Commodore 128, converted
-to text by Peter Karlsson <pk@abc.se>
+to text by Peter Krefting <peter@softwolves.pp.se>
 
 offical128_en1.txt, July 2000, etext #66.
 

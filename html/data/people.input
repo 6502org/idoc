@@ -1,4 +1,3 @@
-all;<!-- $Id: people.input,v 1.8 2001/05/25 15:52:54 peter Exp $ -->
 
 all;<div class=left align=center>
 all;<h1 align="center"><img src="../pics/idoccbm.gif" alt="iDOC=" height=150
@@ -22,7 +21,7 @@ fi;iDOC=:n perustaja on
 es;El iniciador de iDOC= es
 hu;Az iDOC= alapítója:
 
-all;<a href="../">Peter Karlsson</a>
+all;<a href="../">Peter Krefting</a>
 en;from Oslo in Norway.
 sv;från Oslo i Norge (men jag är svensk).
 de;aus Oslo in Norwegen.

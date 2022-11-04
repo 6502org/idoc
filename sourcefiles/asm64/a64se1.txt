@@ -8,7 +8,7 @@ cease to exist with the rapid advancement of computer technology and
 declining interest in 8-bit computers on the part of the general
 population. If you would like to help by converting C64 related
 hardcopy documents to electronic texts please contact the manager of
-International Project 64, Peter Karlsson, at m9944@abc.se.
+International Project 64, Peter Krefting, at peter@softwolves.pp.se.
 
 Extensive efforts were made to preserve the contents of the original
 document.  However, certain portions, such as diagrams, program
@@ -42,7 +42,7 @@ do so at your own risk.
 *********
 
 The International Project 64 etext of the ASM 64 manual, converted to
-text by Peter Karlsson <m9944@abc.se>
+text by Peter Krefting <peter@softwolves.pp.se>
 
 A64SE1.TXT, May 1997, etext #5.
 

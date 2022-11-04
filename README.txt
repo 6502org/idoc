@@ -1,4 +1,4 @@
-Note from Peter Karlsson:
+Note from Peter Krefting:
 
 "html" contains the stuff that was on the web site. html/data contains the
 scripts that generates all the pages. This stuff was on the web server.

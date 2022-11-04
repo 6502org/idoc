@@ -8,7 +8,7 @@ exist with the rapid advancement of computer technology and declining
 interest in 8-bit computers on the part of the general population. If you
 would like to help by converting C64 related hardcopy documents to
 electronic texts please contact the manager of International Project 64,
-Peter Karlsson, at pk@abc.se.
+Peter Krefting, at peter@softwolves.pp.se.
 
 Extensive efforts were made to preserve the contents of the original
 document. However, certain portions, such as diagrams, program listings, and
@@ -41,7 +41,7 @@ information herein you do so at your own risk.
 *********
 
 The International Project 64 etext of the The Final Cartridge III Swedish
-manual, converted to text by Peter Karlsson <pk@abc.se>
+manual, converted to text by Peter Krefting <peter@softwolves.pp.se>
 
 TFC3SE1A.TXT, January 1998, etext #21.
 

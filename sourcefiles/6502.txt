@@ -1,6 +1,6 @@
 From harel@free.fr Tue Mar  2 21:24:52 2004
 From: Eric Harel <harel@free.fr>
-To: Peter Karlsson <peter@softwolves.pp.se>, project64@project64.ath.cx
+To: Peter Krefting <peter@softwolves.pp.se>, project64@project64.ath.cx
 Date: Tue, 02 Mar 2004 21:18:48 +0100
 Subject: [iDoc64] Article: Extra 6502 Instructions
 X-Bogosity: No, tests=bogofilter, spamicity=0.437425, version=0.14.5.4

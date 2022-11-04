@@ -2,6 +2,8 @@
 # iDOC= main page
 
 # Imports
+use File::Basename;
+use lib dirname (__FILE__);
 use idoc;
 
 # Retrieve parameters
@@ -41,12 +43,12 @@ print <<"EOM";
  <link rel="stylesheet" type="text/css" href="idoc.css">
 EOM
 
-&langlinks($language, 'index.%s.shtml', %titles);
+&langlinks($language, 'index.%s.html', %titles);
 
 print <<"EOM";
  <link rel="search" href="search">
  <link rel="top" href="./">
- <meta name="author" content="Peter Karlsson">
+ <meta name="author" content="Peter Krefting">
  <meta name="keywords" content="cbm, c64, documentation, international, project, project 64, commodore 64, eight-bit, svenska, deutsch, english, hungarian, magyar">
 </head>
 
@@ -106,7 +108,7 @@ print <<"EOM";
 <hr noshade class=decorative>
 <a href="http://www.softwolves.pp.se/cbm/">Softwolves' CBM page</a>
 <hr noshade>
-<a href="http://validator.w3.org/check?uri=http://cbm.6502.org/index.$language.shtml">
+<a href="http://validator.w3.org/check?uri=http://cbm.6502.org/index.$language.html">
  <img src="../pics/vh401.gif" width=88 height=31 border=0
   alt="[HTML 4.01]"></a>
 

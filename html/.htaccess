@@ -4,7 +4,7 @@
 # ------------------------------------------------------------------------
 # Implement automatic language support
 
-AddType text/html .shtml
+AddType text/html .html
      
 # Add index+language selection as index page
 DirectoryIndex index

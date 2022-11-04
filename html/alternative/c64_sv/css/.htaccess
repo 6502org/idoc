@@ -1,7 +1,6 @@
 # Skriv om adresser som använder gamla CSS-adressen
 # -------------------------------------------------
 #
-# $Id: .htaccess,v 1.1 2002/04/05 20:50:23 peter Exp $
 
 RewriteEngine on
 
