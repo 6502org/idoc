@@ -1,4 +1,0 @@
-# Prohibit access to this directory via the web server
-
-RewriteEngine off
-Deny from all
