@@ -1,5 +1,9 @@
 # iDOC=
 
+iDOC= is a project [initiated by Peter Krefting](https://www.softwolves.pp.se/cbm/artiklar/oblivion.en.html) that collects documentation (primarily text files) related to Commodore computers in various languages.  Before March 1999, it was known an International Project 64.
+
+## Build
+
 The iDOC= website is fully static and is built from this repository.  Building iDOC= requires a Unix-like machine (e.g. Linux, macOS) with GNU Make and Perl 5.
 
 On Ubuntu 18.04 LTS, this will install the requirements:
@@ -53,3 +57,11 @@ Serving HTTP on 127.0.0.1 port 8000 (http://127.0.0.1:8000/) ...
 ```
 
 Open a browser to http://127.0.0.1:8000/ to view it.
+
+## Repository Layout 
+
+ - `build/` - contains the complete iDOC= website after a successful build.  This directory is what would be served by a webserver, e.g. as an Apache public directory.  
+ - `data/` - data and scripts used to build the website.  The `build/` directory will contain of the output of these scripts combined with the contents of `static/`.
+ - `static/`- files used in the build that never change.  This includes the documents that are downloaded from the website (`static/docs/`). 
+ - `sourcefiles` - materials that were once used to create the documents in `static/docs/`.  The files in this directory are not used during the build.
+
