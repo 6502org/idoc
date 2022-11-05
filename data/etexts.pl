@@ -452,7 +452,7 @@ sub printelist
 	foreach $key (sort alphasort keys %sortkey)
 	{
 		$num = $sortkey{$key};
-		my @filedata = stat '../docs/' . $filename{$num};
+		my @filedata = stat '../html/docs/' . $filename{$num};
 		my $filesize = 0;
 		$filesize = $filedata[7] if $#filedata != -1;
 		my $addedon;
