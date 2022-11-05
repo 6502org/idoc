@@ -30,6 +30,7 @@ done
 
 echo -n "copy: "
 cp -v ../html/index.en.html ../html/index.html
+cp -v ../html/alternative/index.en.html ../html/alternative/index.html
 
 echo Done
 exit 0
