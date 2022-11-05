@@ -62,6 +62,6 @@ Open a browser to http://127.0.0.1:8000/ to view it.
 
  - `build/` - contains the complete iDOC= website after a successful build.  This directory is what would be served by a webserver, e.g. as an Apache public directory.  
  - `data/` - data and scripts used to build the website.  The `build/` directory will contain of the output of these scripts combined with the contents of `static/`.
- - `static/`- files used in the build that never change.  This includes the documents that are downloaded from the website (`static/docs/`). 
+ - `static/`- files used in the build that never change.  This includes the documents that are downloaded from the website (`static/download/`).
  - `sourcefiles` - materials that were once used to create the documents in `static/docs/`.  The files in this directory are not used during the build.
 
