@@ -9,11 +9,11 @@ unset LANG LC_ALL
 HERE=$(dirname $0)
 cd "$HERE"
 
-echo -n "clean: "
+echo "clean: "
 mkdir -p ../build/
 rm -rfv ../build/*
 
-echo -n "copy: "
+echo "copy: "
 cp -vR ../static/* ../build/
 
 for language in sv en de fi es hu; do
