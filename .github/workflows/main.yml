@@ -12,11 +12,11 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Build the website
-      run: ./data/updatepages.sh
+      run: ./data/build.sh
 
     - name: 'Upload build artifacts'
       uses: actions/upload-artifact@v3
       with:
         name: build-artifacts
         path: |
-            html/
+            build/
