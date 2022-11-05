@@ -58,52 +58,39 @@ all;<li>
 en;The primary format for iDOC= documentation is raw text, which means
 en;that graphics need to be converted to ascii-art or descriptions to
 en;convey <em>information</em> or maybe even feelings.
-en;If images are needed, other formats for publication may be necessary,
-en;please contact
-en;<a href="../">Mike Naberezny</a> at
-en;<a href="m&#65;ilto:mike&#64;naberezny&#46;com">mike&#64;naberezny&#46;com</a>
-en;for more information.
+en;If images are needed, they may be available in the 
+en;<a href="https://github.com/6502org/idoc">GitHub repository</a> for iDOC=.
 
 sv;Det primära formatet för iDOC=-dokumentation är råtext, vilket betyder
 sv;att grafik måste konverteras till ASCII-konst eller beskrivningar som
 sv;<em>information</em>, eller kanske t.o.m känslor.
-sv;Om grafik krävs, kan andra publiceringsformat vara nödvändiga, vänligen
-sv;<a href="../">Mike Naberezny</a> på
-sv;<a href="m&#65;ilto:mike&#64;naberezny&#46;com">mike&#64;naberezny&#46;com</a>
-sv;för mer information.
+sv;Om bilder beh&ouml;vs kan de vara tillg&auml;ngliga i 
+sv;<a href="https://github.com/6502org/idoc">GitHub-arkivet</a> f&ouml;r iDOC=.
 
 de;Das primäre Format für iDOC= Dokumente ist roher Text, d.h.
 de;daß Grafiken in ASCII-"Kunst" umgewandelt werden, oder in
 de;Beschreibungen, die dieselbe Information, vielleicht sogar Gefühle,
-de;übermitteln.
-de;Wenn Bilder gebraucht werden mögen andere Formate für eine
-de;Veröffentlichung vonnöten sein, bitte kontaktieren sie
-de;<a href="../">Mike Naberezny</a> über
-de;<a href="m&#65;ilto:mike&#64;naberezny&#46;com">mike&#64;naberezny&#46;com</a>
-de;für mehr Informationen.
+de;übermitteln.  Falls Bilder gebraucht werden, sind sie möglicherweise im 
+de;<a href="https://github.com/6502org/idoc">GitHub-Repository</a> 
+de;für iDOC= verfügbar.
 
 fi;Ensisijainen tallennusmuoto iDOC=:ssa on teksti.
 fi;Kuvat on muunnettava joko ASCII-kaavioiksi tai kuvauksiksi, jotka
 fi;välittävät niiden sisältämän <em>tiedon</em>, mahdollisesti jopa
-fi;tunteet.
-fi;Jos kuvia todella tarvitaan, kysy lisäohjeita
-fi;<a href="../">Mike Naberezny</a>ilta
-fi;(<a href="m&#65;ilto:mike&#64;naberezny&#46;com">mike&#64;naberezny&#46;com</a>)
+fi;tunteet.  Jos kuvia tarvitaan, ne voivat olla saatavilla iDOC=:n 
+fi;<a href="https://github.com/6502org/idoc">GitHub-tietovarastosta</a>.
 
 es;El formato básico para la documentación en iDOC= es texto simple, lo
 es;cual significa que los gráficos tendrán que convertirse a arte ASCII o
 es;a descripciones que ofrezcan <em>información</em> o quizá incluso sentimientos.
-es;Si se necesitan imágenes, otros formatos para la publicación pueden
-es;requerirse. Por favor, contacte a
-es;<a href="../">Mike Naberezny</a> en
-es;<a href="m&#65;ilto:mike&#64;naberezny&#46;com">mike&#64;naberezny&#46;com</a>
-es;para mayor información.
+es;Si se necesitan im&aacute;genes, pueden estar disponibles en el 
+es;<a href="https://github.com/6502org/idoc">repositorio de GitHub</a> para iDOC=.
 
 hu;Az elsõdleges formátum az iDOC= dokumentációknál a sima szöveg, a grafikák 
-hu;ascii-art-ba konvertálva, vagy leírva, az információk megértéséhez. Amennyiben 
-hu;más formátum szükséges a publikációhoz, kérjük a további információkért vedd 
-hu;fel a kapcsolatot a managerrel: <a href="../">Mike Naberezny</a> -nal,
-hu;<a href="m&#65;ilto:mike&#64;naberezny&#46;com">mike&#64;naberezny&#46;com</a>. 
+hu;ascii-art-ba konvertálva, vagy leírva, az információk megértéséhez. 
+hu;Ha k&eacute;pek kellenek, azok is benne lehetnek
+hu;<a href="https://github.com/6502org/idoc">GitHub-t&aacute;rh&aacute;z</a>
+hu;for iDOC= el&eacute;rhet&odblac;.
 
 all;<li>
 en;Preferably non-English documents only. Since there already <em>is</em> the
@@ -211,81 +198,61 @@ hu;vagy valahol máshol.
 
 all;<li>
 en;<em>iDOC=</em> honours the original copyrights of the
-en;included documentations. Since most Commodore eight-bit stuff is
+en;included documentation. Since most Commodore eight-bit stuff is
 en;no longer manufactured
 en;or sold, we don't believe that there is any clash of interests in
 en;this free distribution of documents.
 en;If, however, you have something to object to this distribution, please
-en;contact
-en;<a href="../">Mike Naberezny</a> at
+en;contact us <a href="https://github.com/6502org/idoc">on GitHub</a>.
+en;If you are the copyright holder of a featured document and do not 
+en;want it distributed here, we will of course withdraw it as soon as possible.
 
 sv;<em>iDOC=</em> erkänner dokumentationernas upphovsrätt.
-sv;Eftersom de flesta Commodore åttabitars-saker inte längre tillverkas
-sb;eller säljs, så
-sv;tror vi inte att det ligger någon intressekonflikt i denna fria
-sv;distribution av dokument. Om du, trots allt, skulle ha någonting att
-sv;protestera mot denna distribution, var vänlig kontakta
-sv;<a href="../">Mike Naberezny</a> på
+sv;Eftersom de flesta Commodore åttabitars-saker inte längre tillverkas eller 
+sv;säljs, så tror vi inte att det ligger någon intressekonflikt i denna fria
+sv;distribution av dokument. Om du dock har n&aring;gra inv&auml;ndningar mot 
+sv;denna distribution, kontakta oss V&auml;nligen
+sv;<a href="https://github.com/6502org/idoc">oss p&aring; GitHub</a>.
+sv;Om du är upphovsrättsinnehavare för någon av de tillgängliga dokumentationerna 
+sv;och inte vill att det ska distribueras här, så kommer vi naturligtvis att ta 
+sv;bort det så snart som möjligt.
 
 de;iDOC= respektiert die Original-Copyrights der bereitgestellten
 de;Dokumentationen. Da die meisten Sachen für Commodore-8-Bitter nicht länger
 de;produziert oder verkauft werden, glauben wir nicht, daß ein
 de;Interessenskonflikt in der freien Verbreitung der Dokumente besteht.
 de;Falls Sie jedoch etwas an dieser Verbreitung auszusetzen haben, kontaktieren
-de;Sie bitte
-de;<a href="../">Mike Naberezny</a> über
+de;Sie uns bitte <a href="https://github.com/6502org/idoc">auf GitHub</a>.
+de;Wenn Sie Inhaber von Rechten an einer zur Verfügung stehenden
+de;Dokumentation sind und nicht möchten, dass sie hier verbreitet wird, werden
+de;wir sie selbstverständlich sofort zurückziehen.
 
 fi;<em>iDOC=</em> kunnioittaa ohjeiden tekijänoikeuksia.
 fi;Koska useimpia Commodoren 8-bittisiiin koneisiin liittyviä tuotteita
 fi;ei enää valmisteta eikä myydä, emme usko,
 fi;että näiden ohjeiden vapaa levittäminen on kenenkään etujen vastaista.
-fi;Jos kuitenkin olet levittämistä vastaan, ota yhteyttä
-fi;<a href="../">Mike Nabereznyiin</a> kirjoittamalla osoitteeseen
+fi;Jos kuitenkin vastustat t&auml;t&auml; jakelua, ota meihin yhteytt&auml;
+fi; <a href="https://github.com/6502org/idoc">meit&auml; GitHubissa</a>.
+fi;Jos olet joidenkin levittämiemme
+fi;dokumenttien tekijänoikeuden haltija etkä halua, että levitämme niitä,
+fi;poistamme ne luonnollisesti mahdollisimman nopeasti saatavilta.
 
-es;<em>iDOC=</em> da crédito de los derechos reservados originales de los
-es;documentos incluidos. Puesto que la mayor parte del material de Commodore de 8-bits
-es;ya no es fabricado o vendido, no creemos que haya ningún conflicto de intereses
-es;en la distribución gratuita de los documentos.
-es;Sin embargo, si usted tiene algo que objetar con respecto a esta distribución,
-es;por favor, contacte a
-es;<a href="../">Mike Naberezny</a> en
+es;<em>iDOC=</em> respeta los derechos de autor originales de la documentaci&oacute;n
+es;incluida. Dado que la mayor parte del material de ocho bits de Commodore ya no se
+es;fabrica ni se vende, no creemos que haya ning&uacute;n conflicto de intereses en 
+es;esta distribuci&oacute;n gratuita de documentos. Sin embargo, si tiene algo que 
+es;objetar a esta distribuci&oacute;n, comun&iacute;quese con nosotros 
+es;<a href="https://github.com/6502org/idoc">en GitHub</a>. Si usted es el titular 
+es;de los derechos de autor de un documento destacado y no desea que se distribuya
+es;aqu&aacute;, por supuesto, lo retiraremos lo antes posible.
 
 hu;Az <em>iDOC=</em> tiszteletben tartja az eredeti copyright jogokat, és 
 hu;elhelyezi azokat a dokumentációkban. Mivel a Commodore 8-bit anyagok
 hu;többnyire már nem állnak gyártás alatt, vagy nincsennek már forgalomban,
 hu;ezért nem hisszük, hogy valakinek anyagi kárt okoznánk a dokumentációk
-hu;ingyenes disztibuciójával. Amennyiben valamilyen problémád van ezzel a 
-hu;disztribucióval kérlek vedd fel a kapcsolatot a managerrel: 
-hu;<a href="../">Mike Naberezny</a>-nal, 
-
-all;<a href="m&#65;ilto:mike&#64;naberezny&#46;com">mike&#64;naberezny&#46;com</a>,
-
-en;so that we can sort it out. If you are the copyright holder of a
-en;featured documentation and do not want it distributed here, we
-en;will of course withdraw it as soon as possible.
-
-sv;så att vi kan få rätsida på det hela. Om du är upphovsrättsinnehavare
-sv;för någon av de tillgängliga dokumentationerna och inte vill att det
-sv;ska distribueras här, så kommer vi naturligtvis att ta bort det
-sv;så snart som möjligt.
-
-de;damit wir es aussortieren können.
-de;Wenn Sie Inhaber von Rechten an einer zur Verfügung stehenden
-de;Dokumentation sind und nicht möchten, daß sie hier verbreitet wird, werden
-de;wir sie selbstverständlich sofort zurückziehen.
-
-fi;jotta voimme korjata asian. Jos olet joidenkin levittämiemme
-fi;dokumenttien tekijänoikeuden haltija etkä halua, että levitämme niitä,
-fi;poistamme ne luonnollisesti mahdollisimman nopeasti saatavilta.
-
-es;para que podamos arreglarlo. Si usted es el beneficiario de los derechos 
-es;reservados de alguno de los documentos presentados y no quiere
-es;que se distribuyan aquí, desde luego que nosotros lo retiraremos
-es;tan pronto como sea posible.
-
-hu;és kérésedre eltávolíthatjuk azt. Amennyiben copyright jog tulajdonosa vagy
-hu;a dokumentációnak, és nem kívánod itt nyilvánosságra hozni, természetesen 
-hu;tudomásul vesszük azt, és szintén eltávolítjuk weboldalunkról.
+hu;ingyenes disztibuciójával. Ha azonban kifog&aacute;solnival&oacute;ja 
+hu;van ezzel a terjeszt&eacute;ssel szemben, k&eacute;rj&uuml;k, vegye fel
+hu;vel&uuml;nk a kapcsolatot <a href="https://github.com/6502org/idoc">a GitHubon</a>.
 
 all;<li>
 en;<em>iDOC=</em> is a non-profit project.

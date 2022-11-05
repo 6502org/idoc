@@ -17,20 +17,18 @@ en;non-English Commodore related documents in electronic text format that
 en;might otherwise cease to exist with the rapid advancement of computer
 en;technology and declining interest in 8-bit computers on the part of the
 en;general population. If you would like to help by converting Commodore related
-en;hardcopy documents to electronic texts please contact the manager of
-en;<strong>iDOC=</strong>,
-en;<a href="../">Mike Naberezny</a> at
+en;hardcopy documents to electronic texts please contact 
+en;us <a href="https://github.com/6502org/idoc">on GitHub</a>.
 
 sv;Detta är ingångssidan för <strong>iDOC=</strong>. Målet med
 sv;<strong>iDOC=</strong> är att bevara Commodore-relaterade
 sv;dokument på andra språk än engelska i ett elektoniskt
 sv;textformat, vilka i annat fall kan upphöra att existera i den snabba
 sv;utvecklingen inom datorteknologin och det minskade intresset för
-sv;åtta-bitars-datorer hos allmänheten. Om du vill hjälpa till genom att
-sv;konvertera Commodore-relaterade pappersdokument till elektroniska texter,
-sv;kontakta vänligen <strong>iDOC=</strong>s
-sv;administratör, 
-sv;<a href="../">Mike Naberezny</a> på
+sv;åtta-bitars-datorer hos allmänheten. Om du vill hj&aacute;lpa till 
+sv;genom att konvertera Commodore relaterad tryckta dokument till elektroniska 
+sv;texter v&auml;nligen kontakta us 
+sv;<a href="https://github.com/6502org/idoc">p&aring; GitHub</a>.
 
 de;Dies ist die Homepage von <strong>iDOC=</strong>.
 de;Ziel des <strong>iDOC=</strong> ist es, Commodore-bezogene
@@ -40,20 +38,18 @@ de;der schnellen Evolution der Computertechnologie und dem verminderten
 de;Interesse an 8-Bit-Computern im allgemeinen,
 de;aufhören würden zu existieren.
 de;Wenn Sie helfen wollen, Commodore-bezogene Dokumentation vom Papier in
-de;elektronischen Text umzuwandeln, dann nehmen Sie
-de;bitte mit dem <strong>iDOC=</strong>-Adminstrator
-de;<a href="../">Mike Naberezny</a> Kontakt auf:
+de;elektronischen Text umzuwandeln, kontaktieren Sie uns bitte
+de;<a href="https://github.com/6502org/idoc">auf GitHub</a>.
 
 fi;Tämä on <strong>iDOC=:n</strong> kotisivu.
 fi;<strong>iDOC=:n</strong> tarkoitus on säilöä
 fi;sähköiseen muotoon muita kuin englanninkielisiä Commodore:ään
 fi;liittyviä ohjeita, jotka voisivat muuten kadota lopullisesti nopean
 fi;teknisen kehityksen seurauksena ja 8-bittisiin tietokoneisiin
-fi;kohdistuvan yleisen kiinnostuksen katoamisen vuoksi. Jos haluat
-fi;auttaa muuntamalla Commodore:ään liittyviä paperilla olevia ohjeita
-fi;sähköiseen muotoon, ole hyvä ja ota yhteys <strong>iDOC=</strong>
-fi;ylläpitäjään,
-fi;<a href="../">Mike Nabereznyiin</a>, kirjoittamalla osoitteeseen
+fi;kohdistuvan yleisen kiinnostuksen katoamisen vuoksi. Jos haluat 
+fi;auttaa muuntamaan Commodoreen liittyvi&auml; paperiasiakirjoja 
+fi;s&auml;hk&ouml;isiksi teksteiksi, ota meihin yhteytt&auml; 
+fi;<a href="https://github.com/6502org/idoc">GitHubissa</a>.
 
 es;Ésta es la página principal de <strong>iDOC=</strong>.
 es;El objetivo de <strong>iDOC=</strong> es preservar
@@ -61,25 +57,20 @@ es;documentos relacionados con Commodore, en idiomas diferentes al inglés,
 es;en formato de texto electrónico, los cuales podrían cesar de existir
 es;por causa del rápido avance de la tecnología computacional
 es;y la pérdida de interés en computadoras de 8-bits de parte 
-es;de la población en general. Si quisiera ayudar a convertir documentos 
-es;impresos relacionados con Commodore a textos electrónicos, por favor
-es;contacte al administrador de <strong>iDOC=</strong>,
-es;<a href="../">Mike Naberezny</a> en
+es;de la población en general. Si desea ayudar convirtiendo documentos 
+es;impresos relacionados con Commodore en textos electr&oacute;nicos, 
+es;cont&aacute;ctenos <a href="https://github.com/6502org/idoc">en GitHub</a>.
 
 hu;Az <strong>iDOC=</strong> célja, hogy megõrizze a nem angol
 hu;nyelvû Commodorehoz kapcsolódó dokumentumokat elektronikus formában,
 hu;hiszen a számítógépes technológia gyors fejlõdésével és az
 hu;érdeklõdés csökkenésével ezek a dokumentumok könnyen az enyészetté 
-hu;válhatnak.
-hu;Ha szeretnél részt venni a nyomtatott formában meglévõ Commodore
-hu;anyagok elektronikus formátumuvá konvertálásában a vedd fel a
-hu;kapcsolatot az <strong>iDOC=</strong> managerével 
-hu;<a href="../">Mike Naberezny</a>-nal a következõ e-mail címen:
+hu;válhatnak.  Ha seg&iacute;teni szeretne a Commodore-hoz kapcsol&oacute;d&oacute;
+hu;nyomtatott dokumentumok elektronikus sz&ouml;vegekk&eacute;
+hu;alak&iacute;t&aacute;s&aacute;ban, l&eacute;pjen kapcsolatba vel&uuml;nk
+hu;<a href="https://github.com/6502org/idoc">a GitHubon</a>.
 
-
-all;<a href="m&#65;ilto:mike&#64;naberezny&#46;com">mike&#64;naberezny&#46;com</a>.<p>
-
-en;Extensive efforts were made to preserve the contents of the
+en;<p>Extensive efforts were made to preserve the contents of the
 en;original document. However, certain portions, such as diagrams,
 en;program listings, and indexes may have been either altered or
 en;sacrificed due to the limitations of plain vanilla text. Diagrams
@@ -90,7 +81,7 @@ en;from page number references to section number references. Please
 en;accept our apologies for these limitations, alterations and
 en;possible omissions.
 
-sv;Mycket arbete har lagts ner på att bevara innehållet i de ursprungliga
+sv;<p>Mycket arbete har lagts ner på att bevara innehållet i de ursprungliga
 sv;dokumenten. Tyvärr kan vissa delar, såsom diagram, programlistningar,
 sv;och innehållsförteckningar, ha ändrats eller tagits bort på grund
 sv;av begränsningarna med vanlig ren text. Diagram kan ha tagits bort
@@ -100,7 +91,7 @@ sv;Innehållsförteckningar och sakregister kan ha ändrats från
 sv;sidnummerreferenser till sektionsnummerreferenser. Vi ber om ursäkt
 sv;för dessa begränsningar, förändringar och möjliga uteslutningar.
 
-de;Viel Sorgfalt wurde darauf verwandt, den Inhalt
+de;<p>Viel Sorgfalt wurde darauf verwandt, den Inhalt
 de;ursprünglicher Dokumente zu bewahren. Jedoch können bestimmte
 de;Teile wie Diagramme, Programmlistings und Inhaltsverzeichnisse
 de;geändert oder der Beschränkung auf reinen Text zum Opfer gefallen sein.
@@ -110,7 +101,7 @@ de;können Seitennummer- in Abschnittnummer-Referenzen
 de;umgewandelt worden sein. Wir bitten um Ihr Verständnis für diese
 de;Beschränkungen, Veränderungen und mögliche Ausschließungen.
 
-fi;Ohjeiden alkuperäisen sisällön säilyttämiseksi on nähty paljon
+fi;<p>Ohjeiden alkuperäisen sisällön säilyttämiseksi on nähty paljon
 fi;vaivaa. Valitettavasti joitakin osia, kuten kaavioita,
 fi;ohjelmalistauksia ja sisällysluetteloita on jouduttu muuttamaan tai
 fi;jättämään pois puhtaan tekstimuodon rajoitusten vuoksi. Kaavioita
@@ -121,7 +112,7 @@ fi;hakemistojen sivunumeroviittaukset on muutettu
 fi;kappalenumeroviittauksiksi. Toivomme lukijan ymmärtävän nämä
 fi;rajoitukset, muutokset ja mahdolliset poistot.
 
-es;Se han hecho grandes esfuerzos por preservar los contenidos de los
+es;<p>Se han hecho grandes esfuerzos por preservar los contenidos de los
 es;documentos originales. Sin embargo, ciertos fragmentos de ellos, tales como
 es;diagramas, listados de programas e índices pueden haber sufrido alteraciones
 es;o fueron eliminados por causa de las limitaciones del texto simple.
@@ -133,7 +124,7 @@ es;a números de página hacia referencias a números de sección. Por favor,
 es;acepte nuestras disculpas por estas limitaciones, alteraciones y
 es;posibles omisiones.
 
-hu;Sajnos az elektronikus formában létrejött dokumnetumoknál bizonyos
+hu;<p>Sajnos az elektronikus formában létrejött dokumnetumoknál bizonyos
 hu;kompromisszumok megkötésére van szükség. Nehézkes dolog ASCII 
 hu;formában visszadni a diagrammokat, a programlistákat. A diagrammok
 hu;ASCII-art formában történõ visszadása nem mindig megfelelõ, míg a 
