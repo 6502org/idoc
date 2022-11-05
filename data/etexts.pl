@@ -41,7 +41,6 @@ if ($language eq "sv")
 		isLanguage => "Språk",
 		isAddedon => "Tillagd den",
 		isNew => "Ny!",
-		watch => "läs",
 		none => "ingen sortering",
 		file => "sorterat efter filnamn",
 		name => "sorterat efter titel",
@@ -76,7 +75,6 @@ elsif ($language eq "en")
 		isLanguage => "Language",
 		isAddedon => "Added on",
 		isNew => "New!",
-		watch => "read",
 		none => "no sorting",
 		file => "sorted by file name",
 		name => "sorted by title",
@@ -111,7 +109,6 @@ elsif ($language eq "de")
 		isLanguage => "Sprache",
 		isAddedon => "Hinzugefügt am",
 		isNew => "Neu!",
-		watch => "lesen",
 		none => "unsortiert",
 		file => "sortiert nach Dateinamen",
 		name => "sortiert nach Titel",
@@ -146,7 +143,6 @@ elsif ($language eq	"fi")
 		isLanguage => "Kieli",
 		isAddedon => "Lisätty",
 		isNew => "Uusi!",
-		watch => "lue",
 		none => "lajittelematta",
 		file => "tiedostonimen mukaan lajiteltuna",
 		name => "otsikon mukaan lajiteltuna",
@@ -181,7 +177,6 @@ elsif ($language eq "es")
 		isLanguage => "Idioma",
 		isAddedon => "Agregado",
 		isNew => "¡Nuevo!",
-		watch => "leer",
 		none => "no ordenado",
 		file => "ordenado por nombre de archivo",
 		name => "ordenado por título",
@@ -218,7 +213,6 @@ elsif ($language eq "hu")
 		isLanguage => "Nyelv",
 		isAddedon => "Hozzáadás dátuma",
 		isNew => "Új!",   
-		watch => "olvas",
 		none => "rendezés nélkül",
 		file => "fájlnév alapján rendezve",
 		name => "cím alapján rendezve",
@@ -493,16 +487,13 @@ sub printelist
 		}
 		$languages =~ s/^([a-z])/\U$1/;
 
-		my $readname = $filename{$num};
-		$readname =~ s/\.zip$//;
 		my $newmark = $date{$num} ge $newfrom
 		                ? "<em>" . $strings{"isNew"} . "</em>"
 		                : "";
 		printf " <tr><td>%d<td><a href=\"download/%s\">%s</a> ".
-		       "<small><a href=\"read/%s\">(%s)</a></small>".
 		       "<td align=\"right\">%d %s<td>%s<td>%s<td>%s %s\n",
-		       $num,$filename{$num},$filename{$num},$readname,
-		       $strings{"watch"},$filesize,$strings{"bytes"},$title{$num},
+		       $num,$filename{$num},$filename{$num},
+		       $filesize,$strings{"bytes"},$title{$num},
 		       $languages,$addedon,$newmark;
 	}
 
