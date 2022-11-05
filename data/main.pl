@@ -106,7 +106,7 @@ page($language, $dateformats{$language}, "index", "main-footer.input");
 # Trailer
 print <<"EOM";
 <hr noshade class=decorative>
-<a href="http://www.softwolves.pp.se/cbm/">Softwolves' CBM page</a>
+<a href="https://www.softwolves.pp.se/cbm/">Softwolves' CBM page</a>
 <hr noshade>
 <img src="../pics/vh401.gif" width=88 height=31 border=0 alt="[HTML 4.01]">
 <img src="../pics/vcss.gif" width=88 height=31 border=0 alt="[CSS 2]">

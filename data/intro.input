@@ -148,36 +148,36 @@ all;<p>
 en;All documents are written using the ISO 8859-1 character set, unless
 en;otherwise noted.
 en;If you are having problems reading these files under DOS or OS/2,
-en;<a href="http://www.softwolves.pp.se/sw/software/iso2dos">iso2dos</a>
+en;<a href="https://www.softwolves.pp.se/sw/software/iso2dos">iso2dos</a>
 en;might be able to help you.
 
 sv;Alla dokument är skrivna i ISO 8859-1-teckenuppsättningen om inget annat
 sv;anges.
 sv;Om du har problem med att läsa dessa filer under DOS eller OS/2,
-sv;<a href="http://www.softwolves.pp.se/sw/software/iso2dos">iso2dos</a>
+sv;<a href="https://www.softwolves.pp.se/sw/software/iso2dos">iso2dos</a>
 sv;hjälpa dig.
 
 de;Alle Dokumente sind im ISO 8859-1-Zeichensatz geschrieben, wenn nicht
 de;anders angegeben.
 de;Wenn Sie unter DOS oder OS/2 Probleme beim Lesen dieser Dateien haben,
-de;<a href="http://www.softwolves.pp.se/sw/software/iso2dos">iso2dos</a>
+de;<a href="https://www.softwolves.pp.se/sw/software/iso2dos">iso2dos</a>
 de;helfen.
 
 fi;Kaikki dokumentit on kirjoitettu käyttäen ISO 8859-1:n
 fi;määrittelemää merkistöä, ellei toisin ole mainittu. Jos et pysty
 fi;lukemaan näitä tekstejä MS-DOSissa tai OS/2:ssa, 
-fi;<a href="http://www.softwolves.pp.se/sw/software/iso2dos">iso2dos</a>
+fi;<a href="https://www.softwolves.pp.se/sw/software/iso2dos">iso2dos</a>
 fi;saattaa olla apua.
 
 es;Todos los documentos están escritos usando el conjunto de caracteres ISO 8859-1,
 es;a menos que se especifique lo contrario.
 es;Si tiene problemas leyendo estos archivos bajo DOS o bajo OS/2,
-es;<a href="http://www.softwolves.pp.se/sw/software/iso2dos">iso2dos</a>
+es;<a href="https://www.softwolves.pp.se/sw/software/iso2dos">iso2dos</a>
 es;podría ayudarlo.
 
 hu;Minden dokumentum ISO 8859-1 karakterkészlettel készült, kivéve, ha egyébként
 hu;más van jelezve. Amennyiben problémád van a szövegek DOS vagy OS/2 alatti
-hu;elolvasásával, a <a href="http://www.softwolves.pp.se/sw/software/iso2dos">iso2dos</a> 
+hu;elolvasásával, a <a href="https://www.softwolves.pp.se/sw/software/iso2dos">iso2dos</a> 
 hu;program talán segíthet.
 
 all;<p>
@@ -185,7 +185,7 @@ all;<p>
 en;To make it easier to convert the textual listings available in the
 en;e-texts back to Commodore BASIC format, I have developed a small utitily
 en;called
-en;<a href="http://www.softwolves.pp.se/sw/software/others#bastext">bastext</a>.
+en;<a href="https://www.softwolves.pp.se/sw/software/others#bastext">bastext</a>.
 en;It will convert the listings to Commodore binary format, or to T64
 en;archives, ready for transfer to a Commodore computer.
 en;The program is written to be compatible with
@@ -193,7 +193,7 @@ en;<a href="http://project64.c64.org/">tok64</a>.
 
 sv;För att göra det enklare att konvertera listingarna i e-texterna tillbaka
 sv;till Commodore BASIC-format, har jag utvecklat ett litet program kallat
-sv;<a href="http://www.softwolves.pp.se/sw/software/others#bastext">bastext</a>.
+sv;<a href="https://www.softwolves.pp.se/sw/software/others#bastext">bastext</a>.
 sv;Programmet konverterar listningarna till Commodore-binärformat, eller
 sv;till T64-arkiv, klara för att överföras till en Commodoredator.
 sv;Programmet är skrivet så att det ska vara kompatibelt med
@@ -201,7 +201,7 @@ sv;<a href="http://project64.c64.org/">tok64</a>.
 
 fi;Helpottaakseni teksteissä esiintyvien ohjelmalistausten muuntamista
 fi;takaisin Commodoren BASIC-muotoon olen kehittänyt pienen apuohjelman,
-fi;<a href="http://www.softwolves.pp.se/sw/software/others#bastext">bastext</a>in.
+fi;<a href="https://www.softwolves.pp.se/sw/software/others#bastext">bastext</a>in.
 fi;Se muuntaa ohjelmalistaukset Commodoren binäärimuotoon tai
 fi;T64-muotoon, jotta ne voidaan helposti sirtää Commodore-tietokoneeseen.
 fi;Ohjelma on yhteensopiva
@@ -211,7 +211,7 @@ fi;kanssa.
 de;Um das Konvertieren von Listings in den E-Texten zurück
 de;ins Commodore BASIC-Format zu vereinfachen, habe ich ein
 de;kleines Hilfsprogramm namens
-de;<a href="http://www.softwolves.pp.se/sw/software/others#bastext">bastext</a>
+de;<a href="https://www.softwolves.pp.se/sw/software/others#bastext">bastext</a>
 de;geschrieben. Es konvertiert
 de;die Listings in das binäre Commodore-Format oder in T64-Archive,
 de;bereit für eine Übertragung zu einem Commodore-Computer.
@@ -222,14 +222,14 @@ de;ist.
 es;Para facilitar la conversión de los textos de los listados disponibles
 es;en los textos electrónicos al formato BASIC de Commodore,
 es;he desarrollado una pequeña utilería llamada
-es;<a href="http://www.softwolves.pp.se/sw/software/others#bastext">bastext</a>.
+es;<a href="https://www.softwolves.pp.se/sw/software/others#bastext">bastext</a>.
 es;Ésta convertirá los listados a formato binario de Commodore o a archivos
 es;T64, listos para transferirse a una computadora Commodore.
 es;El formato está escrito para ser compatible con
 es;<a href="http://project64.c64.org/">tok64</a>.
 
 hu;Hogy könnyebbé tegyük a programlisták Commodore BASIC formába történõ
-hu;konvertálását, készítettünk egy kis programot, a <a href="http://www.softwolves.pp.se/sw/software/others#bastext">bastext</a>-et
+hu;konvertálását, készítettünk egy kis programot, a <a href="https://www.softwolves.pp.se/sw/software/others#bastext">bastext</a>-et
 hu;mely program átkonvertálja a programlistákat Commodore bináris formátumba, 
 hu;vagy T64-be, és így könnyedén átvihetõvé válik Commodore számítógépekre. 
 hu;A program <a href="http://project64.c64.org/">tok64</a> kompatibilisre készült.

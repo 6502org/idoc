@@ -44,7 +44,7 @@ André Fachat <fachat@physik.tu-chemnitz.de>
 loskit_de.txt, June 1999, etext #52.
 
 Postscript and HTML versions are available from the iDOC= website,
-http://www.softwolves.pp.se/idoc/
+https://www.softwolves.pp.se/idoc/
 
 Note from the etexter: 
 

@@ -65,7 +65,7 @@ Es wird natürlich, Stück für Stück, weiter an diesem E-Text gearbeitet,
 die endgültige, fertige Version wird Version 1.00 sein.
 
 Die jeweils aktuelle Version dieses Handbuchs kann man jederzeit
-kostenlos bei iDOC (http://www.softwolves.pp.se/idoc/) herunterladen.
+kostenlos bei iDOC (https://www.softwolves.pp.se/idoc/) herunterladen.
 
 Korrektur-/Formatiervorschläge und sonstige Hinweise sind stets willkommen!
 (bitte per E-Mail an mich: mepk@c64.org)

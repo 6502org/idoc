@@ -136,12 +136,12 @@ hu;<li><a href="people.hu.html">Az iDOC= résztvevõi</a> (frissítve:
 filedate;../data/people.list
 
 all;)<li>
-en;<a href="http://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
-sv;<a href="http://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
-de;<a href="http://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
-fi;<a href="http://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext-työkalu</a>
-es;<a href="http://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
-hu;<a href="http://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
+en;<a href="https://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
+sv;<a href="https://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
+de;<a href="https://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
+fi;<a href="https://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext-työkalu</a>
+es;<a href="https://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
+hu;<a href="https://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
 
 all;</ul>
 
@@ -234,13 +234,13 @@ es;<li><a href="etexts-all-name.es.html">Todos los documentos</a>
 hu;<li><a href="etexts-all-name.hu.html">Az összes dokumentum</a>
 
 all;<li>
-en;<a href="alternative/">Other formats</a> (updated:
-sv;<a href="alternative/">Andra format</a> (uppdaterad:
-de;<a href="alternative/">Andere Formate</a> (aktualisiert am:
-fi;<a href="alternative/">Muut kuin tekstimuotoiset dokumentit</a> (päivitetty
-es;<a href="alternative/">Otros formatos</a> (actualizado el:
-hu;<a href="alternative/">Más formátumú anyagok</a> (frissítve:
-filedate;../html/alternative/index.sv.html
+en;<a href="alternative/index.en.html">Other formats</a> (updated:
+sv;<a href="alternative/index.sv.html">Andra format</a> (uppdaterad:
+de;<a href="alternative/index.en.html">Andere Formate</a> (aktualisiert am:
+fi;<a href="alternative/index.en.html">Muut kuin tekstimuotoiset dokumentit</a> (päivitetty
+es;<a href="alternative/index.en.html">Otros formatos</a> (actualizado el:
+hu;<a href="alternative/index.en.html">Más formátumú anyagok</a> (frissítve:
+filedate;../html/alternative/index.en.html
 all;)
 
 all;</ul>
