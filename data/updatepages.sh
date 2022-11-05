@@ -28,5 +28,8 @@ for language in sv en de fi es hu; do
   echo
 done
 
+echo -n "copy: "
+cp -v ../html/index.en.html ../html/index.html
+
 echo Done
 exit 0
