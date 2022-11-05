@@ -1,6 +1,6 @@
 # iDOC=
 
-iDOC= is a project [initiated by Peter Krefting](https://www.softwolves.pp.se/cbm/artiklar/oblivion.en.html) that collects documentation (primarily text files) related to Commodore computers in various languages.  Before March 1999, it was known an International Project 64.
+iDOC= is a project [initiated by Peter Krefting](https://www.softwolves.pp.se/cbm/artiklar/oblivion.en.html) that collects documentation (primarily text files) related to Commodore computers in various languages.  Before March 1999, it was known as International Project 64.
 
 ## Build
 
