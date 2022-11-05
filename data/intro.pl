@@ -66,12 +66,8 @@ page($language, $dateformats{$language}, "intro", "backtohome.input");
 # Trailer
 print <<"EOM";
 <hr noshade>
-<a href="http://validator.w3.org/check?uri=http://cbm.6502.org/intro.$language.html">
- <img src="../pics/vh401.gif" width=88 height=31 border=0
-  alt="[HTML 4.01]"></a>
-
-<a href="http://jigsaw.w3.org/css-validator/validator?uri=http://cbm.6502.org/idoc.css">
- <img src="../pics/vcss.gif" width=88 height=31 border=0 alt="[CSS 2]"></a>
+<img src="../pics/vh401.gif" width=88 height=31 border=0 alt="[HTML 4.01]">
+<img src="../pics/vcss.gif" width=88 height=31 border=0 alt="[CSS 2]">
 
 </body>
 </html>
