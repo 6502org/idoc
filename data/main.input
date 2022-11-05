@@ -7,17 +7,17 @@ all;alt="iDOC=" width=211></h1>
 all;<p align="center">
 en;(English)
 sv;(svenska)
-de;(deutsch)
+de;(Deutsch)
 fi;(suomeksi)
 es;(Español)
 hu;(Magyar)
 all;</p>
 
 de;<p align="center"><small>Übersetzung:
-de;<a href="http://www.student.informatik.tu-darmstadt.de/~mepk/">Christian
+de;<a href="https://web.archive.org/web/20040102173644/http://www.student.informatik.tu-darmstadt.de/~mepk/">Christian
 de;Janoff</a></small></p>
 fi;<p align="center"><small>Käännös:
-fi;<a href="http://www.hut.fi/home/msmakela/">Marko Mäkelä</a></small></p>
+fi;<a href="https://www.ktverkko.fi/~msmakela/">Marko Mäkelä</a></small></p>
 es;<p align="center"><small>Traducción:
 es;Rodolfo Leal</small></p>
 hu;<p align="center"><small>Fordítás:
@@ -35,11 +35,11 @@ es;Bienvenido a iDOC=!</h2>
 hu;Üdvözöljük az iDOC-nál!</h2>
 
 all;<p align="center">
-en;<small>Copyright © 1997-2003 Peter Krefting</small>
+en;<small>Copyright &copy; 1997-2003 Peter Krefting</small>
 sv;<small>Upphovsrättsskyddat © 1997-2003 Peter Krefting</small>
-de;<small>Copyright © 1997-2003 Peter Krefting</small>
-fi;<small>Copyright © 1997-2003 Peter Krefting</small>
-es;<small>Copyright © 1997-2003 Peter Krefting</small>
+de;<small>Copyright &copy; 1997-2003 Peter Krefting</small>
+fi;<small>Copyright &copy; 1997-2003 Peter Krefting</small>
+es;<small>Copyright &copy; 1997-2003 Peter Krefting</small>
 hu;<small>Copyright &copy; 1997-2003 Peter Krefting</small>
 all;</p>
 all;<p align="center"><big>
@@ -58,7 +58,7 @@ hu;elektronikus formában történõ megõrzésért.
 all;</big><!--htdig_noindex--><p align=center>
 all;[ <a href="index.en.html">English</a>
 all;| <a href="index.sv.html">svenska</a>
-all;| <a href="index.de.html">deutsch</a>
+all;| <a href="index.de.html">Deutsch</a>
 all;| <a href="index.fi.html">suomeksi</a>
 all;| <a href="index.es.html">Espa&ntilde;ol</a>
 all;| <a href="index.hu.html">Magyar</a>
@@ -70,7 +70,7 @@ en;64</a></em>.
 sv;Se även <em><a href="http://project64.c64.org/">Project
 sv;64</a></em>.
 
-de;Besuchen sie bitte auch <em><a href="http://project64.c64.org/">Project
+de;Besuchen Sie bitte auch <em><a href="http://project64.c64.org/">Project
 de;64</a></em>.
 
 fi;Vieraile myös <em><a href="http://project64.c64.org/">Project
@@ -109,37 +109,33 @@ hu;Információk az iDOC=-ról</h2>
 
 all;<ul>
 
-all;<li><a href="intro">
-en;Introduction to iDOC=</a> (updated:
-sv;Introduktion till iDOC=</a> (uppdaterad:
-de;Einführung in iDOC=</a> (aktualisiert am:
-fi;iDOC=:n esittely</a> (päivitetty
-es;Introducción a iDOC=</a> (actualizado el:
-hu;Bevezetés az iDOC=-hoz</a> (frissítve:
+en;<li><a href="intro.en.html">Introduction to iDOC=</a> (updated:
+sv;<li><a href="intro.sv.html">Introduktion till iDOC=</a> (uppdaterad:
+de;<li><a href="intro.de.html">Einführung in iDOC=</a> (aktualisiert am:
+fi;<li><a href="intro.fi.html">iDOC=:n esittely</a> (päivitetty
+es;<li><a href="intro.es.html">Introducción a iDOC=</a> (actualizado el:
+hu;<li><a href="intro.hu.html">Bevezetés az iDOC=-hoz</a> (frissítve:
 filedate;../data/intro.input
 all;)
 
-all;<li><a href="policy">
-en;iDOC= policy</a> (updated:
-sv;Riktlinjer för iDOC=</a> (uppdaterad:
-de;Richtlinien von iDOC=</a> (aktualisiert am:
-fi;iDOC=:n suuntaviivat</a> (päivitetty
-es;Políticas sobre iDOC=</a> (actualizado el:
-hu;Az iDOC= szabályzata</a> (frissítve:
+en;<li><a href="policy.en.html">iDOC= policy</a> (updated:
+sv;<li><a href="policy.sv.html">Riktlinjer för iDOC=</a> (uppdaterad:
+de;<li><a href="policy.de.html">Richtlinien von iDOC=</a> (aktualisiert am:
+fi;<li><a href="policy.fi.html">iDOC=:n suuntaviivat</a> (päivitetty
+es;<li><a href="policy.es.html">Políticas sobre iDOC=</a> (actualizado el:
+hu;<li><a href="policy.hu.html">Az iDOC= szabályzata</a> (frissítve:
 filedate;../data/policy.input
 all;)
 
-all;<li><a href="people">
-en;The people of iDOC=</a> (updated:
-sv;Folket bakom iDOC=</a> (uppdaterad:
-de;Die Leute hinter iDOC=</a> (aktualisiert am:
-fi;iDOC=:n tekijät</a> (päivitetty
-es;La gente de iDOC=</a> (actualizado el:
-hu;Az iDOC= résztvevõi</a> (frissítve:
+en;<li><a href="people.en.html">The people of iDOC=</a> (updated:
+sv;<li><a href="people.sv.html">Folket bakom iDOC=</a> (uppdaterad:
+de;<li><a href="people.de.html">Die Leute hinter iDOC=</a> (aktualisiert am:
+fi;<li><a href="people.fi.html">iDOC=:n tekijät</a> (päivitetty
+es;<li><a href="people.es.html">La gente de iDOC=</a> (actualizado el:
+hu;<li><a href="people.hu.html">Az iDOC= résztvevõi</a> (frissítve:
 filedate;../data/people.list
-all;)
 
-all;<li>
+all;)<li>
 en;<a href="http://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
 sv;<a href="http://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
 de;<a href="http://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
@@ -167,79 +163,75 @@ filedate;../data/etexts.list
 all;
 
 all;<ul>
-all;<li><a href="etexts-gm-name">
-en;Game related</a>
-sv;Spelrelaterat</a>
-de;Spielebezogen</a>
-fi;Peleihin liittyvää</a>
-es;Relacionado con juegos</a>
-hu;Játékokkal kacsolatos anyagok</a>
+en;<li><a href="etexts-gm-name.en.html">Game related</a>
+sv;<li><a href="etexts-gm-name.sv.html">Spelrelaterat</a>
+de;<li><a href="etexts-gm-name.de.html">Spielebezogen</a>
+fi;<li><a href="etexts-gm-name.fi.html">Peleihin liittyvää</a>
+es;<li><a href="etexts-gm-name.es.html">Relacionado con juegos</a>
+hu;<li><a href="etexts-gm-name.hu.html">Játékokkal kacsolatos anyagok</a>
 
-all;<li><a href="etexts-hw-name">
-en;Hardware/firmware related</a>
-sv;Maskinvaru-/fastprogramrelaterat</a>
-de;Hardware-/Firmwarebezogen</a>
-fi;Kovoon tai valmoon liittyvää</a>
-es;Relacionado con Hardware/Firmware</a>
-hu;Hardware/firmware anyagok</a>
+en;<li><a href="etexts-hw-name.en.html">Hardware/firmware related</a>
+sv;<li><a href="etexts-hw-name.sv.html">Maskinvaru-/fastprogramrelaterat</a>
+de;<li><a href="etexts-hw-name.de.html">Hardware-/Firmwarebezogen</a>
+fi;<li><a href="etexts-hw-name.fi.html">Kovoon tai valmoon liittyvää</a>
+es;<li><a href="etexts-hw-name.es.html">Relacionado con Hardware/Firmware</a>
+hu;<li><a href="etexts-hw-name.hu.html">Hardware/firmware anyagok</a>
 
-all;<li><a href="etexts-pr-name">
-en;Programming related</a>
-sv;Programmeringsrelaterat</a>
-de;Programmierung</a>
-fi;Ohjelmointiin liittyvää</a>
-es;Relacionado con programación</a>
-hu;Programozással kapcsolatos anyagok</a>
+en;<li><a href="etexts-pr-name.en.html">Programming related</a>
+sv;<li><a href="etexts-pr-name.sv.html">Programmeringsrelaterat</a>
+de;<li><a href="etexts-pr-name.de.html">Programmierung</a>
+fi;<li><a href="etexts-pr-name.fi.html">Ohjelmointiin liittyvää</a>
+es;<li><a href="etexts-pr-name.es.html">Relacionado con programación</a>
+hu;<li><a href="etexts-pr-name.hu.html">Programozással kapcsolatos anyagok</a>
 
-all;<li><a href="etexts-vc-name">
-en;VIC 20</a>
-sv;VIC 20</a>
-de;VC 20</a>
-fi;VIC 20</a>
-es;VIC 20</a>
-hu;VIC 20</a>
+en;<li><a href="etexts-vc-name.en.html">VIC 20</a>
+sv;<li><a href="etexts-vc-name.sv.html">VIC 20</a>
+de;<li><a href="etexts-vc-name.de.html">VC 20</a>
+fi;<li><a href="etexts-vc-name.fi.html">VIC 20</a>
+es;<li><a href="etexts-vc-name.es.html">VIC 20</a>
+hu;<li><a href="etexts-vc-name.hu.html">VIC 20</a>
 
-all;<li><a href="etexts-c2-name">Commodore 128/128D</a>
+en;<li><a href="etexts-c2-name.en.html">Commodore 128/128D</a>
+sv;<li><a href="etexts-c2-name.sv.html">Commodore 128/128D</a>
+de;<li><a href="etexts-c2-name.de.html">Commodore 128/128D</a>
+fi;<li><a href="etexts-c2-name.fi.html">Commodore 128/128D</a>
+es;<li><a href="etexts-c2-name.es.html">Commodore 128/128D</a>
+hu;<li><a href="etexts-c2-name.hu.html">Commodore 128/128D</a>
 
-all;<li><a href="etexts-ms-name">
-en;Miscellaneous</a>
-sv;Blandat</a>
-de;Gemischtes</a>
-fi;Sekalaista</a>
-es;Varios</a>
-hu;Mindenféle más</a>
+en;<li><a href="etexts-ms-name.en.html">Miscellaneous</a>
+sv;<li><a href="etexts-ms-name.sv.html">Blandat</a>
+de;<li><a href="etexts-ms-name.de.html">Gemischtes</a>
+fi;<li><a href="etexts-ms-name.fi.html">Sekalaista</a>
+es;<li><a href="etexts-ms-name.es.html">Varios</a>
+hu;<li><a href="etexts-ms-name.hu.html">Mindenféle más</a>
 
-all;<li><a href="etexts-langsv-name">
-en;Documents in Swedish</a>
-sv;Svenskspråkiga dokument</a>
-de;Schwedischsprachige</a>
-fi;Ruotsinkieliset dokumentit</a>
-es;Documentos en Sueco</a>
-hu;Svéd nyelvû anyagok</a>
+en;<li><a href="etexts-langsv-name.en.html">Documents in Swedish</a>
+sv;<li><a href="etexts-langsv-name.sv.html">Svenskspråkiga dokument</a>
+de;<li><a href="etexts-langsv-name.de.html">Schwedischsprachige</a>
+fi;<li><a href="etexts-langsv-name.fi.html">Ruotsinkieliset dokumentit</a>
+es;<li><a href="etexts-langsv-name.es.html">Documentos en Sueco</a>
+hu;<li><a href="etexts-langsv-name.hu.html">Svéd nyelvû anyagok</a>
 
-all;<li><a href="etexts-langde-name">
-en;Documents in German</a>
-sv;Tyskspråkiga dokument</a>
-de;Deutschsprachige</a>
-fi;Saksankieliset dokumentit</a>
-es;Documentos en Alemán</a>
-hu;Német nyelvû anyagok</a>
+en;<li><a href="etexts-langde-name.en.html">Documents in German</a>
+sv;<li><a href="etexts-langde-name.sv.html">Tyskspråkiga dokument</a>
+de;<li><a href="etexts-langde-name.de.html">Deutschsprachige</a>
+fi;<li><a href="etexts-langde-name.fi.html">Saksankieliset dokumentit</a>
+es;<li><a href="etexts-langde-name.es.html">Documentos en Alemán</a>
+hu;<li><a href="etexts-langde-name.hu.html">Német nyelvû anyagok</a>
 
-all;<li><a href="etexts-langhu-name">
-en;Documents in Hungarian</a>
-sv;Ungerskspråkiga dokument</a>
-de;Ungarischsprachige</a>
-fi;Unkarinkieliset dokumentit</a>
-es;Documentos en Húngaro</a>
-hu;Magyar nyelvû anyagok</a>
+en;<li><a href="etexts-langhu-name.en.html">Documents in Hungarian</a>
+sv;<li><a href="etexts-langhu-name.sv.html">Ungerskspråkiga dokument</a>
+de;<li><a href="etexts-langhu-name.de.html">Ungarischsprachige</a>
+fi;<li><a href="etexts-langhu-name.fi.html">Unkarinkieliset dokumentit</a>
+es;<li><a href="etexts-langhu-name.es.html">Documentos en Húngaro</a>
+hu;<li><a href="etexts-langhu-name.hu.html">Magyar nyelvû anyagok</a>
 
-all;<li><a href="etexts-all-name">
-en;All documents</a>
-de;Alle Dokumente</a>
-sv;Samtliga dokument</a>
-fi;Kaikki dokumentit</a>
-es;Todos los documentos</a>
-hu;Az összes dokumentum</a>
+en;<li><a href="etexts-all-name.en.html">All documents</a>
+de;<li><a href="etexts-all-name.de.html">Alle Dokumente</a>
+sv;<li><a href="etexts-all-name.sv.html">Samtliga dokument</a>
+fi;<li><a href="etexts-all-name.fi.html">Kaikki dokumentit</a>
+es;<li><a href="etexts-all-name.es.html">Todos los documentos</a>
+hu;<li><a href="etexts-all-name.hu.html">Az összes dokumentum</a>
 
 all;<li>
 en;<a href="alternative/">Other formats</a> (updated:
@@ -248,7 +240,7 @@ de;<a href="alternative/">Andere Formate</a> (aktualisiert am:
 fi;<a href="alternative/">Muut kuin tekstimuotoiset dokumentit</a> (päivitetty
 es;<a href="alternative/">Otros formatos</a> (actualizado el:
 hu;<a href="alternative/">Más formátumú anyagok</a> (frissítve:
-filedate;../alternative/index.sv.html
+filedate;../html/alternative/index.sv.html
 all;)
 
 all;</ul>

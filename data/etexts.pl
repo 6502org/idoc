@@ -277,7 +277,7 @@ foreach $sortorder (@sortorders)
 	if ($sortorder ne $sorting)
 	{
 		print ' <link rel="alternate" type="text/html" hreflang="';
-		print $language, qq'" href="etexts-$list-$sortorder" ';
+		print $language, qq'" href="etexts-$list-$sortorder.$language.html" ';
 		print 'title="', $strings{$sortorder}, qq'">\n';
 	}	
 }
@@ -330,7 +330,7 @@ foreach $sortorder (@sortorders)
 	if ($sortorder ne $sorting)
 	{
 		print "- \n" if $i;
-		print qq(<a href="etexts-$list-$sortorder">$strings{$sortorder}</a>\n);
+		print qq(<a href="etexts-$list-$sortorder.$language.html">$strings{$sortorder}</a>\n);
 		$i ++;
 	}	
 }
@@ -349,7 +349,7 @@ foreach $other (@lists)
 	}
 	else
 	{
-		print qq( <li><a href="etexts-$other-$sorting">$strings{$other}</a>\n);
+		print qq( <li><a href="etexts-$other-$sorting.$language.html">$strings{$other}</a>\n);
 	}
 }
 print "</ul>\n<hr noshade class=decorative>\n";
