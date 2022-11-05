@@ -135,14 +135,22 @@ fi;<li><a href="people.fi.html">iDOC=:n tekijät</a> <!--(päivitetty
 es;<li><a href="people.es.html">La gente de iDOC=</a> <!--(actualizado el:
 hu;<li><a href="people.hu.html">Az iDOC= résztvevõi</a> <!--(frissítve:
 filedate;../data/people.list
-all;)--><li>
+all;)-->
 
-en;<a href="https://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
-sv;<a href="https://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
-de;<a href="https://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
-fi;<a href="https://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext-työkalu</a>
-es;<a href="https://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
-hu;<a href="https://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
+all;<li><a href="https://github.com/6502org/idoc">
+en;GitHub repository for iDOC=</a> 
+sv;GitHub repository f&ouml;r iDOC=</a>
+de;GitHub repository f&uuml;r iDOC=</a>
+fi;GitHub-varasto iDOC:lle=</a>
+es;Repositorio de GitHub para iDOC=</a>
+hu;GitHub adattár az iDOC= számára</a>
+
+en;<li><a href="https://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
+sv;<li><a href="https://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
+de;<li><a href="https://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
+fi;<li><a href="https://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext-työkalu</a>
+es;<li><a href="https://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
+hu;<li><a href="https://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
 
 all;</ul>
 
