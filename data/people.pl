@@ -64,10 +64,10 @@ page($language, $dateformats{$language}, "people", "people.input");
 printlist($language,
           $paths{'datadir'} . "/people.list");
 
-print "<p><small>$lastupdated{$language} ";
+print "<p><!--<small>$lastupdated{$language} ";
 filedate($paths{'datadir'} . "/people.list",
          $dateformats{$language});
-print "</small></p>\n";
+print "</small>--></p>\n";
 
 # Link back
 page($language, $dateformats{$language}, "people", "backtohome.input");

@@ -87,7 +87,7 @@ all;</p>
 all;</div>
 all;<hr noshade class=decorative>
 
-all;<div align="center" class="clear"><div align="center" class=visitors>
+all;<!--<div align="center" class="clear"><div align="center" class=visitors>
 
 en;Last updated on
 sv;Senast uppdaterad den
@@ -97,9 +97,10 @@ es;Última actualización el
 hu;Utolsó frissítés:
 
 filedate;../data/main.input
-all;</div></div><hr noshade class=decorative>
+all;</div></div>-->
 
-all;<h2 class=main>
+all;<br clear=all><hr noshade class=decorative>
+all;<h2 class=main">
 en;Information on iDOC=</h2>
 sv;Information om iDOC=</h2>
 de;Informationen zu iDOC=</h2>
@@ -109,33 +110,33 @@ hu;Információk az iDOC=-ról</h2>
 
 all;<ul>
 
-en;<li><a href="intro.en.html">Introduction to iDOC=</a> (updated:
-sv;<li><a href="intro.sv.html">Introduktion till iDOC=</a> (uppdaterad:
-de;<li><a href="intro.de.html">Einführung in iDOC=</a> (aktualisiert am:
-fi;<li><a href="intro.fi.html">iDOC=:n esittely</a> (päivitetty
-es;<li><a href="intro.es.html">Introducción a iDOC=</a> (actualizado el:
-hu;<li><a href="intro.hu.html">Bevezetés az iDOC=-hoz</a> (frissítve:
+en;<li><a href="intro.en.html">Introduction to iDOC=</a> <!--(updated:
+sv;<li><a href="intro.sv.html">Introduktion till iDOC=</a> <!--(uppdaterad:
+de;<li><a href="intro.de.html">Einführung in iDOC=</a> <!--(aktualisiert am:
+fi;<li><a href="intro.fi.html">iDOC=:n esittely</a> <!--(päivitetty
+es;<li><a href="intro.es.html">Introducción a iDOC=</a> <!--(actualizado el:
+hu;<li><a href="intro.hu.html">Bevezetés az iDOC=-hoz</a> <!--(frissítve:
 filedate;../data/intro.input
-all;)
+all;)-->
 
-en;<li><a href="policy.en.html">iDOC= policy</a> (updated:
-sv;<li><a href="policy.sv.html">Riktlinjer för iDOC=</a> (uppdaterad:
-de;<li><a href="policy.de.html">Richtlinien von iDOC=</a> (aktualisiert am:
-fi;<li><a href="policy.fi.html">iDOC=:n suuntaviivat</a> (päivitetty
-es;<li><a href="policy.es.html">Políticas sobre iDOC=</a> (actualizado el:
-hu;<li><a href="policy.hu.html">Az iDOC= szabályzata</a> (frissítve:
+en;<li><a href="policy.en.html">iDOC= policy</a> <!--(updated:
+sv;<li><a href="policy.sv.html">Riktlinjer för iDOC=</a> <!--(uppdaterad:
+de;<li><a href="policy.de.html">Richtlinien von iDOC=</a> <!--(aktualisiert am:
+fi;<li><a href="policy.fi.html">iDOC=:n suuntaviivat</a> <!--(päivitetty
+es;<li><a href="policy.es.html">Políticas sobre iDOC=</a> <!--(actualizado el:
+hu;<li><a href="policy.hu.html">Az iDOC= szabályzata</a> <!--(frissítve:
 filedate;../data/policy.input
-all;)
+all;)-->
 
-en;<li><a href="people.en.html">The people of iDOC=</a> (updated:
-sv;<li><a href="people.sv.html">Folket bakom iDOC=</a> (uppdaterad:
-de;<li><a href="people.de.html">Die Leute hinter iDOC=</a> (aktualisiert am:
-fi;<li><a href="people.fi.html">iDOC=:n tekijät</a> (päivitetty
-es;<li><a href="people.es.html">La gente de iDOC=</a> (actualizado el:
-hu;<li><a href="people.hu.html">Az iDOC= résztvevõi</a> (frissítve:
+en;<li><a href="people.en.html">The people of iDOC=</a> <!--(updated:
+sv;<li><a href="people.sv.html">Folket bakom iDOC=</a> <!--(uppdaterad:
+de;<li><a href="people.de.html">Die Leute hinter iDOC=</a> <!--(aktualisiert am:
+fi;<li><a href="people.fi.html">iDOC=:n tekijät</a> <!--(päivitetty
+es;<li><a href="people.es.html">La gente de iDOC=</a> <!--(actualizado el:
+hu;<li><a href="people.hu.html">Az iDOC= résztvevõi</a> <!--(frissítve:
 filedate;../data/people.list
+all;)--><li>
 
-all;)<li>
 en;<a href="https://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
 sv;<a href="https://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
 de;<a href="https://www.softwolves.pp.se/cbm/skapelser/verktyg#bastext">bastext</a>
@@ -153,6 +154,7 @@ fi;Dokumentit</h2>
 es;Documentos</h2>
 hu;Dokumentumok</h2>
 
+all;<!--
 en;Last updated on
 sv;Senast uppdaterad den
 de;Aktualisiert am
@@ -160,7 +162,7 @@ fi;Päivitetty
 es;Última actualización el
 hu;Utolsó frissítés:
 filedate;../data/etexts.list
-all;
+all;-->
 
 all;<ul>
 en;<li><a href="etexts-gm-name.en.html">Game related</a>
@@ -234,13 +236,13 @@ es;<li><a href="etexts-all-name.es.html">Todos los documentos</a>
 hu;<li><a href="etexts-all-name.hu.html">Az összes dokumentum</a>
 
 all;<li>
-en;<a href="alternative/index.en.html">Other formats</a> (updated:
-sv;<a href="alternative/index.sv.html">Andra format</a> (uppdaterad:
-de;<a href="alternative/index.en.html">Andere Formate</a> (aktualisiert am:
-fi;<a href="alternative/index.en.html">Muut kuin tekstimuotoiset dokumentit</a> (päivitetty
-es;<a href="alternative/index.en.html">Otros formatos</a> (actualizado el:
-hu;<a href="alternative/index.en.html">Más formátumú anyagok</a> (frissítve:
+en;<a href="alternative/index.en.html">Other formats</a> <!--(updated:
+sv;<a href="alternative/index.sv.html">Andra format</a> <!--(uppdaterad:
+de;<a href="alternative/index.en.html">Andere Formate</a> <!--(aktualisiert am:
+fi;<a href="alternative/index.en.html">Muut kuin tekstimuotoiset dokumentit</a> <!--(päivitetty
+es;<a href="alternative/index.en.html">Otros formatos</a> <!--(actualizado el:
+hu;<a href="alternative/index.en.html">Más formátumú anyagok</a> <!--(frissítve:
 filedate;../build/alternative/index.en.html
-all;)
+all;)-->
 
 all;</ul>

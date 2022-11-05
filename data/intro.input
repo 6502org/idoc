@@ -236,11 +236,11 @@ hu;A program <a href="http://project64.c64.org/">tok64</a> kompatibilisre készül
 
 all;<div class=clear><p>
 
-en;<small>Last updated on
+en;<!--<small>Last updated on
 sv;<small>Senast uppdaterad den
 de;<small>Aktualisiert am
 fi;<small>Päivitetty
 es;<small>Última actualización el
 hu;<small>Utolsó frissítés:
 filedate;../data/policy.input
-all;</small></p></div>
+all;</small>--></p></div>

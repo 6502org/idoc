@@ -297,7 +297,7 @@ hu;Az <em>iDOC=</em> egy a non-profit project.
 
 all;</ol>
 
-all;<div class=clear><p>
+all;<div class=clear><p><!--
 en;<small>Last updated on
 sv;<small>Senast uppdaterad den
 de;<small>Aktualisiert am
@@ -306,4 +306,4 @@ es;<small>Última actualización el
 hu;<small>Utolsó frissítés:
 filedate;../data/policy.input
 all;</small>
-all;</p></div>
+all;--></p></div>

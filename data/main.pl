@@ -72,10 +72,10 @@ page($language, $dateformats{$language}, "index", "main.input");
 );
 
 print "<h3 class=main>$requesttitles{$language}</h3>\n";
-print "<small>$lastupdated{$language} ";
+print "<!--<small>$lastupdated{$language}";
 filedate($paths{'datadir'} . "/requests.list",
          $dateformats{$language});
-print "</small><p>\n";
+print "</small>--><p>\n";
 
 printlist($language,
           $paths{'datadir'} . "/requests.list");
@@ -92,10 +92,10 @@ printlist($language,
 );
 
 print "<h3 class=main>$currentprojects{$language}</h3>\n";
-print "<small>$lastupdated{$language} ";
+print "<!--<small>$lastupdated{$language} ";
 filedate($paths{'datadir'} . "/currentprojects.list",
          $dateformats{$language});
-print "</small><p>\n";
+print "</small>--><p>\n";
 
 printlist($language,
           $paths{'datadir'} . "/currentprojects.list");

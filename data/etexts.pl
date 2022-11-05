@@ -371,7 +371,7 @@ $update = strftime("%m/%d/%Y", localtime($filetime))
 $update = strftime("%d.%m.%Y", localtime($filetime))
 	if $dateformats{$language} eq "DMY";
 
-print "<p>\n<small>$lastupdated{$language} $update</small>\n";
+print "<p>\n<!--<small>$lastupdated{$language} $update</small>-->\n";
 
 
 # Link back
