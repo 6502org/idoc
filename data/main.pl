@@ -108,18 +108,18 @@ print <<"EOM";
 <hr noshade class=decorative>
 <a href="https://www.softwolves.pp.se/cbm/">Softwolves' CBM page</a>
 <hr noshade>
-<img src="../pics/vh401.gif" width=88 height=31 border=0 alt="[HTML 4.01]">
-<img src="../pics/vcss.gif" width=88 height=31 border=0 alt="[CSS 2]">
+<img src="pics/vh401.gif" width=88 height=31 border=0 alt="[HTML 4.01]">
+<img src="pics/vcss.gif" width=88 height=31 border=0 alt="[CSS 2]">
 EOM
 
 # Anyborwser campaign
 %anybrowser = (
-	en => qq'<a href="http://www.anybrowser.org/campaign/"><img src="../pics/anybrowser3.gif" alt="Best viewed with ANY browser."',
-	sv => qq'<a href="http://www.anybrowser.org/campaign/anybrowser_swe.html"><img src="../pics/anybr_sw.gif" alt="Visas bäst med VALFRI vävläsare."',
-	de => qq'<a href="http://www.anybrowser.org/campaign/anybrowser_de.html"><img src="../pics/allebr.gif" alt="Geeignet für ALLE Brauser."',
-	fi => qq'<a href="http://www.anybrowser.org/campaign/"><img src="../pics/anybrowser3.gif" alt="Tämä sivu näkyy parhaiten MILLÄ TAHANSA selaimella."',
-	es => qq'<a href="http://www.anybrowser.org/campaign/"><img src="../pics/anybrowser3.gif" alt="Se ve mejor con CUALQUIER navegador."',
-	hu => qq'<a href="http://www.anybrowser.org/campaign/"><img src="../pics/anybrowser3.gif" alt="Bármilyen böngészõvel jól olvasható."',
+	en => qq'<a href="http://www.anybrowser.org/campaign/"><img src="pics/anybrowser3.gif" alt="Best viewed with ANY browser."',
+	sv => qq'<a href="http://www.anybrowser.org/campaign/anybrowser_swe.html"><img src="pics/anybr_sw.gif" alt="Visas bäst med VALFRI vävläsare."',
+	de => qq'<a href="http://www.anybrowser.org/campaign/anybrowser_de.html"><img src="pics/allebr.gif" alt="Geeignet für ALLE Brauser."',
+	fi => qq'<a href="http://www.anybrowser.org/campaign/"><img src="pics/anybrowser3.gif" alt="Tämä sivu näkyy parhaiten MILLÄ TAHANSA selaimella."',
+	es => qq'<a href="http://www.anybrowser.org/campaign/"><img src="pics/anybrowser3.gif" alt="Se ve mejor con CUALQUIER navegador."',
+	hu => qq'<a href="http://www.anybrowser.org/campaign/"><img src="pics/anybrowser3.gif" alt="Bármilyen böngészõvel jól olvasható."',
 );
 
 print $anybrowser{$language},

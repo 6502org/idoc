@@ -66,8 +66,8 @@ page($language, $dateformats{$language}, "policy", "backtohome.input");
 # Trailer
 print <<"EOM";
 <hr noshade>
-<img src="../pics/vh401.gif" width=88 height=31 border=0 alt="[HTML 4.01]">
-<img src="../pics/vcss.gif" width=88 height=31 border=0 alt="[CSS 2]">
+<img src="pics/vh401.gif" width=88 height=31 border=0 alt="[HTML 4.01]">
+<img src="pics/vcss.gif" width=88 height=31 border=0 alt="[CSS 2]">
 
 </body>
 </html>

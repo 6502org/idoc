@@ -234,7 +234,7 @@ sub printlist
 			{
 #				if ($data[$i+1] ne "mx")
 #				{
-					print qq(<img src="../flags/$data[$i+1]_lo.gif" );
+					print qq(<img src="flags/$data[$i+1]_lo.gif" );
 					print qq(alt="" width=23 height=15> );
 #				}
 

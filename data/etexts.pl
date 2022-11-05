@@ -321,7 +321,7 @@ $sortfield = 3 if $sorting eq "name";
 $sortfield ||= 1; # else
 
 # Document body
-print qq(<div align="center" class="left"><h1 align="center"><img src="../pics/idoccbm.gif" alt="" height=150 width=211></h1>\n);
+print qq(<div align="center" class="left"><h1 align="center"><img src="pics/idoccbm.gif" alt="" height=150 width=211></h1>\n);
 print qq(<h2 align="center">$strings{$list}</h2>\n);
 print qq(<p align="center"><strong>$strings{$sorting}</strong><br><small>[ \n);
 $i = 0;
@@ -381,8 +381,8 @@ page($language, $dateformats{$language}, "etexts-$list-$sorting",
 # Trailer
 print <<"EOM";
 <hr noshade>
-<img src="../pics/vh401.gif" width=88 height=31 border=0 alt="[HTML 4.01]">
-<img src="../pics/vcss.gif" width=88 height=31 border=0 alt="[CSS 2]">
+<img src="pics/vh401.gif" width=88 height=31 border=0 alt="[HTML 4.01]">
+<img src="pics/vcss.gif" width=88 height=31 border=0 alt="[CSS 2]">
 
 </body>
 </html>
