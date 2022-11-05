@@ -1,14 +1,14 @@
-# Implementera automatiskt språkstöd
+# Implement automatic language support
 # ----------------------------------
 
 
-# Först stänger vi av omskrivningsmotorn så vi inte får rekursion
+# First we turn off the rewrite engine so we don't get recursion
 RewriteEngine off
 
-# Lägg till index+språkval som indexsida
+# Add index+language selection as index page
 DirectoryIndex index
 
-# Slå på möjlighet till multipla val
+# Turn on the option for multiple selections
 Options +MultiViews
 
 # Lägg till språk
@@ -21,6 +21,6 @@ AddLanguage es .es
 AddLanguage hu .hu
 AddLanguage nb .nb
 
-# Ange språkprioritet (Apachebug)
+# Set language preference (Apachebug)
 LanguagePriority sv no en de fi es hu nb
 
