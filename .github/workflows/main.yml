@@ -4,18 +4,18 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
 
     - name: Build the website
       run: make
 
     - name: 'Upload build artifacts'
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v7
       with:
         name: build-artifacts
         path: |
