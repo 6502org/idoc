@@ -6,6 +6,6 @@ clean:
 	rm -rf ./build/*
 
 build:
-	./data/build.sh
+	./scripts/build.sh
 
 .PHONY: clean build

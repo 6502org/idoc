@@ -4,12 +4,12 @@ iDOC= is a project [initiated by Peter Krefting](https://www.softwolves.pp.se/cb
 
 ## Build
 
-The iDOC= website is fully static and is built from this repository.  Building iDOC= requires a Unix-like machine (e.g. Linux, macOS) with GNU Make and Perl 5.
+The iDOC= website is fully static and is built from this repository.  Building iDOC= requires a Unix-like machine (e.g. Linux, macOS) with GNU Make and Python 3.
 
-On Ubuntu 18.04 LTS, this will install the requirements:
+On Ubuntu, this will install the requirements:
 
 ```text
-$ apt install build-essential perl
+$ apt install build-essential python3
 ```
 
 Run `make` in the git checkout to build:
@@ -60,8 +60,9 @@ Open a browser to http://127.0.0.1:8000/ to view it.
 
 ## Repository Layout 
 
- - `build/` - contains the complete iDOC= website after a successful build.  This directory is what would be served by a webserver, e.g. as an Apache public directory.  
- - `data/` - data and scripts used to build the website.  The `build/` directory will contain of the output of these scripts combined with the contents of `static/`.
+ - `build/` - contains the complete iDOC= website after a successful build.  This directory is what would be served by a webserver, e.g. as an Apache public directory.
+ - `data/` - multilingual content templates (`.input`) and structured data files (`.list`) used during the build.
+ - `scripts/` - Python scripts that generate the website HTML from the data files.
  - `static/`- files used in the build that never change.  This includes the documents that are downloaded from the website (`static/download/`).
- - `sourcefiles` - materials that were once used to create the documents in `static/docs/`.  The files in this directory are not used during the build.
+ - `sourcefiles/` - materials that were once used to create the documents in `static/download/`.  The files in this directory are not used during the build.
 

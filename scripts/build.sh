@@ -1,6 +1,6 @@
 #!/bin/bash
 # Update iDOC='s web pages
-# © 1999-2003 Peter Krefting <peter@softwolves.pp.se>
+# ï¿½ 1999-2003 Peter Krefting <peter@softwolves.pp.se>
 # Update iDOC='s web pages
 set -e
 
@@ -19,17 +19,17 @@ cp -vR ../static/* ../build/
 for language in sv en de fi es hu; do
   echo -n "${language}: "
   echo -n "index "
-  ./main.pl ${language}  > ../build/index.${language}.html
+  python3 ./main.py ${language}  > ../build/index.${language}.html
   for page in people intro policy; do
     echo -n "${page} "
-    ./${page}.pl ${language}  > ../build/${page}.${language}.html
+    python3 ./${page}.py ${language}  > ../build/${page}.${language}.html
   done
   echo
   echo -n "  etexts:"
   for table in gm hw pr vc c2 ms langsv langde langhu langfr all; do #28
     echo -n " ${table}"
     for sorting in none file name; do
-      ./etexts.pl ${language} ${table} ${sorting}  > ../build/etexts-${table}-${sorting}.${language}.html
+      python3 ./etexts.py ${language} ${table} ${sorting}  > ../build/etexts-${table}-${sorting}.${language}.html
     done
   done
   echo
